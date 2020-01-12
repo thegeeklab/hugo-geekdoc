@@ -29,6 +29,8 @@ steps:
   image: alpine
   commands:
   - cd dist/ && sha256sum * > ../sha256sum.txt
+  - cd ../ ls -lh dist/
+  - cat sha256sum.txt
 
 - name: publish
   image: plugins/github-release
@@ -53,6 +55,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 4b20293d941483d9917375f4bb77230e1f2db42c1c2fa19d4e7b3eb84f055ac7
+hmac: 63efa69b91d1f42a9d4b8c4fa8bb49ce3f70f0911cc5a6819bb9f993d721bd1d
 
 ...
