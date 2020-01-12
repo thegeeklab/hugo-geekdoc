@@ -7,7 +7,7 @@
 
 <link rel="stylesheet" href="{{ "main.min.css" | relURL }}">
 <!-- Theme stylesheet, you can customize css by creating static/custom.css` in your website -->
-<link rel="stylesheet" href="{{ .Site.BaseURL }}/custom.css">
+<link rel="stylesheet" href="{{ "custom.css" | relURL }}">
 
 {{ if default true .Site.Params.GeekdocSearch }}
     {{ .Scratch.Set "geekdocSearchConfig" .Site.Params.GeekdocSearchConfig }}
