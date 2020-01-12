@@ -17,7 +17,8 @@ steps:
 - name: test
   image: klakegg/hugo:0.59.1-ext-alpine
   commands:
-  - cd exampleSite/ && ln -s ../../. themes/hugo-geekdoc && hugo-official
+  - cd exampleSite/
+  - mkdir themes/ && ln -s ../../. themes/hugo-geekdoc && hugo-official
 
 - name: build
   image: alpine
@@ -82,6 +83,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 6025b5c20708252a941553d3897edd427f8ba581501a0bf6734763b64e8c5fa3
+hmac: 62d8594764dea62853a1f8fe742650178a80e2aca930a0cce6d7043a90c34204
 
 ...
