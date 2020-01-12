@@ -97,7 +97,7 @@ steps:
     key:
       from_secret: ssh_key
     rm: true
-    source: public/*
+    source: exampleSite/public/*
     strip_components: 1
     target: /var/www/virtual/geeklab/html/docs.geeklabor.de/
     username:
@@ -164,6 +164,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: a0a18a3f5906f7589beaccc5b4affb6b134b648704f264a7806dee182f9f2497
+hmac: c42e2aaa92a03011eabcee8cfac91883a26152f91fe39ddf8a8d0963bf4f09a0
 
 ...
