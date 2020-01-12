@@ -74,6 +74,49 @@ steps:
   commands:
   - cd exampleSite/ && hugo-official
 
+- name: freeze
+  pull: always
+  image: appleboy/drone-ssh
+  settings:
+    host:
+      from_secret: ssh_host
+    key:
+      from_secret: ssh_key
+    script:
+    - cp -R /var/www/virtual/geeklab/html/docs.geeklabor.de/ /var/www/virtual/geeklab/html/docs_freeze/
+    - ln -sfn /var/www/virtual/geeklab/html/docs_freeze /var/www/virtual/geeklab/docs.geeklabor.de
+    username:
+      from_secret: ssh_username
+
+- name: publish
+  pull: always
+  image: appleboy/drone-scp
+  settings:
+    host:
+      from_secret: ssh_host
+    key:
+      from_secret: ssh_key
+    rm: true
+    source: public/*
+    strip_components: 1
+    target: /var/www/virtual/geeklab/html/docs.geeklabor.de/
+    username:
+      from_secret: ssh_username
+
+- name: cleanup
+  pull: always
+  image: appleboy/drone-ssh
+  settings:
+    host:
+      from_secret: ssh_host
+    key:
+      from_secret: ssh_key
+    script:
+    - ln -sfn /var/www/virtual/geeklab/html/docs.geeklabor.de /var/www/virtual/geeklab/docs.geeklabor.de
+    - rm -rf /var/www/virtual/geeklab/html/docs_freeze/
+    username:
+      from_secret: ssh_username
+
 trigger:
   ref:
   - refs/heads/master
@@ -121,6 +164,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: b8bb39bf0e41da63f5ad5f7de146c9301fabb5153b42bf43ca7648df100c17da
+hmac: a0a18a3f5906f7589beaccc5b4affb6b134b648704f264a7806dee182f9f2497
 
 ...
