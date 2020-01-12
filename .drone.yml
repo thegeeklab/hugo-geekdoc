@@ -23,7 +23,7 @@ steps:
   image: alpine
   commands:
   - mkdir dist/
-  - tar -zcvf dist/hugo-geekdoc.tar.gz . --exclude='.git*' --exclude='.drone*' --exclude='dist' --exclude='.git*' --exclude='example*' --exclude='src' --exclude='gulp*' --exclude='package*'
+  - tar -zcvf dist/hugo-geekdoc.tar.gz . --exclude='.git*' --exclude='.drone*' --exclude='dist' --exclude='.git*' --exclude='example*' --exclude='src' --exclude='gulp*' --exclude='package*' --exclude='node*'
 
 - name: checksum
   image: alpine
@@ -53,6 +53,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 549fc79b15dede6b3124796870db1ca1eeedd62da861ff33519b0c9126f5e74d
+hmac: 4b20293d941483d9917375f4bb77230e1f2db42c1c2fa19d4e7b3eb84f055ac7
 
 ...
