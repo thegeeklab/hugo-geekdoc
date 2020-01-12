@@ -67,7 +67,7 @@ steps:
   image: byrnedo/alpine-curl
   commands:
   - mkdir -p exampleSite/themes/hugo-geekdoc/
-  - curl -L https://github.com/xoxys/hugo-geekdoc/tarball/master | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
+  - curl -L https://github.com/xoxys/hugo-geekdoc/releases/download/v0.1.0/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
 
 - name: test
   image: klakegg/hugo:0.59.1-ext-alpine
@@ -83,6 +83,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 62d8594764dea62853a1f8fe742650178a80e2aca930a0cce6d7043a90c34204
+hmac: abb5e35a32fafac58c17cf87111991d6d700ad1a9e73d70c77ab7f92d1aee439
 
 ...
