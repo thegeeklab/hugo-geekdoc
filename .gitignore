@@ -1,7 +1,6 @@
 # local environments
 .env*
 node_modules/
-exampleSite/themes/
 
 # auto-generated files
 layouts/partials/icons-svg-symbols.html

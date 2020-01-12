@@ -1,0 +1,48 @@
+---
+kind: pipeline
+name: build
+
+steps:
+- name: assets
+  image: node
+  commands:
+  - npm install -g gulp -s
+  - npm install -s
+  - gulp default
+
+- name: test
+  image: klakegg/hugo:0.59.1-ext-alpine
+  commands:
+  - cd exampleSite/ && hugo-official
+
+- name: build
+  image: alpine
+  commands:
+  - mkdir dist/
+  - tar -zcvf . -f dist/hugo-geekdoc.tar.gz --exclude='.git*' --exclude='.drone*' --exclude='dist' --exclude='.git*' --exclude='example*' --exclude='src' --exclude='gulp*' --exclude='package*'
+
+- name: checksum
+  image: alpine
+  commands:
+  - "cd dist/ && sha256sum * > ../sha256sum.txt"
+
+- name: publish
+  image: plugins/github-release
+  settings:
+    api_key:
+      from_secret: github_token
+    files:
+    - "dist/*"
+    - sha256sum.txt
+    note: CHANGELOG.md
+    overwrite: true
+    title: "${DRONE_TAG}"
+  when:
+    ref:
+    - "refs/tags/**" 
+
+trigger:
+  ref:
+  - refs/heads/master
+  - refs/tags/**
+  - refs/pull/**
