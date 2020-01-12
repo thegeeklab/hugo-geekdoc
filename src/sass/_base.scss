@@ -1,0 +1,484 @@
+html {
+  font-size: $font-size-base;
+  letter-spacing: 0.33px;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-width: $body-min-width;
+  overflow-x: hidden;
+}
+
+body {
+  color: $body-font-color;
+  background: $body-background;
+
+  font-weight: $body-font-weight;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  box-sizing: border-box;
+  * {
+    box-sizing: inherit;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: $body-font-weight;
+}
+
+a {
+  text-decoration: none;
+  color: $color-link;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: $color-link-visited;
+  }
+}
+
+img {
+  vertical-align: middle;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  top: 0.125em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  position: relative;
+}
+
+.gdoc-header {
+  background: $main-color;
+  color: $white;
+  border-bottom: 0.3em solid $second-color;
+
+  &__link,
+  &__link:visited {
+    color: inherit;
+  }
+
+  &__link:hover {
+    text-decoration: none;
+  }
+
+  .icon {
+    width: $font-size-16 * 2;
+    height: $font-size-16 * 2;
+  }
+
+  .container {
+    padding: $padding-16;
+  }
+}
+
+.gdoc-brand {
+  font-size: $font-size-16 * 2;
+
+  &__img {
+    padding: 0 $padding-16 0 0;
+  }
+}
+
+.gdoc-nav {
+  flex: 0 0 $menu-width;
+  font-size: $font-size-14;
+
+  nav {
+    width: $menu-width;
+    padding: $padding-16 * 1.5 $padding-16;
+
+    > ul > li > * {
+      font-weight: normal;
+    }
+
+    > :first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__control {
+    display: none;
+    margin: 0;
+    padding: 0;
+
+    .icon.menu {
+      display: inline-block;
+    }
+    .icon.arrow-back {
+      display: none;
+    }
+  }
+
+  &__list {
+    padding-left: 1em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    ul {
+      padding-left: $padding-16;
+    }
+
+    li {
+      margin: $padding-8 0;
+    }
+
+    .icon {
+      margin-right: $padding-4;
+    }
+  }
+
+  &__entry {
+    flex: 1;
+    color: $body-font-color;
+
+    &:hover,
+    &.is-active {
+      text-decoration: underline;
+      text-decoration-style: dashed !important;
+    }
+
+    &:visited {
+      color: $body-font-color;
+    }
+  }
+
+  &--main > ul > li > span,
+  &--main > ul > li > span > a {
+    font-weight: bold;
+  }
+
+  &--more {
+    padding-top: $padding-8;
+  }
+}
+
+.gdoc-page {
+  min-width: $body-min-width;
+  flex-grow: 1;
+  padding: $padding-16 * 1.5 $padding-16;
+
+  &__header,
+  &__footer {
+    margin-bottom: $padding-16 * 1.2;
+    flex-wrap: wrap;
+
+    .icon {
+      color: $gray-600;
+    }
+
+    a,
+    a:visited {
+      color: $color-link;
+    }
+  }
+
+  &__header {
+    background: $gray-100;
+    padding: $padding-8 $padding-16;
+    border-radius: $border-radius;
+  }
+
+  &__footer {
+    margin-top: $padding-16 * 2;
+  }
+
+  &__nav {
+    &--prev:before {
+      content: "\1f828";
+    }
+    &--next:after {
+      content: "\1f82a";
+    }
+  }
+}
+
+.gdoc-post {
+  word-wrap: break-word;
+  border-top: 1px dashed $gray-600;
+  padding-bottom: 1em;
+  line-height: 1.5;
+
+  &__title {
+    a,
+    a:visited {
+      color: $body-font-color;
+    }
+  }
+
+  &:first-child {
+    border-top: 0;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  &__readmore {
+    margin: 1em 0;
+    color: $color-link;
+    display: block;
+
+    &:visited {
+      color: $color-link;
+    }
+
+    &:after {
+      content: "\1f82a";
+    }
+  }
+}
+
+.gdoc-footer {
+  background: $second-color;
+  color: $white;
+  padding: $padding-16;
+
+  &__link {
+    color: $color-link-footer;
+
+    &:visited {
+      color: $color-link-footer;
+    }
+  }
+}
+
+.gdoc-search {
+  position: relative;
+
+  .icon {
+    position: absolute;
+    top: 0.625em;
+    left: $padding-16 * 0.5;
+    color: $gray-600;
+    width: $font-size-16;
+    height: $font-size-16;
+  }
+
+  .has-hits {
+    border-bottom: 1px dashed $gray-600;
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+
+  &__input {
+    width: 100%;
+    padding: $padding-8;
+    padding-left: $padding-16 * 2;
+
+    border: 1px solid $gray-200;
+    border-radius: $border-radius;
+
+    background: $gray-100;
+    color: $body-font-color;
+
+    &:required + &__spinner {
+      display: block;
+    }
+  }
+
+  &__spinner {
+    position: absolute;
+    margin: $padding-8;
+    right: 0;
+    top: 0;
+
+    width: $padding-16;
+    height: $padding-16;
+
+    border: $padding-1 solid transparent;
+    border-top-color: $body-font-color;
+    border-radius: 50%;
+
+    @include spin(1s);
+  }
+
+  &__list {
+    padding-left: 1em;
+    margin: 0;
+    padding: $padding-8 0;
+    list-style: none;
+
+    ul {
+      padding-left: $padding-16;
+    }
+
+    li {
+      margin: $padding-4 0;
+    }
+
+    .icon {
+      margin-right: $padding-4;
+    }
+  }
+}
+
+.gdoc-error {
+  padding: $padding-16 * 6 $padding-16;
+  margin: 0 auto;
+  max-width: 45em;
+
+  .icon {
+    width: $font-size-16 * 6;
+    height: $font-size-16 * 6;
+    color: $gray-700;
+  }
+
+  &__link,
+  &__link:visited {
+    color: $color-link;
+  }
+
+  &__message {
+    padding-left: $padding-16 * 4;
+  }
+
+  &__line {
+    padding: $padding-8 0;
+  }
+
+  &__title {
+    font-size: $font-size-16 * 4;
+  }
+
+  &__code {
+    font-weight: bolder;
+  }
+}
+
+.gdoc-toc {
+  // Classes to hide nested levels of ToC/Menu
+  &__level--1 ul,
+  &__level--2 ul ul,
+  &__level--3 ul ul ul,
+  &__level--4 ul ul ul ul,
+  &__level--5 ul ul ul ul ul,
+  &__level--6 ul ul ul ul ul ul {
+    display: none;
+  }
+
+  a,
+  a:visited {
+    color: $color-link;
+  }
+}
+
+// Responsive styles
+.gdoc-nav nav,
+.gdoc-page,
+.markdown {
+  transition: 0.2s ease-in-out;
+  transition-property: transform, margin-left, opacity;
+  will-change: transform!important, margin-left !important;
+}
+
+@media screen and (max-width: $sm-breakpoint) {
+  .gdoc-nav {
+    margin-left: -$menu-width;
+    font-size: $font-size-base;
+
+    &__control {
+      display: inline-block;
+    }
+  }
+
+  .gdoc-header {
+    display: flex;
+
+    .icon {
+      width: $font-size-16 * 1.5;
+      height: $font-size-16 * 1.5;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+
+  .gdoc-brand {
+    font-size: $font-size-16 * 1.5;
+
+    &__img {
+      display: none;
+    }
+  }
+
+  .gdoc-error {
+    padding: $padding-16 * 6 $padding-16;
+
+    .icon {
+      width: $font-size-16 * 4;
+      height: $font-size-16 *4;
+    }
+
+    &__message {
+      padding-left: $padding-16 * 2;
+    }
+
+    &__line {
+      padding: $padding-4 0;
+    }
+
+    &__title {
+      font-size: $font-size-16 * 2;
+    }
+  }
+
+  .gdoc-page__header .breadcrumb {
+    display: none;
+  }
+
+  #menu-control:checked ~ main {
+    .gdoc-nav nav,
+    .gdoc-page {
+      transform: translateX($menu-width);
+    }
+
+    .gdoc-page {
+      opacity: 0.25;
+    }
+  }
+
+  #menu-control:checked ~ .gdoc-header .gdoc-nav__control {
+    .icon.menu {
+      display: none;
+    }
+
+    .icon.arrow-back {
+      display: inline-block;
+    }
+  }
+}

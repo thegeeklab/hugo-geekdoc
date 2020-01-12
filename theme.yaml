@@ -1,0 +1,17 @@
+---
+name: "Geekdoc"
+license: "MIT"
+licenselink: "https://gitea.rknet.org/xoxys/hugo-theme-geekdoc/src/branch/master/LICENSE"
+description: "Simple Hugo documentation theme"
+homepage: "https://gitea.rknet.org/xoxys/hugo-theme-geekdoc"
+tags:
+  - responsive
+  - clean
+  - documentation
+  - docs
+features: []
+min_version: "0.55"
+
+author:
+  name: "Robert Kaussow"
+  homepage: "https://gitea.rknet.org/xoxys"

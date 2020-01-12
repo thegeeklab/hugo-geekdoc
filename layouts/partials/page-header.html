@@ -1,0 +1,38 @@
+{{ $geekdocRepo := default (default false .Site.Params.GeekdocRepo) .Page.Params.GeekdocRepo }}
+{{ $geekdocEditPath := default (default false .Site.Params.GeekdocEditPath) .Page.Params.GeekdocEditPath }}
+{{ if .File }}
+    {{ $.Scratch.Set "geekdocFilePath" (default .File.Path .Page.Params.geekdocFilePath) }}
+{{ else }}
+    {{ $.Scratch.Set "geekdocFilePath" false }}
+{{ end }}
+
+{{define "breadcrumb"}}
+    {{$parent := .page.Parent }}
+    {{ if $parent }}
+        {{ $value := (printf "<a href='%s'>%s</a> / %s" $parent.RelPermalink $parent.Title .value) }}
+        {{ template "breadcrumb" dict "page" $parent "value" $value }}
+    {{else}}
+        {{.value|safeHTML}}
+    {{end}}
+{{end}}
+
+<div class="gdoc-page__header flex justify-between" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    {{$showBreadcrumb := (and (not .Params.disableBreadcrumb) (not .Site.Params.disableBreadcrumb))}}
+    <span>
+        {{if $showBreadcrumb}}
+            <span class="breadcrumb">
+                <svg class="icon path"><use xlink:href="#path"></use></svg>
+                {{ $name := (partial "title" .) }}
+                {{ template "breadcrumb" dict "page" . "value" $name }}
+            </span>
+        {{ end }}
+    </span>
+    <span>
+        {{ if and ($.Scratch.Get "geekdocFilePath") $geekdocRepo $geekdocEditPath }}
+            <svg class="icon code"><use xlink:href="#code"></use></svg>
+            <a href="{{ $geekdocRepo }}/{{ $geekdocEditPath }}/{{ $.Scratch.Get "geekdocFilePath" }}">
+                Edit this page
+            </a>
+        {{ end }}
+    </span>
+</div>

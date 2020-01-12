@@ -1,0 +1,14 @@
+<header class="gdoc-header">
+    <div class="container flex align-center justify-between">
+        <label for="menu-control" class="gdoc-nav__control">
+            <svg class="icon menu"><use xlink:href="#menu"></use></svg>
+            <svg class="icon arrow-back"><use xlink:href="#arrow_back"></use></svg>
+        </label>
+        <a class="gdoc-header__link" href="{{ .Site.BaseURL }}">
+            <span class="gdoc-brand flex align-center">
+                <img class="gdoc-brand__img" src="{{ "brand.svg" | relURL }}" alt="Branding" width=48 height=48>
+                {{ .Site.Title }}
+            </span>
+        </a>
+    </div>
+</header>

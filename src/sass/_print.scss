@@ -1,0 +1,19 @@
+@media print {
+  .gdoc-nav,
+  .gdoc-footer {
+    display: none;
+  }
+
+  main {
+    flex-direction: column-reverse;
+  }
+
+  .gdoc-toc {
+    flex: none;
+
+    nav {
+      position: relative;
+      width: auto;
+    }
+  }
+}

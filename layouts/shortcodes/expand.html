@@ -1,0 +1,12 @@
+<div class="gdoc-expand">
+    <label>
+        <div class="gdoc-expand__head flex justify-between">
+            <span>{{ default "Expand" (.Get 0) }}</span>
+            <span>{{ default "↕" (.Get 1) }}</span>
+        </div>
+        <input type="checkbox" class="gdoc-expand__control hidden" />
+        <div class="gdoc-markdown--nested gdoc-expand__content">
+            {{ .Inner | markdownify }}
+        </div>
+    </label>
+</div>

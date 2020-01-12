@@ -1,0 +1,8 @@
+{{ define "main" }}
+    {{ partial "page-header" . }}
+
+    <article class="gdoc-markdown">
+        <h1>{{ partial "title" . }}</h1>
+        {{ .Content | replaceRE `<nav id="TableOfContents">\s*<ul>\s*<li>\s*<ul>` `<nav id="TableOfContents"><ul>` | replaceRE `</ul>\s*</li>\s*</ul>\s*</nav>` `</ul></nav>` | safeHTML }}
+    </article>
+{{ end }}

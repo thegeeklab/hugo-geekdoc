@@ -1,0 +1,56 @@
+// Used in layout
+$padding-1: 1px !default;
+$padding-4: 0.25rem !default;
+$padding-8: 0.5rem !default;
+$padding-16: 1rem !default;
+
+$font-size-base: 16px !default;
+$font-size-12: 0.75rem !default;
+$font-size-14: 0.875rem !default;
+$font-size-16: 1rem !default;
+
+$border-radius: 0.15rem !default;
+
+// Grayscale
+$white: rgba(255, 255, 255, 1) !default;
+$gray-100: rgba(248, 249, 250, 1) !default;
+$gray-200: rgba(233, 236, 239, 1) !default;
+$gray-300: rgba(222, 226, 230, 1) !default;
+$gray-400: rgba(206, 212, 218, 1) !default;
+$gray-500: rgba(173, 181, 189, 1) !default;
+$gray-600: rgba(134, 142, 150, 1) !default;
+$gray-700: rgba(73, 80, 87, 1) !default;
+$gray-800: rgba(52, 58, 64, 1) !default;
+$gray-900: rgba(33, 37, 41, 1) !default;
+$black: rgba(0, 0, 0, 1) !default;
+
+$color-link: rgba(10, 83, 154, 1) !default;
+$color-link-visited: rgba(119, 73, 191, 1) !default;
+$color-link-footer: rgba(255,163,30,1.0) !default;
+
+$color-code: rgba($gray-200, 0.5) !default;
+
+$header-font-size: 2em;
+$header-font-size-small: 1.5em;
+
+$body-background: white !default;
+$body-font-color: $gray-800 !default;
+$body-font-weight: normal !default;
+$body-min-width: 20rem !default;
+
+$container-max-width: 80rem !default;
+
+$main-color: rgba(65, 134, 201, 1) !default;
+$second-color: rgba(47, 51, 62, 1) !default;
+
+$header-height: 3.5rem !default;
+$menu-width: 16rem !default;
+
+$sm-breakpoint: $menu-width + $body-min-width !default;
+
+// Panel colors
+$hint-colors: (
+  info: rgba(102, 187, 255, 1),
+  warning: rgba(255, 221, 102, 1),
+  danger: rgba(255, 102, 102, 1)
+) !default;

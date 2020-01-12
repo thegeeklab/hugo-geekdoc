@@ -1,0 +1,102 @@
+// {{< expand "Label" "icon" >}}
+.gdoc-expand {
+  margin-top: $padding-16;
+  margin-bottom: $padding-16;
+
+  border: $padding-1 solid $gray-200;
+  border-radius: $border-radius;
+
+  overflow: hidden;
+
+  &__head {
+    background: $gray-100;
+    padding: $padding-8 $padding-16;
+    cursor: pointer;
+  }
+
+  &__content {
+    display: none;
+    padding: $padding-16;
+  }
+
+  &__control:checked + &__content {
+    display: block;
+  }
+}
+
+// {{< tabs >}}
+.gdoc-tabs {
+  margin-top: $padding-16;
+  margin-bottom: $padding-16;
+
+  border: $padding-1 solid $gray-200;
+  border-radius: $border-radius;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__label {
+    display: inline-block;
+    padding: $padding-8 $padding-16;
+    border-bottom: $padding-1 transparent;
+    cursor: pointer;
+  }
+
+  &__content {
+    order: 999; //Move content blocks to the end
+    width: 100%;
+    border-top: $padding-1 solid $gray-100;
+    padding: $padding-16;
+    display: none;
+  }
+
+  &__control:checked + &__label {
+    border-bottom: $padding-1 solid $color-link;
+  }
+  &__control:checked + &__label + &__content {
+    display: block;
+  }
+}
+
+// {{< columns >}}
+.gdoc-columns {
+  margin-left: -$padding-16;
+  margin-right: -$padding-16;
+
+  &__content {
+    margin: $padding-16 0;
+    min-width: $body-min-width * 0.66;
+    padding: 0 $padding-16;
+  }
+}
+
+// {{< button >}}
+a.gdoc-btn {
+  display: inline-block;
+  color: $gray-700;
+  text-decoration: none !important;
+  border: $padding-1 solid $gray-500;
+  border-radius: $border-radius;
+  padding: $padding-4 $padding-16;
+  margin-top: $padding-8;
+  margin-bottom: $padding-8;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba($main-color, 0.9);
+    border-color: $main-color;
+    color: $gray-100;
+  }
+}
+
+// {{< hint >}}
+.gdoc-hint {
+  @each $name, $color in $hint-colors {
+    &.#{$name} {
+      border-left-color: $color;
+      background-color: rgba($color, 0.1);
+    }
+  }
+}
