@@ -2,6 +2,7 @@
 .env*
 node_modules/
 exampleSite/themes/
+exampleSite/public/
 
 # auto-generated files
 layouts/partials/icons-svg-symbols.html
