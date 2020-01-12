@@ -58,6 +58,9 @@ trigger:
 kind: pipeline
 name: docs
 
+concurrency:
+  limit: 1
+
 platform:
   os: linux
   arch: amd64
@@ -164,6 +167,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 682a950289f296ee8f25875e689221b051cc796a364175b9c3b0e45d9972a4d6
+hmac: eef2b2526b9f0ab9bacb8d8e1689ab69191f91a2069e6fbd0bc4372697a6e782
 
 ...

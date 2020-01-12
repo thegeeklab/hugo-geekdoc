@@ -38,7 +38,7 @@ params:
 
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
-  GeekdocRepo: https://github.com/xoxys/hugo-geeekdoc
+  GeekdocRepo: https://github.com/xoxys/hugo-geekdoc
 
   # Enable "Edit this page" links for 'doc' page type.
   # Disabled by default. Uncomment to enable. Requires 'GeekdocRepo' param.
