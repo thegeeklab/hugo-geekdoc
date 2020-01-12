@@ -17,7 +17,7 @@ steps:
 - name: test
   image: klakegg/hugo:0.59.1-ext-alpine
   commands:
-  - cd exampleSite/ && hugo-official
+  - cd exampleSite/ && ln -s ../../. themes/hugo-geekdoc && hugo-official
 
 - name: build
   image: alpine
@@ -29,7 +29,7 @@ steps:
   image: alpine
   commands:
   - cd dist/ && sha256sum * > ../sha256sum.txt
-  - cd ../ ls -lh dist/
+  - cd ../ && ls -lh dist/
   - cat sha256sum.txt
 
 - name: publish
@@ -54,7 +54,31 @@ trigger:
   - refs/pull/**
 
 ---
+kind: pipeline
+name: docs
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: assets
+  image: alpine
+  commands:
+  - mkdir -p exampleSite/themes/hugo-geekdoc/
+  - curl -L https://github.com/xoxys/hugo-geekdoc/tarball/master | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
+
+- name: test
+  image: klakegg/hugo:0.59.1-ext-alpine
+  commands:
+  - cd exampleSite/ && hugo-official
+
+trigger:
+  ref:
+  - refs/heads/master
+
+---
 kind: signature
-hmac: 63efa69b91d1f42a9d4b8c4fa8bb49ce3f70f0911cc5a6819bb9f993d721bd1d
+hmac: 045e419a618003df0ea0a85de97a8152d88192a7b9e6f5ad8ba2701913e6288f
 
 ...
