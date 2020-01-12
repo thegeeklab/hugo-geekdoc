@@ -3,6 +3,7 @@
   src: url("fonts/LiberationSans-Bold.woff2") format("woff2"), url("fonts/LiberationSans-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -11,6 +12,7 @@
     url("fonts/LiberationSans-BoldItalic.woff") format("woff");
   font-weight: bold;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -18,6 +20,7 @@
   src: url("fonts/LiberationSans-Italic.woff2") format("woff2"), url("fonts/LiberationSans-Italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -25,6 +28,7 @@
   src: url("fonts/LiberationSans.woff2") format("woff2"), url("fonts/LiberationSans.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -32,6 +36,7 @@
   src: url("fonts/DroidSerif.woff2") format("woff2"), url("fonts/DroidSerif.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -39,6 +44,7 @@
   src: url("fonts/LiberationMono.woff2") format("woff2"), url("fonts/LiberationMono.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 body {
