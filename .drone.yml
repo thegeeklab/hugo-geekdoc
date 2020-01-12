@@ -63,7 +63,7 @@ platform:
 
 steps:
 - name: assets
-  image: alpine
+  image: byrnedo/alpine-curl
   commands:
   - mkdir -p exampleSite/themes/hugo-geekdoc/
   - curl -L https://github.com/xoxys/hugo-geekdoc/tarball/master | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
@@ -77,8 +77,11 @@ trigger:
   ref:
   - refs/heads/master
 
+depends_on:
+- build
+
 ---
 kind: signature
-hmac: 045e419a618003df0ea0a85de97a8152d88192a7b9e6f5ad8ba2701913e6288f
+hmac: 6025b5c20708252a941553d3897edd427f8ba581501a0bf6734763b64e8c5fa3
 
 ...
