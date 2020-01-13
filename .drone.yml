@@ -70,7 +70,7 @@ steps:
   image: byrnedo/alpine-curl
   commands:
   - mkdir -p exampleSite/themes/hugo-geekdoc/
-  - curl -L https://github.com/xoxys/hugo-geekdoc/releases/download/v0.1.0/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
+  - curl -L https://github.com/xoxys/hugo-geekdoc/releases/download/v0.1.1/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
 
 - name: test
   image: klakegg/hugo:0.59.1-ext-alpine
@@ -123,6 +123,7 @@ steps:
 trigger:
   ref:
   - refs/heads/master
+  - refs/tags/**
 
 depends_on:
 - build
