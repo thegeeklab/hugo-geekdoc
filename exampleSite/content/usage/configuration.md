@@ -151,7 +151,7 @@ geekdocEditPath: edit/master/exampleSite/content
 
 # Used for 'Edit this page' link, set to '.File.Path' by default.
 # Can be overwritten by a path relative to 'geekdocEditPath'
-geekdocFilePath =
+geekdocFilePath:
 
 # Set to mark page as flat section (file-tree menu only)
 geekdocFlatSection: true

@@ -1,0 +1,9 @@
+- FEATURE
+  - add `geekdocHidden` param to exclude pages/sections from rendered file-tree menu
+  - add `geekdocFlatSection` param to include only section link into rendered file-tree menu
+  - add `geekdocBreadcrumb` param to control breadcrumb naviation
+  - add `geekdocNextPrev` param to page navigation links
+
+- BUGFIX
+  - normalize variable and parameter names
+  - fix `geekdocLogo` param and custom logo handling
