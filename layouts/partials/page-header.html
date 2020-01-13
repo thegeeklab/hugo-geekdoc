@@ -17,7 +17,7 @@
 {{end}}
 
 <div class="gdoc-page__header flex justify-between" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-    {{$showBreadcrumb := (and (not .Params.disableBreadcrumb) (not .Site.Params.disableBreadcrumb))}}
+    {{$showBreadcrumb := (and (not .Page.Params.geekdocBreadcrumb) (not .Site.Params.geekdocBreadcrumb))}}
     <span>
         {{if $showBreadcrumb}}
             <span class="breadcrumb">

@@ -102,7 +102,7 @@ img {
   font-size: $font-size-16 * 2;
 
   &__img {
-    padding: 0 $padding-16 0 0;
+    margin-right: $padding-16;
   }
 }
 

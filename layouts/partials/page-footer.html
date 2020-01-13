@@ -44,7 +44,7 @@
 
 
 <div class="gdoc-page__footer flex justify-between">
-    {{ $showPrevNext := (and (not .Params.disableNextPrev) (not .Site.Params.disableNextPrev) .Site.Params.GeekdocMenuBundle) }}
+    {{ $showPrevNext := (and (not .Site.Params.GeekdocNextPrev) .Site.Params.GeekdocMenuBundle) }}
     {{ if $showPrevNext }}
         <span>
             {{ with ($current.Scratch.Get "prevPage") }}

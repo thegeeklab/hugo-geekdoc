@@ -1,0 +1,13 @@
+---
+more:
+  - name: News
+    ref: "/posts"
+    icon: "notification"
+  - name: Releases
+    ref: "https://github.com/xoxys/hugo-geekdoc/releases"
+    external: true
+    icon: "download"
+  - name: "View Source"
+    ref: "https://github.com/xoxys/hugo-geekdoc"
+    external: true
+    icon: "github"

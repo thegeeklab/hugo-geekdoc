@@ -8,9 +8,9 @@
     <ul class="gdoc-nav__list">
         {{ range .sect.GroupBy "Weight" "desc" }}
             {{ range .ByTitle }}
-
+            {{ if not .Params.geekdocHidden }}
             <li>
-            {{ if or .Content .Params.ListOnly }}
+            {{ if or .Content .Params.geekdocFlatSection }}
                 <span class="flex">
                     <a href="{{ .RelPermalink }}" class="gdoc-nav__entry {{ if eq $current . }}is-active{{ end }}">
                         {{ partial "title" . }}
@@ -21,11 +21,11 @@
             {{ end }}
 
             {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
-            {{ if and (ne $numberOfPages 0) (not .Params.ListOnly) }}
+            {{ if and (ne $numberOfPages 0) (not .Params.geekdocFlatSection) }}
                 {{ template "tree-nav" dict "sect" .Pages "current" $current}}
             {{ end }}
             </li>
-
+            {{ end }}
             {{ end }}
         {{ end }}
     </ul>

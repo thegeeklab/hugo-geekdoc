@@ -19,37 +19,10 @@ markup:
     startLevel: 1
 
 params:
-  # (Optional, default 6) Set how many table of contents levels to be showed on page.
-  # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
-  # You can also specify this parameter per page in front matter
-  GeekdocToC: 3
+  geekdocToC: 3
 
-  # (Optional, default none) Set the path to a logo for the Geekdoc. If the logo is
-  # /static/logo.png then the path would be logo.png
-  # GeekdocLogo: /logo.png
+  geekdocRepo: https://github.com/xoxys/hugo-geekdoc
+  geekdocEditPath: edit/master/exampleSite/content
 
-  # (Optional, default none) Set leaf bundle to render as side menu
-  # When not specified file structure and weights will be used
-  # GeekdocMenuBundle: /menu
-
-  # (Optional, default docs) Specify section of content to render as menu
-  # You can also set value to '*' to render all sections to menu
-  GeekdocSection: docs
-
-  # Set source repository location.
-  # Used for 'Last Modified' and 'Edit this page' links.
-  GeekdocRepo: https://github.com/xoxys/hugo-geekdoc
-
-  # Enable "Edit this page" links for 'doc' page type.
-  # Disabled by default. Uncomment to enable. Requires 'GeekdocRepo' param.
-  # Path must point to 'content' directory of repo.
-  GeekdocEditPath: edit/master/exampleSite/content
-
-  # Configure the date format used on the pages
-  # - In git information
-  # - In blog posts
-  GeekdocDateFormat: "Jan 2, 2006"
-
-  # (Optional, default true) Enables search function with flexsearch,
-  # Index is built on fly, therefore it might slowdown your website.
-  GeekdocSearch: true
+  geekdocDateFormat: "Jan 2, 2006"
+  geekdocSearch: true
