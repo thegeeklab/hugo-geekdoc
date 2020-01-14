@@ -1,7 +1,6 @@
-# hugo server --minify --themesDir ... --baseURL=http://0.0.0.0:1313
-
-baseURL: https://docs.geeklabor.de/
-title: Geekdoc
+---
+baseURL: https://geekdocs.de/
+title: Geekdocs
 theme: hugo-geekdoc
 pygmentsUseClasses: true
 pygmentsCodeFences: true

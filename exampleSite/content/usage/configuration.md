@@ -58,7 +58,7 @@ params:
   geekdocLogo: logo.png
 
   # (Optional, default false) Render menu from data file im 'data/menu/main.yaml'.
-  # See also https://docs.geeklabor.de/usage/menus/#bundle-menu
+  # See also https://geekdocs.de/usage/menus/#bundle-menu
   geekdocMenuBundle: true
 
   # (Optional, default true) Show page navigation links at the bottom of each

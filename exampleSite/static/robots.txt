@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /categories/*
 Disallow: /tags/*
-Sitemap: https://docs.geeklabor.de/sitemap.xml
+Sitemap: https://geekdocs.de/sitemap.xml
