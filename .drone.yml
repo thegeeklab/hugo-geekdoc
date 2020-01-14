@@ -78,7 +78,6 @@ steps:
   - cd exampleSite/ && hugo-official
 
 - name: freeze
-  pull: always
   image: appleboy/drone-ssh
   settings:
     host:
@@ -92,7 +91,6 @@ steps:
       from_secret: ssh_username
 
 - name: publish
-  pull: always
   image: appleboy/drone-scp
   settings:
     host:
@@ -107,7 +105,6 @@ steps:
       from_secret: ssh_username
 
 - name: cleanup
-  pull: always
   image: appleboy/drone-ssh
   settings:
     host:
@@ -168,6 +165,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 8fcb0e91f1d79392f1489655a107c14da859b97c8b54e51ed0e55b38a4b1b821
+hmac: 3772b9da3de90c6cfddedbbcd9d20ef4888e03d48ceea6967603f54fe872cbb4
 
 ...
