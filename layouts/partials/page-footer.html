@@ -53,7 +53,7 @@
         </span>
         <span>
             {{ with ($current.Scratch.Get "nextPage") }}
-                <a class="gdoc-page__nav-next" href="{{.RelPermalink}}" title="{{.Title}}">{{ .Name }} </a>
+                <a class="gdoc-page__nav--next" href="{{.RelPermalink}}" title="{{.Title}}">{{ .Name }} </a>
             {{ end }}
         </span>
     {{ end }}
