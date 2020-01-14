@@ -86,8 +86,8 @@ steps:
     key:
       from_secret: ssh_key
     script:
-    - cp -R /var/www/virtual/geeklab/html/geekdocs.de/ /var/www/virtual/geeklab/html/docs_freeze/
-    - ln -sfn /var/www/virtual/geeklab/html/docs_freeze /var/www/virtual/geeklab/geekdocs.de
+    - cp -R /var/www/virtual/geeklab/html/geekdocs.de/ /var/www/virtual/geeklab/html/geekdocs_freeze/
+    - ln -sfn /var/www/virtual/geeklab/html/geekdocs_freeze /var/www/virtual/geeklab/geekdocs.de
     username:
       from_secret: ssh_username
 
@@ -116,7 +116,7 @@ steps:
       from_secret: ssh_key
     script:
     - ln -sfn /var/www/virtual/geeklab/html/geekdocs.de /var/www/virtual/geeklab/geekdocs.de
-    - rm -rf /var/www/virtual/geeklab/html/docs_freeze/
+    - rm -rf /var/www/virtual/geeklab/html/geekdocs_freeze/
     username:
       from_secret: ssh_username
 
@@ -168,6 +168,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 938d5b538d9c2833ab1cd4a09b78747157c9c53e5a7f9f0004a75ef33f136dd9
+hmac: 8fcb0e91f1d79392f1489655a107c14da859b97c8b54e51ed0e55b38a4b1b821
 
 ...
