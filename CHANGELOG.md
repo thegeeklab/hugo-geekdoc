@@ -1,2 +1,3 @@
 - BUGFIX
   - fix wrong class name for page navigation button
+  - use title from menu data file for page nav links

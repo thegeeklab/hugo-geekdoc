@@ -23,7 +23,7 @@
             {{ $current := $current.Scratch.Get "current" }}
 
             {{ if $current.Scratch.Get "getNext" }}
-                {{ $current.Scratch.Set "nextPage" $this }}
+                {{ $current.Scratch.Set "nextPage" (dict "name" .name "this" $this) }}
                 {{ $current.Scratch.Set "getNext" false }}
             {{ end }}
 
@@ -32,7 +32,7 @@
                 {{ $current.Scratch.Set "getNext" true }}
             {{ end }}
 
-            {{ $current.Scratch.Set "prev" $this }}
+            {{ $current.Scratch.Set "prev" (dict "name" .name "this" $this) }}
         {{ end }}
 
         {{ $sub := default false .sub }}
@@ -48,12 +48,12 @@
     {{ if $showPrevNext }}
         <span>
             {{ with ($current.Scratch.Get "prevPage") }}
-                <a class="gdoc-page__nav--prev" href="{{.RelPermalink}}" title="{{.Title}}"> {{ .Name }}</a>
+                <a class="gdoc-page__nav--prev" href="{{.this.RelPermalink}}" title="{{ .name }}"> {{ .name }}</a>
             {{ end }}
         </span>
         <span>
             {{ with ($current.Scratch.Get "nextPage") }}
-                <a class="gdoc-page__nav--next" href="{{.RelPermalink}}" title="{{.Title}}">{{ .Name }} </a>
+                <a class="gdoc-page__nav--next" href="{{.this.RelPermalink}}" title="{{ .name }}">{{ .name }} </a>
             {{ end }}
         </span>
     {{ end }}
