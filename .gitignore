@@ -1,4 +1,5 @@
 # local environments
+.swp
 .env*
 node_modules/
 exampleSite/themes/
