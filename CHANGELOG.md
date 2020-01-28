@@ -1,3 +1,3 @@
 - BUGFIX
-  - fix wrong class name for page navigation button
-  - use title from menu data file for page nav links
+  - fix broken mermaid include
+  - hide empty page header on mobile view
