@@ -73,16 +73,20 @@
 }
 
 // {{< button >}}
-a.gdoc-btn {
+.gdoc-button {
   display: inline-block;
   color: $gray-700;
-  text-decoration: none !important;
   border: $padding-1 solid $gray-500;
   border-radius: $border-radius;
-  padding: $padding-4 $padding-16;
-  margin-top: $padding-8;
-  margin-bottom: $padding-8;
+  margin: $padding-8 0;
   cursor: pointer;
+
+  &__link {
+    display: inline-block;
+    color: inherit !important;
+    text-decoration: none !important;
+    padding: $padding-4 $padding-16;
+  }
 
   &:hover {
     background: rgba($main-color, 0.9);

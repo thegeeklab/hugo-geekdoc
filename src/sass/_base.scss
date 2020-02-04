@@ -259,7 +259,6 @@ img {
 .gdoc-footer {
   background: $second-color;
   color: $white;
-  padding: $padding-16;
 
   &__link {
     color: $color-link-footer;
@@ -267,6 +266,10 @@ img {
     &:visited {
       color: $color-link-footer;
     }
+  }
+
+  .container {
+    padding: $padding-16;
   }
 }
 
@@ -414,17 +417,9 @@ img {
   }
 
   .gdoc-header {
-    display: flex;
-
     .icon {
       width: $font-size-16 * 1.5;
       height: $font-size-16 * 1.5;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 100%;
-      margin: 0;
     }
   }
 
