@@ -1,3 +1,3 @@
-- BUGFIX
-  - fix broken mermaid include
-  - hide empty page header on mobile view
+- FEATURE
+  - add option to include a privacy policy and legal notice page
+  - make color scheme customization easier and add example
