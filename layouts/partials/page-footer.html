@@ -12,7 +12,7 @@
     {{ $current := .current }}
     {{ $site := .site }}
 
-    {{ range sort (default (seq 0) .sect) "weight" "desc" }}
+    {{ range sort (default (seq 0) .sect) "weight" }}
         {{ $current.Scratch.Set "current" $current }}
         {{ $current.Scratch.Set "site" $site }}
 

@@ -6,7 +6,7 @@
     {{ $current := .current }}
 
     <ul class="gdoc-nav__list">
-        {{ range .sect.GroupBy "Weight" "desc" }}
+        {{ range .sect.GroupBy "Weight" }}
             {{ range .ByTitle }}
             {{ if not .Params.geekdocHidden }}
             <li>

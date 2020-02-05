@@ -1,2 +1,3 @@
 - BUGFIX
   - fix typos
+  - fix sort by weight order

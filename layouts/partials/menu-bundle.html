@@ -6,7 +6,7 @@
 {{ $site := .site }}
 
 <ul class="gdoc-nav__list">
-{{ range sort (default (seq 0) .sect) "weight" "desc" }}
+{{ range sort (default (seq 0) .sect) "weight" }}
     {{ $current.Scratch.Set "current" $current }}
     {{ $current.Scratch.Set "site" $site }}
 
