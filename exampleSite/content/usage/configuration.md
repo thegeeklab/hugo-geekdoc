@@ -41,6 +41,14 @@
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slowdown your website.
   geekdocSearch = false
+
+  # (Optional, default none) Add a link to your Legal Notice page to the site footer.
+  # It can be either a remote url or a local file path relative to your content directory.
+  geekdocLegalNotice = 'https://blog.example.com/legal'
+
+  # (Optional, default none) Add a link to your Privacy Policy page to the site footer.
+  # It can be either a remote url or a local file path relative to your content directory.
+  geekdocPrivacyPolicy = '/privacy'
 ```
 
 {{< /tab >}}
@@ -85,6 +93,14 @@ params:
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slowdown your website.
   geekdocSearch: false
+
+  # (Optional, default none) Add a link to your Legal Notice page to the site footer.
+  # It can be either a remote url or a local file path relative to your content directory.
+  geekdocLegalNotice: https://blog.example.com/legal
+
+  # (Optional, default none) Add a link to your Privacy Policy page to the site footer.
+  # It can be either a remote url or a local file path relative to your content directory.
+  geekdocPrivacyPolicy: /privacy
 ```
 
 {{< /tab >}}

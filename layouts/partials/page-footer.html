@@ -43,7 +43,7 @@
 {{ end }}
 
 
-<div class="gdoc-page__footer flex justify-between">
+<div class="gdoc-page__footer flex flex-wrap justify-between">
     {{ $showPrevNext := (and (not .Site.Params.GeekdocNextPrev) .Site.Params.GeekdocMenuBundle) }}
     {{ if $showPrevNext }}
         <span>
