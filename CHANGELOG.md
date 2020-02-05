@@ -1,3 +1,2 @@
-- FEATURE
-  - add option to include a privacy policy and legal notice page
-  - make color scheme customization easier and add example
+- BUGFIX
+  - fix default settings for some config parameters
