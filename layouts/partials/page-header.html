@@ -6,20 +6,20 @@
     {{ $.Scratch.Set "geekdocFilePath" false }}
 {{ end }}
 
-{{define "breadcrumb"}}
+{{ define "breadcrumb" }}
     {{$parent := .page.Parent }}
     {{ if $parent }}
         {{ $value := (printf "<a href='%s'>%s</a> / %s" $parent.RelPermalink $parent.Title .value) }}
         {{ template "breadcrumb" dict "page" $parent "value" $value }}
-    {{else}}
-        {{.value|safeHTML}}
-    {{end}}
-{{end}}
+    {{ else }}
+        {{ .value | safeHTML }}
+    {{ end }}
+{{ end }}
 
 <div class="gdoc-page__header flex flex-wrap justify-between{{ if not $geekdocRepo }} hidden-mobile{{ end }}" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-    {{$showBreadcrumb := (and (not .Page.Params.geekdocBreadcrumb) (not .Site.Params.geekdocBreadcrumb))}}
+    {{ $showBreadcrumb := (and (default true .Page.Params.geekdocBreadcrumb) (default true .Site.Params.geekdocBreadcrumb)) }}
     <span>
-        {{if $showBreadcrumb}}
+        {{if $showBreadcrumb }}
             <span class="breadcrumb">
                 <svg class="icon path"><use xlink:href="#path"></use></svg>
                 {{ $name := (partial "title" .) }}
