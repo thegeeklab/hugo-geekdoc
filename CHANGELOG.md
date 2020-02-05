@@ -1,2 +1,3 @@
 - BUGFIX
   - fix default settings for some config parameters
+  - fix page-header conditions
