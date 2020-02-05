@@ -32,16 +32,25 @@
 }
 
 @font-face {
-  font-family: "Droid Serif";
-  src: url("fonts/DroidSerif.woff2") format("woff2"), url("fonts/DroidSerif.woff") format("woff");
+  font-family: "Liberation Mono";
+  src: url("fonts/LiberationMono.woff2") format("woff2"), url("fonts/LiberationMono.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Liberation Mono";
-  src: url("fonts/LiberationMono.woff2") format("woff2"), url("fonts/LiberationMono.woff") format("woff");
+  font-family: "Droid Sans";
+  src: url("fonts/DroidSans.woff2") format("woff2"), url("fonts/DroidSans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("fonts/Metropolis.woff2") format("woff2"), url("fonts/Metropolis.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -57,5 +66,5 @@ code,
 }
 
 .gdoc-header {
-  font-family: "Droid Serif", serif;
+  font-family: "Metropolis", sans-serif;
 }
