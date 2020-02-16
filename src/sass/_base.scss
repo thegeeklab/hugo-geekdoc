@@ -386,12 +386,12 @@ img {
 
 .gdoc-toc {
   // Classes to hide nested levels of ToC/Menu
-  &__level--1 ul,
-  &__level--2 ul ul,
-  &__level--3 ul ul ul,
-  &__level--4 ul ul ul ul,
-  &__level--5 ul ul ul ul ul,
-  &__level--6 ul ul ul ul ul ul {
+  &__level--1 ul ul,
+  &__level--2 ul ul ul,
+  &__level--3 ul ul ul ul,
+  &__level--4 ul ul ul ul ul,
+  &__level--5 ul ul ul ul ul ul,
+  &__level--6 ul ul ul ul ul ul ul {
     display: none;
   }
 
