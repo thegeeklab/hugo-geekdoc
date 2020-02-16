@@ -119,7 +119,6 @@ steps:
 
 trigger:
   ref:
-  - refs/heads/master
   - refs/tags/**
 
 depends_on:
@@ -165,6 +164,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 81fa93ff2eec43e2f69f7bf396f82c3ad5dbf045aa2a7581d994057ecd769a9c
+hmac: b3fc6896f4621be874def73f812ce0d25bbb65b3cad1d80d13eb8b307f51259d
 
 ...
