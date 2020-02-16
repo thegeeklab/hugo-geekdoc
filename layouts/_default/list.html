@@ -1,7 +1,7 @@
 {{ define "main" }}
     {{ partial "page-header" . }}
     <article class="gdoc-markdown">
-        <h1>{{ .Page.Title }}</h1>
+        <h1>{{ partial "title" . }}</h1>
         {{ .Content }}
     </article>
 {{ end }}
