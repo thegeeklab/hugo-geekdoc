@@ -7,9 +7,10 @@
 {{ end }}
 
 {{ define "breadcrumb" }}
-    {{$parent := .page.Parent }}
+    {{ $parent := .page.Parent }}
     {{ if $parent }}
-        {{ $value := (printf "<a href='%s'>%s</a> / %s" $parent.RelPermalink $parent.Title .value) }}
+        {{ $name := (partial "title" $parent) }}
+        {{ $value := (printf "<a href='%s'>%s</a> / %s" $parent.RelPermalink $name .value) }}
         {{ template "breadcrumb" dict "page" $parent "value" $value }}
     {{ else }}
         {{ .value | safeHTML }}
