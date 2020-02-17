@@ -25,7 +25,6 @@ steps:
   commands:
   - mkdir dist/
   - echo "${DRONE_TAG:-latest}" > VERSION
-  - cat VERSION
   - tar -zcvf dist/hugo-geekdoc.tar.gz . --exclude='.git*' --exclude='.drone*' --exclude='dist' --exclude='.git*' --exclude='example*' --exclude='src' --exclude='gulp*' --exclude='package*' --exclude='node*' --exclude='local*'
 
 - name: checksum
@@ -164,6 +163,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: c39313ac49872d46afb5b02f67bab21b20c54ea782bd2413c570ef251defd4a3
+hmac: c783c5567b269aa5d7279a52edf2de39039e5366d6d2008d767b20725fa05462
 
 ...
