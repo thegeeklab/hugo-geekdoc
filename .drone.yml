@@ -24,14 +24,14 @@ steps:
   image: alpine
   commands:
   - mkdir dist/
-  - tar -zcvf dist/hugo-geekdoc.tar.gz . --exclude='.git*' --exclude='.drone*' --exclude='dist' --exclude='.git*' --exclude='example*' --exclude='src' --exclude='gulp*' --exclude='package*' --exclude='node*'
+  - echo "${DRONE_TAG:-latest}" > VERSION
+  - cat VERSION
+  - tar -zcvf dist/hugo-geekdoc.tar.gz . --exclude='.git*' --exclude='.drone*' --exclude='dist' --exclude='.git*' --exclude='example*' --exclude='src' --exclude='gulp*' --exclude='package*' --exclude='node*' --exclude='local*'
 
 - name: checksum
   image: alpine
   commands:
   - cd dist/ && sha256sum * > ../sha256sum.txt
-  - cd ../ && ls -lh dist/
-  - cat sha256sum.txt
 
 - name: publish
   image: plugins/github-release
