@@ -9,7 +9,7 @@
     {{ partial "svg-icon-symbols" . }}
 
     <div class="wrapper">
-        {{ partial "site-header" . }}
+        {{ partial "site-header" (dict "Root" . "MenuEnabled" false) }}
 
         <main class="gdoc-error flex-even">
             <div class="flex align-center justify-center">

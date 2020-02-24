@@ -9,11 +9,10 @@ Geekdoc is a simple Hugo theme for documentations. This work is inspired and par
 
 ![Screenshot Desktop](local_media/desktop.png)
 
-
-### License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### Maintainers and Contributors
+## Maintainers and Contributors
 
 [Robert Kaussow](https://github.com/xoxys)
