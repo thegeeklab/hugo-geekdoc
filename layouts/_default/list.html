@@ -2,6 +2,6 @@
     {{ partial "page-header" . }}
     <article class="gdoc-markdown">
         <h1>{{ partial "title" . }}</h1>
-        {{ .Content }}
+        {{ partial "content" . }}
     </article>
 {{ end }}

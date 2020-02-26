@@ -5,6 +5,6 @@
         <h5>
             <strong>{{ .Date.Format $dateFormat }}</strong>
         </h5>
-        {{ .Content }}
+        {{ partial "content" . }}
     </article>
 {{ end }}

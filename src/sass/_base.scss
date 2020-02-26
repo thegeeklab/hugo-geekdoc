@@ -30,8 +30,12 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   font-weight: $body-font-weight;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 a {
@@ -216,6 +220,10 @@ img {
     &--next:after {
       content: "\1f82a";
     }
+  }
+
+  &__anchor .icon {
+    color: $gray-400;
   }
 }
 
