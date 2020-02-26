@@ -1,4 +1,4 @@
-{{ $showAnchor := (and (default true .Page.Params.geekdocAnchor) (default true .Site.Params.geekdocAnchor)) }}
+{{ $showAnchor := (and (default true .Page.Params.GeekdocAnchor) (default true .Site.Params.GeekdocAnchor)) }}
 
 {{ $.Scratch.Set "content" (.Content | replaceRE `<nav id="TableOfContents">\s*<ul>\s*<li>\s*<ul>` `<nav id="TableOfContents"><ul>` | replaceRE `</ul>\s*</li>\s*</ul>\s*</nav>` `</ul></nav>` | safeHTML) }}
 {{ if $showAnchor }}

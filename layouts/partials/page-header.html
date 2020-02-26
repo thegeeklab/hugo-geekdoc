@@ -17,7 +17,7 @@
     {{ end }}
 {{ end }}
 
-{{ $showBreadcrumb := (and (default true .Page.Params.geekdocBreadcrumb) (default true .Site.Params.geekdocBreadcrumb)) }}
+{{ $showBreadcrumb := (and (default true .Page.Params.GeekdocBreadcrumb) (default true .Site.Params.GeekdocBreadcrumb)) }}
 {{ $showEdit := (and ($.Scratch.Get "geekdocFilePath") $geekdocRepo $geekdocEditPath) }}
 <div class="gdoc-page__header flex flex-wrap justify-between{{ if not $showEdit }} hidden-mobile{{ end }}{{ if (and (not $showBreadcrumb) (not $showEdit)) }} hidden {{ end }}" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
     <span>
