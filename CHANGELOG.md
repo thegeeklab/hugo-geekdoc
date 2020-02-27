@@ -1,2 +1,2 @@
 * FEATURE
-  * Add anchor links for headlines
+  * Add option to move anchor links to the left site of headlines
