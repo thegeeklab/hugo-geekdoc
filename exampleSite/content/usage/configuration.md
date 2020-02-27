@@ -52,6 +52,9 @@
 
   # (Optional, default true) Add an anchor link to headlines.
   geekdocAnchor = true
+
+  # (Optional, default false) Move anchor link to the left side of headlines.
+  geekdocAnchorLeft = false
 ```
 
 {{< /tab >}}
@@ -107,6 +110,9 @@ params:
 
   # (Optional, default true) Add an anchor link to headlines.
   geekdocAnchor: true
+
+  # (Optional, default false) Move anchor link to the left side of headlines.
+  geekdocAnchorLeft: false
 ```
 
 {{< /tab >}}
