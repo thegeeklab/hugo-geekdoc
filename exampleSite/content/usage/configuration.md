@@ -55,6 +55,9 @@
 
   # (Optional, default false) Move anchor link to the left side of headlines.
   geekdocAnchorLeft = false
+
+  # (Optional, default true) Copy anchor url to clipboard on click.
+  geekdocAnchorCopy = true
 ```
 
 {{< /tab >}}
@@ -113,6 +116,9 @@ params:
 
   # (Optional, default false) Move anchor link to the left side of headlines.
   geekdocAnchorLeft: false
+
+  # (Optional, default true) Copy anchor url to clipboard on click.
+  geekdocAnchorCopy: true
 ```
 
 {{< /tab >}}
