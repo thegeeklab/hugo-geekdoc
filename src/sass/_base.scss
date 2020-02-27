@@ -222,8 +222,19 @@ img {
     }
   }
 
-  &__anchor .icon {
-    color: $gray-400;
+  &__anchor{
+    &--left {
+      min-width: 35px;
+      text-align: left;
+    }
+
+    &--right {
+      margin-left: 0.5em;
+    }
+
+    .icon {
+      color: $gray-400;
+    }
   }
 }
 
