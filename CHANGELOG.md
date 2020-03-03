@@ -1,3 +1,4 @@
-* FEATURE
-  * Add option to move anchor links to the left site of headlines
-  * add optional clipboard.js to copy anchor links on click
+* BUGFIX
+  * fix shortcode syntax for mermaid in the docs
+* ENHANCEMENT
+  * update mermaid.js to v8.4.8
