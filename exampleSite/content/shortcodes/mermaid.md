@@ -4,7 +4,7 @@
 
 {{< columns >}}
 ```tpl
-{{</* mermaid [class="text-center"]*/>}}
+{{</* mermaid class="text-center"*/>}}
 sequenceDiagram
     Alice->>Bob: Hello Bob, how are you?
     alt is sick
@@ -20,7 +20,7 @@ sequenceDiagram
 
 <--->
 
-{{< mermaid >}}
+{{< mermaid class="text-center" >}}
 sequenceDiagram
     Alice->>Bob: Hello Bob, how are you?
     alt is sick
