@@ -7,6 +7,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const iconfont = require('gulp-iconfont');
 
 const realFavicon = require('gulp-real-favicon');
+const path = require('path');
 const fs = require('fs');
 
 const svgSprite = require('gulp-svg-sprite');
@@ -127,23 +128,43 @@ gulp.task('svg-sprite', function () {
 });
 
 gulp.task('iconfont', function () {
-    return gulp.src(['assets/icons/*.svg'])
+    var lastUnicode = 0xEA01;
+    var files = fs.readdirSync('src/iconfont');
+
+    // Filter files with containing unicode value
+    // and set last unicode
+    files.forEach(function (file) {
+        var basename = path.basename(file);
+        var matches = basename.match(/^(?:((?:u[0-9a-f]{4,6},?)+)\-)?(.+)\.svg$/i);
+        var currentCode = -1;
+
+        if (matches && matches[1]) {
+            currentCode = parseInt(matches[1].split('u')[1], 16);
+        }
+
+        if (currentCode >= lastUnicode) {
+            lastUnicode = ++currentCode;
+        }
+    });
+
+    return gulp.src(['src/iconfont/*.svg'])
         .pipe(iconfont({
-            fontName: 'myfont', // required
+            startUnicode: lastUnicode,
+            fontName: 'GeekdocIcons', // required
             prependUnicode: true, // recommended option
-            formats: ['ttf', 'eot', 'woff'], // default, 'woff2' and 'svg' are available
+            normalize: true,
+            fontHeight: 1001,
+            centerHorizontally: true,
+            formats: ['woff', 'woff2'], // default, 'woff2' and 'svg' are available
             timestamp: TIMESTAMP, // recommended to get consistent builds when watching files
         }))
-        .on('glyphs', function (glyphs, options) {
-            // CSS templating, e.g.
-            console.log(glyphs, options);
-        })
-        .pipe(gulp.dest('www/fonts/'));
+        .pipe(gulp.dest('static/fonts/'));
 });
 
 gulp.task('default', gulp.series(
     'sass',
     'svg-sprite',
+    'iconfont',
     'favicon-check-update',
     'favicon-generate'
 ));

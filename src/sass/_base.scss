@@ -56,9 +56,9 @@ img {
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .container {
@@ -211,18 +211,30 @@ img {
 
   &__footer {
     margin-top: $padding-16 * 2;
+
+    a:hover {
+      text-decoration: none;
+    }
   }
 
   &__nav {
+    &:hover {
+      background-image: linear-gradient($color-link, $color-link);
+      background-position: 0 100%;
+      background-size: 100% 1px;
+      background-repeat: no-repeat;
+    }
     &--prev:before {
-      content: "\1f828";
+      font-family: GeekdocIcons;
+      content: "\ea13";
     }
     &--next:after {
-      content: "\1f82a";
+      font-family: GeekdocIcons;
+      content: "\ea02";
     }
   }
 
-  &__anchor{
+  &__anchor {
     &--left {
       min-width: 35px;
       text-align: left;
@@ -459,7 +471,7 @@ img {
 
     .icon {
       width: $font-size-16 * 4;
-      height: $font-size-16 *4;
+      height: $font-size-16 * 4;
     }
 
     &__message {
