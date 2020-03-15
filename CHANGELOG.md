@@ -1,4 +1,5 @@
+* FEATURE
+  * add iconfont based on svg icons
 * BUGFIX
-  * fix shortcode syntax for mermaid in the docs
-* ENHANCEMENT
-  * update mermaid.js to v8.4.8
+  * use iconfont in next/prev links to fix unicode errors on mobile devices
+  * use fake underline for next/pref links on hover
