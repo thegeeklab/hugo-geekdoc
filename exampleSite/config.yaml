@@ -28,3 +28,5 @@ params:
 
   geekdocLegalNotice: https://geeklabor.de/legal-notice/#impressum
   geekdocPrivacyPolicy: https://geeklabor.de/legal-notice/#datenschutzerkl%C3%A4rung
+
+  geekdocAnchorLeft: true

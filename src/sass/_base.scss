@@ -234,18 +234,29 @@ img {
     }
   }
 
+  &__anchorwrap {
+    &:hover .gdoc-page__anchor .icon {
+      color: $gray-500;
+    }
+  }
+
   &__anchor {
+    min-width: 30px;
+
     &--left {
-      min-width: 35px;
+      position: absolute;
+      margin-left: -25px;
       text-align: left;
     }
 
     &--right {
-      margin-left: 0.5em;
+      text-align: right;
     }
 
     .icon {
-      color: $gray-400;
+      width: 1.4rem;
+      height: 1.4rem;
+      color: transparent;
     }
   }
 }
@@ -452,6 +463,10 @@ img {
   }
 
   .gdoc-header {
+    .container {
+      padding: $padding-16 $padding-16 * 2;
+    }
+
     .icon {
       width: $font-size-16 * 1.5;
       height: $font-size-16 * 1.5;
@@ -492,8 +507,18 @@ img {
     display: none;
   }
 
-  .gdoc-footer__item {
-    width: 100%;
+  .gdoc-page {
+    padding: $padding-16 * 1.5 $padding-16 * 2;
+  }
+
+  .gdoc-footer {
+    .container {
+      padding: $padding-16 $padding-16 * 2;
+    }
+
+    &__item {
+      width: 100%;
+    }
   }
 
   #menu-control:checked ~ main {
