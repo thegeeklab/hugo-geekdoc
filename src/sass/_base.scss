@@ -457,6 +457,10 @@ img {
     margin-left: -$menu-width;
     font-size: $font-size-base;
 
+    nav {
+      padding: $padding-16 * 1.5 $padding-16 * 2;
+    }
+
     &__control {
       display: inline-block;
     }
