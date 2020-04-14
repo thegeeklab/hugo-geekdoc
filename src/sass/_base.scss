@@ -35,7 +35,19 @@ h6 {
   font-weight: $body-font-weight;
   display: flex;
   align-items: center;
-  text-align: center;
+
+  > code {
+    border-top: 3px solid $gray-300;
+    font-size: 0.75em !important;
+  }
+}
+
+h4,
+h5,
+h6 {
+  > code {
+    font-size: 0.8rem !important;
+  }
 }
 
 a {
