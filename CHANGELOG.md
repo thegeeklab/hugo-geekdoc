@@ -1,3 +1,5 @@
+* BREAKING
+  * min Hugo version is now v0.65
 * ENHANCEMENT
-  * improve anchor link alignment and spacing
-  * show anchor link only on `:hover`
+  * update mermaid to v8.5.0
+  * update config documentation
