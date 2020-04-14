@@ -15,7 +15,7 @@ steps:
   - gulp default
 
 - name: test
-  image: klakegg/hugo:0.59.1-ext-alpine
+  image: klakegg/hugo:0.69.0-ext-alpine
   commands:
   - cd exampleSite/
   - mkdir themes/ && ln -s ../../. themes/hugo-geekdoc && hugo-official
@@ -72,7 +72,7 @@ steps:
   - curl -L https://github.com/xoxys/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
 
 - name: test
-  image: klakegg/hugo:0.59.1-ext-alpine
+  image: klakegg/hugo:0.69.0-ext-alpine
   commands:
   - cd exampleSite/ && hugo-official
 

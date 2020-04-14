@@ -16,6 +16,7 @@ markup:
       unsafe: true
   tableOfContents:
     startLevel: 1
+    endLevel: 9
 
 params:
   geekdocToC: 3
