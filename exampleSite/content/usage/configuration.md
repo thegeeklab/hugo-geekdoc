@@ -6,7 +6,7 @@
 ```Toml
 # ...
 
-theme = hugo-geekdoc
+theme = 'hugo-geekdoc'
 
 # Required to get well formatted code blocks
 pygmentsUseClasses = true
