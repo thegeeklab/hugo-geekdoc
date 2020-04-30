@@ -3,7 +3,7 @@ repository:
   name: hugo-geekdoc
   description: Hugo theme made for documentation
   homepage: https://geekdocs.de
-  topics: hugo, theme, documentation
+  topics: hugo, theme, hugo-theme, documentation
 
   private: false
   has_issues: true
