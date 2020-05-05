@@ -1,2 +1,2 @@
 * ENHANCEMENT
-  * [#5](https://github.com/xoxys/hugo-geekdoc/pull/5) add shortcode to include files
+  * [#6](https://github.com/xoxys/hugo-geekdoc/pull/6) improve code block formatting
