@@ -19,6 +19,12 @@
   border-radius: 0;
   border-top-right-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
+  padding-left: 0.5em;
+}
+.chroma .lntable td:nth-child(2) code .hl {
+  width: auto;
+  margin-left: -0.5em;
+  padding: 0 0.5em;
 }
 
 .highlight {
@@ -55,10 +61,8 @@
   overflow: auto;
   display: block;
 }
-.chroma .lntable td:first-child {
-  padding-right: 0.5em;
-}
 .chroma .lntable td:first-child code {
+  background-color: $gray-200;
   border-right: 1px solid #dcdfe3;
   padding: 0.5em 0;
 }
