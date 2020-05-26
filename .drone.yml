@@ -57,12 +57,12 @@ trigger:
 kind: pipeline
 name: docs
 
-concurrency:
-  limit: 1
-
 platform:
   os: linux
   arch: amd64
+
+concurrency:
+  limit: 1
 
 steps:
 - name: assets
@@ -76,45 +76,19 @@ steps:
   commands:
   - cd exampleSite/ && hugo-official
 
-- name: freeze
-  image: appleboy/drone-ssh:1.5.5
-  settings:
-    host:
-      from_secret: ssh_host
-    key:
-      from_secret: ssh_key
-    script:
-    - cp -R /var/www/virtual/geeklab/html/geekdocs.de/ /var/www/virtual/geeklab/html/geekdocs_freeze/
-    - ln -sfn /var/www/virtual/geeklab/html/geekdocs_freeze /var/www/virtual/geeklab/geekdocs.de
-    username:
-      from_secret: ssh_username
-
 - name: publish
-  image: appleboy/drone-scp
+  image: plugins/s3-sync
   settings:
-    host:
-      from_secret: ssh_host
-    key:
-      from_secret: ssh_key
-    rm: true
-    source: exampleSite/public/*
-    strip_components: 2
-    target: /var/www/virtual/geeklab/html/geekdocs.de/
-    username:
-      from_secret: ssh_username
-
-- name: cleanup
-  image: appleboy/drone-ssh:1.5.5
-  settings:
-    host:
-      from_secret: ssh_host
-    key:
-      from_secret: ssh_key
-    script:
-    - ln -sfn /var/www/virtual/geeklab/html/geekdocs.de /var/www/virtual/geeklab/geekdocs.de
-    - rm -rf /var/www/virtual/geeklab/html/geekdocs_freeze/
-    username:
-      from_secret: ssh_username
+    access_key:
+      from_secret: s3_access_key
+    bucket: geekdocs-root
+    delete: true
+    endpoint: https://sp.rknet.org
+    path_style: true
+    secret_key:
+      from_secret: s3_secret_access_key
+    source: docs/public/
+    strip_prefix: docs/public/
 
 trigger:
   ref:
@@ -163,6 +137,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 619b71bf888e764e4f97ac00d707b963284f3619ee2e9c47851e9a63f16df6bc
+hmac: bc43c76e82f4405a0b3a5efc1e76fbf2ee2253d9988216c4244bb39a8d619de9
 
 ...
