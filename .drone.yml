@@ -87,8 +87,8 @@ steps:
     path_style: true
     secret_key:
       from_secret: s3_secret_access_key
-    source: docs/public/
-    strip_prefix: docs/public/
+    source: exampleSite/public/
+    strip_prefix: exampleSite/public/
 
 trigger:
   ref:
