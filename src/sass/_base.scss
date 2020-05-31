@@ -461,7 +461,7 @@ img {
 .markdown {
   transition: 0.2s ease-in-out;
   transition-property: transform, margin-left, opacity;
-  will-change: transform!important, margin-left !important;
+  will-change: transform, margin-left;
 }
 
 @media screen and (max-width: $sm-breakpoint) {

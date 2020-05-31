@@ -22,6 +22,10 @@
   &__control:checked + &__content {
     display: block;
   }
+
+  .gdoc-page__anchor {
+    display: none;
+  }
 }
 
 // {{< tabs >}}

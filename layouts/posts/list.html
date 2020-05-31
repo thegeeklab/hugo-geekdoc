@@ -1,7 +1,5 @@
 {{ define "main" }}
     {{ $dateFormat := default "January 2, 2006" .Site.Params.GeekdocDateFormat }}
-    {{ $paginator := .Paginate (where .Pages "Params.hidden" "ne" true) }}
-
     {{ range sort .Paginator.Pages }}
         <article class="gdoc-markdown gdoc-post">
             <header>
@@ -12,17 +10,14 @@
             <h5>
                 <strong>{{ .Date.Format $dateFormat }}</strong>
             </h5>
-            <section>
+            <div>
                 {{ .Summary }}
                 {{ if .Truncated }}
                 <a class="gdoc-post__readmore" title="Read full post" href="{{ .RelPermalink }}">
                     Read more
                 </a>
                 {{ end }}
-            </section>
+            </div>
         </article>
     {{ end }}
-
-    <!-- TODO: FIXME -->
-    {{ template "_internal/pagination.html" . }}
 {{ end }}

@@ -10,15 +10,30 @@ steps:
 - name: assets
   image: node
   commands:
-  - npm install -g gulp -s
-  - npm install -s
+  - npm install -g gulp
+  - npm install
   - gulp default
+  environment:
+    FORCE_COLOR: true
 
 - name: test
   image: klakegg/hugo:0.69.0-ext-alpine
   commands:
   - cd exampleSite/
   - mkdir themes/ && ln -s ../../. themes/hugo-geekdoc && hugo-official
+
+- name: spellcheck
+  image: node:lts-alpine
+  commands:
+  - npm install -g spellchecker-cli
+  - spellchecker --files 'exampleSite/content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls --no-suggestions
+  environment:
+    FORCE_COLOR: true
+
+- name: html-validation
+  image: validator/validator
+  commands:
+  - vnu --skip-non-html --also-check-css --errors-only exampleSite/public
 
 - name: build
   image: alpine
@@ -71,7 +86,7 @@ steps:
   - mkdir -p exampleSite/themes/hugo-geekdoc/
   - curl -L https://github.com/xoxys/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
 
-- name: test
+- name: build
   image: klakegg/hugo:0.69.0-ext-alpine
   commands:
   - cd exampleSite/ && hugo-official
@@ -138,6 +153,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: c78faf65f2d038c8daa5b56c592a1fa6264b40633cd2375d61257a3027897c3c
+hmac: 708f32a4284b33fb9606b8304637d426cdb38260a6123ca23b4a387ad2bf6654
 
 ...
