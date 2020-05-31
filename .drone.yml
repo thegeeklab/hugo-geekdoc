@@ -41,6 +41,8 @@ steps:
   image: xoxys/link-validator
   commands:
   - link-validator -ro
+  environment:
+    LINK_VALIDATOR_BASE_DIR: /drone/src/exampleSite/public
 
 - name: build
   image: alpine
@@ -160,6 +162,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: a6c3c2933f950352b2379b402340ed9723d3a4d736e1e79fc3964aca078a4e08
+hmac: ca1ffdbbe56ee6624fad160c24071dcd3da2de55d580c3614dd0e6a23cdb338a
 
 ...
