@@ -8,13 +8,14 @@ platform:
 
 steps:
 - name: assets
-  image: node
+  image: node:lts
   commands:
   - npm install -g gulp
   - npm install
   - gulp default
   environment:
     FORCE_COLOR: true
+    NPM_CONFIG_LOGLEVEL: error
 
 - name: test
   image: klakegg/hugo:0.69.0-ext-alpine
@@ -29,11 +30,17 @@ steps:
   - spellchecker --files 'exampleSite/content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls --no-suggestions
   environment:
     FORCE_COLOR: true
+    NPM_CONFIG_LOGLEVEL: error
 
 - name: html-validation
   image: validator/validator
   commands:
   - vnu --skip-non-html --also-check-css --errors-only exampleSite/public
+
+- name: dead-links-validation
+  image: xoxys/link-validator
+  commands:
+  - link-validator -ro
 
 - name: build
   image: alpine
@@ -153,6 +160,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 708f32a4284b33fb9606b8304637d426cdb38260a6123ca23b4a387ad2bf6654
+hmac: a6c3c2933f950352b2379b402340ed9723d3a4d736e1e79fc3964aca078a4e08
 
 ...
