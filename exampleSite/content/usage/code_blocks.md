@@ -1,4 +1,4 @@
-There are multiple ways to add code blocks. Most of them works out of the box only the hugo shortcode `<highlight>` need some configuration to work properly.
+There are multiple ways to add code blocks. Most of them works out of the box only the Hugo shortcode `<highlight>` need some configuration to work properly.
 
 ## Inline code
 To display an inline shortcode use single quotes:
@@ -9,7 +9,7 @@ To display an inline shortcode use single quotes:
 **Example:** `some code`
 
 ## Code blocks
-Codeblocks can be uses without language specification:
+Code blocks can be uses without language specification:
 
 ````
 ```
@@ -41,7 +41,7 @@ echo "Hello World"
 
 ## Highlight shortcode
 
-Hugo has a build-in shortcode for syntax highlighting. To work properly with this theme, you have to set following options in your sites config:
+Hugo has a build-in shortcode for syntax highlighting. To work properly with this theme, you have to set following options in your site configuration:
 
 {{< tabs "uniqueid" >}}
 {{< tab "TOML" >}}

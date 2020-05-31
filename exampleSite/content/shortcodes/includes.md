@@ -1,4 +1,4 @@
-Include Shortcode can include files of different types. By specifying a language, the included file will have syntax highlighting.
+Include shortcode can include files of different types. By specifying a language, the included file will have syntax highlighting.
 
 ## Shortcode
 
@@ -15,7 +15,7 @@ Attributes:
 | markdown | included file is markdown | false |
 | options | highlighting [options](https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode) | linenos=table |
 
-\* if not set, the content will be rendered as plain html
+\* if not set, the content will be rendered as plain HTML
 
 ### Include *.yml file with options
 
@@ -31,21 +31,21 @@ Included markdown files will be rendered using the `markdownify` filter.
 
 {{< hint warning >}}
 **Location of markdown files**\
-If you include markdown files that should not get a menu entry, place them outside the content folder or exlude them otherwise.
+If you include markdown files that should not get a menu entry, place them outside the content folder or exclude them otherwise.
 {{< /hint >}}
 
 ```tpl
-{{</* include file="static/table.md" markdown="true" */>}}
+{{</* include file="static/includes/table.md.part" markdown="true" */>}}
 ```
 
-{{< include file="static/table.md" markdown="true" >}}
+{{< include file="static/includes/table.md.part" markdown="true" >}}
 
 ### Include *.html file
 
-Html content will be filtered by the `safeHTML` filter and added to the rendered page output.
+HTML content will be filtered by the `safeHTML` filter and added to the rendered page output.
 
 ```tpl
-{{</* include file="static/example.html" */>}}
+{{</* include file="static/includes/example.html.part" */>}}
 ```
 
-{{< include file="static/example.html" >}}
+{{< include file="static/includes/example.html.part" >}}

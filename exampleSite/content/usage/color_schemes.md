@@ -1,9 +1,9 @@
 If you want to customize the color scheme of the theme to give it your individual touch you are just a few lines CSS away. In general, you have to override the defaults, the easiest way to do so is to create a `static/custom.css` file right in your site root.
 
-All necessary class names are listed below. If you miss some classes for theming you are very welcome to fill an [Issue](https://github.com/xoxys/hugo-geekdoc/issues). For some inspiration you can have a look at [https://www.color-hex.com/color-palettes/](https://www.color-hex.com/). The following listing use the _HC-primary_ color palette as an example:
+All necessary class names are listed below. If you miss some classes required for a color scheme you are very welcome to create an [Issue](https://github.com/xoxys/hugo-geekdoc/issues) or Pull Request. For some inspiration you can have a look at [https://www.color-hex.com/color-palettes/](https://www.color-hex.com/). The following listing use the _HC-primary_ color palette as an example:
 
 {{< highlight CSS "linenos=table" >}}
-/* defaut link color */
+/* default link color */
 a { color: #1c388e; }
 a:visited { color: #73bfb8 }
 
@@ -31,6 +31,6 @@ a:visited { color: #73bfb8 }
 .gdoc-hint.danger { background: #fae1db; border-color: #cf5f46; color: black; }
 {{< /highlight >}}
 
-And that is how the result will looks like. Happy theming!
+And that is how the result will looks like. Happy customizing!
 
 [![HC-primary Color Scheme](/media/color_scheme_example.png)](/media/color_scheme_example.png)

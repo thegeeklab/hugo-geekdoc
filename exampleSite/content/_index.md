@@ -11,8 +11,8 @@ Geekdoc is a simple Hugo theme for documentations. This work is inspired and par
 
 ## Features
 
-- Clean simple design
+- Clean and simple design
 - Light and mobile-friendly
-- Customisable
+- Easy customization
 - Zero initial configuration
 - Handy shortcodes

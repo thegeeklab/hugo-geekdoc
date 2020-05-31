@@ -4,8 +4,8 @@ There are 3 colors to choose: `info`, `warning` and `danger`.
 ```tpl
 {{</* hint [info|warning|danger] */>}}
 **Markdown content**\
-Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
+ Ornateness bland it ex enc, est yeti am bongo detract re.
 {{</* /hint */>}}
 ```
 
@@ -13,18 +13,18 @@ stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
 
 {{< hint info >}}
 **Markdown content**\
-Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
+ Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
 
 {{< hint warning >}}
 **Markdown content**\
-Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
+ Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
 
 {{< hint danger >}}
 **Markdown content**\
-Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
+ Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
