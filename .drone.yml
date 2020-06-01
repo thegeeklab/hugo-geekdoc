@@ -7,15 +7,6 @@ platform:
   arch: amd64
 
 steps:
-- name: spellcheck
-  image: node:lts-alpine
-  commands:
-  - npm install -g spellchecker-cli
-  - spellchecker --files 'exampleSite/content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls --no-suggestions
-  environment:
-    FORCE_COLOR: true
-    NPM_CONFIG_LOGLEVEL: error
-
 - name: assets
   image: node:lts
   commands:
@@ -118,6 +109,24 @@ concurrency:
   limit: 1
 
 steps:
+- name: markdownlint
+  image: node:lts-alpine
+  commands:
+  - npm install -g markdownlint-cli
+  - markdownlint 'exampleSite/content/**/*.md' 'README.md'
+  environment:
+    FORCE_COLOR: true
+    NPM_CONFIG_LOGLEVEL: error
+
+- name: spellcheck
+  image: node:lts-alpine
+  commands:
+  - npm install -g spellchecker-cli
+  - spellchecker --files 'exampleSite/content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls --no-suggestions
+  environment:
+    FORCE_COLOR: true
+    NPM_CONFIG_LOGLEVEL: error
+
 - name: assets
   image: byrnedo/alpine-curl
   commands:
@@ -142,11 +151,16 @@ steps:
       from_secret: s3_secret_access_key
     source: exampleSite/public/
     strip_prefix: exampleSite/public/
+  when:
+    ref:
+    - refs/heads/master
+    - refs/tags/**
 
 trigger:
   ref:
   - refs/heads/master
   - refs/tags/**
+  - refs/pull/**
 
 depends_on:
 - build
@@ -192,6 +206,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 1145f38b73b28a6a9e659bd19008fcdf24c808e22db91fc2768740bbf9e138e9
+hmac: 49898e6b496014772113f110dae80acca1f525f1ae0545669eba5ba468f7a4da
 
 ...
