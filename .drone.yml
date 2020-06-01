@@ -1,5 +1,63 @@
 ---
 kind: pipeline
+name: test
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: spellcheck
+  image: node:lts-alpine
+  commands:
+  - npm install -g spellchecker-cli
+  - spellchecker --files 'exampleSite/content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls --no-suggestions
+  environment:
+    FORCE_COLOR: true
+    NPM_CONFIG_LOGLEVEL: error
+
+- name: assets
+  image: node:lts
+  commands:
+  - npm install -g gulp
+  - npm install
+  - gulp default
+  environment:
+    FORCE_COLOR: true
+    NPM_CONFIG_LOGLEVEL: error
+
+- name: testbuild
+  image: klakegg/hugo:0.72.0-ext-alpine
+  commands:
+  - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
+  - hugo-official -s exampleSite/ -b http://localhost/
+
+- name: html-validation
+  image: validator/validator
+  commands:
+  - vnu --skip-non-html --also-check-css --errors-only exampleSite/public
+
+- name: link-validation
+  image: xoxys/link-validator
+  commands:
+  - link-validator -ro
+  environment:
+    LINK_VALIDATOR_BASE_DIR: exampleSite/public
+
+- name: page-validator
+  image: patrickhulce/lhci-client
+  user: root
+  commands:
+  - lhci autorun
+
+trigger:
+  ref:
+  - refs/heads/master
+  - refs/tags/**
+  - refs/pull/**
+
+---
+kind: pipeline
 name: build
 
 platform:
@@ -17,41 +75,7 @@ steps:
     FORCE_COLOR: true
     NPM_CONFIG_LOGLEVEL: error
 
-- name: test
-  image: klakegg/hugo:0.72.0-ext-alpine
-  commands:
-  - cd exampleSite/
-  - mkdir themes/ && ln -s /drone/src/. themes/hugo-geekdoc
-  - hugo-official -b http://localhost/
-
-- name: spellcheck
-  image: node:lts-alpine
-  commands:
-  - npm install -g spellchecker-cli
-  - spellchecker --files 'exampleSite/content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls --no-suggestions
-  environment:
-    FORCE_COLOR: true
-    NPM_CONFIG_LOGLEVEL: error
-
-- name: html-validation
-  image: validator/validator
-  commands:
-  - vnu --skip-non-html --also-check-css --errors-only exampleSite/public
-
-- name: link-validation
-  image: xoxys/link-validator
-  commands:
-  - link-validator -ro
-  environment:
-    LINK_VALIDATOR_BASE_DIR: /drone/src/exampleSite/public
-
-- name: page-validator
-  image: patrickhulce/lhci-client
-  user: root
-  commands:
-  - lhci autorun
-
-- name: build
+- name: package
   image: alpine
   commands:
   - mkdir dist/
@@ -63,7 +87,7 @@ steps:
   commands:
   - cd dist/ && sha256sum * > ../sha256sum.txt
 
-- name: publish
+- name: release
   image: plugins/github-release
   settings:
     api_key:
@@ -74,15 +98,13 @@ steps:
     note: CHANGELOG.md
     overwrite: true
     title: ${DRONE_TAG}
-  when:
-    ref:
-    - refs/tags/**
 
 trigger:
   ref:
-  - refs/heads/master
   - refs/tags/**
-  - refs/pull/**
+
+depends_on:
+- test
 
 ---
 kind: pipeline
@@ -105,7 +127,7 @@ steps:
 - name: build
   image: klakegg/hugo:0.72.0-ext-alpine
   commands:
-  - cd exampleSite/ && hugo-official
+  - hugo-official -s exampleSite/
 
 - name: publish
   image: plugins/s3-sync
@@ -164,11 +186,12 @@ trigger:
   - failure
 
 depends_on:
+- test
 - build
 - docs
 
 ---
 kind: signature
-hmac: e490a6b965b1b70d9807afd59d38aab1fc425dbb95e71e335bfd3bdf2ad54ef8
+hmac: 1145f38b73b28a6a9e659bd19008fcdf24c808e22db91fc2768740bbf9e138e9
 
 ...
