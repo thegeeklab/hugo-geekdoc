@@ -18,10 +18,11 @@ steps:
     NPM_CONFIG_LOGLEVEL: error
 
 - name: test
-  image: klakegg/hugo:0.69.0-ext-alpine
+  image: klakegg/hugo:0.72.0-ext-alpine
   commands:
   - cd exampleSite/
-  - mkdir themes/ && ln -s ../../. themes/hugo-geekdoc && hugo-official -b http://localhost/
+  - mkdir themes/ && ln -s /drone/src/. themes/hugo-geekdoc
+  - hugo-official -b http://localhost/
 
 - name: spellcheck
   image: node:lts-alpine
@@ -102,7 +103,7 @@ steps:
   - curl -L https://github.com/xoxys/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
 
 - name: build
-  image: klakegg/hugo:0.69.0-ext-alpine
+  image: klakegg/hugo:0.72.0-ext-alpine
   commands:
   - cd exampleSite/ && hugo-official
 
@@ -168,6 +169,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 6d920a9019c2478a391c98d207313ff77782c987f3869e9410d8174146fd07ef
+hmac: e490a6b965b1b70d9807afd59d38aab1fc425dbb95e71e335bfd3bdf2ad54ef8
 
 ...
