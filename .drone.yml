@@ -37,7 +37,7 @@ steps:
   commands:
   - vnu --skip-non-html --also-check-css --errors-only exampleSite/public
 
-- name: dead-links-validation
+- name: link-validation
   image: xoxys/link-validator
   commands:
   - link-validator -ro
@@ -168,6 +168,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 6c9fc660b81ed9086e1bcb0f8176ba6b084834bc7ecafbaa0573943760698330
+hmac: 6d920a9019c2478a391c98d207313ff77782c987f3869e9410d8174146fd07ef
 
 ...
