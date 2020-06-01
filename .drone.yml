@@ -35,7 +35,7 @@ steps:
   environment:
     LINK_VALIDATOR_BASE_DIR: exampleSite/public
 
-- name: page-validator
+- name: page-validation
   image: patrickhulce/lhci-client
   user: root
   commands:
@@ -131,7 +131,7 @@ steps:
   image: byrnedo/alpine-curl
   commands:
   - mkdir -p exampleSite/themes/hugo-geekdoc/
-  - curl -L https://github.com/xoxys/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
+  - curl -sSL https://github.com/xoxys/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
 
 - name: build
   image: klakegg/hugo:0.72.0-ext-alpine
@@ -206,6 +206,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 49898e6b496014772113f110dae80acca1f525f1ae0545669eba5ba468f7a4da
+hmac: c9158b4a7c4fb787644c711560925ffae038a982953f958d5f535158f640032f
 
 ...
