@@ -1,6 +1,7 @@
 # local environments
 .swp
 .env*
+dist/
 node_modules/
 exampleSite/themes/
 exampleSite/public/
@@ -10,3 +11,6 @@ layouts/partials/icons-svg-symbols.html
 static/main.*
 static/favicon/
 resources/_gen/
+
+# testing
+.lighthouseci/

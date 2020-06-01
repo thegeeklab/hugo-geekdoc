@@ -6,15 +6,13 @@
                 <h1 class="gdoc-post__title">
                     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 </h1>
+                <div class="gdoc-post__date">{{ .Date.Format $dateFormat }}</div>
             </header>
-            <h5>
-                <strong>{{ .Date.Format $dateFormat }}</strong>
-            </h5>
             <div>
                 {{ .Summary }}
                 {{ if .Truncated }}
                 <a class="gdoc-post__readmore" title="Read full post" href="{{ .RelPermalink }}">
-                    Read more
+                    Read full post
                 </a>
                 {{ end }}
             </div>

@@ -7,8 +7,10 @@
 {{ end }}
 
 {{ if default true .Site.Params.GeekdocAnchorCopy }}
-<script src="{{ "js/clipboard.min.js" | relURL }}"></script>
+<script defer src="{{ "js/clipboard.min.js" | relURL }}"></script>
 <script>
-    var clipboard = new ClipboardJS('.clip');
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var clipboard = new ClipboardJS('.clip');
+    });
 </script>
 {{ end }}

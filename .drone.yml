@@ -21,7 +21,7 @@ steps:
   image: klakegg/hugo:0.69.0-ext-alpine
   commands:
   - cd exampleSite/
-  - mkdir themes/ && ln -s ../../. themes/hugo-geekdoc && hugo-official
+  - mkdir themes/ && ln -s ../../. themes/hugo-geekdoc && hugo-official -b http://localhost/
 
 - name: spellcheck
   image: node:lts-alpine
@@ -44,12 +44,18 @@ steps:
   environment:
     LINK_VALIDATOR_BASE_DIR: /drone/src/exampleSite/public
 
+- name: page-validator
+  image: patrickhulce/lhci-client
+  user: root
+  commands:
+  - lhci autorun
+
 - name: build
   image: alpine
   commands:
   - mkdir dist/
   - echo "${DRONE_TAG:-latest}" > VERSION
-  - tar -zcvf dist/hugo-geekdoc.tar.gz . --exclude='.git*' --exclude='.drone*' --exclude='dist' --exclude='.git*' --exclude='example*' --exclude='src' --exclude='gulp*' --exclude='package*' --exclude='node*' --exclude='local*'
+  - tar -zcvf dist/hugo-geekdoc.tar.gz -X .tarignore .
 
 - name: checksum
   image: alpine
@@ -162,6 +168,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: ca1ffdbbe56ee6624fad160c24071dcd3da2de55d580c3614dd0e6a23cdb338a
+hmac: 6c9fc660b81ed9086e1bcb0f8176ba6b084834bc7ecafbaa0573943760698330
 
 ...
