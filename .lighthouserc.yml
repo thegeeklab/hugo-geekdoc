@@ -15,3 +15,5 @@ ci:
       uses-long-cache-ttl: off
       render-blocking-resources: off
       tap-targets: off
+      first-contentful-paint: off
+      first-meaningful-paint: off
