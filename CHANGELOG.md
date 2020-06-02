@@ -1,3 +1,5 @@
+* BREAKING
+  * use pre tag instead of p for mermaid shortcode
 * BUGFIX
   * optimize resource loading
   * refactor expand shortcode to use valid html
