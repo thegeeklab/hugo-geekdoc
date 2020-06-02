@@ -11,6 +11,6 @@
 {{ .Page.Scratch.Set "mermaid" true }}
 {{ end }}
 
-<pre class="mermaid{{ with .Get "class" }} {{ . }}{{ end }}">
+<pre class="gdoc-mermaid mermaid{{ with .Get "class" }} {{ . }}{{ end }}">
   {{- .Inner -}}
 </pre>
