@@ -1,6 +1,6 @@
 * BUGFIX
   * optimize resource loading
-  * resfactor expand shortcode to use valid html
+  * refactor expand shortcode to use valid html
   * fix formatting of nested shortcodes markdown
 * INTERNAL
   * add markdown linting to CI (markdownlint-cli)
