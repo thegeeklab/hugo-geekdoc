@@ -1,4 +1,5 @@
 {{$file := .Get "file"}}
+<div class="gdoc-include">
 {{- if eq (.Get "markdown") "true" -}}
 {{- $file | readFile | markdownify -}}
 {{- else if (.Get "language") -}}
@@ -6,3 +7,4 @@
 {{- else -}}
 {{ $file | readFile | safeHTML }}
 {{- end -}}
+</div>
