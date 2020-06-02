@@ -1,0 +1,19 @@
+---
+ci:
+  collect:
+    numberOfRuns: 2
+    staticDistDir: exampleSite/public
+    url:
+      - http://localhost/
+      - http://localhost/404.html
+      - http://localhost/posts/
+    settings:
+      chromeFlags: "--no-sandbox"
+  assert:
+    preset: "lighthouse:no-pwa"
+    assertions:
+      uses-long-cache-ttl: off
+      render-blocking-resources: off
+      tap-targets: off
+      first-contentful-paint: off
+      first-meaningful-paint: off

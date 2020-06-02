@@ -1,5 +1,54 @@
 ---
 kind: pipeline
+name: test
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: assets
+  image: node:lts
+  commands:
+  - npm install -g gulp
+  - npm install
+  - gulp default
+  environment:
+    FORCE_COLOR: true
+    NPM_CONFIG_LOGLEVEL: error
+
+- name: testbuild
+  image: klakegg/hugo:0.72.0-ext-alpine
+  commands:
+  - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
+  - hugo-official -s exampleSite/ -b http://localhost/
+
+- name: html-validation
+  image: validator/validator
+  commands:
+  - vnu --skip-non-html --also-check-css --errors-only exampleSite/public
+
+- name: link-validation
+  image: xoxys/link-validator
+  commands:
+  - link-validator -ro
+  environment:
+    LINK_VALIDATOR_BASE_DIR: exampleSite/public
+
+- name: page-validation
+  image: patrickhulce/lhci-client
+  user: root
+  commands:
+  - lhci autorun
+
+trigger:
+  ref:
+  - refs/heads/master
+  - refs/tags/**
+  - refs/pull/**
+
+---
+kind: pipeline
 name: build
 
 platform:
@@ -8,31 +57,28 @@ platform:
 
 steps:
 - name: assets
-  image: node
+  image: node:lts
   commands:
-  - npm install -g gulp -s
-  - npm install -s
+  - npm install -g gulp
+  - npm install
   - gulp default
+  environment:
+    FORCE_COLOR: true
+    NPM_CONFIG_LOGLEVEL: error
 
-- name: test
-  image: klakegg/hugo:0.69.0-ext-alpine
-  commands:
-  - cd exampleSite/
-  - mkdir themes/ && ln -s ../../. themes/hugo-geekdoc && hugo-official
-
-- name: build
+- name: package
   image: alpine
   commands:
   - mkdir dist/
   - echo "${DRONE_TAG:-latest}" > VERSION
-  - tar -zcvf dist/hugo-geekdoc.tar.gz . --exclude='.git*' --exclude='.drone*' --exclude='dist' --exclude='.git*' --exclude='example*' --exclude='src' --exclude='gulp*' --exclude='package*' --exclude='node*' --exclude='local*'
+  - tar -zcvf dist/hugo-geekdoc.tar.gz -X .tarignore .
 
 - name: checksum
   image: alpine
   commands:
   - cd dist/ && sha256sum * > ../sha256sum.txt
 
-- name: publish
+- name: release
   image: plugins/github-release
   settings:
     api_key:
@@ -43,15 +89,13 @@ steps:
     note: CHANGELOG.md
     overwrite: true
     title: ${DRONE_TAG}
-  when:
-    ref:
-    - refs/tags/**
 
 trigger:
   ref:
-  - refs/heads/master
   - refs/tags/**
-  - refs/pull/**
+
+depends_on:
+- test
 
 ---
 kind: pipeline
@@ -65,16 +109,34 @@ concurrency:
   limit: 1
 
 steps:
+- name: markdownlint
+  image: node:lts-alpine
+  commands:
+  - npm install -g markdownlint-cli
+  - markdownlint 'exampleSite/content/**/*.md' 'README.md'
+  environment:
+    FORCE_COLOR: true
+    NPM_CONFIG_LOGLEVEL: error
+
+- name: spellcheck
+  image: node:lts-alpine
+  commands:
+  - npm install -g spellchecker-cli
+  - spellchecker --files 'exampleSite/content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls --no-suggestions
+  environment:
+    FORCE_COLOR: true
+    NPM_CONFIG_LOGLEVEL: error
+
 - name: assets
   image: byrnedo/alpine-curl
   commands:
   - mkdir -p exampleSite/themes/hugo-geekdoc/
-  - curl -L https://github.com/xoxys/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
+  - curl -sSL https://github.com/xoxys/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
 
-- name: test
-  image: klakegg/hugo:0.69.0-ext-alpine
+- name: build
+  image: klakegg/hugo:0.72.0-ext-alpine
   commands:
-  - cd exampleSite/ && hugo-official
+  - hugo-official -s exampleSite/
 
 - name: publish
   image: plugins/s3-sync
@@ -89,11 +151,16 @@ steps:
       from_secret: s3_secret_access_key
     source: exampleSite/public/
     strip_prefix: exampleSite/public/
+  when:
+    ref:
+    - refs/heads/master
+    - refs/tags/**
 
 trigger:
   ref:
   - refs/heads/master
   - refs/tags/**
+  - refs/pull/**
 
 depends_on:
 - build
@@ -133,11 +200,12 @@ trigger:
   - failure
 
 depends_on:
+- test
 - build
 - docs
 
 ---
 kind: signature
-hmac: c78faf65f2d038c8daa5b56c592a1fa6264b40633cd2375d61257a3027897c3c
+hmac: c9158b4a7c4fb787644c711560925ffae038a982953f958d5f535158f640032f
 
 ...

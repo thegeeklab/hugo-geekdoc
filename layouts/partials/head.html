@@ -5,9 +5,9 @@
 <title>{{ partial "title" . }} | {{ .Site.Title -}}</title>
 <link rel="icon" href="{{ "favicon/favicon-32x32.png" | relURL }}" type="image/x-icon">
 
-<link rel="stylesheet" href="{{ "main.min.css" | relURL }}">
+<link rel="stylesheet" href="{{ "main.min.css" | relURL }}" media="screen">
 <!-- Theme stylesheet, you can customize css by creating static/custom.css` in your website -->
-<link rel="stylesheet" href="{{ "custom.css" | relURL }}">
+<link rel="stylesheet" href="{{ "custom.css" | relURL }}" media="screen">
 
 <!-- RSS -->
 {{ with .OutputFormats.Get "rss" -}}

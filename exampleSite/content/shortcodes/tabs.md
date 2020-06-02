@@ -2,7 +2,7 @@ Tabs let you organize content by context, for example installation instructions 
 
 ```tpl
 {{</* tabs "uniqueid" */>}}
-{{</* tab "MacOS" */>}} # MacOS Content {{</* /tab */>}}
+{{</* tab "macOS" */>}} # macOS Content {{</* /tab */>}}
 {{</* tab "Linux" */>}} # Linux Content {{</* /tab */>}}
 {{</* tab "Windows" */>}} # Windows Content {{</* /tab */>}}
 {{</* /tabs */>}}
@@ -11,15 +11,16 @@ Tabs let you organize content by context, for example installation instructions 
 ## Example
 
 {{< tabs "uniqueid" >}}
-{{< tab "MacOS" >}}
-# MacOS
+{{< tab "macOS" >}}
 
-This is tab **MacOS** content.
+# macOS
 
-Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
-protulit, sed sed aere valvis inhaesuro Pallas animam: qui _quid_, ignes.
-Miseratus fonte Ditis conubia.
+This is tab **macOS** content.
+
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad
+prompts feud gait, quid exercise emeritus bis e. In pro quints consequent, denim
+fastidious copious quo ad. Stet probates in duo.
 {{< /tab >}}
 
 {{< tab "Linux" >}}
@@ -28,10 +29,10 @@ Miseratus fonte Ditis conubia.
 
 This is tab **Linux** content.
 
-Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
-protulit, sed sed aere valvis inhaesuro Pallas animam: qui _quid_, ignes.
-Miseratus fonte Ditis conubia.
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. __Ornateness__ bland it ex enc, est yeti am bongo detract re. Pro ad
+prompts feud gait, quid exercise emeritus bis e. In pro quints consequent, denim
+fastidious copious quo ad. Stet probates in duo.
 {{< /tab >}}
 
 {{< tab "Windows" >}}
@@ -40,9 +41,8 @@ Miseratus fonte Ditis conubia.
 
 This is tab **Windows** content.
 
-Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
-protulit, sed sed aere valvis inhaesuro Pallas animam: qui _quid_, ignes.
-Miseratus fonte Ditis conubia.
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad
+prompts feud gait, quid exercise emeritus bis e. In pro quints consequent.
 {{< /tab >}}
 {{< /tabs >}}

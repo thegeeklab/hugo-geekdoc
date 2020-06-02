@@ -6,7 +6,7 @@
   }
 
   &--nested {
-    > :first-child {
+    :first-child {
       margin-top: 0;
     }
     > :last-child {

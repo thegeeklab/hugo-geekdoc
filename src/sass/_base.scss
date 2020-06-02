@@ -286,16 +286,21 @@ img {
     }
   }
 
+  &__date {
+    font-weight: bold;
+    margin: 1em 0;
+  }
+
   &:first-child {
     border-top: 0;
 
     h1 {
-      margin: 0;
+      margin-top: 0;
     }
   }
 
   &__readmore {
-    margin: 1em 0;
+    margin-top: 1em;
     color: $color-link;
     display: block;
 
@@ -461,7 +466,7 @@ img {
 .markdown {
   transition: 0.2s ease-in-out;
   transition-property: transform, margin-left, opacity;
-  will-change: transform!important, margin-left !important;
+  will-change: transform, margin-left;
 }
 
 @media screen and (max-width: $sm-breakpoint) {
