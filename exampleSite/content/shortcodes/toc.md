@@ -4,7 +4,9 @@ Simple wrapper to generate a page Table of Content from a shortcode.
 {{</* toc */>}}
 ```
 
+<!-- spellchecker-disable -->
 {{< toc >}}
+<!-- spellchecker-enable -->
 
 ## Level 1
 

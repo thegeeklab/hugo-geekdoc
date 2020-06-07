@@ -3,6 +3,7 @@ If you want to customize the color scheme of the theme to give it your individua
 All necessary class names are listed below. If you miss some classes required for a color scheme you are very welcome to create an [Issue](https://github.com/xoxys/hugo-geekdoc/issues) or Pull Request. For some inspiration you can have a look at [https://www.color-hex.com/color-palettes/](https://www.color-hex.com/). The following listing use the _HC-primary_ color palette as an example:
 
 <!-- markdownlint-disable -->
+<!-- spellchecker-disable -->
 {{< highlight CSS "linenos=table" >}}
 /* default link color */
 a { color: #1c388e; }
@@ -31,6 +32,7 @@ a:visited { color: #73bfb8 }
 .gdoc-hint.warning { background: #fef5dc; border-color: #e4ba48; color: black; }
 .gdoc-hint.danger { background: #fae1db; border-color: #cf5f46; color: black; }
 {{< /highlight >}}
+<!-- spellchecker-enable -->
 <!-- markdownlint-enable -->
 
 And that is how the result will looks like. Happy customizing!

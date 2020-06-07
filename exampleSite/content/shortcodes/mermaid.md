@@ -21,6 +21,7 @@ sequenceDiagram
 
 <--->
 
+<!-- spellchecker-disable -->
 {{< mermaid class="text-center" >}}
 sequenceDiagram
     Alice->>Bob: Hello Bob, how are you?
@@ -33,5 +34,6 @@ sequenceDiagram
         Bob->>Alice: Thanks for asking
     end
 {{< /mermaid >}}
+<!-- spellchecker-enable -->
 
 {{< /columns >}}

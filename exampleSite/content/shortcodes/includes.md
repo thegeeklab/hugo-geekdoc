@@ -23,7 +23,9 @@ Attributes:
 {{</* include file="config.yaml" language="yaml" options="linenos=table,hl_lines=5-6,linenostart=100" */>}}
 ```
 
+<!-- spellchecker-disable -->
 {{< include file="config.yaml" language="yaml" options="linenos=table,hl_lines=5-6,linenostart=100">}}
+<!-- spellchecker-enable -->
 
 ### Include *.md file
 
@@ -38,7 +40,9 @@ If you include markdown files that should not get a menu entry, place them outsi
 {{</* include file="static/includes/table.md.part" markdown="true" */>}}
 ```
 
+<!-- spellchecker-disable -->
 {{< include file="static/includes/table.md.part" markdown="true" >}}
+<!-- spellchecker-enable -->
 
 ### Include *.html file
 
