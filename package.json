@@ -1,16 +1,16 @@
 {
   "name": "geekdoc",
   "version": "1.0.0",
-  "description": "Lightweight repsonsive docs theme for hugo",
+  "description": "Hugo theme made for documentation",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "gitea@gitea.rknet.org:xoxys/theme-geekdoc.git"
+    "url": "https://github.com/xoxys/hugo-geekdoc"
   },
-  "author": "xoxys <mail@rknet.org>",
+  "author": "Robert Kaussow",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
