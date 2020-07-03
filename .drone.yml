@@ -24,7 +24,7 @@ steps:
   - hugo-official -s exampleSite/ -b http://localhost/
 
 - name: html-validation
-  image: validator/validator
+  image: xoxys/vnu
   commands:
   - vnu --skip-non-html --also-check-css --errors-only exampleSite/public
 
@@ -215,6 +215,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 0e4002121787435d22c628f091c8b11ceec1c8a02057436dc9a868c190f91317
+hmac: 4764c7afd506eaa92d3a85fb983813ff240d15aecb2692406aae5b3fb387ff6b
 
 ...
