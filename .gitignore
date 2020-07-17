@@ -2,7 +2,9 @@
 .swp
 .env*
 dist/
+tmp/
 node_modules/
+lhci_reports/
 exampleSite/themes/
 exampleSite/public/
 
@@ -10,6 +12,7 @@ exampleSite/public/
 layouts/partials/icons-svg-symbols.html
 static/main.*
 static/favicon/
+static/fonts/GeekdocIcons.*
 resources/_gen/
 
 # testing

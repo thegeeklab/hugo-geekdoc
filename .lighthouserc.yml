@@ -17,3 +17,7 @@ ci:
       tap-targets: off
       first-contentful-paint: off
       first-meaningful-paint: off
+      largest-contentful-paint: off
+  upload:
+    target: filesystem
+    outputDir: lhci_reports

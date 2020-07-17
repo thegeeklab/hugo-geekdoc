@@ -55,6 +55,10 @@ steps:
     source: lhci_reports/dist/*
     strip_prefix: lhci_reports/dist/
     target: /${DRONE_REPO_NAME}
+  when:
+    status:
+    - failure
+    - success
 
 trigger:
   ref:
