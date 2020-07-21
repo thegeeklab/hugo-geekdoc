@@ -27,7 +27,7 @@ params:
   geekdocDateFormat: "Jan 2, 2006"
   geekdocSearch: true
 
-  geekdocLegalNotice: https://geeklabor.de/legal-notice/#impressum
-  geekdocPrivacyPolicy: https://geeklabor.de/legal-notice/#datenschutzerkl%C3%A4rung
+  geekdocLegalNotice: https://thegeeklab.de/legal-notice/#contact-information
+  geekdocPrivacyPolicy: https://thegeeklab.de/legal-notice/#privacy-policy
 
   geekdocAnchorLeft: true
