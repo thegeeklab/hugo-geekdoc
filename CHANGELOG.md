@@ -1,4 +1,2 @@
-* BUGFIX
-  * fix mermaid default font
-* ENHANCEMENT
-  * add surrounding div with class `gdoc-include` to include shortcode
+- INTERNAL
+  - upgrade CI pipeline to use Hugo v0.74.3
