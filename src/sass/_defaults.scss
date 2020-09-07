@@ -3,6 +3,7 @@ $padding-1: 1px !default;
 $padding-4: 0.25rem !default;
 $padding-8: 0.5rem !default;
 $padding-16: 1rem !default;
+$padding-32: 2rem !default;
 
 $font-size-base: 16px !default;
 $font-size-12: 0.75rem !default;
@@ -46,7 +47,7 @@ $second-color: rgba(47, 51, 62, 1) !default;
 $header-height: 3.5rem !default;
 $menu-width: 16rem !default;
 
-$sm-breakpoint: $menu-width + $body-min-width !default;
+$sm-breakpoint: $menu-width + $body-min-width + 3rem !default;
 
 // Panel colors
 $hint-colors: (

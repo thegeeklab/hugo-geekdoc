@@ -77,6 +77,7 @@ img {
   width: 100%;
   max-width: $container-max-width;
   margin: 0 auto;
+  padding: $padding-16;
 }
 
 .icon {
@@ -108,10 +109,6 @@ img {
     width: $font-size-16 * 2;
     height: $font-size-16 * 2;
   }
-
-  .container {
-    padding: $padding-16;
-  }
 }
 
 .gdoc-brand {
@@ -128,7 +125,7 @@ img {
 
   nav {
     width: $menu-width;
-    padding: $padding-16 * 1.5 $padding-16;
+    padding: $padding-16 $padding-32 $padding-16 0;
 
     > ul > li > * {
       font-weight: normal;
@@ -199,7 +196,7 @@ img {
 .gdoc-page {
   min-width: $body-min-width;
   flex-grow: 1;
-  padding: $padding-16 * 1.5 $padding-16;
+  padding: $padding-16 0;
 
   &__header,
   &__footer {
@@ -222,7 +219,7 @@ img {
   }
 
   &__footer {
-    margin-top: $padding-16 * 2;
+    margin-top: $padding-32;
 
     a:hover {
       text-decoration: none;
@@ -330,10 +327,6 @@ img {
       color: $color-link-footer;
     }
   }
-
-  .container {
-    padding: $padding-16;
-  }
 }
 
 .gdoc-search {
@@ -361,7 +354,7 @@ img {
   &__input {
     width: 100%;
     padding: $padding-8;
-    padding-left: $padding-16 * 2;
+    padding-left: $padding-32;
 
     border: 1px solid $gray-200;
     border-radius: $border-radius;
@@ -474,20 +467,12 @@ img {
     margin-left: -$menu-width;
     font-size: $font-size-base;
 
-    nav {
-      padding: $padding-16 * 1.5 $padding-16 * 2;
-    }
-
     &__control {
       display: inline-block;
     }
   }
 
   .gdoc-header {
-    .container {
-      padding: $padding-16 $padding-16 * 2;
-    }
-
     .icon {
       width: $font-size-16 * 1.5;
       height: $font-size-16 * 1.5;
@@ -511,7 +496,7 @@ img {
     }
 
     &__message {
-      padding-left: $padding-16 * 2;
+      padding-left: $padding-32;
     }
 
     &__line {
@@ -528,15 +513,7 @@ img {
     display: none;
   }
 
-  .gdoc-page {
-    padding: $padding-16 * 1.5 $padding-16 * 2;
-  }
-
   .gdoc-footer {
-    .container {
-      padding: $padding-16 $padding-16 * 2;
-    }
-
     &__item {
       width: 100%;
     }
