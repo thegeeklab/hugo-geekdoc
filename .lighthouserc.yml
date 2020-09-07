@@ -18,6 +18,7 @@ ci:
       first-contentful-paint: off
       first-meaningful-paint: off
       largest-contentful-paint: off
+      unsized-images: off
   upload:
     target: filesystem
     outputDir: lhci_reports
