@@ -67,6 +67,7 @@ pygmentsCodeFences: true
 
 You can use it like every other shortcode:
 
+<!-- prettier-ignore -->
 ```markdown
 {{</* highlight Shell "linenos=table" */>}}
 # some code
@@ -77,8 +78,12 @@ echo "Hello World"
 **Example:**
 
 <!-- markdownlint-disable -->
+
+<!-- prettier-ignore-start -->
 {{< highlight Shell "linenos=table" >}}
 # some code
 echo "Hello World"
 {{< /highlight >}}
+<!-- prettier-ignore-end-->
+
 <!-- markdownlint-enable -->

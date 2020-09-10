@@ -8,6 +8,7 @@ Include shortcode can include files of different types. By specifying a language
 
 Attributes:
 
+<!-- prettier-ignore -->
 | Name | Usage | default |
 |---|---|---|
 |  file | path to the included file relative to the hugo root | empty value |
@@ -17,17 +18,19 @@ Attributes:
 
 \* if not set, the content will be rendered as plain HTML
 
-### Include *.yml file with options
+### Include \*.yml file with options
 
 ```tpl
 {{</* include file="config.yaml" language="yaml" options="linenos=table,hl_lines=5-6,linenostart=100" */>}}
 ```
 
 <!-- spellchecker-disable -->
+
 {{< include file="config.yaml" language="yaml" options="linenos=table,hl_lines=5-6,linenostart=100">}}
+
 <!-- spellchecker-enable -->
 
-### Include *.md file
+### Include \*.md file
 
 Included markdown files will be rendered using the `markdownify` filter.
 
@@ -41,10 +44,12 @@ If you include markdown files that should not get a menu entry, place them outsi
 ```
 
 <!-- spellchecker-disable -->
+
 {{< include file="static/includes/table.md.part" markdown="true" >}}
+
 <!-- spellchecker-enable -->
 
-### Include *.html file
+### Include \*.html file
 
 HTML content will be filtered by the `safeHTML` filter and added to the rendered page output.
 

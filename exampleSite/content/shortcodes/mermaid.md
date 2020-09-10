@@ -4,6 +4,7 @@
 
 {{< columns >}}
 
+<!-- prettier-ignore -->
 ```tpl
 {{</* mermaid class="text-center"*/>}}
 sequenceDiagram
@@ -22,6 +23,7 @@ sequenceDiagram
 <--->
 
 <!-- spellchecker-disable -->
+<!-- prettier-ignore -->
 {{< mermaid class="text-center" >}}
 sequenceDiagram
     Alice->>Bob: Hello Bob, how are you?
@@ -34,6 +36,7 @@ sequenceDiagram
         Bob->>Alice: Thanks for asking
     end
 {{< /mermaid >}}
+
 <!-- spellchecker-enable -->
 
 {{< /columns >}}

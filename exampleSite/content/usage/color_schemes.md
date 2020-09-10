@@ -4,6 +4,8 @@ All necessary class names are listed below. If you miss some classes required fo
 
 <!-- markdownlint-disable -->
 <!-- spellchecker-disable -->
+
+<!-- prettier-ignore-start -->
 {{< highlight CSS "linenos=table" >}}
 /* default link color */
 a { color: #1c388e; }
@@ -32,6 +34,8 @@ a:visited { color: #73bfb8 }
 .gdoc-hint.warning { background: #fef5dc; border-color: #e4ba48; color: black; }
 .gdoc-hint.danger { background: #fae1db; border-color: #cf5f46; color: black; }
 {{< /highlight >}}
+<!-- prettier-ignore-end -->
+
 <!-- spellchecker-enable -->
 <!-- markdownlint-enable -->
 
