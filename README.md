@@ -8,7 +8,7 @@
 
 Geekdoc is a simple Hugo theme for documentations. You can find a demo and the full documentation at [https://geekdocs.de](https://geekdocs.de).
 
-![Preview Desktop](https://github.com/xoxys/hugo-geekdoc/blob/master/images/rm-desktop.png) ![Preview Mobile](https://github.com/xoxys/hugo-geekdoc/blob/master/images/rm-mobile.png)
+![Desktop and mobile preview](https://github.com/xoxys/hugo-geekdoc/blob/master/images/readme.png)
 
 ## Contributors
 
