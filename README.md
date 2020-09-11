@@ -6,7 +6,7 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/xoxys/hugo-geekdoc)](https://github.com/xoxys/hugo-geekdoc/graphs/contributors)
 [![License: MIT](https://img.shields.io/github/license/xoxys/hugo-geekdoc)](LICENSE)
 
-Geekdoc is a simple Hugo theme for documentations. You can find a demo and the full documentation at [https://geekdocs.de](https://geekdocs.de).
+Geekdoc is a simple Hugo theme for documentations. It is intentionally designed as a fast and lean theme and may not fit the requirements of complex projects. If a more feature-complete theme is required there are a lot of got alternatives out there. You can find a demo and the full documentation at [https://geekdocs.de](https://geekdocs.de).
 
 ![Desktop and mobile preview](https://github.com/xoxys/hugo-geekdoc/blob/master/images/readme.png)
 
