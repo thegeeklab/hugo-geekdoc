@@ -41,7 +41,7 @@ To prepare your new site environment just a few steps are required:
    cd demosite
    ```
 
-3. Install the Geekdoc theme from a [release bundle](#option-1-download-pre-build-release) (recommended) or form [Git branch](#option-2-clone-the-github-repository).
+3. Install the Geekdoc theme from a [release bundle](#option-1-download-pre-build-release-bundle) (recommended) or form [Git branch](#option-2-clone-the-github-repository).
 
 4. Create the minimal required Hugo configuration `config.toml`. For all configuration options see [here](/usage/configuration/).
 
