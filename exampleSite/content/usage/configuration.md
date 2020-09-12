@@ -1,3 +1,8 @@
+---
+title: Configuration
+weight: -10
+---
+
 ## Site configuration
 
 {{< tabs "site-config" >}}

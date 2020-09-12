@@ -9,7 +9,7 @@ pygmentsCodeFences: true
 disablePathToLower: true
 enableGitInfo: true
 
-# Needed for mermaid/katex shortcodes
+# Needed for mermaid shortcodes
 markup:
   goldmark:
     renderer:
