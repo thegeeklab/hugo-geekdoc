@@ -34,4 +34,4 @@ Geekdoc is inspired and partially based on the [hugo-book](https://github.com/al
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/xoxys/hugo-geekdoc/blob/master/LICENSE) file for details.
