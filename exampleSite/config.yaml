@@ -24,7 +24,6 @@ params:
   geekdocRepo: https://github.com/xoxys/hugo-geekdoc
   geekdocEditPath: edit/master/exampleSite/content
 
-  geekdocDateFormat: "Jan 2, 2006"
   geekdocSearch: true
 
   geekdocLegalNotice: https://thegeeklab.de/legal-notice/#contact-information

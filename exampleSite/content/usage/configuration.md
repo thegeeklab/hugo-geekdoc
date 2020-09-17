@@ -9,14 +9,13 @@ weight: -10
 {{< tab "TOML" >}}
 
 ```Toml
-# ...
-
-theme = 'hugo-geekdoc'
+baseURL = "http://localhost"
+title = "Geekdocs"
+theme = "hugo-geekdoc"
 
 # Required to get well formatted code blocks
 pygmentsUseClasses = true
 pygmentsCodeFences = true
-
 disablePathToLower = true
 enableGitInfo = true
 
@@ -36,7 +35,7 @@ enableGitInfo = true
 
   # (Optional, default static/brand.svg) Set the path to a logo for the Geekdoc
   # relative to your 'static/' folder.
-  geekdocLogo = logo.png
+  geekdocLogo = "logo.png"
 
   # (Optional, default false) Render menu from data file im 'data/menu/main.yaml'.
   geekdocMenuBundle = true
@@ -52,15 +51,12 @@ enableGitInfo = true
   # (Optional, default none) Set source repository location
   # Used for 'Edit this page' links
   # You can also specify this parameter per page in front matter.
-  geekdocRepo = 'https://github.com/xoxys/hugo'
+  geekdocRepo = "https://github.com/xoxys/hugo"
 
-  # (Optional, default none) Enable "Edit this page" links. Requires 'GeekdocRepo' param
+  # (Optional, default none) Enable 'Edit this page' links. Requires 'GeekdocRepo' param
   # and path must point to 'content' directory of repo.
   # You can also specify this parameter per page in front matter.
-  geekdocEditPath = 'edit/master/exampleSite/content'
-
-  # (Optional, default 'Jan 2, 2006') Configure the date format used on the pages in blog posts.
-  geekdocDateFormat = "Jan 2, 2006"
+  geekdocEditPath = "edit/master/exampleSite/content"
 
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slowdown your website.
@@ -68,11 +64,11 @@ enableGitInfo = true
 
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
-  geekdocLegalNotice = 'https://blog.example.com/legal'
+  geekdocLegalNotice = "https://blog.example.com/legal"
 
   # (Optional, default none) Add a link to your Privacy Policy page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
-  geekdocPrivacyPolicy = '/privacy'
+  geekdocPrivacyPolicy = "/privacy"
 
   # (Optional, default true) Add an anchor link to headlines.
   geekdocAnchor = true
@@ -86,14 +82,13 @@ enableGitInfo = true
 
 ```Yaml
 ---
-# ...
-
-theme: hugo-geekdoc
+baseURL: "http://localhost"
+title: "Geekdocs"
+theme: "hugo-geekdoc"
 
 # Required to get well formatted code blocks
 pygmentsUseClasses: true
 pygmentsCodeFences: true
-
 disablePathToLower: true
 enableGitInfo: true
 
@@ -131,15 +126,12 @@ params:
   # (Optional, default none) Set source repository location
   # Used for 'Edit this page' links
   # You can also specify this parameter per page in front matter.
-  geekdocRepo: https://github.com/xoxys/hugo-geekdoc
+  geekdocRepo: "https://github.com/xoxys/hugo-geekdoc"
 
   # (Optional, default none) Enable "Edit this page" links. Requires 'GeekdocRepo' param
   # and path must point to 'content' directory of repo.
   # You can also specify this parameter per page in front matter.
   geekdocEditPath: edit/master/exampleSite/content
-
-  # (Optional, default 'Jan 2, 2006') Configure the date format used on the pages in blog posts.
-  geekdocDateFormat: "Jan 2, 2006"
 
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slowdown your website.
@@ -147,11 +139,11 @@ params:
 
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
-  geekdocLegalNotice: https://blog.example.com/legal
+  geekdocLegalNotice: "https://blog.example.com/legal"
 
   # (Optional, default none) Add a link to your Privacy Policy page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
-  geekdocPrivacyPolicy: /privacy
+  geekdocPrivacyPolicy: "/privacy"
 
   # (Optional, default true) Add an anchor link to headlines.
   geekdocAnchor: true
@@ -170,7 +162,7 @@ params:
 
 ```Toml
 # Set type to 'posts' if you want to render page as blogpost
-type = 'posts'
+type = "posts"
 
 # Set page weight to re-arrange items in file-tree menu
 weight = 10
@@ -182,11 +174,11 @@ geekdocToC = 3
 geekdocBreadcrumb = false
 
 # Set source repository location
-geekdocRepo = 'https://github.com/xoxys/hugo-geekdoc'
+geekdocRepo = "https://github.com/xoxys/hugo-geekdoc"
 
 # Enable "Edit this page" links. Requires 'GeekdocRepo' param and path must point
 # to 'content' directory of repo.
-geekdocEditPath = 'edit/master/exampleSite/content'
+geekdocEditPath = "edit/master/exampleSite/content"
 
 # Used for 'Edit this page' link, set to '.File.Path' by default.
 # Can be overwritten by a path relative to 'geekdocEditPath'
@@ -207,7 +199,7 @@ geekdocAnchor = true
 
 ```Yaml
 # Set type to 'posts' if you want to render page as blogpost
-type: 'posts'
+type: "posts"
 
 # Set page weight to re-arrange items in file-tree menu
 weight: 10
@@ -219,11 +211,11 @@ geekdocToC: 3
 geekdocBreadcrumb: false
 
 # Set source repository location
-geekdocRepo: https://github.com/xoxys/hugo-geekdoc
+geekdocRepo: "https://github.com/xoxys/hugo-geekdoc"
 
 # Enable "Edit this page" links. Requires 'GeekdocRepo' param and path must point
 # to 'content' directory of repo.
-geekdocEditPath: edit/master/exampleSite/content
+geekdocEditPath: "edit/master/exampleSite/content"
 
 # Used for 'Edit this page' link, set to '.File.Path' by default.
 # Can be overwritten by a path relative to 'geekdocEditPath'
