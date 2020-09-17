@@ -20,24 +20,20 @@
   h4,
   h5,
   h6 {
-    font-weight: normal;
-    line-height: 1em;
-    margin-top: 1.5em;
-    margin-bottom: $padding-16;
+    font-weight: 600;
+
+    > code {
+      border-top: 3px solid $gray-300;
+      font-size: 0.75em !important;
+    }
   }
 
   h4,
   h5,
   h6 {
-    font-weight: bolder;
-  }
-
-  h5 {
-    font-size: 0.875em;
-  }
-
-  h6 {
-    font-size: 0.75em;
+    > code {
+      font-size: 0.8rem !important;
+    }
   }
 
   b,

@@ -1,21 +1,26 @@
 {{ define "main" }}
-    {{ $dateFormat := default "January 2, 2006" .Site.Params.GeekdocDateFormat }}
-    {{ range sort .Paginator.Pages }}
+    {{ range .Paginator.Pages }}
         <article class="gdoc-markdown gdoc-post">
-            <header>
-                <h1 class="gdoc-post__title">
-                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </h1>
-                <div class="gdoc-post__date">{{ .Date.Format $dateFormat }}</div>
+            <header class="gdoc-post__header">
+                <h1 class="gdoc-post__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+                <div class="gdoc-post__date">
+                    <svg class="icon date"><use xlink:href="#date"></use></svg>
+                    <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+                        {{ if ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02") }}
+                        Updated on
+                        {{ end }}
+                        {{ .Lastmod.Format "Jan 2, 2006" }}
+                    </time>
+                </div>
             </header>
-            <div>
+            <section>
                 {{ .Summary }}
-                {{ if .Truncated }}
-                <a class="gdoc-post__readmore" title="Read full post" href="{{ .RelPermalink }}">
-                    Read full post
-                </a>
-                {{ end }}
+            </section>
+            {{ if .Truncated }}
+            <div class="gdoc-post__readmore">
+                <a class="flex-inline align-center fake-link" title="Read full post" href="{{ .RelPermalink }}">Read full post</a>
             </div>
+            {{ end }}
         </article>
     {{ end }}
 {{ end }}
