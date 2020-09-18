@@ -53,9 +53,7 @@ To prepare your new site environment just a few steps are required:
    # Geekdoc required configuration
    pygmentsUseClasses = true
    pygmentsCodeFences = true
-
    disablePathToLower = true
-   enableGitInfo=true
 
    # Needed for mermaid shortcodes
    [markup]
@@ -70,7 +68,7 @@ To prepare your new site environment just a few steps are required:
 5. Test your site.
 
    ```Shell
-   hugo server --theme geekdoc -D
+   hugo server -D
    ```
 
 ### Option 1: Download pre-build release bundle
@@ -78,6 +76,7 @@ To prepare your new site environment just a few steps are required:
 Download and extract the latest release bundle into the theme directory.
 
 ```Shell
+mkdir -p themes/hugo-geekdoc/
 curl -L https://github.com/xoxys/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C themes/hugo-geekdoc/ --strip-components=1
 ```
 
