@@ -50,6 +50,11 @@
   display: none;
 }
 
+.badge-placeholder {
+  display: inline-block;
+  min-width: 4rem;
+}
+
 @mixin spin($duration) {
   animation: spin $duration ease infinite;
   @keyframes spin {

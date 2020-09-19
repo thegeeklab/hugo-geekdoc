@@ -1,7 +1,7 @@
 ---
 ci:
   collect:
-    numberOfRuns: 2
+    numberOfRuns: 3
     staticDistDir: exampleSite/public
     url:
       - http://localhost/
@@ -13,12 +13,17 @@ ci:
     preset: "lighthouse:no-pwa"
     assertions:
       uses-long-cache-ttl: off
-      render-blocking-resources: off
-      tap-targets: off
-      first-contentful-paint: off
-      first-meaningful-paint: off
-      largest-contentful-paint: off
-      unsized-images: off
+      tap-targets: warn
+      unsized-images: warn
+      categories:performance:
+        - error
+        - minScore: 0.95
+      categories:accessibility:
+        - error
+        - minScore: 1
+      categories:seo:
+        - error
+        - minScore: 0.95
   upload:
     target: filesystem
     outputDir: lhci_reports

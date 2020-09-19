@@ -5,7 +5,19 @@
 <title>{{ partial "title" . }} | {{ .Site.Title -}}</title>
 
 <link rel="icon" href="{{ "favicon/favicon-32x32.png" | relURL }}" type="image/x-icon">
+
+<link rel="preload" as="font" href="/fonts/Metropolis.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/fonts/LiberationSans.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/fonts/LiberationSans-Bold.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/fonts/LiberationSans-BoldItalic.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/fonts/LiberationSans-Italic.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/fonts/LiberationMono.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/fonts/DroidSans.woff2" type="font/woff2" crossorigin="anonymous">
+
+<link rel="preload" href="{{ "main.min.css" | relURL }}" as="style">
 <link rel="stylesheet" href="{{ "main.min.css" | relURL }}" media="screen">
+
+<link rel="preload" href="{{ "custom.css" | relURL }}" as="style">
 <link rel="stylesheet" href="{{ "custom.css" | relURL }}" media="screen">
 
 {{ with .OutputFormats.Get "rss" -}}
