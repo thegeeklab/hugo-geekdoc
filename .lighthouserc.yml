@@ -9,6 +9,8 @@ ci:
       - http://localhost/posts/
     settings:
       chromeFlags: "--no-sandbox"
+      # FIXME: https://github.com/GoogleChrome/lighthouse/issues/11460
+      throttlingMethod: devtools
   assert:
     preset: "lighthouse:no-pwa"
     assertions:
