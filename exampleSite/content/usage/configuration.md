@@ -51,7 +51,7 @@ enableGitInfo = true
   # (Optional, default none) Set source repository location
   # Used for 'Edit this page' links
   # You can also specify this parameter per page in front matter.
-  geekdocRepo = "https://github.com/xoxys/hugo"
+  geekdocRepo = "https://github.com/thegeeklab/hugo"
 
   # (Optional, default none) Enable 'Edit this page' links. Requires 'GeekdocRepo' param
   # and path must point to 'content' directory of repo.
@@ -126,7 +126,7 @@ params:
   # (Optional, default none) Set source repository location
   # Used for 'Edit this page' links
   # You can also specify this parameter per page in front matter.
-  geekdocRepo: "https://github.com/xoxys/hugo-geekdoc"
+  geekdocRepo: "https://github.com/thegeeklab/hugo-geekdoc"
 
   # (Optional, default none) Enable "Edit this page" links. Requires 'GeekdocRepo' param
   # and path must point to 'content' directory of repo.
@@ -174,7 +174,7 @@ geekdocToC = 3
 geekdocBreadcrumb = false
 
 # Set source repository location
-geekdocRepo = "https://github.com/xoxys/hugo-geekdoc"
+geekdocRepo = "https://github.com/thegeeklab/hugo-geekdoc"
 
 # Enable "Edit this page" links. Requires 'GeekdocRepo' param and path must point
 # to 'content' directory of repo.
@@ -211,7 +211,7 @@ geekdocToC: 3
 geekdocBreadcrumb: false
 
 # Set source repository location
-geekdocRepo: "https://github.com/xoxys/hugo-geekdoc"
+geekdocRepo: "https://github.com/thegeeklab/hugo-geekdoc"
 
 # Enable "Edit this page" links. Requires 'GeekdocRepo' param and path must point
 # to 'content' directory of repo.

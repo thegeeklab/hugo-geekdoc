@@ -24,19 +24,19 @@ steps:
   - hugo-official -s exampleSite/ -b http://localhost/
 
 - name: html-validation
-  image: xoxys/vnu
+  image: thegeeklab/vnu
   commands:
   - vnu --skip-non-html --also-check-css --errors-only exampleSite/public
 
 - name: link-validation
-  image: xoxys/link-validator
+  image: thegeeklab/link-validator
   commands:
   - link-validator -ro
   environment:
     LINK_VALIDATOR_BASE_DIR: exampleSite/public
 
 - name: page-validation
-  image: xoxys/lhci
+  image: thegeeklab/lhci
   commands:
   - lhci autorun
   environment:
@@ -150,7 +150,7 @@ steps:
   image: byrnedo/alpine-curl
   commands:
   - mkdir -p exampleSite/themes/hugo-geekdoc/
-  - curl -sSL https://github.com/xoxys/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
+  - curl -sSL https://github.com/thegeeklab/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
 
 - name: build
   image: klakegg/hugo:0.74.3-ext-alpine
@@ -234,6 +234,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 082cef9076e41be30895bc3500bb2ebf888ae24e978e41cea71cd2e45c80b483
+hmac: 548bc9f137bf276ff6415afcf396600cebe4a689e97bd8e0687e3921ee7aad63
 
 ...

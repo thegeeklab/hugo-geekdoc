@@ -4,10 +4,10 @@ more:
     ref: "/posts"
     icon: "notification"
   - name: Releases
-    ref: "https://github.com/xoxys/hugo-geekdoc/releases"
+    ref: "https://github.com/thegeeklab/hugo-geekdoc/releases"
     external: true
     icon: "download"
   - name: "View Source"
-    ref: "https://github.com/xoxys/hugo-geekdoc"
+    ref: "https://github.com/thegeeklab/hugo-geekdoc"
     external: true
     icon: "github"

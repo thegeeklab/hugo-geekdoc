@@ -77,7 +77,7 @@ Download and extract the latest release bundle into the theme directory.
 
 ```Shell
 mkdir -p themes/hugo-geekdoc/
-curl -L https://github.com/xoxys/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C themes/hugo-geekdoc/ --strip-components=1
+curl -L https://github.com/thegeeklab/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C themes/hugo-geekdoc/ --strip-components=1
 ```
 
 ### Option 2: Clone the GitHub repository
@@ -92,7 +92,7 @@ run the described steps as well.
 Clone the Geekdoc git repository.
 
 ```Shell
-git clone https://github.com/xoxys/hugo-geekdoc.git themes/geekdoc
+git clone https://github.com/thegeeklab/hugo-geekdoc.git themes/geekdoc
 ```
 
 Build required theme assets e.g. CSS files and SVG sprites with `gulp`.
