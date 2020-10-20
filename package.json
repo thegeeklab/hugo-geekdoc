@@ -4,7 +4,6 @@
   "description": "Hugo theme made for documentation",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "gulp"
   },
   "repository": {
