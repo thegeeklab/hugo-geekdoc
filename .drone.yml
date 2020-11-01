@@ -143,7 +143,7 @@ steps:
     NPM_CONFIG_LOGLEVEL: error
 
 - name: assets
-  image: byrnedo/alpine-curl
+  image: thegeeklab/alpine-tools
   commands:
   - mkdir -p exampleSite/themes/hugo-geekdoc/
   - curl -sSL https://github.com/thegeeklab/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
@@ -230,6 +230,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: dc8d60c049235066146ba0a60b45e484241b361cf0be86b555e93d5c4cb52cda
+hmac: 16fef8d3e0cba7202aa533623d9ec7bf8bd3b645aed4c488b9080667f02fa366
 
 ...
