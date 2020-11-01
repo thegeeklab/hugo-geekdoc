@@ -129,13 +129,9 @@ concurrency:
 
 steps:
 - name: markdownlint
-  image: node:lts-alpine
+  image: thegeeklab/markdownlint-cli
   commands:
-  - npm install -g markdownlint-cli
   - markdownlint 'exampleSite/content/**/*.md' 'README.md'
-  environment:
-    FORCE_COLOR: true
-    NPM_CONFIG_LOGLEVEL: error
 
 - name: spellcheck
   image: node:lts-alpine
@@ -234,6 +230,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 548bc9f137bf276ff6415afcf396600cebe4a689e97bd8e0687e3921ee7aad63
+hmac: dc8d60c049235066146ba0a60b45e484241b361cf0be86b555e93d5c4cb52cda
 
 ...
