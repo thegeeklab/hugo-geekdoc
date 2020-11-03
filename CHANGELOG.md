@@ -2,3 +2,7 @@
   - improve and normalize microblog formatting
   - add font and css preloading links
   - add node `gulp` script to package.json (@AgentEnder)
+- BUGFIX
+  - use relative URL's for fonts (@atorrescogollo)
+- OTHER
+  - fix typos (@weidenhaus)
