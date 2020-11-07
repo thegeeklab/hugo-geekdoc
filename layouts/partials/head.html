@@ -25,6 +25,4 @@
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
 
-{{ "<!--" | safeHTML -}}
-    Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc
-{{- "-->" | safeHTML }}
+{{ printf "<!-- %s -->" "Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc" | safeHTML }}
