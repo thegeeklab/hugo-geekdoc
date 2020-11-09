@@ -1,0 +1,78 @@
+@media screen and (max-width: $sm-breakpoint) {
+  .gdoc-nav {
+    margin-left: -$menu-width;
+    font-size: $font-size-base;
+
+    &__control {
+      display: inline-block;
+    }
+  }
+
+  .gdoc-header {
+    .icon {
+      width: $font-size-16 * 1.5;
+      height: $font-size-16 * 1.5;
+    }
+  }
+
+  .gdoc-brand {
+    font-size: $font-size-16 * 1.5;
+
+    &__img {
+      display: none;
+    }
+  }
+
+  .gdoc-error {
+    padding: $padding-16 * 6 $padding-16;
+
+    .icon {
+      width: $font-size-16 * 4;
+      height: $font-size-16 * 4;
+    }
+
+    &__message {
+      padding-left: $padding-32;
+    }
+
+    &__line {
+      padding: $padding-4 0;
+    }
+
+    &__title {
+      font-size: $font-size-16 * 2;
+    }
+  }
+
+  .gdoc-page__header .breadcrumb,
+  .hidden-mobile {
+    display: none;
+  }
+
+  .gdoc-footer {
+    &__item {
+      width: 100%;
+    }
+  }
+
+  #menu-control:checked ~ main {
+    .gdoc-nav nav,
+    .gdoc-page {
+      transform: translateX($menu-width);
+    }
+
+    .gdoc-page {
+      opacity: 0.25;
+    }
+  }
+
+  #menu-control:checked ~ .gdoc-header .gdoc-nav__control {
+    .icon.menu {
+      display: none;
+    }
+
+    .icon.arrow-back {
+      display: inline-block;
+    }
+  }
+}

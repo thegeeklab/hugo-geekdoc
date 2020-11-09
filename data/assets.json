@@ -1,0 +1,8 @@
+{
+  "main.min.css": "main.min.css",
+  "mobile.min.css": "mobile.min.css",
+  "print.min.css": "print.min.css",
+  "custom.css": "custom.css",
+  "js/clipboard.min.js": "js/clipboard.min.js",
+  "js/mermaid.min.js": "js/mermaid.min.js"
+}
