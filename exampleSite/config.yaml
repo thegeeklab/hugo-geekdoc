@@ -4,6 +4,7 @@ title: Geekdocs
 theme: hugo-geekdoc
 pygmentsUseClasses: true
 pygmentsCodeFences: true
+timeout: 180000
 
 # Geekdoc configuration
 disablePathToLower: true
