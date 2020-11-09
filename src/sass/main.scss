@@ -1,11 +1,10 @@
-@import "defaults";
+@import "_defaults";
 
-@import "normalize";
-@import "utils";
-@import "fonts";
-@import "base";
-@import "print";
+@import "_normalize";
+@import "_utils";
+@import "_fonts";
+@import "_base";
 
-@import "markdown";
-@import "chroma_github";
-@import "shortcodes";
+@import "_markdown";
+@import "_chroma_github";
+@import "_shortcodes";
