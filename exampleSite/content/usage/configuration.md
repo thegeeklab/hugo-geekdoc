@@ -62,6 +62,11 @@ enableGitInfo = true
   # Index is built on the fly and might slowdown your website.
   geekdocSearch = false
 
+  # (Optional, default false) Display search results with the parent folder as prefix. This
+  # option allows you to distinguish between files with the same name in different folders.
+  # NOTE: This parameter only applies when geekdocSearch=true
+  GeekdocSearchShowParent = true
+
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
   geekdocLegalNotice = "https://blog.example.com/legal"
@@ -136,6 +141,11 @@ params:
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slowdown your website.
   geekdocSearch: false
+
+  # (Optional, default false) Display search results with the parent folder as prefix. This
+  # option allows you to distinguish between files with the same name in different folders.
+  # NOTE: This parameter only applies when geekdocSearch=true
+  GeekdocSearchShowParent: true
 
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.

@@ -46,7 +46,12 @@
             a = li.appendChild(document.createElement('a'));
 
       a.href = page.href;
+
+      {{ if .Site.Params.GeekdocSearchShowParent }}
+      a.textContent = page.parent ? page.parent + ' / ' + page.title : page.title;
+      {{ else }}
       a.textContent = page.title;
+      {{ end }}
 
       results.appendChild(li);
       results.classList.add("DUMMY");
