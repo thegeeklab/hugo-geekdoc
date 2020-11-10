@@ -15,10 +15,10 @@
       <li>
       {{ if or .Content .Params.geekdocFlatSection }}
         <span>
-          <a href="{{ .RelPermalink }}" class="gdoc-toc__entry">{{ partial "title" . }}</a>
+          <a href="{{ .RelPermalink }}" class="gdoc-toc__entry">{{ partial "title" . }}{{ with .Params.GeekdocDescription }}:</a> {{ . }}{{ else }}</a>{{ end }}
         </span>
       {{ else }}
-        <span>{{ partial "title" . }}</span>
+        <span>{{ partial "title" . }}{{ with .Params.GeekdocDescription }}: {{ . }}{{ end }}</span>
       {{ end }}
 
       {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}

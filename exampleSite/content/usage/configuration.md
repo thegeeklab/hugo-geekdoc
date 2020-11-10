@@ -170,6 +170,9 @@ weight = 10
 # Set how many table of contents levels to be showed on page.
 geekdocToC = 3
 
+# Set a description for the current page. This will be shown in toc-trees objects
+GeekdocDescription =
+
 # Show a breadcrumb navigation bar at the top of each docs page.
 geekdocBreadcrumb = false
 
@@ -206,6 +209,9 @@ weight: 10
 
 # Set how many table of contents levels to be showed on page.
 geekdocToC: 3
+
+# Set a description for the current page. This will be shown in toc-trees objects
+GeekdocDescription:
 
 # Show a breadcrumb navigation bar at the top of each docs page.
 geekdocBreadcrumb: false
