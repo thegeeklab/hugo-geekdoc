@@ -10,7 +10,7 @@
   indexCfg.doc = {
     id: 'id',
     field: ['title', 'content'],
-    store: ['title', 'href'],
+    store: ['title', 'href', 'parent'],
   };
 
   const index = FlexSearch.create(indexCfg);
@@ -21,6 +21,7 @@
     'id': {{ $index }},
     'href': '{{ $page.RelPermalink }}',
     'title': {{ (partial "title" $page) | jsonify }},
+    'parent': {{ with $page.Parent }}{{ (partial "title" .) | jsonify }}{{ else }}''{{ end }},
     'content': {{ $page.Plain | jsonify }}
   });
   {{- end -}}
