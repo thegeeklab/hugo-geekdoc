@@ -193,6 +193,10 @@ geekdocFlatSection = true
 # Set true to hide page or section from side menu (file-tree menu only)
 geekdocHidden = true
 
+# Set false to show this page as a file-tree menu entry when you want it to be hidden in the sidebar
+# NOTE: Only applies when geekdocHidden=true
+geekdocHiddenTocTree = true
+
 # Add an anchor link to headlines
 geekdocAnchor = true
 ```
@@ -232,6 +236,10 @@ geekdocFlatSection: true
 
 # Set true to hide page or section from side menu (file-tree menu only)
 geekdocHidden: true
+
+# Set false to show this page as a file-tree menu entry when you want it to be hidden in the sidebar
+# NOTE: Only applies when geekdocHidden=true
+geekdocHiddenTocTree: true
 
 # Add an anchor link to headlines
 geekdocAnchor: true

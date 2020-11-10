@@ -11,7 +11,7 @@
   <ul>
     {{ range .sect.GroupBy "Weight" }}
       {{ range .ByTitle }}
-      {{ if not .Params.geekdocHidden }}
+      {{ if or (not .Params.geekdocHidden) (not (default true .Params.geekdocHiddenTocTree)) }}
       <li>
       {{ if or .Content .Params.geekdocFlatSection }}
         <span>
