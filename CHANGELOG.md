@@ -6,9 +6,12 @@
   - split out mobile css
   - load static css/js assets from data template:
     This way users can hash static assets and overwrite the data template
-    to deliver the hashed assets. Thats helpful if you have to deal with
-    long cache settings but wont to ensure your updated assets are delivered
+    to deliver the hashed assets. That's helpful if you have to deal with
+    long cache settings but want to ensure your updated assets are delivered
     to clients.
+  - add new site parameter `geekdocSearchShowParent` #17 (@atorrescogollo)
+  - add new page parameter `geekdocHiddenTocTree` #16 (@atorrescogollo)
+  - add new page parameter `geekdocDescription` #15 (@atorrescogollo)
 - BUGFIX
   - use relative URL's for fonts (@atorrescogollo)
 - OTHER
