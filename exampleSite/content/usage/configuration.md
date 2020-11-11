@@ -64,8 +64,8 @@ enableGitInfo = true
 
   # (Optional, default false) Display search results with the parent folder as prefix. This
   # option allows you to distinguish between files with the same name in different folders.
-  # NOTE: This parameter only applies when geekdocSearch=true
-  GeekdocSearchShowParent = true
+  # NOTE: This parameter only applies when 'geekdocSearch = true'.
+  geekdocSearchShowParent = true
 
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
@@ -144,8 +144,8 @@ params:
 
   # (Optional, default false) Display search results with the parent folder as prefix. This
   # option allows you to distinguish between files with the same name in different folders.
-  # NOTE: This parameter only applies when geekdocSearch=true
-  GeekdocSearchShowParent: true
+  # NOTE: This parameter only applies when 'geekdocSearch: true'.
+  geekdocSearchShowParent: true
 
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
@@ -180,8 +180,8 @@ weight = 10
 # Set how many table of contents levels to be showed on page.
 geekdocToC = 3
 
-# Set a description for the current page. This will be shown in toc-trees objects
-GeekdocDescription =
+# Set a description for the current page. This will be shown in toc-trees objects.
+geekdocDescription =
 
 # Show a breadcrumb navigation bar at the top of each docs page.
 geekdocBreadcrumb = false
@@ -203,8 +203,8 @@ geekdocFlatSection = true
 # Set true to hide page or section from side menu (file-tree menu only)
 geekdocHidden = true
 
-# Set false to show this page as a file-tree menu entry when you want it to be hidden in the sidebar
-# NOTE: Only applies when geekdocHidden=true
+# Set false to show this page as a file-tree menu entry when you want it to be hidden in the sidebar.
+# NOTE: Only applies when 'geekdocHidden = true'.
 geekdocHiddenTocTree = true
 
 # Add an anchor link to headlines
@@ -224,8 +224,8 @@ weight: 10
 # Set how many table of contents levels to be showed on page.
 geekdocToC: 3
 
-# Set a description for the current page. This will be shown in toc-trees objects
-GeekdocDescription:
+# Set a description for the current page. This will be shown in toc-trees objects.
+geekdocDescription:
 
 # Show a breadcrumb navigation bar at the top of each docs page.
 geekdocBreadcrumb: false
@@ -247,8 +247,8 @@ geekdocFlatSection: true
 # Set true to hide page or section from side menu (file-tree menu only)
 geekdocHidden: true
 
-# Set false to show this page as a file-tree menu entry when you want it to be hidden in the sidebar
-# NOTE: Only applies when geekdocHidden=true
+# Set false to show this page as a file-tree menu entry when you want it to be hidden in the sidebar.
+# NOTE: Only applies when 'geekdocHidden: true'.
 geekdocHiddenTocTree: true
 
 # Add an anchor link to headlines
