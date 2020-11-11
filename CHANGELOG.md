@@ -12,6 +12,8 @@
   - add new site parameter `geekdocSearchShowParent` #17 (@atorrescogollo)
   - add new page parameter `geekdocHiddenTocTree` #16 (@atorrescogollo)
   - add new page parameter `geekdocDescription` #15 (@atorrescogollo)
+  - update clipboard.js to v2.0.6
+  - update mermaid to v8.8.3
 - BUGFIX
   - use relative URL's for fonts (@atorrescogollo)
 - OTHER
