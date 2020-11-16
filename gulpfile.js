@@ -117,7 +117,7 @@ gulp.task("svg-sprite", function () {
         attributes: false,
       },
       spacing: {
-        padding: 0,
+        padding: 2,
         box: "content",
       },
       dest: "tmp/intermediate-svg",
