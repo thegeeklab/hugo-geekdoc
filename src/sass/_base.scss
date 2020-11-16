@@ -155,6 +155,7 @@ img {
     margin: 0;
     padding: 0;
     list-style: none;
+    user-select: none;
 
     ul {
       padding-left: $padding-16;
@@ -166,6 +167,39 @@ img {
 
     .icon {
       margin-right: $padding-4;
+    }
+  }
+
+  &__toggle {
+    display: none;
+
+    & ~ label {
+      cursor: pointer;
+
+      .icon {
+        font-size: 0.7rem;
+      }
+    }
+
+    &:not(:checked) {
+      & ~ ul,
+      & ~ label .icon.keyborad_arrow_down {
+        display: none;
+      }
+      & ~ label .icon.keyborad_arrow_left {
+        display: block;
+      }
+    }
+
+    &:checked {
+      & ~ ul,
+      & ~ label .icon.keyborad_arrow_down {
+        display: block;
+      }
+
+      & ~ label .icon.keyborad_arrow_left {
+        display: none;
+      }
     }
   }
 
@@ -185,7 +219,9 @@ img {
   }
 
   &--main > ul > li > span,
-  &--main > ul > li > span > a {
+  &--main > ul > li > span > a,
+  &--main > ul > li > label,
+  &--main > ul > li > label > a {
     font-weight: bold;
   }
 
