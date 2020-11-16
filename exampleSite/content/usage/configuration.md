@@ -207,6 +207,9 @@ geekdocHidden = true
 # NOTE: Only applies when 'geekdocHidden = true'.
 geekdocHiddenTocTree = true
 
+# Set to true to make a section foldable in side menu (file-tree menu only)
+geekdocCollapseSection = true
+
 # Add an anchor link to headlines
 geekdocAnchor = true
 ```
@@ -250,6 +253,9 @@ geekdocHidden: true
 # Set false to show this page as a file-tree menu entry when you want it to be hidden in the sidebar.
 # NOTE: Only applies when 'geekdocHidden: true'.
 geekdocHiddenTocTree: true
+
+# Set to true to make a section foldable in side menu (file-tree menu only)
+geekdocCollapseSection: true
 
 # Add an anchor link to headlines
 geekdocAnchor: true
