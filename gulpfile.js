@@ -4,15 +4,17 @@ const sass = require("gulp-sass");
 const cleanCSS = require("gulp-clean-css");
 const autoprefixer = require("gulp-autoprefixer");
 const iconfont = require("gulp-iconfont");
+const clean = require("gulp-clean");
 
 const realFavicon = require("gulp-real-favicon");
 const path = require("path");
 const fs = require("fs");
 
 const svgSprite = require("gulp-svg-sprite");
+const rev = require("gulp-rev");
 
-var CSSDEST = "static/";
-var FAVICON_DATA_FILE = "tmp/faviconData.json";
+var CSSDEST = "assets/";
+var FAVICON_DATA_FILE = "build/faviconData.json";
 var TIMESTAMP = Math.round(Date.now() / 1000);
 
 gulp.task("sass", function () {
@@ -120,7 +122,7 @@ gulp.task("svg-sprite", function () {
         padding: 2,
         box: "content",
       },
-      dest: "tmp/intermediate-svg",
+      dest: "build/intermediate-svg",
     },
     svg: {
       xmlDeclaration: false,
@@ -169,23 +171,52 @@ gulp.task("iconfont", function () {
     .pipe(
       iconfont({
         startUnicode: lastUnicode,
-        fontName: "GeekdocIcons", // required
-        prependUnicode: true, // recommended option
+        fontName: "GeekdocIcons",
+        prependUnicode: true,
         normalize: true,
         fontHeight: 1001,
         centerHorizontally: true,
-        formats: ["woff", "woff2"], // default, 'woff2' and 'svg' are available
-        timestamp: TIMESTAMP, // recommended to get consistent builds when watching files
+        formats: ["woff", "woff2"],
+        timestamp: TIMESTAMP,
       })
     )
     .pipe(gulp.dest("static/fonts/"));
 });
 
+gulp.task("asset-rev", function () {
+  return gulp
+    .src(["assets/*.min.css", "assets/js/*.min.js"], {
+      base: "static",
+    })
+    .pipe(gulp.dest("build/assets"))
+    .pipe(rev())
+    .pipe(gulp.dest("static"))
+    .pipe(
+      rev.manifest("data/assets-static.json", {
+        base: "data",
+        merge: true,
+      })
+    )
+    .pipe(rename("assets.json"))
+    .pipe(gulp.dest("data"));
+});
+
+gulp.task("asset-rm", function () {
+  return gulp
+    .src(["build/assets", "static/js/*-*.js", "static/*-*.css"], {
+      read: false,
+      allowEmpty: true,
+    })
+    .pipe(clean());
+});
+
+gulp.task("asset", gulp.series("asset-rm", "asset-rev"));
+
 gulp.task(
   "default",
-  gulp.series("sass", "svg-sprite", "iconfont", "favicon-generate")
+  gulp.series("sass", "svg-sprite", "iconfont", "favicon-generate", "asset")
 );
 
 gulp.task("devel", function () {
-  gulp.watch("src/sass/**/*.*css", gulp.series("sass"));
+  gulp.watch("src/sass/**/*.*css", gulp.series("sass", "asset"));
 });
