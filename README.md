@@ -35,3 +35,9 @@ Geekdoc is inspired and partially based on the [hugo-book](https://github.com/al
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/thegeeklab/hugo-geekdoc/blob/master/LICENSE) file for details.
+
+The used SVG icons and generated icon fonts are licensed under the license of the respective icon pack:
+
+- Font Awesome: [CC BY 4.0 License](https://github.com/FortAwesome/Font-Awesome#license)
+- IcoMoon Free Pack: [GPL/CC BY 4.0](https://icomoon.io/#icons-icomoon)
+- Material Icons: [Apache License 2.0](https://github.com/google/material-design-icons/blob/master/LICENSE)
