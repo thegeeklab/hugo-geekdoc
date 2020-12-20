@@ -1,9 +1,12 @@
+.envrc
 .tarignore
 .dictionary*
 .git*
 .drone*
 .lighthouse*
 .markdownlint*
+.jsbeautify*
+.prettier*
 example*
 gulp*
 package*
