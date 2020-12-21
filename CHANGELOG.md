@@ -1,2 +1,3 @@
-- BUGFIX
-  - fix flexsearch loading
+- ENHANCEMENT
+  - Rework search as a dropdown #38 (@LukasHirt)
+  - Add option `geekdocSearchShowParent` to group search results by parent #38 (@LukasHirt)
