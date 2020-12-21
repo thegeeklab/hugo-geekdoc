@@ -46,27 +46,25 @@
     }
 
     results.classList.add("has-hits");
-    
+
     if (showParent) {
       searchHits = groupBy(searchHits, hit => hit.parent);
     }
 
     const items = [];
 
-    if (showParent) {
-      for (const section in searchHits) {
-        const item = document.createElement('li'),
-              title = item.appendChild(document.createElement('span')),
-              subList = item.appendChild(document.createElement('ul'));
+    for (const section in searchHits) {
+      const item = document.createElement('li');
 
+      if (showParent) {
+        const title = item.appendChild(document.createElement('span'));
         title.textContent = section;
-        title.classList.add('gdoc-search__list__section-title');
-        createLinks(searchHits[section], subList);
-
-        items.push(item);
       }
-    } else {
-      items.push(...createLinks(searchHits));
+
+      const subList = item.appendChild(document.createElement('ul'));
+      createLinks(searchHits[section], subList);
+
+      items.push(item);
     }
 
     items.forEach(item => {
@@ -84,11 +82,15 @@
     const items = [];
 
     for (const page of pages) {
-      const item = document.createElement('li'),
-            a = item.appendChild(document.createElement('a'));
+      const item = document.createElement("li"),
+            entry = item.appendChild(document.createElement("span")),
+            a = entry.appendChild(document.createElement("a"));
+
+      entry.classList.add("flex")
 
       a.href = page.href;
       a.textContent = page.title;
+      a.classList.add("gdoc-search__entry")
 
       if (target) {
         target.appendChild(item);

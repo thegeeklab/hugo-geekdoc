@@ -203,21 +203,6 @@ img {
     }
   }
 
-  &__entry {
-    flex: 1;
-    color: $body-font-color;
-
-    &:hover,
-    &.is-active {
-      text-decoration: underline;
-      text-decoration-style: dashed !important;
-    }
-
-    &:visited {
-      color: $body-font-color;
-    }
-  }
-
   &--main > ul > li > span,
   &--main > ul > li > span > a,
   &--main > ul > li > label,
@@ -227,6 +212,22 @@ img {
 
   &--more {
     padding-top: $padding-8;
+  }
+}
+
+.gdoc-nav__entry,
+.gdoc-search__entry {
+  flex: 1;
+  color: $body-font-color;
+
+  &:hover,
+  &.is-active {
+    text-decoration: underline;
+    text-decoration-style: dashed !important;
+  }
+
+  &:visited {
+    color: $body-font-color;
   }
 }
 
@@ -438,9 +439,9 @@ img {
 
   &__list {
     display: none;
-    background-color: #ffffff;
+    background: $white;
     border-radius: $border-radius;
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     position: absolute;
     margin: 0;
     padding: $padding-8;
@@ -461,21 +462,16 @@ img {
     }
 
     > li > span {
-      color: $gray-600;
-      font-size: $font-size-14;
       font-weight: bold;
+      color: $gray-600;
     }
 
     > li + li {
-      margin-top: $padding-16;
+      margin-top: $padding-8;
     }
 
     .icon {
       margin-right: $padding-4;
-    }
-
-    a {
-      font-size: $font-size-16;
     }
   }
 
