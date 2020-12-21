@@ -72,7 +72,6 @@
     items.forEach(item => {
       results.appendChild(item);
     })
-    results.classList.add('DUMMY');
   }
 
   /**
