@@ -3,6 +3,12 @@ title: Configuration
 weight: -10
 ---
 
+<!-- spellchecker-disable -->
+
+{{< toc >}}
+
+<!-- spellchecker-enable -->
+
 ## Site configuration
 
 {{< tabs "site-config" >}}

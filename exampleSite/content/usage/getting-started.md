@@ -22,7 +22,7 @@ If you want to use the theme from a cloned branch instead of a release tarball y
 npm install
 
 # run gulp pipeline to build required assets
-gulp default
+npx gulp default
 ```
 
 ## Using the theme
@@ -98,5 +98,5 @@ git clone https://github.com/thegeeklab/hugo-geekdoc.git themes/geekdoc
 Build required theme assets e.g. CSS files and SVG sprites with `gulp`.
 
 ```Shell
-gulp default
+npx gulp default
 ```
