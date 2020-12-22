@@ -29,8 +29,6 @@ content/
     └── level-2-2.md
 ```
 
-Generated navigation:
-
 [![Example file-tree menu](/media/file-tree.png)](/media/file-tree.png)
 
 ## Bundle menu
@@ -70,7 +68,7 @@ As an advantage you can add icons to your menu entries e.g. `icon: "notification
 
 ### More menu
 
-{{< hint info >}}
+{{< hint ok >}}
 **Tip**\
 The more menu is special type of the bundle menu and can be combined with the default file-tree menu.
 {{< /hint >}}
