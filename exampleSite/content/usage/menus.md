@@ -1,4 +1,10 @@
-The theme supports two different kinds of menus. [File-tree menu](#file-tree-menu) is the default one and does not require further configuration to work. If you want full control about your menu the [bundle menu](#bundle-menu) is a powerful option to accomplish it.
+The theme supports two different kinds of menus. File-tree menu is the default one and does not require further configuration to work. If you want full control about your menu the bundle menu is a powerful option to accomplish it.
+
+<!-- spellchecker-disable -->
+
+{{< toc >}}
+
+<!-- spellchecker-enable -->
 
 ## File-tree menu
 
@@ -6,7 +12,7 @@ As the name already suggests, the file tree menu builds a menu from the file sys
 
 **Example:**
 
-A file structure like shown below...
+File system structure:
 
 ```plain
 content/
@@ -23,8 +29,70 @@ content/
     └── level-2-2.md
 ```
 
-... results in a menu that looks like this.
+Generated navigation:
 
 [![Example file-tree menu](/media/file-tree.png)](/media/file-tree.png)
 
 ## Bundle menu
+
+This type of navigation needs to be enabled first by setting `geekdocMenuBundle` to `true` in your [site configuration](/usage/configuration/#site-configuration). After you have activated the bundle menu, you start with an empty navigation. This is intentional because bundle menus have to be defined manually in a data file. While this increases the effort it also offers maximum flexibility in the design. The data file needs to be written in YAML and placed at `data/menu/main.yml`.
+
+**Example:**
+
+```YAML
+---
+main:
+  - name: Level 1
+    ref: "/level-1"
+    icon: "notification"
+    sub:
+      - name: Level 1.1
+        ref: "/level-1/level-1-1"
+      - name: Level 1.2
+        ref: "/level-1/level-1-2"
+      - name: Level 1.3
+        ref: "/level-1/level-1-3"
+        sub:
+          - name: Level 1.3.1
+            ref: "/level-1/level-1-3/level-1-3-1"
+  - name: Level 2
+    ref: "/level-2"
+    sub:
+      - name: Level 2.1
+        ref: "/level-2/level-2-1"
+      - name: Level 2.2
+        ref: "/level-2/level-2-2"
+```
+
+As an advantage you can add icons to your menu entries e.g. `icon: "notification"`.
+
+[![Example bundle menu](/media/bundle-menu.png)](/media/bundle-menu.png)
+
+### More menu
+
+{{< hint info >}}
+**Tip**\
+The more menu is special type of the bundle menu and can be combined with the default file-tree menu.
+{{< /hint >}}
+
+As this is a special type of the bundle menu it is basically working in the same way. To enable it just add a data file to `data/menu/more.yml`. The more menu will also work with the file-tree menu and therefor **don't need to be enabled** by the `geekdocMenuBundle` parameter.
+
+**Example:**
+
+```YAML
+---
+more:
+  - name: News
+    ref: "/#"
+    icon: "notification"
+  - name: Releases
+    ref: "https://github.com/thegeeklab/hugo-geekdoc/releases"
+    external: true
+    icon: "download"
+  - name: "View Source"
+    ref: "https://github.com/thegeeklab/hugo-geekdoc"
+    external: true
+    icon: "github"
+```
+
+[![Example bundle menu](/media/more-menu.png)](/media/more-menu.png)
