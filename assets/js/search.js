@@ -110,7 +110,7 @@
   function loadScript(src, callback) {
     let script = document.createElement('script');
     script.defer = true;
-    script.async = true;
+    script.async = false;
     script.src = src;
     script.onload = callback;
 
