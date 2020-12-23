@@ -8,7 +8,7 @@
   const results = document.querySelector('#gdoc-search-results');
   let showParent = false
 
-  {{ if .Site.Params.GeekdocSearchShowParent  }}
+  {{ if .Site.Params.GeekdocSearchShowParent }}
     showParent = true
   {{ end }}
 
@@ -19,12 +19,12 @@
     input.removeEventListener('focus', init); // init once
     input.required = true;
 
+    loadScript('{{ index .Site.Data.assets "js/groupBy.min.js" | relURL }}');
     loadScript('{{ index .Site.Data.assets "js/flexsearch.min.js" | relURL }}');
     loadScript('{{ $searchData.RelPermalink }}', function() {
       input.required = false;
       search();
     });
-    loadScript('{{ index .Site.Data.assets "js/groupBy.min.js" | relURL }}');
   }
 
   function search() {
@@ -33,14 +33,10 @@
     }
 
     if (!input.value) {
-      console.log("empty")
-      results.classList.remove("has-hits");
-      return;
+      return results.classList.remove("has-hits");
     }
 
     let searchHits = window.geekdocSearchIndex.search(input.value, 10);
-
-    console.log(searchHits.length);
     if (searchHits.length < 1) {
       return results.classList.remove("has-hits");
     }
@@ -53,16 +49,24 @@
 
     const items = [];
 
-    for (const section in searchHits) {
-      const item = document.createElement('li');
+    if (showParent) {
+      for (const section in searchHits) {
+        const item = document.createElement('li'),
+              title = item.appendChild(document.createElement('span')),
+              subList = item.appendChild(document.createElement('ul'));
 
-      if (showParent) {
-        const title = item.appendChild(document.createElement('span'));
         title.textContent = section;
-      }
+        createLinks(searchHits[section], subList);
 
-      const subList = item.appendChild(document.createElement('ul'));
-      createLinks(searchHits[section], subList);
+        items.push(item);
+      }
+    } else {
+      const item = document.createElement('li'),
+            title = item.appendChild(document.createElement('span')),
+            subList = item.appendChild(document.createElement('ul'));
+
+      title.textContent = "Results";
+      createLinks(searchHits, subList);
 
       items.push(item);
     }
@@ -104,12 +108,12 @@
   }
 
   function loadScript(src, callback) {
-    const script = document.createElement('script');
+    let script = document.createElement('script');
     script.defer = true;
-    script.async = false;
+    script.async = true;
     script.src = src;
     script.onload = callback;
 
-    document.head.appendChild(script);
+    document.body.appendChild(script);
   }
 })();
