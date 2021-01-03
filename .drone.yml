@@ -18,7 +18,7 @@ steps:
     NPM_CONFIG_LOGLEVEL: error
 
 - name: testbuild
-  image: klakegg/hugo:0.74.3-ext-alpine
+  image: klakegg/hugo:0.80.0-ext-alpine-ci
   commands:
   - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
   - hugo-official -s exampleSite/ -b http://localhost/
@@ -167,7 +167,7 @@ steps:
   - curl -sSL https://github.com/thegeeklab/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
 
 - name: build
-  image: klakegg/hugo:0.74.3-ext-alpine
+  image: klakegg/hugo:0.80.0-ext-alpine-ci
   commands:
   - hugo-official -s exampleSite/
 
@@ -254,6 +254,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 21a75fed2d451c36e7a25f274ce6264bd47f80d71d8637eb887ffa50afc3e5c7
+hmac: 20af3b31e76916be77171ae6826ca58e084408f7ae5ee98580fc05c990f1d72f
 
 ...
