@@ -138,7 +138,7 @@
   }
 
   function getJson(src, callback) {
-    var http_request = new XMLHttpRequest();
+    var http_request = null;
     try{
       // Opera 8.0+, Firefox, Chrome, Safari
       http_request = new XMLHttpRequest();
