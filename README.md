@@ -24,7 +24,7 @@ npm install
 gulp default
 ```
 
-See the [Getting Started Guide](https://geekdocs.de/usage/getting_started/) for details about the different setup options.
+See the [Getting Started Guide](https://geekdocs.de/usage/getting-started/) for details about the different setup options.
 
 ## Contributors
 
