@@ -1,29 +1,38 @@
 'use strict';
 
-{{ $searchDataFile := printf "js/%s.search-data.js" .Language.Lang }}
-{{ $searchData := resources.Get "js/search-data.js" | resources.ExecuteAsTemplate $searchDataFile . | resources.Minify | resources.Fingerprint }}
+{{ $searchDataFile := printf "%s.search-data.json" .Language.Lang }}
+{{ $searchData := resources.Get "search-data.json" | resources.ExecuteAsTemplate $searchDataFile . | resources.Minify }}
 
 (function() {
   const input = document.querySelector('#gdoc-search-input');
   const results = document.querySelector('#gdoc-search-results');
-  let showParent = false
-
-  {{ if .Site.Params.GeekdocSearchShowParent }}
-    showParent = true
-  {{ end }}
+  let showParent = {{ if .Site.Params.GeekdocSearchShowParent }}true{{ else }}false{{ end }}
 
   input.addEventListener('focus', init);
   input.addEventListener('keyup', search);
 
   function init() {
     input.removeEventListener('focus', init); // init once
-    input.required = true;
 
     loadScript('{{ index .Site.Data.assets "js/groupBy.min.js" | relURL }}');
-    loadScript('{{ index .Site.Data.assets "js/flexsearch.min.js" | relURL }}');
-    loadScript('{{ $searchData.RelPermalink }}', function() {
-      input.required = false;
-      search();
+    loadScript('{{ index .Site.Data.assets "js/flexsearch.min.js" | relURL }}', function() {
+      const indexCfg = {{ with .Scratch.Get "geekdocSearchConfig" }}{{ . | jsonify}}{{ else }}{}{{ end }};
+      const dataUrl = "{{ $searchData.RelPermalink }}"
+
+      indexCfg.doc = {
+        id: 'id',
+        field: ['title', 'content'],
+        store: ['title', 'href', 'parent'],
+      };
+
+      const index = FlexSearch.create(indexCfg);
+      window.geekdocSearchIndex = index;
+
+      getJson(dataUrl, function(data) {
+        data.forEach(obj => {
+          window.geekdocSearchIndex.add(obj);
+        });
+      });
     });
   }
 
@@ -43,13 +52,13 @@
 
     results.classList.add("has-hits");
 
-    if (showParent) {
+    if (showParent === true) {
       searchHits = groupBy(searchHits, hit => hit.parent);
     }
 
     const items = [];
 
-    if (showParent) {
+    if (showParent === true) {
       for (const section in searchHits) {
         const item = document.createElement('li'),
               title = item.appendChild(document.createElement('span')),
@@ -105,6 +114,23 @@
     }
 
     return items;
+  }
+
+  function fetchErrors(response) {
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response;
+  }
+
+  function getJson(src, callback) {
+    fetch(src)
+    .then(fetchErrors)
+    .then(response => response.json())
+    .then(json => callback(json))
+    .catch(function(error) {
+      console.log(error);
+    });
   }
 
   function loadScript(src, callback) {
