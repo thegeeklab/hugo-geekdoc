@@ -1,33 +1,23 @@
 'use strict';
 
-{{ $searchDataFile := printf "js/%s.search-data.json" .Language.Lang }}
-{{ $searchData := resources.Get "js/search-data.json" | resources.ExecuteAsTemplate $searchDataFile . | resources.Minify | resources.Fingerprint }}
+{{ $searchDataFile := printf "%s.search-data.json" .Language.Lang }}
+{{ $searchData := resources.Get "search-data.json" | resources.ExecuteAsTemplate $searchDataFile . | resources.Minify }}
 
 (function() {
   const input = document.querySelector('#gdoc-search-input');
   const results = document.querySelector('#gdoc-search-results');
-  let showParent = false
-
-  {{ if .Site.Params.GeekdocSearchShowParent }}
-    showParent = true
-  {{ end }}
+  let showParent = {{ default false .Site.Params.GeekdocSearchShowParent }}
 
   input.addEventListener('focus', init);
   input.addEventListener('keyup', search);
 
   function init() {
     input.removeEventListener('focus', init); // init once
-    input.required = true;
 
     loadScript('{{ index .Site.Data.assets "js/groupBy.min.js" | relURL }}');
-    loadScript('{{ index .Site.Data.assets "js/flexsearch.min.js" | relURL }}');
-    getJson('{{ $searchData.RelPermalink }}', function(data) {
-      console.log(data);
-      const indexCfg = {{ with .Scratch.Get "geekdocSearchConfig" }}
-        {{ . | jsonify}};
-      {{ else }}
-       {};
-      {{ end }}
+    loadScript('{{ index .Site.Data.assets "js/flexsearch.min.js" | relURL }}', function() {
+      const indexCfg = {{ with .Scratch.Get "geekdocSearchConfig" }}{{ . | jsonify}}{{ else }}{}{{ end }};
+      const dataUrl = "{{ $searchData.RelPermalink }}"
 
       indexCfg.doc = {
         id: 'id',
@@ -38,12 +28,11 @@
       const index = FlexSearch.create(indexCfg);
       window.geekdocSearchIndex = index;
 
-      for (var i = 0; i < data.legnth; i++) {
-        index.add(data[i]);
-      }
-
-      input.required = false;
-      search();
+      getJson(dataUrl, function(data) {
+        data.forEach(obj => {
+          window.geekdocSearchIndex.add(obj);
+        });
+      });
     });
   }
 
@@ -127,6 +116,23 @@
     return items;
   }
 
+  function fetchErrors(response) {
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response;
+}
+
+  function getJson(src, callback) {
+    fetch(src)
+    .then(fetchErrors)
+    .then(response => response.json())
+    .then(json => callback(json))
+    .catch(function(error) {
+      console.log(error);
+    });
+  }
+
   function loadScript(src, callback) {
     let script = document.createElement('script');
     script.defer = true;
@@ -135,37 +141,5 @@
     script.onload = callback;
 
     document.body.appendChild(script);
-  }
-
-  function getJson(src, callback) {
-    var http_request = null;
-    try{
-      // Opera 8.0+, Firefox, Chrome, Safari
-      http_request = new XMLHttpRequest();
-    }catch (e) {
-      // Internet Explorer Browsers
-      try{
-        http_request = new ActiveXObject("Msxml2.XMLHTTP");
-      }catch (e) {
-        try{
-          http_request = new ActiveXObject("Microsoft.XMLHTTP");
-        }catch (e) {
-          // Something went wrong
-          console.log("Your browser broke!");
-          return false;
-        }
-      }
-    }
-    http_request.onreadystatechange = function() {
-
-      if (http_request.readyState == 4  ) {
-        // Javascript function JSON.parse to parse JSON data
-        var jsonObj = JSON.parse(http_request.responseText);
-        callback(jsonObj);
-      }
-    }
-
-    http_request.open("GET", src, true);
-    http_request.send();
   }
 })();
