@@ -6,7 +6,7 @@
 (function() {
   const input = document.querySelector('#gdoc-search-input');
   const results = document.querySelector('#gdoc-search-results');
-  let showParent = {{ default false .Site.Params.GeekdocSearchShowParent }}
+  let showParent = {{ if .Site.Params.GeekdocSearchShowParent }}true{{ else }}false{{ end }}
 
   input.addEventListener('focus', init);
   input.addEventListener('keyup', search);
@@ -52,13 +52,13 @@
 
     results.classList.add("has-hits");
 
-    if (showParent) {
+    if (showParent === true) {
       searchHits = groupBy(searchHits, hit => hit.parent);
     }
 
     const items = [];
 
-    if (showParent) {
+    if (showParent === true) {
       for (const section in searchHits) {
         const item = document.createElement('li'),
               title = item.appendChild(document.createElement('span')),
@@ -121,7 +121,7 @@
         throw Error(response.statusText);
     }
     return response;
-}
+  }
 
   function getJson(src, callback) {
     fetch(src)
