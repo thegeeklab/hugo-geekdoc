@@ -21,7 +21,7 @@ Due to the fact that `gulp` is used as pre-processor the theme cannot be used fr
 npm install
 
 # run gulp pipeline to build required assets
-gulp default
+npx gulp default
 ```
 
 See the [Getting Started Guide](https://geekdocs.de/usage/getting-started/) for details about the different setup options.
