@@ -17,6 +17,12 @@
             {{ $this := $site.GetPage .ref }}
             {{ $current := $current.Scratch.Get "current" }}
             {{ $icon := default false .icon }}
+            {{ $id := substr (sha1 .ref) 0 8 }}
+        
+            {{ if .collapse }}
+            <input type="checkbox" id="{{ printf "navtree-%s" $id }}" class="gdoc-nav__toggle">
+            <label for="{{ printf "navtree-%s" $id }}" class="flex justify-between">
+            {{ end }}
 
             <span class="flex">
                 {{ if $icon }}<svg class="icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>{{ end }}
@@ -25,6 +31,13 @@
                     {{ .name }}
                 </a>
             </span>
+                
+            {{ if .collapse }}
+            <svg class="icon keyborad_arrow_left"><use xlink:href="#keyborad_arrow_left"></use></svg>
+            <svg class="icon keyborad_arrow_down hidden"><use xlink:href="#keyborad_arrow_down"></use></svg>
+            </label>
+            {{ end }}
+                
         {{ else }}
             <span class="flex">
                 {{ .name }}
