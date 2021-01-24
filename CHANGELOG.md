@@ -1,15 +1,16 @@
 # Changelog
 
-## v0.8.2 (2021-01-05)
+## v0.8.3 (2021-01-24)
 
-### Fixes
+### Features
 
-- fetch search data as JSON rather than JS ([#43](https://github.com/thegeeklab/hugo-geekdoc/issues/43))
+- add collapsible sections to bundle menu ([#53](https://github.com/thegeeklab/hugo-geekdoc/issues/53))
 
 ### Docs
 
-- add contributing information
+- fix gulp instructions in readme
+- fix link to Getting Started guide in readme ([#44](https://github.com/thegeeklab/hugo-geekdoc/issues/44))
 
 ### Others
 
-- use renovate preset config
+- **deps**: update dependency gulp-iconfont to v11 ([#48](https://github.com/thegeeklab/hugo-geekdoc/issues/48))
