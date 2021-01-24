@@ -1,3 +1,7 @@
+---
+geekdocCollapseSection: true
+---
+
 Level 1
 
 <!-- spellchecker-disable -->

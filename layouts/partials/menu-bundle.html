@@ -1,6 +1,7 @@
 {{ $current := .current }}
 {{ template "menu-file" dict "sect" .source "current" $current "site" $current.Site }}
 
+<!-- template -->
 {{ define "menu-file" }}
 {{ $current := .current }}
 {{ $site := .site }}
@@ -17,23 +18,34 @@
             {{ $this := $site.GetPage .ref }}
             {{ $current := $current.Scratch.Get "current" }}
             {{ $icon := default false .icon }}
+            {{ $numberOfPages := (add (len $this.Pages) (len $this.Sections)) }}
+            {{ $isCurrent := eq $current $this }}
+            {{ $isAncestor := $this.IsAncestor $current }}
+            {{ $id := substr (sha1 $this.Permalink) 0 8 }}
+            {{ $hasCollapse := and $this.Params.GeekdocCollapseSection (isset . "sub") }}
 
+            {{ if $hasCollapse }}
+            <input type="checkbox" id="{{ printf "navtree-%s" $id }}" class="gdoc-nav__toggle" {{ if or $isCurrent $isAncestor }}checked{{ end }}>
+            <label for="{{ printf "navtree-%s" $id }}" class="flex justify-between">
+            {{ end }}
             <span class="flex">
                 {{ if $icon }}<svg class="icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>{{ end }}
                 <a href="{{ if .external }}{{ .ref }}{{ else }}{{ relref $current .ref }}{{ end }}"
-                    class="gdoc-nav__entry {{ if not .external }}{{ if eq $current $this }}is-active{{ end }}{{ end }}">
+                    class="gdoc-nav__entry {{ if not .external }}{{ if $isCurrent }}is-active{{ end }}{{ end }}">
                     {{ .name }}
                 </a>
             </span>
+            {{ if $hasCollapse }}
+            <svg class="icon keyborad_arrow_left"><use xlink:href="#keyborad_arrow_left"></use></svg>
+            <svg class="icon keyborad_arrow_down hidden"><use xlink:href="#keyborad_arrow_down"></use></svg>
+            </label>
+            {{ end }}
         {{ else }}
-            <span class="flex">
-                {{ .name }}
-            </span>
+            <span class="flex">{{ .name }}</span>
         {{ end }}
 
-        {{ $sub := default false .sub }}
-        {{ if $sub }}
-            {{ template "menu-file" dict "sect" $sub "current" ($current.Scratch.Get "current") "site" ($current.Scratch.Get "site") }}
+        {{ with .sub }}
+            {{ template "menu-file" dict "sect" . "current" ($current.Scratch.Get "current") "site" ($current.Scratch.Get "site") }}
         {{ end }}
     </li>
 
