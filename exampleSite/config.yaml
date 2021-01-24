@@ -20,7 +20,7 @@ markup:
     endLevel: 9
 
 params:
-  geekdocMenuBundle: true
+#  geekdocMenuBundle: true
   geekdocToC: 3
 
   geekdocRepo: https://github.com/thegeeklab/hugo-geekdoc
