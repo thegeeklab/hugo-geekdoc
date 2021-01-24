@@ -54,8 +54,7 @@ enableGitInfo = true
   # You can also specify this parameter per page in front matter.
   geekdocBreadcrumb = false
 
-  # (Optional, default none) Set source repository location
-  # Used for 'Edit this page' links
+  # (Optional, default none) Set source repository location. Used for 'Edit this page' links.
   # You can also specify this parameter per page in front matter.
   geekdocRepo = "https://github.com/thegeeklab/hugo"
 
@@ -134,8 +133,7 @@ params:
   # You can also specify this parameter per page in front matter.
   geekdocBreadcrumb: false
 
-  # (Optional, default none) Set source repository location
-  # Used for 'Edit this page' links
+  # (Optional, default none) Set source repository location. Used for 'Edit this page' links.
   # You can also specify this parameter per page in front matter.
   geekdocRepo: "https://github.com/thegeeklab/hugo-geekdoc"
 
@@ -180,7 +178,7 @@ params:
 # Set type to 'posts' if you want to render page as blogpost
 type = "posts"
 
-# Set page weight to re-arrange items in file-tree menu
+# Set page weight to re-arrange items in file-tree menu.
 weight = 10
 
 # Set how many table of contents levels to be showed on page.
@@ -192,7 +190,7 @@ geekdocDescription =
 # Show a breadcrumb navigation bar at the top of each docs page.
 geekdocBreadcrumb = false
 
-# Set source repository location
+# Set source repository location.
 geekdocRepo = "https://github.com/thegeeklab/hugo-geekdoc"
 
 # Enable "Edit this page" links. Requires 'GeekdocRepo' param and path must point
@@ -203,20 +201,20 @@ geekdocEditPath = "edit/master/exampleSite/content"
 # Can be overwritten by a path relative to 'geekdocEditPath'
 geekdocFilePath =
 
-# Set to mark page as flat section (file-tree menu only)
+# Set to mark page as flat section (file-tree menu only).
 geekdocFlatSection = true
 
-# Set true to hide page or section from side menu (file-tree menu only)
+# Set true to hide page or section from side menu (file-tree menu only).
 geekdocHidden = true
 
 # Set false to show this page as a file-tree menu entry when you want it to be hidden in the sidebar.
 # NOTE: Only applies when 'geekdocHidden = true'.
 geekdocHiddenTocTree = true
 
-# Set to true to make a section foldable in side menu (file-tree menu only)
+# Set to true to make a section foldable in side menu.
 geekdocCollapseSection = true
 
-# Add an anchor link to headlines
+# Add an anchor link to headlines.
 geekdocAnchor = true
 ```
 
@@ -224,10 +222,10 @@ geekdocAnchor = true
 {{< tab "YAML" >}}
 
 ```Yaml
-# Set type to 'posts' if you want to render page as blogpost
+# Set type to 'posts' if you want to render page as blogpost.
 type: "posts"
 
-# Set page weight to re-arrange items in file-tree menu
+# Set page weight to re-arrange items in file-tree menu.
 weight: 10
 
 # Set how many table of contents levels to be showed on page.
@@ -239,7 +237,7 @@ geekdocDescription:
 # Show a breadcrumb navigation bar at the top of each docs page.
 geekdocBreadcrumb: false
 
-# Set source repository location
+# Set source repository location.
 geekdocRepo: "https://github.com/thegeeklab/hugo-geekdoc"
 
 # Enable "Edit this page" links. Requires 'GeekdocRepo' param and path must point
@@ -250,20 +248,20 @@ geekdocEditPath: "edit/master/exampleSite/content"
 # Can be overwritten by a path relative to 'geekdocEditPath'
 geekdocFilePath:
 
-# Set to mark page as flat section (file-tree menu only)
+# Set to mark page as flat section (file-tree menu only).
 geekdocFlatSection: true
 
-# Set true to hide page or section from side menu (file-tree menu only)
+# Set true to hide page or section from side menu (file-tree menu only).
 geekdocHidden: true
 
 # Set false to show this page as a file-tree menu entry when you want it to be hidden in the sidebar.
 # NOTE: Only applies when 'geekdocHidden: true'.
 geekdocHiddenTocTree: true
 
-# Set to true to make a section foldable in side menu (file-tree menu only)
+# Set to true to make a section foldable in side menu.
 geekdocCollapseSection: true
 
-# Add an anchor link to headlines
+# Add an anchor link to headlines.
 geekdocAnchor: true
 ```
 
