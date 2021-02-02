@@ -1,4 +1,4 @@
-{{ $showAnchor := (and (default true .Page.Params.GeekdocAnchor) (default true site.Params.GeekdocAnchor)) }}
+{{ $showAnchor := (and (default true .Page.Params.GeekdocAnchor) (default true .Page.Site.Params.GeekdocAnchor)) }}
 
 {{ if $showAnchor }}
 <div class="gdoc-page__anchorwrap">
