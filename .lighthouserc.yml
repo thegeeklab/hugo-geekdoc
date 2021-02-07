@@ -9,7 +9,8 @@ ci:
       - http://localhost/posts/
     settings:
       chromeFlags: "--no-sandbox"
-      cpuSlowdownMultiplier: "2.0"
+      throttling:
+        cpuSlowdownMultiplier: "2.0"
   assert:
     preset: "lighthouse:no-pwa"
     assertions:
