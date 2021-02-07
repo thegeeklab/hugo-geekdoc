@@ -9,7 +9,6 @@ ci:
       - http://localhost/posts/
     settings:
       chromeFlags: "--no-sandbox"
-      throttlingMethod: "devtools"
       throttling:
         cpuSlowdownMultiplier: "2.0"
   assert:
