@@ -1,7 +1,12 @@
 # Changelog
 
-## v0.8.4 (2021-02-04)
+## [v0.8.5](https://github.com/thegeeklab/hugo-geekdoc/compare/v0.8.4...v0.8.5) (2021-02-07)
 
-### Fixes
+### Bug Fixes
 
-- use custom render templates to fix references ([#56](https://github.com/thegeeklab/hugo-geekdoc/issues/56))
+- set line-height in normalized h1 to avoid overlapping ([#58](https://github.com/thegeeklab/hugo-geekdoc/issues/58))
+
+### Others
+
+- set a proper value for lighthouse throttling ([#59](https://github.com/thegeeklab/hugo-geekdoc/issues/59))
+
