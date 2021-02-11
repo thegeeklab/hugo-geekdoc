@@ -11,6 +11,9 @@ options:
       perf: Performance Improvements
       refactor: Code Refactoring
       chore: Others
+      test: Testing
+      ci: CI Pipeline
+      docs: Documentation
   header:
     pattern: "^(\\w*)(?:\\(([\\w\\$\\.\\-\\*\\s]*)\\))?\\:\\s(.*)$"
     pattern_maps:

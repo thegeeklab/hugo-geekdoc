@@ -7,6 +7,7 @@ node_modules/
 lhci_reports/
 exampleSite/themes/
 exampleSite/public/
+CHANGELOG.md
 
 # auto-generated files
 layouts/partials/icons-svg-symbols.html
