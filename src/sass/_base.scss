@@ -1,3 +1,17 @@
+:root {
+  --body-background: #{$body-background};
+  --body-font-color: #{$body-font-color};
+
+  --page-header-color: #{$gray-100};
+  --color-link: #{$color-link};
+
+  --search-input: #{$gray-100};
+  --search-border: #{$gray-200};
+  --search-icon: #{$gray-600};
+  --search-result-body: #{$body-background};
+  --search-result-head: #{$gray-700};
+}
+
 html {
   font-size: $font-size-base;
   letter-spacing: 0.33px;
@@ -10,12 +24,23 @@ body {
   overflow-x: hidden;
 }
 
+.dark-mode-checkbox:checked {
+  & ~ .wrapper {
+    --body-background: #{invert($body-background, 80%)};
+    --body-font-color: #{invert($body-font-color, 100%)};
+
+    --page-header-color: #{invert($gray-100, 80%)};
+    --color-link: #{invert($color-link, 95%)};
+
+    --search-input: #{invert($gray-100, 80%)};
+    --search-border: #{invert($gray-200, 80%)};
+    --search-icon: #{invert($gray-600, 100%)};
+    --search-result-body: #{invert($body-background, 75%)};
+    --search-result-head: #{invert($gray-700, 100%)};
+  }
+}
+
 body {
-  color: $body-font-color;
-  background: $body-background;
-
-  font-weight: $body-font-weight;
-
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -45,7 +70,7 @@ h6 {
 
 a {
   text-decoration: none;
-  color: $color-link;
+  color: var(--color-link);
 
   &:hover {
     text-decoration: underline;
@@ -61,7 +86,7 @@ img {
 }
 
 .fake-link:hover {
-  background-image: linear-gradient($color-link, $color-link);
+  background-image: linear-gradient(var(--color-link), var(--color-link));
   background-position: 0 100%;
   background-size: 100% 1px;
   background-repeat: no-repeat;
@@ -72,6 +97,11 @@ img {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  color: var(--body-font-color);
+  background: var(--body-background);
+
+  font-weight: $body-font-weight;
 }
 
 .container {
@@ -220,7 +250,7 @@ img {
 .gdoc-nav__entry,
 .gdoc-search__entry {
   flex: 1;
-  color: $body-font-color;
+  color: var(--body-font-color);
 
   &:hover,
   &.is-active {
@@ -229,7 +259,7 @@ img {
   }
 
   &:visited {
-    color: $body-font-color;
+    color: var(--body-font-color);
   }
 }
 
@@ -248,12 +278,12 @@ img {
 
     a,
     a:visited {
-      color: $color-link;
+      color: var(--color-link);
     }
   }
 
   &__header {
-    background: $gray-100;
+    background: var(--page-header-color);
     padding: $padding-8 $padding-16;
     border-radius: $border-radius;
   }
@@ -268,7 +298,7 @@ img {
 
   &__nav {
     &:hover {
-      background-image: linear-gradient($color-link, $color-link);
+      background-image: linear-gradient(var(--color-link), var(--color-link));
       background-position: 0 100%;
       background-size: 100% 1px;
       background-repeat: no-repeat;
@@ -327,14 +357,14 @@ img {
 
     a,
     a:visited {
-      color: $body-font-color;
+      color: var(--body-font-color);
       text-decoration: none;
     }
 
     a:hover {
       background: none;
       text-decoration: underline;
-      color: $body-font-color;
+      color: var(--body-font-color);
     }
   }
 
@@ -365,7 +395,7 @@ img {
     a,
     a:hover,
     a:visited {
-      color: $color-link;
+      color: var(--color-link);
       text-decoration: none !important;
     }
   }
@@ -396,7 +426,7 @@ img {
     position: absolute;
     top: 0.625em;
     left: $padding-16 * 0.5;
-    color: $gray-600;
+    color: var(--search-icon);
     width: $font-size-16;
     height: $font-size-16;
   }
@@ -412,11 +442,11 @@ img {
     padding: $padding-8;
     padding-left: $padding-32;
 
-    border: $border-1 solid $gray-200;
+    border: $border-1 solid var(--search-border);
     border-radius: $border-radius;
 
-    background: $gray-100;
-    color: $body-font-color;
+    background: var(--search-input);
+    color: var(--body-font-color);
 
     &:required + &__spinner {
       display: block;
@@ -432,8 +462,8 @@ img {
     width: $padding-16;
     height: $padding-16;
 
-    border: $border-1 solid transparent;
-    border-top-color: $body-font-color;
+    border: $padding-1 solid transparent;
+    border-top-color: var(--body-font-color);
     border-radius: 50%;
 
     @include spin(1s);
@@ -441,7 +471,7 @@ img {
 
   &__list {
     visibility: hidden;
-    background: $white;
+    background: var(--search-result-body);
     border-radius: $border-radius;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     position: absolute;
@@ -465,7 +495,7 @@ img {
 
     > li > span {
       font-weight: bold;
-      color: $gray-700;
+      color: var(--search-result-head);
     }
 
     > li + li {
@@ -496,7 +526,7 @@ img {
 
   &__link,
   &__link:visited {
-    color: $color-link;
+    color: var(--color-link);
   }
 
   &__message {
@@ -529,7 +559,7 @@ img {
 
   a,
   a:visited {
-    color: $color-link;
+    color: var(--color-link);
   }
 }
 
