@@ -113,8 +113,6 @@ steps:
   - git fetch -tq
   - git-chglog --no-color --no-emoji ${DRONE_TAG:---next-tag unreleased unreleased}
   - git-chglog --no-color --no-emoji -o CHANGELOG.md ${DRONE_TAG:---next-tag unreleased unreleased}
-  depends_on:
-  - tags
 
 - name: release
   image: plugins/github-release
@@ -254,6 +252,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: ce4008cf5e93c162f4ac2da3ad04ba6bf19fa4e9f067443f60a02efed2250b6e
+hmac: fae8f99db3daee8b04423ca2f8c9f1aa0547a1902fcf7f90a17f9e39fcc302a9
 
 ...
