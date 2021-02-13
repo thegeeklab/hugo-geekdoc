@@ -1,11 +1,16 @@
 {{ $title := "" }}
+{{ $geekdocRawTitle := default (default false .Site.Params.GeekdocRawTitle) .Page.Params.GeekdocRawTitle }}
 
 {{ if .Title }}
   {{ $title = .Title }}
 {{ else if and .IsSection .File }}
-  {{ $title = path.Base .File.Dir | humanize | title }}
+    {{ $title = path.Base .File.Dir }}
 {{ else if and .IsPage .File }}
-  {{ $title = .File.BaseFileName | humanize | title }}
+  {{ $title = .File.BaseFileName }}
+{{ end }}
+
+{{ if not $geekdocRawTitle }}
+  {{ $title = $title | humanize | title }}
 {{ end }}
 
 {{ return $title }}

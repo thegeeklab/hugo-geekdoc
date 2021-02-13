@@ -85,6 +85,11 @@ enableGitInfo = true
 
   # (Optional, default true) Copy anchor url to clipboard on click.
   geekdocAnchorCopy = true
+
+  # (Optional, default false) Use raw titles from filenames. If no page title is set
+  # in the front matter, it will be generated from the filename and formatted by Hugos
+  # 'humanize' + 'title' filter.
+  geekdocRawTitle = false
 ```
 
 {{< /tab >}}
@@ -164,6 +169,11 @@ params:
 
   # (Optional, default true) Copy anchor url to clipboard on click.
   geekdocAnchorCopy: true
+
+  # (Optional, default false) Use raw titles from filenames. If no page title is set
+  # in the front matter, it will be generated from the filename and formatted by Hugos
+  # 'humanize' + 'title' filter.
+  geekdocRawTitle: false
 ```
 
 {{< /tab >}}
@@ -216,6 +226,10 @@ geekdocCollapseSection = true
 
 # Add an anchor link to headlines.
 geekdocAnchor = true
+
+# Use raw titles from filenames. If no page title is set in the front matter, it will be generated
+# from the filename and formatted by Hugos 'humanize' + 'title' filter.
+geekdocRawTitle = false
 ```
 
 {{< /tab >}}
@@ -263,6 +277,10 @@ geekdocCollapseSection: true
 
 # Add an anchor link to headlines.
 geekdocAnchor: true
+
+# Use raw titles from filenames. If no page title is set in the front matter, it will be generated
+# from the filename and formatted by Hugos 'humanize' + 'title' filter.
+geekdocRawTitle: false
 ```
 
 {{< /tab >}}
