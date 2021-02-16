@@ -1,7 +1,7 @@
 {{$file := .Get "file"}}
 <div class="gdoc-include">
 {{- if eq (.Get "markdown") "true" -}}
-{{- $file | readFile | markdownify -}}
+{{- $file | readFile | $.Page.RenderString -}}
 {{- else if (.Get "language") -}}
 {{- highlight ($file | readFile) (.Get "language") (default "linenos=table" (.Get "options")) -}}
 {{- else -}}
