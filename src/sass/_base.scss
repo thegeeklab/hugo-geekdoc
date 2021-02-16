@@ -4,40 +4,64 @@
 
   --page-header-color: #{$gray-100};
   --color-link: #{$color-link};
+  --color-link-visited: #{$color-link-visited};
 
   --search-input: #{$gray-100};
   --search-border: #{$gray-200};
   --search-icon: #{$gray-600};
   --search-result-body: #{$body-background};
   --search-result-head: #{$gray-700};
+
+  --code-background: #{$code-background};
+
+  --accent-color: #{$gray-200};
+  --accent-color-lite: #{$gray-100};
+
+  --button-border: #{$gray-500};
+  --button-font-color: #{$gray-700};
+}
+
+* {
+  transition: color 100ms, background-color 100ms;
 }
 
 html {
   font-size: $font-size-base;
   letter-spacing: 0.33px;
   scroll-behavior: smooth;
+
+  @include chroma_github;
+
+  &.dark {
+    @include chroma_dark;
+
+    --body-background: #{$main-color-dark};
+    --body-font-color: #{lighten($main-color-dark, 60)};
+
+    --page-header-color: #{darken($main-color-dark, 2)};
+    --color-link: #{$color-link-dark};
+    --color-link-visited: #{$color-link-visited-dark};
+
+    --search-input: #{darken($main-color-dark, 2)};
+    --search-border: #{lighten($main-color-dark, 5)};
+    --search-icon: #{lighten($main-color-dark, 30)};
+    --search-result-body: #{darken($main-color-dark, 4)};
+    --search-result-head: #{lighten($main-color-dark, 60)};
+
+    --code-background: #{$code-background-dark};
+
+    --accent-color: #{darken($main-color-dark, 4)};
+    --accent-color-lite: #{darken($main-color-dark, 2)};
+
+    --button-border: #{darken($main-color-dark, 5)};
+    --button-font-color: #{lighten($main-color-dark, 60)};
+  }
 }
 
 html,
 body {
   min-width: $body-min-width;
   overflow-x: hidden;
-}
-
-.dark-mode-checkbox:checked {
-  & ~ .wrapper {
-    --body-background: #{invert($body-background, 80%)};
-    --body-font-color: #{invert($body-font-color, 100%)};
-
-    --page-header-color: #{invert($gray-100, 80%)};
-    --color-link: #{invert($color-link, 95%)};
-
-    --search-input: #{invert($gray-100, 80%)};
-    --search-border: #{invert($gray-200, 80%)};
-    --search-icon: #{invert($gray-600, 100%)};
-    --search-result-body: #{invert($body-background, 75%)};
-    --search-result-head: #{invert($gray-700, 100%)};
-  }
 }
 
 body {
@@ -77,7 +101,7 @@ a {
   }
 
   &:visited {
-    color: $color-link-visited;
+    color: var(--color-link-visited);
   }
 }
 

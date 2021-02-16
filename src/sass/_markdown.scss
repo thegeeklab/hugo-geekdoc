@@ -99,7 +99,7 @@
     margin: $padding-16 0;
     padding: $padding-8 $padding-16 $padding-8 ($padding-16 - $padding-4); //to keep total left space 16dp
 
-    border-left: $border-4 solid $gray-200;
+    border-left: $border-4 solid var(--accent-color);
     border-radius: $border-radius;
 
     :first-child {
@@ -121,18 +121,18 @@
     tr th,
     tr td {
       padding: $padding-8 $padding-16;
-      border: $border-1 solid $gray-200;
+      border: $border-1 solid var(--accent-color);
     }
 
     tr:nth-child(2n) {
-      background: $gray-100;
+      background: var(--accent-color-lite);
     }
   }
 
   hr {
     height: $padding-2;
     border: none;
-    background: $gray-200;
+    background: var(--accent-color);
   }
 
   ul,
@@ -156,7 +156,7 @@
   }
 
   code {
-    background-color: $color-code;
+    background-color: var(--color-code);
     font-size: 0.85em;
     line-height: 1.45;
     padding: 0.2em 0.4em;

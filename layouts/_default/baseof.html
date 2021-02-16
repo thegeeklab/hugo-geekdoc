@@ -12,7 +12,6 @@
 <body itemscope itemtype="https://schema.org/WebPage">
     {{ partial "svg-icon-symbols" . }}
 
-    <input class="dark-mode-checkbox" id="dark-mode" type="checkbox">
     <div class="wrapper">
         <input type="checkbox" class="hidden" id="menu-control" />
         {{ partial "site-header" (dict "Root" . "MenuEnabled" true) }}
