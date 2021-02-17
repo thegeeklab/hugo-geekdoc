@@ -11,7 +11,7 @@
     {{ if $parent }}
         {{ $name := (partial "title" $parent) }}
         {{ $position := (sub .position 1) }}
-        {{ $value := (printf "<li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='%s' href='%s'><span itemprop='name'>%s</span></a><meta itemprop='position' content='%d' /></li>/%s" $parent.RelPermalink $parent.RelPermalink $name $position .value) }}
+        {{ $value := (printf "<li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='%s' href='%s'><span itemprop='name'>%s</span></a><meta itemprop='position' content='%d' />/</li>%s" $parent.RelPermalink $parent.RelPermalink $name $position .value) }}
         {{ template "breadcrumb" dict "page" $parent "value" $value "position" $position }}
     {{ else }}
         {{ .value | safeHTML }}
