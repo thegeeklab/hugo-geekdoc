@@ -538,3 +538,16 @@ img {
   transition-property: transform, margin-left, opacity;
   will-change: transform, margin-left;
 }
+
+// Breadcrumbs styles
+.breadcrumb {
+  overflow-x: hidden;
+  white-space: nowrap;
+  display: inline;
+  padding-left: 10px;
+
+  li {
+    display: inline;
+    padding: 0 5px;
+  }
+}

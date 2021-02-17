@@ -10,8 +10,9 @@
     {{ $parent := .page.Parent }}
     {{ if $parent }}
         {{ $name := (partial "title" $parent) }}
-        {{ $value := (printf "<a href='%s'>%s</a> / %s" $parent.RelPermalink $name .value) }}
-        {{ template "breadcrumb" dict "page" $parent "value" $value }}
+        {{ $position := (sub .position 1) }}
+        {{ $value := (printf "<li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='https://example.com/books/sciencefiction' href='https://example.com/books/sciencefiction'><span itemprop='name'>%s</span></a><meta itemprop='position' content='%d' /></li>/%s" $name $position .value) }}
+        {{ template "breadcrumb" dict "page" $parent "value" $value "position" $position }}
     {{ else }}
         {{ .value | safeHTML }}
     {{ end }}
@@ -22,11 +23,14 @@
 <div class="gdoc-page__header flex flex-wrap justify-between{{ if not $showEdit }} hidden-mobile{{ end }}{{ if (and (not $showBreadcrumb) (not $showEdit)) }} hidden {{ end }}" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
     <span>
         {{if $showBreadcrumb }}
-        <span class="breadcrumb">
-            <svg class="icon path"><use xlink:href="#path"></use></svg>
-            {{ $name := (partial "title" .) }}
-            {{ template "breadcrumb" dict "page" . "value" $name }}
-        </span>
+            <svg class="icon path hidden-mobile"><use xlink:href="#path"></use></svg>
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+                {{ $position := len (split $url "/") }}
+                {{ $name := (partial "title" .) }}
+                {{ $value := (printf "<li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>%s</span><meta itemprop='position' content='%d' /></li>" $name $position ) }}
+                {{ template "breadcrumb" dict "page" . "value" $value "position" $position }}
+            </ol>
         {{ end }}
     </span>
     <span>
