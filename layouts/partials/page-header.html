@@ -21,8 +21,8 @@
 {{ $showBreadcrumb := (and (default true .Page.Params.GeekdocBreadcrumb) (default true .Site.Params.GeekdocBreadcrumb)) }}
 {{ $showEdit := (and ($.Scratch.Get "geekdocFilePath") $geekdocRepo $geekdocEditPath) }}
 <div class="gdoc-page__header flex flex-wrap justify-between{{ if not $showEdit }} hidden-mobile{{ end }}{{ if (and (not $showBreadcrumb) (not $showEdit)) }} hidden {{ end }}" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-    <span>
-        {{if $showBreadcrumb }}
+    {{if $showBreadcrumb }}
+        <div>
             <svg class="icon path hidden-mobile"><use xlink:href="#path"></use></svg>
             <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
                 {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
@@ -31,8 +31,8 @@
                 {{ $value := (printf "<li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>%s</span><meta itemprop='position' content='%d' /></li>" $name $position ) }}
                 {{ template "breadcrumb" dict "page" . "value" $value "position" $position }}
             </ol>
-        {{ end }}
-    </span>
+        </div>
+    {{ end }}
     <span>
         {{ if $showEdit }}
         <span class="editpage">
