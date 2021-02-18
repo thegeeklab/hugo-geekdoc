@@ -4,14 +4,16 @@
             Built with <a href="https://gohugo.io/" class="gdoc-footer__link">Hugo</a> and
             <svg class="icon heart"><use xlink:href="#heart"></use></svg>
         </span>
+        {{ $legalNoticeTitle := (default "Legal Notice" .Site.Params.GeekdocLocalization.LegalNotice) }}
         {{ with .Site.Params.GeekdocLegalNotice }}
         <span class="gdoc-footer__item">
-            <a href="{{ . | relURL }}" class="gdoc-footer__link">Legal Notice</a>
+            <a href="{{ . | relURL }}" class="gdoc-footer__link">{{ $legalNoticeTitle }}</a>
         </span>
         {{ end }}
+        {{ $privacyPolicyTitle := (default "Privacy Policy" .Site.Params.GeekdocLocalization.PrivacyPolicy) }}
         {{ with .Site.Params.GeekdocPrivacyPolicy }}
         <span class="gdoc-footer__item">
-            <a href="{{ . | relURL }}" class="gdoc-footer__link">Privacy Policy</a>
+            <a href="{{ . | relURL }}" class="gdoc-footer__link">{{ $privacyPolicyTitle }}</a>
         </span>
         {{ end }}
     </div>

@@ -34,7 +34,7 @@
         <span class="editpage">
             <svg class="icon code"><use xlink:href="#code"></use></svg>
             <a href="{{ $geekdocRepo }}/{{ $geekdocEditPath }}/{{ $.Scratch.Get "geekdocFilePath" }}">
-                Edit this page
+                {{ (default "Edit this page" .Page.Site.Params.GeekdocLocalization.EditPage) }}
             </a>
         </span>
         {{ end }}
