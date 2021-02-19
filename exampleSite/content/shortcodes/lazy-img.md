@@ -5,6 +5,7 @@ If you don't want to load images outside of user viewport at once, you can use `
 ```
 
 `lazy-img` also support link behaviour via `href` attribute
+
 ```html
 {{</* lazy-img src="/example.png" alt="Example" href="example.com" */>}}
 ```
