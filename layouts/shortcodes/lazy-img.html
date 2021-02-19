@@ -1,0 +1,11 @@
+{{ $href := .Get "href" }}
+{{ $alt := .Get "alt" }}
+{{ $src := .Get "src" }}
+
+{{ if $href }}
+    <a href="{{ $href | relURL }}">
+{{ end }}
+    <img loading="lazy" src="{{ $src | relURL }}" alt="{{ $alt }}" />
+{{ if $href }}
+    </a>
+{{ end }}

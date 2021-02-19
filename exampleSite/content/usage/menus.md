@@ -29,7 +29,7 @@ content/
     └── level-2-2.md
 ```
 
-[![Example file-tree menu](/media/file-tree.png)](/media/file-tree.png)
+{{< lazy-img src="/media/file-tree.png" alt="Example file-tree menu" href="/media/file-tree.png" >}}
 
 ## Bundle menu
 
@@ -64,7 +64,7 @@ main:
 
 As an advantage you can add icons to your menu entries e.g. `icon: "notification"`.
 
-[![Example bundle menu](/media/bundle-menu.png)](/media/bundle-menu.png)
+{{< lazy-img src="/media/bundle-menu.png" alt="Example bundle menu" href="/media/bundle-menu.png" >}}
 
 ### More menu
 
@@ -93,4 +93,4 @@ more:
     icon: "github"
 ```
 
-[![Example bundle menu](/media/more-menu.png)](/media/more-menu.png)
+{{< lazy-img src="/media/more-menu.png" alt="Example more menu" href="/media/more-menu.png" >}}
