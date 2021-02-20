@@ -85,6 +85,10 @@ enableGitInfo = true
 
   # (Optional, default true) Copy anchor url to clipboard on click.
   geekdocAnchorCopy = true
+
+  # (Optional, default true) Enable or disable image lazy loading for images rendered
+  # by the 'img' shortcode.
+  geekdocImageLazyLoading = true
 ```
 
 {{< /tab >}}
@@ -164,6 +168,10 @@ params:
 
   # (Optional, default true) Copy anchor url to clipboard on click.
   geekdocAnchorCopy: true
+
+  # (Optional, default true) Enable or disable image lazy loading for images rendered
+  # by the 'img' shortcode.
+  geekdocImageLazyLoading: true
 ```
 
 {{< /tab >}}

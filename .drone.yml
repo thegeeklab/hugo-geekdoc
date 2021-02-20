@@ -159,7 +159,7 @@ steps:
   image: node:lts-alpine
   commands:
   - npm install -g spellchecker-cli
-  - spellchecker --files 'exampleSite/content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls --no-suggestions
+  - spellchecker --files 'exampleSite/content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls frontmatter --no-suggestions
   environment:
     FORCE_COLOR: true
     NPM_CONFIG_LOGLEVEL: error
@@ -252,6 +252,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: fae8f99db3daee8b04423ca2f8c9f1aa0547a1902fcf7f90a17f9e39fcc302a9
+hmac: e7f2792705cf2a50d0d2c3aca83d5b715c56d1199ae838d0e8cd9dc89e0da305
 
 ...

@@ -1,0 +1,40 @@
+{{ $source := ($.Page.Resources.ByType "image").GetMatch (printf "*%s*" (.Get "name")) }}
+{{ $customAlt := .Get "alt" }}
+{{ $customSize := .Get "size" }}
+{{ $lazyLoad := default (default true $.Site.Params.GeekdocImageLazyLoading) (.Get "lazy") }}
+
+{{ with $source }}
+{{ $caption := default .Title $customAlt }}
+
+{{ $tiny := (.Resize "320x").RelPermalink }}
+{{ $small := (.Resize "600x").RelPermalink }}
+{{ $medium := (.Resize "1200x").RelPermalink }}
+{{ $large := (.Resize "1800x").RelPermalink }}
+
+{{ $size := dict "tiny" $tiny "small" $small "medium" $medium "large" $large }}
+
+<div class="flex justify-center">
+<figure class="gdoc-markdown__figure">
+    <a href="{{ .RelPermalink }}">
+        <img
+            {{ if $lazyLoad }}loading="lazy"{{ end }}
+            {{ with $customSize }}
+            src="{{ index $size $customSize }}" alt="{{ $caption }}"
+            {{ else }}
+            srcset="{{ $size.tiny }} 320w,
+                    {{ $size.small }} 600w,
+                    {{ $size.medium }} 1200w,
+                    {{ $size.large }} 2x"
+            sizes="(max-width: 320px) 320w,
+                   (max-width: 600px) 600w,
+                   (max-width: 1200px) 1200w,
+                   2x"
+            src="{{ $size.large }}" alt="{{ $caption }}"
+            {{ end }}/>
+    </a>
+    {{ with $caption }}
+    <figcaption>{{ . }}{{ with $source.Params.credits }} ({{ . | markdownify }}){{ end }}</figcaption>
+    {{ end }}
+</figure>
+</div>
+{{ end }}
