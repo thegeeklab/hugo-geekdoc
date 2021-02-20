@@ -65,7 +65,7 @@ resources:
       credits: "[Jay Mantri](https://unsplash.com/@jaymantri) on [Unsplash](https://unsplash.com/s/photos/forest)"
 ---
 
-{{</* img name="forest-1" size="large" lazy=false */>}}
+{{</* img name="forest-1" size="large" lazy=true */>}}
 ```
 
 <!-- spellchecker-enable -->
@@ -85,7 +85,7 @@ copious quo ad. Stet probates in duo.
 
 <!-- spellchecker-disable -->
 
-{{< img name="forest-2" size="large" lazy=false >}}
+{{< img name="forest-2" size="large" lazy=true >}}
 
 <!-- spellchecker-enable -->
 
@@ -96,7 +96,7 @@ copious quo ad. Stet probates in duo.
 
 <!-- spellchecker-disable -->
 
-{{< img name="forest-3" size="large" lazy=false >}}
+{{< img name="forest-3" size="large" lazy=true >}}
 
 <!-- spellchecker-enable -->
 
@@ -107,7 +107,7 @@ copious quo ad. Stet probates in duo.
 
 <!-- spellchecker-disable -->
 
-{{< img name="forest-4" size="large" lazy=false >}}
+{{< img name="forest-4" size="large" lazy=true >}}
 
 <!-- spellchecker-enable -->
 
@@ -118,7 +118,7 @@ copious quo ad. Stet probates in duo.
 
 <!-- spellchecker-disable -->
 
-{{< img name="forest-5" size="large" lazy=false >}}
+{{< img name="forest-5" size="large" lazy=true >}}
 
 <!-- spellchecker-enable -->
 
@@ -129,7 +129,7 @@ copious quo ad. Stet probates in duo.
 
 <!-- spellchecker-disable -->
 
-{{< img name="forest-6" size="large" lazy=false >}}
+{{< img name="forest-6" size="large" lazy=true >}}
 
 <!-- spellchecker-enable -->
 
@@ -140,6 +140,6 @@ copious quo ad. Stet probates in duo.
 
 <!-- spellchecker-disable -->
 
-{{< img name="forest-7" size="large" lazy=false >}}
+{{< img name="forest-7" size="large" lazy=true >}}
 
 <!-- spellchecker-enable -->
