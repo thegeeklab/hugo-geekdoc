@@ -30,16 +30,20 @@
     text-decoration: none !important;
   }
 
-  main {
-    flex-direction: column-reverse;
-  }
-
   .gdoc-toc {
     flex: none;
 
     nav {
       position: relative;
       width: auto;
+    }
+  }
+
+  .wrapper {
+    display: block;
+
+    main {
+      display: block;
     }
   }
 }
