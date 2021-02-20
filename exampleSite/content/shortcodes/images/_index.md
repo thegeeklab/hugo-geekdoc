@@ -37,7 +37,7 @@ resources:
       credits: "[Asher Ward](https://unsplash.com/@the_asher_ward) on [Unsplash](https://unsplash.com/s/photos/forest)"
 ---
 
-If you need more flexibility for your embedded images, you could use the `img` shortcode. It is using Hugos
+If you need more flexibility for your embedded images, you could use the `img` shortcode. It is using Hugo's
 [page resources](https://gohugo.io/content-management/page-resources/) and supports lazy loading of your images.
 
 **Attributes:**
@@ -53,6 +53,8 @@ If you need more flexibility for your embedded images, you could use the `img` s
 
 Define your resources in the page front matter. `params.credits` are optional.
 
+<!-- spellchecker-disable -->
+
 ```md
 ---
 resources:
@@ -66,48 +68,78 @@ resources:
 {{</* img name="forest-1" size="large" lazy=false */>}}
 ```
 
+<!-- spellchecker-enable -->
+
 **Demo:**
+
+<!-- spellchecker-disable -->
 
 {{< img name="forest-1" size="large" lazy=false >}}
 
-Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
-investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
-feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
-copious quo ad. Stet probates in duo.
-
-{{< img name="forest-2" size="large" >}}
+<!-- spellchecker-enable -->
 
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
 investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
 feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
 copious quo ad. Stet probates in duo.
 
-{{< img name="forest-3" size="large" >}}
+<!-- spellchecker-disable -->
+
+{{< img name="forest-2" size="large" lazy=false >}}
+
+<!-- spellchecker-enable -->
 
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
 investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
 feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
 copious quo ad. Stet probates in duo.
 
-{{< img name="forest-4" size="large" >}}
+<!-- spellchecker-disable -->
+
+{{< img name="forest-3" size="large" lazy=false >}}
+
+<!-- spellchecker-enable -->
 
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
 investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
 feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
 copious quo ad. Stet probates in duo.
 
-{{< img name="forest-5" size="large" >}}
+<!-- spellchecker-disable -->
+
+{{< img name="forest-4" size="large" lazy=false >}}
+
+<!-- spellchecker-enable -->
 
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
 investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
 feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
 copious quo ad. Stet probates in duo.
 
-{{< img name="forest-6" size="large" >}}
+<!-- spellchecker-disable -->
+
+{{< img name="forest-5" size="large" lazy=false >}}
+
+<!-- spellchecker-enable -->
 
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
 investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
 feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
 copious quo ad. Stet probates in duo.
 
-{{< img name="forest-7" size="large" >}}
+<!-- spellchecker-disable -->
+
+{{< img name="forest-6" size="large" lazy=false >}}
+
+<!-- spellchecker-enable -->
+
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
+feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
+copious quo ad. Stet probates in duo.
+
+<!-- spellchecker-disable -->
+
+{{< img name="forest-7" size="large" lazy=false >}}
+
+<!-- spellchecker-enable -->
