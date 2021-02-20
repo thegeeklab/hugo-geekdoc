@@ -55,15 +55,18 @@ Define your resources in the page front matter. `params.credits` are optional.
 
 ```md
 ---
-- name: my-image
-  src: "my-image.jpg"
-  title: Custom tile for my image
-  params:
-    credits: "[John](https://john.example.com/)"
+resources:
+  - name: forest-1
+    src: "forest-1.jpg"
+    title: Forest (1)
+    params:
+      credits: "[Jay Mantri](https://unsplash.com/@jaymantri) on [Unsplash](https://unsplash.com/s/photos/forest)"
 ---
 
-{{</* img name="my-image" size="medium" lazy="true" */>}}
+{{</* img name="forest-1" size="large" lazy=false */>}}
 ```
+
+**Demo:**
 
 {{< img name="forest-1" size="large" lazy=false >}}
 
