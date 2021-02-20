@@ -11,7 +11,7 @@
     {{ if $parent }}
         {{ $name := (partial "title" $parent) }}
         {{ $position := (sub .position 1) }}
-        {{ $value := (printf "<li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='%s' href='%s'><span itemprop='name'>%s</span></a><meta itemprop='position' content='%d' />/</li>%s" $parent.RelPermalink $parent.RelPermalink $name $position .value) }}
+        {{ $value := (printf "<li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='%s' href='%s'><span itemprop='name'>%s</span></a><meta itemprop='position' content='%d' /></li><li> / </li>%s" $parent.RelPermalink $parent.RelPermalink $name $position .value) }}
         {{ template "breadcrumb" dict "page" $parent "value" $value "position" $position }}
     {{ else }}
         {{ .value | safeHTML }}
@@ -20,19 +20,18 @@
 
 {{ $showBreadcrumb := (and (default true .Page.Params.GeekdocBreadcrumb) (default true .Site.Params.GeekdocBreadcrumb)) }}
 {{ $showEdit := (and ($.Scratch.Get "geekdocFilePath") $geekdocRepo $geekdocEditPath) }}
-<div class="gdoc-page__header flex flex-wrap justify-between{{ if not $showEdit }} hidden-mobile{{ end }}{{ if (and (not $showBreadcrumb) (not $showEdit)) }} hidden {{ end }}" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-    {{if $showBreadcrumb }}
-        <div>
-            <svg class="icon path hidden-mobile"><use xlink:href="#path"></use></svg>
-            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-                {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
-                {{ $position := len (split $url "/") }}
-                {{ $name := (partial "title" .) }}
-                {{ $value := (printf "<li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>%s</span><meta itemprop='position' content='%d' /></li>" $name $position ) }}
-                {{ template "breadcrumb" dict "page" . "value" $value "position" $position }}
-            </ol>
-        </div>
-    {{ end }}
+<div class="gdoc-page__header flex flex-wrap justify-between{{ if not $showEdit }} hidden-mobile{{ end }}{{ if (and (not $showBreadcrumb) (not $showEdit)) }} hidden {{ end }}" itemprop="breadcrumb">
+    <div>
+        {{if $showBreadcrumb }}
+        <svg class="icon path hidden-mobile"><use xlink:href="#path"></use></svg>
+        <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+            {{ $position := sub (len (split .RelPermalink "/")) 1 }}
+            {{ $name := (partial "title" .) }}
+            {{ $value := (printf "<li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>%s</span><meta itemprop='position' content='%d' /></li>" $name $position ) }}
+            {{ template "breadcrumb" dict "page" . "value" $value "position" $position }}
+        </ol>
+        {{ end }}
+    </div>
     <span>
         {{ if $showEdit }}
         <span class="editpage">

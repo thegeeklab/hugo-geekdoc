@@ -541,16 +541,11 @@ img {
 
 // Breadcrumbs styles
 .breadcrumb {
-  overflow-x: hidden;
-  white-space: nowrap;
   display: inline;
-  padding-left: 10px;
+  padding: 0;
+  margin: 0;
 
   li {
     display: inline;
-    
-    span {
-      padding: 0 5px;
-    }
   }
 }
