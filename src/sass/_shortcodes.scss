@@ -3,7 +3,7 @@
   margin-top: $padding-16;
   margin-bottom: $padding-16;
 
-  border: $padding-1 solid $gray-200;
+  border: $border-2 solid $gray-200;
   border-radius: $border-radius;
 
   overflow: hidden;
@@ -33,7 +33,7 @@
   margin-top: $padding-16;
   margin-bottom: $padding-16;
 
-  border: $padding-1 solid $gray-200;
+  border: $border-2 solid $gray-200;
   border-radius: $border-radius;
 
   overflow: hidden;
@@ -44,20 +44,20 @@
   &__label {
     display: inline-block;
     padding: $padding-8 $padding-16;
-    border-bottom: $padding-1 transparent;
+    border-bottom: $border-2 transparent;
     cursor: pointer;
   }
 
   &__content {
     order: 999; //Move content blocks to the end
     width: 100%;
-    border-top: $padding-1 solid $gray-100;
+    border-top: $border-2 solid $gray-100;
     padding: $padding-16;
     display: none;
   }
 
   &__control:checked + &__label {
-    border-bottom: $padding-1 solid $color-link;
+    border-bottom: $border-2 solid $color-link;
   }
   &__control:checked + &__label + &__content {
     display: block;
@@ -84,7 +84,7 @@
 .gdoc-button {
   display: inline-block;
   color: $gray-700;
-  border: $padding-1 solid $gray-500;
+  border: $border-2 solid $gray-500;
   border-radius: $border-radius;
   margin: $padding-8 0;
   cursor: pointer;

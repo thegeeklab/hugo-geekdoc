@@ -99,7 +99,7 @@
     margin: $padding-16 0;
     padding: $padding-8 $padding-16 $padding-8 ($padding-16 - $padding-4); //to keep total left space 16dp
 
-    border-left: $padding-4 solid $gray-200;
+    border-left: $border-4 solid $gray-200;
     border-radius: $border-radius;
 
     :first-child {
@@ -121,7 +121,7 @@
     tr th,
     tr td {
       padding: $padding-8 $padding-16;
-      border: $padding-1 solid $gray-200;
+      border: $border-2 solid $gray-200;
     }
 
     tr:nth-child(2n) {
@@ -130,7 +130,7 @@
   }
 
   hr {
-    height: $padding-1;
+    height: $padding-2;
     border: none;
     background: $gray-200;
   }
