@@ -63,7 +63,7 @@
 }
 .chroma .lntable td:first-child code {
   background-color: $gray-200;
-  border-right: 1px solid #dcdfe3;
+  border-right: $border-1 solid #dcdfe3;
   padding: 0.5em 0;
 }
 .chroma .lntable td code {
