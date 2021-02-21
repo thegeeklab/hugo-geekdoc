@@ -15,7 +15,7 @@
 
 <div class="flex justify-center">
 <figure class="gdoc-markdown__figure">
-    <a href="{{ .RelPermalink }}">
+    <a class="gdoc-markdown__link--raw" href="{{ .RelPermalink }}">
         <img
             {{ if $lazyLoad }}loading="lazy"{{ end }}
             {{ with $customSize }}

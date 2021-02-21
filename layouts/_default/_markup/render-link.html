@@ -1,1 +1,2 @@
-<a href="{{ .Destination | safeURL | relURL }}"{{ with .Title}} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
+{{ $raw := or (hasPrefix .Text "<img") (hasPrefix .Text "<figure") }}
+<a class="gdoc-markdown__link{{ if $raw }}--raw{{ end }}" href="{{ .Destination | safeURL | relURL }}"{{ with .Title}} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
