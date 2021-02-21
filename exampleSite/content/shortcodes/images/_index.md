@@ -51,7 +51,7 @@ If you need more flexibility for your embedded images, you could use the `img` s
 
 **Example:**
 
-Define your resources in the page front matter. `params.credits` are optional.
+Define your resources in the page front matter, custom parameter `params.credits` is optional.
 
 <!-- spellchecker-disable -->
 
@@ -65,7 +65,7 @@ resources:
       credits: "[Jay Mantri](https://unsplash.com/@jaymantri) on [Unsplash](https://unsplash.com/s/photos/forest)"
 ---
 
-{{</* img name="forest-1" size="large" lazy=true */>}}
+{{</* img name="forest-1" size="large" lazy=false */>}}
 ```
 
 <!-- spellchecker-enable -->
