@@ -1,4 +1,4 @@
-{{$file := .Get "file"}}
+{{ $file := .Get "file" }}
 <div class="gdoc-include">
 {{- if eq (.Get "markdown") "true" -}}
 {{- $file | readFile | $.Page.RenderString -}}

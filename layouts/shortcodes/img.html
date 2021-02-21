@@ -33,7 +33,7 @@
             {{ end }}/>
     </a>
     {{ with $caption }}
-    <figcaption>{{ . }}{{ with $source.Params.credits }} ({{ . | markdownify }}){{ end }}</figcaption>
+    <figcaption>{{ . }}{{ with $source.Params.credits }} ({{ . | $.Page.RenderString }}){{ end }}</figcaption>
     {{ end }}
 </figure>
 </div>

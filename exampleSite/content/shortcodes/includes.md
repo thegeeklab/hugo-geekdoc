@@ -32,7 +32,7 @@ Attributes:
 
 ### Include \*.md file
 
-Included markdown files will be rendered using the `markdownify` filter.
+Included markdown files will be rendered using the `RenderString` [function](https://gohugo.io/functions/renderstring/).
 
 {{< hint warning >}}
 **Location of markdown files**\
