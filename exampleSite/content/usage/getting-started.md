@@ -50,6 +50,8 @@ To prepare your new site environment just a few steps are required:
    title = "Geekdocs"
    theme = "hugo-geekdoc"
 
+   pluralizeListTitles = false
+
    # Geekdoc required configuration
    pygmentsUseClasses = true
    pygmentsCodeFences = true

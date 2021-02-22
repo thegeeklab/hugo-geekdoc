@@ -5,6 +5,7 @@ theme: hugo-geekdoc
 pygmentsUseClasses: true
 pygmentsCodeFences: true
 timeout: 180000
+pluralizeListTitles: false
 
 # Geekdoc configuration
 disablePathToLower: true
