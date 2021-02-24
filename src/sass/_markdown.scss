@@ -54,15 +54,15 @@
   }
 
   &__link--raw {
-    text-decoration: none;
-    color: $body-font-color;
+    text-decoration: none !important;
+    color: $body-font-color !important;
 
     &:hover {
-      text-decoration: none;
+      text-decoration: none !important;
     }
 
     &:visited {
-      color: $body-font-color;
+      color: $body-font-color !important;
     }
   }
 
