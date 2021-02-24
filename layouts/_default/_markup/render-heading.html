@@ -1,6 +1,6 @@
-{{ $showAnchor := (and (default true .Page.Params.GeekdocAnchor) (default true .Page.Site.Params.GeekdocAnchor)) }}
+{{- $showAnchor := (and (default true .Page.Params.GeekdocAnchor) (default true .Page.Site.Params.GeekdocAnchor)) -}}
 
-{{ if $showAnchor }}
+{{- if $showAnchor -}}
 <div class="gdoc-page__anchorwrap">
     <h{{ .Level }} id="{{ .Anchor | safeURL }}">
         {{ .Text | safeHTML }}
@@ -9,10 +9,10 @@
         </a>
     </h{{ .Level }}>
 </div>
-{{ else }}
+{{- else -}}
 <div class="gdoc-page__anchorwrap">
     <h{{ .Level }} id="{{ .Anchor | safeURL }}">
         {{ .Text | safeHTML }}
     </h{{ .Level }}>
 </div>
-{{ end }}
+{{- end -}}
