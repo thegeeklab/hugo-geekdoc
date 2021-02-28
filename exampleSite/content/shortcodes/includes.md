@@ -8,16 +8,16 @@ Include shortcode can include files of different types. By specifying a language
 
 Attributes:
 
-<!-- prettier-ignore -->
-| Name | Usage | default |
-|---|---|---|
-|  file | path to the included file relative to the hugo root | empty value |
-| language* | language for [syntax highlighting](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages)  | empty value |
-| markdown | included file is markdown | false |
-| options | highlighting [options](https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode) | linenos=table |
+| Name       | Usage                                                                                                                               | default       |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| file       | path to the included file relative to the hugo root                                                                                 | empty value   |
+| language\* | language for [syntax highlighting](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages) | empty value   |
+| markdown   | included file is markdown                                                                                                           | false         |
+| options    | highlighting [options](https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode)                               | linenos=table |
 
 \* if not set, the content will be rendered as plain HTML
 
+<!-- prettier-ignore -->
 ### Include \*.yml file with options
 
 ```tpl

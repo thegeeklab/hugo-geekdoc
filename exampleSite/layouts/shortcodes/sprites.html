@@ -1,0 +1,12 @@
+<div class="flex flex-wrap justify-center">
+    {{ range .Site.Data.sprites.geekdoc }}
+    <div class="flex flex-grid icon-grid">
+        <div class="flex align-center justify-center icon-grid__line">
+            <svg class="icon {{ . }}"><use xlink:href="#{{ . }}"></use></svg>
+        </div>
+        <div class="flex align-center justify-center icon-grid__line icon-grid__line--text">
+            <span>#{{ (replace . "_" "_<wbr>") | safeHTML }}</span>
+        </div>
+    </div>
+    {{ end }}
+</div>

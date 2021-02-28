@@ -19,6 +19,7 @@ static/favicon/
 static/fonts/GeekdocIcons.*
 resources/
 exampleSite/resources/
+exampleSite/data/sprites/
 data/assets.json
 
 

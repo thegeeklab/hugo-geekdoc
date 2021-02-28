@@ -1,0 +1,18 @@
+.icon-grid {
+  width: 8rem;
+  height: 8rem;
+  margin: 0.2em;
+  text-align: center;
+}
+
+.icon-grid__line {
+  height: 4rem;
+}
+
+.icon-grid__line .icon {
+  font-size: 3em;
+}
+
+.icon-grid__line--text {
+  font-size: 0.8em;
+}
