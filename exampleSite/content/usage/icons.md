@@ -33,15 +33,15 @@ my_projcet/
 │   ├── ...
 ```
 
-That's it! The theme will auto-load all available SVG sprites provided in the assets folder. To use the icons e.g. in the [bundle menu](/usage/menus/#bundle-menu), you need to lookup the id of the icon. An example would be `thumbs-up` {{< sprite-icon "thumbs-up" >}}. There is also a simple shortcode available to include sprite icons outside of menus `{{</* sprite-icon "thumbs-up" */>}}`.
+That's it! The theme will auto-load all available SVG sprites provided in the assets folder. To use the icons e.g. in the [bundle menu](/usage/menus/#bundle-menu), you need to lookup the id of the icon. An example would be `thumbs-up` {{< icon "thumbs-up" >}}. There is also a simple shortcode available to include sprite icons outside of menus `{{</* icon "thumbs-up" */>}}`.
 
-| Result                            | Usage                                   |
-| --------------------------------- | --------------------------------------- |
-| {{< sprite-icon "thumbs-up" >}}   | `{{</* sprite-icon "thumbs-up" */>}}`   |
-| {{< sprite-icon "thumbs-down" >}} | `{{</* sprite-icon "thumbs-down" */>}}` |
-| {{< sprite-icon "laugh" >}}       | `{{</* sprite-icon "laugh" */>}}`       |
-| {{< sprite-icon "lemon" >}}       | `{{</* sprite-icon "lemon" */>}}`       |
-| {{< sprite-icon "moon" >}}        | `{{</* sprite-icon "moon" */>}}`        |
+| Result                     | Usage                            |
+| -------------------------- | -------------------------------- |
+| {{< icon "thumbs-up" >}}   | `{{</* icon "thumbs-up" */>}}`   |
+| {{< icon "thumbs-down" >}} | `{{</* icon "thumbs-down" */>}}` |
+| {{< icon "laugh" >}}       | `{{</* icon "laugh" */>}}`       |
+| {{< icon "lemon" >}}       | `{{</* icon "lemon" */>}}`       |
+| {{< icon "moon" >}}        | `{{</* icon "moon" */>}}`        |
 
 ## Build-in icons
 
