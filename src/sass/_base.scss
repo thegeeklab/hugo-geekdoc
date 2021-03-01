@@ -142,10 +142,10 @@ img {
     margin: 0;
     padding: 0;
 
-    .icon.menu {
+    .icon.gdoc_menu {
       display: inline-block;
     }
-    .icon.arrow-back {
+    .icon.gdoc_arrow_back {
       display: none;
     }
   }
@@ -183,21 +183,21 @@ img {
 
     &:not(:checked) {
       & ~ ul,
-      & ~ label .icon.keyborad_arrow_down {
+      & ~ label .icon.gdoc_keyborad_arrow_down {
         display: none;
       }
-      & ~ label .icon.keyborad_arrow_left {
+      & ~ label .icon.gdoc_keyborad_arrow_left {
         display: block;
       }
     }
 
     &:checked {
       & ~ ul,
-      & ~ label .icon.keyborad_arrow_down {
+      & ~ label .icon.gdoc_keyborad_arrow_down {
         display: block;
       }
 
-      & ~ label .icon.keyborad_arrow_left {
+      & ~ label .icon.gdoc_keyborad_arrow_left {
         display: none;
       }
     }

@@ -114,6 +114,9 @@ gulp.task("favicon-check-update", function (done) {
 gulp.task("svg-sprite", function () {
   config = {
     shape: {
+      id: {
+        generator: "gdoc_%s",
+      },
       dimension: {
         maxWidth: 28,
         maxHeight: 28,
