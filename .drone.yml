@@ -169,6 +169,23 @@ steps:
   commands:
   - mkdir -p exampleSite/themes/hugo-geekdoc/
   - curl -sSL https://github.com/thegeeklab/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
+  when:
+    ref:
+    - refs/heads/master
+    - refs/tags/**
+
+- name: assets
+  image: node:lts
+  commands:
+  - npm install > /dev/null
+  - npx gulp default
+  - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
+  environment:
+    FORCE_COLOR: true
+    NPM_CONFIG_LOGLEVEL: error
+  when:
+    ref:
+    - refs/pull/**
 
 - name: build
   image: klakegg/hugo:0.80.0-ext-alpine-ci
@@ -252,6 +269,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 0e3b40841b005c43e743091e0457d4d28e376442b877e81ecf3576093d78ab33
+hmac: 838fa95a0e12d61deaaa3620f004919c1f6e73eba88073c0ffdf96b91ecd0f3b
 
 ...
