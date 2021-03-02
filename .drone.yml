@@ -174,7 +174,7 @@ steps:
     - refs/heads/master
     - refs/tags/**
 
-- name: assets
+- name: assets-master
   image: node:lts
   commands:
   - npm install > /dev/null
@@ -269,6 +269,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 838fa95a0e12d61deaaa3620f004919c1f6e73eba88073c0ffdf96b91ecd0f3b
+hmac: 0b3fb338632d237c7279a218b7bd1b3793aeb15cd8382b8c804a5e2da9a30534
 
 ...
