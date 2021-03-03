@@ -67,11 +67,11 @@
   }
 
   #menu-control:checked ~ .gdoc-header .gdoc-nav__control {
-    .icon.menu {
+    .icon.gdoc_menu {
       display: none;
     }
 
-    .icon.arrow-back {
+    .icon.gdoc_arrow_back {
       display: inline-block;
     }
   }

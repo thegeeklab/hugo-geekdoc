@@ -5,6 +5,7 @@ const cleanCSS = require("gulp-clean-css");
 const autoprefixer = require("gulp-autoprefixer");
 const iconfont = require("gulp-iconfont");
 const clean = require("gulp-clean");
+const filelist = require("gulp-filelist");
 
 const realFavicon = require("gulp-real-favicon");
 const path = require("path");
@@ -113,6 +114,9 @@ gulp.task("favicon-check-update", function (done) {
 gulp.task("svg-sprite", function () {
   config = {
     shape: {
+      id: {
+        generator: "gdoc_%s",
+      },
       dimension: {
         maxWidth: 28,
         maxHeight: 28,
@@ -127,14 +131,14 @@ gulp.task("svg-sprite", function () {
     svg: {
       xmlDeclaration: false,
       rootAttributes: {
-        style: "position: absolute; width: 0; height: 0; overflow: hidden;",
+        class: "svg-sprite",
       },
     },
     mode: {
       inline: true,
       symbol: {
-        dest: "layouts/partials/",
-        sprite: "svg-icon-symbols.html",
+        dest: "assets/sprites/",
+        sprite: "geekdoc.svg",
         bust: false,
       },
     },
@@ -143,6 +147,15 @@ gulp.task("svg-sprite", function () {
   return gulp
     .src("src/icons/*.svg")
     .pipe(svgSprite(config))
+    .pipe(gulp.dest("."));
+});
+
+gulp.task("svg-sprite-list", function () {
+  config = { removeExtensions: true, flatten: true };
+
+  return gulp
+    .src("src/icons/*.svg")
+    .pipe(filelist("exampleSite/data/sprites/geekdoc.json", config))
     .pipe(gulp.dest("."));
 });
 
@@ -211,6 +224,8 @@ gulp.task("asset-rm", function () {
 });
 
 gulp.task("asset", gulp.series("asset-rm", "asset-rev"));
+
+gulp.task("svg", gulp.series("svg-sprite", "svg-sprite-list"));
 
 gulp.task(
   "default",

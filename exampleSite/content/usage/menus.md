@@ -62,7 +62,7 @@ main:
         ref: "/level-2/level-2-2"
 ```
 
-As an advantage you can add icons to your menu entries e.g. `icon: "notification"`.
+As an advantage you can add [icons](/usage/icons/) to your menu entries e.g. `icon: "notification"`.
 
 [![Example bundle menu](/media/bundle-menu.png)](/media/bundle-menu.png)
 
