@@ -19,6 +19,8 @@
 
   --button-border: #{$gray-500};
   --button-font-color: #{$gray-700};
+
+  --anchor-icon: #{lighten($body-font-color, 50)};
 }
 
 * {
@@ -55,6 +57,8 @@ html {
 
     --button-border: #{darken($main-color-dark, 5)};
     --button-font-color: #{lighten($main-color-dark, 60)};
+
+    --anchor-icon: #{lighten($body-font-color, 50)};
   }
 }
 
@@ -339,7 +343,7 @@ img {
 
   &__anchorwrap {
     &:hover .gdoc-page__anchor .icon {
-      color: $gray-500;
+      color: var(--anchor-icon);
     }
   }
 
@@ -486,7 +490,7 @@ img {
     width: $padding-16;
     height: $padding-16;
 
-    border: $padding-1 solid transparent;
+    border: $border-1 solid transparent;
     border-top-color: var(--body-font-color);
     border-radius: 50%;
 

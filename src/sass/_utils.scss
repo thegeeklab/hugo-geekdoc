@@ -20,8 +20,9 @@
 
 .flex-grid {
   flex-direction: column;
-  border: $border-1 solid $gray-200;
+  border: $border-1 solid var(--accent-color);
   border-radius: $border-radius;
+  background: var(--accent-color-lite);
 }
 
 .justify-start {
