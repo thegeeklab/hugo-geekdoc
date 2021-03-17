@@ -23,7 +23,7 @@
     font-weight: 600;
 
     > code {
-      border-top: 3px solid $gray-300;
+      border-top: $border-4 solid var(--accent-color);
       font-size: 0.75em !important;
     }
   }
@@ -74,7 +74,7 @@
   &__figure {
     padding: $padding-4;
     margin: $padding-16 0;
-    background-color: $gray-300;
+    background-color: var(--accent-color);
     display: table;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
@@ -82,7 +82,7 @@
     figcaption {
       display: table-caption;
       caption-side: bottom;
-      background-color: $gray-300;
+      background-color: var(--accent-color);
       padding: 0 $padding-4 $padding-4;
       text-align: center;
       border-bottom-left-radius: $border-radius;
@@ -130,7 +130,7 @@
   }
 
   hr {
-    height: $padding-2;
+    height: $border-2;
     border: none;
     background: var(--accent-color);
   }
@@ -158,7 +158,7 @@
   code {
     background-color: var(--code-background);
     font-size: 0.85em;
-    line-height: 1.45;
+    line-height: 1.45em;
     padding: 0.2em 0.4em;
   }
 

@@ -57,7 +57,7 @@
   }
 
   &__control:checked + &__label {
-    border-bottom: $border-1 solid $color-link;
+    border-bottom: $border-1 solid $link-color;
   }
   &__control:checked + &__label + &__content {
     display: block;
@@ -84,8 +84,7 @@
 .gdoc-button {
   display: inline-block;
   background: var(--accent-color-lite);
-  border: $border-1 solid var(--button-border);
-  color: var(--button-font-color);
+  border: $border-1 solid var(--accent-color);
   border-radius: $border-radius;
   margin: $padding-8 0;
   cursor: pointer;

@@ -2,29 +2,17 @@
   --body-background: #{$body-background};
   --body-font-color: #{$body-font-color};
 
-  --page-header-color: #{$gray-100};
-  --color-link: #{$color-link};
-  --color-link-visited: #{$color-link-visited};
-
-  --search-input: #{$gray-100};
-  --search-border: #{$gray-200};
-  --search-icon: #{$gray-600};
-  --search-result-body: #{$body-background};
-  --search-result-head: #{$gray-700};
+  --link-color: #{$link-color};
+  --link-color-visited: #{$link-color-visited};
 
   --code-background: #{$code-background};
+  --code-accent-color: #{darken($code-background, 6)};
+  --code-accent-color-lite: #{darken($code-background, 2)};
 
   --accent-color: #{$gray-200};
   --accent-color-lite: #{$gray-100};
 
-  --button-border: #{$gray-500};
-  --button-font-color: #{$gray-700};
-
-  --anchor-icon: #{lighten($body-font-color, 50)};
-}
-
-* {
-  transition: color 100ms, background-color 100ms;
+  --control-icons: #{lighten($body-font-color, 50)};
 }
 
 html {
@@ -40,25 +28,17 @@ html {
     --body-background: #{$main-color-dark};
     --body-font-color: #{lighten($main-color-dark, 60)};
 
-    --page-header-color: #{darken($main-color-dark, 2)};
-    --color-link: #{$color-link-dark};
-    --color-link-visited: #{$color-link-visited-dark};
-
-    --search-input: #{darken($main-color-dark, 2)};
-    --search-border: #{lighten($main-color-dark, 5)};
-    --search-icon: #{lighten($main-color-dark, 30)};
-    --search-result-body: #{darken($main-color-dark, 4)};
-    --search-result-head: #{lighten($main-color-dark, 60)};
+    --link-color: #{$link-color-dark};
+    --link-color-visited: #{$link-color-visited-dark};
 
     --code-background: #{$code-background-dark};
+    --code-accent-color: #{darken($code-background-dark, 4)};
+    --code-accent-color-lite: #{darken($code-background-dark, 2)};
 
     --accent-color: #{darken($main-color-dark, 4)};
     --accent-color-lite: #{darken($main-color-dark, 2)};
 
-    --button-border: #{darken($main-color-dark, 5)};
-    --button-font-color: #{lighten($main-color-dark, 60)};
-
-    --anchor-icon: #{lighten($body-font-color, 50)};
+    --control-icons: #{lighten($body-font-color, 50)};
   }
 }
 
@@ -98,14 +78,14 @@ h6 {
 
 a {
   text-decoration: none;
-  color: var(--color-link);
+  color: var(--link-color);
 
   &:hover {
     text-decoration: underline;
   }
 
   &:visited {
-    color: var(--color-link-visited);
+    color: var(--link-color-visited);
   }
 }
 
@@ -114,7 +94,7 @@ img {
 }
 
 .fake-link:hover {
-  background-image: linear-gradient(var(--color-link), var(--color-link));
+  background-image: linear-gradient(var(--link-color), var(--link-color));
   background-position: 0 100%;
   background-size: 100% 1px;
   background-repeat: no-repeat;
@@ -301,17 +281,17 @@ img {
     margin-bottom: $padding-16 * 1.2;
 
     .icon {
-      color: $gray-600;
+      color: var(--control-icons);
     }
 
     a,
     a:visited {
-      color: var(--color-link);
+      color: var(--link-color);
     }
   }
 
   &__header {
-    background: var(--page-header-color);
+    background: var(--accent-color-lite);
     padding: $padding-8 $padding-16;
     border-radius: $border-radius;
   }
@@ -326,7 +306,7 @@ img {
 
   &__nav {
     &:hover {
-      background-image: linear-gradient(var(--color-link), var(--color-link));
+      background-image: linear-gradient(var(--link-color), var(--link-color));
       background-position: 0 100%;
       background-size: 100% 1px;
       background-repeat: no-repeat;
@@ -343,7 +323,7 @@ img {
 
   &__anchorwrap {
     &:hover .gdoc-page__anchor .icon {
-      color: var(--anchor-icon);
+      color: var(--control-icons);
     }
   }
 
@@ -423,7 +403,7 @@ img {
     a,
     a:hover,
     a:visited {
-      color: var(--color-link);
+      color: var(--link-color);
       text-decoration: none !important;
     }
   }
@@ -439,10 +419,10 @@ img {
   }
 
   &__link {
-    color: $color-link-footer;
+    color: $link-color-footer;
 
     &:visited {
-      color: $color-link-footer;
+      color: $link-color-footer;
     }
   }
 }
@@ -454,7 +434,7 @@ img {
     position: absolute;
     top: 0.625em;
     left: $padding-16 * 0.5;
-    color: var(--search-icon);
+    color: var(--control-icons);
     width: $font-size-16;
     height: $font-size-16;
   }
@@ -470,10 +450,10 @@ img {
     padding: $padding-8;
     padding-left: $padding-32;
 
-    border: $border-1 solid var(--search-border);
+    border: $border-1 solid var(--accent-color);
     border-radius: $border-radius;
 
-    background: var(--search-input);
+    background: var(--accent-color-lite);
     color: var(--body-font-color);
 
     &:required + &__spinner {
@@ -499,9 +479,10 @@ img {
 
   &__list {
     visibility: hidden;
-    background: var(--search-result-body);
+    background: var(--body-background);
     border-radius: $border-radius;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 3px 0 var(--accent-color),
+      0 1px 2px 0 var(--accent-color-lite);
     position: absolute;
     margin: 0;
     padding: $padding-8;
@@ -523,7 +504,6 @@ img {
 
     > li > span {
       font-weight: bold;
-      color: var(--search-result-head);
     }
 
     > li + li {
@@ -549,12 +529,12 @@ img {
   .icon {
     width: $font-size-16 * 8;
     height: $font-size-16 * 8;
-    color: $gray-700;
+    color: var(--body-font-color);
   }
 
   &__link,
   &__link:visited {
-    color: var(--color-link);
+    color: var(--link-color);
   }
 
   &__message {
@@ -587,7 +567,7 @@ img {
 
   a,
   a:visited {
-    color: var(--color-link);
+    color: var(--link-color);
   }
 }
 

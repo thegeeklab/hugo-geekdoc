@@ -6,7 +6,11 @@
         let currentMode = localStorage.getItem(THEME);
         mermaid.initialize({
             flowchart: { useMaxWidth: true },
-            theme: currentMode === DARK_MODE ? "dark" : "default",
+            theme: "base",
+            themeVariables: {
+                darkMode: currentMode === DARK_MODE ? true : false,
+                primaryColor: currentMode === DARK_MODE ? "#8f8fbc" : "#ececff",
+            },
         });
     });
 </script>

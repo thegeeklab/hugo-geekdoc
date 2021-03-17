@@ -63,8 +63,8 @@
   display: block;
 }
 .chroma .lntable td:first-child code {
-  background-color: $gray-200;
-  border-right: $border-1 solid #dcdfe3;
+  background-color: var(--code-accent-color-lite);
+  border-right: $border-1 solid var(--code-accent-color);
   padding: 0.5em 0;
 }
 .chroma .lntable td code {
