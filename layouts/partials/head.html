@@ -31,4 +31,8 @@
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
 
+{{ if (default false $.Site.Params.GeekdocOverwriteHTMLBase) }}
+<base href="{{ .Site.BaseURL }}">
+{{ end }}
+
 {{ printf "<!-- %s -->" "Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc" | safeHTML }}

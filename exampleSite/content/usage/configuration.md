@@ -85,6 +85,11 @@ enableGitInfo = true
   # (Optional, default true) Enable or disable image lazy loading for images rendered
   # by the 'img' shortcode.
   geekdocImageLazyLoading = true
+
+  # (Optional, default false) Set HTMl <base> to .Site.BaseURL if enabled. Is might be required
+  # a subdirectory is used within Hugos BaseURL.
+  # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
+  geekdocOverwriteHTMLBase = false
 ```
 
 {{< /tab >}}
@@ -168,6 +173,11 @@ params:
   # (Optional, default true) Enable or disable image lazy loading for images rendered
   # by the 'img' shortcode.
   geekdocImageLazyLoading: true
+
+  # (Optional, default false) Set HTMl <base> to .Site.BaseURL if enabled. Is might be required
+  # a subdirectory is used within Hugos BaseURL.
+  # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
+  geekdocOverwriteHTMLBase: false
 ```
 
 {{< /tab >}}
