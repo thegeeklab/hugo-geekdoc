@@ -69,7 +69,7 @@ HTML content will be filtered by the `safeHTML` filter and added to the rendered
 
 #### Pages
 
-For some situations it might be helpful to include Markdownfiles containing were you also want to use Shortcodes. While the [default method](#markdown-file-default) works fine to render plain Markdown, Shortcodes will not be parsed. To only way to get this working is to use Hugo pages. There are multiple ways to structure those include pages, whatever you do please keep in mind, that Hugo must be able to render and serve these files as regular pages! How it works:
+In some situations, it can be helpful to include Markdown files that also contain shortcodes. While the [default method](#markdown-file-default) works fine to render plain Markdown, shortcodes are not parsed. The only way to get this to work is to use Hugo pages. There are several ways to structure these include pages, so whatever you do, keep in mind that Hugo needs to be able to render and serve these files as regular pages! How it works:
 
 1. First you need to create a directory **within** your content directory. For this example site `_includes` is used.
 2. To prevent the theme from embedding the page in the navigation, create a file `_includes/_index.md` and add `GeekdocHidden: true` to the front matter.
