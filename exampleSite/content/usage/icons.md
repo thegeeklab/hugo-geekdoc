@@ -2,11 +2,7 @@
 title: Icons
 ---
 
-<!-- spellchecker-disable -->
-
 {{< toc >}}
-
-<!-- spellchecker-enable -->
 
 ## Custom icons
 
