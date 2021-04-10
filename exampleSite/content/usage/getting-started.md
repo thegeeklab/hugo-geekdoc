@@ -153,22 +153,22 @@ publish = "docs/public"
 command = "command1 && command 2 && command3 && hugo"
 ```
 
-### Sub-directories
+### Subdirectories
 
 {{< hint danger >}}
 **Warning**\
-As deploying Hugo sites on sub-directories is not as robust as on subdomains, we do not recommend this.
+As deploying Hugo sites on subdirectories is not as robust as on subdomains, we do not recommend this.
 If you have a choice, using a domain/subdomain should always be the preferred solution!
 {{< /hint >}}
 
-If you want to deploy your side to a sub-directory of your domain, some extra steps are required:
+If you want to deploy your side to a subdirectory of your domain, some extra steps are required:
 
 - Configure your Hugo base URL e.g. `baseURL = http://localhost/demo/`.
 - Don't use `relativeURLs: false` nor `canonifyURLs: true` as is can cause unwanted side effects!
 
 There are two ways to get Markdown links or images working:
 
-- Use the absolute path including your sub-directory e.g. `[testlink](/demo/example-site)`
+- Use the absolute path including your subdirectory e.g. `[testlink](/demo/example-site)`
 - Overwrite the HTML base in your site configuration with `geekdocOverwriteHTMLBase = true` and use the relative path e.g. `[testlink](example-site)`
 
 But there is another special case if you use `geekdocOverwriteHTMLBase = true`. If you use anchors in your Markdown links you have to ensure to always include the page path. As an example `[testlink](#some-anchor)` will resolve to `http://localhost/demo/#some-anchor` and not automatically include the current page!
