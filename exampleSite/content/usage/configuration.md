@@ -87,7 +87,7 @@ enableGitInfo = true
   geekdocImageLazyLoading = true
 
   # (Optional, default false) Set HTMl <base> to .Site.BaseURL if enabled. Is might be required
-  # a subdirectory is used within Hugos BaseURL.
+  # a subdirectory is used within Hugo's BaseURL.
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekdocOverwriteHTMLBase = false
 ```
@@ -175,7 +175,7 @@ params:
   geekdocImageLazyLoading: true
 
   # (Optional, default false) Set HTMl <base> to .Site.BaseURL if enabled. Is might be required
-  # a subdirectory is used within Hugos BaseURL.
+  # a subdirectory is used within Hugo's BaseURL.
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekdocOverwriteHTMLBase: false
 ```
