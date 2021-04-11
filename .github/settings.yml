@@ -11,7 +11,7 @@ repository:
   has_wiki: false
   has_downloads: false
 
-  default_branch: master
+  default_branch: main
 
   allow_squash_merge: true
   allow_merge_commit: true
@@ -47,7 +47,7 @@ labels:
     description: This will not be worked on
 
 branches:
-  - name: master
+  - name: main
     protection:
       required_status_checks:
         strict: true

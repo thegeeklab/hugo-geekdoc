@@ -57,7 +57,7 @@ enableGitInfo = true
   # (Optional, default none) Enable 'Edit this page' links. Requires 'GeekdocRepo' param
   # and path must point to 'content' directory of repo.
   # You can also specify this parameter per page in front matter.
-  geekdocEditPath = "edit/master/exampleSite/content"
+  geekdocEditPath = "edit/main/exampleSite/content"
 
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slowdown your website.
@@ -145,7 +145,7 @@ params:
   # (Optional, default none) Enable "Edit this page" links. Requires 'GeekdocRepo' param
   # and path must point to 'content' directory of repo.
   # You can also specify this parameter per page in front matter.
-  geekdocEditPath: edit/master/exampleSite/content
+  geekdocEditPath: edit/main/exampleSite/content
 
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slowdown your website.
@@ -209,7 +209,7 @@ geekdocRepo = "https://github.com/thegeeklab/hugo-geekdoc"
 
 # Enable "Edit this page" links. Requires 'GeekdocRepo' param and path must point
 # to 'content' directory of repo.
-geekdocEditPath = "edit/master/exampleSite/content"
+geekdocEditPath = "edit/main/exampleSite/content"
 
 # Used for 'Edit this page' link, set to '.File.Path' by default.
 # Can be overwritten by a path relative to 'geekdocEditPath'
@@ -256,7 +256,7 @@ geekdocRepo: "https://github.com/thegeeklab/hugo-geekdoc"
 
 # Enable "Edit this page" links. Requires 'GeekdocRepo' param and path must point
 # to 'content' directory of repo.
-geekdocEditPath: "edit/master/exampleSite/content"
+geekdocEditPath: "edit/main/exampleSite/content"
 
 # Used for 'Edit this page' link, set to '.File.Path' by default.
 # Can be overwritten by a path relative to 'geekdocEditPath'
