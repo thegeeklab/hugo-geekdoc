@@ -20,3 +20,5 @@ Netlify
 Makefile
 prebuilt
 (S|s)ubdirector(ies|y)
+(M|m)inify
+whitespace
