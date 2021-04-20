@@ -1,5 +1,5 @@
 [
-  {{ range $index, $page := .Site.Pages }}
+  {{ range $index, $page := (where .Site.Pages "Params.geekdocprotected" "ne" true) }}
     {{ if ne $index 0 }},{{ end }}
     {
       "id": {{ $index }},

@@ -230,6 +230,12 @@ geekdocCollapseSection = true
 
 # Add an anchor link to headlines.
 geekdocAnchor = true
+
+# If you have protected some pages with e.g. basic auth, you may want to exclude
+# these pages from list views as it could leak information otherwise. Set this parameter
+# to 'true' will exclude the page from search results, feeds, ect.
+# WARNING: Consider hosting a standalone full auth-protected static page for secret information instead!
+geekdocProtected: false
 ```
 
 {{< /tab >}}
@@ -277,6 +283,12 @@ geekdocCollapseSection: true
 
 # Add an anchor link to headlines.
 geekdocAnchor: true
+
+# If you have protected some pages with e.g. basic auth, you may want to exclude
+# these pages from list views as it could leak information otherwise. Set this parameter
+# to 'true' will exclude the page from search results, feeds, ect.
+# WARNING: Consider hosting a standalone full auth-protected static page for secret information instead!
+geekdocProtected: false
 ```
 
 {{< /tab >}}
