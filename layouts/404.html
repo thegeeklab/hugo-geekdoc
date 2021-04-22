@@ -2,7 +2,11 @@
 <html lang="{{ .Site.Language.Lang }}">
 
 <head>
-    {{ partial "head" . }}
+    {{ partial "head/meta" . }}
+    <title>Lost? Don't worry</title>
+
+    {{ partial "head/favicons" . }}
+    {{ partial "head/others" . }}
 </head>
 
 <body>
