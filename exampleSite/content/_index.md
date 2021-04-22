@@ -1,5 +1,6 @@
 ---
 title: Documentation
+description: Geekdoc is a simple Hugo theme for documentations. It is intentionally designed as a fast and lean theme and may not fit the requirements of complex projects. If a more feature-complete theme is required there are a lot of got alternatives out there.
 ---
 
 <!-- markdownlint-capture -->
@@ -13,7 +14,7 @@ title: Documentation
 
 <!-- markdownlint-restore -->
 
-Geekdoc is a simple Hugo theme for documentations. It is intentionally designed as a fast and lean theme and may not fit the requirements of complex projects. If a more feature-complete theme is required there are a lot of got alternatives out there. You can find a demo and the full documentation at [https://geekdocs.de](https://geekdocs.de).
+Geekdoc is a simple Hugo theme for documentations. It is intentionally designed as a fast and lean theme and may not fit the requirements of complex projects. If a more feature-complete theme is required there are a lot of got alternatives out there.
 
 ## Features
 
