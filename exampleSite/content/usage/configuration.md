@@ -231,10 +231,10 @@ geekdocCollapseSection = true
 # Add an anchor link to headlines.
 geekdocAnchor = true
 
-# If you have protected some pages with e.g. basic auth, you may want to exclude
-# these pages from list views as it could leak information otherwise. Set this parameter
-# to 'true' will exclude the page from search results, feeds, ect.
-# WARNING: Consider hosting a standalone full auth-protected static page for secret information instead!
+# If you have protected some pages with e.g. basic authentication you may want to exclude these pages
+# from data file, otherwise information may be leaked. Setting this parameter to 'true' will exclude the
+# page from search data, feeds, etc.
+# WARNING: Consider hosting a standalone, fully auth-protected static page for secret information instead!
 geekdocProtected: false
 ```
 
@@ -284,10 +284,10 @@ geekdocCollapseSection: true
 # Add an anchor link to headlines.
 geekdocAnchor: true
 
-# If you have protected some pages with e.g. basic auth, you may want to exclude
-# these pages from list views as it could leak information otherwise. Set this parameter
-# to 'true' will exclude the page from search results, feeds, ect.
-# WARNING: Consider hosting a standalone full auth-protected static page for secret information instead!
+# If you have protected some pages with e.g. basic authentication you may want to exclude these pages
+# from data file, otherwise information may be leaked. Setting this parameter to 'true' will exclude the
+# page from search data, feeds, etc.
+# WARNING: Consider hosting a standalone, fully auth-protected static page for secret information instead!
 geekdocProtected: false
 ```
 
