@@ -230,6 +230,12 @@ geekdocCollapseSection = true
 
 # Add an anchor link to headlines.
 geekdocAnchor = true
+
+# If you have protected some pages with e.g. basic authentication you may want to exclude these pages
+# from data file, otherwise information may be leaked. Setting this parameter to 'true' will exclude the
+# page from search data, feeds, etc.
+# WARNING: Consider hosting a standalone, fully auth-protected static page for secret information instead!
+geekdocProtected: false
 ```
 
 {{< /tab >}}
@@ -277,6 +283,12 @@ geekdocCollapseSection: true
 
 # Add an anchor link to headlines.
 geekdocAnchor: true
+
+# If you have protected some pages with e.g. basic authentication you may want to exclude these pages
+# from data file, otherwise information may be leaked. Setting this parameter to 'true' will exclude the
+# page from search data, feeds, etc.
+# WARNING: Consider hosting a standalone, fully auth-protected static page for secret information instead!
+geekdocProtected: false
 ```
 
 {{< /tab >}}
