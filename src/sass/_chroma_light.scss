@@ -1,6 +1,8 @@
 @mixin chroma_github {
+  /* Theme: GitHub */
+  /* Background */
   .chroma {
-    color: #999988;
+    color: #999;
     margin: 1rem 0;
   }
   .chroma code {
@@ -39,6 +41,9 @@
     }
   }
 
+  /* Other */
+  .chroma .x {
+  }
   /* Error */
   .chroma .err {
     color: #a61717;
@@ -123,6 +128,9 @@
     color: #445588;
     font-weight: bold;
   }
+  /* Name */
+  .chroma .n {
+  }
   /* NameAttribute */
   .chroma .na {
     color: #008080;
@@ -163,6 +171,9 @@
     color: #990000;
     font-weight: bold;
   }
+  /* NameFunctionMagic */
+  .chroma .fm {
+  }
   /* NameLabel */
   .chroma .nl {
     color: #990000;
@@ -171,6 +182,12 @@
   /* NameNamespace */
   .chroma .nn {
     color: #555555;
+  }
+  /* NameOther */
+  .chroma .nx {
+  }
+  /* NameProperty */
+  .chroma .py {
   }
   /* NameTag */
   .chroma .nt {
@@ -191,6 +208,15 @@
   /* NameVariableInstance */
   .chroma .vi {
     color: #008080;
+  }
+  /* NameVariableMagic */
+  .chroma .vm {
+  }
+  /* Literal */
+  .chroma .l {
+  }
+  /* LiteralDate */
+  .chroma .ld {
   }
   /* LiteralString */
   .chroma .s {
@@ -286,6 +312,9 @@
     color: #000000;
     font-weight: bold;
   }
+  /* Punctuation */
+  .chroma .p {
+  }
   /* Comment */
   .chroma .c {
     color: #999988;
@@ -323,6 +352,9 @@
     color: #999999;
     font-weight: bold;
     font-style: italic;
+  }
+  /* Generic */
+  .chroma .g {
   }
   /* GenericDeleted */
   .chroma .gd {
