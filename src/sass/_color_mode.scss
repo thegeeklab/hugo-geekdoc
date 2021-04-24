@@ -1,0 +1,37 @@
+@mixin light_mode {
+  @include chroma_github;
+
+  --body-background: #{$body-background};
+  --body-font-color: #{$body-font-color};
+
+  --link-color: #{$link-color};
+  --link-color-visited: #{$link-color-visited};
+
+  --code-background: #{$code-background};
+  --code-accent-color: #{darken($code-background, 6)};
+  --code-accent-color-lite: #{darken($code-background, 2)};
+
+  --accent-color: #{$gray-200};
+  --accent-color-lite: #{$gray-100};
+
+  --control-icons: #{lighten($body-font-color, 50)};
+}
+
+@mixin dark_mode {
+  @include chroma_dark;
+
+  --body-background: #{$main-color-dark};
+  --body-font-color: #{lighten($main-color-dark, 60)};
+
+  --link-color: #{$link-color-dark};
+  --link-color-visited: #{$link-color-visited-dark};
+
+  --code-background: #{$code-background-dark};
+  --code-accent-color: #{darken($code-background-dark, 4)};
+  --code-accent-color-lite: #{darken($code-background-dark, 2)};
+
+  --accent-color: #{darken($main-color-dark, 4)};
+  --accent-color-lite: #{darken($main-color-dark, 2)};
+
+  --control-icons: #{lighten($body-font-color, 50)};
+}

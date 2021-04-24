@@ -18,8 +18,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     localStorage.setItem(THEME, currentMode);
 
     darkModeToggle.setAttribute("class", "toggle-" + currentMode);
-
-    let darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
     if (currentMode === AUTO_MODE) {
       html.removeAttribute("color-mode");
     } else {
@@ -37,14 +35,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let nextMode = toggle(TOGGLE_MODES, currentMode);
 
     localStorage.setItem(THEME, TOGGLE_MODES[nextMode]);
-    applyTheme(true);
+    applyTheme(false);
   };
 });
 
 function toggle(list = [], value) {
-  console.log("Toggle value:", value);
   current = list.indexOf(value);
-  console.log("Toggle current:", current, list[current]);
   max = list.length - 1;
   next = 0;
 
@@ -52,6 +48,5 @@ function toggle(list = [], value) {
     next = current + 1;
   }
 
-  console.log("Toggle next:", next, list[next]);
   return next;
 }
