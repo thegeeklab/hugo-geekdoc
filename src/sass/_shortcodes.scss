@@ -57,7 +57,7 @@
   }
 
   &__control:checked + &__label {
-    border-bottom: $border-1 solid $link-color;
+    border-bottom: $border-2 solid var(--link-color);
   }
   &__control:checked + &__label + &__content {
     display: block;
@@ -108,7 +108,7 @@
   @each $name, $color in $hint-colors {
     &.#{$name} {
       border-left-color: $color;
-      background-color: rgba(lighten($color, 26), 0.7);
+      background-color: rgba(lighten($color, 26), 0.8);
       color: $body-font-color;
     }
   }

@@ -12,6 +12,7 @@ CHANGELOG.md
 # auto-generated files
 assets/sprites/
 assets/*.css
+assets/js/darkmode.min.js
 static/*.css
 !static/custom.css
 static/js/*.js

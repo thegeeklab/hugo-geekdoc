@@ -6,6 +6,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const iconfont = require("gulp-iconfont");
 const clean = require("gulp-clean");
 const filelist = require("gulp-filelist");
+const minify = require("gulp-minify");
 
 const realFavicon = require("gulp-real-favicon");
 const path = require("path");
@@ -196,6 +197,23 @@ gulp.task("iconfont", function () {
     .pipe(gulp.dest("static/fonts/"));
 });
 
+gulp.task("min-js", function () {
+  return gulp
+    .src(["assets/js/*.raw.js"])
+    .pipe(
+      minify({
+        noSource: true,
+      })
+    )
+    .pipe(
+      rename(function (path) {
+        path.basename = path.basename.split(".")[0];
+        path.extname = ".min.js";
+      })
+    )
+    .pipe(gulp.dest("assets/js/"));
+});
+
 gulp.task("asset-rev", function () {
   return gulp
     .src(["assets/*.min.css", "assets/js/*.min.js"], {
@@ -229,10 +247,11 @@ gulp.task("svg", gulp.series("svg-sprite", "svg-sprite-list"));
 
 gulp.task(
   "default",
-  gulp.series("sass", "svg-sprite", "iconfont", "favicon-generate", "asset")
+  gulp.series("sass", "svg", "iconfont", "favicon-generate", "min-js", "asset")
 );
 
 gulp.task("devel", function () {
   gulp.watch("src/sass/**/*.*css", gulp.series("sass", "asset"));
+  gulp.watch("assets/js/*.raw.js", gulp.series("min-js"));
   gulp.watch("assets/js/*.js", gulp.series("asset"));
 });
