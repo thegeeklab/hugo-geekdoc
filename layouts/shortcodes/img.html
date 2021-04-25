@@ -21,12 +21,8 @@
                 {{ with $customSize }}
                 srcset="{{ index $size $customSize }}"
                 {{ else }}
-                srcset="{{ $size.tiny }} 320w,
-                        {{ $size.small }} 600w,
+                srcset="{{ $size.small }} 600w,
                         {{ $size.medium }} 1200w"
-                sizes="(max-width: 320px) 320w,
-                    (max-width: 600px) 600w,
-                    (max-width: 1200px) 1200w"
                 {{ end }} />
             <img
                 {{ if $lazyLoad }}loading="lazy"{{ end }}
