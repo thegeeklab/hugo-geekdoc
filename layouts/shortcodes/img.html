@@ -23,6 +23,7 @@
                 {{ else }}
                 srcset="{{ $size.small }} 600w,
                         {{ $size.medium }} 1200w"
+                sizes="100vw"
                 {{ end }} />
             <img
                 {{ if $lazyLoad }}loading="lazy"{{ end }}
