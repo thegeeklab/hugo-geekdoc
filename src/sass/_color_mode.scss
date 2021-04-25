@@ -1,6 +1,8 @@
 @mixin light_mode {
   @include chroma_github;
 
+  --header-color: #{$white};
+
   --body-background: #{$body-background};
   --body-font-color: #{$body-font-color};
 
@@ -20,6 +22,8 @@
 @mixin dark_mode {
   @include chroma_dark;
 
+  --header-color: #{$white};
+
   --body-background: #{$main-color-dark};
   --body-font-color: #{lighten($main-color-dark, 60)};
 
@@ -34,4 +38,10 @@
   --accent-color-lite: #{darken($main-color-dark, 2)};
 
   --control-icons: #{lighten($body-font-color, 50)};
+
+  .dark-mode-dim .gdoc-markdown {
+    img {
+      filter: brightness(0.75) grayscale(0.2);
+    }
+  }
 }

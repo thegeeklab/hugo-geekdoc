@@ -74,7 +74,7 @@ resources:
 
 <!-- spellchecker-disable -->
 
-{{< img name="forest-1" size="large" lazy=false >}}
+{{< img name="forest-1" lazy=false >}}
 
 <!-- spellchecker-enable -->
 
@@ -85,7 +85,7 @@ copious quo ad. Stet probates in duo.
 
 <!-- spellchecker-disable -->
 
-{{< img name="forest-2" size="large" lazy=true >}}
+{{< img name="forest-2" lazy=true >}}
 
 <!-- spellchecker-enable -->
 
@@ -96,7 +96,7 @@ copious quo ad. Stet probates in duo.
 
 <!-- spellchecker-disable -->
 
-{{< img name="forest-3" size="large" lazy=true >}}
+{{< img name="forest-3" lazy=true >}}
 
 <!-- spellchecker-enable -->
 
@@ -107,7 +107,7 @@ copious quo ad. Stet probates in duo.
 
 <!-- spellchecker-disable -->
 
-{{< img name="forest-4" size="large" lazy=true >}}
+{{< img name="forest-4" lazy=true >}}
 
 <!-- spellchecker-enable -->
 
@@ -118,7 +118,7 @@ copious quo ad. Stet probates in duo.
 
 <!-- spellchecker-disable -->
 
-{{< img name="forest-5" size="large" lazy=true >}}
+{{< img name="forest-5" lazy=true >}}
 
 <!-- spellchecker-enable -->
 
@@ -129,7 +129,7 @@ copious quo ad. Stet probates in duo.
 
 <!-- spellchecker-disable -->
 
-{{< img name="forest-6" size="large" lazy=true >}}
+{{< img name="forest-6" lazy=true >}}
 
 <!-- spellchecker-enable -->
 
@@ -140,6 +140,6 @@ copious quo ad. Stet probates in duo.
 
 <!-- spellchecker-disable -->
 
-{{< img name="forest-7" size="large" lazy=true >}}
+{{< img name="forest-7" lazy=true >}}
 
 <!-- spellchecker-enable -->

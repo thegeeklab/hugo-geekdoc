@@ -163,7 +163,7 @@ img {
 
 .gdoc-header {
   background: $main-color;
-  color: $white;
+  color: var(--header-color);
   border-bottom: 0.3em solid $second-color;
 
   &__link,
