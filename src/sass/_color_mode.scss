@@ -44,4 +44,10 @@
       filter: brightness(0.75) grayscale(0.2);
     }
   }
+
+  .gdoc-markdown {
+    .gdoc-hint {
+      filter: saturate(2.5) brightness(0.85);
+    }
+  }
 }

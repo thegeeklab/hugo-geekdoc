@@ -1,4 +1,4 @@
-If you want to customize the color scheme of the theme to give it your individual touch you are just a few lines CSS away. In general, you have to override the defaults, the easiest way to do so is to create a `static/custom.css` file right in your site root.
+If you want to customize the color scheme of the theme to give it your individual touch you are just a few lines of CSS away. In general, you have to override the defaults, the easiest way to do so is to create a `static/custom.css` file right in your site root.
 
 All necessary class names are listed below. If you miss some classes required for a color scheme you are very welcome to create an [Issue](https://github.com/thegeeklab/hugo-geekdoc/issues) or Pull Request. For some inspiration you can have a look at [https://www.color-hex.com/color-palettes/](https://www.color-hex.com/). The following listing use the _HC-primary_ color palette as an example:
 
