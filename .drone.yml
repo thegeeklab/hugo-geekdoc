@@ -18,7 +18,7 @@ steps:
     NPM_CONFIG_LOGLEVEL: error
 
 - name: testbuild
-  image: klakegg/hugo:0.80.0-ext-alpine-ci
+  image: klakegg/hugo:0.81.0-ext-alpine-ci
   commands:
   - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
   - hugo-official -s exampleSite/ -b http://localhost/
