@@ -9,17 +9,33 @@
 <link rel="preload" as="font" href="{{ "fonts/DroidSans.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" as="font" href="{{ "fonts/GeekdocIcons.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
 
-<link rel="preload" href="{{ index .Site.Data.assets "main.min.css" | relURL }}" as="style">
-<link rel="stylesheet" href="{{ index .Site.Data.assets "main.min.css" | relURL }}" media="all">
-
-<link rel="preload" href="{{ index .Site.Data.assets "mobile.min.css" | relURL }}" as="style">
-<link rel="stylesheet" href="{{ index .Site.Data.assets "mobile.min.css" | relURL }}" media="screen and (max-width: 45rem)">
-
-<link rel="preload" href="{{ index .Site.Data.assets "print.min.css" | relURL }}" as="style">
-<link rel="stylesheet" href="{{ index .Site.Data.assets "print.min.css" | relURL }}" media="print">
-
-<link rel="preload" href="{{ index .Site.Data.assets "custom.css" | relURL }}" as="style">
-<link rel="stylesheet" href="{{ index .Site.Data.assets "custom.css" | relURL }}" media="all">
+{{ $styles := slice
+    (dict
+        "file" "main"
+        "media" "all"
+    )
+    (dict
+        "file" "mobile"
+        "media" "screen and (max-width: 45rem)"
+    )
+    (dict
+        "file" "print"
+        "media" "print"
+    )
+    (dict
+        "file" "custom"
+        "media" "all"
+    )
+}}
+{{- range $styles }}
+    {{- $sass := print "sass/" .file ".scss" }}
+    {{- if resources.Get $sass }}
+        {{- $outputName := print .file ".css" }}
+        {{- $style := resources.Get $sass | resources.ToCSS (dict "targetPath" $outputName "enableSourceMap" true) | resources.PostCSS (dict "config" "postcss.config.js") | minify | fingerprint }}
+<link rel="preload" href="{{ $style.RelPermalink }}" as="style">
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" media="{{ .media }}">
+    {{- end -}}
+{{ end }}
 
 {{ with .OutputFormats.Get "rss" -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}

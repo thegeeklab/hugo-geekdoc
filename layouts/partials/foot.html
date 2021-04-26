@@ -7,7 +7,7 @@
 {{ end }}
 
 {{ if default true .Site.Params.GeekdocAnchorCopy }}
-<script defer src="{{ index .Site.Data.assets "js/clipboard.min.js" | relURL }}"></script>
+<script defer src="{{ (resources.Get "js/clipboard.min.js" | fingerprint ).RelPermalink }}"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
         var clipboard = new ClipboardJS('.clip');

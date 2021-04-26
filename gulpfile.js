@@ -1,10 +1,5 @@
 const gulp = require("gulp");
-const rename = require("gulp-rename");
-const sass = require("gulp-sass");
-const cleanCSS = require("gulp-clean-css");
-const autoprefixer = require("gulp-autoprefixer");
 const iconfont = require("gulp-iconfont");
-const clean = require("gulp-clean");
 const filelist = require("gulp-filelist");
 
 const realFavicon = require("gulp-real-favicon");
@@ -12,27 +7,9 @@ const path = require("path");
 const fs = require("fs");
 
 const svgSprite = require("gulp-svg-sprite");
-const rev = require("gulp-rev");
 
-var CSSDEST = "assets/";
 var FAVICON_DATA_FILE = "build/faviconData.json";
 var TIMESTAMP = Math.round(Date.now() / 1000);
-
-gulp.task("sass", function () {
-  return gulp
-    .src("src/sass/{main,print,mobile}.scss")
-    .pipe(sass({ errLogToConsole: true }))
-    .pipe(cleanCSS({ format: "beautify" }))
-    .pipe(
-      autoprefixer({
-        cascade: false,
-      })
-    )
-    .pipe(gulp.dest(CSSDEST))
-    .pipe(cleanCSS())
-    .pipe(rename({ extname: ".min.css" }))
-    .pipe(gulp.dest(CSSDEST));
-});
 
 gulp.task("favicon-generate", function (done) {
   realFavicon.generateFavicon(
@@ -196,42 +173,9 @@ gulp.task("iconfont", function () {
     .pipe(gulp.dest("static/fonts/"));
 });
 
-gulp.task("asset-rev", function () {
-  return gulp
-    .src(["assets/*.min.css", "assets/js/*.min.js"], {
-      base: "static",
-    })
-    .pipe(gulp.dest("build/assets"))
-    .pipe(rev())
-    .pipe(gulp.dest("static"))
-    .pipe(
-      rev.manifest("data/assets-static.json", {
-        base: "data",
-        merge: true,
-      })
-    )
-    .pipe(rename("assets.json"))
-    .pipe(gulp.dest("data"));
-});
-
-gulp.task("asset-rm", function () {
-  return gulp
-    .src(["build/assets", "static/js/*-*.js", "static/*-*.css"], {
-      read: false,
-      allowEmpty: true,
-    })
-    .pipe(clean());
-});
-
-gulp.task("asset", gulp.series("asset-rm", "asset-rev"));
-
 gulp.task("svg", gulp.series("svg-sprite", "svg-sprite-list"));
 
 gulp.task(
   "default",
-  gulp.series("sass", "svg-sprite", "iconfont", "favicon-generate", "asset")
+  gulp.series("svg-sprite", "iconfont", "favicon-generate")
 );
-
-gulp.task("devel", function () {
-  gulp.watch("src/sass/**/*.*css", gulp.series("sass", "asset"));
-});
