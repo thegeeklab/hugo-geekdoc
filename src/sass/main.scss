@@ -1,4 +1,7 @@
 @import "_defaults";
+@import "_color_mode";
+@import "_chroma_light";
+@import "_chroma_dark";
 
 @import "_normalize";
 @import "_utils";
@@ -6,5 +9,4 @@
 @import "_base";
 
 @import "_markdown";
-@import "_chroma_github";
 @import "_shortcodes";

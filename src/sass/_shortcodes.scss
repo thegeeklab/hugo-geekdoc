@@ -3,13 +3,13 @@
   margin-top: $padding-16;
   margin-bottom: $padding-16;
 
-  border: $border-1 solid $gray-200;
+  border: $border-1 solid var(--accent-color);
   border-radius: $border-radius;
 
   overflow: hidden;
 
   &__head {
-    background: $gray-100;
+    background: var(--accent-color-lite);
     padding: $padding-8 $padding-16;
     cursor: pointer;
   }
@@ -33,7 +33,7 @@
   margin-top: $padding-16;
   margin-bottom: $padding-16;
 
-  border: $border-1 solid $gray-200;
+  border: $border-1 solid var(--accent-color);
   border-radius: $border-radius;
 
   overflow: hidden;
@@ -51,13 +51,13 @@
   &__content {
     order: 999; //Move content blocks to the end
     width: 100%;
-    border-top: $border-1 solid $gray-100;
+    border-top: $border-1 solid var(--accent-color-lite);
     padding: $padding-16;
     display: none;
   }
 
   &__control:checked + &__label {
-    border-bottom: $border-1 solid $color-link;
+    border-bottom: $border-2 solid var(--link-color);
   }
   &__control:checked + &__label + &__content {
     display: block;
@@ -83,8 +83,8 @@
 // {{< button >}}
 .gdoc-button {
   display: inline-block;
-  color: $gray-700;
-  border: $border-1 solid $gray-500;
+  background: var(--accent-color-lite);
+  border: $border-1 solid var(--accent-color);
   border-radius: $border-radius;
   margin: $padding-8 0;
   cursor: pointer;
@@ -97,8 +97,8 @@
   }
 
   &:hover {
-    background: rgba($main-color, 0.9);
-    border-color: $main-color;
+    background: var(--button-background);
+    border-color: var(--button-border-color);
     color: $gray-100;
   }
 }
@@ -108,7 +108,8 @@
   @each $name, $color in $hint-colors {
     &.#{$name} {
       border-left-color: $color;
-      background-color: rgba($color, 0.1);
+      background-color: scale-color($color, $lightness: 95%, $saturation: -30%);
+      color: $body-font-color;
     }
   }
 }

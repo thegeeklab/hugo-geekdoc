@@ -23,7 +23,7 @@
     font-weight: 600;
 
     > code {
-      border-top: 3px solid $gray-300;
+      border-top: $border-4 solid var(--accent-color);
       font-size: 0.75em !important;
     }
   }
@@ -74,7 +74,7 @@
   &__figure {
     padding: $padding-4;
     margin: $padding-16 0;
-    background-color: $gray-300;
+    background-color: var(--accent-color);
     display: table;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
@@ -82,7 +82,7 @@
     figcaption {
       display: table-caption;
       caption-side: bottom;
-      background-color: $gray-300;
+      background-color: var(--accent-color);
       padding: 0 $padding-4 $padding-4;
       text-align: center;
       border-bottom-left-radius: $border-radius;
@@ -99,7 +99,7 @@
     margin: $padding-16 0;
     padding: $padding-8 $padding-16 $padding-8 ($padding-16 - $padding-4); //to keep total left space 16dp
 
-    border-left: $border-4 solid $gray-200;
+    border-left: $border-4 solid var(--accent-color);
     border-radius: $border-radius;
 
     :first-child {
@@ -121,18 +121,18 @@
     tr th,
     tr td {
       padding: $padding-8 $padding-16;
-      border: $border-1 solid $gray-200;
+      border: $border-1 solid var(--accent-color);
     }
 
     tr:nth-child(2n) {
-      background: $gray-100;
+      background: var(--accent-color-lite);
     }
   }
 
   hr {
-    height: $padding-2;
+    height: $border-2;
     border: none;
-    background: $gray-200;
+    background: var(--accent-color);
   }
 
   ul,
@@ -156,9 +156,9 @@
   }
 
   code {
-    background-color: $color-code;
+    background-color: var(--code-background);
     font-size: 0.85em;
-    line-height: 1.45;
+    line-height: 1.45em;
     padding: 0.2em 0.4em;
   }
 

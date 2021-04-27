@@ -1,10 +1,10 @@
 ---
-title: Icons
+title: Icon Sets
 ---
 
 {{< toc >}}
 
-## Custom icons
+## Custom icon sets
 
 The only supported source for custom icons are SVG sprites. Some icon frameworks provides ready to use sprites e.g. FontAwesome. If the framework don't provide sprites, you can create your own from raw SVG icons. There are a lot of tools available to create sprites, please choose one that fits your need. One solution could be [svgsprit.es](https://svgsprit.es/).
 
@@ -26,7 +26,7 @@ The result of a valid minimal SVG sprite file could look like this:
 
 **Example:**
 
-FontAwesome provides three pre-build sprites included in the regular Web download pack, `sprites/brands.svg`, `sprites/regular.svg` and `sprites/solid.svg`. Choose your sprite to use and copy it to your projects root directory into `assets/sprites`, right beside your `content` folder. The result should look like this:
+FontAwesome provides three pre-build sprites included in the regular Web download pack, `sprites/brands.svg`, `sprites/regular.svg` and `sprites/solid.svg`. Choose your sprite to use and copy it to your projects root directory into `assets/sprites`, right beside your `content` folder:
 
 ```Bash
 my_projcet/

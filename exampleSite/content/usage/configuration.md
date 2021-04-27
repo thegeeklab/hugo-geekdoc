@@ -90,6 +90,10 @@ enableGitInfo = true
   # a subdirectory is used within Hugo's BaseURL.
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekdocOverwriteHTMLBase = false
+
+  # (Optional, default false) Auto-decrease brightness of images and add a slightly grayscale to avoid
+  # bright spots while using the dark mode.
+  geekdocDarkModeDim = false
 ```
 
 {{< /tab >}}
@@ -178,6 +182,10 @@ params:
   # a subdirectory is used within Hugo's BaseURL.
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekdocOverwriteHTMLBase: false
+
+  # (Optional, default false) Auto-decrease brightness of images and add a slightly grayscale to avoid
+  # bright spots while using the dark mode.
+  geekdocDarkModeDim: false
 ```
 
 {{< /tab >}}

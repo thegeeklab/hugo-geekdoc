@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ .Site.Language.Lang }}" class="color-toggle-hidden">
 
 <head>
     {{ partial "head/meta" . }}
@@ -12,7 +12,7 @@
 <body itemscope itemtype="https://schema.org/WebPage">
     {{ partial "svg-icon-symbols" . }}
 
-    <div class="wrapper">
+    <div class="wrapper {{ if default false .Site.Params.geekdocDarkModeDim }}dark-mode-dim{{ end }}">
         <input type="checkbox" class="hidden" id="menu-control" />
         {{ partial "site-header" (dict "Root" . "MenuEnabled" true) }}
 
