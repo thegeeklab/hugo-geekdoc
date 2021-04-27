@@ -91,7 +91,7 @@ enableGitInfo = true
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekdocOverwriteHTMLBase = false
 
-  # (Optional, default false) Auto-decrease brightness and slightly grayscale images to avoid
+  # (Optional, default false) Auto-decrease brightness of images and add a slightly grayscale to avoid
   # bright spots while using the dark mode.
   geekdocDarkModeDim = false
 ```
@@ -183,7 +183,7 @@ params:
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekdocOverwriteHTMLBase: false
 
-  # (Optional, default false) Auto-decrease brightness and slightly grayscale images to avoid
+  # (Optional, default false) Auto-decrease brightness of images and add a slightly grayscale to avoid
   # bright spots while using the dark mode.
   geekdocDarkModeDim: false
 ```
