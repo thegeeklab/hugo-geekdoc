@@ -2,9 +2,9 @@
 :root,
 :root[color-mode="light"] {
   --header-background: #4ec58a;
-  --header-font-color: white;
+  --header-font-color: #ffffff;
 
-  --body-background: white;
+  --body-background: #ffffff;
   --body-font-color: #343a40;
 
   --button-background: #62cb97;
@@ -23,16 +23,16 @@
   --control-icons: #b2bac1;
 
   --footer-background: #2f333e;
-  --footer-font-color: white;
+  --footer-font-color: #ffffff;
   --footer-link-color: #ffcc5c;
   --footer-link-color-visited: #ffcc5c;
 }
 @media (prefers-color-scheme: light) {
   :root {
     --header-background: #4ec58a;
-    --header-font-color: white;
+    --header-font-color: #ffffff;
 
-    --body-background: white;
+    --body-background: #ffffff;
     --body-font-color: #343a40;
 
     --button-background: #62cb97;
@@ -51,7 +51,7 @@
     --control-icons: #b2bac1;
 
     --footer-background: #2f333e;
-    --footer-font-color: white;
+    --footer-font-color: #ffffff;
     --footer-link-color: #ffcc5c;
     --footer-link-color-visited: #ffcc5c;
   }
@@ -60,7 +60,7 @@
 /* Dark mode theming */
 :root[color-mode="dark"] {
   --header-background: #4ec58a;
-  --header-font-color: white;
+  --header-font-color: #ffffff;
 
   --body-background: #343a40;
   --body-font-color: #ced3d8;
@@ -81,14 +81,14 @@
   --control-icons: #b2bac1;
 
   --footer-background: #2f333e;
-  --footer-font-color: white;
+  --footer-font-color: #ffffff;
   --footer-link-color: #ffcc5c;
   --footer-link-color-visited: #ffcc5c;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --header-background: #4ec58a;
-    --header-font-color: white;
+    --header-font-color: #ffffff;
 
     --body-background: #343a40;
     --body-font-color: #ced3d8;
@@ -109,7 +109,7 @@
     --control-icons: #b2bac1;
 
     --footer-background: #2f333e;
-    --footer-font-color: white;
+    --footer-font-color: #ffffff;
     --footer-link-color: #ffcc5c;
     --footer-link-color-visited: #ffcc5c;
   }
