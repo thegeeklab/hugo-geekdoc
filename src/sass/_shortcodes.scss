@@ -97,8 +97,8 @@
   }
 
   &:hover {
-    background: lighten($main-color, 2);
-    border-color: $main-color;
+    background: var(--button-background);
+    border-color: var(--button-border-color);
     color: $gray-100;
   }
 }

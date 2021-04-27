@@ -47,12 +47,15 @@ $container-max-width: 80rem !default;
 $main-color: rgba(65, 134, 201, 1) !default;
 $second-color: rgba(47, 51, 62, 1) !default;
 
-$main-color-dark: mix(invert($body-background, 75%), $second-color) !default;
+$body-background-dark: mix(
+  invert($body-background, 75%),
+  $second-color
+) !default;
 $link-color-dark: lighten(desaturate($link-color, 40), 25) !default;
 $link-color-visited-dark: lighten($link-color-visited, 10) !default;
 
 $code-background: lighten($gray-200, 4) !default;
-$code-background-dark: darken($main-color-dark, 2) !default;
+$code-background-dark: darken($body-background-dark, 2) !default;
 
 $header-height: 3.5rem !default;
 $menu-width: 16rem !default;

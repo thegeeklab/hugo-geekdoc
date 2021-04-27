@@ -162,8 +162,8 @@ img {
 }
 
 .gdoc-header {
-  background: $main-color;
-  color: var(--header-color);
+  background: var(--header-background);
+  color: var(--header-font-color);
   border-bottom: 0.3em solid $second-color;
 
   &__link,
@@ -441,8 +441,8 @@ img {
 }
 
 .gdoc-footer {
-  background: $second-color;
-  color: $white;
+  background: var(--footer-background);
+  color: var(--footer-font-color);
 
   &__item {
     margin-right: 1em;
@@ -450,10 +450,10 @@ img {
   }
 
   &__link {
-    color: $link-color-footer;
+    color: var(--footer-link-color);
 
     &:visited {
-      color: $link-color-footer;
+      color: var(--footer-link-color-visited);
     }
   }
 }
