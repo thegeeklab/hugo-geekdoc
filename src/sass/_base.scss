@@ -164,7 +164,7 @@ img {
 .gdoc-header {
   background: var(--header-background);
   color: var(--header-font-color);
-  border-bottom: 0.3em solid $second-color;
+  border-bottom: 0.3em solid var(--footer-background);
 
   &__link,
   &__link:visited {
