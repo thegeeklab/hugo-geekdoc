@@ -2,6 +2,7 @@
 .swp
 .env*
 dist/
+build/
 node_modules/
 lhci_reports/
 exampleSite/themes/

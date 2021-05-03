@@ -20,10 +20,10 @@ const fs = require("fs");
 const del = require("del");
 const through = require("through2");
 
-var DIST = "dist";
-var CSS_DIST = DIST + "/assets";
-var JS_DIST = DIST + "/assets/js";
-var FAVICON_DATA_FILE = DIST + "/faviconData.json";
+var BUILD = "build";
+var CSS_BUILD = BUILD + "/assets";
+var JS_BUILD = BUILD + "/assets/js";
+var FAVICON_DATA_FILE = BUILD + "/faviconData.json";
 var TIMESTAMP = Math.round(Date.now() / 1000);
 
 function noop() {
@@ -47,11 +47,11 @@ gulp.task("sass", function () {
         cascade: false,
       })
     )
-    .pipe(gulp.dest(CSS_DIST))
+    .pipe(gulp.dest(CSS_BUILD))
     .pipe(cleanCSS())
     .pipe(rename({ extname: ".min.css" }))
     .pipe(devBuild ? sourcemaps.write(".") : noop())
-    .pipe(gulp.dest(CSS_DIST));
+    .pipe(gulp.dest(CSS_BUILD));
 });
 
 gulp.task("favicon-generate", function (done) {
@@ -146,7 +146,7 @@ gulp.task("svg-sprite", function () {
         padding: 2,
         box: "content",
       },
-      dest: DIST + "/intermediate-svg",
+      dest: BUILD + "/intermediate-svg",
     },
     svg: {
       xmlDeclaration: false,
@@ -223,7 +223,7 @@ gulp.task("js", function () {
     .pipe(uglify())
     .pipe(rename({ extname: ".min.js" }))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(JS_DIST));
+    .pipe(gulp.dest(JS_BUILD));
 });
 
 gulp.task("asset-sync", function () {
@@ -233,13 +233,13 @@ gulp.task("asset-sync", function () {
       "node_modules/flexsearch/dist/flexsearch.min.js",
       "node_modules/mermaid/dist/mermaid.min.js",
     ])
-    .pipe(gulp.dest(JS_DIST));
+    .pipe(gulp.dest(JS_BUILD));
 });
 
 gulp.task("asset-rev", function () {
   return gulp
-    .src([CSS_DIST + "/*.min.css", JS_DIST + "/*.min.js"], {
-      base: DIST + "/assets",
+    .src([CSS_BUILD + "/*.min.css", JS_BUILD + "/*.min.js"], {
+      base: BUILD + "/assets",
     })
     .pipe(rev())
     .pipe(gulp.dest("static"))
@@ -255,15 +255,15 @@ gulp.task("asset-rev", function () {
 
 gulp.task("asset-map", function () {
   return gulp
-    .src([CSS_DIST + "/*.min.css.map", JS_DIST + "/*.min.js.map"], {
-      base: DIST + "/assets",
+    .src([CSS_BUILD + "/*.min.css.map", JS_BUILD + "/*.min.js.map"], {
+      base: BUILD + "/assets",
     })
     .pipe(gulp.dest("static"));
 });
 
 gulp.task("clean", function () {
   return del([
-    DIST,
+    BUILD,
     "assets/sprites/",
     "static/js/",
     "static/favicon/",
