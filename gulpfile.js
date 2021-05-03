@@ -1,27 +1,45 @@
+const devBuild = !(
+  (process.env.NODE_ENV || "prod").trim().toLowerCase() === "prod"
+);
+
 const gulp = require("gulp");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const cleanCSS = require("gulp-clean-css");
 const autoprefixer = require("gulp-autoprefixer");
 const iconfont = require("gulp-iconfont");
-const clean = require("gulp-clean");
 const filelist = require("gulp-filelist");
-const minify = require("gulp-minify");
-
+const uglify = require("gulp-uglify");
+const sourcemaps = require("gulp-sourcemaps");
 const realFavicon = require("gulp-real-favicon");
-const path = require("path");
-const fs = require("fs");
-
 const svgSprite = require("gulp-svg-sprite");
 const rev = require("gulp-rev");
 
-var CSSDEST = "assets/";
-var FAVICON_DATA_FILE = "build/faviconData.json";
+const path = require("path");
+const fs = require("fs");
+const del = require("del");
+const through = require("through2");
+
+var DIST = "dist";
+var CSS_DIST = DIST + "/assets";
+var JS_DIST = DIST + "/assets/js";
+var FAVICON_DATA_FILE = DIST + "/faviconData.json";
 var TIMESTAMP = Math.round(Date.now() / 1000);
+
+function noop() {
+  return through.obj();
+}
+
+function noop2() {
+  return function (cb) {
+    cb();
+  };
+}
 
 gulp.task("sass", function () {
   return gulp
     .src("src/sass/{main,print,mobile}.scss")
+    .pipe(devBuild ? sourcemaps.init() : noop())
     .pipe(sass({ errLogToConsole: true }))
     .pipe(cleanCSS({ format: "beautify" }))
     .pipe(
@@ -29,10 +47,11 @@ gulp.task("sass", function () {
         cascade: false,
       })
     )
-    .pipe(gulp.dest(CSSDEST))
+    .pipe(gulp.dest(CSS_DIST))
     .pipe(cleanCSS())
     .pipe(rename({ extname: ".min.css" }))
-    .pipe(gulp.dest(CSSDEST));
+    .pipe(devBuild ? sourcemaps.write(".") : noop())
+    .pipe(gulp.dest(CSS_DIST));
 });
 
 gulp.task("favicon-generate", function (done) {
@@ -127,7 +146,7 @@ gulp.task("svg-sprite", function () {
         padding: 2,
         box: "content",
       },
-      dest: "build/intermediate-svg",
+      dest: DIST + "/intermediate-svg",
     },
     svg: {
       xmlDeclaration: false,
@@ -197,29 +216,31 @@ gulp.task("iconfont", function () {
     .pipe(gulp.dest("static/fonts/"));
 });
 
-gulp.task("min-js", function () {
+gulp.task("js", function () {
   return gulp
-    .src(["assets/js/*.raw.js"])
-    .pipe(
-      minify({
-        noSource: true,
-      })
-    )
-    .pipe(
-      rename(function (path) {
-        path.basename = path.basename.split(".")[0];
-        path.extname = ".min.js";
-      })
-    )
-    .pipe(gulp.dest("assets/js/"));
+    .src(["src/js/*.js"])
+    .pipe(sourcemaps.init())
+    .pipe(uglify())
+    .pipe(rename({ extname: ".min.js" }))
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest(JS_DIST));
+});
+
+gulp.task("asset-sync", function () {
+  return gulp
+    .src([
+      "node_modules/clipboard/dist/clipboard.min.js",
+      "node_modules/flexsearch/dist/flexsearch.min.js",
+      "node_modules/mermaid/dist/mermaid.min.js",
+    ])
+    .pipe(gulp.dest(JS_DIST));
 });
 
 gulp.task("asset-rev", function () {
   return gulp
-    .src(["assets/*.min.css", "assets/js/*.min.js"], {
-      base: "static",
+    .src([CSS_DIST + "/*.min.css", JS_DIST + "/*.min.js"], {
+      base: DIST + "/assets",
     })
-    .pipe(gulp.dest("build/assets"))
     .pipe(rev())
     .pipe(gulp.dest("static"))
     .pipe(
@@ -232,26 +253,52 @@ gulp.task("asset-rev", function () {
     .pipe(gulp.dest("data"));
 });
 
-gulp.task("asset-rm", function () {
+gulp.task("asset-map", function () {
   return gulp
-    .src(["build/assets", "static/js/*-*.js", "static/*-*.css"], {
-      read: false,
-      allowEmpty: true,
+    .src([CSS_DIST + "/*.min.css.map", JS_DIST + "/*.min.js.map"], {
+      base: DIST + "/assets",
     })
-    .pipe(clean());
+    .pipe(gulp.dest("static"));
 });
 
-gulp.task("asset", gulp.series("asset-rm", "asset-rev"));
+gulp.task("clean", function () {
+  return del([
+    DIST,
+    "assets/sprites/",
+    "static/js/",
+    "static/favicon/",
+    "static/*.min.css",
+    "static/*.css.map",
+    "data/assets.json",
+    "resources",
+  ]);
+});
+
+/* Task series */
+
+gulp.task("asset", gulp.series("asset-sync", "asset-rev"));
 
 gulp.task("svg", gulp.series("svg-sprite", "svg-sprite-list"));
 
 gulp.task(
   "default",
-  gulp.series("sass", "svg", "iconfont", "favicon-generate", "min-js", "asset")
+  gulp.series([
+    devBuild ? [] : "clean",
+    "sass",
+    "js",
+    "asset",
+    devBuild ? "asset-map" : [],
+    "svg",
+    "iconfont",
+    "favicon-generate",
+  ])
 );
 
-gulp.task("devel", function () {
-  gulp.watch("src/sass/**/*.*css", gulp.series("sass", "asset"));
-  gulp.watch("assets/js/*.raw.js", gulp.series("min-js"));
-  gulp.watch("assets/js/*.js", gulp.series("asset"));
+gulp.task("watch", function () {
+  gulp.series("default")();
+  gulp.watch(
+    "src/sass/**/*.*css",
+    gulp.series("sass", "asset-rev", "asset-map")
+  );
+  gulp.watch("src/js/*.js", gulp.series("js", "asset-rev", "asset-map"));
 });
