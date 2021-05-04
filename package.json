@@ -15,6 +15,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "@mr-hope/gulp-sass": "2.0.0",
     "clipboard": "2.0.8",
     "del": "6.0.0",
     "flexsearch": "0.6.32",
@@ -26,7 +27,6 @@
     "gulp-real-favicon": "0.3.2",
     "gulp-rename": "2.0.0",
     "gulp-rev": "9.0.0",
-    "gulp-sass": "4.1.0",
     "gulp-sourcemaps": "3.0.0",
     "gulp-svg-sprite": "1.5.0",
     "gulp-uglify": "3.0.2",

@@ -4,7 +4,7 @@ const devBuild = !(
 
 const gulp = require("gulp");
 const rename = require("gulp-rename");
-const sass = require("gulp-sass");
+const { sass } = require("@mr-hope/gulp-sass");
 const cleanCSS = require("gulp-clean-css");
 const autoprefixer = require("gulp-autoprefixer");
 const iconfont = require("gulp-iconfont");
@@ -30,17 +30,11 @@ function noop() {
   return through.obj();
 }
 
-function noop2() {
-  return function (cb) {
-    cb();
-  };
-}
-
 gulp.task("sass", function () {
   return gulp
     .src("src/sass/{main,print,mobile}.scss")
     .pipe(devBuild ? sourcemaps.init() : noop())
-    .pipe(sass({ errLogToConsole: true }))
+    .pipe(sass().on("error", sass.logError))
     .pipe(cleanCSS({ format: "beautify" }))
     .pipe(
       autoprefixer({
@@ -183,8 +177,7 @@ gulp.task("iconfont", function () {
   var lastUnicode = 0xea01;
   var files = fs.readdirSync("src/iconfont");
 
-  // Filter files with containing unicode value
-  // and set last unicode
+  // Filter files with containing unicode value and set last unicode
   files.forEach(function (file) {
     var basename = path.basename(file);
     var matches = basename.match(/^(?:((?:u[0-9a-f]{4,6},?)+)\-)?(.+)\.svg$/i);
