@@ -14,6 +14,7 @@ const sourcemaps = require("gulp-sourcemaps");
 const realFavicon = require("gulp-real-favicon");
 const svgSprite = require("gulp-svg-sprite");
 const rev = require("gulp-rev");
+const replace = require("gulp-replace");
 
 const path = require("path");
 const fs = require("fs");
@@ -226,6 +227,7 @@ gulp.task("asset-sync", function () {
       "node_modules/flexsearch/dist/flexsearch.min.js",
       "node_modules/mermaid/dist/mermaid.min.js",
     ])
+    .pipe(replace(/\/\/# sourceMappingURL=.+$/, ""))
     .pipe(gulp.dest(JS_BUILD));
 });
 
