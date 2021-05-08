@@ -112,16 +112,25 @@
 
   table {
     overflow: auto;
-    display: block;
+    display: table;
     border-spacing: 0;
     border-collapse: collapse;
     margin-top: $padding-16;
     margin-bottom: $padding-16;
+    width: 100%;
+    text-align: left;
+
+    thead {
+      border-bottom: $border-4 solid var(--accent-color);
+    }
 
     tr th,
     tr td {
       padding: $padding-8 $padding-16;
-      border: $border-1 solid var(--accent-color);
+    }
+
+    tr {
+      border-bottom: $border-2 solid var(--accent-color);
     }
 
     tr:nth-child(2n) {
