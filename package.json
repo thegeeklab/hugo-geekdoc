@@ -16,7 +16,7 @@
   "dependencies": {
     "clipboard": "2.0.8",
     "flexsearch": "0.6.32",
-    "mermaid": "8.9.3"
+    "mermaid": "8.10.1"
   },
   "devDependencies": {
     "@mr-hope/gulp-sass": "2.0.0",
