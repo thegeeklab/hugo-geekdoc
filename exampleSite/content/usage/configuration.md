@@ -243,7 +243,7 @@ geekdocAnchor = true
 # from data file, otherwise information may be leaked. Setting this parameter to 'true' will exclude the
 # page from search data, feeds, etc.
 # WARNING: Consider hosting a standalone, fully auth-protected static page for secret information instead!
-geekdocProtected: false
+geekdocProtected = false
 ```
 
 {{< /tab >}}

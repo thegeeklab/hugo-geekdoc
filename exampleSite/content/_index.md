@@ -23,3 +23,4 @@ Geekdoc is a simple Hugo theme for documentations. It is intentionally designed 
 - Easy customization
 - Zero initial configuration
 - Handy shortcodes
+- Dark mode
