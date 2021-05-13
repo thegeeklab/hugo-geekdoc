@@ -1,3 +1,7 @@
+:root {
+  --code-max-height: 60rem;
+}
+
 .icon-grid {
   width: 8rem;
   height: 8rem;
