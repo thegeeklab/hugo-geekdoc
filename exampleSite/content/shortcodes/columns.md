@@ -1,4 +1,4 @@
-Columns help organize shorter pieces of content horizontally for readability.
+Columns help organize shorter pieces of content vertically for readability.
 
 ```html
 {{</* columns */>}} <!-- begin columns block -->
