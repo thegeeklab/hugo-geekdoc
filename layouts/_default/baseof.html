@@ -12,14 +12,17 @@
 <body itemscope itemtype="https://schema.org/WebPage">
     {{ partial "svg-icon-symbols" . }}
 
-    <div class="wrapper {{ if default false .Site.Params.geekdocDarkModeDim }}dark-mode-dim{{ end }}">
+    <div class="wrapper {{ if default false .Site.Params.GeekdocDarkModeDim }}dark-mode-dim{{ end }}">
         <input type="checkbox" class="hidden" id="menu-control" />
-        {{ partial "site-header" (dict "Root" . "MenuEnabled" true) }}
+        {{ $navEnabled := default true .Page.Params.GeekdocNav }}
+        {{ partial "site-header" (dict "Root" . "MenuEnabled" $navEnabled) }}
 
         <main class="container flex flex-even">
+            {{ if $navEnabled }}
             <aside class="gdoc-nav">
                 {{ partial "menu" . }}
             </aside>
+            {{ end }}
 
             <div class="gdoc-page">
                 {{ template "main" . }}

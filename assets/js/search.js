@@ -8,8 +8,10 @@
   const results = document.querySelector('#gdoc-search-results');
   let showParent = {{ if .Site.Params.GeekdocSearchShowParent }}true{{ else }}false{{ end }}
 
-  input.addEventListener('focus', init);
-  input.addEventListener('keyup', search);
+  if (input) {
+    input.addEventListener('focus', init);
+    input.addEventListener('keyup', search);
+  }
 
   function init() {
     input.removeEventListener('focus', init); // init once
