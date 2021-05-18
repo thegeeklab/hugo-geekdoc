@@ -248,6 +248,9 @@ geekdocAnchor = true
 # page from search data, feeds, etc.
 # WARNING: Consider hosting a standalone, fully auth-protected static page for secret information instead!
 geekdocProtected = false
+
+# Set 'left' (default), 'center' or 'right' to configure the text align of a page.
+geekdocAlign = "left"
 ```
 
 {{< /tab >}}
@@ -305,6 +308,9 @@ geekdocAnchor: true
 # page from search data, feeds, etc.
 # WARNING: Consider hosting a standalone, fully auth-protected static page for secret information instead!
 geekdocProtected: false
+
+# Set 'left' (default), 'center' or 'right' to configure the text align of a page.
+geekdocAlign: "left"
 ```
 
 {{< /tab >}}
