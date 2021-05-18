@@ -250,7 +250,7 @@ geekdocAnchor = true
 geekdocProtected = false
 
 # Set 'left' (default), 'center' or 'right' to configure the text align of a page.
-geekdocAlign = left
+geekdocAlign = "left"
 ```
 
 {{< /tab >}}
@@ -310,7 +310,7 @@ geekdocAnchor: true
 geekdocProtected: false
 
 # Set 'left' (default), 'center' or 'right' to configure the text align of a page.
-geekdocAlign: left
+geekdocAlign: "left"
 ```
 
 {{< /tab >}}
