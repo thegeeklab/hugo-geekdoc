@@ -22,3 +22,5 @@ prebuilt
 (S|s)ubdirector(ies|y)
 (M|m)inify
 whitespace
+relref
+href
