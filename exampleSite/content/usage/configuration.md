@@ -209,6 +209,10 @@ geekdocToC = 3
 # Set a description for the current page. This will be shown in toc-trees objects.
 geekdocDescription =
 
+# Set false to hide the whole left navigation sidebar. Beware that it will make
+# navigation pretty hard without adding some kind of on-page navigation.
+geekdocNav = true
+
 # Show a breadcrumb navigation bar at the top of each docs page.
 geekdocBreadcrumb = false
 
@@ -261,6 +265,10 @@ geekdocToC: 3
 
 # Set a description for the current page. This will be shown in toc-trees objects.
 geekdocDescription:
+
+# Set false to hide the whole left navigation sidebar. Beware that it will make
+# navigation pretty hard without adding some kind of on-page navigation.
+geekdocNav: true
 
 # Show a breadcrumb navigation bar at the top of each docs page.
 geekdocBreadcrumb: false
