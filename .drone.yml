@@ -20,6 +20,7 @@ steps:
   image: thegeeklab/hugo:0.83.1
   commands:
   - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
+  - cp exampleSite/layouts/partials/head/custom.ci.html exampleSite/layouts/partials/head/custom.html
   - hugo -s exampleSite/ -b http://localhost/
 
 - name: html-validation
@@ -37,7 +38,6 @@ steps:
 - name: page-validation
   image: thegeeklab/lhci
   commands:
-  - cp exampleSite/layouts/partials/head/custom.ci.html exampleSite/layouts/partials/head/custom.html
   - lhci autorun
   environment:
     LHCI_SERVER_URL: https://drone-artifact.rknet.org/${DRONE_REPO_NAME}/
@@ -271,6 +271,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 62955d778e6570e7bdd7db2935b82f5c643a3b237314cc5d0f4549f7114a89d1
+hmac: e2ef57c014893437655882116e07f1b8ea211adf60aa479c52113df515f51b58
 
 ...
