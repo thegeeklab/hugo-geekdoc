@@ -20,6 +20,7 @@ steps:
   image: thegeeklab/hugo:0.83.1
   commands:
   - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
+  - cp exampleSite/layouts/partials/head/custom.ci.html exampleSite/layouts/partials/head/custom.html
   - hugo -s exampleSite/ -b http://localhost/
 
 - name: html-validation
@@ -270,6 +271,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 2c0c709a64128fd42c47d3549184ac29e2225be8de1953fa2e72b63aa0b7e871
+hmac: e2ef57c014893437655882116e07f1b8ea211adf60aa479c52113df515f51b58
 
 ...
