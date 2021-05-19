@@ -37,6 +37,7 @@ steps:
 - name: page-validation
   image: thegeeklab/lhci
   commands:
+  - cp exampleSite/layouts/partials/head/custom.ci.html exampleSite/layouts/partials/head/custom.html
   - lhci autorun
   environment:
     LHCI_SERVER_URL: https://drone-artifact.rknet.org/${DRONE_REPO_NAME}/
