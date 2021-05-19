@@ -3,11 +3,11 @@
 
 <head>
     {{ partial "head/meta" . }}
-    {{ partial "head/headers" . }}
     <title>{{ if not (eq .Kind "home") }}{{ partial "title" . }} | {{ end }}{{ .Site.Title }}</title>
 
     {{ partial "head/favicons" . }}
     {{ partial "head/others" . }}
+    {{ partial "head/custom" . }}
 </head>
 
 <body itemscope itemtype="https://schema.org/WebPage">
