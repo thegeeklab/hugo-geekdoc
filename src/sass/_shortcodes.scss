@@ -82,6 +82,8 @@
 
 // {{< button >}}
 .gdoc-button {
+  $root: &;
+
   display: inline-block;
   background: var(--accent-color-lite);
   border: $border-1 solid var(--accent-color);
@@ -93,13 +95,28 @@
     display: inline-block;
     color: inherit !important;
     text-decoration: none !important;
-    padding: $padding-4 $padding-16;
   }
 
   &:hover {
     background: var(--button-background);
     border-color: var(--button-border-color);
     color: $gray-100;
+  }
+
+  &--regular {
+    font-size: $font-size-base;
+
+    #{$root}__link {
+      padding: $padding-4 $padding-8;
+    }
+  }
+
+  &--large {
+    font-size: $font-size-24;
+
+    #{$root}__link {
+      padding: $padding-8 $padding-16;
+    }
   }
 }
 
