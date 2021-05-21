@@ -1,5 +1,10 @@
 {{ $ref := "" }}
 {{ $target := "" }}
+{{ $size := default "regular" (.Get "size" | lower) }}
+
+{{ if not (in (slice "regular" "large") $size) }}
+{{ $size = "regular" }}
+{{ end }}
 
 {{ with .Get "href" }}
   {{ $ref = . }}
@@ -10,7 +15,7 @@
   {{ $ref = relref $ . }}
 {{ end }}
 
-<span class="gdoc-button{{ with .Get "class" }} {{ . }}{{ end }}">
+<span class="gdoc-button gdoc-button--{{ $size }}{{ with .Get "class" }} {{ . }}{{ end }}">
 <a {{ with $ref }} href="{{.}}" {{ end }} {{ with $target }} target="{{.}}" {{ end }} class="gdoc-button__link">
   {{ $.Inner }}
 </a>
