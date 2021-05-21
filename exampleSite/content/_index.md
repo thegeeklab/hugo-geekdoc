@@ -19,7 +19,7 @@ geekdocAnchor: false
 
 Geekdoc is a simple Hugo theme for documentations. It is intentionally designed as a fast and lean theme and may not fit the requirements of complex projects. If a more feature-complete theme is required there are a lot of got alternatives out there.
 
-{{< button size="large" relref="usage/getting-started/" >}}Learn more{{< /button >}}
+{{< button size="large" relref="usage/getting-started/" >}}Getting Started{{< /button >}}
 
 ## Feature overview
 
