@@ -178,13 +178,13 @@ img {
   }
 
   .icon {
-    width: $font-size-16 * 2;
-    height: $font-size-16 * 2;
+    width: $font-size-32;
+    height: $font-size-32;
   }
 }
 
 .gdoc-brand {
-  font-size: $font-size-16 * 2;
+  font-size: $font-size-32;
 
   &__img {
     margin-right: $padding-16;
@@ -560,8 +560,8 @@ img {
   max-width: 45em;
 
   .icon {
-    width: $font-size-16 * 8;
-    height: $font-size-16 * 8;
+    width: $font-size-128;
+    height: $font-size-128;
     color: var(--body-font-color);
   }
 
@@ -579,7 +579,7 @@ img {
   }
 
   &__title {
-    font-size: $font-size-16 * 4;
+    font-size: $font-size-64;
   }
 
   &__code {

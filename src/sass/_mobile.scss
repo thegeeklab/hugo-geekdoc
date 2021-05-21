@@ -10,13 +10,13 @@
 
   .gdoc-header {
     .icon {
-      width: $font-size-16 * 1.5;
-      height: $font-size-16 * 1.5;
+      width: $font-size-24;
+      height: $font-size-24;
     }
   }
 
   .gdoc-brand {
-    font-size: $font-size-16 * 1.5;
+    font-size: $font-size-24;
 
     &__img {
       display: none;
@@ -27,8 +27,8 @@
     padding: $padding-16 * 6 $padding-16;
 
     .icon {
-      width: $font-size-16 * 6;
-      height: $font-size-16 * 6;
+      width: $font-size-96;
+      height: $font-size-96;
     }
 
     &__message {
@@ -40,7 +40,7 @@
     }
 
     &__title {
-      font-size: $font-size-16 * 2;
+      font-size: $font-size-32;
     }
   }
 
