@@ -213,10 +213,10 @@ gulp.task("iconfont", function () {
 gulp.task("js", function () {
   return gulp
     .src(["src/js/*.js"])
-    .pipe(sourcemaps.init())
+    .pipe(devBuild ? sourcemaps.init() : noop())
     .pipe(uglify())
     .pipe(rename({ extname: ".min.js" }))
-    .pipe(sourcemaps.write("."))
+    .pipe(devBuild ? sourcemaps.write(".") : noop())
     .pipe(gulp.dest(JS_BUILD));
 });
 
