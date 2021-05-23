@@ -1,4 +1,5 @@
 .envrc
+.npmrc
 .tarignore
 .dictionary*
 .git*
@@ -7,6 +8,7 @@
 .markdownlint*
 .jsbeautify*
 .prettier*
+.chglog
 example*
 gulp*
 package*
@@ -17,3 +19,4 @@ src
 build
 renovate*
 resources
+CONTRIBUTING.md
