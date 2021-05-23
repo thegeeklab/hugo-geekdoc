@@ -99,14 +99,14 @@ steps:
     NPM_CONFIG_LOGLEVEL: error
 
 - name: package
-  image: alpine
+  image: thegeeklab/alpine-tools
   commands:
   - mkdir dist/
   - echo "${DRONE_TAG:-latest}" > VERSION
   - tar -zcvf dist/hugo-geekdoc.tar.gz -X .tarignore .
 
 - name: checksum
-  image: alpine
+  image: thegeeklab/alpine-tools
   commands:
   - cd dist/ && sha256sum * > ../sha256sum.txt
 
@@ -274,6 +274,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 1bce039ffef8b6f4cbece66dcabdf83218b449e9303f86cc65fcbc78b3fa8457
+hmac: 627514bcdf172853579a3de05ab8f5c86bf5f5abcfd2b516aa19d9e51eb1889a
 
 ...
