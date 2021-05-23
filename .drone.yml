@@ -94,20 +94,19 @@ steps:
   commands:
   - npm install > /dev/null
   - npx gulp default
-  - npx gulp svg-sprite-list
   environment:
     FORCE_COLOR: true
     NPM_CONFIG_LOGLEVEL: error
 
 - name: package
-  image: alpine
+  image: thegeeklab/alpine-tools
   commands:
   - mkdir dist/
   - echo "${DRONE_TAG:-latest}" > VERSION
   - tar -zcvf dist/hugo-geekdoc.tar.gz -X .tarignore .
 
 - name: checksum
-  image: alpine
+  image: thegeeklab/alpine-tools
   commands:
   - cd dist/ && sha256sum * > ../sha256sum.txt
 
@@ -171,6 +170,8 @@ steps:
 - name: assets
   image: thegeeklab/alpine-tools
   commands:
+  - npm install > /dev/null
+  - npx gulp svg-sprite-list
   - mkdir -p exampleSite/themes/hugo-geekdoc/
   - curl -sSL https://github.com/thegeeklab/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
   when:
@@ -183,6 +184,7 @@ steps:
   commands:
   - npm install > /dev/null
   - npx gulp default
+  - npx gulp svg-sprite-list
   - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
   environment:
     FORCE_COLOR: true
@@ -273,6 +275,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 9aae6e48a3316cb2881f7f6ae959a7868cb727138e0bdaae927c873b6417ccaa
+hmac: 127e4b738bbf810da960f10b767378793ecff2da5de7de03892ff96d4361735d
 
 ...

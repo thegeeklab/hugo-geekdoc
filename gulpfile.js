@@ -273,7 +273,7 @@ gulp.task("clean", function () {
 
 gulp.task("asset", gulp.series("asset-sync", "asset-rev"));
 
-gulp.task("svg", gulp.series("svg-sprite", "svg-sprite-list"));
+gulp.task("svg", gulp.series("svg-sprite"));
 
 gulp.task(
   "default",
