@@ -13,12 +13,12 @@ Include shortcode can include files of different types. By specifying a language
 
 Attributes:
 
-| Name     | Usage                                                                                                                               | default       |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| file     | path to the included file relative to the hugo root                                                                                 | undefined     |
-| language | language for [syntax highlighting](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages) | undefined     |
-| type     | special include type (`html,page`)                                                                                                  | undefined     |
-| options  | highlighting [options](https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode)                               | linenos=table |
+| Name     | Usage                                                                                                                               | default         |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| file     | path to the included file relative to the Hugo root                                                                                 | undefined       |
+| language | language for [syntax highlighting](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages) | undefined       |
+| type     | special include type (`html,page`)                                                                                                  | undefined       |
+| options  | highlighting [options](https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode)                               | `linenos=table` |
 
 ## Examples
 
