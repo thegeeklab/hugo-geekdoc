@@ -184,6 +184,7 @@ steps:
   commands:
   - npm install > /dev/null
   - npx gulp default
+  - npx gulp svg-sprite-list
   - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
   environment:
     FORCE_COLOR: true
@@ -274,6 +275,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 627514bcdf172853579a3de05ab8f5c86bf5f5abcfd2b516aa19d9e51eb1889a
+hmac: 127e4b738bbf810da960f10b767378793ecff2da5de7de03892ff96d4361735d
 
 ...
