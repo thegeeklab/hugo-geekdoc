@@ -94,7 +94,6 @@ steps:
   commands:
   - npm install > /dev/null
   - npx gulp default
-  - npx gulp svg-sprite-list
   environment:
     FORCE_COLOR: true
     NPM_CONFIG_LOGLEVEL: error
@@ -275,6 +274,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 9aae6e48a3316cb2881f7f6ae959a7868cb727138e0bdaae927c873b6417ccaa
+hmac: 1bce039ffef8b6f4cbece66dcabdf83218b449e9303f86cc65fcbc78b3fa8457
 
 ...
