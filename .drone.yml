@@ -168,7 +168,7 @@ steps:
     NPM_CONFIG_LOGLEVEL: error
 
 - name: assets
-  image: thegeeklab/alpine-tools
+  image: node:lts
   commands:
   - npm install > /dev/null
   - npx gulp svg-sprite-list
@@ -275,6 +275,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 127e4b738bbf810da960f10b767378793ecff2da5de7de03892ff96d4361735d
+hmac: f50ce7eb9ad9db8f6813bad0af73022fa67d8d2b4e263629eeadcede12108c41
 
 ...
