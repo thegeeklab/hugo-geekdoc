@@ -1,7 +1,7 @@
 Buttons are styled links that can lead to local page or external link.
 
 ```tpl
-{{</* button relref="/" [class="..."] */>}}Get Home{{</* /button */>}}
+{{</* button relref="/" [class="...", size="large|regular"] */>}}Get Home{{</* /button */>}}
 {{</* button href="https://github.com/thegeeklab/hugo-geekdoc" */>}}Contribute{{</* /button */>}}
 ```
 
