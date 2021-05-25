@@ -1,4 +1,3 @@
----
 repository:
   name: hugo-geekdoc
   description: Hugo theme made for documentation
@@ -9,7 +8,7 @@ repository:
   has_issues: true
   has_projects: false
   has_wiki: false
-  has_downloads: false
+  has_downloads: true
 
   default_branch: main
 
