@@ -22,7 +22,7 @@
     "@mr-hope/gulp-sass": "2.0.0",
     "del": "6.0.0",
     "gulp": "4.0.2",
-    "gulp-autoprefixer": "7.0.1",
+    "gulp-autoprefixer": "8.0.0",
     "gulp-clean-css": "4.3.0",
     "gulp-filelist": "2.0.5",
     "gulp-iconfont": "11.0.0",
