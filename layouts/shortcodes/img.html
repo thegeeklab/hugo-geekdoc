@@ -17,22 +17,13 @@
 <figure class="gdoc-markdown__figure">
     <a class="gdoc-markdown__link--raw" href="{{ .RelPermalink }}">
         <picture>
-            <source
-                {{ with $customSize }}
-                srcset="{{ index $size $customSize }}"
-                {{ else }}
-                srcset="{{ $size.small }} 600w,
-                        {{ $size.medium }} 1200w"
-                sizes="100vw"
-                {{ end }} />
-            <img
-                {{ if $lazyLoad }}loading="lazy"{{ end }}
-                src="{{ $size.large }}" alt="{{ $caption }}" />
+            <source {{ with $customSize }}srcset="{{ index $size $customSize }}"{{ else }}srcset="{{ $size.small }} 600w, {{ $size.medium }} 1200w" sizes="100vw"{{ end }} />
+            <img {{ if $lazyLoad }}loading="lazy" {{ end }}src="{{ $size.large }}" alt="{{ $caption }}" />
         </picture>
     </a>
-    {{ with $caption }}
+    {{ with $caption -}}
     <figcaption>{{ . }}{{ with $source.Params.credits }} ({{ . | $.Page.RenderString }}){{ end }}</figcaption>
-    {{ end }}
+    {{- end }}
 </figure>
 </div>
 {{ end }}
