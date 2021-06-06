@@ -15,6 +15,7 @@ ci:
     preset: "lighthouse:no-pwa"
     assertions:
       uses-long-cache-ttl: off
+      csp-xss: off
       tap-targets: warn
       unsized-images: warn
       # FIXME: https://github.com/GoogleChrome/lighthouse/issues/11460
