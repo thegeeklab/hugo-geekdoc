@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "clipboard": "2.0.8",
-    "flexsearch": "0.6.32",
+    "flexsearch": "0.7.0",
     "mermaid": "8.10.2"
   },
   "devDependencies": {

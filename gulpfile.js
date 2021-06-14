@@ -224,18 +224,30 @@ gulp.task("asset-sync", function () {
   return gulp
     .src([
       "node_modules/clipboard/dist/clipboard.min.js",
-      "node_modules/flexsearch/dist/flexsearch.min.js",
+      "node_modules/flexsearch/dist/flexsearch.compact.js",
       "node_modules/mermaid/dist/mermaid.min.js",
     ])
     .pipe(replace(/\/\/# sourceMappingURL=.+$/, ""))
+    .pipe(
+      rename(function (path) {
+        path.basename = path.basename.replace(/compact/, "min");
+      })
+    )
     .pipe(gulp.dest(JS_BUILD));
 });
 
 gulp.task("asset-rev", function () {
   return gulp
-    .src([CSS_BUILD + "/*.min.css", JS_BUILD + "/*.min.js"], {
-      base: BUILD + "/assets",
-    })
+    .src(
+      [
+        CSS_BUILD + "/*.min.css",
+        JS_BUILD + "/*.min.js",
+        JS_BUILD + "/*.compact.js",
+      ],
+      {
+        base: BUILD + "/assets",
+      }
+    )
     .pipe(rev())
     .pipe(gulp.dest("static"))
     .pipe(
