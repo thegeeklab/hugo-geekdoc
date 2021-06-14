@@ -43,7 +43,6 @@
 
   function search() {
     const searchCfg = {
-      field: ['title', 'content'],
       enrich: true,
       limit: 10
     };
