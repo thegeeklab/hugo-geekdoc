@@ -16,19 +16,24 @@ f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 
 <--->
 
+<!-- spellchecker-disable -->
 <!-- prettier-ignore -->
 {{< katex display >}}
 f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 {{< /katex >}}
+
+<!-- spellchecker-enable -->
 
 {{< /columns >}}
 
-## Display Mode Example
+KaTeX can also be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used with a `display` setting. for example `display: block`:
 
-Here is some inline example: {{< katex >}}\pi(x){{< /katex >}}, rendered in the same line. And below is `display` example, having `display: block`
-
+<!-- spellchecker-disable -->
 <!-- prettier-ignore -->
 {{< katex display >}}
 f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 {{< /katex >}}
+
+<!-- spellchecker-enable -->
+
 Text continues here.

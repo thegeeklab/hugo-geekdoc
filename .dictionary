@@ -4,6 +4,7 @@ Shpak
 (S|s)hortcode[s]?
 hugo-book
 ToC
+ToC-Tree
 toc
 macOS
 SVG
@@ -24,3 +25,5 @@ prebuilt
 whitespace
 relref
 href
+KaTeX
+katex
