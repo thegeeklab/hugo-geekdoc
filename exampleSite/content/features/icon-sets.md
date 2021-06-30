@@ -39,7 +39,7 @@ my_projcet/
 │   ├── ...
 ```
 
-That's it! The theme will auto-load all available SVG sprites provided in the assets folder. To use the icons e.g. in the [bundle menu](/usage/menus/#bundle-menu), you need to lookup the id of the icon. An example would be `thumbs-up` {{< icon "thumbs-up" >}}. There is also a [shortcode](/shortcodes/icon/) available.
+That's it! The theme will auto-load all available SVG sprites provided in the assets folder. To use the icons e.g. in the [bundle menu](/usage/menus/#bundle-menu), you need to lookup the id of the icon. An example would be `thumbs-up` {{< icon "thumbs-up" >}}. There is also a [shortcode](/shortcodes/icons/) available.
 
 ## Build-in icons
 
