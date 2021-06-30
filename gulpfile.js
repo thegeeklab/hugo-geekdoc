@@ -24,6 +24,7 @@ const through = require("through2");
 var BUILD = "build";
 var CSS_BUILD = BUILD + "/assets";
 var JS_BUILD = BUILD + "/assets/js";
+var FONTS = "static/fonts";
 var FAVICON_DATA_FILE = BUILD + "/faviconData.json";
 var TIMESTAMP = Math.round(Date.now() / 1000);
 
@@ -207,7 +208,7 @@ gulp.task("iconfont", function () {
         timestamp: TIMESTAMP,
       })
     )
-    .pipe(gulp.dest("static/fonts/"));
+    .pipe(gulp.dest(FONTS));
 });
 
 gulp.task("js", function () {
@@ -220,12 +221,14 @@ gulp.task("js", function () {
     .pipe(gulp.dest(JS_BUILD));
 });
 
-gulp.task("asset-sync", function () {
+gulp.task("asset-sync-js", function () {
   return gulp
     .src([
       "node_modules/clipboard/dist/clipboard.min.js",
       "node_modules/flexsearch/dist/flexsearch.compact.js",
       "node_modules/mermaid/dist/mermaid.min.js",
+      "node_modules/katex/dist/katex.min.js",
+      "node_modules/katex/dist/contrib/auto-render.min.js",
     ])
     .pipe(replace(/\/\/# sourceMappingURL=.+$/, ""))
     .pipe(
@@ -234,6 +237,24 @@ gulp.task("asset-sync", function () {
       })
     )
     .pipe(gulp.dest(JS_BUILD));
+});
+
+gulp.task("asset-sync-css", function () {
+  return gulp
+    .src(["node_modules/katex/dist/katex.min.css"])
+    .pipe(replace(/\/\/# sourceMappingURL=.+$/, ""))
+    .pipe(
+      rename(function (path) {
+        path.basename = path.basename.replace(/compact/, "min");
+      })
+    )
+    .pipe(gulp.dest(CSS_BUILD));
+});
+
+gulp.task("asset-sync-font", function () {
+  return gulp
+    .src(["node_modules/katex/dist/fonts/KaTeX_*"])
+    .pipe(gulp.dest(FONTS));
 });
 
 gulp.task("asset-rev", function () {
@@ -283,7 +304,10 @@ gulp.task("clean", function () {
 
 /* Task series */
 
-gulp.task("asset", gulp.series("asset-sync", "asset-rev"));
+gulp.task(
+  "asset",
+  gulp.series("asset-sync-font", "asset-sync-css", "asset-sync-js", "asset-rev")
+);
 
 gulp.task("svg", gulp.series("svg-sprite"));
 

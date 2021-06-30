@@ -1,6 +1,5 @@
 ---
-# Empty front matter as shortcodes could not be includes
-# as first line of a file.
+title: Includes
 ---
 
 {{< toc >}}

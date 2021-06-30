@@ -1,3 +1,7 @@
+---
+title: Icons
+---
+
 Simple shortcode to include icons from SVG sprites outside of menus.
 
 ```tpl

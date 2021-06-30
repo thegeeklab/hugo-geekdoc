@@ -1,3 +1,7 @@
+---
+title: Expand
+---
+
 Expand shortcode can help to decrease clutter on screen by hiding part of text. Expand content by clicking on it.
 
 ## Example

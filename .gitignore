@@ -16,6 +16,7 @@ static/*.min.css.map
 static/js/
 static/favicon/
 static/fonts/GeekdocIcons.*
+static/fonts/KaTeX_*
 resources/
 exampleSite/resources/
 exampleSite/data/sprites/

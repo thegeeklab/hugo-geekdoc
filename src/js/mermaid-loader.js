@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let primaryColor = "#ececff";
   let darkMode = false;
 
-  console.log(currentMode);
-
   if (
     currentMode === DARK_MODE ||
     (currentMode === AUTO_MODE && darkModeQuery.matches)

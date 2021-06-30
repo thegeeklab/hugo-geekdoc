@@ -1,4 +1,5 @@
 ---
+title: Images
 resources:
   - name: forest-1
     src: "forest-1.jpg"
