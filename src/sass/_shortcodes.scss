@@ -62,6 +62,10 @@
   &__control:checked + &__label + &__content {
     display: block;
   }
+
+  .gdoc-page__anchor {
+    display: none;
+  }
 }
 
 // {{< columns >}}
@@ -128,6 +132,10 @@
       background-color: scale-color($color, $lightness: 95%, $saturation: -30%);
       color: $body-font-color;
     }
+  }
+
+  .gdoc-page__anchor {
+    display: none;
   }
 }
 
