@@ -25,7 +25,7 @@ steps:
 - name: html-validation
   image: thegeeklab/vnu
   commands:
-  - vnu --skip-non-html --also-check-css --errors-only exampleSite/public
+  - vnu --skip-non-html --also-check-css --errors-only --filterfile .vnuignore exampleSite/public
 
 - name: link-validation
   image: thegeeklab/link-validator
@@ -275,6 +275,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: f50ce7eb9ad9db8f6813bad0af73022fa67d8d2b4e263629eeadcede12108c41
+hmac: eab38beb69658699f03b9ce6ad2c70c5040f6fd028af08fcdaf27384cc61ab45
 
 ...

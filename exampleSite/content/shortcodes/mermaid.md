@@ -1,3 +1,7 @@
+---
+title: Mermaid
+---
+
 [Mermaid](https://mermaidjs.github.io/) is library for generating SVG charts and diagrams from text.
 
 ## Example

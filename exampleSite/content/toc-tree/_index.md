@@ -1,5 +1,5 @@
 ---
-title: ToC Tree
+title: ToC-Tree
 geekdocFlatSection: true
 ---
 

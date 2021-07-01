@@ -1,3 +1,7 @@
+---
+title: ToC-Tree
+---
+
 The `toc-tree` shortcode will generate a Table of Content from a section file tree of your content directory. The root of the resulting ToC will be the page on which you define the shortcode.
 
 ```tpl

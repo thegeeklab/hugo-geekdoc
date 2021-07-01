@@ -1,3 +1,7 @@
+---
+title: ToC
+---
+
 Simple wrapper to generate a page Table of Content from a shortcode.
 
 ```tpl

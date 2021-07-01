@@ -1,3 +1,7 @@
+---
+title: Tabs
+---
+
 Tabs let you organize content by context, for example installation instructions for each supported platform.
 
 ```tpl
@@ -13,7 +17,7 @@ Tabs let you organize content by context, for example installation instructions 
 {{< tabs "uniqueid" >}}
 {{< tab "macOS" >}}
 
-# macOS
+## macOS
 
 This is tab **macOS** content.
 
@@ -25,7 +29,7 @@ fastidious copious quo ad. Stet probates in duo.
 
 {{< tab "Linux" >}}
 
-# Linux
+## Linux
 
 This is tab **Linux** content.
 
@@ -37,7 +41,7 @@ fastidious copious quo ad. Stet probates in duo.
 
 {{< tab "Windows" >}}
 
-# Windows
+## Windows
 
 This is tab **Windows** content.
 

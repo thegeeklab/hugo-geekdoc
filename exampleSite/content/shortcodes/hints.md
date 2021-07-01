@@ -1,3 +1,7 @@
+---
+title: Hints
+---
+
 Hint shortcode can be used as hint/alerts/notification block.
 There are four colors to choose: `info`, `ok`, `warning` and `danger`.
 
