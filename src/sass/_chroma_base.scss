@@ -1,6 +1,6 @@
 @mixin chroma_base {
   .chroma {
-    color: #999;
+    color: var(--code-font-color);
     margin: 1rem 0;
   }
   .chroma code {
