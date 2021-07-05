@@ -16,6 +16,7 @@
   --code-background: #{$code-background};
   --code-accent-color: #{darken($code-background, 6)};
   --code-accent-color-lite: #{darken($code-background, 2)};
+  --code-font-color: #{$code-font-color};
 
   --accent-color: #{$gray-200};
   --accent-color-lite: #{$gray-100};
@@ -58,6 +59,7 @@
   --code-background: #{$code-background-dark};
   --code-accent-color: #{darken($code-background-dark, 4)};
   --code-accent-color-lite: #{darken($code-background-dark, 2)};
+  --code-font-color: #{$code-font-color-dark};
 
   --accent-color: #{darken($body-background-dark, 4)};
   --accent-color-lite: #{darken($body-background-dark, 2)};

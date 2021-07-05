@@ -166,6 +166,8 @@
 
   code {
     background-color: var(--code-background);
+    border-radius: $border-radius;
+    color: var(--code-font-color);
     font-size: 0.85em;
     line-height: 1.45em;
     padding: 0.2em 0.4em;
