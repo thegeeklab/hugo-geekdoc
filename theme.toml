@@ -3,6 +3,7 @@ license = "MIT"
 licenselink = "https://github.com/thegeeklab/hugo-geekdoc/blob/main/LICENSE"
 description = "Hugo theme made for documentation"
 homepage = "https://geekdocs.de/"
+demosite = "https://geekdocs.de/"
 tags = ["docs", "documentation", "responsive", "simple"]
 min_version = "0.83.0"
 
