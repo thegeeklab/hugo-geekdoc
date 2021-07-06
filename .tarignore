@@ -8,6 +8,7 @@
 .markdownlint*
 .jsbeautify*
 .prettier*
+.vnu*
 .chglog
 example*
 gulp*
