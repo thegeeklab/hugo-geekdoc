@@ -136,7 +136,7 @@ params:
 
   # (Optional, default false) Collapse all menu entries, can not be overwritten
   # per page if enabled. Can be enabled per page via `geekdocCollapseSection`
-  GeekdocCollapseAllSections: true
+  geekdocCollapseAllSections: true
 
   # (Optional, default true) Show page navigation links at the bottom of each
   # docs page (bundle menu only).

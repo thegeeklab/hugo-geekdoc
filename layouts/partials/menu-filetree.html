@@ -15,8 +15,7 @@
             {{ $isCurrent := eq $current . }}
             {{ $isAncestor := .IsAncestor $current }}
             {{ $id := substr (sha1 .Permalink) 0 8 }}
-            {{ $hasCollapse := and $isParent .Params.GeekdocCollapseSection }}
-            {{ $doCollapse := or $hasCollapse (default false .Site.Params.GeekdocCollapseAllSections) }}
+            {{ $doCollapse := and $isParent (or .Params.GeekdocCollapseSection (default false .Site.Params.GeekdocCollapseAllSections)) }}
 
             <li>
             {{ if $doCollapse }}

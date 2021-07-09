@@ -22,8 +22,7 @@
             {{ $isCurrent := eq $current $this }}
             {{ $isAncestor := $this.IsAncestor $current }}
             {{ $id := substr (sha1 $this.Permalink) 0 8 }}
-            {{ $hasCollapse := and $this.Params.GeekdocCollapseSection (isset . "sub") }}
-            {{ $doCollapse := or $hasCollapse (default false .Site.Params.GeekdocCollapseAllSections) }}
+            {{ $doCollapse := and (isset . "sub") (or $this.Params.GeekdocCollapseSection (default false .Site.Params.GeekdocCollapseAllSections)) }}
 
             {{ if $doCollapse }}
             <input type="checkbox" id="{{ printf "navtree-%s" $id }}" class="gdoc-nav__toggle" {{ if or $isCurrent $isAncestor }}checked{{ end }}>
