@@ -15,10 +15,10 @@
             {{ $isCurrent := eq $current . }}
             {{ $isAncestor := .IsAncestor $current }}
             {{ $id := substr (sha1 .Permalink) 0 8 }}
-            {{ $hasCollapse := and $isParent .Params.GeekdocCollapseSection }}
+            {{ $doCollapse := and $isParent (or .Params.GeekdocCollapseSection (default false .Site.Params.GeekdocCollapseAllSections)) }}
 
             <li>
-            {{ if $hasCollapse }}
+            {{ if $doCollapse }}
             <input type="checkbox" id="{{ printf "navtree-%s" $id }}" class="gdoc-nav__toggle" {{ if or $isCurrent $isAncestor }}checked{{ end }}>
             <label for="{{ printf "navtree-%s" $id }}" class="flex justify-between">
             {{ end }}
@@ -31,7 +31,7 @@
             {{ else }}
                 <span class="flex">{{ partial "title" . }}</span>
             {{ end }}
-            {{ if $hasCollapse }}
+            {{ if $doCollapse }}
                 <svg class="icon gdoc_keyborad_arrow_left"><use xlink:href="#gdoc_keyborad_arrow_left"></use></svg>
                 <svg class="icon gdoc_keyborad_arrow_down hidden"><use xlink:href="#gdoc_keyborad_arrow_down"></use></svg>
             </label>

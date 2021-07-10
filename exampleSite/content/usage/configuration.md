@@ -134,6 +134,10 @@ params:
   # See also https://geekdocs.de/usage/menus/#bundle-menu
   geekdocMenuBundle: true
 
+  # (Optional, default false) Collapse all menu entries, can not be overwritten
+  # per page if enabled. Can be enabled per page via `geekdocCollapseSection`
+  geekdocCollapseAllSections: true
+
   # (Optional, default true) Show page navigation links at the bottom of each
   # docs page (bundle menu only).
   geekdocNextPrev: false
