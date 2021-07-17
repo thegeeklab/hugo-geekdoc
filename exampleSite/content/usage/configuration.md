@@ -94,6 +94,9 @@ enableGitInfo = true
   # (Optional, default false) Auto-decrease brightness of images and add a slightly grayscale to avoid
   # bright spots while using the dark mode.
   geekdocDarkModeDim = false
+
+  # (Optional, default true) Display a "Back to top" link in the site footer.
+  geekdocBackToTop = true
 ```
 
 {{< /tab >}}
@@ -190,6 +193,9 @@ params:
   # (Optional, default false) Auto-decrease brightness of images and add a slightly grayscale to avoid
   # bright spots while using the dark mode.
   geekdocDarkModeDim: false
+
+  # (Optional, default true) Display a "Back to top" link in the site footer.
+  geekdocBackToTop: true
 ```
 
 {{< /tab >}}
