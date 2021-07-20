@@ -385,7 +385,7 @@ img {
   word-wrap: break-word;
   border-top: 1px dashed $gray-600;
   padding: $padding-32 0;
-  line-height: 1.5;
+  line-height: 1.5em;
 
   &:first-of-type {
     padding-top: 0;
@@ -446,9 +446,19 @@ img {
   background: var(--footer-background);
   color: var(--footer-font-color);
 
+  .fake-link:hover {
+    background-image: linear-gradient(
+      var(--footer-link-color),
+      var(--footer-link-color)
+    );
+  }
+
   &__item {
-    margin-right: 1em;
     line-height: 2em;
+
+    &--row {
+      margin-right: 1em;
+    }
   }
 
   &__link {
