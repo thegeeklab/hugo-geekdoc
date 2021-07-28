@@ -66,6 +66,7 @@ steps:
       from_secret: github_token
     key: pr-${DRONE_PULL_REQUEST}
     message: lhci_reports/dist/summary.md
+    skip_missing: true
     update: true
   when:
     ref:
@@ -275,6 +276,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: eab38beb69658699f03b9ce6ad2c70c5040f6fd028af08fcdaf27384cc61ab45
+hmac: 7c75520ec754a947c22c7727ac905b3798298c0ea174023fb5d7f99426eee0ac
 
 ...
