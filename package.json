@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "clipboard": "2.0.8",
-    "flexsearch": "0.7.2",
+    "flexsearch": "0.7.21",
     "katex": "0.13.13",
     "mermaid": "8.11.1"
   },
