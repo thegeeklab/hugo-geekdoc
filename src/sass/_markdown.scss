@@ -110,8 +110,11 @@
     }
   }
 
-  table:not(.lntable) {
+  .table-wrap {
     overflow: auto;
+  }
+
+  table:not(.lntable) {
     display: table;
     border-spacing: 0;
     border-collapse: collapse;
