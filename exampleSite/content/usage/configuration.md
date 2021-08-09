@@ -97,6 +97,15 @@ enableGitInfo = true
 
   # (Optional, default true) Display a "Back to top" link in the site footer.
   geekdocBackToTop = true
+
+  # (Optional, default empty) Array of Header Icon Links to display on top right
+  [[params.geekdocHeaderIconLinks]]
+  # (Required) the link URL
+  href = "https://github.com/thegeeklab/hugo-geekdoc"
+  # (Optional, default empty) the link target, use "_blank" to open link in new window
+  target = "_blank"
+  # (Required) the SVG icon name, see Icon Sets page for options
+  icon = "gdoc_github"
 ```
 
 {{< /tab >}}
@@ -196,6 +205,15 @@ params:
 
   # (Optional, default true) Display a "Back to top" link in the site footer.
   geekdocBackToTop: true
+
+  # (Optional, default empty) Array of Header Icon Links to display on top right
+  geekdocHeaderIconLinks:
+      # (Required) the link URL
+    - href: https://github.com/thegeeklab/hugo-geekdoc
+      # (Optional, default empty) the link target, use "_blank" to open link in new window
+      target: _blank
+      # (Required) the SVG icon name, see Icon Sets page for options
+      icon: gdoc_github
 ```
 
 {{< /tab >}}

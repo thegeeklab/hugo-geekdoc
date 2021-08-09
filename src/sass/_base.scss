@@ -170,7 +170,7 @@ img {
 
   &__link,
   &__link:visited {
-    color: inherit;
+    color: var(--header-font-color);
   }
 
   &__link:hover {
