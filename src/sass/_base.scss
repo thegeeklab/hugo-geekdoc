@@ -126,6 +126,10 @@ img {
   vertical-align: middle;
 }
 
+#gdoc-dark-mode {
+  cursor: pointer;
+}
+
 .fake-link:hover {
   background-image: linear-gradient(var(--link-color), var(--link-color));
   background-position: 0 100%;

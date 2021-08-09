@@ -37,6 +37,7 @@ params:
   geekdocDarkModeDim: true
 
   geekdocHeaderIconLinks:
-    - href: https://github.com/thegeeklab/hugo-geekdoc
+    - name: GitHub
+      href: https://github.com/thegeeklab/hugo-geekdoc
       target: _blank
       icon: gdoc_github

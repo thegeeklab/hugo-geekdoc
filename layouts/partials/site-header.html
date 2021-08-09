@@ -15,13 +15,25 @@
         <div>
             {{- if .Root.Site.Params.GeekdocHeaderIconLinks }}
             {{- range $_, $iconLink := .Root.Site.Params.GeekdocHeaderIconLinks }}
-            <a class="gdoc-header__link" href="{{ $iconLink.href }}" {{ if $iconLink.target }}target="{{ $iconLink.target }}"{{ end }}><svg class="icon {{ $iconLink.icon }}"><use xlink:href="#{{ $iconLink.icon }}"></use></svg></a>
+            <a class="gdoc-header__link" href="{{ $iconLink.href }}" rel="noopener"{{ if $iconLink.target }} target="{{ $iconLink.target }}"{{ end }}><svg class="icon {{ $iconLink.icon }}">
+                <title>{{ $iconLink.name }}</title>
+                <use xlink:href="#{{ $iconLink.icon }}"></use>
+            </svg></a>
             {{- end }}
             {{- end }}
             <span id="gdoc-dark-mode">
-                <svg class="icon gdoc_brightness_dark"><use xlink:href="#gdoc_brightness_dark"></use></svg>
-                <svg class="icon gdoc_brightness_light"><use xlink:href="#gdoc_brightness_light"></use></svg>
-                <svg class="icon gdoc_brightness_auto"><use xlink:href="#gdoc_brightness_auto"></use></svg>
+                <svg class="icon gdoc_brightness_dark">
+                    <title>Toggle Dark/Light/Auto mode</title>
+                    <use xlink:href="#gdoc_brightness_dark"></use>
+                </svg>
+                <svg class="icon gdoc_brightness_light">
+                    <title>Toggle Dark/Light/Auto mode</title>
+                    <use xlink:href="#gdoc_brightness_light"></use>
+                </svg>
+                <svg class="icon gdoc_brightness_auto">
+                    <title>Toggle Dark/Light/Auto mode</title>
+                    <use xlink:href="#gdoc_brightness_auto"></use>
+                </svg>
             </span>
         </div>
     </div>
