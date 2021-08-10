@@ -197,6 +197,20 @@ img {
   }
 }
 
+.gdoc-menu-bar {
+  &__items {
+    display: inline-block;
+  }
+  
+  &__control {
+    display: none;
+
+    .icon {
+      cursor: pointer;
+    }
+  } 
+}
+
 .gdoc-nav {
   flex: 0 0 $menu-width;
   font-size: $font-size-14;
@@ -219,9 +233,14 @@ img {
     margin: 0;
     padding: 0;
 
+    .icon {
+      cursor: pointer;
+    }
+
     .icon.gdoc_menu {
       display: inline-block;
     }
+
     .icon.gdoc_arrow_back {
       display: none;
     }
