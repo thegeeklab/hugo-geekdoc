@@ -92,10 +92,6 @@
   }
 
   #menu-bar-control:checked ~ .gdoc-header {
-    .gdoc-brand__title {
-      display: none;
-    }
-
     .gdoc-menu-bar {
       &__items {
         transform: translateX(0);
@@ -103,8 +99,12 @@
   
       &__control {
         .icon.gdoc_keyborad_arrow_left {
-          display: none;
+          visibility: hidden;
         }
+      }
+  
+      &__expanded_hide {
+        display: none;
       }
     }
   }
