@@ -18,9 +18,9 @@
                 <span class="gdoc-brand__title">{{ .Root.Site.Title }}</span>
             </span>
         </a>
-        <div class="gdoc-menu-bar">
+        <div class="gdoc-menu-header">
             {{ if .Root.Site.Data.menu.extra.header }}
-            <span class="gdoc-menu-bar__items">
+            <span class="gdoc-menu-header__items">
             {{ partial "menu-extra" (dict "current" .Root "source" .Root.Site.Data.menu.extra.header "target" "header") }}
             {{ end }}
             <span id="gdoc-dark-mode">
@@ -38,14 +38,14 @@
                 </svg>
             </span>
             {{ if .Root.Site.Data.menu.extra.header }}
-            <label for="menu-bar-control" class="gdoc-menu-bar__control">
+            <label for="menu-header-control" class="gdoc-menu-header__control">
                 <svg class="icon gdoc_keyborad_arrow_right">
                     <use xlink:href="#gdoc_keyborad_arrow_right"></use>
                     <title>Close Menu Bar</title>
                 </svg>
             </label>
             </span>
-            <label for="menu-bar-control" class="gdoc-menu-bar__control">
+            <label for="menu-header-control" class="gdoc-menu-header__control">
                 <svg class="icon gdoc_keyborad_arrow_left">
                     <use xlink:href="#gdoc_keyborad_arrow_left"></use>
                     <title>Open Menu Bar</title>

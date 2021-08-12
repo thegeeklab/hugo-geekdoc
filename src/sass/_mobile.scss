@@ -23,14 +23,9 @@
     }
   }
 
-  .gdoc-menu-bar {
+  .gdoc-menu-header {
     &__items {
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: $padding-16;
-      transform: translateX(100%);
-      transition: transform 0.2s ease-in-out;
+      display: none;
     }
 
     &__control {
@@ -91,16 +86,16 @@
     }
   }
 
-  #menu-bar-control:checked ~ .gdoc-header {
+  #menu-header-control:checked ~ .gdoc-header {
     .gdoc-brand__title {
       display: none;
     }
 
-    .gdoc-menu-bar {
+    .gdoc-menu-header {
       &__items {
-        transform: translateX(0);
+        display: inline-block;
       }
-  
+
       &__control {
         .icon.gdoc_keyborad_arrow_left {
           display: none;

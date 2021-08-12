@@ -197,18 +197,18 @@ img {
   }
 }
 
-.gdoc-menu-bar {
+.gdoc-menu-header {
   &__items {
     display: inline-block;
   }
-  
+
   &__control {
     display: none;
 
     .icon {
       cursor: pointer;
     }
-  } 
+  }
 }
 
 .gdoc-nav {
