@@ -104,5 +104,4 @@ header:
     ref: https://github.com/thegeeklab/hugo-geekdoc
     icon: gdoc_github
     external: true
-    newWindow: true
 ```
