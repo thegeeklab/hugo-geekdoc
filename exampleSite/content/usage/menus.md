@@ -90,3 +90,18 @@ more:
 ```
 
 [![Example bundle menu](/media/more-menu.png)](/media/more-menu.png)
+
+## Extra Header Menu
+
+If you want to customize the header menu, this can be achieved by using a data file written in YAML and placed at `data/menu/extra.yml`.
+
+**Example:**
+
+```Yaml
+---
+header:
+  - name: GitHub
+    ref: https://github.com/thegeeklab/hugo-geekdoc
+    icon: gdoc_github
+    external: true
+```

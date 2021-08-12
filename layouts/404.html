@@ -13,6 +13,7 @@
     {{ partial "svg-icon-symbols" . }}
 
     <div class="wrapper">
+        <input type="checkbox" class="hidden" id="menu-header-control" />
         {{ partial "site-header" (dict "Root" . "MenuEnabled" false) }}
 
         <main class="gdoc-error flex-even">

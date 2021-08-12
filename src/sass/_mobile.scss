@@ -23,6 +23,16 @@
     }
   }
 
+  .gdoc-menu-header {
+    &__items {
+      display: none;
+    }
+
+    &__control {
+      display: inline-block;
+    }
+  }
+
   .gdoc-error {
     padding: $padding-16 * 6 $padding-16;
 
@@ -73,6 +83,24 @@
 
     .icon.gdoc_arrow_back {
       display: inline-block;
+    }
+  }
+
+  #menu-header-control:checked ~ .gdoc-header {
+    .gdoc-brand__title {
+      display: none;
+    }
+
+    .gdoc-menu-header {
+      &__items {
+        display: inline-block;
+      }
+
+      &__control {
+        .icon.gdoc_keyborad_arrow_left {
+          display: none;
+        }
+      }
     }
   }
 }

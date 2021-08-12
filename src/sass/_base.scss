@@ -126,6 +126,10 @@ img {
   vertical-align: middle;
 }
 
+#gdoc-dark-mode {
+  cursor: pointer;
+}
+
 .fake-link:hover {
   background-image: linear-gradient(var(--link-color), var(--link-color));
   background-position: 0 100%;
@@ -170,7 +174,7 @@ img {
 
   &__link,
   &__link:visited {
-    color: inherit;
+    color: var(--header-font-color);
   }
 
   &__link:hover {
@@ -190,6 +194,20 @@ img {
     margin-right: $padding-16;
     width: 2rem;
     height: 2rem;
+  }
+}
+
+.gdoc-menu-header {
+  &__items {
+    display: inline-block;
+  }
+
+  &__control {
+    display: none;
+
+    .icon {
+      cursor: pointer;
+    }
   }
 }
 
@@ -215,9 +233,14 @@ img {
     margin: 0;
     padding: 0;
 
+    .icon {
+      cursor: pointer;
+    }
+
     .icon.gdoc_menu {
       display: inline-block;
     }
+
     .icon.gdoc_arrow_back {
       display: none;
     }

@@ -2,8 +2,14 @@
     <div class="container flex align-center justify-between">
         {{ if .MenuEnabled }}
         <label for="menu-control" class="gdoc-nav__control">
-            <svg class="icon gdoc_menu"><use xlink:href="#gdoc_menu"></use></svg>
-            <svg class="icon gdoc_arrow_back"><use xlink:href="#gdoc_arrow_back"></use></svg>
+            <svg class="icon gdoc_menu">
+                <title>Open Nav Menu</title>
+                <use xlink:href="#gdoc_menu"></use>
+            </svg>
+            <svg class="icon gdoc_arrow_back">
+                <title>Close Nav Menu</title>
+                <use xlink:href="#gdoc_arrow_back"></use>
+            </svg>
         </label>
         {{ end }}
         <a class="gdoc-header__link" href="{{ .Root.Site.BaseURL }}">
@@ -12,10 +18,40 @@
                 <span class="gdoc-brand__title">{{ .Root.Site.Title }}</span>
             </span>
         </a>
-        <span id="gdoc-dark-mode">
-            <svg class="icon gdoc_brightness_dark"><use xlink:href="#gdoc_brightness_dark"></use></svg>
-            <svg class="icon gdoc_brightness_light"><use xlink:href="#gdoc_brightness_light"></use></svg>
-            <svg class="icon gdoc_brightness_auto"><use xlink:href="#gdoc_brightness_auto"></use></svg>
-        </span>
+        <div class="gdoc-menu-header">
+            {{ if .Root.Site.Data.menu.extra.header }}
+            <span class="gdoc-menu-header__items">
+            {{ partial "menu-extra" (dict "current" .Root "source" .Root.Site.Data.menu.extra.header "target" "header") }}
+            {{ end }}
+            <span id="gdoc-dark-mode">
+                <svg class="icon gdoc_brightness_dark">
+                    <title>Toggle Dark/Light/Auto mode</title>
+                    <use xlink:href="#gdoc_brightness_dark"></use>
+                </svg>
+                <svg class="icon gdoc_brightness_light">
+                    <title>Toggle Dark/Light/Auto mode</title>
+                    <use xlink:href="#gdoc_brightness_light"></use>
+                </svg>
+                <svg class="icon gdoc_brightness_auto">
+                    <title>Toggle Dark/Light/Auto mode</title>
+                    <use xlink:href="#gdoc_brightness_auto"></use>
+                </svg>
+            </span>
+            {{ if .Root.Site.Data.menu.extra.header }}
+            <label for="menu-header-control" class="gdoc-menu-header__control">
+                <svg class="icon gdoc_keyborad_arrow_right">
+                    <use xlink:href="#gdoc_keyborad_arrow_right"></use>
+                    <title>Close Menu Bar</title>
+                </svg>
+            </label>
+            </span>
+            <label for="menu-header-control" class="gdoc-menu-header__control">
+                <svg class="icon gdoc_keyborad_arrow_left">
+                    <use xlink:href="#gdoc_keyborad_arrow_left"></use>
+                    <title>Open Menu Bar</title>
+                </svg>
+            </label>
+            {{ end }}
+        </div>
     </div>
 </header>
