@@ -92,7 +92,7 @@ run the described steps as well.
 Clone the Geekdoc git repository.
 
 ```Shell
-git clone https://github.com/thegeeklab/hugo-geekdoc.git themes/geekdoc
+git clone https://github.com/thegeeklab/hugo-geekdoc.git themes/hugo-geekdoc
 ```
 
 Build required theme assets e.g. CSS files and SVG sprites with `gulp`.
