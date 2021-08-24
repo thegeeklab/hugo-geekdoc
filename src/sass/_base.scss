@@ -200,6 +200,10 @@ img {
 .gdoc-menu-header {
   &__items {
     display: inline-block;
+
+    :not(:last-child) {
+      margin-right: $padding-8;
+    }
   }
 
   &__control {
