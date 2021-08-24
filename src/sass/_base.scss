@@ -206,7 +206,8 @@ img {
     }
   }
 
-  &__control {
+  &__control,
+  &__home {
     display: none;
 
     .icon {
