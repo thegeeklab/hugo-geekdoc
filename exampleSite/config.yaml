@@ -20,6 +20,9 @@ markup:
     startLevel: 1
     endLevel: 9
 
+taxonomies:
+  tag: tags
+
 params:
   # geekdocMenuBundle: true
   geekdocToC: 3
