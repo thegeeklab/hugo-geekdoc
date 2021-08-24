@@ -29,6 +29,9 @@ enableGitInfo = true
     startLevel = 1
     endLevel = 9
 
+[taxonomies]
+  tag = "tags"
+
 [params]
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
   # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
@@ -125,6 +128,9 @@ markup:
   tableOfContents:
     startLevel: 1
     endLevel: 9
+
+taxonomies:
+  tag: tags
 
 params:
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
