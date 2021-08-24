@@ -26,6 +26,7 @@ taxonomies:
 params:
   # geekdocMenuBundle: true
   geekdocToC: 3
+  geekdocTagsToMenu: true
 
   geekdocRepo: https://github.com/thegeeklab/hugo-geekdoc
   geekdocEditPath: edit/main/exampleSite/content

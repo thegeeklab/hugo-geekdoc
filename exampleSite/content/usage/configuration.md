@@ -97,6 +97,9 @@ enableGitInfo = true
 
   # (Optional, default true) Display a "Back to top" link in the site footer.
   geekdocBackToTop = true
+
+  # (Optional, default false) Enable or disable adding tags for post pages automatically to the navigation sidebar.
+  geekdocTagsToMenu = true
 ```
 
 {{< /tab >}}
@@ -196,6 +199,9 @@ params:
 
   # (Optional, default true) Display a "Back to top" link in the site footer.
   geekdocBackToTop: true
+
+  # (Optional, default false) Enable or disable adding tags for post pages automatically to the navigation sidebar.
+  geekdocTagsToMenu: true
 ```
 
 {{< /tab >}}
