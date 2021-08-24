@@ -202,7 +202,8 @@ img {
     display: inline-block;
   }
 
-  &__control {
+  &__control,
+  &__home {
     display: none;
 
     .icon {
