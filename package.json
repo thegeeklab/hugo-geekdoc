@@ -16,7 +16,7 @@
   "dependencies": {
     "clipboard": "2.0.8",
     "flexsearch": "0.7.21",
-    "katex": "0.13.13",
+    "katex": "0.13.16",
     "mermaid": "8.11.5"
   },
   "devDependencies": {
