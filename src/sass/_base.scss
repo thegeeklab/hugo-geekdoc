@@ -278,7 +278,7 @@ img {
       cursor: pointer;
 
       .icon {
-        font-size: 0.7rem;
+        font-size: $font-size-12;
       }
     }
 
@@ -311,6 +311,7 @@ img {
     font-weight: bold;
   }
 
+  &--tags,
   &--more {
     padding-top: $padding-8;
   }
@@ -437,14 +438,6 @@ img {
     }
   }
 
-  &__date {
-    margin: 1em 0;
-
-    .icon {
-      font-size: 1.2em;
-    }
-  }
-
   &:first-child {
     border-top: 0;
 
@@ -466,6 +459,33 @@ img {
     a:visited {
       color: var(--link-color);
       text-decoration: none !important;
+    }
+  }
+
+  &__tag {
+    margin: $padding-4 0 !important;
+
+    .gdoc-button {
+      background: var(--body-background);
+
+      &__link {
+        padding: $padding-4 $padding-8;
+      }
+    }
+  }
+
+  &__meta {
+    padding-bottom: $padding-16;
+  }
+
+  &__footer,
+  &__meta {
+    :not(:first-child).no-wrap {
+      margin-left: $padding-8;
+    }
+
+    .icon {
+      font-size: $font-size-20;
     }
   }
 }

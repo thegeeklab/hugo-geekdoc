@@ -63,6 +63,9 @@ To prepare your new site environment just a few steps are required:
      [markup.tableOfContents]
        startLevel = 1
        endLevel = 9
+
+   [taxonomies]
+      tag = "tags"
    ```
 
 5. Test your site.

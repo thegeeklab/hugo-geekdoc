@@ -29,6 +29,9 @@ enableGitInfo = true
     startLevel = 1
     endLevel = 9
 
+[taxonomies]
+  tag = "tags"
+
 [params]
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
   # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
@@ -97,6 +100,9 @@ enableGitInfo = true
 
   # (Optional, default true) Display a "Back to top" link in the site footer.
   geekdocBackToTop = true
+
+  # (Optional, default false) Enable or disable adding tags for post pages automatically to the navigation sidebar.
+  geekdocTagsToMenu = true
 ```
 
 {{< /tab >}}
@@ -122,6 +128,9 @@ markup:
   tableOfContents:
     startLevel: 1
     endLevel: 9
+
+taxonomies:
+  tag: tags
 
 params:
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
@@ -196,6 +205,9 @@ params:
 
   # (Optional, default true) Display a "Back to top" link in the site footer.
   geekdocBackToTop: true
+
+  # (Optional, default false) Enable or disable adding tags for post pages automatically to the navigation sidebar.
+  geekdocTagsToMenu: true
 ```
 
 {{< /tab >}}

@@ -2,6 +2,8 @@
 title: Hello Geekdoc
 type: posts
 date: 2020-01-06
+tags:
+  - Documentation
 ---
 
 This is the first release of the Geekdoc theme.
