@@ -15,10 +15,6 @@
 <link rel="preload" href="{{ index .Site.Data.assets "custom.css" | relURL }}" as="style">
 <link rel="stylesheet" href="{{ index .Site.Data.assets "custom.css" | relURL }}" media="all">
 
-{{ with .OutputFormats.Get "rss" -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-{{ end -}}
-
 {{ if (default false $.Site.Params.GeekdocOverwriteHTMLBase) }}
 <base href="{{ .Site.BaseURL }}">
 {{ end }}

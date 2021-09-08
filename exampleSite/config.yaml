@@ -23,6 +23,18 @@ markup:
 taxonomies:
   tag: tags
 
+outputs:
+  home:
+    - HTML
+  page:
+    - HTML
+  section:
+    - HTML
+  taxonomy:
+    - HTML
+  term:
+    - HTML
+
 params:
   # geekdocMenuBundle: true
   geekdocToC: 3
