@@ -55,6 +55,9 @@ To prepare your new site environment just a few steps are required:
    pygmentsCodeFences = true
    disablePathToLower = true
 
+   # Required if you want to render robots.txt template
+   enableRobotsTXT = true
+
    # Needed for mermaid shortcodes
    [markup]
      [markup.goldmark.renderer]

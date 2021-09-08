@@ -21,6 +21,9 @@ pygmentsCodeFences = true
 disablePathToLower = true
 enableGitInfo = true
 
+# Required if you want to render robots.txt template
+enableRobotsTXT = true
+
 [markup]
   [markup.goldmark.renderer]
     # Needed for mermaid shortcode
@@ -119,6 +122,9 @@ pygmentsUseClasses: true
 pygmentsCodeFences: true
 disablePathToLower: true
 enableGitInfo: true
+
+# Required if you want to render robots.txt template
+enableRobotsTXT: true
 
 markup:
   goldmark:
