@@ -245,7 +245,7 @@ platform:
 
 steps:
   - name: matrix
-    image: plugins/matrix
+    image: thegeeklab/drone-matrix
     settings:
       homeserver:
         from_secret: matrix_homeserver
@@ -253,7 +253,7 @@ steps:
         from_secret: matrix_password
       roomid:
         from_secret: matrix_roomid
-      template: "Status: **{{ build.status }}**<br/> Build: [{{ repo.Owner }}/{{ repo.Name }}]({{ build.link }}) ({{ build.branch }}) by {{ build.author }}<br/> Message: {{ build.message }}"
+      template: "Status: **{{ build.Status }}**<br/> Build: [{{ repo.Owner }}/{{ repo.Name }}]({{ build.Link }}) ({{ build.Branch }}) by {{ commit.Author }}<br/> Message: {{ commit.Message }}"
       username:
         from_secret: matrix_username
     when:
@@ -276,4 +276,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 142554a7f95601e98915d56a24f89ed1ead98e9b4d8672e6b8ee385bbc4204fb
+hmac: 7c064d7f73a3f6f4bc7c9378dff223af66e2724a843ffee325ef163a1615fe7b
+
+...
