@@ -1,3 +1,7 @@
+---
+title: Code Blocks
+---
+
 There are multiple ways to add code blocks. Most of them works out of the box only the Hugo shortcode `<highlight>` need some configuration to work properly.
 
 {{< toc >}}
