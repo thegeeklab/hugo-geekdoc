@@ -50,6 +50,13 @@ gulp.task("sass", function () {
     .pipe(gulp.dest(CSS_BUILD));
 });
 
+gulp.task("favicon-svg", function () {
+  return gulp
+    .src("src/favicon/favicon-master.svg")
+    .pipe(rename("favicon.svg"))
+    .pipe(gulp.dest("static/favicon/"));
+});
+
 gulp.task("favicon-generate", function (done) {
   realFavicon.generateFavicon(
     {
@@ -309,6 +316,8 @@ gulp.task(
   gulp.series("asset-sync-font", "asset-sync-css", "asset-sync-js", "asset-rev")
 );
 
+gulp.task("favicon", gulp.series("favicon-svg", "favicon-generate"));
+
 gulp.task("svg", gulp.series("svg-sprite"));
 
 gulp.task(
@@ -321,7 +330,7 @@ gulp.task(
     devBuild ? "asset-map" : [],
     "svg",
     "iconfont",
-    "favicon-generate",
+    "favicon",
   ])
 );
 
