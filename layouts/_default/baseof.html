@@ -6,7 +6,10 @@
     <title>{{ if not (eq .Kind "home") }}{{ partial "title" . }} | {{ end }}{{ .Site.Title }}</title>
 
     {{ partial "head/favicons" . }}
+    {{ partial "head/rel-me" . }}
+    {{ partial "head/microformats" . }}
     {{ partial "head/others" . }}
+    {{ partial "head/schema" . }}
     {{ partial "head/custom" . }}
 </head>
 
