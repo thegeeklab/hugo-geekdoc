@@ -201,8 +201,8 @@ img {
   &__items {
     display: inline-block;
 
-    :not(:last-child) {
-      margin-right: $padding-8;
+    > span {
+      margin-left: $padding-8;
     }
   }
 
