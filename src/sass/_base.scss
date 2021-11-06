@@ -489,7 +489,16 @@ img {
     }
   }
 
+  &__codecontainer {
+    position: relative;
+
+    &:hover > .gdoc-post__codecopy {
+      display: block;
+    }
+  }
+
   &__codecopy {
+    display: none;
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
