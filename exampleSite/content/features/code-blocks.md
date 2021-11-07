@@ -21,14 +21,14 @@ To display an inline shortcode use single quotes:
 Code blocks can be uses without language specification:
 
 ````markdown
-```
+```Plain
 some code
 ```
 ````
 
 **Example:**
 
-```plain
+```Plain
 some code
 ```
 
