@@ -493,15 +493,39 @@ img {
     position: relative;
 
     &:hover > .gdoc-post__codecopy {
-      display: block;
+      visibility: visible;
     }
   }
 
   &__codecopy {
-    display: none;
+    visibility: hidden;
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
+
+    border: $border-2 solid var(--code-copy-border-color);
+    border-radius: $border-radius;
+    width: 2.2rem;
+    height: 2.2rem;
+
+    .icon {
+      top: 0;
+      width: $font-size-20;
+      height: $font-size-20;
+      color: var(--code-copy-font-color);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--success {
+      border-color: var(--code-copy-success-color);
+
+      .icon {
+        color: var(--code-copy-success-color);
+      }
+    }
   }
 }
 
