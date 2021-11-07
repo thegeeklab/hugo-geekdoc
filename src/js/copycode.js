@@ -7,7 +7,7 @@ function createCopyButton(highlightDiv) {
     selector = "pre > code";
   }
 
-  const codeToCopy = highlightDiv.querySelector(selector).innerText;
+  const codeToCopy = highlightDiv.querySelector(selector).innerText.trim();
 
   button.classList.add(
     "flex",
