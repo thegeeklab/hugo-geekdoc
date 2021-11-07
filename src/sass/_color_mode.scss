@@ -18,6 +18,10 @@
   --code-accent-color-lite: #{darken($code-background, 2)};
   --code-font-color: #{$code-font-color};
 
+  --code-copy-font-color: #{lighten($body-font-color, 24)};
+  --code-copy-border-color: #{lighten($body-font-color, 48)};
+  --code-copy-success-color: #{map.get($hint-colors, "ok")};
+
   --accent-color: #{$gray-200};
   --accent-color-lite: #{$gray-100};
 
@@ -61,6 +65,10 @@
   --code-accent-color-lite: #{darken($code-background-dark, 2)};
   --code-font-color: #{$code-font-color-dark};
 
+  --code-copy-font-color: #{lighten($body-font-color, 48)};
+  --code-copy-border-color: #{lighten($body-font-color, 32)};
+  --code-copy-success-color: #{map.get($hint-colors, "ok")};
+
   --accent-color: #{darken($body-background-dark, 4)};
   --accent-color-lite: #{darken($body-background-dark, 2)};
 
@@ -78,7 +86,8 @@
   }
 
   .gdoc-markdown {
-    .gdoc-hint {
+    .gdoc-hint,
+    .gdoc-post__codecopy--success {
       filter: saturate(2.5) brightness(0.85);
     }
   }
