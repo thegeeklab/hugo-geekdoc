@@ -35,6 +35,9 @@
   }
 
   .highlight {
+    overflow: auto;
+    max-height: var(--code-max-height);
+
     pre.chroma {
       margin: 0;
     }
