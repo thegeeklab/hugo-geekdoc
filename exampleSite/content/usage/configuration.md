@@ -106,6 +106,11 @@ enableRobotsTXT = true
 
   # (Optional, default false) Enable or disable adding tags for post pages automatically to the navigation sidebar.
   geekdocTagsToMenu = true
+
+  # (Optional, default 'title') Configure how to sort file-tree menu entries. Possible options are 'title', 'linktitle',
+  # 'date', 'publishdate', 'expirydate' or 'lastmod'. Every option can be used with a reverse modifier as well
+  # e.g. 'title_reverse'.
+  geekdocFileTreeSortBy = "title"
 ```
 
 {{< /tab >}}
@@ -214,6 +219,11 @@ params:
 
   # (Optional, default false) Enable or disable adding tags for post pages automatically to the navigation sidebar.
   geekdocTagsToMenu: true
+
+  # (Optional, default 'title') Configure how to sort file-tree menu entries. Possible options are 'title', 'linktitle',
+  # 'date', 'publishdate', 'expirydate' or 'lastmod'. Every option can be used with a reverse modifier as well
+  # e.g. 'title_reverse'.
+  geekdocFileTreeSortBy: "title"
 ```
 
 {{< /tab >}}
