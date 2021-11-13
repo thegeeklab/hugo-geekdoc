@@ -19,28 +19,6 @@
     margin: 0;
     border: 0;
   }
-  /* LineTable */
-  .chroma .lntable {
-    border-spacing: 0;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    width: 100%;
-    overflow: auto;
-    display: block;
-  }
-  .chroma .lntable td:first-child code {
-    background-color: var(--code-accent-color-lite);
-    border-right: $border-1 solid var(--code-accent-color);
-    padding: 0.5em 0;
-  }
-  .chroma .lntable td code {
-    padding: 0.5em 0;
-  }
-  .chroma .lntable td:nth-child(2) {
-    width: 100%;
-    margin-left: 2em;
-  }
   /* LineHighlight */
   .chroma .hl {
     display: block;
