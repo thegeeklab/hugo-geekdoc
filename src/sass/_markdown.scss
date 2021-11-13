@@ -2,13 +2,18 @@
   line-height: 1.6em;
 
   > :first-child {
-    margin-top: 0;
+    margin-top: 0 !important;
   }
 
   &--nested {
     :first-child {
       margin-top: 0;
     }
+
+    > pre {
+      margin-top: 0 !important;
+    }
+
     > :last-child {
       margin-bottom: 0;
     }

@@ -228,8 +228,13 @@ img {
       font-weight: normal;
     }
 
-    > :first-child {
+    > :first-child,
+    > :first-child > :first-child {
       margin-top: 0;
+    }
+
+    section {
+      margin-top: $padding-32;
     }
   }
 
@@ -309,11 +314,6 @@ img {
   &--main > ul > li > label,
   &--main > ul > li > label > a {
     font-weight: bold;
-  }
-
-  &--tags,
-  &--more {
-    padding-top: $padding-8;
   }
 }
 
