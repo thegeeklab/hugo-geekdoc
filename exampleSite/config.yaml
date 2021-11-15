@@ -7,6 +7,17 @@ pygmentsCodeFences: true
 timeout: 180000
 pluralizeListTitles: false
 
+defaultContentLanguage: en
+languages:
+  en:
+    languageName: "English"
+    contentDir: "content/en"
+    weight: 10
+  de:
+    languageName: "German"
+    contentDir: "content/de"
+    weight: 20
+
 disablePathToLower: true
 enableGitInfo: true
 

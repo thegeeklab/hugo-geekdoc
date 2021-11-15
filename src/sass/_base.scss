@@ -635,6 +635,35 @@ img {
   }
 }
 
+.language_switch {
+  border: 1px solid red;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding: 0;
+  }
+
+  .dropdown {
+    position: relative;
+
+    .dropdown__menu {
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 0.15em 0.25em rgba(black, 0.25);
+      padding: 0.5em 0;
+      min-width: 15ch;
+
+      a {
+        color: #444;
+        display: block;
+        padding: 0.5em;
+      }
+    }
+  }
+}
+
 .gdoc-error {
   padding: $padding-16 * 6 $padding-16;
   margin: 0 auto;

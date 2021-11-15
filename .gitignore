@@ -9,6 +9,9 @@
 /exampleSite/public/
 CHANGELOG.md
 
+# translation envs
+exampleSite/content/de
+
 # auto-generated files
 /data/
 /static/

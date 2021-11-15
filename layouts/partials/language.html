@@ -1,0 +1,19 @@
+{{ .Site.IsMultiLingual }}
+{{ .Site.Languages }}
+{{ $.Translations }}
+{{ if .Site.IsMultiLingual }}
+    <ul class="language_switch">
+        {{ range .Site.Languages }}
+        {{ if eq . $.Site.Language }}
+        <li class="dropdown">
+            <span>{{ .LanguageName }}</span>
+        {{ end }}
+        {{ end }}
+            <ul class="dropdown__menu">
+            {{ range $.Translations }}
+                <li><a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+            {{ end }}
+            </ul>
+        </li>
+    </ul>
+{{ end }}
