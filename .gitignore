@@ -9,6 +9,9 @@ exampleSite/themes/
 exampleSite/public/
 CHANGELOG.md
 
+# translation envs
+exampleSite/content/de
+
 # auto-generated files
 assets/sprites/
 static/*.min.css

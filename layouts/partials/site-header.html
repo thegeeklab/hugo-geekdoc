@@ -3,11 +3,11 @@
         {{ if .MenuEnabled }}
         <label for="menu-control" class="gdoc-nav__control">
             <svg class="icon gdoc_menu">
-                <title>Open Nav Menu</title>
+                <title>{{ i18n "button_nav_open" }}</title>
                 <use xlink:href="#gdoc_menu"></use>
             </svg>
             <svg class="icon gdoc_arrow_back">
-                <title>Close Nav Menu</title>
+                <title>{{ i18n "button_nav_close" }}</title>
                 <use xlink:href="#gdoc_arrow_back"></use>
             </svg>
         </label>
@@ -25,15 +25,15 @@
             {{ end }}
             <span id="gdoc-dark-mode">
                 <svg class="icon gdoc_brightness_dark">
-                    <title>Toggle Dark/Light/Auto mode</title>
+                    <title>{{ i18n "button_toggle_dark" }}</title>
                     <use xlink:href="#gdoc_brightness_dark"></use>
                 </svg>
                 <svg class="icon gdoc_brightness_light">
-                    <title>Toggle Dark/Light/Auto mode</title>
+                    <title>{{ i18n "button_toggle_dark" }}</title>
                     <use xlink:href="#gdoc_brightness_light"></use>
                 </svg>
                 <svg class="icon gdoc_brightness_auto">
-                    <title>Toggle Dark/Light/Auto mode</title>
+                    <title>{{ i18n "button_toggle_dark" }}</title>
                     <use xlink:href="#gdoc_brightness_auto"></use>
                 </svg>
             </span>
@@ -41,7 +41,7 @@
             <span class="gdoc-menu-header__home">
             <a href="{{ .Root.Site.BaseURL }}" class="gdoc-header__link">
                 <svg class="icon gdoc_home">
-                    <title>Back to homepage</title>
+                    <title>{{ i18n "button_homepage" }}</title>
                     <use xlink:href="#gdoc_home"></use>
                 </svg>
             </a>
@@ -50,7 +50,7 @@
             <label for="menu-header-control">
                 <svg class="icon gdoc_keyborad_arrow_right">
                     <use xlink:href="#gdoc_keyborad_arrow_right"></use>
-                    <title>Close Menu Bar</title>
+                    <title>{{ i18n "button_menu_close" }}</title>
                 </svg>
             </label>
             </span>
@@ -58,7 +58,7 @@
             <label for="menu-header-control" class="gdoc-menu-header__control">
                 <svg class="icon gdoc_keyborad_arrow_left">
                     <use xlink:href="#gdoc_keyborad_arrow_left"></use>
-                    <title>Open Menu Bar</title>
+                    <title>{{ i18n "button_menu_open" }}</title>
                 </svg>
             </label>
             {{ end }}
