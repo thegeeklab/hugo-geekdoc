@@ -1,19 +1,32 @@
-{{ .Site.IsMultiLingual }}
-{{ .Site.Languages }}
-{{ $.Translations }}
 {{ if .Site.IsMultiLingual }}
-    <ul class="language_switch">
-        {{ range .Site.Languages }}
-        {{ if eq . $.Site.Language }}
-        <li class="dropdown">
-            <span>{{ .LanguageName }}</span>
-        {{ end }}
-        {{ end }}
-            <ul class="dropdown__menu">
+<section class="gdoc-language">
+    <ul class="gdoc-language__selector">
+        <li>
+            <input type="checkbox" id="menu-language-control" class="gdoc-language__toggle">
+            <label class="flex" for="menu-language-control">
+            {{ range .Site.Languages }}
+            {{ if eq . $.Site.Language }}
+            <svg class="icon gdoc_language"><use xlink:href="#gdoc_language"></use></svg>
+            <span class="flex flex-auto justify-between">
+                <span>{{ .LanguageName }}</span>
+                {{ if $.Translations }}
+                <svg class="icon gdoc_keyborad_arrow_left"><use xlink:href="#gdoc_keyborad_arrow_left"></use></svg>
+                <svg class="icon gdoc_keyborad_arrow_down"><use xlink:href="#gdoc_keyborad_arrow_down"></use></svg>
+                {{ end }}
+            </span>
+            {{ end }}
+            {{ end }}
+            </label>
+            {{ if $.Translations }}
+            <ul class="gdoc-language__list">
             {{ range $.Translations }}
-                <li><a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+                <li>
+                    <a class="flex gdoc-language__entry" title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+                </li>
             {{ end }}
             </ul>
+            {{ end }}
         </li>
     </ul>
+</section>
 {{ end }}
