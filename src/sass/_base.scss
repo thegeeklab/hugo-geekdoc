@@ -318,7 +318,8 @@ img {
 }
 
 .gdoc-nav__entry,
-.gdoc-search__entry {
+.gdoc-search__entry,
+.gdoc-language__entry {
   flex: 1;
   color: var(--body-font-color);
 
@@ -331,6 +332,22 @@ img {
   &:visited {
     color: var(--body-font-color);
   }
+}
+
+.gdoc-search__list,
+.gdoc-language__list {
+  background: var(--body-background);
+  border-radius: $border-radius;
+  box-shadow: 0 1px 3px 0 var(--accent-color),
+    0 1px 2px 0 var(--accent-color-lite);
+  position: absolute;
+  margin: 0;
+  padding: $padding-8 !important;
+  list-style: none;
+  left: 0;
+  top: calc(100% + #{$padding-8});
+  width: 100%;
+  z-index: 2;
 }
 
 .gdoc-page {
@@ -610,18 +627,6 @@ img {
 
   &__list {
     visibility: hidden;
-    background: var(--body-background);
-    border-radius: $border-radius;
-    box-shadow: 0 1px 3px 0 var(--accent-color),
-      0 1px 2px 0 var(--accent-color-lite);
-    position: absolute;
-    margin: 0;
-    padding: $padding-8;
-    list-style: none;
-    left: 0;
-    top: calc(100% + #{$padding-8});
-    width: 100%;
-    z-index: 2;
 
     ul {
       list-style: none;
@@ -652,30 +657,52 @@ img {
   }
 }
 
-.language_switch {
-  border: 1px solid red;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  li {
+.gdoc-language {
+  &__selector {
+    position: relative;
+    list-style: none;
+    user-select: none;
+    margin: 0;
     padding: 0;
+    width: 100%;
   }
 
-  .dropdown {
-    position: relative;
+  &__list {
+    display: none;
+    list-style: none;
+    user-select: none;
+    margin: 0;
+  }
 
-    .dropdown__menu {
-      background-color: #fff;
-      border-radius: 4px;
-      box-shadow: 0 0.15em 0.25em rgba(black, 0.25);
-      padding: 0.5em 0;
-      min-width: 15ch;
+  &__toggle {
+    display: none;
 
-      a {
-        color: #444;
+    & ~ label {
+      cursor: pointer;
+
+      > .icon {
+        margin-right: $padding-4;
+      }
+    }
+
+    &:not(:checked) {
+      & ~ .gdoc-language__list,
+      & ~ label .icon.gdoc_keyborad_arrow_down {
+        display: none;
+      }
+      & ~ label .icon.gdoc_keyborad_arrow_left {
         display: block;
-        padding: 0.5em;
+      }
+    }
+
+    &:checked {
+      & ~ .gdoc-language__list,
+      & ~ label .icon.gdoc_keyborad_arrow_down {
+        display: block;
+      }
+
+      & ~ label .icon.gdoc_keyborad_arrow_left {
+        display: none;
       }
     }
   }

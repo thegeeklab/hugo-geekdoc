@@ -1,6 +1,5 @@
 <nav>
     {{ partial "search" . }}
-    {{ partial "language" . }}
 
     <section class="gdoc-nav--main">
         <h2>{{ i18n "nav_navigation" }}</h2>
@@ -33,4 +32,6 @@
             {{ partial "menu-bundle" (dict "current" . "source" .Site.Data.menu.more.more) }}
         {{ end }}
     </section>
+
+    {{ partial "language" . }}
 </nav>
