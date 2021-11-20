@@ -13,7 +13,7 @@ error_message_title: Lost?
 error_message_code: Error 404
 error_message_text: >
   Seems like what you are looking for can't be found. Don't worry, we can
-  bring you back to the <a class="gdoc-error__link" href="{{ .Site.BaseURL }}">homepage</a>.
+  bring you back to the <a class="gdoc-error__link" href="{{ . }}">homepage</a>.
 
 button_toggle_dark: Toggle Dark/Light/Auto mode
 button_nav_open: Open Navigation
