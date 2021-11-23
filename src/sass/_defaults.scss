@@ -54,6 +54,7 @@ $container-max-width: 80rem !default;
 
 $main-color: rgba(65, 134, 201, 1) !default;
 $second-color: rgba(47, 51, 62, 1) !default;
+$mark-color: rgba(255, 171, 0, 1) !default;
 
 $body-background-dark: mix(
   invert($body-background, 75%),

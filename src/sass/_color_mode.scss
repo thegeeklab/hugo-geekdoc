@@ -7,6 +7,8 @@
   --body-background: #{$body-background};
   --body-font-color: #{$body-font-color};
 
+  --mark-color: #{$mark-color};
+
   --button-background: #{lighten($main-color, 2)};
   --button-border-color: #{$main-color};
 
@@ -53,6 +55,8 @@
 
   --body-background: #{$body-background-dark};
   --body-font-color: #{lighten($body-background-dark, 60)};
+
+  --mark-color: #{$mark-color};
 
   --button-background: #{lighten($main-color, 2)};
   --button-border-color: #{$main-color};

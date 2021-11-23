@@ -46,7 +46,12 @@ enableRobotsTXT = true
   geekdocLogo = "logo.png"
 
   # (Optional, default false) Render menu from data file im 'data/menu/main.yaml'.
+  # See also https://geekdocs.de/usage/menus/#bundle-menu.
   geekdocMenuBundle = true
+
+  # (Optional, default false) Collapse all menu entries, can not be overwritten
+  # per page if enabled. Can be enabled per page via `geekdocCollapseSection`.
+  geekdocCollapseAllSections = true
 
   # (Optional, default true) Show page navigation links at the bottom of each
   # docs page (bundle menu only).
@@ -154,11 +159,11 @@ params:
   geekdocLogo: logo.png
 
   # (Optional, default false) Render menu from data file im 'data/menu/main.yaml'.
-  # See also https://geekdocs.de/usage/menus/#bundle-menu
+  # See also https://geekdocs.de/usage/menus/#bundle-menu.
   geekdocMenuBundle: true
 
   # (Optional, default false) Collapse all menu entries, can not be overwritten
-  # per page if enabled. Can be enabled per page via `geekdocCollapseSection`
+  # per page if enabled. Can be enabled per page via `geekdocCollapseSection`.
   geekdocCollapseAllSections: true
 
   # (Optional, default true) Show page navigation links at the bottom of each
