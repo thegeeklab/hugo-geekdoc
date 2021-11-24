@@ -64,12 +64,6 @@
     flex-direction: column;
   }
 
-  .gdoc-footer {
-    &__item--row {
-      width: 100%;
-    }
-  }
-
   #menu-control:checked ~ main {
     .gdoc-nav nav,
     .gdoc-page {

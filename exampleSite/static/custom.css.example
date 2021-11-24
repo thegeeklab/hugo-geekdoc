@@ -13,6 +13,8 @@
   --body-background: #ffffff;
   --body-font-color: #343a40;
 
+  --mark-color: #ffab00;
+
   --button-background: #62cb97;
   --button-border-color: #4ec58a;
 
@@ -44,6 +46,8 @@
 
     --body-background: #ffffff;
     --body-font-color: #343a40;
+
+    --mark-color: #ffab00;
 
     --button-background: #62cb97;
     --button-border-color: #4ec58a;
@@ -79,6 +83,8 @@
   --body-background: #343a40;
   --body-font-color: #ced3d8;
 
+  --mark-color: #ffab00;
+
   --button-background: #62cb97;
   --button-border-color: #4ec58a;
 
@@ -110,6 +116,8 @@
 
     --body-background: #343a40;
     --body-font-color: #ced3d8;
+
+    --mark-color: #ffab00;
 
     --button-background: #62cb97;
     --button-border-color: #4ec58a;
