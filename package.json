@@ -34,7 +34,7 @@
     "gulp-sourcemaps": "3.0.0",
     "gulp-svg-sprite": "1.5.0",
     "gulp-uglify": "3.0.2",
-    "prettier": "2.4.1",
+    "prettier": "2.5.0",
     "prettier-plugin-go-template": "0.0.11",
     "through2": "4.0.2"
   },
