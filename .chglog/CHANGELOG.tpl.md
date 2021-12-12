@@ -7,7 +7,7 @@
 ### {{ .Title }}
 
 {{ range .Commits -}}
-- {{ if .Scope }}**{{ .Scope }}:** {{ end }}{{ (regexReplaceAll "(Co-\\w*-by.*)" .Subject "") | trim }}
+- {{ if .Scope }}**{{ .Scope }}:** {{ end }}{{ (regexReplaceAll "(.*)/issues/(.*)" (regexReplaceAll "(Co-\\w*-by.*)" .Subject "") "${1}/pull/${2}") | trim }}
 {{ end }}
 {{- end -}}
 
