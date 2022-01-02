@@ -1,9 +1,9 @@
-*.html
 .drone.yml
 search*.js
 _normalize.css
-.lighthouseci/
-themes/
-static/js/
-src/favicon/
+list.json.json
+/.lighthouseci/
+/themes/
+/static/js/
+/src/favicon/
 LICENSE

@@ -2,6 +2,7 @@
 ci:
   collect:
     numberOfRuns: 3
+    psiStrategy: desktop
     staticDistDir: exampleSite/public
     url:
       - http://localhost/
