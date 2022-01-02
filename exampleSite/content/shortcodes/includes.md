@@ -6,9 +6,11 @@ title: Includes
 
 Include shortcode can include files of different types. By specifying a language, the included file will have syntax highlighting.
 
+<!-- prettier-ignore-start -->
 ```tpl
 {{</* include file="relative/path/from/hugo/root" language="go" markdown=[false|true] */>}}
 ```
+<!-- prettier-ignore-end -->
 
 Attributes:
 
@@ -30,9 +32,11 @@ If no other options are specified, files will be rendered as Markdown using the 
 If you include markdown files that should not get a menu entry, place them outside the content folder or exclude them otherwise.
 {{< /hint >}}
 
+<!-- prettier-ignore-start -->
 ```tpl
 {{</* include file="/static/_includes/example.md.part" */>}}
 ```
+<!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
 <!-- spellchecker-disable -->
@@ -44,9 +48,11 @@ If you include markdown files that should not get a menu entry, place them outsi
 
 This method can be used to include source code files and keep them automatically up to date.
 
+<!-- prettier-ignore-start -->
 ```tpl
 {{</* include file="config.yaml" language="yaml" options="linenos=table,hl_lines=5-6,linenostart=100" */>}}
 ```
+<!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
 <!-- spellchecker-disable -->
@@ -60,9 +66,11 @@ This method can be used to include source code files and keep them automatically
 
 HTML content will be filtered by the `safeHTML` filter and added to the rendered page output.
 
+<!-- prettier-ignore-start -->
 ```tpl
 {{</* include file="/static/_includes/example.html.part" */>}}
 ```
+<!-- prettier-ignore-end -->
 
 {{< include file="/static/_includes/example.html.part" type="html" >}}
 

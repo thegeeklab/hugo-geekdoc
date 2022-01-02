@@ -4,9 +4,11 @@ title: Icons
 
 Simple shortcode to include icons from SVG sprites outside of menus.
 
+<!-- prettier-ignore-start -->
 ```tpl
 {{</* icon "thumbs-up" */>}}
 ```
+<!-- prettier-ignore-end -->
 
 **Example:**
 

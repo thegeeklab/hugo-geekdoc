@@ -4,6 +4,7 @@ title: Tabs
 
 Tabs let you organize content by context, for example installation instructions for each supported platform.
 
+<!-- prettier-ignore-start -->
 ```tpl
 {{</* tabs "uniqueid" */>}}
 {{</* tab "macOS" */>}} # macOS Content {{</* /tab */>}}
@@ -11,6 +12,7 @@ Tabs let you organize content by context, for example installation instructions 
 {{</* tab "Windows" */>}} # Windows Content {{</* /tab */>}}
 {{</* /tabs */>}}
 ```
+<!-- prettier-ignore-end -->
 
 ## Example
 
