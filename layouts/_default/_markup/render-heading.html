@@ -1,5 +1,7 @@
 {{- $showAnchor := (and (default true .Page.Params.GeekdocAnchor) (default true .Page.Site.Params.GeekdocAnchor)) -}}
 
+
+<!-- prettier-ignore-start -->
 {{- if $showAnchor -}}
 <div class="gdoc-page__anchorwrap">
     <h{{ .Level }} id="{{ .Anchor | safeURL }}">
@@ -16,3 +18,4 @@
     </h{{ .Level }}>
 </div>
 {{- end -}}
+<!-- prettier-ignore-end -->
