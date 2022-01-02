@@ -1,7 +1,7 @@
 {
-  "name": "geekblog",
+  "name": "geekdoc",
   "version": "1.0.0",
-  "description": "Hugo theme made for blogs",
+  "description": "Hugo theme made for documentation",
   "main": "index.js",
   "scripts": {
     "build": "run-s prep svg build:webpack-prod",
@@ -17,12 +17,12 @@
     "prep": "run-s prep:*",
     "prep:clean": "del build/ static/",
     "prep:make": "make-dir build/icons build/fonts",
-    "svg-sprite-list": "run-s prep:make svg ; make-dir exampleSite/data/sprites ; cpy build/fonts/GeekblogIcons.json exampleSite/data/sprites/ --rename geekblog.json",
+    "svg-sprite-list": "run-s prep:make svg ; make-dir exampleSite/data/sprites ; cpy build/fonts/GeekdocIcons.json exampleSite/data/sprites/ --rename geekdoc.json",
     "lint": "eslint src/js/ --color"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/thegeeklab/hugo-geekblog"
+    "url": "https://github.com/thegeeklab/hugo-geekdoc"
   },
   "author": "Robert Kaussow",
   "license": "MIT",
@@ -63,7 +63,7 @@
     "Firefox ESR"
   ],
   "svgtofont": {
-    "fontName": "GeekblogIcons",
+    "fontName": "GeekdocIcons",
     "css": false,
     "html": false,
     "emptyDist": true,

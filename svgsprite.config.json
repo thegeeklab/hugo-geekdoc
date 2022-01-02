@@ -23,7 +23,7 @@
   "mode": {
     "defs": {
       "dest": "build/sprites/",
-      "sprite": "geekblog.svg",
+      "sprite": "geekdoc.svg",
       "bust": false
     }
   }

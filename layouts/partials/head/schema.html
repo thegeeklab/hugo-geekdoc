@@ -1,6 +1,5 @@
 {{ if .IsHome -}}
-{{ $thumbnail := default (default "brand.svg" .Site.Params.logo) (index (default slice .Site.Params.images) 0) | absURL }}
-<script type="application/ld+json">
+  {{ $thumbnail := default (default "brand.svg" .Site.Params.logo) (index (default slice .Site.Params.images) 0) | absURL }}<script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -10,7 +9,7 @@
     "description": "{{ . }}",
     {{- end }}
     "thumbnailUrl": "{{ $thumbnail }}"
-    {{- with .Site.Params.GeekblogContentLicense }},
+    {{- with .Site.Params.GeekdocContentLicense }},
     "license": "{{ .name }}"
     {{- end }}
 }
