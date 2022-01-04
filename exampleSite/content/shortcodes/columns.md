@@ -9,12 +9,12 @@ The Columns shortcode can be used to organize content side-by-side (horizontally
 # Left Content
 Dolor sit, sumo unique argument um no ...
 
-<---> <!-- magic sparator, between columns -->
+<---> <!-- magic separator, between columns -->
 
 # Mid Content
 Dolor sit, sumo unique argument um no ...
 
-<---> <!-- magic sparator, between columns -->
+<---> <!-- magic separator, between columns -->
 
 # Right Content
 Dolor sit, sumo unique argument um no ...
