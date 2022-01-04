@@ -1,9 +1,63 @@
 const path = require("path")
+const fs = require("fs")
+const crypto = require("crypto")
 
-const WebpackAssetsManifest = require("webpack-assets-manifest")
+const { WebpackManifestPlugin } = require("webpack-manifest-plugin")
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin")
 const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts")
 const CopyPlugin = require("copy-webpack-plugin")
+const { validate } = require("schema-utils")
+
+class SRIPlugin {
+  static defaultOptions = {
+    algorithm: "sha512",
+    sourceFile: "assets.json"
+  }
+
+  constructor(options = {}) {
+    const schema = {
+      type: "object",
+      properties: {
+        outputFile: {
+          type: "string"
+        },
+        algorithm: {
+          type: "string"
+        }
+      }
+    }
+
+    this.options = { ...SRIPlugin.defaultOptions, ...options }
+
+    validate(schema, options, {
+      name: "SRI Plugin",
+      baseDataPath: "options"
+    })
+  }
+
+  apply(compiler) {
+    compiler.hooks.done.tap("SRIPlugin", (manifest) => {
+      let data = JSON.parse(fs.readFileSync(this.options.sourceFile, "utf8"))
+      let outputFile = this.options.outputFile ? this.options.outputFile : this.options.sourceFile
+
+      const checksum = (str, algorithm = this.options.algorithm, encoding = "base64") =>
+        crypto.createHash(algorithm).update(str, "utf8").digest(encoding)
+      const fileSum = (file, algorithm) => checksum(fs.readFileSync(file), algorithm)
+      const calculateSRI = (file, algorithm = this.options.algorithm) =>
+        `${algorithm}-${fileSum(path.join(".", "static", file), algorithm)}`
+
+      Object.keys(data).forEach((key) => {
+        let element = data[key]
+        element.integrity = calculateSRI(element.src)
+      })
+
+      fs.writeFileSync(outputFile, JSON.stringify(data, null, 2), {
+        encoding: "utf8",
+        flag: "w"
+      })
+    })
+  }
+}
 
 var config = {
   entry: {
@@ -26,8 +80,6 @@ var config = {
     ignored: ["/exampleSite/", "/node_modules/"]
   },
   plugins: [
-    new RemoveEmptyScriptsPlugin(),
-
     new CopyPlugin({
       patterns: [
         {
@@ -44,12 +96,6 @@ var config = {
           context: path.resolve(__dirname, "build")
         }
       ]
-    }),
-
-    new WebpackAssetsManifest({
-      output: "../data/assets.json",
-      integrity: true,
-      integrityHashes: ["sha512"]
     }),
 
     new FaviconsWebpackPlugin({
@@ -70,6 +116,31 @@ var config = {
           coast: false
         }
       }
+    }),
+
+    new RemoveEmptyScriptsPlugin(),
+
+    new WebpackManifestPlugin({
+      fileName: "../data/assets.json",
+      publicPath: "",
+      writeToFileEmit: true,
+      generate(seed, files) {
+        let manifest = {}
+
+        files.forEach(function (element, index) {
+          if (element.name.endsWith(".svg")) return
+
+          Object.assign(manifest, {
+            [element.name]: { src: element.path }
+          })
+        })
+
+        return manifest
+      }
+    }),
+
+    new SRIPlugin({
+      sourceFile: "data/assets.json"
     })
   ]
 }
@@ -82,7 +153,7 @@ module.exports = (env, argv) => {
   config.module = {
     rules: [
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.(sa|sc)ss$/,
         exclude: /node_modules/,
         type: "asset/resource",
         generator: {

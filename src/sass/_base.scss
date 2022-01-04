@@ -401,30 +401,6 @@ img {
     }
   }
 
-  &__figure {
-    padding: $padding-4;
-    margin: $padding-16 0;
-    background-color: var(--accent-color);
-    display: table;
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
-
-    figcaption {
-      display: table-caption;
-      caption-side: bottom;
-      background-color: var(--accent-color);
-      padding: 0 $padding-4 $padding-4;
-      text-align: center;
-      border-bottom-left-radius: $border-radius;
-      border-bottom-right-radius: $border-radius;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
-
   &__footer {
     margin-top: $padding-32;
 
@@ -559,10 +535,7 @@ img {
   color: var(--footer-font-color);
 
   .fake-link:hover {
-    background-image: linear-gradient(
-      var(--footer-link-color),
-      var(--footer-link-color)
-    );
+    background-image: linear-gradient(var(--footer-link-color), var(--footer-link-color));
   }
 
   &__item {
@@ -636,8 +609,7 @@ img {
     visibility: hidden;
     background: var(--body-background);
     border-radius: $border-radius;
-    box-shadow: 0 1px 3px 0 var(--accent-color),
-      0 1px 2px 0 var(--accent-color-lite);
+    box-shadow: 0 1px 3px 0 var(--accent-color), 0 1px 2px 0 var(--accent-color-lite);
     position: absolute;
     margin: 0;
     padding: $padding-8;

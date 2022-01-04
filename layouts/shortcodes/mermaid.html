@@ -4,6 +4,6 @@
 {{ end }}
 
 
-<pre class="gdoc-mermaid mermaid{{ with .Get "class" }}{{ . }}{{ end }}">
+<pre class="gdoc-mermaid mermaid{{ with .Get "class" }}{{ printf " %s" . }}{{ end }}">
   {{- .Inner -}}
 </pre>
