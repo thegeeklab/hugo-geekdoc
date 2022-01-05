@@ -73,7 +73,8 @@ var config = {
     mermaid: path.resolve("src", "js", "mermaid.js"),
     katex: [path.resolve("src", "js", "katex.js")].concat(
       glob.sync(path.join(nodeModulesPath, "katex", "dist", "fonts", "*.{woff,woff2}"))
-    )
+    ),
+    search: [path.resolve("src", "js", "search.js")]
   },
   output: {
     filename: "js/[name].bundle.min.js",

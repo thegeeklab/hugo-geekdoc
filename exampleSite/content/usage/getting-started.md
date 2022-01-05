@@ -69,6 +69,19 @@ To prepare your new site environment just a few steps are required:
 
    [taxonomies]
       tag = "tags"
+
+   [outputFormats.Search]
+   name = "Search"
+   mediaType = "application/json"
+   baseName = "searchconfig"
+   isPlainText = false
+   rel = "alternate"
+   isHTML = false
+   noUgly = true
+   permalinkable = false
+
+   [outputs]
+   home = [ "HTML", "SEARCH" ]
    ```
 
 5. Test your site.

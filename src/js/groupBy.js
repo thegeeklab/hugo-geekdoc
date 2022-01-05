@@ -7,7 +7,7 @@
  * strings for iteratees.
  */
 
-const groupBy = (e, ...t) => {
+export const groupBy = (e, ...t) => {
     let r = e.map((e) => t.map((t) => t(e))),
       a = {}
     return (

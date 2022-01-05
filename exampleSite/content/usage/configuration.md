@@ -32,6 +32,19 @@ enableRobotsTXT = true
     startLevel = 1
     endLevel = 9
 
+[outputFormats.Search]
+name = "Search"
+mediaType = "application/json"
+baseName = "searchconfig"
+isPlainText = false
+rel = "alternate"
+isHTML = false
+noUgly = true
+permalinkable = false
+
+[outputs]
+home = [ "HTML", "SEARCH" ]
+
 [taxonomies]
   tag = "tags"
 
@@ -70,7 +83,8 @@ enableRobotsTXT = true
   # You can also specify this parameter per page in front matter.
   geekdocEditPath = "edit/main/exampleSite/content"
 
-  # (Optional, default true) Enables search function with flexsearch.
+  # (Optional, default true) Enables search function with flexsearch. To use the search you
+  # have to ensure `outputFormats` and `outputs` are properly configured as well (see below).
   # Index is built on the fly and might slow down your website.
   geekdocSearch = false
 
@@ -148,6 +162,23 @@ markup:
 taxonomies:
   tag: tags
 
+outputFormats:
+  Search:
+    name: "Search"
+    mediaType: "application/json"
+    # generated file: <baseName>.<mediaType."application/feed+json".suffixes[0]> = feed.json
+    baseName: "searchconfig"
+    isPlainText: false
+    rel: "alternate"
+    isHTML: false
+    noUgly: true
+    permalinkable: false
+
+outputs:
+  home:
+    - HTML
+    - SEARCH
+
 params:
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
   # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
@@ -183,8 +214,9 @@ params:
   # You can also specify this parameter per page in front matter.
   geekdocEditPath: edit/main/exampleSite/content
 
-  # (Optional, default true) Enables search function with flexsearch.
-  # Index is built on the fly and might slowdown your website.
+  # (Optional, default true) Enables search function with flexsearch. To use the search you
+  # have to ensure `outputFormats` and `outputs` are properly configured as well (see below).
+  # Index is built on the fly and might slow down your website.
   geekdocSearch: false
 
   # (Optional, default false) Display search results with the parent folder as prefix. This

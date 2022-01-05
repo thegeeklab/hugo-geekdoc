@@ -1,5 +1,4 @@
 .drone.yml
-search*.js
 _normalize.css
 list.json.json
 /.lighthouseci/
