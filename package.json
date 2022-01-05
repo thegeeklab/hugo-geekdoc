@@ -28,6 +28,7 @@
   "license": "MIT",
   "dependencies": {
     "clipboard": "2.0.8",
+    "katex": "0.15.1",
     "mermaid": "8.13.8",
     "store2": "2.13.1"
   },

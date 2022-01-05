@@ -1,12 +1,15 @@
 const path = require("path")
 const fs = require("fs")
 const crypto = require("crypto")
+const glob = require("glob")
 
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin")
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin")
 const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts")
 const CopyPlugin = require("copy-webpack-plugin")
 const { validate } = require("schema-utils")
+
+const nodeModulesPath = path.resolve(__dirname, "node_modules")
 
 class SRIPlugin {
   static defaultOptions = {
@@ -67,7 +70,10 @@ var config = {
       path.resolve("src", "sass", "print.scss")
     ],
     bundle: path.resolve("src", "js", "app.js"),
-    mermaid: path.resolve("src", "js", "mermaid.js")
+    mermaid: path.resolve("src", "js", "mermaid.js"),
+    katex: [path.resolve("src", "js", "katex.js")].concat(
+      glob.sync(path.join(nodeModulesPath, "katex", "dist", "fonts", "*.{woff,woff2}"))
+    )
   },
   output: {
     filename: "js/[name].bundle.min.js",
@@ -153,8 +159,14 @@ module.exports = (env, argv) => {
   config.module = {
     rules: [
       {
-        test: /\.(sa|sc)ss$/,
-        exclude: /node_modules/,
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "fonts/[name][ext]"
+        }
+      },
+      {
+        test: /\.(sa|sc|c)ss$/i,
         type: "asset/resource",
         generator: {
           filename: "[name]-[contenthash:8].min.css"
@@ -175,7 +187,8 @@ module.exports = (env, argv) => {
                 // FIXME: https://github.com/webpack-contrib/sass-loader/issues/962#issuecomment-1002675051
                 sourceMap: argv.mode === "development" ? true : false,
                 sourceMapEmbed: argv.mode === "development" ? true : false,
-                outputStyle: "compressed"
+                outputStyle: "compressed",
+                includePaths: [nodeModulesPath]
               }
             }
           }
