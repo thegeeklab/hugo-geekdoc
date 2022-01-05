@@ -26,7 +26,10 @@
             {{ end }}
           />
           <img
-            {{ if $lazyLoad }}loading="lazy"{{ end }}src="{{ $size.large }}"
+            {{ if $lazyLoad }}
+              loading="lazy"
+            {{ end }}
+            src="{{ $size.large }}"
             alt="{{ $caption }}"
           />
         </picture>
