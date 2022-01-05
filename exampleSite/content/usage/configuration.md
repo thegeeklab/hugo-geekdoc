@@ -45,7 +45,7 @@ enableRobotsTXT = true
   # relative to your 'static/' folder.
   geekdocLogo = "logo.png"
 
-  # (Optional, default false) Render menu from data file im 'data/menu/main.yaml'.
+  # (Optional, default false) Render menu from data file in 'data/menu/main.yaml'.
   # See also https://geekdocs.de/usage/menus/#bundle-menu.
   geekdocMenuBundle = true
 
@@ -71,7 +71,7 @@ enableRobotsTXT = true
   geekdocEditPath = "edit/main/exampleSite/content"
 
   # (Optional, default true) Enables search function with flexsearch.
-  # Index is built on the fly and might slowdown your website.
+  # Index is built on the fly and might slow down your website.
   geekdocSearch = false
 
   # (Optional, default false) Display search results with the parent folder as prefix. This
@@ -158,7 +158,7 @@ params:
   # relative to your 'static/' folder.
   geekdocLogo: logo.png
 
-  # (Optional, default false) Render menu from data file im 'data/menu/main.yaml'.
+  # (Optional, default false) Render menu from data file in 'data/menu/main.yaml'.
   # See also https://geekdocs.de/usage/menus/#bundle-menu.
   geekdocMenuBundle: true
 
