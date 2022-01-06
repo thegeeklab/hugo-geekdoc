@@ -23,22 +23,9 @@ markup:
 taxonomies:
   tag: tags
 
-outputFormats:
-  Search:
-    name: "Search"
-    mediaType: "application/json"
-    # generated file: <baseName>.<mediaType."application/feed+json".suffixes[0]> = feed.json
-    baseName: "searchconfig"
-    isPlainText: false
-    rel: "alternate"
-    isHTML: false
-    noUgly: true
-    permalinkable: false
-
 outputs:
   home:
     - HTML
-    - SEARCH
   page:
     - HTML
   section:

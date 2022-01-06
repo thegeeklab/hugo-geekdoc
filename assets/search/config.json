@@ -1,5 +1,5 @@
-{{- $searchDataFile := printf "%s.searchdata.json" .Language.Lang -}}
-{{- $searchData := resources.Get "search/searchdata.json" | resources.ExecuteAsTemplate $searchDataFile . | resources.Minify -}}
+{{- $searchDataFile := printf "search/%s.data.json" .Language.Lang -}}
+{{- $searchData := resources.Get "search/data.json" | resources.ExecuteAsTemplate $searchDataFile . | resources.Minify -}}
 {
   "dataFile": {{ $searchData.RelPermalink | jsonify }},
   "indexConfig": {{ .Site.Params.GeekdocSearchConfig | jsonify }},

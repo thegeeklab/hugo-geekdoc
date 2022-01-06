@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     additionalProperties: false
   }
 
-  getJson("/searchconfig.json", function (searchConfig) {
+  getJson("/search/config.min.json", function (searchConfig) {
     const configValidate = ajv.compile(configSchema)
     const valid = configValidate(searchConfig)
 
