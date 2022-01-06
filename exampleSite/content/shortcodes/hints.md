@@ -5,6 +5,7 @@ title: Hints
 Hint shortcode can be used as hint/alerts/notification block.
 There are four colors to choose: `info`, `ok`, `warning` and `danger`.
 
+<!-- prettier-ignore-start -->
 ```tpl
 {{</* hint [info|warning|danger] */>}}
 **Markdown content**\
@@ -12,6 +13,7 @@ Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclima
  Ornateness bland it ex enc, est yeti am bongo detract re.
 {{</* /hint */>}}
 ```
+<!-- prettier-ignore-end -->
 
 ## Example
 

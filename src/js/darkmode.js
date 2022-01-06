@@ -1,51 +1,53 @@
-const DARK_MODE = "dark";
-const LIGHT_MODE = "light";
-const AUTO_MODE = "auto";
-const THEME = "hugo-geekdoc";
+import Storage from "store2"
 
-const TOGGLE_MODES = [AUTO_MODE, DARK_MODE, LIGHT_MODE];
+import { TOGGLE_MODES, THEME, AUTO_MODE } from "./config.js"
 
-(applyTheme = function (init = true) {
-  let html = document.documentElement;
-  let currentMode = TOGGLE_MODES.includes(localStorage.getItem(THEME))
-    ? localStorage.getItem(THEME)
-    : AUTO_MODE;
+document.addEventListener("DOMContentLoaded", (event) => {
+  const darkModeToggle = document.getElementById("gdoc-dark-mode")
 
-  html.setAttribute("class", "color-toggle-" + currentMode);
-  localStorage.setItem(THEME, currentMode);
+  darkModeToggle.onclick = function () {
+    let lstore = Storage.namespace(THEME)
+    let currentMode = lstore.get("color-mode")
+    let nextMode = toggle(TOGGLE_MODES, currentMode)
+
+    lstore.set("color-mode", TOGGLE_MODES[nextMode])
+    applyTheme(false)
+  }
+})
+
+export function applyTheme(init = true) {
+  if (Storage.isFake()) return
+
+  let lstore = Storage.namespace(THEME)
+  let html = document.documentElement
+  let currentMode = TOGGLE_MODES.includes(lstore.get("color-mode"))
+    ? lstore.get("color-mode")
+    : AUTO_MODE
+
+  html.setAttribute("class", "color-toggle-" + currentMode)
+  lstore.set("color-mode", currentMode)
 
   if (currentMode === AUTO_MODE) {
-    html.removeAttribute("color-mode");
+    html.removeAttribute("color-mode")
   } else {
-    html.setAttribute("color-mode", currentMode);
+    html.setAttribute("color-mode", currentMode)
   }
 
   if (!init) {
-    // Reload required to re-initialise e.g. Mermaid with the new theme and re-parse the Mermaid code blocks.
-    location.reload();
+    // Reload required to re-initialise e.g. Mermaid with the new theme
+    // and re-parse the Mermaid code blocks.
+    location.reload()
   }
-})();
-
-document.addEventListener("DOMContentLoaded", (event) => {
-  const darkModeToggle = document.getElementById("gdoc-dark-mode");
-
-  darkModeToggle.onclick = function () {
-    let currentMode = localStorage.getItem(THEME);
-    let nextMode = toggle(TOGGLE_MODES, currentMode);
-
-    localStorage.setItem(THEME, TOGGLE_MODES[nextMode]);
-    applyTheme(false);
-  };
-});
+}
 
 function toggle(list = [], value) {
-  current = list.indexOf(value);
-  max = list.length - 1;
-  next = 0;
+  let current = list.indexOf(value)
+  let max = list.length - 1
+  let next = 0
 
   if (current < max) {
-    next = current + 1;
+    next = current + 1
   }
 
-  return next;
+  return next
 }

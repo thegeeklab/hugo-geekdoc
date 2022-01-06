@@ -7,30 +7,25 @@
  * strings for iteratees.
  */
 
-const groupBy = (e, ...t) => {
+export const groupBy = (e, ...t) => {
     let r = e.map((e) => t.map((t) => t(e))),
-      a = {};
+      a = {}
     return (
       r.forEach((t, r) => {
-        let l = (_simpleAt(a, t) || []).concat([e[r]]);
-        _simpleSet(a, t, l);
+        let l = (_simpleAt(a, t) || []).concat([e[r]])
+        _simpleSet(a, t, l)
       }),
       a
-    );
+    )
   },
-  _isPlainObject = (e) =>
-    null != e && "object" == typeof e && e.constructor == Object,
+  _isPlainObject = (e) => null != e && "object" == typeof e && e.constructor == Object,
   _parsePath = (e) => (Array.isArray(e) ? e : `${e}`.split(".")),
   _simpleAt = (e, t) =>
-    _parsePath(t).reduce(
-      (e, t) => (null != e && e.hasOwnProperty(t) ? e[t] : void 0),
-      e
-    ),
+    _parsePath(t).reduce((e, t) => (null != e && e.hasOwnProperty(t) ? e[t] : void 0), e),
   _simpleSet = (e, t, r) =>
     _parsePath(t).reduce((e, t, a, l) => {
-      let s = a === l.length - 1;
+      let s = a === l.length - 1
       return (
-        (e.hasOwnProperty(t) && (s || _isPlainObject(e[t]))) || (e[t] = {}),
-        s ? (e[t] = r) : e[t]
-      );
-    }, e);
+        (e.hasOwnProperty(t) && (s || _isPlainObject(e[t]))) || (e[t] = {}), s ? (e[t] = r) : e[t]
+      )
+    }, e)

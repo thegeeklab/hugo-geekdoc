@@ -7,11 +7,20 @@ platform:
   arch: amd64
 
 steps:
+  - name: eslint
+    image: node:lts
+    commands:
+      - npm install > /dev/null
+      - npm run lint
+    environment:
+      FORCE_COLOR: true
+      NPM_CONFIG_LOGLEVEL: error
+
   - name: assets
     image: node:lts
     commands:
       - npm install > /dev/null
-      - npx gulp default
+      - npm run build
     environment:
       FORCE_COLOR: true
       NPM_CONFIG_LOGLEVEL: error
@@ -94,7 +103,7 @@ steps:
     image: node:lts
     commands:
       - npm install > /dev/null
-      - npx gulp default
+      - npm run build
     environment:
       FORCE_COLOR: true
       NPM_CONFIG_LOGLEVEL: error
@@ -172,7 +181,7 @@ steps:
     image: node:lts
     commands:
       - npm install > /dev/null
-      - npx gulp svg-sprite-list
+      - npm run svg-sprite-list
       - mkdir -p exampleSite/themes/hugo-geekdoc/
       - curl -sSL https://github.com/thegeeklab/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C exampleSite/themes/hugo-geekdoc/ --strip-components=1
     when:
@@ -184,8 +193,8 @@ steps:
     image: node:lts
     commands:
       - npm install > /dev/null
-      - npx gulp default
-      - npx gulp svg-sprite-list
+      - npm run build
+      - npm run svg-sprite-list
       - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
     environment:
       FORCE_COLOR: true
@@ -276,6 +285,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: a61d16aa7a47108fbef3836588111f16f52d280497cfe0aab14bcd726728b297
+hmac: e715545ce951b15ce1ab5f7d7f107e2ab37aa08e94a681f27646a543d1e6ac3c
 
 ...

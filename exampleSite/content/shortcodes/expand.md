@@ -8,12 +8,14 @@ Expand shortcode can help to decrease clutter on screen by hiding part of text. 
 
 ### Default
 
+<!-- prettier-ignore-start -->
 ```tpl
 {{</* expand */>}}
 ## Markdown content
 Dolor sit, sumo unique ...
 {{</* /expand */>}}
 ```
+<!-- prettier-ignore-end -->
 
 {{< expand >}}
 
@@ -24,12 +26,14 @@ Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclima
 
 ### With Custom Label
 
+<!-- prettier-ignore-start -->
 ```tpl
 {{</* expand "Custom Label" "..." */>}}
 ## Markdown content
 Dolor sit, sumo unique ...
 {{</* /expand */>}}
 ```
+<!-- prettier-ignore-end -->
 
 {{< expand "Custom Label" "..." >}}
 

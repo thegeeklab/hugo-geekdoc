@@ -1,0 +1,30 @@
+{
+  "shape": {
+    "id": {
+      "generator": "gdoc_%s"
+    },
+    "dimension": {
+      "maxWidth": 22,
+      "maxHeight": 22,
+      "attributes": false
+    },
+    "spacing": {
+      "padding": 5,
+      "box": "content"
+    },
+    "dest": "build/icons"
+  },
+  "svg": {
+    "xmlDeclaration": false,
+    "rootAttributes": {
+      "class": "svg-sprite"
+    }
+  },
+  "mode": {
+    "defs": {
+      "dest": "build/sprites/",
+      "sprite": "geekdoc.svg",
+      "bust": false
+    }
+  }
+}

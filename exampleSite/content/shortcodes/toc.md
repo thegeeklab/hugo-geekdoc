@@ -4,9 +4,11 @@ title: ToC
 
 Simple wrapper to generate a page Table of Content from a shortcode.
 
+<!-- prettier-ignore-start -->
 ```tpl
 {{</* toc */>}}
 ```
+<!-- prettier-ignore-end -->
 
 {{< toc >}}
 
