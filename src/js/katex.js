@@ -1,6 +1,9 @@
-import renderMathInElement from "katex/dist/contrib/auto-render"
 import "katex/dist/katex.css"
 
 document.addEventListener("DOMContentLoaded", function () {
-  renderMathInElement(document.body)
+  import("katex/dist/contrib/auto-render")
+    .then(({ default: renderMathInElement }) => {
+      renderMathInElement(document.body)
+    })
+    .catch((error) => console.error(error))
 })
