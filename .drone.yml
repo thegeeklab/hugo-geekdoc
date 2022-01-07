@@ -28,7 +28,7 @@ steps:
   - name: testbuild
     image: thegeeklab/hugo:0.91.0
     commands:
-      - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
+      - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
       - hugo -s exampleSite/ -b http://localhost/
 
   - name: html-validation
@@ -111,7 +111,6 @@ steps:
   - name: package
     image: thegeeklab/alpine-tools
     commands:
-      - mkdir dist/
       - echo "${DRONE_TAG:-latest}" > VERSION
       - tar -zcvf dist/hugo-geekdoc.tar.gz -X .tarignore .
 
@@ -195,7 +194,7 @@ steps:
       - npm install > /dev/null
       - npm run build
       - npm run svg-sprite-list
-      - mkdir exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
+      - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
     environment:
       FORCE_COLOR: true
       NPM_CONFIG_LOGLEVEL: error
@@ -285,6 +284,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: e715545ce951b15ce1ab5f7d7f107e2ab37aa08e94a681f27646a543d1e6ac3c
+hmac: d45186c01b7b530fc615420c88bd6a375ac6979758cb6e12d45412cd78fc5642
 
 ...
