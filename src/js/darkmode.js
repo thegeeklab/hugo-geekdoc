@@ -1,6 +1,6 @@
-import Storage from "store2"
+const Storage = require("store2")
 
-import { TOGGLE_MODES, THEME, AUTO_MODE } from "./config.js"
+const { TOGGLE_MODES, THEME, AUTO_MODE } = require("./config.js")
 
 document.addEventListener("DOMContentLoaded", (event) => {
   const darkModeToggle = document.getElementById("gdoc-dark-mode")

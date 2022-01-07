@@ -1,6 +1,5 @@
-import Storage from "store2"
-
-import { DARK_MODE, THEME, AUTO_MODE } from "./config.js"
+const Storage = require("store2")
+const { DARK_MODE, THEME, AUTO_MODE } = require("./config.js")
 
 document.addEventListener("DOMContentLoaded", function (event) {
   let lstore = Storage.namespace(THEME)

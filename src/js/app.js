@@ -1,7 +1,7 @@
-import { applyTheme } from "./darkmode"
-import { createCopyButton } from "./copycode.js"
+const { applyTheme } = require("./darkmode")
+const { createCopyButton } = require("./copycode.js")
+const Clipboard = require("clipboard")
 
-import Clipboard from "clipboard"
 ;(() => {
   applyTheme()
 })()
