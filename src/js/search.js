@@ -1,10 +1,8 @@
 const { groupBy } = require("./groupBy")
 const { FlexSearch } = require("flexsearch/dist/flexsearch.compact")
-const Ajv = require("ajv")
+const { Validator } = require("@cfworker/json-schema")
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  const ajv = new Ajv()
-
   const input = document.querySelector("#gdoc-search-input")
   const results = document.querySelector("#gdoc-search-results")
 
@@ -23,17 +21,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     },
     additionalProperties: false
   }
+  const validator = new Validator(configSchema)
 
   getJson("/search/config.min.json", function (searchConfig) {
-    const configValidate = ajv.compile(configSchema)
-    const valid = configValidate(searchConfig)
+    const validationResult = validator.validate(searchConfig)
 
-    if (!valid)
+    if (!validationResult.valid)
       throw AggregateError(
-        configValidate.errors.map(
-          (err) =>
-            new Error(["Validation error:", err.instancePath, err.keyword, err.message].join(" "))
-        ),
+        validationResult.errors.map((err) => new Error("Validation error: " + err.error)),
         "Schema validation failed"
       )
 
