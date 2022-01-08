@@ -1,5 +1,5 @@
 const { groupBy } = require("./groupBy")
-const FlexSearch = require("flexsearch")
+const { FlexSearch } = require("flexsearch/dist/flexsearch.compact")
 const Ajv = require("ajv")
 
 document.addEventListener("DOMContentLoaded", function (event) {
