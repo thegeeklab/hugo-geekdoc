@@ -90,6 +90,8 @@ _includes/
  └── _index.md
 ```
 
+Specify the page include:
+
 <!-- prettier-ignore -->
 ```tpl
 {{</* include file="/_includes/include-page.md" type="page" */>}}
