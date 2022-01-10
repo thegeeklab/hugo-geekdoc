@@ -57,6 +57,9 @@
     "webpack-manifest-plugin": "4.0.2",
     "webpack-remove-empty-scripts": "0.7.2"
   },
+  "overrides": {
+    "colors": "1.4.0"
+  },
   "browserslist": [
     "last 2 version",
     "> 5%",
