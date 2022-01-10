@@ -8,18 +8,18 @@ Include shortcode can include files of different types. By specifying a language
 
 <!-- prettier-ignore-start -->
 ```tpl
-{{</* include file="relative/path/from/hugo/root" language="go" markdown=[false|true] */>}}
+{{</* include file="relative/path/from/hugo/root" language="go" */>}}
 ```
 <!-- prettier-ignore-end -->
 
 Attributes:
 
-| Name     | Usage                                                                                                                               | default         |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| file     | path to the included file relative to the Hugo root                                                                                 | undefined       |
-| language | language for [syntax highlighting](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages) | undefined       |
-| type     | special include type (`html,page`)                                                                                                  | undefined       |
-| options  | highlighting [options](https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode)                               | `linenos=table` |
+| Name     | Usage                                                                                                                               | default                          |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| file     | path to the included file relative to the Hugo root                                                                                 | undefined                        |
+| language | language for [syntax highlighting](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages) | undefined                        |
+| type     | special include type (`html,page`)                                                                                                  | undefined (rendered as markdown) |
+| options  | highlighting [options](https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode)                               | `linenos=table`                  |
 
 ## Examples
 
@@ -32,11 +32,10 @@ If no other options are specified, files will be rendered as Markdown using the 
 If you include markdown files that should not get a menu entry, place them outside the content folder or exclude them otherwise.
 {{< /hint >}}
 
-<!-- prettier-ignore-start -->
+<!-- prettier-ignore -->
 ```tpl
 {{</* include file="/static/_includes/example.md.part" */>}}
 ```
-<!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
 <!-- spellchecker-disable -->
@@ -48,17 +47,16 @@ If you include markdown files that should not get a menu entry, place them outsi
 
 This method can be used to include source code files and keep them automatically up to date.
 
-<!-- prettier-ignore-start -->
+<!-- prettier-ignore -->
 ```tpl
 {{</* include file="config.yaml" language="yaml" options="linenos=table,hl_lines=5-6,linenostart=100" */>}}
 ```
-<!-- prettier-ignore-end -->
 
 Result:
 
 <!-- prettier-ignore-start -->
 <!-- spellchecker-disable -->
-{{< include file="config.yaml" language="yaml" options="linenos=table,hl_lines=5-6,linenostart=100">}}
+{{< include file="config.yaml" language="yaml" options="linenos=table,hl_lines=5-6,linenostart=100" >}}
 <!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
 
@@ -68,11 +66,10 @@ Result:
 
 HTML content will be filtered by the `safeHTML` filter and added to the rendered page output.
 
-<!-- prettier-ignore-start -->
+<!-- prettier-ignore -->
 ```tpl
-{{</* include file="/static/_includes/example.html.part" */>}}
+{{</* include file="/static/_includes/example.html.part" type="html" */>}}
 ```
-<!-- prettier-ignore-end -->
 
 {{< include file="/static/_includes/example.html.part" type="html" >}}
 
@@ -91,6 +88,13 @@ Resulting structure should look like this:
 _includes/
  ├── include-page.md
  └── _index.md
+```
+
+Specify the page include:
+
+<!-- prettier-ignore -->
+```tpl
+{{</* include file="/_includes/include-page.md" type="page" */>}}
 ```
 
 {{< include file="/_includes/include-page.md" type="page" >}}
