@@ -122,6 +122,11 @@ a {
   }
 }
 
+i.gdoc-icon {
+  font-family: "GeekdocIcons";
+  font-style: normal;
+}
+
 img {
   vertical-align: middle;
 }
@@ -365,14 +370,6 @@ img {
       background-size: 100% 1px;
       background-repeat: no-repeat;
     }
-    &--prev:before {
-      font-family: GeekdocIcons;
-      content: "\ea13";
-    }
-    &--next:after {
-      font-family: GeekdocIcons;
-      content: "\ea02";
-    }
   }
 
   &__anchorwrap {
@@ -414,7 +411,6 @@ img {
   word-wrap: break-word;
   border-top: 1px dashed $gray-600;
   padding: $padding-32 0;
-  line-height: 1.5em;
 
   &:first-of-type {
     padding-top: 0;
@@ -448,11 +444,6 @@ img {
 
   &__readmore {
     margin: 1.5rem 0 2rem 0;
-
-    a:after {
-      font-family: GeekdocIcons;
-      content: "\ea02";
-    }
 
     a,
     a:hover,
