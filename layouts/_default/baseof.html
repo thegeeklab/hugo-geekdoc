@@ -3,7 +3,9 @@
   <head>
     {{ partial "head/meta" . }}
     <title>
-      {{ if not (eq .Kind "home") }}{{ partial "title" . }} |{{ end }}{{ .Site.Title }}
+      {{ if not (eq .Kind "home") }}
+        {{ partial "title" . }}{{ printf " | " }}
+      {{ end }}{{ .Site.Title }}
     </title>
 
     {{ partial "head/favicons" . }}
