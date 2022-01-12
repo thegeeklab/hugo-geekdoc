@@ -163,9 +163,9 @@ img {
 
 .icon {
   display: inline-block;
-  width: 1em;
-  height: 1em;
-  top: 0.125em;
+  width: 1.3em;
+  height: 1.3em;
+  vertical-align: middle;
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
@@ -456,12 +456,8 @@ img {
   &__tag {
     margin: $padding-4 0 !important;
 
-    .gdoc-button {
-      background: var(--body-background);
-
-      &__link {
-        padding: $padding-4 $padding-8;
-      }
+    .gdoc-button__link {
+      padding: $padding-4 $padding-8;
     }
   }
 
