@@ -24,8 +24,8 @@ var config = {
     search: [path.resolve("src", "js", "search.js")]
   },
   output: {
-    filename: "js/[name].bundle.min.js",
-    chunkFilename: "js/[name].chunk.min.js",
+    filename: "js/[name]-[contenthash:8].bundle.min.js",
+    chunkFilename: "js/[name]-[contenthash:8].chunk.min.js",
     path: path.join(__dirname, "static"),
     publicPath: "/",
     clean: true
