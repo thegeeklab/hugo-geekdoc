@@ -1,5 +1,5 @@
 ---
-baseURL: https://geekdocs.de/
+baseURL: https://geekdocs.de/wiki/
 title: Geekdocs
 theme: hugo-geekdoc
 pygmentsUseClasses: true
