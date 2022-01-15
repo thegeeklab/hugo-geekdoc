@@ -5,7 +5,7 @@ const { Validator } = require("@cfworker/json-schema")
 document.addEventListener("DOMContentLoaded", function (event) {
   const input = document.querySelector("#gdoc-search-input")
   const results = document.querySelector("#gdoc-search-results")
-  const siteBaseURL = input ? input.dataset.siteBaseUrl : ""
+  const basePath = urlPath(input ? input.dataset.siteBaseUrl : "")
 
   const configSchema = {
     type: "object",
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   if (!input) return
 
-  getJson(combineURLs(siteBaseURL, "/search/config.min.json"), function (searchConfig) {
+  getJson(combineURLs(basePath, "/search/config.min.json"), function (searchConfig) {
     const validationResult = validator.validate(searchConfig)
 
     if (!validationResult.valid)
@@ -195,6 +195,13 @@ function flattenHits(results) {
   }
 
   return items
+}
+
+function urlPath(rawURL) {
+  var parser = document.createElement("a")
+  parser.href = rawURL
+
+  return parser.pathname
 }
 
 /**
