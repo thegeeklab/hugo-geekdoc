@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const input = document.querySelector("#gdoc-search-input")
   const results = document.querySelector("#gdoc-search-results")
   const basePath = urlPath(input ? input.dataset.siteBaseUrl : "")
+  const lang = input ? input.dataset.siteLang : ""
 
   const configSchema = {
     type: "object",
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   if (!input) return
 
-  getJson(combineURLs(basePath, "/search/config.min.json"), function (searchConfig) {
+  getJson(combineURLs(basePath, "/search/" + lang + ".config.min.json"), function (searchConfig) {
     const validationResult = validator.validate(searchConfig)
 
     if (!validationResult.valid)

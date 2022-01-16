@@ -49,14 +49,14 @@ This method can be used to include source code files and keep them automatically
 
 <!-- prettier-ignore -->
 ```tpl
-{{</* include file="config.yaml" language="yaml" options="linenos=table,hl_lines=5-6,linenostart=100" */>}}
+{{</* include file="config/_default/config.yaml" language="yaml" options="linenos=table,hl_lines=5-6,linenostart=100" */>}}
 ```
 
 Result:
 
 <!-- prettier-ignore-start -->
 <!-- spellchecker-disable -->
-{{< include file="config.yaml" language="yaml" options="linenos=table,hl_lines=5-6,linenostart=100" >}}
+{{< include file="config/_default/config.yaml" language="yaml" options="linenos=table,hl_lines=5-6,linenostart=100" >}}
 <!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
 

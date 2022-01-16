@@ -12,8 +12,8 @@ error_page_title: Verlaufen? Keine Sorge
 error_message_title: Verlaufen?
 error_message_code: Fehler 404
 error_message_text: >
-  Wir können die Seite nach der Sie gesucht haben leider nicht finden. Keine Sorge,
-  wir bringen Sie zurück zur <a class="gdoc-error__link" href="{{ .Site.BaseURL }}">Startseite</a>.
+  Wir können die Seite nach der Du gesucht hast leider nicht finden. Keine Sorge,
+  wir bringen Dich zurück zur <a class="gdoc-error__link" href="{{ . }}">Startseite</a>.
 
 button_toggle_dark: Wechsel zwischen Dunkel/Hell/Auto Modus
 button_nav_open: Navigation öffnen

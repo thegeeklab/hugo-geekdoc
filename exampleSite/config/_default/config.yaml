@@ -1,0 +1,39 @@
+---
+baseURL: https://geekdocs.de/
+title: Geekdocs
+theme: hugo-geekdoc
+
+pygmentsUseClasses: true
+pygmentsCodeFences: true
+timeout: 180000
+pluralizeListTitles: false
+
+defaultContentLanguage: en
+
+disablePathToLower: true
+enableGitInfo: true
+
+enableRobotsTXT: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 1
+    endLevel: 9
+
+taxonomies:
+  tag: tags
+
+outputs:
+  home:
+    - HTML
+  page:
+    - HTML
+  section:
+    - HTML
+  taxonomy:
+    - HTML
+  term:
+    - HTML
