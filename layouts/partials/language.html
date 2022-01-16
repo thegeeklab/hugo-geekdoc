@@ -9,7 +9,7 @@
         />
         <label class="flex align-center" for="menu-language-control">
           {{ range .Site.Languages }}
-            {{ if eq . $.Site.Language }}
+            {{ if eq . $.Site.Language.Lang }}
               <svg class="icon gdoc_language"><use xlink:href="#gdoc_language"></use></svg>
               <span class="flex flex-auto justify-between align-center">
                 <span>{{ .LanguageName }}</span>

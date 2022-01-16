@@ -27,6 +27,13 @@
           {{ $id := substr (sha1 $this.Permalink) 0 8 }}
           {{ $doCollapse := and (isset . "sub") (or $this.Params.GeekdocCollapseSection (default false .Site.Params.GeekdocCollapseAllSections)) }}
 
+          {{ if reflect.IsMap .name }}
+            {{ $current.Scratch.Set "refName" (index .name $site.Language.Lang) }}
+          {{ else }}
+            {{ $current.Scratch.Set "refName" .name }}
+          {{ end }}
+          {{ $name := $current.Scratch.Get "refName" }}
+
 
           <input
             type="checkbox"
@@ -56,7 +63,7 @@
                   {{ if $isCurrent }}is-active{{ end }}
                 {{ end }}"
               >
-                {{ .name }}
+                {{ $name }}
               </a>
             </span>
             {{ if $doCollapse }}
@@ -69,7 +76,7 @@
             {{ end }}
           </label>
         {{ else }}
-          <span class="flex">{{ .name }}</span>
+          <span class="flex">{{ $name }}</span>
         {{ end }}
 
         {{ with .sub }}
