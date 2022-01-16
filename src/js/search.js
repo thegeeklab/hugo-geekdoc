@@ -5,6 +5,7 @@ const { Validator } = require("@cfworker/json-schema")
 document.addEventListener("DOMContentLoaded", function (event) {
   const input = document.querySelector("#gdoc-search-input")
   const results = document.querySelector("#gdoc-search-results")
+  const basePath = urlPath(input ? input.dataset.siteBaseUrl : "")
 
   const configSchema = {
     type: "object",
@@ -23,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
   const validator = new Validator(configSchema)
 
-  getJson("/search/config.min.json", function (searchConfig) {
+  if (!input) return
+
+  getJson(combineURLs(basePath, "/search/config.min.json"), function (searchConfig) {
     const validationResult = validator.validate(searchConfig)
 
     if (!validationResult.valid)
@@ -192,4 +195,25 @@ function flattenHits(results) {
   }
 
   return items
+}
+
+function urlPath(rawURL) {
+  var parser = document.createElement("a")
+  parser.href = rawURL
+
+  return parser.pathname
+}
+
+/**
+ * Part of [axios](https://github.com/axios/axios/blob/master/lib/helpers/combineURLs.js).
+ * Creates a new URL by combining the specified URLs
+ *
+ * @param {string} baseURL The base URL
+ * @param {string} relativeURL The relative URL
+ * @returns {string} The combined URL
+ */
+function combineURLs(baseURL, relativeURL) {
+  return relativeURL
+    ? baseURL.replace(/\/+$/, "") + "/" + relativeURL.replace(/^\/+/, "")
+    : baseURL
 }
