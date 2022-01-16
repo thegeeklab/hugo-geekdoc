@@ -61,11 +61,11 @@ enableRobotsTXT = true
   # You can also specify this parameter per page in front matter.
   geekdocBreadcrumb = false
 
-  # (Optional, default none) Set source repository location. Used for 'Edit this page' links.
+  # (Optional, default none) Set source repository location. Used for 'Edit page' links.
   # You can also specify this parameter per page in front matter.
   geekdocRepo = "https://github.com/thegeeklab/hugo"
 
-  # (Optional, default none) Enable 'Edit this page' links. Requires 'GeekdocRepo' param
+  # (Optional, default none) Enable 'Edit page' links. Requires 'GeekdocRepo' param
   # and path must point to 'content' directory of repo.
   # You can also specify this parameter per page in front matter.
   geekdocEditPath = "edit/main/exampleSite/content"
@@ -174,11 +174,11 @@ params:
   # You can also specify this parameter per page in front matter.
   geekdocBreadcrumb: false
 
-  # (Optional, default none) Set source repository location. Used for 'Edit this page' links.
+  # (Optional, default none) Set source repository location. Used for 'Edit page' links.
   # You can also specify this parameter per page in front matter.
   geekdocRepo: "https://github.com/thegeeklab/hugo-geekdoc"
 
-  # (Optional, default none) Enable "Edit this page" links. Requires 'GeekdocRepo' param
+  # (Optional, default none) Enable "Edit page" links. Requires 'GeekdocRepo' param
   # and path must point to 'content' directory of repo.
   # You can also specify this parameter per page in front matter.
   geekdocEditPath: edit/main/exampleSite/content
@@ -262,11 +262,11 @@ geekdocBreadcrumb = false
 # Set source repository location.
 geekdocRepo = "https://github.com/thegeeklab/hugo-geekdoc"
 
-# Enable "Edit this page" links. Requires 'GeekdocRepo' param and path must point
+# Enable "Edit page" links. Requires 'GeekdocRepo' param and path must point
 # to 'content' directory of repo.
 geekdocEditPath = "edit/main/exampleSite/content"
 
-# Used for 'Edit this page' link, set to '.File.Path' by default.
+# Used for 'Edit page' link, set to '.File.Path' by default.
 # Can be overwritten by a path relative to 'geekdocEditPath'
 geekdocFilePath =
 
@@ -322,11 +322,11 @@ geekdocBreadcrumb: false
 # Set source repository location.
 geekdocRepo: "https://github.com/thegeeklab/hugo-geekdoc"
 
-# Enable "Edit this page" links. Requires 'GeekdocRepo' param and path must point
+# Enable "Edit page" links. Requires 'GeekdocRepo' param and path must point
 # to 'content' directory of repo.
 geekdocEditPath: "edit/main/exampleSite/content"
 
-# Used for 'Edit this page' link, set to '.File.Path' by default.
+# Used for 'Edit page' link, set to '.File.Path' by default.
 # Can be overwritten by a path relative to 'geekdocEditPath'
 geekdocFilePath:
 
