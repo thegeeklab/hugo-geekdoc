@@ -7,39 +7,57 @@
           id="menu-language-control"
           class="gdoc-nav__toggle gdoc-language__toggle"
         />
+
         <label class="flex align-center" for="menu-language-control">
           {{ range .Site.Languages }}
-            {{ if eq . $.Site.Language.Lang }}
+            {{ if eq . $.Site.Language }}
               <svg class="icon gdoc_language"><use xlink:href="#gdoc_language"></use></svg>
               <span class="flex flex-auto justify-between align-center">
                 <span>{{ .LanguageName }}</span>
-                {{ if $.Translations }}
-                  <svg class="icon toggle gdoc_keyborad_arrow_left">
-                    <use xlink:href="#gdoc_keyborad_arrow_left"></use>
-                  </svg>
-                  <svg class="icon toggle gdoc_keyborad_arrow_down">
-                    <use xlink:href="#gdoc_keyborad_arrow_down"></use>
-                  </svg>
-                {{ end }}
+                <svg class="icon toggle gdoc_keyborad_arrow_left">
+                  <use xlink:href="#gdoc_keyborad_arrow_left"></use>
+                </svg>
+                <svg class="icon toggle gdoc_keyborad_arrow_down">
+                  <use xlink:href="#gdoc_keyborad_arrow_down"></use>
+                </svg>
               </span>
             {{ end }}
           {{ end }}
         </label>
-        {{ if $.Translations }}
-          <ul class="gdoc-language__list">
+
+        <ul class="gdoc-language__list">
+          {{ if $.Translations }}
             {{ range $.Translations }}
               <li>
                 <a
                   class="flex gdoc-language__entry"
                   title="{{ .Language.LanguageName }}"
-                  href="{{ .Permalink }}"
+                  href="{{ .RelPermalink }}"
+                  hreflang="{{ .Lang }}"
+                  lang="{{ .Lang }}"
                 >
                   {{ .Language.LanguageName }}
                 </a>
               </li>
             {{ end }}
-          </ul>
-        {{ end }}
+          {{ else }}
+            {{ range .Site.Languages -}}
+              {{ if ne $.Site.Language.Lang .Lang }}
+                <li>
+                  <a
+                    class="flex gdoc-language__entry"
+                    title="{{ i18n "language_switch_no_tranlation_prefix" }} {{ .LanguageName }}"
+                    href="{{ .Lang | relLangURL }}"
+                    hreflang="{{ .Lang }}"
+                    lang="{{ .Lang }}"
+                  >
+                    {{ .LanguageName }}*
+                  </a>
+                </li>
+              {{ end -}}
+            {{ end -}}
+          {{ end }}
+        </ul>
       </li>
     </ul>
   </section>

@@ -35,3 +35,5 @@ footer_build_with: >
   <svg class="icon gdoc_heart"><use xlink:href="#gdoc_heart"></use></svg>
 footer_legal_notice: Impressum
 footer_privacy_policy: Datenschutzerklärung
+
+language_switch_no_tranlation_prefix: "Seite nicht übersetzt:"

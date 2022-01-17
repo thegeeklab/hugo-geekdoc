@@ -33,7 +33,7 @@ content/
 
 ## Bundle menu
 
-This type of navigation needs to be enabled first by setting `geekdocMenuBundle` to `true` in your [site configuration](/usage/configuration/#site-configuration). After you have activated the bundle menu, you start with an empty navigation. This is intentional because bundle menus have to be defined manually in a data file. While this increases the effort it also offers maximum flexibility in the design. The data file needs to be written in YAML and placed at `data/menu/main.yml`.
+This type of navigation needs to be enabled first by setting `geekdocMenuBundle` to `true` in your [site configuration](/usage/configuration/#site-configuration). After you have activated the bundle menu, you start with an empty navigation. This is intentional because bundle menus have to be defined manually in a data file. While this increases the effort it also offers maximum flexibility in the design. The data file needs to be written in YAML and placed at `data/menu/main.yaml`.
 
 **Example:**
 
@@ -73,7 +73,7 @@ As an advantage you can add [icons](/features/icon-sets/) to your menu entries e
 The more menu is special type of the bundle menu and can be combined with the default file-tree menu.
 {{< /hint >}}
 
-As this is a special type of the bundle menu it is basically working in the same way. To enable it just add a data file to `data/menu/more.yml`. The more menu will also work with the file-tree menu and therefor **don't need to be enabled** by the `geekdocMenuBundle` parameter.
+As this is a special type of the bundle menu it is basically working in the same way. To enable it just add a data file to `data/menu/more.yaml`. The more menu will also work with the file-tree menu and therefor **don't need to be enabled** by the `geekdocMenuBundle` parameter.
 
 **Example:**
 
@@ -97,7 +97,7 @@ more:
 
 ## Extra Header Menu
 
-If you want to customize the header menu, this can be achieved by using a data file written in YAML and placed at `data/menu/extra.yml`.
+If you want to customize the header menu, this can be achieved by using a data file written in YAML and placed at `data/menu/extra.yaml`.
 
 **Example:**
 
