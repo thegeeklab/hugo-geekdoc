@@ -15,8 +15,15 @@
       {{ $isCurrent := eq $current $this }}
       {{ $icon := default false .icon }}
 
+      {{ if reflect.IsMap .name }}
+        {{ $current.Scratch.Set "refName" (index .name $site.Language.Lang) }}
+      {{ else }}
+        {{ $current.Scratch.Set "refName" .name }}
+      {{ end }}
+      {{ $name := $current.Scratch.Get "refName" }}
+
       {{ if not .icon }}
-        {{ errorf "Missing 'icon' attribute in data file for '%s' menu item '%s'" $target .name }}
+        {{ errorf "Missing 'icon' attribute in data file for '%s' menu item '%s'" $target $name }}
       {{ end }}
 
       {{ if eq $target "header" }}
@@ -30,7 +37,7 @@
             class="gdoc-header__link"
           >
             <svg class="icon {{ .icon }}">
-              <title>{{ .name }}</title>
+              <title>{{ $name }}</title>
               <use xlink:href="#{{ .icon }}"></use>
             </svg>
           </a>

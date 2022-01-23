@@ -17,6 +17,7 @@
 
   .gdoc-brand {
     font-size: $font-size-24;
+    line-height: $font-size-24;
 
     &__img {
       display: none;
@@ -30,7 +31,7 @@
 
     &__control,
     &__home {
-      display: inline-block;
+      display: flex;
     }
   }
 
@@ -86,13 +87,13 @@
   }
 
   #menu-header-control:checked ~ .gdoc-header {
-    .gdoc-brand__title {
+    .gdoc-brand {
       display: none;
     }
 
     .gdoc-menu-header {
       &__items {
-        display: inline-block;
+        display: flex;
       }
 
       &__control {

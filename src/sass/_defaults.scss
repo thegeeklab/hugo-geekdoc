@@ -56,10 +56,7 @@ $main-color: rgba(65, 134, 201, 1) !default;
 $second-color: rgba(47, 51, 62, 1) !default;
 $mark-color: rgba(255, 171, 0, 1) !default;
 
-$body-background-dark: mix(
-  invert($body-background, 75%),
-  $second-color
-) !default;
+$body-background-dark: mix(invert($body-background, 75%), $second-color) !default;
 $link-color-dark: rgba(110, 168, 212, 1) !default;
 $link-color-visited-dark: rgba(186, 142, 240) !default;
 
@@ -76,5 +73,5 @@ $hint-colors: (
   info: rgba(0, 145, 234, 1),
   ok: rgba(0, 200, 83, 1),
   warning: rgba(255, 171, 0, 1),
-  danger: rgba(213, 0, 0, 1),
+  danger: rgba(213, 0, 0, 1)
 ) !default;

@@ -7,7 +7,7 @@ more:
     ref: "https://github.com/thegeeklab/hugo-geekdoc/releases"
     external: true
     icon: "gdoc_download"
-  - name: "View Source"
+  - name: View Source
     ref: "https://github.com/thegeeklab/hugo-geekdoc"
     external: true
     icon: "gdoc_github"

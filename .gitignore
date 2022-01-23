@@ -7,7 +7,11 @@
 /lhci_reports/
 /exampleSite/themes/
 /exampleSite/public/
+/exampleSite/config/development/
 CHANGELOG.md
+
+# translation envs
+exampleSite/content/de
 
 # auto-generated files
 /data/

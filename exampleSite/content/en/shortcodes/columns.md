@@ -6,17 +6,17 @@ The Columns shortcode can be used to organize content side-by-side (horizontally
 
 ```html
 {{</* columns */>}} <!-- begin columns block -->
-# Left Content
+## Left Content
 Dolor sit, sumo unique argument um no ...
 
 <---> <!-- magic separator, between columns -->
 
-# Mid Content
+## Mid Content
 Dolor sit, sumo unique argument um no ...
 
 <---> <!-- magic separator, between columns -->
 
-# Right Content
+## Right Content
 Dolor sit, sumo unique argument um no ...
 {{</* /columns */>}}
 ```
