@@ -73,7 +73,7 @@
         {{ end }}
 
         {{ with .sub }}
-          {{ template "menu-file" dict "sect" . "current" ($current) "site" ($site) }}
+          {{ template "menu-file" dict "sect" . "current" $current "site" $site }}
         {{ end }}
       </li>
     {{ end }}
