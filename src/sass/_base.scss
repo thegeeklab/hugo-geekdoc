@@ -645,6 +645,7 @@ img {
     position: relative;
     list-style: none;
     user-select: none;
+    cursor: pointer;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -663,14 +664,6 @@ img {
     right: 0;
     width: auto;
     white-space: nowrap;
-  }
-
-  &__toggle {
-    display: none;
-
-    & ~ label {
-      cursor: pointer;
-    }
   }
 }
 

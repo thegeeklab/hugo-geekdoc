@@ -2,16 +2,13 @@
   <span class="gdoc-language">
     <ul class="gdoc-language__selector" role="button" aria-pressed="false" tabindex="0">
       <li>
-        <input type="checkbox" id="menu-language-control" class="gdoc-language__toggle" />
-
-        <label class="flex align-center" for="menu-language-control">
-          {{ range .Site.Languages }}
-            {{ if eq . $.Site.Language }}
-              <svg class="icon gdoc_language"><use xlink:href="#gdoc_language"></use></svg>
-              <span>{{ .Lang | upper }}</span>
-            {{ end }}
+        {{ range .Site.Languages }}
+          {{ if eq . $.Site.Language }}
+            <svg class="icon gdoc_language"><use xlink:href="#gdoc_language"></use></svg>
+            <span>{{ .Lang | upper }}</span>
           {{ end }}
-        </label>
+        {{ end }}
+
 
         <ul class="gdoc-language__list">
           {{ if $.Translations }}
