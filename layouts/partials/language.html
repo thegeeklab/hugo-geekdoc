@@ -1,26 +1,14 @@
 {{ if .Site.IsMultiLingual }}
-  <section class="gdoc-language">
-    <ul class="gdoc-nav__list gdoc-language__selector">
+  <span class="gdoc-language">
+    <ul class="gdoc-language__selector" role="button" aria-pressed="false" tabindex="0">
       <li>
-        <input
-          type="checkbox"
-          id="menu-language-control"
-          class="gdoc-nav__toggle gdoc-language__toggle"
-        />
+        <input type="checkbox" id="menu-language-control" class="gdoc-language__toggle" />
 
         <label class="flex align-center" for="menu-language-control">
           {{ range .Site.Languages }}
             {{ if eq . $.Site.Language }}
               <svg class="icon gdoc_language"><use xlink:href="#gdoc_language"></use></svg>
-              <span class="flex flex-auto justify-between align-center">
-                <span>{{ .LanguageName }}</span>
-                <svg class="icon toggle gdoc_keyborad_arrow_left">
-                  <use xlink:href="#gdoc_keyborad_arrow_left"></use>
-                </svg>
-                <svg class="icon toggle gdoc_keyborad_arrow_down">
-                  <use xlink:href="#gdoc_keyborad_arrow_down"></use>
-                </svg>
-              </span>
+              <span>{{ .Lang | upper }}</span>
             {{ end }}
           {{ end }}
         </label>
@@ -60,5 +48,5 @@
         </ul>
       </li>
     </ul>
-  </section>
+  </span>
 {{ end }}

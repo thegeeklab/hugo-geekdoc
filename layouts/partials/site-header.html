@@ -1,7 +1,7 @@
 <header class="gdoc-header">
   <div class="container flex align-center justify-between">
     {{ if .MenuEnabled }}
-      <label for="menu-control" class="gdoc-nav__control">
+      <label for="menu-control" class="gdoc-nav__control" tabindex="0">
         <svg class="icon gdoc_menu">
           <title>{{ i18n "button_nav_open" }}</title>
           <use xlink:href="#gdoc_menu"></use>
@@ -12,21 +12,27 @@
         </svg>
       </label>
     {{ end }}
-    <a class="gdoc-header__link" href="{{ .Root.Site.BaseURL }}">
-      <span class="gdoc-brand flex align-center">
-        <img
-          class="gdoc-brand__img"
-          src="{{ (default "brand.svg" .Root.Site.Params.GeekdocLogo) | relURL }}"
-          alt=""
-        />
-        <span class="gdoc-brand__title">{{ .Root.Site.Title }}</span>
-      </span>
-    </a>
+    <div>
+      <a class="gdoc-brand gdoc-header__link" href="{{ .Root.Site.BaseURL }}">
+        <span class="flex align-center">
+          <img
+            class="gdoc-brand__img"
+            src="{{ (default "brand.svg" .Root.Site.Params.GeekdocLogo) | relURL }}"
+            alt=""
+          />
+          <span class="gdoc-brand__title">{{ .Root.Site.Title }}</span>
+        </span>
+      </a>
+    </div>
     <div class="gdoc-menu-header">
-      <span {{ if .Root.Site.Data.menu.extra.header }}class="gdoc-menu-header__items"{{ end }}>
+      <span
+        {{ if .Root.Site.Data.menu.extra.header }}class="gdoc-menu-header__items"{{ end }}
+      >
         {{ if .Root.Site.Data.menu.extra.header }}
           {{ partial "menu-extra" (dict "current" .Root "source" .Root.Site.Data.menu.extra.header "target" "header") }}
         {{ end }}
+
+
         <span id="gdoc-dark-mode">
           <svg class="icon gdoc_brightness_dark">
             <title>{{ i18n "button_toggle_dark" }}</title>
@@ -41,6 +47,7 @@
             <use xlink:href="#gdoc_brightness_auto"></use>
           </svg>
         </span>
+
         {{ if .Root.Site.Data.menu.extra.header }}
           <span class="gdoc-menu-header__home">
             <a href="{{ .Root.Site.BaseURL }}" class="gdoc-header__link">
@@ -50,6 +57,11 @@
               </svg>
             </a>
           </span>
+        {{ end }}
+
+        {{ partial "language" .Root }}
+
+        {{ if .Root.Site.Data.menu.extra.header }}
           <span class="gdoc-menu-header__control">
             <label for="menu-header-control">
               <svg class="icon gdoc_keyborad_arrow_right">

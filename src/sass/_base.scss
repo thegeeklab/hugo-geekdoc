@@ -204,7 +204,7 @@ img {
 
 .gdoc-menu-header {
   &__items {
-    display: inline-block;
+    display: flex;
 
     > span {
       margin-left: $padding-8;
@@ -348,14 +348,12 @@ img {
   margin: 0;
   padding: $padding-8 !important;
   list-style: none;
-  left: 0;
   top: calc(100% + #{$padding-8});
-  width: 100%;
   z-index: 2;
 }
 
 .gdoc-page {
-  min-width: $body-min-width;
+  min-width: calc($body-min-width - $padding-16 * 2);
   flex-grow: 1;
   padding: $padding-16 0;
 
@@ -610,17 +608,8 @@ img {
 
   &__list {
     visibility: hidden;
-    background: var(--body-background);
-    border-radius: $border-radius;
-    box-shadow: 0 1px 3px 0 var(--accent-color), 0 1px 2px 0 var(--accent-color-lite);
-    position: absolute;
-    margin: 0;
-    padding: $padding-8;
-    list-style: none;
     left: 0;
-    top: calc(100% + #{$padding-8});
     width: 100%;
-    z-index: 2;
 
     ul {
       list-style: none;
@@ -659,13 +648,21 @@ img {
     margin: 0;
     padding: 0;
     width: 100%;
+
+    &:focus,
+    &:focus-within,
+    &:active {
+      .gdoc-language__list {
+        display: block;
+      }
+    }
   }
 
   &__list {
     display: none;
-    list-style: none;
-    user-select: none;
-    margin: 0;
+    right: 0;
+    width: auto;
+    white-space: nowrap;
   }
 
   &__toggle {
@@ -673,31 +670,6 @@ img {
 
     & ~ label {
       cursor: pointer;
-
-      > .icon {
-        margin-right: $padding-4;
-      }
-    }
-
-    &:not(:checked) {
-      & ~ .gdoc-language__list,
-      & ~ label .icon.gdoc_keyborad_arrow_down {
-        display: none;
-      }
-      & ~ label .icon.gdoc_keyborad_arrow_left {
-        display: block;
-      }
-    }
-
-    &:checked {
-      & ~ .gdoc-language__list,
-      & ~ label .icon.gdoc_keyborad_arrow_down {
-        display: block;
-      }
-
-      & ~ label .icon.gdoc_keyborad_arrow_left {
-        display: none;
-      }
     }
   }
 }

@@ -1,5 +1,9 @@
 ---
 title: Multilingual
+resources:
+  - name: translation-available
+    src: images/translation-available.png
+    title: ""
 ---
 
 {{< toc >}}
@@ -57,6 +61,18 @@ To translate your content you need to create a directory `content/<languagecode>
 
 ## Switch Content
 
-If you have configured at least two different languages, the language switcher will be enabled in the UI automatically. The switcher is as part of the main navigation sidebar and displayed on all pages.
+If you have configured at least two different languages, the language switcher will be enabled in the UI automatically. The switcher is as part of the header menu and displayed on all pages.
 
-On a page where
+{{< columns >}}
+
+[![Beach Color Palette](images/translation-available.png)](images/translation-available.png)
+
+On pages for which a translation is available it will be displayed in the selection list and links to the translated page.
+
+<--->
+
+[![Beach Color Palette](images/translation-not-available.png)](images/translation-not-available.png)
+
+Pages without a translation will be displayed in the selection list as well but are marked with an asterisk and link to the start page of the respective language.
+
+{{< /columns >}}
