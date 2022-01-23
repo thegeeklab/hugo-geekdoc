@@ -15,12 +15,10 @@
       {{ $isCurrent := eq $current $this }}
       {{ $icon := default false .icon }}
 
+      {{ $name := .name }}
       {{ if reflect.IsMap .name }}
-        {{ $current.Scratch.Set "refName" (index .name $site.Language.Lang) }}
-      {{ else }}
-        {{ $current.Scratch.Set "refName" .name }}
+        {{ $name = (index .name $site.Language.Lang) }}
       {{ end }}
-      {{ $name := $current.Scratch.Get "refName" }}
 
       {{ if not .icon }}
         {{ errorf "Missing 'icon' attribute in data file for '%s' menu item '%s'" $target $name }}
