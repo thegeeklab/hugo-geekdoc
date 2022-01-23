@@ -27,7 +27,7 @@
   "author": "Robert Kaussow",
   "license": "MIT",
   "dependencies": {
-    "@cfworker/json-schema": "1.12.0",
+    "@cfworker/json-schema": "1.12.1",
     "clipboard": "2.0.8",
     "flexsearch": "0.7.21",
     "katex": "0.15.2",
