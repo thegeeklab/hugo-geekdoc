@@ -37,7 +37,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "7.16.5",
     "autoprefixer": "10.4.2",
-    "copy-webpack-plugin": "10.2.3",
+    "copy-webpack-plugin": "10.2.4",
     "css-loader": "6.5.1",
     "eslint": "8.8.0",
     "eslint-config-prettier": "8.3.0",
