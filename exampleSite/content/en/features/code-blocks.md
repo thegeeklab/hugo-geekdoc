@@ -14,7 +14,7 @@ To display an inline shortcode use single quotes:
 `some code`
 ```
 
-**Example:** `some code`
+**Example:** `some code` with a [`link`](#)
 
 ## Code blocks
 
