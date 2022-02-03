@@ -358,6 +358,15 @@ img {
   flex-grow: 1;
   padding: $padding-16 0;
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+  }
+
   &__header,
   &__footer {
     margin-bottom: $padding-16 * 1.2;
@@ -458,7 +467,7 @@ img {
   }
 
   &__readmore {
-    margin: 1.5rem 0 2rem 0;
+    margin: $padding-16 0;
 
     a,
     a:hover,
@@ -468,26 +477,25 @@ img {
     }
   }
 
-  &__tag {
-    margin: $padding-4 0 !important;
-
-    .gdoc-button__link {
-      padding: $padding-4 $padding-8;
+  &__meta {
+    span:first-child .icon {
+      margin-left: -5px;
     }
-  }
 
-  &__meta {
-    padding-bottom: $padding-16;
-  }
-
-  &__footer,
-  &__meta {
     :not(:first-child).no-wrap {
       margin-left: $padding-8;
     }
 
     .icon {
-      font-size: $font-size-20;
+      font-size: 1.2em;
+    }
+
+    .gdoc-button {
+      margin-left: $padding-4;
+    }
+
+    &--head {
+      padding-bottom: $padding-16;
     }
   }
 
