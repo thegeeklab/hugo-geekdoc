@@ -69,6 +69,24 @@
     }
   }
 
+  &__link--code {
+    text-decoration: none;
+    code {
+      color: inherit !important;
+    }
+
+    &:hover {
+      background: none;
+      color: var(--link-color) !important;
+      text-decoration: underline;
+    }
+
+    &:visited,
+    &:visited:hover {
+      color: var(--link-color-visited) !important;
+    }
+  }
+
   &__figure {
     padding: $padding-4;
     margin: $padding-16 0;
