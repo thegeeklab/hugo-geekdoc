@@ -21,7 +21,9 @@
       </div>
 
       <footer class="gdoc-post__footer">
-        {{ partial "posts/metadata.html" . }}
+        <div class="flex flex-wrap align-center gdoc-post__meta">
+          {{ partial "posts/metadata.html" . }}
+        </div>
       </footer>
     </article>
   {{ end }}

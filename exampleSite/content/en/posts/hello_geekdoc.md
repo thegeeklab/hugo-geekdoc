@@ -4,6 +4,7 @@ type: posts
 date: 2020-01-06
 tags:
   - Documentation
+  - Updates
 ---
 
 This is the first release of the Geekdoc theme.
