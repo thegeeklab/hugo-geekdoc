@@ -12,16 +12,16 @@ Geekdoc is a simple Hugo theme for documentations. It is intentionally designed 
 
 ## Build and release process
 
-This theme is subject to a CI driven build and release process common for software development. During the release build, all necessary assets are automatically built by [gulp](https://gulpjs.com/) and bundled in a release tarball. You can download the latest release from the GitHub [release page](https://github.com/thegeeklab/hugo-geekdoc/releases).
+This theme is subject to a CI driven build and release process common for software development. During the release build, all necessary assets are automatically built by [webpack](https://webpack.js.org/) and bundled in a release tarball. You can download the latest release from the GitHub [release page](https://github.com/thegeeklab/hugo-geekdoc/releases).
 
-Due to the fact that `gulp` is used as pre-processor the theme cannot be used from the main branch by default. If you want to use the theme from a cloned branch instead of a release tarball you'll need to install `gulp` locally and run the default pipeline once to create all required assets.
+Due to the fact that `webpack` and `npm scripts` are used as pre-processors, the theme cannot be used from the main branch by default. If you want to use the theme from a cloned branch instead of a release tarball you'll need to install `webpack` locally and run the build script once to create all required assets.
 
 ```Shell
 # install required packages from package.json
 npm install
 
-# run gulp pipeline to build required assets
-npx gulp default
+# run the build script to build required assets
+npm run build
 ```
 
 See the [Getting Started Guide](https://geekdocs.de/usage/getting-started/) for details about the different setup options.
