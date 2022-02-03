@@ -9,7 +9,6 @@ toc
 macOS
 SVG
 HC-primary
-pre-processor
 pre-build
 submodule
 GPL
@@ -30,3 +29,5 @@ katex
 Theming
 Favicon[s]?
 UI
+webpack
+pre-processor(s)
