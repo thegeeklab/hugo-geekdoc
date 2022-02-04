@@ -58,7 +58,9 @@
     {{- end }}
     "url" : "{{ .Permalink }}",
     "wordCount" : "{{ .WordCount }}",
-    "genre" : [ {{ range $i, $tag := .Params.tags }}{{ if $i }}, {{ end }}"{{ $tag }}" {{ end }}]
+    {{- with $tags := .Params.tags }}
+    "genre" : [ {{ range $i, $tag := $tags }}{{ if $i }}, {{ end }}"{{ $tag }}" {{ end }}]
+    {{- end }}
 }
 </script>
 {{ end }}
