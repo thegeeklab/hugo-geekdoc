@@ -26,6 +26,9 @@
   },
   "author": "Robert Kaussow",
   "license": "MIT",
+  "engines": {
+    "node": ">=15 <17"
+  },
   "dependencies": {
     "@cfworker/json-schema": "1.12.1",
     "clipboard": "2.0.10",
