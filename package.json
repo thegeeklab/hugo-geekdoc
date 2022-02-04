@@ -16,8 +16,8 @@
     "svg:font": "svgtofont --sources build/icons/ --output build/fonts/",
     "prep:clean": "shx rm -rf build/ static/",
     "prep:clean-all": "shx rm -rf build/ dist/ static/ data/ assets/sprites/ exampleSite/data/sprites/",
-    "prep:make": "mkdir -p build/icons/ build/fonts/ dist/",
-    "svg-sprite-list": "run-s prep:make svg ; mkdir -p exampleSite/data/sprites/ ; shx cp build/fonts/GeekdocIcons.json exampleSite/data/sprites/geekdoc.json",
+    "prep:make": "shx mkdir -p build/icons/ build/fonts/ dist/",
+    "svg-sprite-list": "run-s prep:make svg ; shx mkdir -p exampleSite/data/sprites/ ; shx cp build/fonts/GeekdocIcons.json exampleSite/data/sprites/geekdoc.json",
     "lint": "eslint src/js/ --color"
   },
   "repository": {
