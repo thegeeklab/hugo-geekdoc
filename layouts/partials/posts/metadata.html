@@ -26,7 +26,9 @@
           {{ template "post-tag" dict "name" $name "page" . }}
         </span>
       {{ else }}
-        {{ template "post-tag" dict "name" $name "page" . }}
+        <span class="flex align-center">
+          {{ template "post-tag" dict "name" $name "page" . }}
+        </span>
       {{ end }}
     {{ end }}
     {{ $tc = (add $tc 1) }}
