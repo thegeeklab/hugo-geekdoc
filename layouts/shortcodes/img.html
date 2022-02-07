@@ -1,17 +1,17 @@
-{{ $source := ($.Page.Resources.ByType "image").GetMatch (printf "%s" (.Get "name")) }}
-{{ $customAlt := .Get "alt" }}
-{{ $customSize := .Get "size" }}
-{{ $lazyLoad := default (default true $.Site.Params.GeekdocImageLazyLoading) (.Get "lazy") }}
+{{- $source := ($.Page.Resources.ByType "image").GetMatch (printf "%s" (.Get "name")) -}}
+{{- $customAlt := .Get "alt" -}}
+{{- $customSize := .Get "size" -}}
+{{- $lazyLoad := default (default true $.Site.Params.GeekdocImageLazyLoading) (.Get "lazy") -}}
 
-{{ with $source }}
-  {{ $caption := default .Title $customAlt }}
+{{- with $source }}
+  {{- $caption := default .Title $customAlt -}}
 
-  {{ $tiny := (.Resize "320x").Permalink }}
-  {{ $small := (.Resize "600x").Permalink }}
-  {{ $medium := (.Resize "1200x").Permalink }}
-  {{ $large := (.Resize "1800x").Permalink }}
+  {{- $tiny := (.Resize "320x").Permalink -}}
+  {{- $small := (.Resize "600x").Permalink -}}
+  {{- $medium := (.Resize "1200x").Permalink -}}
+  {{- $large := (.Resize "1800x").Permalink -}}
 
-  {{ $size := dict "tiny" $tiny "small" $small "medium" $medium "large" $large }}
+  {{- $size := dict "tiny" $tiny "small" $small "medium" $medium "large" $large -}}
 
 
   <div class="flex justify-center">
@@ -34,11 +34,11 @@
           />
         </picture>
       </a>
-      {{ with $caption -}}
+      {{- with $caption -}}
         <figcaption>
           {{ . }}{{ with $source.Params.credits }}({{ . | $.Page.RenderString }}){{ end }}
         </figcaption>
       {{- end }}
     </figure>
   </div>
-{{ end }}
+{{- end }}

@@ -1,25 +1,25 @@
-{{ $geekdocRepo := default (default false .Site.Params.GeekdocRepo) .Page.Params.GeekdocRepo }}
-{{ $geekdocEditPath := default (default false .Site.Params.GeekdocEditPath) .Page.Params.GeekdocEditPath }}
-{{ if .File }}
-  {{ $.Scratch.Set "geekdocFilePath" (default .File.Path .Page.Params.GeekdocFilePath) }}
-{{ else }}
-  {{ $.Scratch.Set "geekdocFilePath" false }}
-{{ end }}
+{{- $geekdocRepo := default (default false .Site.Params.GeekdocRepo) .Page.Params.GeekdocRepo -}}
+{{- $geekdocEditPath := default (default false .Site.Params.GeekdocEditPath) .Page.Params.GeekdocEditPath -}}
+{{- if .File -}}
+  {{- $.Scratch.Set "geekdocFilePath" (default .File.Path .Page.Params.GeekdocFilePath) -}}
+{{- else -}}
+  {{- $.Scratch.Set "geekdocFilePath" false -}}
+{{- end -}}
 
-{{ define "breadcrumb" }}
-  {{ $parent := .page.Parent }}
-  {{ if $parent }}
-    {{ $name := (partial "utils/title" $parent) }}
-    {{ $position := (sub .position 1) }}
-    {{ $value := (printf "<li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='%s' href='%s'><span itemprop='name'>%s</span></a><meta itemprop='position' content='%d' /></li><li> / </li>%s" $parent.RelPermalink $parent.RelPermalink $name $position .value) }}
+{{- define "breadcrumb" }}
+  {{- $parent := .page.Parent -}}
+  {{- if $parent }}
+    {{- $name := (partial "utils/title" $parent) -}}
+    {{- $position := (sub .position 1) -}}
+    {{- $value := (printf "<li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='%s' href='%s'><span itemprop='name'>%s</span></a><meta itemprop='position' content='%d' /></li><li> / </li>%s" $parent.RelPermalink $parent.RelPermalink $name $position .value) -}}
     {{ template "breadcrumb" dict "page" $parent "value" $value "position" $position }}
-  {{ else }}
+  {{- else }}
     {{ .value | safeHTML }}
-  {{ end }}
-{{ end }}
+  {{- end }}
+{{- end }}
 
-{{ $showBreadcrumb := (and (default true .Page.Params.GeekdocBreadcrumb) (default true .Site.Params.GeekdocBreadcrumb)) }}
-{{ $showEdit := (and ($.Scratch.Get "geekdocFilePath") $geekdocRepo $geekdocEditPath) }}
+{{- $showBreadcrumb := (and (default true .Page.Params.GeekdocBreadcrumb) (default true .Site.Params.GeekdocBreadcrumb)) -}}
+{{- $showEdit := (and ($.Scratch.Get "geekdocFilePath") $geekdocRepo $geekdocEditPath) -}}
 <div
   class="gdoc-page__header flex flex-wrap
   {{ if $showBreadcrumb }}
@@ -31,7 +31,7 @@
   {{ if (and (not $showBreadcrumb) (not $showEdit)) }}hidden{{ end }}"
   itemprop="breadcrumb"
 >
-  {{ if $showBreadcrumb }}
+  {{- if $showBreadcrumb }}
     <div>
       <svg class="icon gdoc_path hidden-mobile"><use xlink:href="#gdoc_path"></use></svg>
       <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
@@ -41,8 +41,8 @@
         {{ template "breadcrumb" dict "page" . "value" $value "position" $position }}
       </ol>
     </div>
-  {{ end }}
-  {{ if $showEdit }}
+  {{- end }}
+  {{- if $showEdit }}
     <div>
       <span class="editpage">
         <svg class="icon gdoc_code"><use xlink:href="#gdoc_code"></use></svg>
@@ -53,5 +53,5 @@
         </a>
       </span>
     </div>
-  {{ end }}
+  {{- end }}
 </div>

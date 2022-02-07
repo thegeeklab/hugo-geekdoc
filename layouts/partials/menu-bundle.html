@@ -1,57 +1,57 @@
-{{ $current := .current }}
-{{ template "menu-file" dict "sect" .source "current" $current "site" $current.Site }}
+{{- $current := .current -}}
+{{- template "menu-file" dict "sect" .source "current" $current "site" $current.Site -}}
 
 
 <!-- template -->
-{{ define "menu-file" }}
-  {{ $current := .current }}
-  {{ $site := .site }}
+{{- define "menu-file" }}
+  {{- $current := .current -}}
+  {{- $site := .site -}}
 
 
   <ul class="gdoc-nav__list">
-    {{ range sort (default (seq 0) .sect) "weight" }}
-      {{ $name := .name }}
-      {{ if reflect.IsMap .name }}
-        {{ $name = (index .name $site.Language.Lang) }}
-      {{ end }}
+    {{- range sort (default (seq 0) .sect) "weight" }}
+      {{- $name := .name -}}
+      {{- if reflect.IsMap .name }}
+        {{- $name = (index .name $site.Language.Lang) -}}
+      {{- end }}
 
 
       <li>
         {{ $ref := default false .ref }}
-        {{ if $ref }}
-          {{ $this := $site.GetPage .ref }}
-          {{ $icon := default false .icon }}
-          {{ $numberOfPages := (add (len $this.Pages) (len $this.Sections)) }}
-          {{ $isCurrent := eq $current $this }}
-          {{ $isAncestor := $this.IsAncestor $current }}
-          {{ $id := substr (sha1 $this.Permalink) 0 8 }}
-          {{ $doCollapse := and (isset . "sub") (or $this.Params.GeekdocCollapseSection (default false .Site.Params.GeekdocCollapseAllSections)) }}
+        {{- if $ref }}
+          {{- $this := $site.GetPage .ref -}}
+          {{- $icon := default false .icon -}}
+          {{- $numberOfPages := (add (len $this.Pages) (len $this.Sections)) -}}
+          {{- $isCurrent := eq $current $this -}}
+          {{- $isAncestor := $this.IsAncestor $current -}}
+          {{- $id := substr (sha1 $this.Permalink) 0 8 -}}
+          {{- $doCollapse := and (isset . "sub") (or $this.Params.GeekdocCollapseSection (default false .Site.Params.GeekdocCollapseAllSections)) -}}
 
 
           <input
             type="checkbox"
-            {{ if $doCollapse }}
+            {{- if $doCollapse }}
               class="gdoc-nav__toggle" id="{{ printf "navtree-%s" $id }}"
               {{ if or $isCurrent $isAncestor }}checked{{ end }}
             {{ else }}
               class="hidden"
-            {{ end }}
+            {{- end }}
           />
           <label
-            {{ if $doCollapse }}
+            {{- if $doCollapse }}
               for="{{ printf "navtree-%s" $id }}" class="flex justify-between"
-            {{ end }}
+            {{- end }}
           >
             <span class="flex">
-              {{ if $icon }}
+              {{- if $icon }}
                 <svg class="icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>
-              {{ end }}
+              {{- end }}
               <a
-                href="{{ if .external }}
+                href="{{- if .external }}
                   {{ .ref }}
-                {{ else }}
+                {{- else }}
                   {{ relref $current .ref }}
-                {{ end }}"
+                {{- end }}"
                 class="gdoc-nav__entry{{- if not .external }}
                   {{- if $isCurrent }}{{ printf " is-active" }}{{ end }}
                 {{- end }}"
@@ -59,23 +59,23 @@
                 {{ $name }}
               </a>
             </span>
-            {{ if $doCollapse }}
+            {{- if $doCollapse }}
               <svg class="icon toggle gdoc_keyboard_arrow_left">
                 <use xlink:href="#gdoc_keyboard_arrow_left"></use>
               </svg>
               <svg class="icon toggle gdoc_keyboard_arrow_down hidden">
                 <use xlink:href="#gdoc_keyboard_arrow_down"></use>
               </svg>
-            {{ end }}
+            {{- end }}
           </label>
-        {{ else }}
+        {{- else }}
           <span class="flex">{{ $name }}</span>
-        {{ end }}
+        {{- end }}
 
-        {{ with .sub }}
+        {{- with .sub }}
           {{ template "menu-file" dict "sect" . "current" $current "site" $site }}
-        {{ end }}
+        {{- end }}
       </li>
-    {{ end }}
+    {{- end }}
   </ul>
-{{ end }}
+{{- end }}

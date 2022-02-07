@@ -11,7 +11,9 @@
 <meta property="og:url" content="{{ .Permalink }}" />
 
 {{- with $.Params.images }}
-  {{- range first 6 . }}<meta property="og:image" content="{{ . | absURL }}" />{{ end -}}
+  {{- range first 6 . }}
+    <meta property="og:image" content="{{ . | absURL }}" />
+  {{- end }}
 {{- else }}
   {{- $featured := ($.Resources.ByType "image").GetMatch "{*feature*,*cover*,*thumbnail*}" -}}
   {{- with $featured }}
@@ -51,7 +53,7 @@
   {{- end }}
 {{- end }}
 
-{{ if .IsPage -}}
+{{- if .IsPage -}}
   {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
   <meta property="article:section" content="{{ .Section | humanize | title }}" />
   {{- with .PublishDate }}

@@ -1,6 +1,6 @@
 <header class="gdoc-header">
   <div class="container flex align-center justify-between">
-    {{ if .MenuEnabled }}
+    {{- if .MenuEnabled }}
       <label for="menu-control" class="gdoc-nav__control" tabindex="0">
         <svg class="icon gdoc_menu">
           <title>{{ i18n "button_nav_open" }}</title>
@@ -11,7 +11,7 @@
           <use xlink:href="#gdoc_arrow_back"></use>
         </svg>
       </label>
-    {{ end }}
+    {{- end }}
     <div>
       <a class="gdoc-brand gdoc-header__link" href="{{ .Root.Site.BaseURL }}">
         <span class="flex align-center">
@@ -26,9 +26,9 @@
     </div>
     <div class="gdoc-menu-header">
       <span class="gdoc-menu-header__items">
-        {{ if .Root.Site.Data.menu.extra.header }}
+        {{- if .Root.Site.Data.menu.extra.header }}
           {{ partial "menu-extra" (dict "current" .Root "source" .Root.Site.Data.menu.extra.header "target" "header") }}
-        {{ end }}
+        {{- end }}
 
 
         <span id="gdoc-dark-mode">

@@ -1,37 +1,37 @@
-{{ $current := .current }}
-{{ template "menu-extra" dict "sect" .source "current" $current "site" $current.Site "target" .target }}
+{{- $current := .current -}}
+{{- template "menu-extra" dict "sect" .source "current" $current "site" $current.Site "target" .target -}}
 
 
 <!-- template -->
-{{ define "menu-extra" }}
-  {{ $current := .current }}
-  {{ $site := .site }}
-  {{ $target := .target }}
-  {{ $sect := .sect }}
+{{- define "menu-extra" }}
+  {{- $current := .current -}}
+  {{- $site := .site -}}
+  {{- $target := .target -}}
+  {{- $sect := .sect -}}
 
-  {{ range sort (default (seq 0) $sect) "weight" }}
-    {{ if isset . "ref" }}
-      {{ $this := $site.GetPage .ref }}
-      {{ $isCurrent := eq $current $this }}
-      {{ $icon := default false .icon }}
+  {{- range sort (default (seq 0) $sect) "weight" }}
+    {{- if isset . "ref" }}
+      {{- $this := $site.GetPage .ref -}}
+      {{- $isCurrent := eq $current $this -}}
+      {{- $icon := default false .icon -}}
 
-      {{ $name := .name }}
-      {{ if reflect.IsMap .name }}
+      {{- $name := .name -}}
+      {{- if reflect.IsMap .name }}
         {{ $name = (index .name $site.Language.Lang) }}
-      {{ end }}
+      {{- end }}
 
-      {{ if not .icon }}
+      {{- if not .icon }}
         {{ errorf "Missing 'icon' attribute in data file for '%s' menu item '%s'" $target $name }}
-      {{ end }}
+      {{- end }}
 
-      {{ if eq $target "header" }}
+      {{- if eq $target "header" }}
         <span>
           <a
-            href="{{ if .external }}
+            href="{{ if .external -}}
               {{ .ref }}
-            {{ else }}
+            {{- else -}}
               {{ relref $current .ref }}
-            {{ end }}"
+            {{- end }}"
             class="gdoc-header__link"
           >
             <svg class="icon {{ .icon }}">
@@ -40,7 +40,7 @@
             </svg>
           </a>
         </span>
-      {{ end }}
-    {{ end }}
-  {{ end }}
-{{ end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}

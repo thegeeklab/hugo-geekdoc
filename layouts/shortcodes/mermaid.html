@@ -1,7 +1,7 @@
-{{ if not (.Page.Scratch.Get "mermaid") }}
+{{- if not (.Page.Scratch.Get "mermaid") }}
   <!-- Include mermaid only first time --><script defer src="{{ index (index .Site.Data.assets "mermaid.js") "src" | relURL }}"></script>
   {{ .Page.Scratch.Set "mermaid" true }}
-{{ end }}
+{{- end }}
 
 
 <pre class="gdoc-mermaid mermaid{{ with .Get "class" }}{{ printf " %s" . }}{{ end }}">
