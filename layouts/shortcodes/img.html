@@ -6,17 +6,17 @@
 {{ with $source }}
   {{ $caption := default .Title $customAlt }}
 
-  {{ $tiny := (.Resize "320x").RelPermalink }}
-  {{ $small := (.Resize "600x").RelPermalink }}
-  {{ $medium := (.Resize "1200x").RelPermalink }}
-  {{ $large := (.Resize "1800x").RelPermalink }}
+  {{ $tiny := (.Resize "320x").Permalink }}
+  {{ $small := (.Resize "600x").Permalink }}
+  {{ $medium := (.Resize "1200x").Permalink }}
+  {{ $large := (.Resize "1800x").Permalink }}
 
   {{ $size := dict "tiny" $tiny "small" $small "medium" $medium "large" $large }}
 
 
   <div class="flex justify-center">
     <figure class="gdoc-markdown__figure">
-      <a class="gdoc-markdown__link--raw" href="{{ .RelPermalink }}">
+      <a class="gdoc-markdown__link--raw" href="{{ .Permalink }}">
         <picture>
           <source
             {{ with $customSize }}
