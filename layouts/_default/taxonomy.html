@@ -1,14 +1,16 @@
 {{ define "main" }}
   {{ range .Paginator.Pages }}
-    <article class="gdoc-markdown gdoc-post">
+    <article class="gdoc-post">
       <header class="gdoc-post__header">
         <h1 class="gdoc-post__title">
           <a href="{{ .RelPermalink }}">{{ partial "utils/title" . }}</a>
         </h1>
       </header>
-      <section>
+
+      <section class="gdoc-markdown">
         {{ .Summary }}
       </section>
+
       <div class="gdoc-post__readmore">
         {{ if .Truncated }}
           <a
@@ -37,7 +39,7 @@
       <a
         class="gdoc-button__link"
         href="{{ .page.RelPermalink }}"
-        title="All posts tagged with '{{ .name }}'"
+        title="{{ i18n "posts_tagged_with" .name }}"
       >
         {{ .name }}
       </a>

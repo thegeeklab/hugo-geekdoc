@@ -29,6 +29,10 @@ posts_read_time:
   one: "Eine Minute Lesedauer"
   other: "{{ . }} Minuten Lesedauer"
 posts_update_prefix: Aktualisiert am
+posts_count:
+  one: "Ein Artikel"
+  other: "{{ . }} Artikel"
+posts_tagged_with: Alle Artikel mit dem Tag '{{ . }}'
 
 footer_build_with: >
   Entwickelt mit <a href="https://gohugo.io/" class="gdoc-footer__link">Hugo</a> und
