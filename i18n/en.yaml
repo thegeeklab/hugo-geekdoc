@@ -29,7 +29,7 @@ posts_read_time:
   one: "One minute to read"
   other: "{{ . }} minutes to read"
 posts_update_prefix: Updated on
-posts_terms_count:
+posts_count:
   one: "One post"
   other: "{{ . }} posts"
 posts_tagged_with: All posts tagged with '{{ . }}'

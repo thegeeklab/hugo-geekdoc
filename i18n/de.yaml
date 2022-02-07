@@ -29,7 +29,7 @@ posts_read_time:
   one: "Eine Minute Lesedauer"
   other: "{{ . }} Minuten Lesedauer"
 posts_update_prefix: Aktualisiert am
-posts_terms_count:
+posts_count:
   one: "Ein Artikel"
   other: "{{ . }} Artikel"
 posts_tagged_with: Alle Artikel mit dem Tag '{{ . }}'
