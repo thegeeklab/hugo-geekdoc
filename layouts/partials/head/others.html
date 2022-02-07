@@ -59,8 +59,12 @@
   media="all"
 />
 
-{{ if (default false $.Site.Params.GeekdocOverwriteHTMLBase) }}
+{{- with .OutputFormats.Get "html" }}
+  {{ printf `<link href=%q rel=%q type=%q />` .Permalink .Rel .MediaType.Type | safeHTML }}
+{{- end }}
+
+{{- if (default false $.Site.Params.GeekdocOverwriteHTMLBase) }}
   <base href="{{ .Site.BaseURL }}" />
-{{ end }}
+{{- end }}
 
 {{ printf "<!-- %s -->" "Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc" | safeHTML }}
