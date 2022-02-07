@@ -68,13 +68,15 @@
                 <span class="flex">
                   <a
                     href="{{ .RelPermalink }}"
-                    class="gdoc-nav__entry {{ if eq $current . }}is-active{{ end }}"
+                    class="gdoc-nav__entry{{- if eq $current . }}
+                      {{- printf " is-active" }}
+                    {{- end }}"
                   >
-                    {{ partial "title" . }}
+                    {{ partial "utils/title" . }}
                   </a>
                 </span>
               {{ else }}
-                <span class="flex">{{ partial "title" . }}</span>
+                <span class="flex">{{ partial "utils/title" . }}</span>
               {{ end }}
               {{ if $doCollapse }}
                 <svg class="icon toggle gdoc_keyboard_arrow_left">

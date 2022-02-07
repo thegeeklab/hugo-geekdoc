@@ -20,10 +20,12 @@
           {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
             <li>
               <a
-                class="gdoc-nav__entry {{ if eq $currentPage .RelPermalink }}is-active{{ end }}"
+                class="gdoc-nav__entry{{- if eq $currentPage .RelPermalink }}
+                  {{- printf " is-active" }}
+                {{- end }}"
                 href="{{ .RelPermalink }}"
               >
-                {{ .Title }}
+                {{ partial "utils/title" . }}
               </a>
             </li>
           {{ end }}

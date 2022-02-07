@@ -3,16 +3,17 @@
   <head>
     {{ partial "head/meta" . }}
     <title>
-      {{ if not (eq .Kind "home") }}
-        {{ partial "title" . }}{{ printf " | " }}
-      {{ end }}{{ .Site.Title }}
+      {{- if eq .Kind "home" -}}
+        {{ .Site.Title }}
+      {{- else -}}
+        {{ printf "%s | %s" (partial "utils/title" .) .Site.Title }}
+      {{- end -}}
     </title>
 
     {{ partial "head/favicons" . }}
     {{ partial "head/rel-me" . }}
     {{ partial "head/microformats" . }}
     {{ partial "head/others" . }}
-    {{ partial "head/schema" . }}
     {{ partial "head/custom" . }}
   </head>
 

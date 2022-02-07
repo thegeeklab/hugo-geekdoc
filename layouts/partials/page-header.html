@@ -9,7 +9,7 @@
 {{ define "breadcrumb" }}
   {{ $parent := .page.Parent }}
   {{ if $parent }}
-    {{ $name := (partial "title" $parent) }}
+    {{ $name := (partial "utils/title" $parent) }}
     {{ $position := (sub .position 1) }}
     {{ $value := (printf "<li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='%s' href='%s'><span itemprop='name'>%s</span></a><meta itemprop='position' content='%d' /></li><li> / </li>%s" $parent.RelPermalink $parent.RelPermalink $name $position .value) }}
     {{ template "breadcrumb" dict "page" $parent "value" $value "position" $position }}
@@ -36,7 +36,7 @@
       <svg class="icon gdoc_path hidden-mobile"><use xlink:href="#gdoc_path"></use></svg>
       <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
         {{ $position := sub (len (split .RelPermalink "/")) 1 }}
-        {{ $name := (partial "title" .) }}
+        {{ $name := (partial "utils/title" .) }}
         {{ $value := (printf "<li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>%s</span><meta itemprop='position' content='%d' /></li>" $name $position ) }}
         {{ template "breadcrumb" dict "page" . "value" $value "position" $position }}
       </ol>
