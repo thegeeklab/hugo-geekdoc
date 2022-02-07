@@ -52,9 +52,9 @@
                 {{ else }}
                   {{ relref $current .ref }}
                 {{ end }}"
-                class="gdoc-nav__entry {{ if not .external }}
-                  {{ if $isCurrent }}is-active{{ end }}
-                {{ end }}"
+                class="gdoc-nav__entry{{- if not .external }}
+                  {{- if $isCurrent }}{{ printf " is-active" }}{{ end }}
+                {{- end }}"
               >
                 {{ $name }}
               </a>

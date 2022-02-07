@@ -2,7 +2,9 @@
   {{ range .Paginator.Pages }}
     <article class="gdoc-markdown gdoc-post">
       <header class="gdoc-post__header">
-        <h1 class="gdoc-post__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        <h1 class="gdoc-post__title">
+          <a href="{{ .RelPermalink }}">{{ partial "utils/title" . }}</a>
+        </h1>
       </header>
       <section>
         {{ .Summary }}
