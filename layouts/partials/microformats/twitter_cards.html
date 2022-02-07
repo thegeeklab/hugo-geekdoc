@@ -21,7 +21,7 @@
 {{- end }}
 <meta name="twitter:title" content="{{ partial "utils/title" . }}" />
 {{- with partial "utils/description" . }}
-  <meta name="twitter:description" content="{{ trim (. | plainify) "\n" }}" />
+  <meta name="twitter:description" content="{{ trim (. | plainify) "\n" | safeHTML }}" />
 {{- end }}
 {{- with .Site.Social.twitter -}}
   <meta name="twitter:site" content="@{{ . }}" />

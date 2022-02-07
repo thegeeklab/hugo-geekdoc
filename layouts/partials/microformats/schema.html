@@ -8,7 +8,7 @@
       "name": "{{ .Site.Title }}",
       "url": "{{ .Site.BaseURL }}",
       {{- with partial "utils/description" . }}
-      "description": "{{ trim (. | plainify) "\n" }}",
+      "description": "{{ trim (. | plainify) "\n" | safeHTML }}",
       {{- end }}
       "thumbnailUrl": "{{ $thumbnail }}"
       {{- with .Site.Params.GeekdocContentLicense }},
@@ -26,7 +26,7 @@
       "headline": "{{ (partial "utils/title" .) | safeJS }}",
       "alternativeHeadline": "{{ .Params.lead }}",
       {{- with partial "utils/description" . }}
-      "description": "{{ trim (. | plainify) "\n" }}",
+      "description": "{{ trim (. | plainify) "\n" | safeHTML }}",
       {{- end }}
       "inLanguage": {{ .Site.Language.Lang }},
       "isFamilyFriendly": "true",
