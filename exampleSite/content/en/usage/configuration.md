@@ -264,7 +264,7 @@ geekdocRepo = "https://github.com/thegeeklab/hugo-geekdoc"
 
 # Enable 'Edit page' links. Requires 'GeekdocRepo' param and the path must point to
 # the parent directory of the 'content' folder.
-geekdocEditPath = "edit/main/exampleSite/content"
+geekdocEditPath = "edit/main/exampleSite"
 
 # Used for 'Edit page' link, set to '.File.Path' by default.
 # Can be overwritten by a path relative to 'geekdocEditPath'
