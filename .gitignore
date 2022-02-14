@@ -21,8 +21,5 @@ exampleSite/content/de
 /exampleSite/resources/
 /exampleSite/data/sprites/
 
-# hugo
-.hugo_build.lock
-
 # testing
 .lighthouseci/
