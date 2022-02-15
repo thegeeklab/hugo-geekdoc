@@ -1,7 +1,7 @@
 {{ $geekdocRepo := default (default false .Site.Params.GeekdocRepo) .Page.Params.GeekdocRepo }}
 {{ $geekdocEditPath := default (default false .Site.Params.GeekdocEditPath) .Page.Params.GeekdocEditPath }}
 {{ if .File }}
-  {{ $.Scratch.Set "geekdocFilePath" (default (path.Join .Site.Params.contentDir .File.Path) .Page.Params.GeekdocFilePath) }}
+  {{ $.Scratch.Set "geekdocFilePath" (default (path.Join (default "content" .Site.Params.contentDir) .File.Path) .Page.Params.GeekdocFilePath) }}
 {{ else }}
   {{ $.Scratch.Set "geekdocFilePath" false }}
 {{ end }}
