@@ -50,7 +50,7 @@ enableRobotsTXT = true
   geekdocMenuBundle = true
 
   # (Optional, default false) Collapse all menu entries, can not be overwritten
-  # per page if enabled. Can be enabled per page via `geekdocCollapseSection`.
+  # per page if enabled. Can be enabled per page via 'geekdocCollapseSection'.
   geekdocCollapseAllSections = true
 
   # (Optional, default true) Show page navigation links at the bottom of each
@@ -66,9 +66,9 @@ enableRobotsTXT = true
   geekdocRepo = "https://github.com/thegeeklab/hugo"
 
   # (Optional, default none) Enable 'Edit page' links. Requires 'GeekdocRepo' param
-  # and path must point to 'content' directory of repo.
+  # and the path must point to the parent directory of the 'content' folder.
   # You can also specify this parameter per page in front matter.
-  geekdocEditPath = "edit/main/exampleSite/content"
+  geekdocEditPath = "edit/main/exampleSite"
 
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slow down your website.
@@ -163,7 +163,7 @@ params:
   geekdocMenuBundle: true
 
   # (Optional, default false) Collapse all menu entries, can not be overwritten
-  # per page if enabled. Can be enabled per page via `geekdocCollapseSection`.
+  # per page if enabled. Can be enabled per page via 'geekdocCollapseSection'.
   geekdocCollapseAllSections: true
 
   # (Optional, default true) Show page navigation links at the bottom of each
@@ -178,10 +178,10 @@ params:
   # You can also specify this parameter per page in front matter.
   geekdocRepo: "https://github.com/thegeeklab/hugo-geekdoc"
 
-  # (Optional, default none) Enable "Edit page" links. Requires 'GeekdocRepo' param
-  # and path must point to 'content' directory of repo.
+  # (Optional, default none) Enable 'Edit page' links. Requires 'GeekdocRepo' param
+  # and the path must point to the parent directory of the 'content' folder.
   # You can also specify this parameter per page in front matter.
-  geekdocEditPath: edit/main/exampleSite/content
+  geekdocEditPath: edit/main/exampleSite
 
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slow down your website.
@@ -262,9 +262,9 @@ geekdocBreadcrumb = false
 # Set source repository location.
 geekdocRepo = "https://github.com/thegeeklab/hugo-geekdoc"
 
-# Enable "Edit page" links. Requires 'GeekdocRepo' param and path must point
-# to 'content' directory of repo.
-geekdocEditPath = "edit/main/exampleSite/content"
+# Enable 'Edit page' links. Requires 'GeekdocRepo' param and the path must point to
+# the parent directory of the 'content' folder.
+geekdocEditPath = "edit/main/exampleSite"
 
 # Used for 'Edit page' link, set to '.File.Path' by default.
 # Can be overwritten by a path relative to 'geekdocEditPath'
@@ -322,9 +322,9 @@ geekdocBreadcrumb: false
 # Set source repository location.
 geekdocRepo: "https://github.com/thegeeklab/hugo-geekdoc"
 
-# Enable "Edit page" links. Requires 'GeekdocRepo' param and path must point
-# to 'content' directory of repo.
-geekdocEditPath: "edit/main/exampleSite/content"
+# Enable 'Edit page' links. Requires 'GeekdocRepo' param and the path must point to
+# the parent directory of the 'content' folder.
+geekdocEditPath: "edit/main/exampleSite"
 
 # Used for 'Edit page' link, set to '.File.Path' by default.
 # Can be overwritten by a path relative to 'geekdocEditPath'
