@@ -1,28 +1,20 @@
 {{- if not (eq .Kind "home") }}
-  <meta property="og:title" content="{{ partial "utils/title" . }}" />
+  <meta
+    property="og:title"
+    {{ partial "utils/title" . | printf "content=%q" | safeHTMLAttr }}
+  />
 {{- end }}
 {{- with .Site.Title }}
-  <meta property="og:site_name" content="{{ . }}" />
+  <meta property="og:site_name" {{ . | printf "content=%q" | safeHTMLAttr }} />
+{{- end }}
+{{- with partial "utils/featured" . }}
+  <meta property="og:image" content="{{ . }}" />
 {{- end }}
 {{- with partial "utils/description" . }}
-  <meta property="og:description" content="{{ trim (. | plainify) "\n" | safeHTML }}" />
+  <meta property="og:description" content="{{ . | plainify | htmlUnescape | chomp }}" />
 {{- end }}
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
-
-{{- with $.Params.images }}
-  {{- range first 6 . }}<meta property="og:image" content="{{ . | absURL }}" />{{ end -}}
-{{- else }}
-  {{- $featured := ($.Resources.ByType "image").GetMatch "{*feature*,*cover*,*thumbnail*}" -}}
-  {{- with $featured }}
-    <meta property="og:image" content="{{ $featured.Permalink }}" />
-  {{- else }}
-    {{- with $.Site.Params.images }}
-      <meta property="og:image" content="{{ index . 0 | absURL }}" />
-    {{- end }}
-  {{- end }}
-{{- end }}
-
 {{- with .Params.audio }}
   <meta property="og:audio" content="{{ . }}" />
 {{- end }}

@@ -1,19 +1,17 @@
-{{- if .IsHome -}}
-  {{- $thumbnail := default (default "brand.svg" .Site.Params.logo) (index (default slice .Site.Params.images) 0) | absURL }}
-
+{{- if eq .Kind "home" }}
   <script type="application/ld+json">
   {
       "@context": "http://schema.org",
       "@type": "WebSite",
-      "name": "{{ .Site.Title }}",
-      "url": "{{ .Site.BaseURL }}",
+      "name": {{ .Site.Title }},
+      "url": {{ .Site.BaseURL }},
       {{- with partial "utils/description" . }}
-      "description": "{{ trim (. | plainify) "\n" | safeHTML }}",
+      "description": "{{ . | plainify | htmlUnescape | chomp }}",
       {{- end }}
-      "thumbnailUrl": "{{ $thumbnail }}"
-      {{- with .Site.Params.GeekdocContentLicense }},
-      "license": "{{ .name }}"
+      {{- with partial "utils/featured" . }}
+      "thumbnailUrl": {{ . }},
       {{- end }}
+      "inLanguage": {{ .Lang }}
   }
   </script>
 {{- else if .IsPage }}
@@ -22,18 +20,28 @@
       "@context": "http://schema.org",
       "@type": "TechArticle",
       "articleSection": "{{ .Section | humanize | title }}",
-      "name": "{{ (partial "utils/title" .) | safeJS }}",
-      "headline": "{{ (partial "utils/title" .) | safeJS }}",
-      "alternativeHeadline": "{{ .Params.lead }}",
-      {{- with partial "utils/description" . }}
-      "description": "{{ trim (. | plainify) "\n" | safeHTML }}",
+      "name": {{ partial "utils/title" . }},
+      "url" : {{ .Permalink }},
+      "headline": {{ partial "utils/title" . }},
+      {{- with .Params.lead }}
+      "alternativeHeadline": {{ . }},
       {{- end }}
-      "inLanguage": {{ .Site.Language.Lang }},
+      {{- with partial "utils/description" . }}
+      "description": "{{ . | plainify | htmlUnescape | chomp }}",
+      {{- end }}
+      {{- with partial "utils/featured" . }}
+      "thumbnailUrl": {{ . }},
+      {{- end }}
+      "wordCount" : "{{ .WordCount }}",
+      "inLanguage": {{ .Lang }},
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "{{ .Permalink }}"
+          "@id": {{ .Permalink }}
       },
+      {{- with $tags := .Params.tags }}
+      "keywords" : [ {{ range $i, $tag := $tags }}{{ if $i }}, {{ end }}"{{ $tag }}" {{ end }}],
+      {{- end }}
       "copyrightHolder" : "{{ .Site.Title }}",
       "copyrightYear" : "{{ .Date.Format "2006" }}",
       "dateCreated": "{{ .Date.Format "2006-01-02T15:04:05.00Z" | safeJS }}",
@@ -45,23 +53,11 @@
           "url": {{ .Site.BaseURL }},
           "logo": {
               "@type": "ImageObject",
-              "url": "{{ (default "brand.svg" .Site.Params.logo) | absURL }}",
+              "url": {{ (default "brand.svg" .Site.Params.logo) | absURL }},
               "width":"32",
               "height":"32"
           }
-      },
-      {{- with $images := $.Resources.ByType "image" }}
-      "image": [ {{ range $i, $image := $images }}{{ if $i }}, {{ end }}"{{ $image.Permalink | absURL }}" {{ end }}],
-      {{- else }}
-      {{- with $images := .Params.images }}
-      "image": [ {{ range $i, $image := $images }}{{ if $i }}, {{ end }}"{{ $image | absURL }}" {{ end }}],
-      {{- end }}
-      {{- end }}
-      "url" : "{{ .Permalink }}",
-      "wordCount" : "{{ .WordCount }}",
-      {{- with $tags := .Params.tags }}
-      "genre" : [ {{ range $i, $tag := $tags }}{{ if $i }}, {{ end }}"{{ $tag }}" {{ end }}]
-      {{- end }}
+      }
   }
   </script>
 {{- end }}
