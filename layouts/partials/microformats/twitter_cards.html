@@ -1,27 +1,14 @@
-{{- with $.Params.images -}}
+{{- with partial "utils/featured" . }}
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="{{ index . 0 | absURL }}" />
 {{- else }}
-  {{- $images := $.Resources.ByType "image" -}}
-  {{- $featured := $images.GetMatch "*feature*" -}}
-  {{- if not $featured }}
-    {{- $featured = $images.GetMatch "{*cover*,*thumbnail*}" -}}
-  {{- end }}
-  {{- with $featured }}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="{{ $featured.Permalink }}" />
-  {{- else }}
-    {{- with $.Site.Params.images }}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content="{{ index . 0 | absURL }}" />
-    {{- else }}
-      <meta name="twitter:card" content="summary" />
-    {{- end }}
-  {{- end }}
+  <meta name="twitter:card" content="summary" />
 {{- end }}
-<meta name="twitter:title" content="{{ partial "utils/title" . }}" />
+<meta name="twitter:title" {{ partial "utils/title" . | printf "content=%q" | safeHTMLAttr }} />
+{{- with partial "utils/featured" . }}
+  <meta property="twitter:image" content="{{ . }}" />
+{{- end }}
 {{- with partial "utils/description" . }}
-  <meta name="twitter:description" content="{{ trim (. | plainify) "\n" | safeHTML }}" />
+  <meta name="twitter:description" content="{{ . | plainify | htmlUnescape | chomp }}" />
 {{- end }}
 {{- with .Site.Social.twitter -}}
   <meta name="twitter:site" content="@{{ . }}" />
