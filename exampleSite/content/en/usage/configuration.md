@@ -116,6 +116,12 @@ enableRobotsTXT = true
   # 'date', 'publishdate', 'expirydate' or 'lastmod'. Every option can be used with a reverse modifier as well
   # e.g. 'title_reverse'.
   geekdocFileTreeSortBy = "title"
+
+  # (Optional, default none) Adds a "Content licensed under <license>" line to the footer.
+  # Could be used if you want to define a default license for your content.
+  [params.geekdocContentLicense]
+    name = "CC BY-SA 4.0"
+    link = "https://creativecommons.org/licenses/by-sa/4.0/"
 ```
 
 {{< /tab >}}
@@ -229,6 +235,12 @@ params:
   # 'date', 'publishdate', 'expirydate' or 'lastmod'. Every option can be used with a reverse modifier as well
   # e.g. 'title_reverse'.
   geekdocFileTreeSortBy: "title"
+
+  # (Optional, default none) Adds a "Content licensed under <license>" line to the footer.
+  # Could be used if you want to define a default license for your content.
+  geekdocContentLicense:
+    name: CC BY-SA 4.0
+    link: https://creativecommons.org/licenses/by-sa/4.0/
 ```
 
 {{< /tab >}}

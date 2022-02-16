@@ -11,6 +11,9 @@
       {{- with partial "utils/featured" . }}
       "thumbnailUrl": {{ . }},
       {{- end }}
+      {{- with .Site.Params.GeekdocContentLicense }}
+      "license": "{{ .name }}",
+      {{- end }}
       "inLanguage": {{ .Lang }}
   }
   </script>
@@ -33,6 +36,9 @@
       "thumbnailUrl": {{ . }},
       {{- end }}
       "wordCount" : "{{ .WordCount }}",
+      {{- with .Site.Params.GeekdocContentLicense }}
+      "license": "{{ .name }}",
+      {{- end }}
       "inLanguage": {{ .Lang }},
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {

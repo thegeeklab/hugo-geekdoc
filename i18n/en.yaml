@@ -39,5 +39,7 @@ footer_build_with: >
   <svg class="icon gdoc_heart"><use xlink:href="#gdoc_heart"></use></svg>
 footer_legal_notice: Legal Notice
 footer_privacy_policy: Privacy Policy
+footer_content_license_prefix: >
+  Content licensed under
 
 language_switch_no_tranlation_prefix: "Page not translated:"
