@@ -17,7 +17,7 @@
       "inLanguage": {{ .Lang }}
   }
   </script>
-{{- else if .IsPage }}
+{{- else if or (and (not (eq .Type "posts")) (in "section page" .Kind )) (and (eq .Type "posts") (eq .Kind "page")) }}
   <script type="application/ld+json">
   {
       "@context": "http://schema.org",
