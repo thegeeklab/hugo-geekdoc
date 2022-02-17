@@ -1,9 +1,5 @@
 ---
 title: Multilingual
-resources:
-  - name: translation-available
-    src: images/translation-available.png
-    title: ""
 ---
 
 {{< toc >}}
