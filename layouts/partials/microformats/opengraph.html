@@ -1,4 +1,6 @@
-{{- if not (eq .Kind "home") }}
+{{ $isPage := or (and (ne .Type "posts") (in "section page" .Kind )) (and (eq .Type "posts") (eq .Kind "page")) }}
+
+{{- if ne .Kind "home" }}
   <meta
     property="og:title"
     {{ partial "utils/title" . | printf "content=%q" | safeHTMLAttr }}
@@ -13,7 +15,7 @@
 {{- with partial "utils/description" . }}
   <meta property="og:description" content="{{ . | plainify | htmlUnescape | chomp }}" />
 {{- end }}
-<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:type" content="{{ if $isPage }}article{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 {{- with .Params.audio }}
   <meta property="og:audio" content="{{ . }}" />
@@ -43,7 +45,7 @@
   {{- end }}
 {{- end }}
 
-{{ if .IsPage -}}
+{{ if $isPage -}}
   {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
   <meta property="article:section" content="{{ .Section | humanize | title }}" />
   {{- with .PublishDate }}

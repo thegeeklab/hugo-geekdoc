@@ -1,3 +1,4 @@
+{{ $isPage := or (and (ne .Type "posts") (in "section page" .Kind )) (and (eq .Type "posts") (eq .Kind "page")) }}
 {{- if eq .Kind "home" }}
   <script type="application/ld+json">
   {
@@ -17,7 +18,7 @@
       "inLanguage": {{ .Lang }}
   }
   </script>
-{{- else if or (and (not (eq .Type "posts")) (in "section page" .Kind )) (and (eq .Type "posts") (eq .Kind "page")) }}
+{{- else if $isPage }}
   <script type="application/ld+json">
   {
       "@context": "http://schema.org",
