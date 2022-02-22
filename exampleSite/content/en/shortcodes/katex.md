@@ -26,7 +26,7 @@ f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 
 {{< /columns >}}
 
-KaTeX can also be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used with a `display` setting. for example `display: block`:
+KaTeX can also be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used with the `display` parameter (e.g. `display: block`):
 
 <!-- spellchecker-disable -->
 <!-- prettier-ignore -->
