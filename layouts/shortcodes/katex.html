@@ -10,7 +10,7 @@
 {{ end }}
 <!-- prettier-ignore-end -->
 
-<span class="gdoc-katex katex{{ with .Get "class" }}{{ . }}{{ end }}">
+<span class="gdoc-katex {{ with .Get "class" }}{{ . }}{{ end }}">
   {{ cond (in .Params "display") "\\[" "\\(" -}}
   {{- trim .Inner "\n" -}}
   {{- cond (in .Params "display") "\\]" "\\)" }}
