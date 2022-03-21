@@ -35,7 +35,7 @@
     "flexsearch": "0.7.21",
     "katex": "0.15.3",
     "mermaid": "8.14.0",
-    "store2": "2.13.1"
+    "store2": "2.13.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.17.0",
