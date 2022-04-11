@@ -34,7 +34,7 @@
     "clipboard": "2.0.10",
     "flexsearch": "0.7.21",
     "katex": "0.15.3",
-    "mermaid": "8.14.0",
+    "mermaid": "9.0.0",
     "store2": "2.13.2"
   },
   "devDependencies": {
