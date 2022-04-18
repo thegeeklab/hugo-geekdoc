@@ -36,7 +36,7 @@ posts_tagged_with: Alle Artikel mit dem Tag '{{ . }}'
 
 footer_build_with: >
   Entwickelt mit <a href="https://gohugo.io/" class="gdoc-footer__link">Hugo</a> und
-  <svg class="icon gdoc_heart"><use xlink:href="#gdoc_heart"></use></svg>
+  <svg class="gdoc-icon gdoc_heart"><use xlink:href="#gdoc_heart"></use></svg>
 footer_legal_notice: Impressum
 footer_privacy_policy: Datenschutzerklärung
 footer_content_license_prefix: >

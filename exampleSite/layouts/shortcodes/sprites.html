@@ -2,7 +2,7 @@
   {{ range $key, $value := .Site.Data.sprites.geekdoc }}
     <div class="flex flex-grid icon-grid">
       <div class="flex align-center justify-center icon-grid__line">
-        <svg class="icon {{ $key }}"><use xlink:href="#{{ $key }}"></use></svg>
+        <svg class="gdoc-icon {{ $key }}"><use xlink:href="#{{ $key }}"></use></svg>
       </div>
       <div class="flex align-center justify-center icon-grid__line icon-grid__line--text">
         <span>#{{ (replace $key "_" "_<wbr>") | safeHTML }}</span>

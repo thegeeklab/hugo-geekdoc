@@ -9,7 +9,7 @@
   }
 
   .gdoc-header {
-    .icon {
+    svg.gdoc-icon {
       width: $font-size-24;
       height: $font-size-24;
     }
@@ -38,7 +38,7 @@
   .gdoc-error {
     padding: $padding-16 * 6 $padding-16;
 
-    .icon {
+    svg.gdoc-icon {
       width: $font-size-96;
       height: $font-size-96;
     }
@@ -77,11 +77,11 @@
   }
 
   #menu-control:checked ~ .gdoc-header .gdoc-nav__control {
-    .icon.gdoc_menu {
+    svg.gdoc-icon.gdoc_menu {
       display: none;
     }
 
-    .icon.gdoc_arrow_back {
+    svg.gdoc-icon.gdoc_arrow_back {
       display: inline-block;
     }
   }
@@ -97,7 +97,7 @@
       }
 
       &__control {
-        .icon.gdoc_keyboard_arrow_left {
+        svg.gdoc-icon.gdoc_keyboard_arrow_left {
           display: none;
         }
       }

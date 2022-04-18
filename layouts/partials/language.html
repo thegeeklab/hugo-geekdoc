@@ -5,7 +5,7 @@
         {{ range .Site.Languages }}
           {{ if eq . $.Site.Language }}
             <span class="flex align-center">
-              <svg class="icon gdoc_language"><use xlink:href="#gdoc_language"></use></svg>
+              <svg class="gdoc-icon gdoc_language"><use xlink:href="#gdoc_language"></use></svg>
               <span>{{ .Lang | upper }}</span>
             </span>
           {{ end }}
