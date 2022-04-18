@@ -71,7 +71,11 @@ $sm-breakpoint: $menu-width + $body-min-width + 3rem !default;
 // Panel colors
 $hint-colors: (
   info: rgba(0, 145, 234, 1),
+  note: rgba(0, 145, 234, 1),
   ok: rgba(0, 200, 83, 1),
+  tip: rgba(0, 200, 83, 1),
   warning: rgba(255, 171, 0, 1),
-  danger: rgba(213, 0, 0, 1)
+  caution: rgba(115, 0, 211, 1),
+  danger: rgba(213, 0, 0, 1),
+  important: rgba(213, 0, 0, 1)
 ) !default;
