@@ -161,7 +161,7 @@ img {
   padding: $padding-16;
 }
 
-.icon {
+svg.gdoc-icon {
   display: inline-block;
   width: 1.3em;
   height: 1.3em;
@@ -186,7 +186,7 @@ img {
     text-decoration: none;
   }
 
-  .icon {
+  svg.gdoc-icon {
     width: $font-size-32;
     height: $font-size-32;
   }
@@ -216,7 +216,7 @@ img {
   &__home {
     display: none;
 
-    .icon {
+    svg.gdoc-icon {
       cursor: pointer;
     }
   }
@@ -249,15 +249,15 @@ img {
     margin: 0;
     padding: 0;
 
-    .icon {
+    svg.gdoc-icon {
       cursor: pointer;
     }
 
-    .icon.gdoc_menu {
+    svg.gdoc-icon.gdoc_menu {
       display: inline-block;
     }
 
-    .icon.gdoc_arrow_back {
+    svg.gdoc-icon.gdoc_arrow_back {
       display: none;
     }
   }
@@ -277,7 +277,7 @@ img {
       margin: $padding-8 0;
     }
 
-    .icon {
+    svg.gdoc-icon {
       margin-right: $padding-4;
     }
   }
@@ -288,28 +288,28 @@ img {
     & ~ label {
       cursor: pointer;
 
-      .icon.toggle {
+      svg.gdoc-icon.toggle {
         font-size: $font-size-12;
       }
     }
 
     &:not(:checked) {
       & ~ ul,
-      & ~ label .icon.gdoc_keyboard_arrow_down {
+      & ~ label svg.gdoc-icon.gdoc_keyboard_arrow_down {
         display: none;
       }
-      & ~ label .icon.gdoc_keyboard_arrow_left {
+      & ~ label svg.gdoc-icon.gdoc_keyboard_arrow_left {
         display: block;
       }
     }
 
     &:checked {
       & ~ ul,
-      & ~ label .icon.gdoc_keyboard_arrow_down {
+      & ~ label svg.gdoc-icon.gdoc_keyboard_arrow_down {
         display: block;
       }
 
-      & ~ label .icon.gdoc_keyboard_arrow_left {
+      & ~ label svg.gdoc-icon.gdoc_keyboard_arrow_left {
         display: none;
       }
     }
@@ -371,7 +371,7 @@ img {
   &__footer {
     margin-bottom: $padding-16 * 1.2;
 
-    .icon {
+    svg.gdoc-icon {
       color: var(--control-icons);
     }
 
@@ -397,7 +397,7 @@ img {
   }
 
   &__anchorwrap {
-    &:hover .gdoc-page__anchor .icon {
+    &:hover .gdoc-page__anchor svg.gdoc-icon {
       color: var(--control-icons);
     }
   }
@@ -415,7 +415,7 @@ img {
       text-align: right;
     }
 
-    .icon {
+    svg.gdoc-icon {
       width: 1.4rem;
       height: 1.4rem;
       color: transparent;
@@ -478,7 +478,7 @@ img {
   }
 
   &__meta {
-    span .icon {
+    span svg.gdoc-icon {
       margin-left: -5px;
     }
 
@@ -489,7 +489,7 @@ img {
       }
     }
 
-    .icon {
+    svg.gdoc-icon {
       font-size: 1.2em;
     }
 
@@ -522,7 +522,7 @@ img {
     width: 2.2rem;
     height: 2.2rem;
 
-    .icon {
+    svg.gdoc-icon {
       top: 0;
       width: $font-size-20;
       height: $font-size-20;
@@ -536,7 +536,7 @@ img {
     &--success {
       border-color: var(--code-copy-success-color);
 
-      .icon {
+      svg.gdoc-icon {
         color: var(--code-copy-success-color);
       }
     }
@@ -571,7 +571,7 @@ img {
 .gdoc-search {
   position: relative;
 
-  .icon {
+  svg.gdoc-icon {
     position: absolute;
     top: 0.625em;
     left: $padding-16 * 0.5;
@@ -641,7 +641,7 @@ img {
       margin-top: $padding-8;
     }
 
-    .icon {
+    svg.gdoc-icon {
       margin-right: $padding-4;
     }
   }
@@ -684,7 +684,7 @@ img {
   margin: 0 auto;
   max-width: 45em;
 
-  .icon {
+  svg.gdoc-icon {
     width: $font-size-128;
     height: $font-size-128;
     color: var(--body-font-color);

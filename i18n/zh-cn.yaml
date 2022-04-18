@@ -35,9 +35,9 @@ posts_count:
 posts_tagged_with: 所有带有“{{ . }}”标签的帖子。
 
 footer_build_with: >
-  基于 <a href="https://gohugo.io/" class="gdoc-footer__link">Hugo</a> 
-  <svg class="icon gdoc_heart"><use xlink:href="#gdoc_heart"></use></svg> 制作
-  
+  基于 <a href="https://gohugo.io/" class="gdoc-footer__link">Hugo</a>
+  <svg class="gdoc-icon gdoc_heart"><use xlink:href="#gdoc_heart"></use></svg> 制作
+
 footer_legal_notice: "法律声明"
 footer_privacy_policy: "隐私政策"
 footer_content_license_prefix: >

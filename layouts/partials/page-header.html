@@ -33,7 +33,7 @@
 >
   {{ if $showBreadcrumb }}
     <div>
-      <svg class="icon gdoc_path hidden-mobile"><use xlink:href="#gdoc_path"></use></svg>
+      <svg class="gdoc-icon gdoc_path hidden-mobile"><use xlink:href="#gdoc_path"></use></svg>
       <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
         {{ $position := sub (len (split .RelPermalink "/")) 1 }}
         {{ $name := (partial "utils/title" .) }}
@@ -45,7 +45,7 @@
   {{ if $showEdit }}
     <div>
       <span class="editpage">
-        <svg class="icon gdoc_code"><use xlink:href="#gdoc_code"></use></svg>
+        <svg class="gdoc-icon gdoc_code"><use xlink:href="#gdoc_code"></use></svg>
         <a
           href="{{ $geekdocRepo }}/{{ path.Join $geekdocEditPath ($.Scratch.Get "geekdocFilePath") }}"
         >

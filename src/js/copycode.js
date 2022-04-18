@@ -11,8 +11,8 @@ export function createCopyButton(highlightDiv) {
   button.classList.add("flex", "align-center", "justify-center", "clip", "gdoc-post__codecopy")
   button.type = "button"
   button.innerHTML =
-    '<svg class="icon copy"><use xlink:href="#gdoc_copy"></use></svg>' +
-    '<svg class="icon check hidden"><use xlink:href="#gdoc_check"></use></svg>'
+    '<svg class="gdoc-icon copy"><use xlink:href="#gdoc_copy"></use></svg>' +
+    '<svg class="gdoc-icon check hidden"><use xlink:href="#gdoc_check"></use></svg>'
   button.setAttribute("data-clipboard-text", codeToCopy)
   button.setAttribute("data-copy-feedback", "Copied!")
   button.setAttribute("role", "button")

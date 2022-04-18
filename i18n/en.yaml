@@ -36,7 +36,7 @@ posts_tagged_with: All posts tagged with '{{ . }}'
 
 footer_build_with: >
   Built with <a href="https://gohugo.io/" class="gdoc-footer__link">Hugo</a> and
-  <svg class="icon gdoc_heart"><use xlink:href="#gdoc_heart"></use></svg>
+  <svg class="gdoc-icon gdoc_heart"><use xlink:href="#gdoc_heart"></use></svg>
 footer_legal_notice: Legal Notice
 footer_privacy_policy: Privacy Policy
 footer_content_license_prefix: >
