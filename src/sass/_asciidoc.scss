@@ -9,14 +9,14 @@
   }
 
   margin: $padding-16 0;
-  padding: $padding-8 $padding-16 $padding-8 ($padding-16 - $padding-4); //to keep total left space 16dp
+  padding: 0;
 
   border-left: $border-4 solid var(--accent-color);
   border-radius: $border-radius;
 
   table {
-    padding: 0 !important;
     margin: 0 !important;
+    padding: 0 !important;
 
     tr {
       border: 0 !important;
@@ -24,9 +24,43 @@
 
     td {
       &:first-child {
+        background-color: scale-color($gray-600, $alpha: -95%);
         font-weight: bold;
+
+        &.icon {
+          .title {
+            display: flex;
+            align-items: center;
+          }
+
+          i.fa::after {
+            content: attr(title);
+            font-style: normal;
+            padding-left: 2em;
+          }
+
+          i.fa {
+            color: $black;
+            background-size: auto 90%;
+            background-repeat: no-repeat;
+            filter: invert(30%);
+          }
+
+          @each $name, $icon in $hint-icons {
+            i.fa.icon-#{$name} {
+              background-image: url(img/geekdoc-stack.svg##{$icon});
+            }
+          }
+
+          i.gdoc-icon {
+            font-size: $font-size-20;
+            margin-left: -5px;
+          }
+        }
       }
-      display: table-row;
+
+      display: flex;
+      padding: $padding-4 $padding-16 !important;
     }
   }
 }

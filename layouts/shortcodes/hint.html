@@ -1,3 +1,4 @@
 <blockquote class="gdoc-hint {{ .Get 0 }}">
-  {{ .Inner | $.Page.RenderString }}
+  <div class="gdoc-hint__title">{{ .Get 0 | title }}</div>
+  <div class="gdoc-hint__text">{{ .Inner | $.Page.RenderString }}</div>
 </blockquote>

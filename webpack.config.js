@@ -47,6 +47,10 @@ var config = {
           from: "sprites/*.svg",
           to: path.resolve(__dirname, "assets"),
           context: path.resolve(__dirname, "build")
+        },
+        {
+          from: "img/*.svg",
+          context: path.resolve(__dirname, "build")
         }
       ]
     }),

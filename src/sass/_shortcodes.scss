@@ -131,7 +131,19 @@
       border-left-color: $color;
       background-color: scale-color($color, $lightness: 95%, $saturation: -30%);
       color: $body-font-color;
+      padding: 0;
     }
+  }
+
+  &__title {
+    padding: $padding-4 $padding-16;
+    background-color: scale-color($gray-600, $alpha: -95%);
+    font-weight: bold;
+    color: scale-color($body-font-color, $alpha: -15%);
+  }
+
+  &__text {
+    padding: $padding-4 $padding-16;
   }
 
   .gdoc-page__anchor {

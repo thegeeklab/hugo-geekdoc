@@ -1,41 +1,29 @@
----
-title: Hints
----
++++
+title = "Admonition Icons"
++++
 
-Hint shortcode can be used as hint/alerts/notification block. There are four colors to choose: `info`, `ok`, `warning` and `danger`.
+:icons: font
 
-<!-- prettier-ignore-start -->
-```tpl
-{{</* hint [info|ok|warning|danger] */>}}
-**Markdown content**\
-Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
- Ornateness bland it ex enc, est yeti am bongo detract re.
-{{</* /hint */>}}
-```
-<!-- prettier-ignore-end -->
+By default, the admonition is rendered with a plain text label. To enable font icons the document attribute `:icons: font` need to be set.
 
-## Example
+== Example
 
-{{< hint info >}}
-**Markdown content**\
+[NOTE]
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
-{{< /hint >}}
 
-{{< hint ok >}}
-**Markdown content**\
+[TIP]
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
-{{< /hint >}}
 
-{{< hint warning >}}
-**Markdown content**\
+[IMPORTANT]
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
-{{< /hint >}}
 
-{{< hint danger >}}
-**Markdown content**\
+[CAUTION]
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
-{{< /hint >}}
+
+[WARNING]
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
+Ornateness bland it ex enc, est yeti am bongo detract re.
