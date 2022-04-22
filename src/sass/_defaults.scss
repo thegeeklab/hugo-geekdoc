@@ -74,10 +74,10 @@ $hint-colors: (
   note: rgba(0, 145, 234, 1),
   ok: rgba(0, 200, 83, 1),
   tip: rgba(0, 200, 83, 1),
-  warning: rgba(255, 171, 0, 1),
+  important: rgba(255, 171, 0, 1),
   caution: rgba(115, 0, 211, 1),
   danger: rgba(213, 0, 0, 1),
-  important: rgba(213, 0, 0, 1)
+  warning: rgba(213, 0, 0, 1)
 ) !default;
 
 // Panel colors
@@ -86,8 +86,8 @@ $hint-icons: (
   note: "gdoc_info_outline",
   ok: "gdoc_check_circle_outline",
   tip: "gdoc_check_circle_outline",
-  warning: "gdoc_dangerous",
-  caution: "gdoc_fire",
-  danger: "gdoc_error_outline",
-  important: "gdoc_error_outline"
+  important: "gdoc_error_outline",
+  caution: "gdoc_dangerous",
+  danger: "gdoc_fire",
+  warning: "gdoc_fire"
 ) !default;

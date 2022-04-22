@@ -6,7 +6,7 @@ Hint shortcode can be used as hint/alerts/notification block. There are four col
 
 <!-- prettier-ignore-start -->
 ```tpl
-{{</* hint [info|ok|warning|danger] */>}}
+{{</* hint [note|tip|important|caution|warning] */>}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
  Ornateness bland it ex enc, est yeti am bongo detract re.
@@ -16,25 +16,31 @@ Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclima
 
 ## Example
 
-{{< hint info >}}
+{{< hint note >}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
 
-{{< hint ok >}}
+{{< hint tip >}}
+**Markdown content**\
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
+Ornateness bland it ex enc, est yeti am bongo detract re.
+{{< /hint >}}
+
+{{< hint important >}}
+**Markdown content**\
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
+Ornateness bland it ex enc, est yeti am bongo detract re.
+{{< /hint >}}
+
+{{< hint caution >}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
 
 {{< hint warning >}}
-**Markdown content**\
-Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
-Ornateness bland it ex enc, est yeti am bongo detract re.
-{{< /hint >}}
-
-{{< hint danger >}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
