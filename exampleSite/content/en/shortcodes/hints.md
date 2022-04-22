@@ -2,11 +2,21 @@
 title: Hints
 ---
 
-Hint shortcode can be used as hint/alerts/notification block. There are four colors to choose: `info`, `ok`, `warning` and `danger`.
+Hint shortcode can be used as hint/alerts/notification block.
+
+Attributes:
+
+| Name             | Usage                                                                             | default               |
+| ---------------- | --------------------------------------------------------------------------------- | --------------------- |
+| type             | color types to choose from                                                        | note                  |
+| icon (optional)  | custom icon to use                                                                | undefined (default)   |
+| title (optional) | custom icon to use, need to be an icon from an [SVG sprite](/features/icon-sets/) | undefined (type name) |
+
+Syntax:
 
 <!-- prettier-ignore-start -->
 ```tpl
-{{</* hint [note|tip|important|caution|warning] */>}}
+{{</* hint type=[note|tip|important|caution|warning] (icon=gdoc_github) (title=GitHub) */>}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
  Ornateness bland it ex enc, est yeti am bongo detract re.
@@ -16,31 +26,39 @@ Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclima
 
 ## Example
 
-{{< hint note >}}
+{{< hint type=note >}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
 
-{{< hint tip >}}
+{{< hint type=tip >}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
 
-{{< hint important >}}
+{{< hint type=important >}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
 
-{{< hint caution >}}
+{{< hint type=caution >}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
 
-{{< hint warning >}}
+{{< hint type=warning >}}
+**Markdown content**\
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
+Ornateness bland it ex enc, est yeti am bongo detract re.
+{{< /hint >}}
+
+Example with a custom icon and title:
+
+{{< hint type=note icon=gdoc_github title=GitHub >}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.

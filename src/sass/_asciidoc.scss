@@ -36,7 +36,7 @@
           i.fa::after {
             content: attr(title);
             font-style: normal;
-            padding-left: 2em;
+            padding-left: $padding-24;
           }
 
           i.fa {
@@ -44,17 +44,13 @@
             background-size: auto 90%;
             background-repeat: no-repeat;
             filter: invert(30%);
+            margin-left: -5px;
           }
 
           @each $name, $icon in $hint-icons {
             i.fa.icon-#{$name} {
               background-image: url(img/geekdoc-stack.svg##{$icon});
             }
-          }
-
-          i.gdoc-icon {
-            font-size: $font-size-20;
-            margin-left: -5px;
           }
         }
       }

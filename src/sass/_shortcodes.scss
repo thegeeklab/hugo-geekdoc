@@ -140,6 +140,32 @@
     background-color: scale-color($gray-600, $alpha: -95%);
     font-weight: bold;
     color: scale-color($body-font-color, $alpha: -15%);
+
+    i.fa::after {
+      content: attr(title);
+      font-style: normal;
+      padding-left: $padding-24;
+    }
+
+    i.fa {
+      color: $black;
+      background-size: auto 90%;
+      background-repeat: no-repeat;
+      filter: invert(30%);
+      margin-left: -5px;
+    }
+
+    @each $name, $icon in $hint-icons {
+      i.fa.#{$name} {
+        background-image: url(img/geekdoc-stack.svg##{$icon});
+      }
+    }
+
+    .gdoc-icon {
+      width: 1.5em;
+      height: 1.5em;
+      margin-left: -5px;
+    }
   }
 
   &__text {
