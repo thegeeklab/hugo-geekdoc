@@ -9,7 +9,7 @@ Attributes:
 | Name             | Usage                                                                             | default               |
 | ---------------- | --------------------------------------------------------------------------------- | --------------------- |
 | type             | color types to choose from                                                        | note                  |
-| icon (optional)  | custom icon to use                                                                | undefined (default)   |
+| icon (optional)  | custom icon to use                                                                | undefined (type name) |
 | title (optional) | custom icon to use, need to be an icon from an [SVG sprite](/features/icon-sets/) | undefined (type name) |
 
 Syntax:
