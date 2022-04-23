@@ -163,8 +163,8 @@ img {
 
 svg.gdoc-icon {
   display: inline-block;
-  width: 1.3em;
-  height: 1.3em;
+  width: $font-size-20;
+  height: $font-size-20;
   vertical-align: middle;
   stroke-width: 0;
   stroke: currentColor;
@@ -289,7 +289,8 @@ svg.gdoc-icon {
       cursor: pointer;
 
       svg.gdoc-icon.toggle {
-        font-size: $font-size-12;
+        width: $font-size-16;
+        height: $font-size-16;
       }
     }
 
@@ -354,7 +355,7 @@ svg.gdoc-icon {
 }
 
 .gdoc-page {
-  min-width: calc($body-min-width - $padding-16 * 2);
+  min-width: calc($body-min-width - $padding-32);
   flex-grow: 1;
   padding: $padding-16 0;
 
@@ -369,7 +370,7 @@ svg.gdoc-icon {
 
   &__header,
   &__footer {
-    margin-bottom: $padding-16 * 1.2;
+    margin-bottom: $padding-24;
 
     svg.gdoc-icon {
       color: var(--control-icons);
@@ -490,7 +491,7 @@ svg.gdoc-icon {
     }
 
     svg.gdoc-icon {
-      font-size: 1.2em;
+      font-size: $font-size-20;
     }
 
     .gdoc-button {
@@ -573,8 +574,7 @@ svg.gdoc-icon {
 
   svg.gdoc-icon {
     position: absolute;
-    top: 0.625em;
-    left: $padding-16 * 0.5;
+    left: $padding-8;
     color: var(--control-icons);
     width: $font-size-16;
     height: $font-size-16;
@@ -680,7 +680,7 @@ svg.gdoc-icon {
 }
 
 .gdoc-error {
-  padding: $padding-16 * 6 $padding-16;
+  padding: $padding-96 $padding-16;
   margin: 0 auto;
   max-width: 45em;
 
@@ -696,7 +696,7 @@ svg.gdoc-icon {
   }
 
   &__message {
-    padding-left: $padding-16 * 4;
+    padding-left: $padding-64;
   }
 
   &__line {

@@ -25,6 +25,11 @@
       "dest": "build/sprites/",
       "sprite": "geekdoc.svg",
       "bust": false
+    },
+    "stack": {
+      "dest": "build/img/",
+      "sprite": "geekdoc-stack.svg",
+      "bust": false
     }
   }
 }

@@ -131,7 +131,45 @@
       border-left-color: $color;
       background-color: scale-color($color, $lightness: 95%, $saturation: -30%);
       color: $body-font-color;
+      padding: 0;
     }
+  }
+
+  &__title {
+    padding: $padding-4 $padding-16;
+    background-color: scale-color($gray-600, $alpha: -95%);
+    font-weight: bold;
+    color: scale-color($body-font-color, $alpha: -15%);
+
+    i.fa::after {
+      content: attr(title);
+      font-style: normal;
+      padding-left: $padding-24;
+    }
+
+    i.fa {
+      color: $black;
+      background-size: auto 90%;
+      background-repeat: no-repeat;
+      filter: invert(30%);
+      margin-left: -5px;
+    }
+
+    @each $name, $icon in $hint-icons {
+      i.fa.#{$name} {
+        background-image: url(img/geekdoc-stack.svg##{$icon});
+      }
+    }
+
+    .gdoc-icon {
+      width: $font-size-24;
+      height: $font-size-24;
+      margin-left: -5px;
+    }
+  }
+
+  &__text {
+    padding: $padding-4 $padding-16;
   }
 
   .gdoc-page__anchor {

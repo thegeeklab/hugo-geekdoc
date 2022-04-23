@@ -41,8 +41,15 @@
   }
 
   .gdoc-markdown {
-    .gdoc-hint {
+    .gdoc-hint,
+    .admonitionblock,
+    .gdoc-post__codecopy--success {
       filter: none;
+    }
+
+    .gdoc-hint__title,
+    .admonitionblock table td:first-child {
+      background-color: scale-color($gray-600, $alpha: -95%);
     }
   }
 }
@@ -91,8 +98,14 @@
 
   .gdoc-markdown {
     .gdoc-hint,
+    .admonitionblock,
     .gdoc-post__codecopy--success {
       filter: saturate(2.5) brightness(0.85);
+    }
+
+    .gdoc-hint__title,
+    .admonitionblock table td:first-child {
+      background-color: scale-color($gray-600, $alpha: -85%);
     }
   }
 }

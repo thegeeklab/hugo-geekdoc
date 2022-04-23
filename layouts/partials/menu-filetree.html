@@ -40,7 +40,6 @@
 
       {{ range $rangeBy }}
         {{ if not .Params.GeekdocHidden }}
-
           {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
           {{ $isParent := and (ne $numberOfPages 0) (not .Params.GeekdocFlatSection) }}
           {{ $isCurrent := eq $current . }}
@@ -61,7 +60,7 @@
             />
             <label
               {{ if $doCollapse }}
-                for="{{ printf "navtree-%s" $id }}" class="flex justify-between"
+                for="{{ printf "navtree-%s" $id }}" class="flex justify-between align-center"
               {{ end }}
             >
               {{ if or .Content .Params.GeekdocFlatSection }}
