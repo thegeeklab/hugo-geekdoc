@@ -289,7 +289,8 @@ svg.gdoc-icon {
       cursor: pointer;
 
       svg.gdoc-icon.toggle {
-        font-size: $font-size-12;
+        width: $font-size-16;
+        height: $font-size-16;
       }
     }
 
@@ -569,14 +570,14 @@ svg.gdoc-icon {
 }
 
 .gdoc-search {
-  // position: relative;
+  position: relative;
 
   svg.gdoc-icon {
     position: absolute;
     left: $padding-8;
     color: var(--control-icons);
-    width: $font-size-20;
-    height: $font-size-20;
+    width: $font-size-16;
+    height: $font-size-16;
   }
 
   &::after {
