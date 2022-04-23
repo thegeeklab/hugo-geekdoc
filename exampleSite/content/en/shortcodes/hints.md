@@ -58,8 +58,12 @@ Ornateness bland it ex enc, est yeti am bongo detract re.
 
 Example with a custom icon and title:
 
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
 {{< hint type=note icon=gdoc_github title=GitHub >}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
