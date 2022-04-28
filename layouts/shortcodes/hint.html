@@ -5,12 +5,12 @@
 
 <blockquote class="gdoc-hint {{ $type | lower }}">
   <div class="gdoc-hint__title flex align-center">
-    {{ with $icon }}
+    {{- with $icon -}}
       <svg class="gdoc-icon {{ . }}"><use xlink:href="#{{ . }}"></use></svg>
       <span>{{ $title }}</span>
-    {{ else }}
+    {{- else -}}
       <i class="fa {{ $type | lower }}" title="{{ $title }}"></i>
-    {{ end }}
+    {{- end -}}
   </div>
   <div class="gdoc-hint__text">{{ .Inner | $.Page.RenderString }}</div>
 </blockquote>
