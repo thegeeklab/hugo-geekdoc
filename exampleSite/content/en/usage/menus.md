@@ -68,7 +68,7 @@ As an advantage you can add [icons](/features/icon-sets/) to your menu entries e
 
 ### More menu
 
-{{< hint ok >}}
+{{< hint type=tip >}}
 **Tip**\
 The more menu is special type of the bundle menu and can be combined with the default file-tree menu.
 {{< /hint >}}

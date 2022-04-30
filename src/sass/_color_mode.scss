@@ -90,8 +90,8 @@
   --footer-link-color: #{$link-color-footer};
   --footer-link-color-visited: #{$link-color-footer};
 
-  .dark-mode-dim .gdoc-markdown {
-    img {
+  .dark-mode-dim {
+    .gdoc-markdown img {
       filter: brightness(0.75) grayscale(0.2);
     }
   }
