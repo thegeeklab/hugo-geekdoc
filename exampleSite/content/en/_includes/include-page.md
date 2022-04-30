@@ -1,6 +1,6 @@
 _**Example page include**_
 
-{{< hint info >}}
+{{< hint type=note >}}
 **Example Shortcode**\
 Shortcode used in an include page.
 {{< /hint >}}

@@ -27,7 +27,7 @@ Attributes:
 
 If no other options are specified, files will be rendered as Markdown using the `RenderString` [function](https://gohugo.io/functions/renderstring/).
 
-{{< hint warning >}}
+{{< hint type=important >}}
 **Location of markdown files**\
 If you include markdown files that should not get a menu entry, place them outside the content folder or exclude them otherwise.
 {{< /hint >}}

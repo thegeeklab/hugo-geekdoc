@@ -1,4 +1,3 @@
-// {{< hint >}}
 .admonitionblock {
   @each $name, $color in $hint-colors {
     &.#{$name} {
