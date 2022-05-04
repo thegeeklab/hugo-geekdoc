@@ -51,7 +51,7 @@ steps:
       LHCI_SERVER_URL: https://drone-artifact.rknet.org/${DRONE_REPO_NAME}/
 
   - name: page-validation-upload
-    image: thegeeklab/drone-s3-sync
+    image: thegeeklab/drone-s3-sync:2
     settings:
       access_key:
         from_secret: s3_access_key
@@ -217,7 +217,7 @@ steps:
       NPM_CONFIG_LOGLEVEL: error
 
   - name: publish
-    image: thegeeklab/drone-s3-sync
+    image: thegeeklab/drone-s3-sync:2
     settings:
       access_key:
         from_secret: s3_access_key
@@ -284,6 +284,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 07f9be796665e1d517e85af2c03f879ac21cad6eaedaa3be9b2e8cf0759f325f
+hmac: 897badb55f27edd8373d1c0ea7fbb211a135aff0ac7357fe7d1033354cc9152f
 
 ...
