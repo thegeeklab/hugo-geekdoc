@@ -13,5 +13,6 @@
 <span class="gdoc-katex {{ with .Get "class" }}{{ . }}{{ end }}">
   {{ cond (in .Params "display") "\\[" "\\(" -}}
   {{- trim .Inner "\n" -}}
-  {{- cond (in .Params "display") "\\]" "\\)" }}
+  {{- cond (in .Params "display") "\\]" "\\)" -}}
 </span>
+{{- /* Drop trailing newlines */ -}}
