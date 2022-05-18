@@ -39,7 +39,7 @@ steps:
   - name: link-validation
     image: thegeeklab/link-validator
     commands:
-      - link-validator -ro --exclude "https://github.com/thegeeklab/hugo-geekdoc/edit/main/*"
+      - link-validator --external --skip-file .linkcheckignore
     environment:
       LINK_VALIDATOR_BASE_DIR: exampleSite/public
 
@@ -284,6 +284,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 78d66315bf7cbdff3c4400545f9a4fb7958d9b7c4b254dec24abe3f53326ab87
+hmac: eb7a483df36c53a6b594d8a7ebd48d1bf2b875856f5d35f61f05710142deea36
 
 ...
