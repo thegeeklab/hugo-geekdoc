@@ -29,7 +29,7 @@ steps:
     image: thegeeklab/hugo:0.97.3
     commands:
       - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
-      - hugo --panicOnWarning -s exampleSite/ -b http://localhost/
+      - hugo --panicOnWarning -s exampleSite/ -b http://localhost:8000/
 
   - name: html-validation
     image: thegeeklab/vnu
@@ -39,7 +39,7 @@ steps:
   - name: link-validation
     image: thegeeklab/link-validator
     commands:
-      - link-validator -ro --exclude "https://github.com/thegeeklab/hugo-geekdoc/edit/main/*"
+      - link-validator --nice --external --skip-file .linkcheckignore
     environment:
       LINK_VALIDATOR_BASE_DIR: exampleSite/public
 
@@ -284,6 +284,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 78d66315bf7cbdff3c4400545f9a4fb7958d9b7c4b254dec24abe3f53326ab87
+hmac: b78e05487435826d7285f2cd03cad603315861af89131f8f9d87ccd85cc3ca4f
 
 ...
