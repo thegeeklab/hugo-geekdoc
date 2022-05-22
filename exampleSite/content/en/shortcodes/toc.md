@@ -6,9 +6,9 @@ Simple wrapper to generate a page Table of Content from a shortcode.
 
 **Attributes:**
 
-| Name   | Usage                      | default |
-| ------ | -------------------------- | ------- |
-| format | format of the returned ToC | html    |
+| Name   | Usage                      | Default                                                       |
+| ------ | -------------------------- | ------------------------------------------------------------- |
+| format | format of the returned ToC | <!-- spellchecker-disable -->html<!-- spellchecker-enable --> |
 
 **Syntax:**
 
