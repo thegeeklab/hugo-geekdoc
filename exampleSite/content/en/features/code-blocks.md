@@ -2,7 +2,7 @@
 title: Code Blocks
 ---
 
-There are several ways to add code blocks. Most of them work out of the box, only the Hugo short code `<highlight>` needs to be configured to work properly. The theme also provides some additional features like a copy button and an option to set the maximum length of code blocks. Both of these functions and the dependent formatting rely on the `.highlight` CSS class. You must ensure that you always assign a language to your code blocks if you want to use these functions. If you do not want to apply syntax highlighting, you can also specify `plain` or `text` as the language.
+There are several ways to add code blocks. Most of them work out of the box, only the Hugo shortcode `<highlight>` needs to be configured to work properly. The theme also provides some additional features like a copy button and an option to set the maximum length of code blocks. Both of these functions and the dependent formatting rely on the `.highlight` CSS class. You must ensure that you always assign a language to your code blocks if you want to use these functions. If you do not want to apply syntax highlighting, you can also specify `plain` or `text` as the language.
 
 {{< toc >}}
 

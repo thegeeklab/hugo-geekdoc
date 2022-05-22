@@ -42,6 +42,7 @@
 
   .gdoc-markdown {
     .gdoc-hint,
+    .gdoc-props__tag,
     .admonitionblock,
     .gdoc-post__codecopy--success {
       filter: none;
@@ -98,6 +99,7 @@
 
   .gdoc-markdown {
     .gdoc-hint,
+    .gdoc-props__tag,
     .admonitionblock,
     .gdoc-post__codecopy--success {
       filter: saturate(2.5) brightness(0.85);

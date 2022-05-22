@@ -1,4 +1,3 @@
-
 ---
 edit_page: Modifica la pagina
 
@@ -15,6 +14,7 @@ error_message_code: Errore 404
 error_message_text: >
   Sembra che non sia possibile trovare quello che stavi cercando. Non ti preoccupare,
   possiamo riportarti alla <a class="gdoc-error__link" href="{{ . }}">pagina iniziale</a>.
+
 button_toggle_dark: Seleziona il tema Chiaro/Scuro/Automatico
 button_nav_open: Apri la Navigazione
 button_nav_close: Chiudi la Navigazione
@@ -41,4 +41,9 @@ footer_legal_notice: Avviso Legale
 footer_privacy_policy: Politica sulla Privacy
 footer_content_license_prefix: >
   Contenuto sotto licenza
+
 language_switch_no_tranlation_prefix: "Pagina non tradotta:"
+
+propertylist_required: richiesto
+propertylist_optional: opzionale
+propertylist_default: valore predefinito

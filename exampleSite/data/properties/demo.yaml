@@ -1,0 +1,17 @@
+---
+properties:
+  prop1:
+    type: string
+    description: Dummy description of the prop1 string property.
+    required: true
+
+  prop2:
+    type: int
+    defaultValue: 10
+    description:
+      en: Another description for the integer property called prop2.
+    required: false
+    tags:
+      en:
+        - tag1
+        - tag2

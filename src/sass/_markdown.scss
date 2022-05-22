@@ -49,7 +49,7 @@
   &__link {
     text-decoration: none;
     border-bottom: $border-1 solid transparent;
-    line-height: 1em;
+    line-height: normal;
 
     &:hover {
       text-decoration: underline;

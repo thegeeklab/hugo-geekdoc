@@ -1,0 +1,49 @@
+{{- $name := .Get "name" -}}
+
+{{- if .Site.Data.properties }}
+  <dl class="gdoc-props">
+    {{- with (index .Site.Data.properties $name) }}
+      {{- range $key, $value := .properties }}
+        <dt class="flex flex-wrap align-center gdoc-props__meta">
+          <span class="gdoc-props__title">{{ $key }}</span>
+          {{- if $value.required }}
+            <span class="gdoc-props__tag warning">{{ i18n "propertylist_required" | lower }}</span>
+          {{ else }}
+            <span class="gdoc-props__tag tip">{{ i18n "propertylist_optional" | lower }}</span>
+          {{- end }}
+          {{- with $value.type }}
+            <span class="gdoc-props__tag note">{{ . }}</span>
+          {{- end }}
+
+          {{- with $value.tags }}
+            {{- $tags := . }}
+            {{- if reflect.IsMap $tags }}
+              {{- $tags = (index $tags $.Site.Language.Lang) }}
+            {{- end }}
+            {{- range $tags }}
+              <span class="gdoc-props__tag">{{ . }}</span>
+            {{- end }}
+          {{- end }}
+        </dt>
+        <dd>
+          <div>
+            {{- with $value.description }}
+              {{- $desc := . }}
+              {{- if reflect.IsMap $desc }}
+                {{- $desc = (index $desc $.Site.Language.Lang) }}
+              {{- end }}
+
+              {{ $desc }}
+            {{ end }}
+          </div>
+          <div class="gdoc-props__default">
+            {{- with default "none" $value.defaultValue }}
+              <span>{{ i18n "propertylist_default" | title }}:</span>
+              <span>{{ . }}</span>
+            {{- end }}
+          </div>
+        </dd>
+      {{- end }}
+    {{- end }}
+  </dl>
+{{- end }}
