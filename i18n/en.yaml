@@ -43,3 +43,7 @@ footer_content_license_prefix: >
   Content licensed under
 
 language_switch_no_tranlation_prefix: "Page not translated:"
+
+propertylist_required: required
+propertylist_optional: optional
+propertylist_default: default

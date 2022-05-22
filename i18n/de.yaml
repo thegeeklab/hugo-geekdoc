@@ -43,3 +43,7 @@ footer_content_license_prefix: >
   Inhalt lizensiert unter
 
 language_switch_no_tranlation_prefix: "Seite nicht übersetzt:"
+
+propertylist_required: erforderlich
+propertylist_optional: optional
+propertylist_default: Standardwert

@@ -200,14 +200,14 @@
     }
   }
 
-  &__tag {
-    @each $name, $color in $hint-colors {
-      &--#{$name} {
-        border-color: scale-color($color, $lightness: 90%, $saturation: -30%);
-        background-color: scale-color($color, $lightness: 95%, $saturation: -30%);
-      }
+  @each $name, $color in $hint-colors {
+    &__tag.#{$name} {
+      border-color: scale-color($color, $lightness: 90%, $saturation: -30%);
+      background-color: scale-color($color, $lightness: 95%, $saturation: -30%);
     }
+  }
 
+  &__tag {
     font-size: $font-size-14;
     font-weight: normal;
     background-color: $gray-100;
