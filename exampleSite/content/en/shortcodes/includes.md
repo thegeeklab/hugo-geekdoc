@@ -14,7 +14,7 @@ Include shortcode can include files of different types. By specifying a language
 
 Attributes:
 
-| Name     | Usage                                                                                                                               | default                          |
+| Name     | Usage                                                                                                                               | Default                          |
 | -------- | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
 | file     | path to the included file relative to the Hugo root                                                                                 | undefined                        |
 | language | language for [syntax highlighting](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages) | undefined                        |

@@ -6,7 +6,7 @@ Hint shortcode can be used as hint/alerts/notification block.
 
 Attributes:
 
-| Name             | Usage                                                                             | default               |
+| Name             | Usage                                                                             | Default               |
 | ---------------- | --------------------------------------------------------------------------------- | --------------------- |
 | type             | color types to choose from                                                        | note                  |
 | icon (optional)  | custom icon to use                                                                | undefined (type name) |

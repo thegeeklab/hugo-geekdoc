@@ -43,7 +43,7 @@ If you need more flexibility for your embedded images, you could use the `img` s
 
 **Attributes:**
 
-| Name          | Usage                                                                                                         | default           |
+| Name          | Usage                                                                                                         | Default           |
 | ------------- | ------------------------------------------------------------------------------------------------------------- | ----------------- |
 | name (string) | Name of the image resource defined in your front matter.                                                      | empty             |
 | alt (string)  | Description for displayed image.                                                                              | resource `.Title` |
