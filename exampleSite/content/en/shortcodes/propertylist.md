@@ -2,7 +2,7 @@
 title: Properties
 ---
 
-The properties list shortcode creates a custom HTML description list that can be used to display properties or variables and general dependent information. The shortcode requires a data file in `data/properties/`, e.g. `data/properties/demo.yaml`, where the filename must be passed to the `name` attribute of the property list shortcode.
+The property list shortcode creates a custom HTML description list that can be used to display properties or variables and general dependent information. The shortcode requires a data file in `data/properties/`, e.g. `data/properties/demo.yaml`, where the filename must be passed to the `name` attribute of the property list shortcode.
 
 <!-- prettier-ignore-start -->
 ```tpl
