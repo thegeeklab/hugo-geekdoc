@@ -1,6 +1,6 @@
 :root,
 :root[color-mode="light"] {
-  --code-max-height: auto;
+  --code-max-height: none;
 
   @include light_mode;
 }
