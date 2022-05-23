@@ -93,3 +93,16 @@ echo "Hello World"
 <!-- prettier-ignore-end-->
 
 <!-- markdownlint-enable -->
+
+## Gist Shortcode
+
+The Gist shortcode is a built-in Hugo shortcode to load GitHub gists. For details usage information please check the Hugo [documentation](https://gohugo.io/content-management/shortcodes/#gist).
+
+<!-- prettier-ignore -->
+```markdown
+{{</* gist spf13 7896402 */>}}
+```
+
+**Example:**
+
+{{< gist spf13 7896402 >}}
