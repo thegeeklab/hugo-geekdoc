@@ -83,16 +83,15 @@ echo "Hello World"
 
 **Example:**
 
-<!-- markdownlint-disable -->
-
 <!-- prettier-ignore-start -->
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
 {{< highlight Shell "linenos=table" >}}
 # some code
 echo "Hello World"
 {{< /highlight >}}
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end-->
-
-<!-- markdownlint-enable -->
 
 ## Gist Shortcode
 
