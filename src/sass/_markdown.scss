@@ -131,32 +131,30 @@
     }
   }
 
-  .table-wrap {
-    table:not(.lntable) {
-      display: table;
-      border-spacing: 0;
-      border-collapse: collapse;
-      margin-top: $padding-16;
-      margin-bottom: $padding-16;
-      width: 100%;
-      text-align: left;
+  table:not(.lntable):not(.gist .highlight) {
+    display: table;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-top: $padding-16;
+    margin-bottom: $padding-16;
+    width: 100%;
+    text-align: left;
 
-      thead {
-        border-bottom: $border-4 solid var(--accent-color);
-      }
+    thead {
+      border-bottom: $border-4 solid var(--accent-color);
+    }
 
-      tr th,
-      tr td {
-        padding: $padding-8 $padding-16;
-      }
+    tr th,
+    tr td {
+      padding: $padding-8 $padding-16;
+    }
 
-      tr {
-        border-bottom: $border-2 solid var(--accent-color);
-      }
+    tr {
+      border-bottom: $border-2 solid var(--accent-color);
+    }
 
-      tr:nth-child(2n) {
-        background: var(--accent-color-lite);
-      }
+    tr:nth-child(2n) {
+      background: var(--accent-color-lite);
     }
   }
 
