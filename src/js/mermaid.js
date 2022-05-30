@@ -5,22 +5,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let lstore = Storage.namespace(THEME)
   let currentMode = lstore.get("color-mode")
   let darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)")
-  let primaryColor = "#ececff"
   let darkMode = false
+  let theme = "default"
 
   if (currentMode === DARK_MODE || (currentMode === AUTO_MODE && darkModeQuery.matches)) {
-    primaryColor = "#6C617E"
     darkMode = true
+    theme = "dark"
   }
 
   import("mermaid")
     .then(({ default: md }) => {
       md.initialize({
         flowchart: { useMaxWidth: true },
-        theme: "base",
+        theme: theme,
         themeVariables: {
-          darkMode: darkMode,
-          primaryColor: primaryColor
+          darkMode: darkMode
         }
       })
     })
