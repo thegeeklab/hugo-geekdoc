@@ -26,6 +26,9 @@ npm run build
 
 See the [Getting Started Guide](https://geekdocs.de/usage/getting-started/) for details about the different setup options.
 
+
+## [hugo contact form](https://fabform.io/a/hugo-contact-form)
+
 ## Contributors
 
 Special thanks goes to all [contributors](https://github.com/thegeeklab/hugo-geekdoc/graphs/contributors). If you would like to contribute,
