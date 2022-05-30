@@ -26,18 +26,18 @@
           {{- end }}
         </dt>
         <dd>
-          <div>
+          <div class="gdoc-props__description">
             {{- with $value.description }}
               {{- $desc := . }}
               {{- if reflect.IsMap $desc }}
                 {{- $desc = (index $desc $.Site.Language.Lang) }}
               {{- end }}
 
-              {{ $desc }}
+              {{ $desc | $.Page.RenderString }}
             {{ end }}
           </div>
           <div class="gdoc-props__default">
-            {{- with default "none" $value.defaultValue }}
+            {{- with default "none" ($value.defaultValue | string) }}
               <span>{{ i18n "propertylist_default" | title }}:</span>
               <span>{{ . }}</span>
             {{- end }}

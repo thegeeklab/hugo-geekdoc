@@ -191,12 +191,21 @@
 
   &__meta {
     line-height: normal;
-    margin-bottom: $padding-8;
+    margin-bottom: $padding-4;
     > span {
-      margin-bottom: $padding-4;
+      margin-bottom: $padding-2;
       &:not(:last-child) {
         margin-right: $padding-8;
       }
+    }
+  }
+
+  &__description {
+    > :first-child {
+      margin-top: 0;
+    }
+    > :last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -218,7 +227,6 @@
   }
 
   &__default {
-    font-style: italic;
     font-size: $font-size-14;
   }
 }
