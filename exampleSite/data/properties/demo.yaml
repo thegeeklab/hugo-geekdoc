@@ -15,3 +15,15 @@ properties:
       en:
         - tag1
         - tag2
+
+  prop3:
+    type: bool
+    defaultValue: false
+    description: |
+      A `bool` property with a complex multiline description and embedded Markdown:
+
+      - List item 1
+      - List item 2
+
+      More description how to use this property.
+    required: false
