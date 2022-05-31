@@ -1,14 +1,17 @@
 const Storage = require("store2")
-const { DARK_MODE, THEME, AUTO_MODE } = require("./config.js")
+const { COLOR_THEME_DARK, THEME, COLOR_THEME_AUTO } = require("./config.js")
 
 document.addEventListener("DOMContentLoaded", function (event) {
   let lstore = Storage.namespace(THEME)
-  let currentMode = lstore.get("color-mode")
+  let currentMode = lstore.get("color-theme")
   let darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)")
   let darkMode = false
   let theme = "default"
 
-  if (currentMode === DARK_MODE || (currentMode === AUTO_MODE && darkModeQuery.matches)) {
+  if (
+    currentMode === COLOR_THEME_DARK ||
+    (currentMode === COLOR_THEME_AUTO && darkModeQuery.matches)
+  ) {
     darkMode = true
     theme = "dark"
   }

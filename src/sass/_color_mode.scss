@@ -1,6 +1,4 @@
-@mixin light_mode {
-  @include chroma_github;
-
+@mixin color_theme_light {
   --header-background: #{$main-color};
   --header-font-color: #{$white};
 
@@ -14,11 +12,6 @@
 
   --link-color: #{$link-color};
   --link-color-visited: #{$link-color-visited};
-
-  --code-background: #{$code-background};
-  --code-accent-color: #{darken($code-background, 6)};
-  --code-accent-color-lite: #{darken($code-background, 2)};
-  --code-font-color: #{$code-font-color};
 
   --code-copy-font-color: #{lighten($body-font-color, 24)};
   --code-copy-border-color: #{lighten($body-font-color, 48)};
@@ -55,9 +48,7 @@
   }
 }
 
-@mixin dark_mode {
-  @include chroma_dark;
-
+@mixin color_theme_dark {
   --header-background: #{$main-color};
   --header-font-color: #{$white};
 
@@ -76,10 +67,6 @@
   --code-accent-color: #{darken($code-background-dark, 4)};
   --code-accent-color-lite: #{darken($code-background-dark, 2)};
   --code-font-color: #{$code-font-color-dark};
-
-  --code-copy-font-color: #{lighten($body-font-color, 48)};
-  --code-copy-border-color: #{lighten($body-font-color, 32)};
-  --code-copy-success-color: #{map.get($hint-colors, "ok")};
 
   --accent-color: #{darken($body-background-dark, 4)};
   --accent-color-lite: #{darken($body-background-dark, 2)};
@@ -110,4 +97,22 @@
       background-color: scale-color($gray-600, $alpha: -85%);
     }
   }
+}
+
+@mixin code_theme_dark {
+  @include chroma_dark;
+
+  --code-background: #{$code-background-dark};
+  --code-accent-color: #{darken($code-background-dark, 4)};
+  --code-accent-color-lite: #{darken($code-background-dark, 2)};
+  --code-font-color: #{$code-font-color-dark};
+}
+
+@mixin code_theme_light {
+  @include chroma_github;
+
+  --code-background: #{$code-background};
+  --code-accent-color: #{darken($code-background, 6)};
+  --code-accent-color-lite: #{darken($code-background, 2)};
+  --code-font-color: #{$code-font-color};
 }

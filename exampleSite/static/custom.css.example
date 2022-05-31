@@ -6,7 +6,7 @@
 
 /* Light mode theming */
 :root,
-:root[color-mode="light"] {
+:root[color-theme="light"] {
   --header-background: #4ec58a;
   --header-font-color: #ffffff;
 
@@ -76,7 +76,7 @@
 }
 
 /* Dark mode theming */
-:root[color-mode="dark"] {
+:root[color-theme="dark"] {
   --header-background: #4ec58a;
   --header-font-color: #ffffff;
 
