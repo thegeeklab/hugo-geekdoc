@@ -1,5 +1,5 @@
-export const DARK_MODE = "dark"
-export const LIGHT_MODE = "light"
-export const AUTO_MODE = "auto"
+export const COLOR_THEME_DARK = "dark"
+export const COLOR_THEME_LIGHT = "light"
+export const COLOR_THEME_AUTO = "auto"
 export const THEME = "hugo-geekdoc"
-export const TOGGLE_MODES = [AUTO_MODE, DARK_MODE, LIGHT_MODE]
+export const TOGGLE_COLOR_THEMES = [COLOR_THEME_AUTO, COLOR_THEME_DARK, COLOR_THEME_LIGHT]

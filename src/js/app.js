@@ -1,4 +1,4 @@
-const { applyTheme } = require("./darkmode")
+const { applyTheme } = require("./colorTheme")
 const { createCopyButton } = require("./copycode.js")
 const Clipboard = require("clipboard")
 

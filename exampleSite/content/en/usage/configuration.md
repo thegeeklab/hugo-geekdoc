@@ -106,6 +106,9 @@ enableRobotsTXT = true
   # bright spots while using the dark mode.
   geekdocDarkModeDim = false
 
+  # (Optional, default false) Enforce code blocks to always use the dark color theme.
+  geekdocDarkModeCode = false
+
   # (Optional, default true) Display a "Back to top" link in the site footer.
   geekdocBackToTop = true
 
@@ -224,6 +227,9 @@ params:
   # (Optional, default false) Auto-decrease brightness of images and add a slightly grayscale to avoid
   # bright spots while using the dark mode.
   geekdocDarkModeDim: false
+
+  # (Optional, default false) Enforce code blocks to always use the dark color theme.
+  geekdocDarkModeCode: false
 
   # (Optional, default true) Display a "Back to top" link in the site footer.
   geekdocBackToTop: true

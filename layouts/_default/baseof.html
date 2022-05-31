@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}" class="color-toggle-hidden">
+<html
+  lang="{{ .Site.Language.Lang }}"
+  class="color-toggle-hidden"
+  {{ if default false .Site.Params.GeekdocDarkModeCode }}code-theme="dark"{{ end }}
+>
   <head>
     {{ partial "head/meta" . }}
     <title>
