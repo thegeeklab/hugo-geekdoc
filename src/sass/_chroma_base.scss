@@ -2,24 +2,6 @@
   .chroma {
     color: var(--code-font-color);
   }
-  .chroma .lntable {
-    max-height: var(--code-max-height);
-
-    code {
-      max-height: none;
-    }
-  }
-  .chroma .lntable td:first-child code {
-    border-radius: 0;
-    border-top-left-radius: $border-radius;
-    border-bottom-left-radius: $border-radius;
-  }
-  .chroma .lntable td:nth-child(2) code {
-    border-radius: 0;
-    border-top-right-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
-    padding-left: 0.5em;
-  }
   .chroma .lntable td:nth-child(2) code .hl {
     width: auto;
     margin-left: -0.5em;
@@ -27,39 +9,38 @@
   }
 
   .highlight {
-    max-height: var(--code-max-height);
-
     pre.chroma {
       margin: 0;
       width: 100%;
-      overflow-x: auto;
-    }
-
-    .chroma .lntable td:first-child pre {
-      border-radius: $border-radius 0 0 $border-radius;
-    }
-
-    .chroma .lntable td:last-child pre {
-      border-radius: 0 $border-radius $border-radius 0;
+      overflow: auto;
+      max-height: var(--code-max-height);
     }
   }
 
   /* LineTable */
   .chroma .lntable {
+    border: $border-1 solid var(--code-accent-color);
+    border-radius: $border-radius;
     border-spacing: 0;
     padding: 0;
     margin: 0;
-    border: 0;
     width: 100%;
-    table-layout: fixed;
+    display: block;
+    max-height: var(--code-max-height);
+    overflow: auto;
+
+    pre.chroma {
+      max-height: none;
+      border-radius: 0;
+    }
   }
   .chroma .lntable td:first-child {
-    width: $padding-24;
-
     code {
       background-color: var(--code-accent-color-lite);
       border-right: $border-1 solid var(--code-accent-color);
       padding-left: 0;
+      padding-right: 0;
+      border-radius: 0;
     }
   }
   .chroma .lntable td:nth-child(2) {
