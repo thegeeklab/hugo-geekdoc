@@ -412,22 +412,18 @@ svg.gdoc-icon {
   }
 
   &__anchor {
-    min-width: 30px;
-
-    &--left {
-      position: absolute;
-      margin-left: -25px;
-      text-align: left;
-    }
-
-    &--right {
-      text-align: right;
-    }
+    margin-left: $padding-8;
 
     svg.gdoc-icon {
-      width: 1.4rem;
-      height: 1.4rem;
+      width: 1.4em;
+      height: 1.4em;
       color: transparent;
+    }
+
+    &:focus {
+      svg.gdoc-icon {
+        color: var(--control-icons);
+      }
     }
   }
 
