@@ -138,7 +138,7 @@ module.exports = (env, argv) => {
                 // FIXME: https://github.com/webpack-contrib/sass-loader/issues/962#issuecomment-1002675051
                 sourceMap: argv.mode === "development" ? true : false,
                 sourceMapEmbed: argv.mode === "development" ? true : false,
-                outputStyle: "compressed",
+                outputStyle: argv.mode === "development" ? "expanded" : "compressed",
                 includePaths: [nodeModulesPath]
               }
             }
