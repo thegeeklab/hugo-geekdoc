@@ -24,7 +24,9 @@
   --code-background: #f5f6f8;
   --code-accent-color: #e3e7eb;
   --code-accent-color-lite: #eff1f3;
+  --code-font-color: #5f5f5f;
 
+  --code-copy-background: #f5f6f8;
   --code-copy-font-color: #6b7784;
   --code-copy-border-color: #adb4bc;
   --code-copy-success-color: #00c853;
@@ -58,7 +60,9 @@
     --code-background: #f5f6f8;
     --code-accent-color: #e3e7eb;
     --code-accent-color-lite: #eff1f3;
+    --code-font-color: #5f5f5f;
 
+    --code-copy-background: #f5f6f8;
     --code-copy-font-color: #6b7784;
     --code-copy-border-color: #adb4bc;
     --code-copy-success-color: #00c853;
@@ -94,10 +98,12 @@
   --code-background: #2f353a;
   --code-accent-color: #262b2f;
   --code-accent-color-lite: #2b3035;
+  --code-font-color: #b9b9b9;
 
-  --code-copy-font-color: #adb4bc;
-  --code-copy-border-color: #808c98;
-  --code-copy-success-color: #00c853;
+  --code-copy-background: #343a40;
+  --code-copy-font-color: #6b7784;
+  --code-copy-border-color: #6b7784;
+  --code-copy-success-color: #37905c;
 
   --accent-color: #2b3035;
   --accent-color-lite: #2f353a;
@@ -128,10 +134,12 @@
     --code-background: #2f353a;
     --code-accent-color: #262b2f;
     --code-accent-color-lite: #2b3035;
+    --code-font-color: #b9b9b9;
 
-    --code-copy-font-color: #adb4bc;
-    --code-copy-border-color: #808c98;
-    --code-copy-success-color: #00c853;
+    --code-copy-background: #343a40;
+    --code-copy-font-color: #6b7784;
+    --code-copy-border-color: #6b7784;
+    --code-copy-success-color: #37905c;
 
     --accent-color: #2b3035;
     --accent-color-lite: #2f353a;

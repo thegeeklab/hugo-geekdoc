@@ -519,11 +519,11 @@ svg.gdoc-icon {
     visibility: hidden;
     position: absolute;
     top: 0.5rem;
-    right: 0.5rem;
+    right: 1rem;
 
     border: $border-2 solid var(--code-copy-border-color);
     border-radius: $border-radius;
-    background: var(--code-background);
+    background: var(--code-copy-background);
     width: 2.2rem;
     height: 2.2rem;
 
