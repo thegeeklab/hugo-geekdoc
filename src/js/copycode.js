@@ -1,23 +1,26 @@
 export function createCopyButton(highlightDiv) {
   const button = document.createElement("span")
-  let selector = "pre > code"
 
+  let codeSelector = "pre > code"
   if (highlightDiv.querySelector(".lntable")) {
-    selector = ".lntable .lntd:last-child pre > code"
+    codeSelector = ".lntable .lntd:last-child pre > code"
   }
 
-  const codeToCopy = highlightDiv.querySelector(selector).innerText.trim()
+  const codeContainer = highlightDiv.querySelector(codeSelector)
+  if (codeContainer !== null) {
+    const codeContent = codeContainer.innerText.trim()
 
-  button.classList.add("flex", "align-center", "justify-center", "clip", "gdoc-post__codecopy")
-  button.type = "button"
-  button.innerHTML =
-    '<svg class="gdoc-icon copy"><use xlink:href="#gdoc_copy"></use></svg>' +
-    '<svg class="gdoc-icon check hidden"><use xlink:href="#gdoc_check"></use></svg>'
-  button.setAttribute("data-clipboard-text", codeToCopy)
-  button.setAttribute("data-copy-feedback", "Copied!")
-  button.setAttribute("role", "button")
-  button.setAttribute("aria-label", "Copy")
+    button.classList.add("flex", "align-center", "justify-center", "clip", "gdoc-post__codecopy")
+    button.type = "button"
+    button.innerHTML =
+      '<svg class="gdoc-icon copy"><use xlink:href="#gdoc_copy"></use></svg>' +
+      '<svg class="gdoc-icon check hidden"><use xlink:href="#gdoc_check"></use></svg>'
+    button.setAttribute("data-clipboard-text", codeContent)
+    button.setAttribute("data-copy-feedback", "Copied!")
+    button.setAttribute("role", "button")
+    button.setAttribute("aria-label", "Copy")
 
-  highlightDiv.classList.add("gdoc-post__codecontainer")
-  highlightDiv.insertBefore(button, highlightDiv.firstChild)
+    highlightDiv.classList.add("gdoc-post__codecontainer")
+    highlightDiv.insertBefore(button, highlightDiv.firstChild)
+  }
 }
