@@ -32,8 +32,6 @@ investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad pr
 feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
 copious quo ad. Stet probates in duo.
 
-{{< button relref="/" >}}Get Home{{< /button >}}
-
 <--->
 
 ## Mid Content
