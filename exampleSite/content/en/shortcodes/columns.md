@@ -4,6 +4,14 @@ title: Columns
 
 The Columns shortcode can be used to organize content side-by-side (horizontally) for better readability.
 
+## Attributes
+
+| Name            | Description                                      | default |
+| --------------- | ------------------------------------------------ | ------- |
+| size (optional) | size of the first column (small\|regular\|large) | regular |
+
+## Usage
+
 ```html
 {{</* columns */>}} <!-- begin columns block -->
 ## Left Content

@@ -7,7 +7,7 @@
     --code
   {{- end }}"
   href="{{ .Destination | safeURL }}"
-  {{ with .Title }}title="{{ . }}"{{ end }}
+  {{- with .Title }}{{ printf "title=\"%s\"" . | safeHTMLAttr }}{{- end }}
 >
   {{- .Text | safeHTML -}}
 </a>

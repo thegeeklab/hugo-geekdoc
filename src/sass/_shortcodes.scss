@@ -70,16 +70,28 @@
 
 // {{< columns >}}
 .gdoc-columns {
-  margin-left: -$padding-16;
-  margin-right: -$padding-16;
-
-  &__content {
-    margin: $padding-16 0;
-    min-width: $body-min-width * 0.66;
-    padding: 0 $padding-16;
+  &--regular > :first-child {
+    flex: 1;
   }
 
-  .gdoc-page__anchor {
+  &--small > :first-child {
+    flex: 0.35;
+    min-width: $body-min-width * 0.35;
+  }
+
+  &--large > :first-child {
+    flex: 1.65;
+    min-width: $body-min-width * 1.65;
+  }
+
+  &__content {
+    flex: 1 1;
+    margin: $padding-16 0;
+    min-width: $body-min-width * 0.66;
+    padding: 0;
+  }
+
+  .gdoc-post__anchor {
     display: none;
   }
 }
