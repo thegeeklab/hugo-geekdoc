@@ -95,6 +95,11 @@
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
 
+    &--round,
+    &--round img {
+      border-radius: 50% !important;
+    }
+
     figcaption {
       display: table-caption;
       caption-side: bottom;
