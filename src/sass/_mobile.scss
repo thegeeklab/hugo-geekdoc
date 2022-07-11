@@ -63,6 +63,15 @@
 
   .flex-mobile-column {
     flex-direction: column;
+
+    &.gblog-columns {
+      margin: $padding-32 0;
+    }
+
+    .gblog-columns__content {
+      min-width: auto;
+      margin: 0;
+    }
   }
 
   #menu-control:checked ~ main {

@@ -29,6 +29,11 @@
   background: var(--accent-color-lite);
 }
 
+.flex-gap {
+  flex-wrap: wrap;
+  gap: $padding-16;
+}
+
 .justify-start {
   justify-content: flex-start;
 }
