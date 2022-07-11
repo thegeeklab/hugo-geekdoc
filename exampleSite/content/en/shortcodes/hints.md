@@ -4,15 +4,15 @@ title: Hints
 
 Hint shortcode can be used as hint/alerts/notification block.
 
-Attributes:
+## Attributes
 
-| Name             | Usage                                                                             | Default               |
-| ---------------- | --------------------------------------------------------------------------------- | --------------------- |
-| type             | color types to choose from                                                        | note                  |
-| icon (optional)  | custom icon to use                                                                | undefined (type name) |
-| title (optional) | custom icon to use, need to be an icon from an [SVG sprite](/features/icon-sets/) | undefined (type name) |
+| Name             | Description                                                                      | default   |
+| ---------------- | -------------------------------------------------------------------------------- | --------- |
+| type             | hint type                                                                        | note      |
+| icon (optional)  | custom icon to use,need to be an icon from an [SVG sprite](/features/icon-sets/) | undefined |
+| title (optional) | hint title                                                                       | undefined |
 
-Syntax:
+## Usage
 
 <!-- prettier-ignore-start -->
 ```tpl
