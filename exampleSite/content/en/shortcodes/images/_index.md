@@ -41,16 +41,16 @@ resources:
 If you need more flexibility for your embedded images, you could use the `img` shortcode. It is using Hugo's
 [page resources](https://gohugo.io/content-management/page-resources/) and supports lazy loading of your images.
 
-**Attributes:**
+## Attributes
 
-| Name          | Usage                                                                                                         | Default           |
-| ------------- | ------------------------------------------------------------------------------------------------------------- | ----------------- |
-| name (string) | Name of the image resource defined in your front matter.                                                      | empty             |
-| alt (string)  | Description for displayed image.                                                                              | resource `.Title` |
-| size (string) | Thumbnail size (tiny\|small\|medium\|large).                                                                  | empty             |
-| lazy (bool)   | Enable or disable image lazy loading. Can be controlled globally by site parameter `geekdocImageLazyLoading`. | true              |
+| Name | Description                                             | default           |
+| ---- | ------------------------------------------------------- | ----------------- |
+| name | name of the image resource defined in your front matter | empty             |
+| alt  | description for displayed image                         | resource `.Title` |
+| size | Thumbnail size (profile\|tiny\|small\|medium\|large)    | empty             |
+| lazy | enable or disable image lazy loading                    | true              |
 
-**Example:**
+## Usage
 
 Define your resources in the page front matter, custom parameter `params.credits` is optional.
 
@@ -71,7 +71,7 @@ resources:
 
 <!-- spellchecker-enable -->
 
-**Demo:**
+## Example
 
 <!-- spellchecker-disable -->
 

@@ -10,7 +10,7 @@ Simple shortcode to include icons from SVG sprites outside of menus.
 ```
 <!-- prettier-ignore-end -->
 
-**Example:**
+## Usage
 
 | Result                     | Usage                            |
 | -------------------------- | -------------------------------- |
