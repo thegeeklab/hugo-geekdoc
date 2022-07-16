@@ -168,9 +168,8 @@ steps:
       - markdownlint 'exampleSite/content/**/*.md' 'README.md'
 
   - name: spellcheck
-    image: node:lts-alpine
+    image: thegeeklab/alpine-tools
     commands:
-      - npm install -g spellchecker-cli
       - spellchecker --files 'exampleSite/content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls frontmatter --frontmatter-keys title --no-suggestions
     environment:
       FORCE_COLOR: true
@@ -208,9 +207,8 @@ steps:
       - hugo --panicOnWarning -s exampleSite/
 
   - name: beautify
-    image: node:lts-alpine
+    image: thegeeklab/alpine-tools
     commands:
-      - npm install -g js-beautify
       - html-beautify -r -f 'exampleSite/public/**/*.html'
     environment:
       FORCE_COLOR: true
