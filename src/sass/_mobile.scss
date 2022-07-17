@@ -64,11 +64,11 @@
   .flex-mobile-column {
     flex-direction: column;
 
-    &.gblog-columns {
+    &.gdoc-columns {
       margin: $padding-32 0;
     }
 
-    .gblog-columns__content {
+    .gdoc-columns__content {
       min-width: auto;
       margin: 0;
     }
