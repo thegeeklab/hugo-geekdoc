@@ -53,5 +53,6 @@ branches:
         strict: false
         contexts:
           - continuous-integration/drone/pr
-      enforce_admins: null
+      enforce_admins: true
+      required_linear_history: true
       restrictions: null
