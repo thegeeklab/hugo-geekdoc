@@ -60,6 +60,10 @@ main:
         ref: "/level-2/level-2-1"
       - name: Level 2.2
         ref: "/level-2/level-2-2"
+      - name: Level 2.2 Anchor
+        ref: /level-2/level-2-2
+        # Anchor to add to the entry. This example will result in `/level-2/level-2-2/#anchor`
+        anchor: anchor
 ```
 
 As an advantage you can add [icons](/features/icon-sets/) to your menu entries e.g. `icon: "gdoc_notification"`.
