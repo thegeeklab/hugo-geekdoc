@@ -27,6 +27,11 @@
           {{ $id := substr (sha1 $this.Permalink) 0 8 }}
           {{ $doCollapse := and (isset . "sub") (or $this.Params.GeekdocCollapseSection (default false .Site.Params.GeekdocCollapseAllSections)) }}
 
+          {{ $anchor := default "" .anchor }}
+          {{ if $anchor }}
+            {{ $anchor = printf "#%s" $anchor }}
+          {{ end }}
+
           {{ if or .external ($this.RelPermalink) }}
             <input
               type="checkbox"
@@ -50,7 +55,7 @@
                   href="{{ if .external }}
                     {{ .ref }}
                   {{- else -}}
-                    {{ $this.RelPermalink }}
+                    {{ path.Join $this.RelPermalink $anchor }}
                   {{- end }}"
                   class="gdoc-nav__entry{{- if not .external }}
                     {{- if $isCurrent }}{{ printf " is-active" }}{{ end }}
