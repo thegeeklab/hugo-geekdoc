@@ -27,7 +27,7 @@
   "author": "Robert Kaussow",
   "license": "MIT",
   "engines": {
-    "node": ">=15 <17"
+    "node": ">=16.15 <=18"
   },
   "dependencies": {
     "@cfworker/json-schema": "1.12.3",
