@@ -22,6 +22,12 @@ npm install
 
 # run the build script to build required assets
 npm run build
+
+# build release tarball
+echo "${VERSION:-development}" > VERSION
+tar czf "dist/hugo-geekdoc-${VERSION:-development}.tar.gz" \
+  archetypes assets data i18n images layouts static \
+  theme.toml LICENSE README.md VERSION
 ```
 
 See the [Getting Started Guide](https://geekdocs.de/usage/getting-started/) for details about the different setup options.

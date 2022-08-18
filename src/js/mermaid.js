@@ -18,12 +18,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   import("mermaid")
     .then(({ default: md }) => {
+      // Configure mermaid with matching color scheme
       md.initialize({
         flowchart: { useMaxWidth: true },
         theme: theme,
         themeVariables: {
           darkMode: darkMode
         }
+      })
+
+      // Render mermaid from shortcodes and code fences
+      md.init(undefined, ".mermaid,.language-mermaid", (id) => {
+        // Fix height of mermaid SVG elements (see https://github.com/mermaid-js/mermaid/issues/2481)
+        document.getElementById(id).setAttribute("height", "100%")
       })
     })
     .catch((error) => console.error(error))
