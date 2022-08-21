@@ -4,8 +4,3 @@
   {{- $searchConfig := resources.Get "search/config.json" | resources.ExecuteAsTemplate $searchConfigFile . | resources.Minify -}}
   {{- $searchConfig.Publish -}}
 {{ end }}
-
-<!-- Include mermaid if not already included by a shortcode but a mermaid code fence is present -->
-{{ if and (findRE "[\n^]```mermaid[\n ]" .RawContent) (not (.Scratch.Get "mermaid")) }}
-  <script defer src="{{ index (index .Site.Data.assets "mermaid.js") "src" | relURL }}"></script>
-{{ end }}
