@@ -170,7 +170,7 @@ As deploying Hugo sites on subdirectories is not as robust as on subdomains, we 
 If you have a choice, using a domain/subdomain should always be the preferred solution!
 {{< /hint >}}
 
-If you want to deploy your side to a subdirectory of your domain, some extra steps are required:
+If you want to deploy your site to a subdirectory of your domain, some extra steps are required:
 
 - Configure your Hugo base URL e.g. `baseURL = http://localhost/demo/`.
 - Don't use `relativeURLs: false` nor `canonifyURLs: true` as is can cause unwanted side effects!
