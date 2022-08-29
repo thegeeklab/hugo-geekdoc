@@ -23,12 +23,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         theme: theme,
         themeVariables: {
           darkMode: darkMode
-        },
-        mermaid: {
-          // Fix height of mermaid SVG elements (see https://github.com/mermaid-js/mermaid/issues/2481)
-          callback: (id) => {
-            document.getElementById(id).setAttribute("height", "100%")
-          }
         }
       })
     })

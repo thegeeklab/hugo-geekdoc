@@ -1,7 +1,7 @@
 # Geekdoc
 
 [![Build Status](https://img.shields.io/drone/build/thegeeklab/hugo-geekdoc?logo=drone&server=https%3A%2F%2Fdrone.thegeeklab.de)](https://drone.thegeeklab.de/thegeeklab/hugo-geekdoc)
-[![Hugo Version](https://img.shields.io/badge/hugo-0.83-blue.svg)](https://gohugo.io)
+[![Hugo Version](https://img.shields.io/badge/hugo-0.93-blue.svg)](https://gohugo.io)
 [![GitHub release](https://img.shields.io/github/v/release/thegeeklab/hugo-geekdoc)](https://github.com/thegeeklab/hugo-geekdoc/releases/latest)
 [![GitHub contributors](https://img.shields.io/github/contributors/thegeeklab/hugo-geekdoc)](https://github.com/thegeeklab/hugo-geekdoc/graphs/contributors)
 [![License: MIT](https://img.shields.io/github/license/thegeeklab/hugo-geekdoc)](https://github.com/thegeeklab/hugo-geekdoc/blob/main/LICENSE)
@@ -22,12 +22,6 @@ npm install
 
 # run the build script to build required assets
 npm run build
-
-# build release tarball
-echo "${VERSION:-development}" > VERSION
-tar czf "dist/hugo-geekdoc-${VERSION:-development}.tar.gz" \
-  archetypes assets data i18n images layouts static \
-  theme.toml LICENSE README.md VERSION
 ```
 
 See the [Getting Started Guide](https://geekdocs.de/usage/getting-started/) for details about the different setup options.

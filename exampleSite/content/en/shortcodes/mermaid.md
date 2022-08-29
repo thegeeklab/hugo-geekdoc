@@ -44,3 +44,36 @@ sequenceDiagram
 <!-- spellchecker-enable -->
 
 {{< /columns >}}
+
+As an alternative to shortcodes, code blocks can be used for markdown as well.
+
+{{< columns >}}
+
+<!-- prettier-ignore -->
+````tpl
+```mermaid
+flowchart LR
+
+A[Hard] -->|Text| B(Round)
+B --> C{Decision}
+C -->|One| D[Result 1]
+C -->|Two| E[Result 2]
+```
+````
+
+<--->
+
+<!-- spellchecker-disable -->
+<!-- prettier-ignore -->
+```mermaid
+flowchart LR
+
+A[Hard] -->|Text| B(Round)
+B --> C{Decision}
+C -->|One| D[Result 1]
+C -->|Two| E[Result 2]
+```
+
+<!-- spellchecker-enable -->
+
+{{< /columns >}}
