@@ -2,6 +2,7 @@ const path = require("path")
 const glob = require("glob")
 
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin")
+const GitVersionPlugin = require("@eloquent/git-version-webpack-plugin")
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin")
 const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts")
 const CopyPlugin = require("copy-webpack-plugin")
@@ -98,6 +99,10 @@ var config = {
 
     new SRIPlugin({
       sourceFile: "data/assets.json"
+    }),
+
+    new GitVersionPlugin({
+      path: "../VERSION"
     })
   ]
 }
