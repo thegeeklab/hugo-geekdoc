@@ -21,6 +21,7 @@ exampleSite/content/de
 /resources/
 /exampleSite/resources/
 /exampleSite/data/sprites/
+VERSION
 
 # hugo
 .hugo_build.lock

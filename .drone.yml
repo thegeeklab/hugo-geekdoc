@@ -109,10 +109,14 @@ steps:
       NPM_CONFIG_LOGLEVEL: error
 
   - name: package
-    image: thegeeklab/alpine-tools
+    image: node:lts
     commands:
-      - echo "${DRONE_TAG:-latest}" > VERSION
-      - tar -zcvf dist/hugo-geekdoc.tar.gz -X .tarignore .
+      - npm install > /dev/null
+      - npm run pack
+      - cat VERSION
+    environment:
+      FORCE_COLOR: true
+      NPM_CONFIG_LOGLEVEL: error
 
   - name: checksum
     image: thegeeklab/alpine-tools
@@ -282,6 +286,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 174ee9580389384095c11bf1d67c9093de21ee35c1fb0873ee2e9c8925f5545c
+hmac: eb26add9335c7c40ec3cea16d63c67a0b3edc6759749f5aec4458ed3ceb62dd6
 
 ...

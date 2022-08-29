@@ -7,6 +7,7 @@
     "build": "run-s prep:clean prep:make svg build:webpack",
     "build:webpack": "webpack --mode=production",
     "build:webpack-devel": "webpack --mode=development",
+    "pack": "tar -zcvf dist/hugo-geekdoc.tar.gz -X .tarignore .",
     "start": "run-s prep:clean prep:make svg build:webpack-devel ; run-p start:webpack start:hugo",
     "start:webpack": "webpack --mode=development --watch",
     "start:build": "webpack --mode=development",
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.18.9",
+    "@eloquent/git-version-webpack-plugin": "^5.0.1",
     "autoprefixer": "10.4.8",
     "copy-webpack-plugin": "11.0.0",
     "css-loader": "6.7.1",
