@@ -105,6 +105,7 @@ steps:
       - git fetch -tq
       - npm install > /dev/null
       - npm run build
+      - cat VERSION
     environment:
       FORCE_COLOR: true
       NPM_CONFIG_LOGLEVEL: error
@@ -113,7 +114,6 @@ steps:
     image: node:lts
     commands:
       - npm run pack
-      - cat VERSION
     environment:
       FORCE_COLOR: true
       NPM_CONFIG_LOGLEVEL: error
@@ -286,6 +286,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 824972fa13d0de3ab2bee5628c93c37966a165fde1b6072805c454a15399462e
+hmac: e0710630d0e540bb93561e760d0c4cfa4a67d2ee715993e7bb29e03d79f83d53
 
 ...
