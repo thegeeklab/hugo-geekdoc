@@ -102,6 +102,7 @@ steps:
   - name: assets
     image: node:lts
     commands:
+      - git fetch -tq
       - npm install > /dev/null
       - npm run build
     environment:
@@ -111,8 +112,6 @@ steps:
   - name: package
     image: node:lts
     commands:
-      - git fetch -tq
-      - npm install > /dev/null
       - npm run pack
       - cat VERSION
     environment:
@@ -287,6 +286,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: d2f6d5e29e96182c29eb0f15bffe74e4b7983d582467456d84af03780cb472ba
+hmac: 824972fa13d0de3ab2bee5628c93c37966a165fde1b6072805c454a15399462e
 
 ...
