@@ -43,12 +43,12 @@ If you need more flexibility for your embedded images, you could use the `img` s
 
 ## Attributes
 
-| Name | Description                                             | default           |
-| ---- | ------------------------------------------------------- | ----------------- |
-| name | name of the image resource defined in your front matter | empty             |
-| alt  | description for displayed image                         | resource `.Title` |
-| size | Thumbnail size (profile\|tiny\|small\|medium\|large)    | empty             |
-| lazy | enable or disable image lazy loading                    | true              |
+| Name | Description                                                  | default           |
+| ---- | ------------------------------------------------------------ | ----------------- |
+| name | name of the image resource defined in your front matter      | empty             |
+| alt  | description for displayed image                              | resource `.Title` |
+| size | Thumbnail size (origin\|profile\|tiny\|small\|medium\|large) | empty             |
+| lazy | enable or disable image lazy loading                         | true              |
 
 ## Usage
 
@@ -75,7 +75,7 @@ resources:
 
 <!-- spellchecker-disable -->
 
-{{< img name="forest-1" lazy=false >}}
+{{< img name="forest-1" size="origin" lazy=false >}}
 
 <!-- spellchecker-enable -->
 

@@ -6,18 +6,19 @@
 {{- with $source }}
   {{- $caption := default .Title $customAlt }}
 
+  {{- $origin := .Permalink }}
   {{- $profile := (.Fill "180x180 Center").Permalink }}
   {{- $tiny := (.Resize "320x").Permalink }}
   {{- $small := (.Resize "600x").Permalink }}
   {{- $medium := (.Resize "1200x").Permalink }}
   {{- $large := (.Resize "1800x").Permalink }}
 
-  {{- $size := dict "profile" $profile "tiny" $tiny "small" $small "medium" $medium "large" $large }}
+  {{- $size := dict "origin" $origin "profile" $profile "tiny" $tiny "small" $small "medium" $medium "large" $large }}
 
 
   <div class="flex justify-center">
     <figure
-      class="gdoc-post__figure
+      class="gdoc-markdown__figure
       {{- if eq $customSize "profile" }}{{ print " gdoc-post__figure--round" }}{{ end }}"
     >
       <a class="gdoc-markdown__link--raw" href="{{ .Permalink }}">
@@ -31,7 +32,11 @@
           />
           <img
             {{- if $lazyLoad }}{{ print " loading=\"lazy\"" | safeHTMLAttr }}{{- end }}
-            src="{{ $size.large }}"
+            {{- if eq $customSize "origin" }}
+              src="{{ $size.origin }}"
+            {{- else }}
+              src="{{ $size.large }}"
+            {{- end }}
             alt="{{ $caption }}"
           />
         </picture>
