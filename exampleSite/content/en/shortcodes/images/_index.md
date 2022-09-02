@@ -75,7 +75,7 @@ resources:
 
 <!-- spellchecker-disable -->
 
-{{< img name="forest-1" size="origin" lazy=false >}}
+{{< img name="forest-1" lazy=false >}}
 
 <!-- spellchecker-enable -->
 
