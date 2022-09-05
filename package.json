@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.18.9",
-    "@eloquent/git-version-webpack-plugin": "^5.0.1",
+    "@eloquent/git-version-webpack-plugin": "5.0.1",
     "autoprefixer": "10.4.8",
     "copy-webpack-plugin": "11.0.0",
     "css-loader": "6.7.1",
@@ -53,7 +53,7 @@
     "postcss-loader": "7.0.1",
     "prettier": "2.7.1",
     "prettier-plugin-go-template": "0.0.13",
-    "sass": "1.54.5",
+    "sass": "1.54.8",
     "sass-loader": "13.0.2",
     "shx": "0.3.4",
     "svg-sprite": "1.5.4",
@@ -61,7 +61,7 @@
     "webpack": "5.74.0",
     "webpack-cli": "4.10.0",
     "webpack-manifest-plugin": "5.0.0",
-    "webpack-remove-empty-scripts": "0.8.1"
+    "webpack-remove-empty-scripts": "0.8.3"
   },
   "overrides": {
     "colors": "1.4.0"
