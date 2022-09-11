@@ -3,7 +3,7 @@ const glob = require("glob")
 
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin")
 const GitVersionPlugin = require("@eloquent/git-version-webpack-plugin")
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin")
+const WebpackFavicons = require("webpack-favicons")
 const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts")
 const CopyPlugin = require("copy-webpack-plugin")
 const SRIPlugin = require("./webpack.plugins")
@@ -56,23 +56,19 @@ var config = {
       ]
     }),
 
-    new FaviconsWebpackPlugin({
-      logo: path.resolve("src", "static", "favicon", "favicon.svg"),
-      cache: true,
-      prefix: "favicon/",
-      inject: false,
-      favicons: {
-        background: "#2f333e",
-        theme_color: "#2f333e",
-        icons: {
-          android: { offset: 10 },
-          appleIcon: { offset: 10 },
-          appleStartup: { offset: 10 },
-          favicons: true,
-          windows: { offset: 10 },
-          yandex: false,
-          coast: false
-        }
+    new WebpackFavicons({
+      src: path.resolve("src", "static", "favicon", "favicon.svg"),
+      path: "favicon/",
+      background: "#2f333e",
+      theme_color: "#2f333e",
+      icons: {
+        android: { offset: 10 },
+        appleIcon: { offset: 10 },
+        appleStartup: { offset: 10 },
+        favicons: true,
+        windows: { offset: 10 },
+        yandex: false,
+        coast: false
       }
     }),
 
