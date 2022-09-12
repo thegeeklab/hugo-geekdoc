@@ -86,7 +86,6 @@ var config = {
           if (element.name.endsWith(".svg")) return
           if (element.name.startsWith("fonts/")) return
           if (element.name.startsWith("/favicon")) return
-          if (element.name == "css.js") return
 
           Object.assign(manifest, {
             [element.name]: { src: element.path }
