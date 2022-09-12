@@ -61,7 +61,7 @@
     "webpack-cli": "4.10.0",
     "webpack-favicons": "^1.3.8",
     "webpack-manifest-plugin": "5.0.0",
-    "webpack-remove-empty-scripts": "0.8.1"
+    "webpack-remove-empty-scripts": "0.8.4"
   },
   "overrides": {
     "colors": "1.4.0"
