@@ -27,7 +27,7 @@ title_anchor_prefix: "アンカー先:"
 posts_read_more: 全投稿を閲覧
 posts_read_time:
   one: "読むのに 1 分かかります"
-  other: "読むのに要する時間 {{ . } (分)}"
+  other: "読むのに要する時間 {{ . }} (分)"
 posts_update_prefix: 更新時刻
 posts_count:
   one: "一件の投稿"
