@@ -10,7 +10,7 @@ title: Mermaid
 
 <!-- prettier-ignore -->
 ```tpl
-{{</* mermaid class="text-center"*/>}}
+{{</*/* mermaid class="text-center" */*/>}}
 sequenceDiagram
     Alice->>Bob: Hello Bob, how are you?
     alt is sick
@@ -21,7 +21,7 @@ sequenceDiagram
     opt Extra response
         Bob->>Alice: Thanks for asking
     end
-{{</* /mermaid */>}}
+{{</*/* /mermaid */*/>}}
 ```
 
 <--->
