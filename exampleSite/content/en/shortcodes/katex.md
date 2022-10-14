@@ -6,16 +6,12 @@ title: KaTeX
 
 ## Example
 
-{{< columns >}}
-
 ```latex
-{{</*/* katex [display] [class="text-center"] */*/>}}
+{{</* katex [display] [class="text-center"] */>}}
 f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
-{{</*/* /katex */*/>}}
+{{</* /katex */>}}
 ```
 
-<--->
-
 <!-- spellchecker-disable -->
 <!-- prettier-ignore -->
 {{< katex display >}}
@@ -24,16 +20,4 @@ f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 
 <!-- spellchecker-enable -->
 
-{{< /columns >}}
-
-KaTeX can also be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used with the `display` parameter (e.g. `display: block`):
-
-<!-- spellchecker-disable -->
-<!-- prettier-ignore -->
-{{< katex display >}}
-f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
-{{< /katex >}}
-
-<!-- spellchecker-enable -->
-
-Text continues here.
+KaTeX can be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used with the `display` parameter (see above).
