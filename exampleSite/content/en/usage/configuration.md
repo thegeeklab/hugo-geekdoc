@@ -102,6 +102,10 @@ enableRobotsTXT = true
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekdocOverwriteHTMLBase = false
 
+  # (Optional, default true) Enable or disable the JavaScript based color theme toggle switch. The CSS based
+  # user preference mode still works.
+  geekdocDarkModeToggle = false
+
   # (Optional, default false) Auto-decrease brightness of images and add a slightly grayscale to avoid
   # bright spots while using the dark mode.
   geekdocDarkModeDim = false
@@ -223,6 +227,10 @@ params:
   # if a subdirectory is used within Hugos BaseURL.
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekdocOverwriteHTMLBase: false
+
+  # (Optional, default true) Enable or disable the JavaScript based color theme toggle switch. The CSS based
+  # user preference mode still works.
+  geekdocDarkModeToggle: false
 
   # (Optional, default false) Auto-decrease brightness of images and add a slightly grayscale to avoid
   # bright spots while using the dark mode.

@@ -36,11 +36,7 @@ html {
 
   &.color-toggle-hidden {
     #gdoc-color-theme {
-      .gdoc_brightness_auto,
-      .gdoc_brightness_dark,
-      .gdoc_brightness_light {
-        display: none;
-      }
+      display: none;
     }
   }
 
