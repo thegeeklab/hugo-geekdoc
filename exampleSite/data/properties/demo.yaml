@@ -1,11 +1,11 @@
 ---
 properties:
-  prop1:
+  - name: prop1
     type: string
     description: Dummy description of the prop1 string property.
     required: true
 
-  prop2:
+  - name: prop2
     type: int
     defaultValue: 10
     description:
@@ -16,7 +16,7 @@ properties:
         - tag1
         - tag2
 
-  prop3:
+  - name: prop3
     type: bool
     defaultValue: false
     description: |
@@ -27,3 +27,8 @@ properties:
 
       More description how to use this property.
     required: false
+
+  - name: a-prop
+    type: string
+    description: Property to demonstrate sorting.
+    required: true
