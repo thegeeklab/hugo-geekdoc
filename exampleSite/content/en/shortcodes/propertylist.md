@@ -10,7 +10,7 @@ The property list shortcode creates a custom HTML description list that can be u
 | ---------------- | ------------------------------------------------------ | --------- |
 | name             | name of the file from the `data/properties/` directory | undefined |
 | sort (optional)  | field name to use for sorting                          | undefined |
-| order (optional) | sort order, only applied if `sort` is set              | asc       |
+| order (optional) | sort order, only applied if `sort` is set              | `asc`     |
 
 ## Usage
 
@@ -30,4 +30,8 @@ The supported attributes can be taken from the following example:
 
 ## Example
 
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
 {{< propertylist name=demo sort=name order=asc >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
