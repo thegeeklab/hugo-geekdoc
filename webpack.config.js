@@ -18,6 +18,7 @@ var config = {
       path.resolve("src", "sass", "print.scss")
     ],
     main: path.resolve("src", "js", "app.js"),
+    colortheme: path.resolve("src", "js", "colorTheme.js"),
     mermaid: path.resolve("src", "js", "mermaid.js"),
     katex: [path.resolve("src", "js", "katex.js")].concat(
       glob.sync(path.join(nodeModulesPath, "katex", "dist", "fonts", "*.{woff,woff2}"))

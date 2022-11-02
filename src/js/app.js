@@ -1,10 +1,5 @@
-const { applyTheme } = require("./colorTheme")
 const { createCopyButton } = require("./copycode.js")
 const Clipboard = require("clipboard")
-
-;(() => {
-  applyTheme()
-})()
 
 document.addEventListener("DOMContentLoaded", function (event) {
   let clipboard = new Clipboard(".clip")

@@ -1,6 +1,9 @@
 const Storage = require("store2")
-
 const { TOGGLE_COLOR_THEMES, THEME, COLOR_THEME_AUTO } = require("./config.js")
+
+;(() => {
+  applyTheme()
+})()
 
 document.addEventListener("DOMContentLoaded", (event) => {
   const colorThemeToggle = document.getElementById("gdoc-color-theme")
@@ -15,7 +18,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   }
 })
 
-export function applyTheme(init = true) {
+function applyTheme(init = true) {
   if (Storage.isFake()) return
 
   let lstore = Storage.namespace(THEME)
