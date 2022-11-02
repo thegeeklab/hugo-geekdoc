@@ -2,11 +2,21 @@
 title: Properties
 ---
 
-The property list shortcode creates a custom HTML description list that can be used to display properties or variables and general dependent information. The shortcode requires a data file in `data/properties/`, e.g. `data/properties/demo.yaml`, where the filename must be passed to the `name` attribute of the property list shortcode.
+The property list shortcode creates a custom HTML description list that can be used to display properties or variables and general dependent information. The shortcode requires a data file in `data/properties/`, e.g. `data/properties/demo.yaml`.
+
+## Attributes
+
+| Name             | Description                                            | default   |
+| ---------------- | ------------------------------------------------------ | --------- |
+| name             | name of the file from the `data/properties/` directory | undefined |
+| sort (optional)  | field name to use for sorting                          | undefined |
+| order (optional) | sort order, only applied if `sort` is set              | asc       |
+
+## Usage
 
 <!-- prettier-ignore-start -->
 ```tpl
-{{</* propertylist name=demo */>}}
+{{</* propertylist name=demo (sort=name) (order=[asc|desc]) */>}}
 ```
 <!-- prettier-ignore-end -->
 
@@ -20,4 +30,4 @@ The supported attributes can be taken from the following example:
 
 ## Example
 
-{{< propertylist name=demo >}}
+{{< propertylist name=demo sort=name order=asc >}}
