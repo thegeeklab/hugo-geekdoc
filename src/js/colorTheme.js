@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   colorThemeToggle.onclick = function () {
     let lstore = Storage.namespace(THEME)
-    let currentColorTheme = lstore.get("color-theme")
+    let currentColorTheme = lstore.get("color-theme") || COLOR_THEME_AUTO
     let nextColorTheme = toggle(TOGGLE_COLOR_THEMES, currentColorTheme)
 
     lstore.set("color-theme", TOGGLE_COLOR_THEMES[nextColorTheme])
@@ -25,7 +25,6 @@ export function applyTheme(init = true) {
     : COLOR_THEME_AUTO
 
   html.setAttribute("class", "color-toggle-" + currentColorTheme)
-  lstore.set("color-theme", currentColorTheme)
 
   if (currentColorTheme === COLOR_THEME_AUTO) {
     html.removeAttribute("color-theme")
