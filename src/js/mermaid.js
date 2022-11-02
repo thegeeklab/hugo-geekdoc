@@ -3,7 +3,7 @@ const { COLOR_THEME_DARK, THEME, COLOR_THEME_AUTO } = require("./config.js")
 
 document.addEventListener("DOMContentLoaded", function (event) {
   let lstore = Storage.namespace(THEME)
-  let currentMode = lstore.get("color-theme")
+  let currentMode = lstore.get("color-theme") || COLOR_THEME_AUTO
   let darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)")
   let darkMode = false
   let theme = "default"
