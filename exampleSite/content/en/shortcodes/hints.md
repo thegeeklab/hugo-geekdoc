@@ -54,6 +54,8 @@ Ornateness bland it ex enc, est yeti am bongo detract re.
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
+
+Romanesque acclimates investiture.
 {{< /hint >}}
 
 Example with a custom icon and title:
