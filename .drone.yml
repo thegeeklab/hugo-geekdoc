@@ -39,9 +39,10 @@ steps:
   - name: link-validation
     image: thegeeklab/link-validator
     commands:
-      - link-validator --nice --external --skip-file .linkcheckignore
+      - link-validator --color=always -e https://github.com/thegeeklab/hugo-geekdoc/edit/main/.*
     environment:
       LINK_VALIDATOR_BASE_DIR: exampleSite/public
+      LINK_VALIDATOR_RETRIES: 3
 
   - name: page-validation
     image: thegeeklab/lhci
@@ -286,6 +287,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 8a857bba8126ebb40acc7dfb24a86f1539d447df4ca3e4b3bdc8f78d21e2b51b
+hmac: 95526caa678265ae3ba6315a919882de81e3cfa142bf54bfc66489851c95a3b8
 
 ...
