@@ -47,3 +47,7 @@ language_switch_no_tranlation_prefix: "页面未翻译："
 propertylist_required: 需要
 propertylist_optional: 可选
 propertylist_default: 默认值
+
+pagination_page_prev: 以前
+pagination_page_next: 下一个
+pagination_page_state: "{{ .PageNumber }}/{{ .TotalPages }}"

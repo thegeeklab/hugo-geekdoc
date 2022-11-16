@@ -679,6 +679,32 @@ svg.gdoc-icon {
   }
 }
 
+.gdoc-paging {
+  padding: $padding-16 0;
+
+  &__item {
+    flex: 1 1 0;
+
+    a:visited {
+      color: var(--link-color);
+    }
+
+    a:hover,
+    a:visited:hover {
+      background: var(--link-color);
+      color: $gray-100;
+    }
+
+    &--next {
+      text-align: right;
+    }
+
+    &--prev {
+      text-align: left;
+    }
+  }
+}
+
 .gdoc-error {
   padding: $padding-96 $padding-16;
   margin: 0 auto;
