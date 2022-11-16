@@ -47,3 +47,7 @@ language_switch_no_tranlation_prefix: "Seite nicht übersetzt:"
 propertylist_required: erforderlich
 propertylist_optional: optional
 propertylist_default: Standardwert
+
+pagination_page_prev: vorher
+pagination_page_next: weiter
+pagination_page_state: "{{ .PageNumber }}/{{ .TotalPages }}"

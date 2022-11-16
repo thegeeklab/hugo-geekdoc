@@ -47,3 +47,7 @@ language_switch_no_tranlation_prefix: "未翻訳のページ:"
 propertylist_required: 必須
 propertylist_optional: 任意
 propertylist_default: 既定値
+
+pagination_page_prev: 前
+pagination_page_next: 次
+pagination_page_state: "{{ .PageNumber }}/{{ .TotalPages }}"

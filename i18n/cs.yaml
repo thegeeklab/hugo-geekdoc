@@ -47,3 +47,7 @@ language_switch_no_tranlation_prefix: "Stránka není přeložena:"
 propertylist_required: povinné
 propertylist_optional: volitené
 propertylist_default: výchozí
+
+pagination_page_prev: předchozí
+pagination_page_next: další
+pagination_page_state: "{{ .PageNumber }}/{{ .TotalPages }}"
