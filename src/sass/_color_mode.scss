@@ -13,6 +13,7 @@
   --link-color: #{$link-color};
   --link-color-visited: #{$link-color-visited};
 
+  --accent-color-dark: #{$gray-300};
   --accent-color: #{$gray-200};
   --accent-color-lite: #{$gray-100};
 
@@ -58,6 +59,7 @@
   --link-color: #{$link-color-dark};
   --link-color-visited: #{$link-color-visited-dark};
 
+  --accent-color-dark: #{darken($body-background-dark, 6)};
   --accent-color: #{darken($body-background-dark, 4)};
   --accent-color-lite: #{darken($body-background-dark, 2)};
 

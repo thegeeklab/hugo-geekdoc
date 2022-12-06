@@ -3,5 +3,6 @@
 {
   "dataFile": {{ $searchData.RelPermalink | jsonify }},
   "indexConfig": {{ .Site.Params.GeekdocSearchConfig | jsonify }},
-  "showParent": {{ if .Site.Params.GeekdocSearchShowParent }}true{{ else }}false{{ end }}
+  "showParent": {{ if .Site.Params.GeekdocSearchShowParent }}true{{ else }}false{{ end }},
+  "showDescription": {{ if .Site.Params.GeekdocSearchshowDescription }}true{{ else }}false{{ end }}
 }
