@@ -1,4 +1,5 @@
-const { groupBy } = require("./groupBy")
+const groupBy = require("lodash/groupBy")
+const truncate = require("lodash/truncate")
 const { FlexSearch } = require("flexsearch/dist/flexsearch.compact")
 const { Validator } = require("@cfworker/json-schema")
 
@@ -18,6 +19,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         type: ["object", "null"]
       },
       showParent: {
+        type: "boolean"
+      },
+      showDescription: {
         type: "boolean"
       }
     },
@@ -58,8 +62,8 @@ function init(input, searchConfig) {
 
   indexCfg.document = {
     key: "id",
-    index: ["title", "content"],
-    store: ["title", "href", "parent"]
+    index: ["title", "content", "description"],
+    store: ["title", "href", "parent", "description"]
   }
 
   const index = new FlexSearch.Document(indexCfg)
@@ -75,7 +79,7 @@ function init(input, searchConfig) {
 function search(input, results, searchConfig) {
   const searchCfg = {
     enrich: true,
-    limit: 10
+    limit: 5
   }
 
   while (results.firstChild) {
@@ -106,8 +110,12 @@ function search(input, results, searchConfig) {
         title = item.appendChild(document.createElement("span")),
         subList = item.appendChild(document.createElement("ul"))
 
+      if (!section) {
+        title.remove()
+      }
+      title.classList.add("gdoc-search__section")
       title.textContent = section
-      createLinks(searchHits[section], subList)
+      createLinks(searchHits[section], subList, searchConfig.showDescription)
 
       items.push(item)
     }
@@ -117,7 +125,7 @@ function search(input, results, searchConfig) {
       subList = item.appendChild(document.createElement("ul"))
 
     title.textContent = "Results"
-    createLinks(searchHits, subList)
+    createLinks(searchHits, subList, searchConfig.showDescription)
 
     items.push(item)
   }
@@ -133,19 +141,27 @@ function search(input, results, searchConfig) {
  * @param {HTMLElement} target Element to which the links should be attatched
  * @returns {Array} If target is not specified, returns an array of built links
  */
-function createLinks(pages, target) {
+function createLinks(pages, target, showDesc) {
   const items = []
 
   for (const page of pages) {
     const item = document.createElement("li"),
-      entry = item.appendChild(document.createElement("span")),
-      a = entry.appendChild(document.createElement("a"))
-
-    entry.classList.add("flex")
+      a = item.appendChild(document.createElement("a")),
+      entry = a.appendChild(document.createElement("span"))
 
     a.href = page.href
-    a.textContent = page.title
+    entry.classList.add("gdoc-search__entry--title")
+    entry.textContent = page.title
     a.classList.add("gdoc-search__entry")
+
+    if (showDesc === true) {
+      const desc = a.appendChild(document.createElement("span"))
+      desc.classList.add("gdoc-search__entry--description")
+      desc.textContent = truncate(page.description, {
+        length: 55,
+        separator: " "
+      })
+    }
 
     if (target) {
       target.appendChild(item)

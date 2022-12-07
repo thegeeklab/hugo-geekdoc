@@ -5,6 +5,7 @@ $padding-8: 0.5rem !default;
 $padding-16: 1rem !default;
 $padding-24: 1.5rem !default;
 $padding-32: 2rem !default;
+$padding-48: 3rem !default;
 $padding-64: 4rem !default;
 $padding-96: 6rem !default;
 
@@ -47,13 +48,13 @@ $body-font-color: $gray-800 !default;
 $body-font-weight: normal !default;
 $body-min-width: 20rem !default;
 
-$code-font-color: rgba(95, 95, 95, 1) !default;
+$code-font-color: rgba(70, 70, 70, 1) !default;
 $code-font-color-dark: rgba(185, 185, 185, 1) !default;
 
 $body-background-dark: $gray-800 !default;
 $body-font-color-dark: $gray-100 !default;
 
-$container-max-width: 80rem !default;
+$container-max-width: 82rem !default;
 
 $main-color: rgba(65, 134, 201, 1) !default;
 $second-color: rgba(47, 51, 62, 1) !default;
@@ -63,11 +64,11 @@ $body-background-dark: mix(invert($body-background, 75%), $second-color) !defaul
 $link-color-dark: rgba(110, 168, 212, 1) !default;
 $link-color-visited-dark: rgba(186, 142, 240) !default;
 
-$code-background: lighten($gray-200, 4) !default;
+$code-background: $gray-100 !default;
 $code-background-dark: darken($body-background-dark, 2) !default;
 
 $header-height: 3.5rem !default;
-$menu-width: 16rem !default;
+$menu-width: 18rem !default;
 
 $sm-breakpoint: $menu-width + $body-min-width + 3rem !default;
 

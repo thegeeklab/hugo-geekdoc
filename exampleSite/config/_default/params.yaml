@@ -14,6 +14,7 @@ geekdocEditPath: edit/main/exampleSite
 
 geekdocSearch: true
 geekdocSearchShowParent: true
+geekdocSearchShowDescription: true
 
 geekdocLegalNotice: https://thegeeklab.de/legal-notice/#contact-information
 geekdocPrivacyPolicy: https://thegeeklab.de/legal-notice/#privacy-policy

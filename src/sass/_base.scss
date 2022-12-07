@@ -228,7 +228,6 @@ svg.gdoc-icon {
 
 .gdoc-nav {
   flex: 0 0 $menu-width;
-  font-size: $font-size-14;
 
   nav {
     width: $menu-width;
@@ -329,7 +328,6 @@ svg.gdoc-icon {
 }
 
 .gdoc-nav__entry,
-.gdoc-search__entry,
 .gdoc-language__entry {
   flex: 1;
   color: var(--body-font-color);
@@ -349,10 +347,10 @@ svg.gdoc-icon {
 .gdoc-language__list {
   background: var(--body-background);
   border-radius: $border-radius;
-  box-shadow: 0 1px 3px 0 var(--accent-color), 0 1px 2px 0 var(--accent-color-lite);
+  box-shadow: 0 1px 3px 0 var(--accent-color-dark), 0 1px 2px 0 var(--accent-color);
   position: absolute;
   margin: 0;
-  padding: $padding-8 !important;
+  padding: $padding-8 $padding-4 !important;
   list-style: none;
   top: calc(100% + #{$padding-8});
   z-index: 2;
@@ -576,8 +574,8 @@ svg.gdoc-icon {
     position: absolute;
     left: $padding-8;
     color: var(--control-icons);
-    width: $font-size-16;
-    height: $font-size-16;
+    width: $font-size-20;
+    height: $font-size-20;
   }
 
   &::after {
@@ -591,31 +589,17 @@ svg.gdoc-icon {
     padding: $padding-8;
     padding-left: $padding-32;
 
-    border: $border-1 solid var(--accent-color);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border: 1px solid transparent;
     border-radius: $border-radius;
 
     background: var(--accent-color-lite);
     color: var(--body-font-color);
 
-    &:required + &__spinner {
-      display: block;
+    &:focus {
+      outline: none !important;
+      border: 1px solid var(--accent-color);
     }
-  }
-
-  &__spinner {
-    position: absolute;
-    margin: $padding-8;
-    right: 0;
-    top: 0;
-
-    width: $padding-16;
-    height: $padding-16;
-
-    border: $border-1 solid transparent;
-    border-top-color: var(--body-font-color);
-    border-radius: 50%;
-
-    @include spin(1s);
   }
 
   &__list {
@@ -625,12 +609,7 @@ svg.gdoc-icon {
 
     ul {
       list-style: none;
-      margin-top: $padding-8;
       padding-left: 0;
-    }
-
-    li {
-      margin: $padding-4 0;
     }
 
     > li > span {
@@ -638,11 +617,45 @@ svg.gdoc-icon {
     }
 
     > li + li {
-      margin-top: $padding-8;
+      margin-top: $padding-4;
     }
 
     svg.gdoc-icon {
       margin-right: $padding-4;
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    padding: $padding-4 !important;
+  }
+
+  &__entry {
+    display: flex;
+    flex-direction: column;
+    color: var(--body-font-color);
+    padding: $padding-4 !important;
+    border-radius: $border-radius;
+
+    &:hover,
+    &.is-active {
+      background: var(--accent-color-lite);
+      text-decoration: none;
+
+      .gdoc-search__entry--title {
+        text-decoration-style: dashed !important;
+        text-decoration: underline;
+      }
+    }
+
+    &:visited {
+      color: var(--body-font-color);
+    }
+
+    &--description {
+      font-size: $font-size-14;
+      font-style: italic;
     }
   }
 
