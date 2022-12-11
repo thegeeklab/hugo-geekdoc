@@ -13,6 +13,9 @@
   --link-color: #{$link-color};
   --link-color-visited: #{$link-color-visited};
 
+  --hint-link-color: #{$link-color};
+  --hint-link-color-visited: #{$link-color-visited};
+
   --accent-color-dark: #{$gray-400};
   --accent-color: #{$gray-200};
   --accent-color-lite: #{$gray-100};
@@ -59,6 +62,9 @@
   --link-color: #{$link-color-dark};
   --link-color-visited: #{$link-color-visited-dark};
 
+  --hint-link-color: #{$link-color};
+  --hint-link-color-visited: #{$link-color-visited};
+
   --accent-color-dark: #{darken($body-background-dark, 8)};
   --accent-color: #{darken($body-background-dark, 4)};
   --accent-color-lite: #{darken($body-background-dark, 2)};
@@ -81,6 +87,17 @@
     .gdoc-props__tag,
     .admonitionblock {
       filter: saturate(2.5) brightness(0.85);
+    }
+
+    .gdoc-hint,
+    .admonitionblock {
+      a {
+        color: var(--hint-link-color);
+
+        &:visited {
+          color: var(--hint-link-color-visited);
+        }
+      }
     }
 
     .gdoc-hint__title,
