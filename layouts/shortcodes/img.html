@@ -2,18 +2,26 @@
 {{- $customAlt := .Get "alt" }}
 {{- $customSize := .Get "size" | lower }}
 {{- $lazyLoad := default (default true $.Site.Params.GeekdocImageLazyLoading) (.Get "lazy") }}
+{{- $data := newScratch }}
 
 {{- with $source }}
   {{- $caption := default .Title $customAlt }}
+  {{- $isSVG := (eq .MediaType.SubType "svg") }}
 
   {{- $origin := .Permalink }}
-  {{- $profile := (.Fill "180x180 Center").Permalink }}
-  {{- $tiny := (.Resize "320x").Permalink }}
-  {{- $small := (.Resize "600x").Permalink }}
-  {{- $medium := (.Resize "1200x").Permalink }}
-  {{- $large := (.Resize "1800x").Permalink }}
-
-  {{- $size := dict "origin" $origin "profile" $profile "tiny" $tiny "small" $small "medium" $medium "large" $large }}
+  {{ if $isSVG }}
+    {{- $data.SetInMap "size" "profile" "180px" }}
+    {{- $data.SetInMap "size" "tiny" "320px" }}
+    {{- $data.SetInMap "size" "small" "600ppx" }}
+    {{- $data.SetInMap "size" "medium" "1200px" }}
+    {{- $data.SetInMap "size" "large" "1800px" }}
+  {{ else }}
+    {{- $data.SetInMap "size" "profile" (.Fill "180x180 Center").Permalink }}
+    {{- $data.SetInMap "size" "tiny" (.Resize "320x").Permalink }}
+    {{- $data.SetInMap "size" "small" (.Resize "600x").Permalink }}
+    {{- $data.SetInMap "size" "medium" (.Resize "1200x").Permalink }}
+    {{- $data.SetInMap "size" "large" (.Resize "1800x").Permalink }}
+  {{ end }}
 
 
   <div class="flex justify-center">
@@ -23,22 +31,32 @@
     >
       <a class="gdoc-markdown__link--raw" href="{{ .Permalink }}">
         <picture>
-          <source
-            {{- with $customSize }}
-              srcset="{{ index $size $customSize }}"
-            {{- else }}
-              srcset="{{ $size.small }} 600w, {{ $size.medium }} 1200w" sizes="100vw"
-            {{- end }}
-          />
-          <img
-            {{- if $lazyLoad }}{{ print " loading=\"lazy\"" | safeHTMLAttr }}{{- end }}
-            {{- if eq $customSize "origin" }}
-              src="{{ $size.origin }}"
-            {{- else }}
-              src="{{ $size.large }}"
-            {{- end }}
-            alt="{{ $caption }}"
-          />
+          {{- $size := $data.Get "size" }}
+          {{- if not $isSVG }}
+            <source
+              {{- with $customSize }}
+                srcset="{{ index $size $customSize }}"
+              {{- else }}
+                srcset="{{ $size.small }} 600w, {{ $size.medium }} 1200w" sizes="100vw"
+              {{- end }}
+
+            />
+          {{- end }}
+          <foreignObject x="0" y="0" width="100px" height="100px">
+            <img
+              {{- if $isSVG }}
+                src="{{ $origin }}" width="{{ index $size (default "medium" $customSize) }}"
+              {{- else }}
+                {{- if $lazyLoad }}{{ print " loading=\"lazy\"" | safeHTMLAttr }}{{- end }}
+                {{- if eq $customSize "origin" }}
+                  src="{{ $origin }}"
+                {{- else }}
+                  src="{{ $size.large }}"
+                {{- end }}
+                alt="{{ $caption }}"
+              {{- end }}
+            />
+          </foreignObject>
         </picture>
       </a>
       {{- if not (eq $customSize "profile") }}
