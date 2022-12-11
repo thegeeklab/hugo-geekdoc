@@ -42,21 +42,19 @@
 
             />
           {{- end }}
-          <foreignObject x="0" y="0" width="100px" height="100px">
-            <img
-              {{- if $isSVG }}
-                src="{{ $origin }}" width="{{ index $size (default "medium" $customSize) }}"
+          <img
+            {{- if $isSVG }}
+              src="{{ $origin }}" width="{{ index $size (default "medium" $customSize) }}"
+            {{- else }}
+              {{- if $lazyLoad }}{{ print " loading=\"lazy\"" | safeHTMLAttr }}{{- end }}
+              {{- if eq $customSize "origin" }}
+                src="{{ $origin }}"
               {{- else }}
-                {{- if $lazyLoad }}{{ print " loading=\"lazy\"" | safeHTMLAttr }}{{- end }}
-                {{- if eq $customSize "origin" }}
-                  src="{{ $origin }}"
-                {{- else }}
-                  src="{{ $size.large }}"
-                {{- end }}
-                alt="{{ $caption }}"
+                src="{{ $size.large }}"
               {{- end }}
-            />
-          </foreignObject>
+              alt="{{ $caption }}"
+            {{- end }}
+          />
         </picture>
       </a>
       {{- if not (eq $customSize "profile") }}
