@@ -36,6 +36,11 @@ resources:
     title: Forest (7)
     params:
       credits: "[Asher Ward](https://unsplash.com/@the_asher_ward) on [Unsplash](https://unsplash.com/s/photos/forest)"
+  - name: forest-8
+    src: "forest-8.svg"
+    title: Forest (8)
+    params:
+      credits: "SVG Repo on [SVGRepo](https://www.svgrepo.com/svg/286078/forest)"
 ---
 
 If you need more flexibility for your embedded images, you could use the `img` shortcode. It is using Hugo's
@@ -142,5 +147,16 @@ copious quo ad. Stet probates in duo.
 <!-- spellchecker-disable -->
 
 {{< img name="forest-7" lazy=true >}}
+
+<!-- spellchecker-enable -->
+
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
+feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
+copious quo ad. Stet probates in duo.
+
+<!-- spellchecker-disable -->
+
+{{< img name="forest-8" size=small lazy=true >}}
 
 <!-- spellchecker-enable -->
