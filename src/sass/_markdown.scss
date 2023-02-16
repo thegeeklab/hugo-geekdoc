@@ -1,24 +1,6 @@
 .gdoc-markdown {
   line-height: 1.6em;
 
-  > :first-child {
-    margin-top: 0 !important;
-  }
-
-  &--nested {
-    :first-child {
-      margin-top: 0 !important;
-    }
-
-    > pre {
-      margin-top: 0 !important;
-    }
-
-    > :last-child {
-      margin-bottom: 0;
-    }
-  }
-
   h1,
   h2,
   h3,
@@ -127,13 +109,6 @@
 
     border-left: $border-4 solid var(--accent-color);
     border-radius: $border-radius;
-
-    :first-child {
-      margin-top: 0;
-    }
-    :last-child {
-      margin-bottom: 0;
-    }
   }
 
   table:not(.lntable):not(.highlight) {
@@ -183,10 +158,6 @@
     dd {
       margin-left: $padding-32;
     }
-  }
-
-  pre {
-    margin: 1rem 0;
   }
 
   code {
