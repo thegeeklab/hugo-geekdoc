@@ -1,5 +1,5 @@
 .gdoc-markdown {
-  line-height: 1.6em;
+  line-height: $padding-24;
 
   h1,
   h2,
@@ -7,9 +7,11 @@
   h4,
   h5,
   h6 {
+    font-weight: 600;
+
     > code {
       border-top: $border-4 solid var(--accent-color);
-      font-size: 0.75em !important;
+      font-size: $font-size-12 !important;
     }
   }
 
@@ -17,7 +19,7 @@
   h5,
   h6 {
     > code {
-      font-size: 0.8rem !important;
+      font-size: $font-size-14 !important;
     }
   }
 
@@ -161,7 +163,7 @@
   }
 
   code {
-    padding: 0.2em 0.4em;
+    padding: $padding-4 $padding-8;
   }
 
   pre,
@@ -169,13 +171,13 @@
     background-color: var(--code-background);
     border-radius: $border-radius;
     color: var(--code-font-color);
-    font-size: 0.85rem;
-    line-height: 1.45em;
+    font-size: $font-size-14;
+    line-height: $padding-16;
   }
 
   pre code {
     display: block;
-    padding: 1rem;
+    padding: $padding-16;
     width: 100%;
   }
 
