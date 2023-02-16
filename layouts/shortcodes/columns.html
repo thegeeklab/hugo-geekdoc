@@ -6,9 +6,9 @@
 
 
 <div class="gdoc-columns gdoc-columns--{{ $size }} flex flex-gap flex-mobile-column">
-  {{ range split .Inner "<--->" }}
+  {{- range split .Inner "<--->" }}
     <div class="gdoc-columns__content gdoc-markdown--nested flex-even">
       {{ . | $.Page.RenderString }}
     </div>
-  {{ end }}
+  {{- end }}
 </div>
