@@ -110,7 +110,7 @@ h6 {
 h4,
 h5,
 h6 {
-  font-size: 1rem !important;
+  font-size: $font-size-16 !important;
 }
 
 a {
@@ -202,8 +202,8 @@ svg.gdoc-icon {
 
   &__img {
     margin-right: $padding-16;
-    width: 2rem;
-    height: 2rem;
+    width: $padding-32;
+    height: $padding-32;
   }
 }
 
@@ -261,7 +261,7 @@ svg.gdoc-icon {
   }
 
   &__list {
-    padding-left: 1em;
+    padding-left: $padding-16;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -404,8 +404,8 @@ svg.gdoc-icon {
     margin-left: $padding-8;
 
     svg.gdoc-icon {
-      width: 1.4em;
-      height: 1.4em;
+      width: 1.25em;
+      height: 1.25em;
       color: transparent;
     }
 
@@ -507,14 +507,14 @@ svg.gdoc-icon {
   &__codecopy {
     visibility: hidden;
     position: absolute;
-    top: 0.5rem;
-    right: 1rem;
+    top: $padding-8;
+    right: $padding-8;
 
     border: $border-2 solid var(--code-copy-border-color);
     border-radius: $border-radius;
     background: var(--code-copy-background);
-    width: 2.2rem;
-    height: 2.2rem;
+    width: $padding-32;
+    height: $padding-32;
 
     svg.gdoc-icon {
       top: 0;
@@ -546,7 +546,7 @@ svg.gdoc-icon {
   }
 
   &__item {
-    line-height: 2em;
+    line-height: $padding-32;
 
     &--row {
       margin-right: $padding-16;
