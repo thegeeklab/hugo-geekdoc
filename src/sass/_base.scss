@@ -237,11 +237,6 @@ svg.gdoc-icon {
       font-weight: normal;
     }
 
-    > :first-child,
-    > :first-child > :first-child {
-      margin-top: 0;
-    }
-
     section {
       margin-top: $padding-32;
     }
@@ -752,6 +747,8 @@ svg.gdoc-icon {
 }
 
 .gdoc-toc {
+  margin: $padding-16 0;
+
   // Classes to hide nested levels of ToC/Menu
   &__level--1 ul ul,
   &__level--2 ul ul ul,

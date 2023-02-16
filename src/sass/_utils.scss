@@ -83,6 +83,11 @@
 
 .table-wrap {
   overflow: auto;
+  margin: $padding-16 0;
+
+  > table {
+    margin: 0 !important;
+  }
 }
 
 .badge-placeholder {

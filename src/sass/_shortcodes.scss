@@ -1,7 +1,6 @@
 // {{< expand "Label" "icon" >}}
 .gdoc-expand {
-  margin-top: $padding-16;
-  margin-bottom: $padding-16;
+  margin: $padding-16 0;
 
   border: $border-1 solid var(--accent-color);
   border-radius: $border-radius;
@@ -16,7 +15,7 @@
 
   &__content {
     display: none;
-    padding: $padding-16;
+    padding: 0 $padding-16;
   }
 
   &__control:checked + &__content {
@@ -30,8 +29,7 @@
 
 // {{< tabs >}}
 .gdoc-tabs {
-  margin-top: $padding-16;
-  margin-bottom: $padding-16;
+  margin: $padding-16 0;
 
   border: $border-1 solid var(--accent-color);
   border-radius: $border-radius;
@@ -52,7 +50,7 @@
     order: 999; //Move content blocks to the end
     width: 100%;
     border-top: $border-1 solid var(--accent-color-lite);
-    padding: $padding-16;
+    padding: 0 $padding-16;
     display: none;
   }
 
@@ -70,6 +68,8 @@
 
 // {{< columns >}}
 .gdoc-columns {
+  margin: $padding-16 0;
+
   &--regular > :first-child {
     flex: 1;
   }
@@ -86,7 +86,6 @@
 
   &__content {
     flex: 1 1;
-    margin: $padding-16 0;
     min-width: $body-min-width * 0.66;
     padding: 0;
   }
@@ -99,12 +98,12 @@
 // {{< button >}}
 .gdoc-button {
   $root: &;
+  margin: $padding-16 0;
 
   display: inline-block;
   background: var(--accent-color-lite);
   border: $border-1 solid var(--accent-color);
   border-radius: $border-radius;
-  margin: $padding-8 0;
   cursor: pointer;
 
   &__link {
@@ -215,15 +214,6 @@
       &:not(:last-child) {
         margin-right: $padding-8;
       }
-    }
-  }
-
-  &__description {
-    > :first-child {
-      margin-top: 0;
-    }
-    > :last-child {
-      margin-bottom: 0;
     }
   }
 
