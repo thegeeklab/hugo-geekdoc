@@ -238,3 +238,39 @@
     font-size: $font-size-14;
   }
 }
+
+// {{% progress %}}
+.gdoc-progress {
+  margin-bottom: $padding-16;
+
+  &__label {
+    padding: $padding-4 0;
+
+    &--name {
+      font-weight: bold;
+    }
+  }
+
+  &__wrap {
+    background-color: var(--accent-color-lite);
+    border-radius: 1em;
+    box-shadow: inset 0 0 0 $border-1 var(--accent-color);
+  }
+
+  &__bar {
+    height: 1em;
+    border-radius: 1em;
+    background-image: linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.125) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.125) 50%,
+      rgba(255, 255, 255, 0.125) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 2.5em 2.5em;
+    background-color: $main-color !important;
+  }
+}
