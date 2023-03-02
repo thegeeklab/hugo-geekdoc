@@ -6,11 +6,11 @@ Progress bar to vizualize a state.
 
 ## Attributes
 
-| Name             | Description                                                                      | default   |
-| ---------------- | -------------------------------------------------------------------------------- | --------- |
-| value            | progress value                                                                   | 0         |
-| icon (optional)  | icon to use, need to be an icon from an [SVG sprite](/posts/features/icon-sets/) | undefined |
-| title (optional) | progress title                                                                   | undefined |
+| Name             | Description                                                                | default   |
+| ---------------- | -------------------------------------------------------------------------- | --------- |
+| value            | progress value                                                             | 0         |
+| icon (optional)  | icon to use, need to be an icon from an [SVG sprite](/features/icon-sets/) | undefined |
+| title (optional) | progress title                                                             | undefined |
 
 ## Usage
 
