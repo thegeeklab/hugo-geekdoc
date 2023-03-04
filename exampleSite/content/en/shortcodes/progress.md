@@ -2,7 +2,7 @@
 title: Progress
 ---
 
-Progress bar to vizualize a state.
+A progress bar shows how far a process has progressed.
 
 ## Attributes
 
