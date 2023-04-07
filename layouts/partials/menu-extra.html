@@ -13,15 +13,11 @@
     {{ if isset . "ref" }}
       {{ $this := $site.GetPage .ref }}
       {{ $isCurrent := eq $current $this }}
-      {{ $icon := default false .icon }}
+      {{ $icon := default "" .icon }}
 
       {{ $name := .name }}
       {{ if reflect.IsMap .name }}
         {{ $name = (index .name $site.Language.Lang) }}
-      {{ end }}
-
-      {{ if not .icon }}
-        {{ errorf "Missing 'icon' attribute in data file for '%s' menu item '%s'" $target $name }}
       {{ end }}
 
       {{ if eq $target "header" }}
@@ -34,10 +30,13 @@
             {{ end }}"
             class="gdoc-header__link"
           >
+            {{ if ne $icon "" }}
             <svg class="gdoc-icon {{ .icon }}">
               <title>{{ $name }}</title>
               <use xlink:href="#{{ .icon }}"></use>
             </svg>
+            {{ end }}
+            {{ $name }}
           </a>
         </span>
       {{ end }}
