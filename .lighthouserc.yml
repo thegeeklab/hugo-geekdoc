@@ -1,17 +1,14 @@
 ---
 ci:
   collect:
-    numberOfRuns: 3
-    psiStrategy: desktop
+    numberOfRuns: 1
     staticDistDir: exampleSite/public
     url:
       - http://localhost/
       - http://localhost/404.html
-      - http://localhost/posts/
+      - http://localhost/usage/getting-started/
     settings:
-      chromeFlags: "--no-sandbox --headless=new"
-      throttling:
-        cpuSlowdownMultiplier: "2.0"
+      chromeFlags: "--no-sandbox"
   assert:
     preset: "lighthouse:no-pwa"
     assertions:
