@@ -9,7 +9,7 @@ ci:
       - http://localhost/404.html
       - http://localhost/posts/
     settings:
-      chromeFlags: "--no-sandbox"
+      chromeFlags: "--no-sandbox --headless=new"
       throttling:
         cpuSlowdownMultiplier: "2.0"
   assert:
