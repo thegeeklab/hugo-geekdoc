@@ -36,10 +36,10 @@
 
   --control-icons: #b2bac1;
 
-  --footer-background: #112b3c;
-  --footer-font-color: #ffffff;
-  --footer-link-color: #f66b0e;
-  --footer-link-color-visited: #f66b0e;
+  --footer-background: #efefef;
+  --footer-font-color: #efefef;
+  --footer-link-color: #efefef;
+  --footer-link-color-visited: #efefef;
 }
 @media (prefers-color-scheme: light) {
   :root {

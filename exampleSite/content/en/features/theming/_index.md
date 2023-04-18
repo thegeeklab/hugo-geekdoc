@@ -53,9 +53,9 @@ If you want to add more Favicon formats you have to [overwrite](https://gohugo.i
 <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon/favicon-32x32.png" | relURL }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon/favicon-16x16.png" | relURL }}">
 <link rel="manifest" href="{{ "favicon/site.webmanifest" | relURL }}">
-<link rel="mask-icon" href="{{ "favicon/safari-pinned-tab.svg" | relURL }}" color="#205375">
-<meta name="msapplication-TileColor" content="#205375">
-<meta name="theme-color" content="#205375">
+<link rel="mask-icon" href="{{ "favicon/safari-pinned-tab.svg" | relURL }}" color="#efefef">
+<meta name="msapplication-TileColor" content="#efefef">
+<meta name="theme-color" content="#efefef">
 ```
 
 Happy customizing!

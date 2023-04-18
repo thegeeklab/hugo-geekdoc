@@ -1,43 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 
 <svg
-   width="128.54926mm"
-   height="128.54977mm"
-   viewBox="0 0 128.54926 128.54977"
+   fill="#000000"
+   width="690.9447"
+   height="695.00006"
+   viewBox="0 0 20.728341 20.850002"
+   id="agenda-pencil"
+   data-name="Line Color"
+   class="icon line-color"
    version="1.1"
-   id="svg4543"
+   sodipodi:docname="favicon.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:dc="http://purl.org/dc/elements/1.1/">
+   xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs4537" />
-  <metadata
-     id="metadata4540">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     id="layer1"
-     transform="translate(-39.442039,-40.637613)">
-    <g
-       id="g845">
-      <path
-         id="path5105"
-         d="m 103.71667,40.637611 a 64.274628,64.274887 0 0 0 -64.274627,64.274629 64.274628,64.274887 0 0 0 64.274627,64.27515 64.274628,64.274887 0 0 0 64.27462,-64.27515 64.274628,64.274887 0 0 0 -64.27462,-64.274629 z m 0,2.645833 a 61.628794,61.629054 0 0 1 61.62879,61.628796 61.628794,61.629054 0 0 1 -61.62879,61.62931 61.628794,61.629054 0 0 1 -61.628794,-61.62931 61.628794,61.629054 0 0 1 61.628794,-61.628796 z"
-         style="fill:#112b3c;fill-opacity:1;stroke-width:0.298953" />
-      <path
-         style="fill:#205375;fill-opacity:1;stroke-width:0.292274"
-         d="M 103.71668,42.073958 A 62.838549,62.838547 0 0 0 40.878126,104.91276 62.838549,62.838547 0 0 0 103.71668,167.75104 62.838549,62.838547 0 0 0 166.55521,104.91276 62.838549,62.838547 0 0 0 103.71668,42.073958 Z M 64.310256,74.779542 h 78.812824 a 4.3789035,6.0272064 0 1 1 0,12.0535 H 64.310256 a 4.3789035,6.0272064 0 1 1 0,-12.0535 z m 0,24.10648 h 78.812824 a 4.3789035,6.0272064 0 1 1 0,12.053498 H 64.310256 a 4.3789035,6.0272064 0 1 1 0,-12.053498 z M 63.716965,122.9925 h 53.103385 a 3.7934876,6.0272064 0 1 1 0,12.05349 H 63.716965 a 3.7934876,6.0272064 0 1 1 0,-12.05349 z"
-         id="ellipse5130" />
-    </g>
-  </g>
+     id="defs1499" />
+  <sodipodi:namedview
+     id="namedview1497"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.3958404"
+     inkscape:cx="548.20074"
+     inkscape:cy="915.77312"
+     inkscape:window-width="2560"
+     inkscape:window-height="1371"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="agenda-pencil" />
+  <path
+     id="secondary"
+     d="M 19.08741,5.6462257 17.258775,3.8175911 a 1.3061676,1.3061676 0 0 0 -1.828634,0 L 9.016858,10.230874 v 3.657269 h 3.657269 L 19.08741,7.4748603 a 1.3061676,1.3061676 0 0 0 0,-1.8286346 z"
+     style="fill:none;stroke:#f66b0e;stroke-width:2.55;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" />
+  <path
+     id="primary"
+     d="m 15.566162,16.453545 v 2.009515 a 0.93635558,1.0047573 0 0 1 -0.936355,1.004757 H 3.3935396 A 0.93635558,1.0047573 0 0 1 2.457184,18.46306 V 2.3869423 A 0.93635558,1.0047573 0 0 1 3.3935396,1.382185 h 9.3635554"
+     style="fill:none;stroke:#112b3c;stroke-width:2.76437;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" />
+  <path
+     id="primary-2"
+     data-name="primary"
+     d="m 1.5,6.425001 h 2 m -2,4 h 2 m -2,4 h 2"
+     style="fill:none;stroke:#112b3c;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" />
 </svg>
