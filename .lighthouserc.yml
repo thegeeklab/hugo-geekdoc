@@ -1,7 +1,7 @@
 ---
 ci:
   collect:
-    numberOfRuns: 1
+    numberOfRuns: 3
     staticDistDir: exampleSite/public
     url:
       - http://localhost/

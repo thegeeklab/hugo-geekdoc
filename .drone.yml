@@ -45,7 +45,7 @@ steps:
       LINK_VALIDATOR_RETRIES: 3
 
   - name: page-validation
-    image: thegeeklab/lhci
+    image: thegeeklab/lhci:0.11
     commands:
       - lhci autorun
     environment:
@@ -287,6 +287,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: f1a7b521c40a3571acfafe30268d628a4c0fc359988917bcc63953cc1a311707
+hmac: da9896c5892fff7425a4594cea8576d065aeacae177ffa2d411782721e61a1fb
 
 ...
