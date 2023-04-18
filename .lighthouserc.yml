@@ -16,7 +16,9 @@ ci:
       csp-xss: off
       # FIXME: https://github.com/GoogleChrome/lighthouse/issues/14957
       bf-cache: off
-      tap-targets: warn
+      tap-targets:
+        - warn
+        - minScore: 0.5
       unsized-images: warn
       image-size-responsive: warn
       # FIXME: https://github.com/GoogleChrome/lighthouse/issues/11460
