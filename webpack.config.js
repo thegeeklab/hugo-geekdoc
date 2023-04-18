@@ -60,8 +60,8 @@ var config = {
     new WebpackFavicons({
       src: path.resolve("src", "static", "favicon", "favicon.svg"),
       path: "favicon/",
-      background: "#2f333e",
-      theme_color: "#2f333e",
+      background: "#205375",
+      theme_color: "#205375",
       icons: {
         android: { offset: 10 },
         appleIcon: { offset: 10 },
