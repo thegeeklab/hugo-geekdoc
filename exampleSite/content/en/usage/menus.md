@@ -29,8 +29,6 @@ content/
     └── level-2-2.md
 ```
 
-[![Example file-tree menu](/media/file-tree.png)](/media/file-tree.png)
-
 ## Bundle menu
 
 This type of navigation needs to be enabled first by setting `geekdocMenuBundle` to `true` in your [site configuration](/usage/configuration/#site-configuration). After you have activated the bundle menu, you start with an empty navigation. This is intentional because bundle menus have to be defined manually in a data file. While this increases the effort it also offers maximum flexibility in the design. The data file needs to be written in YAML and placed at `data/menu/main.yaml`.
@@ -68,8 +66,6 @@ main:
 
 As an advantage you can add [icons](/features/icon-sets/) to your menu entries e.g. `icon: "gdoc_notification"`.
 
-[![Example bundle menu](/media/bundle-menu.png)](/media/bundle-menu.png)
-
 ### More menu
 
 {{< hint type=tip >}}
@@ -96,8 +92,6 @@ more:
     external: true
     icon: "gdoc_github"
 ```
-
-[![Example bundle menu](/media/more-menu.png)](/media/more-menu.png)
 
 ## Extra Header Menu
 
