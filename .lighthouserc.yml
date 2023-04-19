@@ -2,21 +2,20 @@
 ci:
   collect:
     numberOfRuns: 3
-    psiStrategy: desktop
     staticDistDir: exampleSite/public
     url:
       - http://localhost/
       - http://localhost/404.html
-      - http://localhost/posts/
+      - http://localhost/usage/getting-started/
     settings:
       chromeFlags: "--no-sandbox"
-      throttling:
-        cpuSlowdownMultiplier: "2.0"
   assert:
     preset: "lighthouse:no-pwa"
     assertions:
       uses-long-cache-ttl: off
       csp-xss: off
+      # FIXME: https://github.com/GoogleChrome/lighthouse/issues/14957
+      bf-cache: off
       tap-targets: warn
       unsized-images: warn
       image-size-responsive: warn

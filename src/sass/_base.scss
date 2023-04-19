@@ -162,7 +162,7 @@ img {
   width: 100%;
   max-width: $container-max-width;
   margin: 0 auto;
-  padding: $padding-16;
+  padding: $padding-20;
 }
 
 svg.gdoc-icon {
@@ -272,7 +272,7 @@ svg.gdoc-icon {
     }
 
     li {
-      margin: $padding-8 0;
+      margin: $padding-12 0;
     }
 
     svg.gdoc-icon {
@@ -748,6 +748,10 @@ svg.gdoc-icon {
 
 .gdoc-toc {
   margin: $padding-16 0;
+
+  li {
+    margin: $padding-4 0;
+  }
 
   // Classes to hide nested levels of ToC/Menu
   &__level--1 ul ul,

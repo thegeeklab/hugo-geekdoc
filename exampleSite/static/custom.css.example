@@ -21,12 +21,12 @@
   --link-color: #518169;
   --link-color-visited: #c54e8a;
 
-  --code-background: #f5f6f8;
+  --code-background: #f8f9fa;
   --code-accent-color: #e3e7eb;
   --code-accent-color-lite: #eff1f3;
   --code-font-color: #5f5f5f;
 
-  --code-copy-background: #f5f6f8;
+  --code-copy-background: #f8f9fa;
   --code-copy-font-color: #6b7784;
   --code-copy-border-color: #adb4bc;
   --code-copy-success-color: #00c853;
@@ -36,10 +36,10 @@
 
   --control-icons: #b2bac1;
 
-  --footer-background: #2f333e;
-  --footer-font-color: #ffffff;
-  --footer-link-color: #ffcc5c;
-  --footer-link-color-visited: #ffcc5c;
+  --footer-background: #efefef;
+  --footer-font-color: #efefef;
+  --footer-link-color: #efefef;
+  --footer-link-color-visited: #efefef;
 }
 @media (prefers-color-scheme: light) {
   :root {
@@ -57,12 +57,12 @@
     --link-color: #518169;
     --link-color-visited: #c54e8a;
 
-    --code-background: #f5f6f8;
+    --code-background: #f8f9fa;
     --code-accent-color: #e3e7eb;
     --code-accent-color-lite: #eff1f3;
     --code-font-color: #5f5f5f;
 
-    --code-copy-background: #f5f6f8;
+    --code-copy-background: #f8f9fa;
     --code-copy-font-color: #6b7784;
     --code-copy-border-color: #adb4bc;
     --code-copy-success-color: #00c853;
@@ -72,10 +72,10 @@
 
     --control-icons: #b2bac1;
 
-    --footer-background: #2f333e;
+    --footer-background: #112b3c;
     --footer-font-color: #ffffff;
-    --footer-link-color: #ffcc5c;
-    --footer-link-color-visited: #ffcc5c;
+    --footer-link-color: #f66b0e;
+    --footer-link-color-visited: #f66b0e;
   }
 }
 
@@ -110,10 +110,10 @@
 
   --control-icons: #b2bac1;
 
-  --footer-background: #2f333e;
+  --footer-background: #112b3c;
   --footer-font-color: #ffffff;
-  --footer-link-color: #ffcc5c;
-  --footer-link-color-visited: #ffcc5c;
+  --footer-link-color: #f66b0e;
+  --footer-link-color-visited: #f66b0e;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -146,9 +146,9 @@
 
     --control-icons: #b2bac1;
 
-    --footer-background: #2f333e;
+    --footer-background: #112b3c;
     --footer-font-color: #ffffff;
-    --footer-link-color: #ffcc5c;
-    --footer-link-color-visited: #ffcc5c;
+    --footer-link-color: #f66b0e;
+    --footer-link-color-visited: #f66b0e;
   }
 }
