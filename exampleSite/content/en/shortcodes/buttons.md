@@ -14,8 +14,9 @@ Buttons are styled links that can lead to local page or external link.
 ## Example
 
 <!-- prettier-ignore-start -->
+<!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
 {{< button relref="/" >}}Get Home{{< /button >}}
 {{< button href="https://github.com/thegeeklab/hugo-geekdoc" >}}Contribute{{< /button >}}
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
