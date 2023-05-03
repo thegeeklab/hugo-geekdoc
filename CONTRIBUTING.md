@@ -3,7 +3,7 @@
 ## Security
 
 If you think you have found a **security issue**, please do not mention it in this repository.
-Instead, send an email to security@thegeeklab.de with as many details as possible so it can be handled confidential.
+Instead, send an email to `security@thegeeklab.de` with as many details as possible so it can be handled confidential.
 
 ## Bug Reports and Feature Requests
 
