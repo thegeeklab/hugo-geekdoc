@@ -65,7 +65,7 @@ enableRobotsTXT = true
   # You can also specify this parameter per page in front matter.
   geekdocRepo = "https://github.com/thegeeklab/hugo"
 
-  # (Optional, default none) Enable 'Edit page' links. Requires 'GeekdocRepo' param
+  # (Optional, default none) Enable 'Edit page' links. Requires 'geekdocRepo' param
   # and the path must point to the parent directory of the 'content' folder.
   # You can also specify this parameter per page in front matter.
   geekdocEditPath = "edit/main/exampleSite"
@@ -191,7 +191,7 @@ params:
   # You can also specify this parameter per page in front matter.
   geekdocRepo: "https://github.com/thegeeklab/hugo-geekdoc"
 
-  # (Optional, default none) Enable 'Edit page' links. Requires 'GeekdocRepo' param
+  # (Optional, default none) Enable 'Edit page' links. Requires 'geekdocRepo' param
   # and the path must point to the parent directory of the 'content' folder.
   # You can also specify this parameter per page in front matter.
   geekdocEditPath: edit/main/exampleSite
@@ -289,7 +289,7 @@ geekdocBreadcrumb = false
 # Set source repository location.
 geekdocRepo = "https://github.com/thegeeklab/hugo-geekdoc"
 
-# Enable 'Edit page' links. Requires 'GeekdocRepo' param and the path must point to
+# Enable 'Edit page' links. Requires 'geekdocRepo' param and the path must point to
 # the parent directory of the 'content' folder.
 geekdocEditPath = "edit/main/exampleSite"
 
@@ -349,7 +349,7 @@ geekdocBreadcrumb: false
 # Set source repository location.
 geekdocRepo: "https://github.com/thegeeklab/hugo-geekdoc"
 
-# Enable 'Edit page' links. Requires 'GeekdocRepo' param and the path must point to
+# Enable 'Edit page' links. Requires 'geekdocRepo' param and the path must point to
 # the parent directory of the 'content' folder.
 geekdocEditPath: "edit/main/exampleSite"
 
