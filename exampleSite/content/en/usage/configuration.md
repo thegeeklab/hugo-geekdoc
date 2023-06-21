@@ -269,8 +269,9 @@ params:
 # Set type to 'posts' if you want to render page as blogpost
 type = "posts"
 
-# Set page weight to re-arrange items in file-tree menu. Higher weight means
-# lower position in the file-tree menu, and negative values are allowed.
+# Hugo predefined front matter variable, to re-arrange items in file-tree menu
+# SEE weights section of
+# https://gohugo.io/content-management/front-matter/?search-input=weight#predefined
 weight = 10
 
 # Set how many table of contents levels to be showed on page.
