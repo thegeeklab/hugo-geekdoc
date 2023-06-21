@@ -55,7 +55,7 @@ Hugo has a build-in shortcode for syntax highlighting. To work properly with thi
 {{< tabs "uniqueid" >}}
 {{< tab "TOML" >}}
 
-```TOML
+```toml
 pygmentsUseClasses=true
 pygmentsCodeFences=true
 ```

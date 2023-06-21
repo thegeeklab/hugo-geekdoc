@@ -46,7 +46,7 @@ To prepare your new site environment just a few steps are required:
 
 4. Create the minimal required Hugo configuration `config.toml`. For all configuration options take a look at the [configuration](/usage/configuration/) page.
 
-   ```Toml
+   ```toml
    baseURL = "http://localhost"
    title = "Geekdocs"
    theme = "hugo-geekdoc"

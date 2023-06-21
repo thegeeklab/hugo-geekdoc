@@ -10,7 +10,7 @@ weight: -10
 {{< tabs "site-config" >}}
 {{< tab "TOML" >}}
 
-```Toml
+```toml
 baseURL = "http://localhost"
 title = "Geekdocs"
 theme = "hugo-geekdoc"
@@ -265,7 +265,7 @@ params:
 {{< tabs "page-config" >}}
 {{< tab "TOML" >}}
 
-```Toml
+```toml
 # Set type to 'posts' if you want to render page as blogpost
 type = "posts"
 
