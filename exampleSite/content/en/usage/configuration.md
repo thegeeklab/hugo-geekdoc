@@ -270,7 +270,7 @@ params:
 type = "posts"
 
 # Hugo predefined front matter variable, to re-arrange items in file-tree menu
-# SEE weights section of
+# See weights section of
 # https://gohugo.io/content-management/front-matter/?search-input=weight#predefined
 weight = 10
 
