@@ -35,7 +35,7 @@ This type of navigation needs to be enabled first by setting `geekdocMenuBundle`
 
 **Example:**
 
-```YAML
+```yaml
 ---
 main:
   - name: Level 1
@@ -77,7 +77,7 @@ As this is a special type of the bundle menu it is basically working in the same
 
 **Example:**
 
-```YAML
+```yaml
 ---
 more:
   - name: News
@@ -99,7 +99,7 @@ If you want to customize the header menu, this can be achieved by using a data f
 
 **Example:**
 
-```Yaml
+```yaml
 ---
 header:
   - name: GitHub

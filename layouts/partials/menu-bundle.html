@@ -25,7 +25,7 @@
           {{ $isCurrent := eq $current $this }}
           {{ $isAncestor := $this.IsAncestor $current }}
           {{ $id := substr (sha1 $this.Permalink) 0 8 }}
-          {{ $doCollapse := and (isset . "sub") (or $this.Params.GeekdocCollapseSection (default false .Site.Params.GeekdocCollapseAllSections)) }}
+          {{ $doCollapse := and (isset . "sub") (or $this.Params.geekdocCollapseSection (default false .Site.Params.geekdocCollapseAllSections)) }}
 
           {{ $anchor := default "" .anchor }}
           {{ if $anchor }}

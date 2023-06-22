@@ -21,21 +21,21 @@ To display an inline shortcode use single quotes:
 Code blocks can be uses without language specification:
 
 ````markdown
-```Plain
+```plain
 some code
 ```
 ````
 
 **Example:**
 
-```Plain
+```plain
 some code
 ```
 
 ... or if you need language specific syntax highlighting:
 
 ````markdown
-```Shell
+```shell
 # some code
 echo "Hello world"
 ```
@@ -43,7 +43,7 @@ echo "Hello world"
 
 **Example:**
 
-```Shell
+```shell
 # some code
 echo "Hello World"
 ```
@@ -55,7 +55,7 @@ Hugo has a build-in shortcode for syntax highlighting. To work properly with thi
 {{< tabs "uniqueid" >}}
 {{< tab "TOML" >}}
 
-```TOML
+```toml
 pygmentsUseClasses=true
 pygmentsCodeFences=true
 ```
@@ -63,7 +63,7 @@ pygmentsCodeFences=true
 {{< /tab >}}
 {{< tab "YAML" >}}
 
-```YAML
+```yaml
 pygmentsUseClasses: true
 pygmentsCodeFences: true
 ```

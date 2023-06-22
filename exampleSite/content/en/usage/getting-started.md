@@ -15,7 +15,7 @@ You need a recent version of Hugo for local builds and previews of sites that us
 
 If you want to use the theme from a cloned branch instead of a release tarball you'll need to install `webpack` locally and run the build script once to create all required assets.
 
-```Shell
+```shell
 # install required packages from package.json
 npm install
 
@@ -32,13 +32,13 @@ To prepare your new site environment just a few steps are required:
 
 1. Create a new empty Hugo site.
 
-   ```Shell
+   ```shell
    hugo new site demosite
    ```
 
 2. Switch to the root of the new site.
 
-   ```Shell
+   ```shell
    cd demosite
    ```
 
@@ -46,7 +46,7 @@ To prepare your new site environment just a few steps are required:
 
 4. Create the minimal required Hugo configuration `config.toml`. For all configuration options take a look at the [configuration](/usage/configuration/) page.
 
-   ```Toml
+   ```toml
    baseURL = "http://localhost"
    title = "Geekdocs"
    theme = "hugo-geekdoc"
@@ -76,7 +76,7 @@ To prepare your new site environment just a few steps are required:
 
 5. Test your site.
 
-   ```Shell
+   ```shell
    hugo server -D
    ```
 
@@ -84,7 +84,7 @@ To prepare your new site environment just a few steps are required:
 
 Download and extract the latest release bundle into the theme directory.
 
-```Shell
+```shell
 mkdir -p themes/hugo-geekdoc/
 curl -L https://github.com/thegeeklab/hugo-geekdoc/releases/latest/download/hugo-geekdoc.tar.gz | tar -xz -C themes/hugo-geekdoc/ --strip-components=1
 ```
@@ -100,13 +100,13 @@ run the described steps as well.
 
 Clone the Geekdoc git repository.
 
-```Shell
+```shell
 git clone https://github.com/thegeeklab/hugo-geekdoc.git themes/hugo-geekdoc
 ```
 
 Build required theme assets e.g. CSS files and SVG sprites.
 
-```Shell
+```shell
 npm install
 npm run build
 ```
@@ -123,7 +123,7 @@ Here are some possible solutions:
 
 Add a Makefile to your repository to bundle the required steps.
 
-```Makefile
+```makefile
 THEME_VERSION := v0.8.2
 THEME := hugo-geekdoc
 BASEDIR := docs

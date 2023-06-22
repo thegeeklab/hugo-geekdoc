@@ -49,7 +49,7 @@
   {{ end }}
 {{ end }}
 
-{{ $showPrevNext := (and (default true .Site.Params.GeekdocNextPrev) .Site.Params.GeekdocMenuBundle) }}
+{{ $showPrevNext := (and (default true .Site.Params.geekdocNextPrev) .Site.Params.geekdocMenuBundle) }}
 {{ if $showPrevNext }}
   <span class="gdoc-page__nav">
     {{ with ($current.Scratch.Get "prevPage") }}

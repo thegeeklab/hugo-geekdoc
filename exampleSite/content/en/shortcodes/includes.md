@@ -78,13 +78,13 @@ HTML content will be filtered by the `safeHTML` filter and added to the rendered
 In some situations, it can be helpful to include Markdown files that also contain shortcodes. While the [default method](#markdown-file-default) works fine to render plain Markdown, shortcodes are not parsed. The only way to get this to work is to use Hugo pages. There are several ways to structure these include pages, so whatever you do, keep in mind that Hugo needs to be able to render and serve these files as regular pages! How it works:
 
 1. First you need to create a directory **within** your content directory. For this example site `_includes` is used.
-2. To prevent the theme from embedding the page in the navigation, create a file `_includes/_index.md` and add `GeekdocHidden: true` to the front matter.
+2. To prevent the theme from embedding the page in the navigation, create a file `_includes/_index.md` and add `geekdocHidden: true` to the front matter.
 3. Place your Markdown files within the `_includes` folder e.g. `/_includes/include-page.md`. Make sure to name it `*.md`.
 4. Include the page using `{{</* include file="/_includes/include-page.md" type="page" */>}}`.
 
 Resulting structure should look like this:
 
-```Shell
+```shell
 _includes/
  ├── include-page.md
  └── _index.md

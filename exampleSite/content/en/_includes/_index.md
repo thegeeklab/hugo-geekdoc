@@ -1,3 +1,3 @@
 ---
-GeekdocHidden: true
+geekdocHidden: true
 ---

@@ -2,7 +2,7 @@
 <html
   lang="{{ .Site.Language.Lang }}"
   class="color-toggle-hidden"
-  {{ if default false .Site.Params.GeekdocDarkModeCode }}code-theme="dark"{{ end }}
+  {{ if default false .Site.Params.geekdocDarkModeCode }}code-theme="dark"{{ end }}
 >
   <head>
     {{ partial "head/meta" . }}
@@ -26,11 +26,11 @@
 
 
     <div
-      class="wrapper {{ if default false .Site.Params.GeekdocDarkModeDim }}dark-mode-dim{{ end }}"
+      class="wrapper {{ if default false .Site.Params.geekdocDarkModeDim }}dark-mode-dim{{ end }}"
     >
       <input type="checkbox" class="hidden" id="menu-control" />
       <input type="checkbox" class="hidden" id="menu-header-control" />
-      {{ $navEnabled := default true .Page.Params.GeekdocNav }}
+      {{ $navEnabled := default true .Page.Params.geekdocNav }}
       {{ partial "site-header" (dict "Root" . "MenuEnabled" $navEnabled) }}
 
 

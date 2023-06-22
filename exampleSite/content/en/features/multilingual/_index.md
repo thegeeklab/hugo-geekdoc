@@ -12,7 +12,7 @@ Hugo supports the creation of websites with multiple languages. In this post we 
 
 You need to set a default language and configure at least two different languages used by your site to your configuration file at `config.toml`:
 
-```Toml
+```toml
 defaultContentLanguage = "en"
 
 [languages.en]
@@ -34,7 +34,7 @@ To customize translation strings used by the theme you can create a file `i18n/<
 
 For the [Bundle Menu](/usage/menus/#bundle-menu) as well as for the [Extra Header Menu](/usage/menus/#extra-header-menu) you can translate the name within the data file of the menu:
 
-```YAML
+```yaml
 ---
 more:
   # If `name` is a text, this text will be used as name for each language.
