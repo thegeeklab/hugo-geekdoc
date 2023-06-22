@@ -10,7 +10,7 @@ weight: -10
 {{< tabs "site-config" >}}
 {{< tab "TOML" >}}
 
-```Toml
+```toml
 baseURL = "http://localhost"
 title = "Geekdocs"
 theme = "hugo-geekdoc"
@@ -65,7 +65,7 @@ enableRobotsTXT = true
   # You can also specify this parameter per page in front matter.
   geekdocRepo = "https://github.com/thegeeklab/hugo"
 
-  # (Optional, default none) Enable 'Edit page' links. Requires 'GeekdocRepo' param
+  # (Optional, default none) Enable 'Edit page' links. Requires 'geekdocRepo' param
   # and the path must point to the parent directory of the 'content' folder.
   # You can also specify this parameter per page in front matter.
   geekdocEditPath = "edit/main/exampleSite"
@@ -134,7 +134,7 @@ enableRobotsTXT = true
 {{< /tab >}}
 {{< tab "YAML" >}}
 
-```Yaml
+```yaml
 ---
 baseURL: "http://localhost"
 title: "Geekdocs"
@@ -191,7 +191,7 @@ params:
   # You can also specify this parameter per page in front matter.
   geekdocRepo: "https://github.com/thegeeklab/hugo-geekdoc"
 
-  # (Optional, default none) Enable 'Edit page' links. Requires 'GeekdocRepo' param
+  # (Optional, default none) Enable 'Edit page' links. Requires 'geekdocRepo' param
   # and the path must point to the parent directory of the 'content' folder.
   # You can also specify this parameter per page in front matter.
   geekdocEditPath: edit/main/exampleSite
@@ -265,7 +265,7 @@ params:
 {{< tabs "page-config" >}}
 {{< tab "TOML" >}}
 
-```Toml
+```toml
 # Set type to 'posts' if you want to render page as blogpost
 type = "posts"
 
@@ -288,7 +288,7 @@ geekdocBreadcrumb = false
 # Set source repository location.
 geekdocRepo = "https://github.com/thegeeklab/hugo-geekdoc"
 
-# Enable 'Edit page' links. Requires 'GeekdocRepo' param and the path must point to
+# Enable 'Edit page' links. Requires 'geekdocRepo' param and the path must point to
 # the parent directory of the 'content' folder.
 geekdocEditPath = "edit/main/exampleSite"
 
@@ -325,7 +325,7 @@ geekdocAlign = "left"
 {{< /tab >}}
 {{< tab "YAML" >}}
 
-```Yaml
+```yaml
 # Set type to 'posts' if you want to render page as blogpost.
 type: "posts"
 
@@ -348,7 +348,7 @@ geekdocBreadcrumb: false
 # Set source repository location.
 geekdocRepo: "https://github.com/thegeeklab/hugo-geekdoc"
 
-# Enable 'Edit page' links. Requires 'GeekdocRepo' param and the path must point to
+# Enable 'Edit page' links. Requires 'geekdocRepo' param and the path must point to
 # the parent directory of the 'content' folder.
 geekdocEditPath: "edit/main/exampleSite"
 

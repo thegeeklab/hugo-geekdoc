@@ -1,4 +1,4 @@
-{{- if default true .Site.Params.GeekdocDarkModeToggle }}
+{{- if default true .Site.Params.geekdocDarkModeToggle }}
   <script src="{{ index (index .Site.Data.assets "colortheme.js") "src" | relURL }}"></script>
 {{- end }}
 <script src="{{ index (index .Site.Data.assets "main.js") "src" | relURL }}"></script>
@@ -66,7 +66,7 @@
   {{ printf `<link href=%q rel=%q type=%q />` .Permalink .Rel .MediaType.Type | safeHTML }}
 {{- end }}
 
-{{- if (default false $.Site.Params.GeekdocOverwriteHTMLBase) }}
+{{- if (default false $.Site.Params.geekdocOverwriteHTMLBase) }}
   <base href="{{ .Site.BaseURL }}" />
 {{- end }}
 

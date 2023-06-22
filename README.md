@@ -16,7 +16,7 @@ This theme is subject to a CI driven build and release process common for softwa
 
 Due to the fact that `webpack` and `npm scripts` are used as pre-processors, the theme cannot be used from the main branch by default. If you want to use the theme from a cloned branch instead of a release tarball you'll need to install `webpack` locally and run the build script once to create all required assets.
 
-```Shell
+```shell
 # install required packages from package.json
 npm install
 

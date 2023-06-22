@@ -1,7 +1,7 @@
 {{- $source := ($.Page.Resources.ByType "image").GetMatch (printf "%s" (.Get "name")) }}
 {{- $customAlt := .Get "alt" }}
 {{- $customSize := .Get "size" | lower }}
-{{- $lazyLoad := default (default true $.Site.Params.GeekdocImageLazyLoading) (.Get "lazy") }}
+{{- $lazyLoad := default (default true $.Site.Params.geekdocImageLazyLoading) (.Get "lazy") }}
 {{- $data := newScratch }}
 
 {{- with $source }}

@@ -16,7 +16,7 @@ Regardless of which tool (or existing sprite) you choose, there are a few requir
 
 The result of a valid minimal SVG sprite file could look like this:
 
-```XML
+```xml
 <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <symbol viewBox="-2.29 -2.29 28.57 28.57" id="arrow_back" xmlns="http://www.w3.org/2000/svg">
         <path d="M24 10.526v2.947H5.755l8.351 8.421-2.105 2.105-12-12 12-12 2.105 2.105-8.351 8.421H24z"/>
@@ -28,7 +28,7 @@ The result of a valid minimal SVG sprite file could look like this:
 
 FontAwesome provides three pre-build sprites included in the regular Web download pack, `sprites/brands.svg`, `sprites/regular.svg` and `sprites/solid.svg`. Choose your sprite to use and copy it to your projects root directory into `assets/sprites`, right beside your `content` folder:
 
-```Bash
+```bash
 my_projcet/
 ├── assets
 │   └── sprites
