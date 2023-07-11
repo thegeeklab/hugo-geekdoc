@@ -26,7 +26,7 @@ steps:
       NPM_CONFIG_LOGLEVEL: error
 
   - name: testbuild
-    image: thegeeklab/hugo:0.114.0
+    image: thegeeklab/hugo:0.115.2
     commands:
       - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
       - hugo --panicOnWarning -s exampleSite/ -b http://localhost:8000/
@@ -173,7 +173,7 @@ steps:
         - refs/pull/**
 
   - name: build
-    image: thegeeklab/hugo:0.114.0
+    image: thegeeklab/hugo:0.115.2
     commands:
       - hugo --panicOnWarning -s exampleSite/
 
