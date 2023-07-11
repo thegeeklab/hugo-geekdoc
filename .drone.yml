@@ -185,6 +185,11 @@ steps:
       FORCE_COLOR: true
       NPM_CONFIG_LOGLEVEL: error
 
+  - name: debug
+    image: thegeeklab/alpine-tools
+    commands:
+      - grep -ri "edit " -C 2 exampleSite/public/
+
   - name: publish
     image: thegeeklab/drone-s3-sync:2
     settings:
