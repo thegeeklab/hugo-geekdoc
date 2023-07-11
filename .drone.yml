@@ -31,11 +31,6 @@ steps:
       - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/hugo-geekdoc
       - hugo --panicOnWarning -s exampleSite/ -b http://localhost:8000/
 
-  - name: debug
-    image: thegeeklab/alpine-tools
-    commands:
-      - grep -ri "edit " -C 2 exampleSite/public/
-
   - name: html-validation
     image: thegeeklab/vnu
     commands:
@@ -189,11 +184,6 @@ steps:
     environment:
       FORCE_COLOR: true
       NPM_CONFIG_LOGLEVEL: error
-
-  - name: debug
-    image: thegeeklab/alpine-tools
-    commands:
-      - grep -ri "edit " -C 2 exampleSite/public/
 
   - name: publish
     image: thegeeklab/drone-s3-sync:2
