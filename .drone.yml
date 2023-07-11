@@ -7,14 +7,14 @@ platform:
   arch: amd64
 
 steps:
-  # - name: eslint
-  #   image: node:lts
-  #   commands:
-  #     - npm install > /dev/null
-  #     - npm run lint
-  #   environment:
-  #     FORCE_COLOR: true
-  #     NPM_CONFIG_LOGLEVEL: error
+  - name: eslint
+    image: node:lts
+    commands:
+      - npm install > /dev/null
+      - npm run lint
+    environment:
+      FORCE_COLOR: true
+      NPM_CONFIG_LOGLEVEL: error
 
   - name: assets
     image: node:lts
@@ -36,25 +36,25 @@ steps:
     commands:
       - grep -ri "edit " -C 2 exampleSite/public/
 
-  # - name: html-validation
-  #   image: thegeeklab/vnu
-  #   commands:
-  #     - vnu --skip-non-html --also-check-css --errors-only --filterfile .vnuignore exampleSite/public
+  - name: html-validation
+    image: thegeeklab/vnu
+    commands:
+      - vnu --skip-non-html --also-check-css --errors-only --filterfile .vnuignore exampleSite/public
 
-  # - name: link-validation
-  #   image: thegeeklab/link-validator
-  #   commands:
-  #     - link-validator --color=always --rate-limit 10 -e https://github.com/thegeeklab/hugo-geekdoc/edit/main/.* -e https://unsplash.com.*
-  #   environment:
-  #     LINK_VALIDATOR_BASE_DIR: exampleSite/public
-  #     LINK_VALIDATOR_RETRIES: 3
+  - name: link-validation
+    image: thegeeklab/link-validator
+    commands:
+      - link-validator --color=always --rate-limit 10 -e https://github.com/thegeeklab/hugo-geekdoc/edit/main/.* -e https://unsplash.com.*
+    environment:
+      LINK_VALIDATOR_BASE_DIR: exampleSite/public
+      LINK_VALIDATOR_RETRIES: 3
 
-  # - name: page-validation
-  #   image: thegeeklab/lhci:0.11
-  #   commands:
-  #     - lhci autorun
-  #   environment:
-  #     LHCI_SERVER_URL: https://drone-artifact.rknet.org/${DRONE_REPO_NAME}/
+  - name: page-validation
+    image: thegeeklab/lhci:0.11
+    commands:
+      - lhci autorun
+    environment:
+      LHCI_SERVER_URL: https://drone-artifact.rknet.org/${DRONE_REPO_NAME}/
 
 trigger:
   ref:
