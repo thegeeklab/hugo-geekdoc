@@ -40,12 +40,12 @@
     "store2": "2.14.2"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.22.7",
+    "@babel/eslint-parser": "7.22.9",
     "@eloquent/git-version-webpack-plugin": "5.0.1",
     "autoprefixer": "10.4.14",
     "copy-webpack-plugin": "11.0.0",
     "css-loader": "6.8.1",
-    "eslint": "8.44.0",
+    "eslint": "8.45.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-prettier": "5.0.0",
     "favicons": "7.1.3",
