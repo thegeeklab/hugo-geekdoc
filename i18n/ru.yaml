@@ -1,0 +1,17 @@
+---
+
+edit_page: Редактировать страницу
+
+form_placeholder_search: поиск
+
+nav_navigation: Навигация
+nav_top: Вернуться наверх
+nav_more: Читать далее
+
+
+footer_content_license_prefix: >
+  Контент лицензирован по
+
+pagination_page_prev: Предыдущая
+pagination_page_next: Следующая
+pagination_page_state: "{{ .PageNumber }}/{{ .TotalPages }}"
