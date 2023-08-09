@@ -56,7 +56,7 @@
     "sass-loader": "13.3.2",
     "shx": "0.3.4",
     "svg-sprite": "2.0.2",
-    "svgtofont": "3.25.4",
+    "svgtofont": "4.0.0",
     "webpack": "5.88.2",
     "webpack-cli": "5.1.4",
     "webpack-favicons": "1.3.8",
