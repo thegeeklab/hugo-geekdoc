@@ -40,7 +40,7 @@ steps:
     image: quay.io/thegeeklab/link-validator
     group: test
     commands:
-      - link-validator --color=always --rate-limit 10 --timeout 30 -e https://github.com/thegeeklab/${CI_REPO_NAME}/edit/main/.* -e https://unsplash.com.*
+      - link-validator --color=always --rate-limit 10 --timeout 60 -e https://github.com/thegeeklab/${CI_REPO_NAME}/edit/main/.* -e https://unsplash.com.*
     environment:
       LINK_VALIDATOR_BASE_DIR: exampleSite/public
       LINK_VALIDATOR_RETRIES: "3"
