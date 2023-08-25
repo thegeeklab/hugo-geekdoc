@@ -42,9 +42,6 @@ steps:
       - prettier CHANGELOG.md
       - prettier -w CHANGELOG.md
 
-  changelog:
-    image: thegeeklab/git-chglog
-
   publish-github:
     image: docker.io/plugins/github-release
     settings:
