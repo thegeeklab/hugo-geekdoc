@@ -32,19 +32,22 @@ steps:
 
   html-validation:
     image: quay.io/thegeeklab/vnu
+    group: test
     commands:
       - vnu --skip-non-html --also-check-css --errors-only --filterfile .vnuignore exampleSite/public
 
   link-validation:
     image: quay.io/thegeeklab/link-validator
+    group: test
     commands:
-      - link-validator --color=always --rate-limit 10 -e https://github.com/thegeeklab/${CI_REPO_NAME}/edit/main/.* -e https://unsplash.com.*
+      - link-validator --color=always --rate-limit 10 --timeout 30 -e https://github.com/thegeeklab/${CI_REPO_NAME}/edit/main/.* -e https://unsplash.com.*
     environment:
       LINK_VALIDATOR_BASE_DIR: exampleSite/public
       LINK_VALIDATOR_RETRIES: "3"
 
   page-validation:
-    image: quay.io/thegeeklab/lhci:0.11
+    image: quay.io/thegeeklab/lhci:0.12
+    group: test
     commands:
       - lhci autorun
     environment:

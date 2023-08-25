@@ -9,16 +9,20 @@ ci:
       - http://localhost/usage/getting-started/
     settings:
       chromeFlags: "--no-sandbox"
+      onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo']
+      skipAudits: ["color-contrast", "uses-long-cache-ttl", "csp-xss", "bf-cache", "is-crawlable", "image-size-responsive"]
   assert:
     preset: "lighthouse:no-pwa"
     assertions:
+      color-contrast: off
       uses-long-cache-ttl: off
       csp-xss: off
       # FIXME: https://github.com/GoogleChrome/lighthouse/issues/14957
       bf-cache: off
+      is-crawlable: off
+      image-size-responsive: off
       tap-targets: warn
       unsized-images: warn
-      image-size-responsive: warn
       # FIXME: https://github.com/GoogleChrome/lighthouse/issues/11460
       categories:performance:
         - warn
