@@ -3,7 +3,7 @@
 .tarignore
 .dictionary*
 .git*
-.drone*
+.woodpecker*
 .lighthouse*
 .markdownlint*
 .jsbeautify*
