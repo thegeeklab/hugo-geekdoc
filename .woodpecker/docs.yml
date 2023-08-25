@@ -16,7 +16,7 @@ steps:
     commands:
       - spellchecker --files 'exampleSite/content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls frontmatter --frontmatter-keys title
     environment:
-      FORCE_COLOR: true
+      FORCE_COLOR: "true"
       NPM_CONFIG_LOGLEVEL: error
 
   assets:
@@ -40,7 +40,7 @@ steps:
       - npm run svg-sprite-list
       - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/${CI_REPO_NAME}
     environment:
-      FORCE_COLOR: true
+      FORCE_COLOR: "true"
       NPM_CONFIG_LOGLEVEL: error
     when:
       - event: [pull_request]
@@ -55,7 +55,7 @@ steps:
     commands:
       - html-beautify -r -f 'exampleSite/public/**/*.html'
     environment:
-      FORCE_COLOR: true
+      FORCE_COLOR: "true"
       NPM_CONFIG_LOGLEVEL: error
 
   publish:

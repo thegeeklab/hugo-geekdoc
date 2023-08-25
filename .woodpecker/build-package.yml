@@ -14,7 +14,7 @@ steps:
       - npm run build
       - cat VERSION
     environment:
-      FORCE_COLOR: true
+      FORCE_COLOR: "true"
       NPM_CONFIG_LOGLEVEL: error
 
   package:
@@ -22,7 +22,7 @@ steps:
     commands:
       - npm run pack
     environment:
-      FORCE_COLOR: true
+      FORCE_COLOR: "true"
       NPM_CONFIG_LOGLEVEL: error
 
   checksum:
