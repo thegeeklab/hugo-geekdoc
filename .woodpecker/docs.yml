@@ -1,0 +1,81 @@
+---
+when:
+  - event: [pull_request, tag]
+  - event: [push, manual]
+    branch:
+      - ${CI_REPO_DEFAULT_BRANCH}
+
+steps:
+  markdownlint:
+    image: quay.io/thegeeklab/markdownlint-cli
+    commands:
+      - markdownlint 'exampleSite/content/**/*.md' 'README.md' 'CONTRIBUTING.md'
+
+  spellcheck:
+    image: quay.io/thegeeklab/alpine-tools
+    commands:
+      - spellchecker --files 'exampleSite/content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls frontmatter --frontmatter-keys title
+    environment:
+      FORCE_COLOR: "true"
+      NPM_CONFIG_LOGLEVEL: error
+
+  assets:
+    image: docker.io/library/node:lts
+    commands:
+      - npm install > /dev/null
+      - npm run svg-sprite-list
+      - mkdir -p exampleSite/themes/${CI_REPO_NAME}
+      - curl -sSL https://github.com/${CI_REPO}/releases/latest/download/${CI_REPO_NAME}.tar.gz | tar -xz -C exampleSite/themes/${CI_REPO_NAME}/ --strip-components=1
+    when:
+      - event: [tag]
+      - event: [push, manual]
+        branch:
+          - ${CI_REPO_DEFAULT_BRANCH}
+
+  assets-main:
+    image: docker.io/library/node:lts
+    commands:
+      - npm install > /dev/null
+      - npm run build
+      - npm run svg-sprite-list
+      - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/${CI_REPO_NAME}
+    environment:
+      FORCE_COLOR: "true"
+      NPM_CONFIG_LOGLEVEL: error
+    when:
+      - event: [pull_request]
+
+  build:
+    image: quay.io/thegeeklab/hugo:0.115.2
+    commands:
+      - hugo --panicOnWarning -s exampleSite/
+
+  beautify:
+    image: quay.io/thegeeklab/alpine-tools
+    commands:
+      - html-beautify -r -f 'exampleSite/public/**/*.html'
+    environment:
+      FORCE_COLOR: "true"
+      NPM_CONFIG_LOGLEVEL: error
+
+  publish:
+    image: quay.io/thegeeklab/wp-s3-action
+    settings:
+      access_key:
+        from_secret: s3_access_key
+      bucket: geekdocs-root
+      delete: true
+      endpoint: https://sp.rknet.org
+      path_style: true
+      secret_key:
+        from_secret: s3_secret_access_key
+      source: exampleSite/public/
+      strip_prefix: exampleSite/public/
+    when:
+      - event: [tag]
+      - event: [push, manual]
+        branch:
+          - ${CI_REPO_DEFAULT_BRANCH}
+
+depends_on:
+  - build-package

@@ -1,0 +1,26 @@
+---
+when:
+  - event: [tag]
+  - event: [push, manual]
+    branch:
+      - ${CI_REPO_DEFAULT_BRANCH}
+
+runs_on: [success, failure]
+
+steps:
+  matrix:
+    image: quay.io/thegeeklab/wp-matrix
+    settings:
+      homeserver:
+        from_secret: matrix_homeserver
+      password:
+        from_secret: matrix_password
+      roomid:
+        from_secret: matrix_roomid
+      username:
+        from_secret: matrix_username
+    when:
+      - status: [success, failure]
+
+depends_on:
+  - docs

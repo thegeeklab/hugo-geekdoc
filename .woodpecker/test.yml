@@ -1,0 +1,51 @@
+---
+when:
+  - event: [pull_request, tag]
+  - event: [push, manual]
+    branch:
+      - ${CI_REPO_DEFAULT_BRANCH}
+
+steps:
+  eslint:
+    image: docker.io/library/node:lts
+    commands:
+      - npm install > /dev/null
+      - npm run lint
+    environment:
+      FORCE_COLOR: "true"
+      NPM_CONFIG_LOGLEVEL: error
+
+  assets:
+    image: docker.io/library/node:lts
+    commands:
+      - npm install > /dev/null
+      - npm run build
+    environment:
+      FORCE_COLOR: "true"
+      NPM_CONFIG_LOGLEVEL: error
+
+  testbuild:
+    image: quay.io/thegeeklab/hugo:0.115.2
+    commands:
+      - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/${CI_REPO_NAME}
+      - hugo --panicOnWarning -s exampleSite/ -b http://localhost:8000/
+
+  html-validation:
+    image: quay.io/thegeeklab/vnu
+    commands:
+      - vnu --skip-non-html --also-check-css --errors-only --filterfile .vnuignore exampleSite/public
+
+  link-validation:
+    image: quay.io/thegeeklab/link-validator
+    commands:
+      - link-validator --color=always --rate-limit 10 -e https://github.com/thegeeklab/${CI_REPO_NAME}/edit/main/.* -e https://unsplash.com.*
+    environment:
+      LINK_VALIDATOR_BASE_DIR: exampleSite/public
+      LINK_VALIDATOR_RETRIES: "3"
+
+  page-validation:
+    image: quay.io/thegeeklab/lhci:0.11
+    commands:
+      - lhci autorun
+    environment:
+      LHCI_SERVER_URL: https://drone-artifact.rknet.org/${CI_REPO_NAME}/

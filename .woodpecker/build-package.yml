@@ -1,0 +1,63 @@
+---
+when:
+  - event: [pull_request, tag]
+  - event: [push, manual]
+    branch:
+      - ${CI_REPO_DEFAULT_BRANCH}
+
+steps:
+  assets:
+    image: docker.io/library/node:lts
+    commands:
+      - git fetch -tq
+      - npm install > /dev/null
+      - npm run build
+      - cat VERSION
+    environment:
+      FORCE_COLOR: "true"
+      NPM_CONFIG_LOGLEVEL: error
+
+  package:
+    image: docker.io/library/node:lts
+    commands:
+      - npm run pack
+    environment:
+      FORCE_COLOR: "true"
+      NPM_CONFIG_LOGLEVEL: error
+
+  checksum:
+    image: quay.io/thegeeklab/alpine-tools
+    commands:
+      - cd dist/ && sha256sum * > ../sha256sum.txt
+
+  changelog-generate:
+    image: quay.io/thegeeklab/git-chglog
+    commands:
+      - git fetch -tq
+      - git-chglog --no-color --no-emoji -o CHANGELOG.md ${CI_COMMIT_TAG:---next-tag unreleased unreleased}
+
+  changelog-format:
+    image: quay.io/thegeeklab/alpine-tools
+    commands:
+      - prettier CHANGELOG.md
+      - prettier -w CHANGELOG.md
+
+  changelog:
+    image: thegeeklab/git-chglog
+
+  publish-github:
+    image: docker.io/plugins/github-release
+    settings:
+      api_key:
+        from_secret: github_token
+      files:
+        - dist/*
+        - sha256sum.txt
+      note: CHANGELOG.md
+      overwrite: true
+      title: ${CI_COMMIT_TAG}
+    when:
+      - event: [tag]
+
+depends_on:
+  - test
