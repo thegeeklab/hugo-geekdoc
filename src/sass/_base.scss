@@ -342,7 +342,9 @@ svg.gdoc-icon {
 .gdoc-language__list {
   background: var(--body-background);
   border-radius: $border-radius;
-  box-shadow: 0 1px 3px 0 var(--accent-color-dark), 0 1px 2px 0 var(--accent-color);
+  box-shadow:
+    0 1px 3px 0 var(--accent-color-dark),
+    0 1px 2px 0 var(--accent-color);
   position: absolute;
   margin: 0;
   padding: $padding-8 $padding-4 !important;
@@ -395,17 +397,17 @@ svg.gdoc-icon {
   }
 
   &__anchorwrap {
+    gap: 0.5em;
+
     &:hover .gdoc-page__anchor svg.gdoc-icon {
       color: var(--control-icons);
     }
   }
 
   &__anchor {
-    margin-left: $padding-8;
-
     svg.gdoc-icon {
-      width: 1.25em;
-      height: 1.25em;
+      width: 1.85em;
+      height: 1.85em;
       color: transparent;
     }
 
@@ -584,7 +586,9 @@ svg.gdoc-icon {
     padding: $padding-8;
     padding-left: $padding-32;
 
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition:
+      border-color 0.15s ease-in-out,
+      box-shadow 0.15s ease-in-out;
     border: 1px solid transparent;
     border-radius: $border-radius;
 
