@@ -655,7 +655,7 @@ svg.gdoc-icon {
   }
 
   &:focus-within &__list.has-hits,
-  &__list.has-hits:active {
+  &__list.has-hits:hover {
     visibility: visible;
   }
 }
