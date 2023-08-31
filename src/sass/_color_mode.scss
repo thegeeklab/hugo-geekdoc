@@ -115,9 +115,9 @@
   --code-accent-color-lite: #{darken($code-background-dark, 2)};
   --code-font-color: #{$code-font-color-dark};
 
-  --code-copy-background: #{$body-background-dark};
-  --code-copy-font-color: #{lighten($body-font-color, 24)};
-  --code-copy-border-color: #{lighten($body-font-color, 24)};
+  --code-copy-background: #{$code-background-dark};
+  --code-copy-font-color: #{$code-font-color-dark};
+  --code-copy-border-color: #{$code-font-color-dark};
   --code-copy-success-color: #{scale-color(map.get($hint-colors, "ok"), $alpha: -55%)};
 }
 
@@ -130,7 +130,7 @@
   --code-font-color: #{$code-font-color};
 
   --code-copy-background: #{$code-background};
-  --code-copy-font-color: #{lighten($body-font-color, 24)};
+  --code-copy-font-color: #{$code-font-color};
   --code-copy-border-color: #{lighten($body-font-color, 48)};
   --code-copy-success-color: #{map.get($hint-colors, "ok")};
 }
