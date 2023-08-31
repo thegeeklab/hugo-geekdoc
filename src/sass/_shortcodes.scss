@@ -212,6 +212,10 @@
     gap: 0.5em;
     line-height: normal;
     margin-bottom: $padding-4;
+
+    &:hover .gdoc-page__anchor svg.gdoc-icon {
+      color: var(--control-icons);
+    }
   }
 
   @each $name, $color in $hint-colors {
