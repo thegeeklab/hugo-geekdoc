@@ -397,17 +397,17 @@ svg.gdoc-icon {
   }
 
   &__anchorwrap {
+    gap: 0.5em;
+
     &:hover .gdoc-page__anchor svg.gdoc-icon {
       color: var(--control-icons);
     }
   }
 
   &__anchor {
-    margin-left: $padding-8;
-
     svg.gdoc-icon {
-      width: 1.25em;
-      height: 1.25em;
+      width: 1.85em;
+      height: 1.85em;
       color: transparent;
     }
 
