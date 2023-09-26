@@ -65,7 +65,8 @@ steps:
         from_secret: s3_access_key
       bucket: geekdocs-root
       delete: true
-      endpoint: https://sp.rknet.org
+      endpoint:
+        from_secret: s3_endpoint
       path_style: true
       secret_key:
         from_secret: s3_secret_access_key
