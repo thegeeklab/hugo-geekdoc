@@ -37,13 +37,10 @@ steps:
       - vnu --skip-non-html --also-check-css --errors-only --filterfile .vnuignore exampleSite/public
 
   link-validation:
-    image: quay.io/thegeeklab/link-validator
+    image: docker.io/lycheeverse/lychee
     group: test
     commands:
-      - link-validator --color=always --rate-limit 10 --timeout 60 -e https://github.com/thegeeklab/${CI_REPO_NAME}/edit/main/.* -e https://unsplash.com.* -e https://www.color-hex.com.*
-    environment:
-      LINK_VALIDATOR_BASE_DIR: exampleSite/public
-      LINK_VALIDATOR_RETRIES: "3"
+      - lychee --no-progress --format detailed exampleSite/content/ README.md
 
   page-validation:
     image: quay.io/thegeeklab/lhci:0.12
