@@ -48,4 +48,4 @@ steps:
     commands:
       - lhci autorun
     environment:
-      LHCI_SERVER_URL: https://drone-artifact.rknet.org/${CI_REPO_NAME}/
+      LHCI_SERVER_URL: https://ci-artifact.rknet.org/${CI_REPO_NAME}/
