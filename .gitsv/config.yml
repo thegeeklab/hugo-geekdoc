@@ -1,0 +1,47 @@
+---
+version: "1.1"
+
+versioning:
+  update-major: []
+  update-minor: [feat]
+  update-patch: [fix, perf, refactor, chore, test, ci, docs]
+
+tag:
+  pattern: "v%d.%d.%d"
+
+release-notes:
+  sections:
+    - name: Features
+      commit-types: [feat]
+      section-type: commits
+    - name: Bug Fixes
+      commit-types: [fix]
+      section-type: commits
+    - name: Performance Improvements
+      commit-types: [perf]
+      section-type: commits
+    - name: Code Refactoring
+      commit-types: [refactor]
+      section-type: commits
+    - name: Others
+      commit-types: [chore]
+      section-type: commits
+    - name: Testing
+      commit-types: [test]
+      section-type: commits
+    - name: CI Pipeline
+      commit-types: [ci]
+      section-type: commits
+    - name: Documentation
+      commit-types: [docs]
+      section-type: commits
+    - name: Breaking Changes
+      section-type: breaking-changes
+
+commit-message:
+  footer:
+    issue:
+      key: issue
+      add-value-prefix: "#"
+  issue:
+    regex: "#?[0-9]+"
