@@ -53,8 +53,7 @@ enableRobotsTXT = true
   # per page if enabled. Can be enabled per page via 'geekdocCollapseSection'.
   geekdocCollapseAllSections = true
 
-  # (Optional, default true) Show page navigation links at the bottom of each
-  # docs page (bundle menu only).
+  # (Optional, default true) Show page navigation links at the bottom of each docs page.
   geekdocNextPrev = false
 
   # (Optional, default true) Show a breadcrumb navigation bar at the top of each docs page.
@@ -179,8 +178,7 @@ params:
   # per page if enabled. Can be enabled per page via 'geekdocCollapseSection'.
   geekdocCollapseAllSections: true
 
-  # (Optional, default true) Show page navigation links at the bottom of each
-  # docs page (bundle menu only).
+  # (Optional, default true) Show page navigation links at the bottom of each docs page.
   geekdocNextPrev: false
 
   # (Optional, default true) Show a breadcrumb navigation bar at the top of each docs page.

@@ -6,9 +6,9 @@
 {{ $current.Scratch.Set "nextPage" false }}
 {{ $current.Scratch.Set "prevPage" false }}
 
-{{ template "menu_nextprev" dict "sect" $.Site.Data.menu.main.main "current" $current "site" $site }}
+{{ template "menu-bundle-np" dict "sect" $.Site.Data.menu.main.main "current" $current "site" $site }}
 
-{{ define "menu_nextprev" }}
+{{ define "menu-bundle-np" }}
   {{ $current := .current }}
   {{ $site := .site }}
 
@@ -44,35 +44,32 @@
 
     {{ $sub := default false .sub }}
     {{ if $sub }}
-      {{ template "menu_nextprev" dict "sect" $sub "current" ($current.Scratch.Get "current") "site" ($current.Scratch.Get "site") }}
+      {{ template "menu-bundle-np" dict "sect" $sub "current" ($current.Scratch.Get "current") "site" ($current.Scratch.Get "site") }}
     {{ end }}
   {{ end }}
 {{ end }}
 
-{{ $showPrevNext := (and (default true .Site.Params.geekdocNextPrev) .Site.Params.geekdocMenuBundle) }}
-{{ if $showPrevNext }}
-  <span class="gdoc-page__nav">
-    {{ with ($current.Scratch.Get "prevPage") }}
-      <a
-        class="gdoc-page__nav--prev flex align-center"
-        href="{{ .this.RelPermalink }}"
-        title="{{ .name }}"
-      >
-        <i class="gdoc-icon">gdoc_arrow_left_alt</i>
-        {{ .name }}
-      </a>
-    {{ end }}
-  </span>
-  <span class="gdoc-page__nav">
-    {{ with ($current.Scratch.Get "nextPage") }}
-      <a
-        class="gdoc-page__nav--next flex align-center"
-        href="{{ .this.RelPermalink }}"
-        title="{{ .name }}"
-      >
-        {{ .name }}
-        <i class="gdoc-icon">gdoc_arrow_right_alt</i>
-      </a>
-    {{ end }}
-  </span>
-{{ end }}
+<span class="gdoc-page__nav">
+  {{ with ($current.Scratch.Get "prevPage") }}
+    <a
+      class="gdoc-page__nav--prev flex align-center"
+      href="{{ .this.RelPermalink }}"
+      title="{{ .name }}"
+    >
+      <i class="gdoc-icon">gdoc_arrow_left_alt</i>
+      {{ .name }}
+    </a>
+  {{ end }}
+</span>
+<span class="gdoc-page__nav">
+  {{ with ($current.Scratch.Get "nextPage") }}
+    <a
+      class="gdoc-page__nav--next flex align-center"
+      href="{{ .this.RelPermalink }}"
+      title="{{ .name }}"
+    >
+      {{ .name }}
+      <i class="gdoc-icon">gdoc_arrow_right_alt</i>
+    </a>
+  {{ end }}
+</span>
