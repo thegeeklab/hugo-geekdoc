@@ -56,9 +56,9 @@
         {{ $name := $current.Scratch.Get "refName" }}
 
         {{ if $current.Scratch.Get "getNext" }}
-          {{ if $this.Content }}
-          {{ $current.Scratch.Set "nextPage" (dict "name" $name "this" $this) }}
-          {{ $current.Scratch.Set "getNext" false }}
+          {{ if or $this.Content $this.Params.geekdocFlatSection }}
+            {{ $current.Scratch.Set "nextPage" (dict "name" $name "this" $this) }}
+            {{ $current.Scratch.Set "getNext" false }}
           {{ end }}
         {{ end }}
 
@@ -67,8 +67,8 @@
           {{ $current.Scratch.Set "getNext" true }}
         {{ end }}
 
-        {{ if $this.Content }}
-        {{ $current.Scratch.Set "prev" (dict "name" $name "this" $this) }}
+        {{ if or $this.Content $this.Params.geekdocFlatSection }}
+          {{ $current.Scratch.Set "prev" (dict "name" $name "this" $this) }}
         {{ end }}
 
         {{ $sub := and (ne $numberOfPages 0) (not .Params.geekdocFlatSection) }}
