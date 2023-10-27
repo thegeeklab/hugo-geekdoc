@@ -46,15 +46,6 @@ resources:
 If you need more flexibility for your embedded images, you could use the `img` shortcode. It is using Hugo's
 [page resources](https://gohugo.io/content-management/page-resources/) and supports lazy loading of your images.
 
-## Attributes
-
-| Name | Description                                                  | default           |
-| ---- | ------------------------------------------------------------ | ----------------- |
-| name | name of the image resource defined in your front matter      | empty             |
-| alt  | description for displayed image                              | resource `.Title` |
-| size | Thumbnail size (origin\|profile\|tiny\|small\|medium\|large) | empty             |
-| lazy | enable or disable image lazy loading                         | true              |
-
 ## Usage
 
 Define your resources in the page front matter, custom parameter `params.credits` is optional.
@@ -73,6 +64,14 @@ resources:
 
 {{</* img name="forest-1" size="large" lazy=false */>}}
 ```
+
+### Attributes
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-images sort=name order=asc >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
 
 <!-- spellchecker-enable -->
 

@@ -4,21 +4,22 @@ title: ToC
 
 Simple wrapper to generate a page Table of Content from a shortcode.
 
-**Attributes:**
+## Usage
 
-| Name   | Description                | Default                                                       |
-| ------ | -------------------------- | ------------------------------------------------------------- |
-| format | format of the returned ToC | <!-- spellchecker-disable -->html<!-- spellchecker-enable --> |
-
-**Usage:**
-
-<!-- prettier-ignore-start -->
+<!-- prettier-ignore -->
 ```tpl
 {{</* toc (format=[html|raw]) */>}}
 ```
+
+### Attributes
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-toc sort=name order=asc >}}
+<!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
 
-**Example:**
+## Example
 
 {{< toc >}}
 

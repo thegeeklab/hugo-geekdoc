@@ -1,0 +1,19 @@
+---
+properties:
+  - name: name
+    type: string
+    description: Mame of the image resource defined in page front matter.
+    required: true
+  - name: alt
+    type: string
+    description: Description text for the image.
+    required: false
+  - name: size
+    type: string
+    description: Thumbnail size. Supported values are `origin|profile|tiny|small|medium|large`.
+    required: false
+  - name: lazy
+    type: bool
+    description: Enable/disable lazy loading for the image.
+    required: false
+    defaultValue: true

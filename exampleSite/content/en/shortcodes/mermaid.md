@@ -4,7 +4,7 @@ title: Mermaid
 
 [Mermaid](https://mermaidjs.github.io/) is library for generating SVG charts and diagrams from text.
 
-## Example
+## Usage
 
 <!-- prettier-ignore -->
 ```tpl
@@ -21,6 +21,16 @@ sequenceDiagram
     end
 {{</* /mermaid */>}}
 ```
+
+### Attributes
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-mermaid sort=name order=asc >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
+
+## Example
 
 <!-- spellchecker-disable -->
 <!-- prettier-ignore -->

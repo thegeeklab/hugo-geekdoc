@@ -1,0 +1,19 @@
+---
+properties:
+  - name: href
+    type: string
+    description: The URL to use as target of the button.
+    required: false
+  - name: relref
+    type: string
+    description: Executes the [relref](https://gohugo.io/functions/urls/relref/) Hugo function to resolve the relative permalink of the specified page. The result is set as the target of the button.
+    required: false
+  - name: class
+    type: list
+    description: List of space-separated CSS class names to apply.
+    required: false
+  - name: size
+    type: string
+    description: Preset of different button sizes. Supported values are `regular|large`.
+    required: false
+    devaultValue: regular

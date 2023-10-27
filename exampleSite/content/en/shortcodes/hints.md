@@ -4,14 +4,6 @@ title: Hints
 
 Hint shortcode can be used as hint/alerts/notification block.
 
-## Attributes
-
-| Name             | Description                                                                      | default   |
-| ---------------- | -------------------------------------------------------------------------------- | --------- |
-| type             | hint type                                                                        | note      |
-| icon (optional)  | custom icon to use,need to be an icon from an [SVG sprite](/features/icon-sets/) | undefined |
-| title (optional) | hint title                                                                       | undefined |
-
 ## Usage
 
 <!-- prettier-ignore-start -->
@@ -22,6 +14,14 @@ Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclima
  Ornateness bland it ex enc, est yeti am bongo detract re.
 {{</* /hint */>}}
 ```
+<!-- prettier-ignore-end -->
+
+### Attributes
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-hints sort=name order=asc >}}
+<!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
 
 ## Example

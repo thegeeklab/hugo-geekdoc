@@ -1,0 +1,15 @@
+---
+properties:
+  - name: name
+    type: string
+    description: Name of the file from the `data/properties/` directory.
+    required: true
+  - name: sort
+    type: string
+    description: Field name to use for sorting.
+    required: false
+  - name: order
+    type: string
+    description: Sort order, only applied if `sort` is set. Supported values are `asc|desc`.
+    required: false
+    defaultValue: asc

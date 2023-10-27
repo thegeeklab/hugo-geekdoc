@@ -1,0 +1,15 @@
+---
+properties:
+  - name: type
+    type: string
+    description: Type of the hint. Supported values are `note|tip|important|caution|warning`.
+    required: false
+    defaultValue: note
+  - name: icon
+    type: string
+    description: Icon to use. The value need to be an icon from an [SVG sprite](/features/icon-sets/).
+    required: false
+  - name: title
+    type: string
+    description: Title text of the hint.
+    required: false
