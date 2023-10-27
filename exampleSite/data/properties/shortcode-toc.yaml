@@ -1,0 +1,10 @@
+---
+properties:
+  - name: format
+    type: string
+    description: |
+      Format of the returned ToC. The `html` format creates an HTML wrapper to enable the `geekdocToC` parameter that limits
+      the maximum ToC level to be displayed. This variant also automatically inserts a horizontal line after the ToC. The `raw` format
+      returns the unformatted ToC, the parameter `geekdocToC` does not work in this mode. Supported values are `html|raw`.
+    required: false
+    defaultValue: html

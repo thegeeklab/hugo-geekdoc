@@ -4,15 +4,9 @@ title: Columns
 
 The Columns shortcode can be used to organize content side-by-side (horizontally) for better readability.
 
-## Attributes
-
-| Name            | Description                                      | default |
-| --------------- | ------------------------------------------------ | ------- |
-| size (optional) | size of the first column (small\|regular\|large) | regular |
-
 ## Usage
 
-```html
+```tpl
 {{</* columns */>}} <!-- begin columns block -->
 ## Left Content
 Dolor sit, sumo unique argument um no ...
@@ -29,11 +23,19 @@ Dolor sit, sumo unique argument um no ...
 {{</* /columns */>}}
 ```
 
+### Attributes
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-columns sort=name order=asc >}}
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
+
 ## Example
 
 {{< columns >}}
 
-## Left
+### Left
 
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
 investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
@@ -42,14 +44,14 @@ copious quo ad. Stet probates in duo.
 
 <--->
 
-## Mid Content
+### Mid Content
 
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
 investiture. Ornateness bland it ex enc, est yeti am bongo detract re.
 
 <--->
 
-## Right Content
+### Right Content
 
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
 investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts

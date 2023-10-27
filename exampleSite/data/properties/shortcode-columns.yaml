@@ -1,0 +1,7 @@
+---
+properties:
+  - name: size
+    type: string
+    description: Preset of different sizes for the _first_ column. Supported values are `small|regular|large`.
+    required: false
+    defaultValue: regular

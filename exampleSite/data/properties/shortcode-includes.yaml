@@ -1,0 +1,19 @@
+---
+properties:
+  - name: file
+    type: string
+    description: Path of the file (relative to the Hugo root) to include.
+    required: true
+  - name: language
+    type: string
+    description: Language for [syntax highlighting](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages).
+    required: false
+  - name: type
+    type: string
+    description: Special include type. Supported values are `html|page`. If not set the included file is rendered as markdown.
+    required: false
+  - name: options
+    type: bool
+    description: highlighting [options](https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode).
+    required: false
+    defaultValue: linenos=table

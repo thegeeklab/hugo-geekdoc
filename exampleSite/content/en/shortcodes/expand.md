@@ -4,40 +4,38 @@ title: Expand
 
 Expand shortcode can help to decrease clutter on screen by hiding part of text. Expand content by clicking on it.
 
-## Example
+## Usage
 
-### Default
-
-<!-- prettier-ignore-start -->
 ```tpl
 {{</* expand */>}}
-## Markdown content
+### Markdown content
 Dolor sit, sumo unique ...
 {{</* /expand */>}}
 ```
-<!-- prettier-ignore-end -->
+
+It is also possible to use a custom label and symbol.
+
+<!-- prettier-ignore-start -->
+
+```tpl
+{{</* expand "Custom Label" "..." */>}}
+### More markdown
+Dolor sit, sumo unique ...
+{{</* /expand */>}}
+```
+
+## Example
 
 {{< expand >}}
 
-## Markdown content
+### Markdown content
 
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture. Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /expand >}}
 
-### With Custom Label
-
-<!-- prettier-ignore-start -->
-```tpl
-{{</* expand "Custom Label" "..." */>}}
-## Markdown content
-Dolor sit, sumo unique ...
-{{</* /expand */>}}
-```
-<!-- prettier-ignore-end -->
-
 {{< expand "Custom Label" "..." >}}
 
-## More markdown
+### More markdown
 
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
 investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts

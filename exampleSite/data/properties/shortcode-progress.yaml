@@ -1,0 +1,15 @@
+---
+properties:
+  - name: value
+    type: integer
+    description: Progress value.
+    required: false
+    defaultValue: 0
+  - name: icon
+    type: string
+    description: Icon to use. The value need to be an icon from an [SVG sprite](/features/icon-sets/).
+    required: false
+  - name: title
+    type: string
+    description: Title text of the progress bar.
+    required: false

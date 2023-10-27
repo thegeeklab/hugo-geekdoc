@@ -1,0 +1,6 @@
+---
+properties:
+  - name: class
+    type: list
+    description: List of space-separated CSS class names to apply.
+    required: false
