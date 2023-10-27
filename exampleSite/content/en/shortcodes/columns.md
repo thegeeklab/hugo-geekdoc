@@ -6,7 +6,7 @@ The Columns shortcode can be used to organize content side-by-side (horizontally
 
 ## Usage
 
-```tpl
+```html
 {{</* columns */>}} <!-- begin columns block -->
 ## Left Content
 Dolor sit, sumo unique argument um no ...
