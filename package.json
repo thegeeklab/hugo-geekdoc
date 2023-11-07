@@ -36,7 +36,7 @@
     "flexsearch": "0.7.31",
     "katex": "0.16.9",
     "lodash": "4.17.21",
-    "mermaid": "10.6.0",
+    "mermaid": "10.6.1",
     "store2": "2.14.2"
   },
   "devDependencies": {
