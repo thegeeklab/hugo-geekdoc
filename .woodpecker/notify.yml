@@ -8,7 +8,7 @@ when:
 runs_on: [success, failure]
 
 steps:
-  matrix:
+  - name: matrix
     image: quay.io/thegeeklab/wp-matrix
     settings:
       homeserver:

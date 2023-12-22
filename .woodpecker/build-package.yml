@@ -6,31 +6,29 @@ when:
       - ${CI_REPO_DEFAULT_BRANCH}
 
 steps:
-  assets:
+  - name: assets
     image: docker.io/library/node:lts
     commands:
       - git fetch --depth=2147483647
-      - npm install > /dev/null
+      - npm install --quiet --no-progress
       - npm run build
       - cat VERSION
     environment:
       FORCE_COLOR: "true"
-      NPM_CONFIG_LOGLEVEL: error
 
-  package:
+  - name: package
     image: docker.io/library/node:lts
     commands:
       - npm run pack
     environment:
       FORCE_COLOR: "true"
-      NPM_CONFIG_LOGLEVEL: error
 
-  checksum:
+  - name: checksum
     image: quay.io/thegeeklab/alpine-tools
     commands:
       - cd dist/ && sha256sum * > ../sha256sum.txt
 
-  changelog:
+  - name: changelog
     image: quay.io/thegeeklab/git-sv
     commands:
       - git fetch --depth=2147483647
@@ -38,7 +36,7 @@ steps:
       - git sv release-notes -t ${CI_COMMIT_TAG:-next} -o CHANGELOG.md
       - cat CHANGELOG.md
 
-  publish-github:
+  - name: publish-github
     image: docker.io/plugins/github-release
     settings:
       api_key:
