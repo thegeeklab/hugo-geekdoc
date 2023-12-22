@@ -25,6 +25,9 @@ steps:
   - name: testbuild
     image: quay.io/thegeeklab/hugo:0.115.2
     commands:
+      # Fetch is used to get the full git history.
+      # Required for Hugos git metadata integration.
+      - git fetch --depth=2147483647
       - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/${CI_REPO_NAME}
       - hugo --panicOnWarning -s exampleSite/ -b http://localhost:8000/
 
