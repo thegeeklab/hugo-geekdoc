@@ -9,7 +9,6 @@ steps:
   - name: assets
     image: docker.io/library/node:lts
     commands:
-      - git fetch --depth=2147483647
       - npm install --quiet --no-progress
       - npm run build
       - cat VERSION
@@ -31,7 +30,6 @@ steps:
   - name: changelog
     image: quay.io/thegeeklab/git-sv
     commands:
-      - git fetch --depth=2147483647
       - git sv current-version
       - git sv release-notes -t ${CI_COMMIT_TAG:-next} -o CHANGELOG.md
       - cat CHANGELOG.md
