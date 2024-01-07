@@ -10,7 +10,8 @@
 .prettier*
 .eslintrc*
 .chglog
-.vnuignore
+.htmlvalidate*
+.lycheeignore*
 example*
 webpack*
 svgsprite*

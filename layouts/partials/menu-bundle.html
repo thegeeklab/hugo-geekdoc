@@ -52,7 +52,7 @@
                   <svg class="gdoc-icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>
                 {{ end }}
                 <a
-                  href="{{ if .external }}
+                  href="{{ if .external -}}
                     {{ .ref }}
                   {{- else -}}
                     {{ path.Join $this.RelPermalink $anchor }}

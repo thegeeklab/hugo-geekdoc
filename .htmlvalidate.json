@@ -1,0 +1,8 @@
+{
+  "extends": ["html-validate:standard"],
+  "rules": {
+    "element-required-content": "off",
+    "element-permitted-content": "off",
+    "no-raw-characters": "off"
+  }
+}
