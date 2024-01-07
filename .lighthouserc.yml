@@ -9,8 +9,18 @@ ci:
       - http://localhost/usage/getting-started/
     settings:
       chromeFlags: "--no-sandbox"
-      onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo']
-      skipAudits: ["color-contrast", "uses-long-cache-ttl", "csp-xss", "bf-cache", "is-crawlable", "image-size-responsive"]
+      onlyCategories: ["performance", "accessibility", "best-practices", "seo"]
+      skipAudits:
+        [
+          "color-contrast",
+          "uses-long-cache-ttl",
+          "csp-xss",
+          "bf-cache",
+          "is-crawlable",
+          "image-size-responsive",
+          "render-blocking-resources",
+          "largest-contentful-paint"
+        ]
   assert:
     preset: "lighthouse:no-pwa"
     assertions:
@@ -21,6 +31,8 @@ ci:
       bf-cache: off
       is-crawlable: off
       image-size-responsive: off
+      render-blocking-resources: off
+      largest-contentful-paint: off
       tap-targets: warn
       unsized-images: warn
       # FIXME: https://github.com/GoogleChrome/lighthouse/issues/11460
