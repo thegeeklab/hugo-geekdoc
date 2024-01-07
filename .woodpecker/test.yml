@@ -10,7 +10,7 @@ steps:
     image: docker.io/library/node:lts
     commands:
       - npm install --quiet --no-progress
-      - npm run lint
+      - npm run lint:js
     environment:
       FORCE_COLOR: "true"
 
@@ -29,10 +29,13 @@ steps:
       - hugo --panicOnWarning -s exampleSite/ -b http://localhost:8000/
 
   - name: html-validation
-    image: quay.io/thegeeklab/vnu
+    image: docker.io/library/node:lts
     group: test
     commands:
-      - vnu --skip-non-html --also-check-css --errors-only --filterfile .vnuignore exampleSite/public
+      - npm install --quiet --no-progress
+      - npm run lint:html
+    environment:
+      FORCE_COLOR: "true"
 
   - name: link-validation
     image: docker.io/lycheeverse/lychee
