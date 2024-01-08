@@ -1,6 +1,6 @@
 const groupBy = require("lodash/groupBy")
 const truncate = require("lodash/truncate")
-const { FlexSearch } = require("flexsearch/dist/flexsearch.compact")
+const { FlexSearch } = require("flexsearch/dist/flexsearch.compact.min")
 const { Validator } = require("@cfworker/json-schema")
 
 document.addEventListener("DOMContentLoaded", function (event) {
