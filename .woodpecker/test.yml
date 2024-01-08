@@ -44,7 +44,7 @@ steps:
       - lychee --no-progress --format detailed exampleSite/content/ README.md
 
   - name: page-validation
-    image: quay.io/thegeeklab/lhci:0.12
+    image: quay.io/thegeeklab/lhci:0.13
     group: test
     commands:
       - lhci autorun

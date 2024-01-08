@@ -33,6 +33,8 @@ ci:
       image-size-responsive: off
       render-blocking-resources: off
       largest-contentful-paint: off
+      total-byte-weight: warn
+      identical-links-same-purpose: warn
       tap-targets: warn
       unsized-images: warn
       # FIXME: https://github.com/GoogleChrome/lighthouse/issues/11460

@@ -547,8 +547,12 @@ svg.gdoc-icon {
   background: var(--footer-background);
   color: var(--footer-font-color);
 
-  .fake-link:hover {
-    background-image: linear-gradient(var(--footer-link-color), var(--footer-link-color));
+  .fake-link {
+    text-decoration: none;
+
+    &:hover {
+      background-image: linear-gradient(var(--footer-link-color), var(--footer-link-color));
+    }
   }
 
   &__item {
@@ -560,6 +564,7 @@ svg.gdoc-icon {
   }
 
   &__link {
+    text-decoration: underline;
     color: var(--footer-link-color);
 
     &:visited {
@@ -734,6 +739,7 @@ svg.gdoc-icon {
 
   &__link,
   &__link:visited {
+    text-decoration: underline;
     color: var(--link-color);
   }
 
@@ -773,6 +779,7 @@ svg.gdoc-icon {
 
   a,
   a:visited {
+    text-decoration: none !important;
     color: var(--link-color);
   }
 }

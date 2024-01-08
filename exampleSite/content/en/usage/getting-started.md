@@ -44,7 +44,7 @@ To prepare your new site environment just a few steps are required:
 
 3. Install the Geekdoc theme from a [release bundle](#option-1-download-pre-build-release-bundle) (recommended) or from [Git branch](#option-2-clone-the-github-repository).
 
-4. Create the minimal required Hugo configuration `config.toml`. For all configuration options take a look at the [configuration](/usage/configuration/) page.
+4. Create the minimal required Hugo configuration `config.toml`. For all configuration options take a look at the [configuration page](/usage/configuration/).
 
    ```toml
    baseURL = "http://localhost"
@@ -147,7 +147,7 @@ clean:
    rm -rf $(BASEDIR)/public
 ```
 
-This Makefile can be used in your `netlify.toml`, take a look at the Netlify [example](https://docs.netlify.com/configure-builds/file-based-configuration/#sample-netlify-toml-file) for more information:
+This Makefile can be used in your `netlify.toml`, take a look at the [Netlify example](https://docs.netlify.com/configure-builds/file-based-configuration/#sample-netlify-toml-file) for more information:
 
 ```toml
 [build]
@@ -193,7 +193,7 @@ Using `hugo --minify` without further configuration or using other minify tools 
 
 After some testing we decided to not spend effort to fix this issue for now as the benefit is very low. There are some parts of the theme where spaces between HTML elements matters but were stripped by minify tools. Some of these issues are related to <!-- spellchecker-disable -->[gohugoio/hugo#6892](https://github.com/gohugoio/hugo/issues/6892).<!-- spellchecker-enable --> While recommendation like "don't depend on whitespace in your layout" sounds reasonable, it seems to be not that straight forward especially for something like embedded icons into the text flow.
 
-If you still want to use Hugo's minify flag you should at least exclude HTML file in your site [configuration](https://gohugo.io/getting-started/configuration/#configure-minify):
+If you still want to use Hugo's minify flag you should at least exclude HTML files in your site configuration as described in the [Hugo documentation](https://gohugo.io/getting-started/configuration/#configure-minify):
 
 ```toml
 [minify]
