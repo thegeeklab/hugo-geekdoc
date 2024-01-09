@@ -34,6 +34,7 @@ var config = {
   watchOptions: {
     ignored: ["/exampleSite/", "/node_modules/"]
   },
+  target: ["web", "es2017"],
   plugins: [
     new CopyPlugin({
       patterns: [
