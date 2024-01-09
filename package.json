@@ -39,7 +39,8 @@
     "katex": "0.16.9",
     "lodash": "4.17.21",
     "mermaid": "10.6.1",
-    "store2": "2.14.2"
+    "store2": "2.14.2",
+    "uuid": "9.0.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.23.3",
