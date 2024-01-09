@@ -1,6 +1,5 @@
-const Storage = require("store2")
-const { TOGGLE_COLOR_THEMES, THEME, COLOR_THEME_AUTO } = require("./config.js")
-
+import Storage from "store2"
+import { TOGGLE_COLOR_THEMES, THEME, COLOR_THEME_AUTO } from "./config.js"
 ;(() => {
   applyTheme()
 })()

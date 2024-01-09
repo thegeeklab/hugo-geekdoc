@@ -1,7 +1,7 @@
-const groupBy = require("lodash/groupBy")
-const truncate = require("lodash/truncate")
-const { FlexSearch } = require("flexsearch/dist/flexsearch.compact.min")
-const { Validator } = require("@cfworker/json-schema")
+import groupBy from "lodash/groupBy"
+import truncate from "lodash/truncate"
+import Document from "flexsearch/dist/module/document"
+import { Validator } from "@cfworker/json-schema"
 
 document.addEventListener("DOMContentLoaded", function (event) {
   const input = document.querySelector("#gdoc-search-input")
@@ -66,7 +66,7 @@ function init(input, searchConfig) {
     store: ["title", "href", "parent", "description"]
   }
 
-  const index = new FlexSearch.Document(indexCfg)
+  const index = new Document(indexCfg)
   window.geekdocSearchIndex = index
 
   getJson(dataUrl, function (data) {

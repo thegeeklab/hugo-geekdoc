@@ -1,22 +1,13 @@
 {
   "env": {
     "browser": true,
-    "es6": true,
-    "amd": true
+    "es2017": true
   },
   "extends": ["plugin:prettier/recommended"],
   "parser": "@babel/eslint-parser",
   "parserOptions": {
     "sourceType": "module",
-    "requireConfigFile": false,
-    "allowImportExportEverywhere": true
+    "requireConfigFile": false
   },
-  "plugins": ["prettier"],
-  "rules": {
-    "require-await": "warn"
-  },
-  "globals": {
-    "require": false,
-    "requirejs": false
-  }
+  "plugins": ["prettier"]
 }

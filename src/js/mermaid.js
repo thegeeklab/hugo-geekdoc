@@ -1,6 +1,6 @@
-const Storage = require("store2")
-const { v4: uuidv4 } = require("uuid")
-const { COLOR_THEME_DARK, THEME, COLOR_THEME_AUTO } = require("./config.js")
+import Storage from "store2"
+import { v4 as uuidv4 } from "uuid"
+import { COLOR_THEME_DARK, THEME, COLOR_THEME_AUTO } from "./config.js"
 
 import mermaid from "mermaid"
 
