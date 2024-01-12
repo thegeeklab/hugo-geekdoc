@@ -8,8 +8,16 @@ The `toc-tree` shortcode will generate a Table of Content from a section file tr
 
 <!-- prettier-ignore-start -->
 ```tpl
-{{</* toc-tree */>}}
+{{</* toc-tree [sortBy="title"] */>}}
 ```
+<!-- prettier-ignore-end -->
+
+### Attributes
+
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+{{< propertylist name=shortcode-toc-tree sort=name order=asc >}}
+<!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
 
 ## Example

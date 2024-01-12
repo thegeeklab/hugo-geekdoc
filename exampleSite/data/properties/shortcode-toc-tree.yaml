@@ -1,0 +1,8 @@
+---
+properties:
+  - name: sortBy
+    type: string
+    description: |
+      Override the default sort parameter set by [`geekdocFileTreeSortBy`](/usage/configuration/#site-configuration).
+    required: false
+    defaultValue: .Site.Params.geekdocFileTreeSortBy

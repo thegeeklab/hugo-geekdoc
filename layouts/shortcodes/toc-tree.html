@@ -1,9 +1,10 @@
 {{- $current := . }}
 {{- $tocLevels := default (default 6 .Site.Params.geekdocToC) .Page.Params.geekdocToC }}
+{{- $sortBy := (default (default "title" .Site.Params.geekdocFileTreeSortBy) (.Get "sortBy") | lower) }}
 
 {{- if $tocLevels }}
   <div class="gdoc-toc gdoc-toc__level--{{ $tocLevels }}">
-    {{ template "toc-tree" dict "sect" .Page.Pages "current" $current }}
+    {{ template "toc-tree" dict "sect" .Page.Pages "current" $current "sort" $sortBy }}
   </div>
 {{- end }}
 
@@ -11,7 +12,7 @@
 <!-- templates -->
 {{- define "toc-tree" }}
   <ul>
-    {{ $sortBy := (default "title" .current.Site.Params.geekdocFileTreeSortBy | lower) }}
+    {{ $sortBy := .sort }}
     {{ range .sect.GroupBy "Weight" }}
       {{ $rangeBy := .ByTitle }}
 
@@ -40,8 +41,6 @@
       {{ else if eq $sortBy "lastmod_reverse" }}
         {{ $rangeBy = .ByLastmod.Reverse }}
       {{ end }}
-
-      {{ $sortBy }}
 
       {{ range $rangeBy }}
         {{- if or (not .Params.geekdocHidden) (not (default true .Params.geekdocHiddenTocTree)) }}
