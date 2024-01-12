@@ -4,7 +4,7 @@
 
 {{- if $tocLevels }}
   <div class="gdoc-toc gdoc-toc__level--{{ $tocLevels }}">
-    {{ template "toc-tree" dict "sect" .Page.Pages "current" $current "sort" $sortBy }}
+    {{ template "toc-tree" dict "sect" .Page.Pages "current" $current "sortBy" $sortBy }}
   </div>
 {{- end }}
 
@@ -12,33 +12,32 @@
 <!-- templates -->
 {{- define "toc-tree" }}
   <ul>
-    {{ $sortBy := .sort }}
     {{ range .sect.GroupBy "Weight" }}
       {{ $rangeBy := .ByTitle }}
 
-      {{ if eq $sortBy "title" }}
+      {{ if eq $.sortBy "title" }}
         {{ $rangeBy = .ByTitle }}
-      {{ else if eq $sortBy "linktitle" }}
+      {{ else if eq $.sortBy "linktitle" }}
         {{ $rangeBy = .ByLinkTitle }}
-      {{ else if eq $sortBy "date" }}
+      {{ else if eq $.sortBy "date" }}
         {{ $rangeBy = .ByDate }}
-      {{ else if eq $sortBy "publishdate" }}
+      {{ else if eq $.sortBy "publishdate" }}
         {{ $rangeBy = .ByPublishDate }}
-      {{ else if eq $sortBy "expirydate" }}
+      {{ else if eq $.sortBy "expirydate" }}
         {{ $rangeBy = .ByExpiryDate }}
-      {{ else if eq $sortBy "lastmod" }}
+      {{ else if eq $.sortBy "lastmod" }}
         {{ $rangeBy = .ByLastmod }}
-      {{ else if eq $sortBy "title_reverse" }}
+      {{ else if eq $.sortBy "title_reverse" }}
         {{ $rangeBy = .ByTitle.Reverse }}
-      {{ else if eq $sortBy "linktitle_reverse" }}
+      {{ else if eq $.sortBy "linktitle_reverse" }}
         {{ $rangeBy = .ByLinkTitle.Reverse }}
-      {{ else if eq $sortBy "date_reverse" }}
+      {{ else if eq $.sortBy "date_reverse" }}
         {{ $rangeBy = .ByDate.Reverse }}
-      {{ else if eq $sortBy "publishdate_reverse" }}
+      {{ else if eq $.sortBy "publishdate_reverse" }}
         {{ $rangeBy = .ByPublishDate.Reverse }}
-      {{ else if eq $sortBy "expirydate_reverse" }}
+      {{ else if eq $.sortBy "expirydate_reverse" }}
         {{ $rangeBy = .ByExpiryDate.Reverse }}
-      {{ else if eq $sortBy "lastmod_reverse" }}
+      {{ else if eq $.sortBy "lastmod_reverse" }}
         {{ $rangeBy = .ByLastmod.Reverse }}
       {{ end }}
 
