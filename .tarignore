@@ -9,7 +9,6 @@
 .jsbeautify*
 .prettier*
 .eslintrc*
-.chglog
 .htmlvalidate*
 .lycheeignore*
 example*
