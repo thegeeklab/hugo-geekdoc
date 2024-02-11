@@ -5,3 +5,5 @@ MD041: False
 MD042: False
 MD004:
   style: dash
+MD010:
+  code_blocks: False
