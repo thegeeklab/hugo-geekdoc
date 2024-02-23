@@ -64,7 +64,8 @@ To prepare your new site environment just a few steps are required:
    # Needed for mermaid shortcodes
    [markup]
      [markup.goldmark.renderer]
-       # Needed for mermaid shortcode
+       # Needed for mermaid shortcode or when nesting shortcodes (e.g. img within
+       # columns or tabs)
        unsafe = true
      [markup.tableOfContents]
        startLevel = 1
