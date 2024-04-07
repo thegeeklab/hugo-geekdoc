@@ -37,11 +37,11 @@ steps:
     environment:
       FORCE_COLOR: "true"
 
-  # - name: link-validation
-  #   image: docker.io/lycheeverse/lychee
-  #   group: test
-  #   commands:
-  #     - lychee --no-progress --format detailed exampleSite/content/ README.md
+  - name: link-validation
+    image: docker.io/lycheeverse/lychee
+    group: test
+    commands:
+      - lychee --no-progress --format detailed exampleSite/content/ README.md
 
   - name: page-validation
     image: quay.io/thegeeklab/lhci:0.13
