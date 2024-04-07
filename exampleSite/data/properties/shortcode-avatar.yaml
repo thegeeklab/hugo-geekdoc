@@ -12,8 +12,7 @@ properties:
     type: string
     description: Thumbnail size. Supported values are `origin|tiny|small|medium|large`.
     required: false
-  - name: lazy
-    type: bool
-    description: Enable/disable lazy loading for the image.
+  - name: anchor
+    type: string
+    description: "[Anchor](https://gohugo.io/content-management/image-processing/#anchor) to determine the placement of the crop box."
     required: false
-    defaultValue: true
