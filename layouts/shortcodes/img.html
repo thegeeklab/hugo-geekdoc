@@ -7,40 +7,30 @@
 {{- with $source }}
   {{- $caption := default .Title $customAlt }}
   {{- $isSVG := (eq .MediaType.SubType "svg") }}
-
   {{- $origin := . }}
+
   {{- if $isSVG }}
-    {{- $data.SetInMap "size" "profile" "180" }}
     {{- $data.SetInMap "size" "tiny" "320" }}
     {{- $data.SetInMap "size" "small" "600" }}
     {{- $data.SetInMap "size" "medium" "1200" }}
     {{- $data.SetInMap "size" "large" "1800" }}
   {{- else }}
-    {{- $data.SetInMap "size" "profile" "180x180 Center" }}
     {{- $data.SetInMap "size" "tiny" "320x"}}
     {{- $data.SetInMap "size" "small" "600x" }}
     {{- $data.SetInMap "size" "medium" "1200x" }}
     {{- $data.SetInMap "size" "large" "1800x" }}
-  {{- end }}
-
+  {{- end -}}
 
   <div class="flex justify-center">
-    <figure
-      class="gdoc-markdown__figure
-      {{- if eq $customSize "profile" }}{{ print " gdoc-markdown__figure--round" }}{{ end }}"
-    >
+    <figure class="gdoc-markdown__figure">
       <a class="gdoc-markdown__link--raw" href="{{ .Permalink }}">
         <picture>
           {{- $size := $data.Get "size" }}
           {{- if not $isSVG }}
             {{- if ne $customSize "origin" }}
             <source
-              {{- with $customSize }}
-                {{- if eq $customSize "profile" }}
-                srcset="{{ ($origin.Fill (index $size $customSize)).Permalink }}"
-                {{- else}}
+              {{- if $customSize }}
                 srcset="{{ ($origin.Resize (index $size $customSize)).Permalink }}"
-                {{- end}}
               {{- else }}
                 srcset="{{ ($origin.Resize (index $size "small")).Permalink }} 600w, {{ ($origin.Resize (index $size "medium")).Permalink }} 1200w" sizes="100vw"
               {{- end }}
@@ -62,15 +52,13 @@
           />
         </picture>
       </a>
-      {{- if not (eq $customSize "profile") }}
-        {{- with $caption }}
-          <figcaption>
-            {{ . }}
-            {{- with $source.Params.credits }}
-              {{ printf " (%s)" . | $.Page.RenderString }}
-            {{- end }}
-          </figcaption>
-        {{- end }}
+      {{- with $caption }}
+        <figcaption>
+          {{ . }}
+          {{- with $source.Params.credits }}
+            {{ printf " (%s)" . | $.Page.RenderString }}
+          {{- end }}
+        </figcaption>
       {{- end }}
     </figure>
   </div>
