@@ -23,7 +23,7 @@ steps:
       FORCE_COLOR: "true"
 
   - name: testbuild
-    image: quay.io/thegeeklab/hugo:0.124.1
+    image: quay.io/thegeeklab/hugo:0.125.7
     commands:
       - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/${CI_REPO_NAME}
       - hugo --panicOnWarning -s exampleSite/ -b http://localhost:8000/
