@@ -143,6 +143,12 @@
       background-color: scale-color($color, $lightness: 95%, $saturation: -30%);
       color: $body-font-color;
       padding: 0;
+
+      code,
+      pre {
+        background-color: scale-color($color, $lightness: 80%, $saturation: -75%);
+        color: $code-font-color;
+      }
     }
   }
 
