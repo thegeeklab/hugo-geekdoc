@@ -110,27 +110,31 @@
 @mixin code_theme_dark {
   @include chroma_dark;
 
-  --code-background: #{$code-background-dark};
-  --code-accent-color: #{darken($code-background-dark, 4)};
-  --code-accent-color-lite: #{darken($code-background-dark, 2)};
-  --code-font-color: #{$code-font-color-dark};
+  & {
+    --code-background: #{$code-background-dark};
+    --code-accent-color: #{darken($code-background-dark, 4)};
+    --code-accent-color-lite: #{darken($code-background-dark, 2)};
+    --code-font-color: #{$code-font-color-dark};
 
-  --code-copy-background: #{$code-background-dark};
-  --code-copy-font-color: #{darken($code-font-color-dark, 15)};
-  --code-copy-border-color: #{darken($code-font-color-dark, 20)};
-  --code-copy-success-color: #{scale-color(map.get($hint-colors, "ok"), $alpha: -55%)};
+    --code-copy-background: #{$code-background-dark};
+    --code-copy-font-color: #{darken($code-font-color-dark, 15)};
+    --code-copy-border-color: #{darken($code-font-color-dark, 20)};
+    --code-copy-success-color: #{scale-color(map.get($hint-colors, "ok"), $alpha: -55%)};
+  }
 }
 
 @mixin code_theme_light {
   @include chroma_github;
 
-  --code-background: #{$code-background};
-  --code-accent-color: #{darken($code-background, 6)};
-  --code-accent-color-lite: #{darken($code-background, 2)};
-  --code-font-color: #{$code-font-color};
+  & {
+    --code-background: #{$code-background};
+    --code-accent-color: #{darken($code-background, 6)};
+    --code-accent-color-lite: #{darken($code-background, 2)};
+    --code-font-color: #{$code-font-color};
 
-  --code-copy-background: #{$code-background};
-  --code-copy-font-color: #{lighten($code-font-color, 15)};
-  --code-copy-border-color: #{lighten($code-font-color, 20)};
-  --code-copy-success-color: #{map.get($hint-colors, "ok")};
+    --code-copy-background: #{$code-background};
+    --code-copy-font-color: #{lighten($code-font-color, 15)};
+    --code-copy-border-color: #{lighten($code-font-color, 20)};
+    --code-copy-success-color: #{map.get($hint-colors, "ok")};
+  }
 }
