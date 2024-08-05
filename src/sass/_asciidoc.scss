@@ -7,11 +7,13 @@
     }
   }
 
-  margin: $padding-16 0;
-  padding: 0;
+  & {
+    margin: $padding-16 0;
+    padding: 0;
 
-  border-left: $border-4 solid var(--accent-color);
-  border-radius: $border-radius;
+    border-left: $border-4 solid var(--accent-color);
+    border-radius: $border-radius;
+  }
 
   table {
     margin: 0 !important;
@@ -22,6 +24,9 @@
     }
 
     td {
+      display: block;
+      padding: $padding-4 $padding-16 !important;
+
       &:first-child {
         background-color: scale-color($gray-600, $alpha: -95%);
         font-weight: bold;
@@ -53,9 +58,6 @@
           }
         }
       }
-
-      display: block;
-      padding: $padding-4 $padding-16 !important;
     }
   }
 }

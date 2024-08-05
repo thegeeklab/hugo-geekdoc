@@ -186,6 +186,7 @@
   }
 
   &__align {
+    text-align: left;
     &--left {
       h1,
       h2,
@@ -195,10 +196,10 @@
       h6 {
         justify-content: flex-start;
       }
-      text-align: left;
     }
 
     &--center {
+      text-align: center;
       h1,
       h2,
       h3,
@@ -207,10 +208,10 @@
       h6 {
         justify-content: center;
       }
-      text-align: center;
     }
 
     &--right {
+      text-align: right;
       h1,
       h2,
       h3,
@@ -219,7 +220,6 @@
       h6 {
         justify-content: flex-end;
       }
-      text-align: right;
     }
   }
 }
