@@ -1,6 +1,6 @@
 import Clipboard from "clipboard"
 
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", function () {
   let clipboard = new Clipboard(".clip")
 
   clipboard.on("success", function (e) {

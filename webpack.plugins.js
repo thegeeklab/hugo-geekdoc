@@ -1,7 +1,7 @@
-const fs = require("fs")
-const crypto = require("crypto")
-const path = require("path")
-const { validate } = require("schema-utils")
+import fs from "fs"
+import crypto from "crypto"
+import path from "path"
+import { validate } from "schema-utils"
 
 class SRIPlugin {
   static defaultOptions = {
@@ -54,4 +54,4 @@ class SRIPlugin {
   }
 }
 
-module.exports = SRIPlugin
+export default SRIPlugin

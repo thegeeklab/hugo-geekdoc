@@ -4,7 +4,7 @@ import { COLOR_THEME_DARK, THEME, COLOR_THEME_AUTO } from "./config.js"
 
 import mermaid from "mermaid"
 
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", function () {
   let lstore = Storage.namespace(THEME)
   let currentMode = lstore.get("color-theme") || COLOR_THEME_AUTO
   let darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)")

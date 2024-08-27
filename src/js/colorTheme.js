@@ -4,7 +4,7 @@ import { TOGGLE_COLOR_THEMES, THEME, COLOR_THEME_AUTO } from "./config.js"
   applyTheme()
 })()
 
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
   const colorThemeToggle = document.getElementById("gdoc-color-theme")
 
   colorThemeToggle.onclick = function () {

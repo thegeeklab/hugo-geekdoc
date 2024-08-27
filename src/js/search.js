@@ -1,9 +1,9 @@
-import groupBy from "lodash/groupBy"
-import truncate from "lodash/truncate"
-import Document from "flexsearch/dist/module/document"
+import groupBy from "lodash/groupBy.js"
+import truncate from "lodash/truncate.js"
+import Document from "flexsearch/dist/module/document.js"
 import { Validator } from "@cfworker/json-schema"
 
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", function () {
   const input = document.querySelector("#gdoc-search-input")
   const results = document.querySelector("#gdoc-search-results")
   const basePath = urlPath(input ? input.dataset.siteBaseUrl : "")
