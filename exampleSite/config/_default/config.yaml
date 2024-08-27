@@ -41,4 +41,5 @@ outputs:
 security:
   exec:
     allow:
+      - "^git$"
       - "^asciidoctor$"
