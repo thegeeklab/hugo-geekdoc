@@ -1,13 +1,16 @@
-const path = require("path")
-const glob = require("glob")
+import path from "path"
+import { glob } from "glob"
+import { fileURLToPath } from 'url';
 
-const { WebpackManifestPlugin } = require("webpack-manifest-plugin")
-const GitVersionPlugin = require("@eloquent/git-version-webpack-plugin")
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin")
-const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts")
-const CopyPlugin = require("copy-webpack-plugin")
-const SRIPlugin = require("./webpack.plugins")
+import { WebpackManifestPlugin } from "webpack-manifest-plugin"
+import GitVersionPlugin from "@eloquent/git-version-webpack-plugin"
+import FaviconsWebpackPlugin from "favicons-webpack-plugin"
+import RemoveEmptyScriptsPlugin from "webpack-remove-empty-scripts"
+import CopyPlugin from "copy-webpack-plugin"
+import SRIPlugin from "./webpack.plugins.js"
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const nodeModulesPath = path.resolve(__dirname, "node_modules")
 
 var config = {
@@ -110,7 +113,7 @@ var config = {
   ]
 }
 
-module.exports = (env, argv) => {
+export default (argv) => {
   if (argv.mode === "development") {
     config.devtool = "eval-cheap-source-map"
   }
@@ -122,7 +125,7 @@ module.exports = (env, argv) => {
         type: "asset/resource",
         generator: {
           filename: "fonts/[name][ext]"
-        }
+        },
       },
       {
         test: /\.(sa|sc|c)ss$/i,
