@@ -3,7 +3,7 @@ import crypto from "crypto"
 import path from "path"
 import { validate } from "schema-utils"
 
-class SRIPlugin {
+export default class SRIPlugin {
   static defaultOptions = {
     algorithm: "sha512",
     sourceFile: "assets.json"
@@ -53,5 +53,3 @@ class SRIPlugin {
     })
   }
 }
-
-export default SRIPlugin
