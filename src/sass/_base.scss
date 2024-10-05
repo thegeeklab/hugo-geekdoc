@@ -1,9 +1,9 @@
 :root {
+  --code-max-height: none;
+
   --header-font-family: #{meta.inspect($header-font-family)};
   --body-font-family: #{meta.inspect($body-font-family)};
   --code-font-family: #{meta.inspect($code-font-family)};
-
-  --code-max-height: none;
 }
 
 :root,
