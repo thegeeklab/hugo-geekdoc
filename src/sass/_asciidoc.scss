@@ -2,7 +2,7 @@
   @each $name, $color in $hint-colors {
     &.#{$name} {
       border-left-color: $color;
-      background-color: scale-color($color, $lightness: 95%, $saturation: -30%);
+      background-color: color.scale($color, $lightness: 95%, $saturation: -30%);
       color: $body-font-color;
     }
   }
@@ -28,7 +28,7 @@
       padding: $padding-4 $padding-16 !important;
 
       &:first-child {
-        background-color: scale-color($gray-600, $alpha: -95%);
+        background-color: color.scale($gray-600, $alpha: -95%);
         font-weight: bold;
 
         &.icon {

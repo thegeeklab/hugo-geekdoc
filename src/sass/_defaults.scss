@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Used in layout
 $padding-2: 0.125rem !default;
 $padding-4: 0.25rem !default;
@@ -68,7 +70,7 @@ $link-color-dark: rgba(110, 168, 212, 1) !default;
 $link-color-visited-dark: rgba(186, 142, 240) !default;
 
 $code-background: $gray-100 !default;
-$code-background-dark: darken($body-background-dark, 3) !default;
+$code-background-dark: color.scale($body-background-dark, $lightness: -15%) !default;
 
 $header-font-family: "Metropolis", sans-serif !default;
 $header-height: 3.5rem !default;
