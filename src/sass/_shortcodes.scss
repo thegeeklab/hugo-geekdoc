@@ -196,7 +196,7 @@
 
 // {{< mermaid >}}
 .gdoc-mermaid {
-  font-family: "Liberation Sans", sans-serif;
+  font-family: var(--body-font-family);
 
   // Fix height of mermaid SVG elements (see https://github.com/mermaid-js/mermaid/issues/2481)
   > svg {
@@ -211,7 +211,7 @@
   &__default {
     padding: 0;
     margin: 0;
-    font-family: "Liberation Mono", monospace;
+    font-family: var(--code-font-family);
   }
 
   &__meta {

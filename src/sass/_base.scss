@@ -1,7 +1,13 @@
-:root,
-:root[color-theme="light"] {
+:root {
   --code-max-height: none;
 
+  --header-font-family: #{meta.inspect($header-font-family)};
+  --body-font-family: #{meta.inspect($body-font-family)};
+  --code-font-family: #{meta.inspect($code-font-family)};
+}
+
+:root,
+:root[color-theme="light"] {
   @include color_theme_light;
   @include code_theme_light;
 }

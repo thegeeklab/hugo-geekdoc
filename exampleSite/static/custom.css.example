@@ -2,6 +2,10 @@
 
 :root {
   --code-max-height: 60rem;
+
+  --header-font-family: "DancingScript";
+  --body-font-family: "DancingScript";
+  --code-font-family: "DancingScript";
 }
 
 /* Light mode theming */
@@ -151,4 +155,14 @@
     --footer-link-color: #ffcc5c;
     --footer-link-color-visited: #ffcc5c;
   }
+}
+
+@font-face {
+  font-family: "DancingScript";
+  src:
+    url("fonts/DancingScript.woff2") format("woff2"),
+    url("fonts/DancingScript.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }

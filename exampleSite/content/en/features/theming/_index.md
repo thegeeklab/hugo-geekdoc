@@ -58,4 +58,33 @@ If you want to add more Favicon formats you have to [overwrite](https://gohugo.i
 <meta name="theme-color" content="#efefef">
 ```
 
+## Fonts
+
+To use a custom font, it needs to be specified first. While there are many ways to do this, we recommend to use `@font-face` as it supports local as well as remote fonts. If you want to serve the fonts from your own server, you have to place them in the `static/fonts` folder of your project.
+
+The font registration is done in the `custom.css` file. There are also a few custom CSS properties available to simplify the usage of custom fonts.
+
+**Example:**
+
+<!-- prettier-ignore -->
+```css
+@font-face {
+  font-family: "DancingScript";
+  src:
+    url("fonts/DancingScript.woff2") format("woff2"),
+    url("fonts/DancingScript.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --code-max-height: 60rem;
+
+  --header-font-family: "DancingScript";
+  --body-font-family: "DancingScript";
+  --code-font-family: "DancingScript";
+}
+```
+
 Happy customizing!
