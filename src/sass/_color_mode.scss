@@ -7,7 +7,7 @@
 
   --mark-color: #{$mark-color};
 
-  --button-background: #{lighten($main-color, 2)};
+  --button-background: #{color.scale($main-color, $lightness: 15%)};
   --button-border-color: #{$main-color};
 
   --link-color: #{$link-color};
@@ -20,7 +20,7 @@
   --accent-color: #{$gray-200};
   --accent-color-lite: #{$gray-100};
 
-  --control-icons: #{lighten($body-font-color, 50)};
+  --control-icons: #{color.scale($body-font-color, $lightness: 40%)};
 
   --footer-background: #{$second-color};
   --footer-font-color: #{$white};
@@ -42,7 +42,7 @@
 
     .gdoc-hint__title,
     .admonitionblock table td:first-child {
-      background-color: scale-color($gray-600, $alpha: -95%);
+      background-color: color.scale($gray-600, $alpha: -95%);
     }
   }
 }
@@ -52,11 +52,11 @@
   --header-font-color: #{$white};
 
   --body-background: #{$body-background-dark};
-  --body-font-color: #{lighten($body-background-dark, 60)};
+  --body-font-color: #{color.scale($body-background-dark, $lightness: 70%)};
 
   --mark-color: #{$mark-color};
 
-  --button-background: #{lighten($main-color, 2)};
+  --button-background: #{color.scale($main-color, $lightness: 15%)};
   --button-border-color: #{$main-color};
 
   --link-color: #{$link-color-dark};
@@ -65,11 +65,11 @@
   --hint-link-color: #{$link-color};
   --hint-link-color-visited: #{$link-color-visited};
 
-  --accent-color-dark: #{darken($body-background-dark, 8)};
-  --accent-color: #{darken($body-background-dark, 4)};
-  --accent-color-lite: #{darken($body-background-dark, 2)};
+  --accent-color-dark: #{color.scale($body-background-dark, $lightness: -60%)};
+  --accent-color: #{color.scale($body-background-dark, $lightness: -30%)};
+  --accent-color-lite: #{color.scale($body-background-dark, $lightness: -15%)};
 
-  --control-icons: #{lighten($body-font-color, 50)};
+  --control-icons: #{color.scale($body-font-color, $lightness: 40%)};
 
   --footer-background: #{$second-color};
   --footer-font-color: #{$white};
@@ -102,7 +102,7 @@
 
     .gdoc-hint__title,
     .admonitionblock table td:first-child {
-      background-color: scale-color($gray-600, $alpha: -85%);
+      background-color: color.scale($gray-600, $alpha: -85%);
     }
   }
 }
@@ -112,14 +112,14 @@
 
   & {
     --code-background: #{$code-background-dark};
-    --code-accent-color: #{darken($code-background-dark, 4)};
-    --code-accent-color-lite: #{darken($code-background-dark, 2)};
+    --code-accent-color: #{color.scale($code-background-dark, $lightness: -30%)};
+    --code-accent-color-lite: #{color.scale($code-background-dark, $lightness: -15%)};
     --code-font-color: #{$code-font-color-dark};
 
     --code-copy-background: #{$code-background-dark};
-    --code-copy-font-color: #{darken($code-font-color-dark, 15)};
-    --code-copy-border-color: #{darken($code-font-color-dark, 20)};
-    --code-copy-success-color: #{scale-color(map.get($hint-colors, "ok"), $alpha: -55%)};
+    --code-copy-font-color: #{color.scale($code-font-color-dark, $lightness: -15%)};
+    --code-copy-border-color: #{color.scale($code-font-color-dark, $lightness: -20%)};
+    --code-copy-success-color: #{color.scale(map.get($hint-colors, "ok"), $alpha: -55%)};
   }
 }
 
@@ -128,13 +128,13 @@
 
   & {
     --code-background: #{$code-background};
-    --code-accent-color: #{darken($code-background, 6)};
-    --code-accent-color-lite: #{darken($code-background, 2)};
+    --code-accent-color: #{color.scale($code-background, $lightness: -45%)};
+    --code-accent-color-lite: #{color.scale($code-background, $lightness: -15%)};
     --code-font-color: #{$code-font-color};
 
     --code-copy-background: #{$code-background};
-    --code-copy-font-color: #{lighten($code-font-color, 15)};
-    --code-copy-border-color: #{lighten($code-font-color, 20)};
+    --code-copy-font-color: #{color.scale($code-font-color, $lightness: 20%)};
+    --code-copy-border-color: #{color.scale($code-font-color, $lightness: 40%)};
     --code-copy-success-color: #{map.get($hint-colors, "ok")};
   }
 }
