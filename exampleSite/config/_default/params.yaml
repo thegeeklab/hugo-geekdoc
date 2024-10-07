@@ -11,6 +11,7 @@ geekdocTagsToMenu: true
 
 geekdocRepo: https://github.com/thegeeklab/hugo-geekdoc
 geekdocEditPath: edit/main/exampleSite
+geekdocPageLastmod: false
 
 geekdocSearch: true
 geekdocSearchShowParent: true
