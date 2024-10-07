@@ -70,6 +70,10 @@ enableRobotsTXT = true
   # You can also specify this parameter per page in front matter.
   geekdocEditPath = "edit/main/exampleSite"
 
+  # (Optional, default false) Show last modification date of the page in the header.
+  # Keep in mind that last modification date works best if `enableGitInfo` is set to true.
+  geekdocPageLastmod = true
+
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slow down your website.
   geekdocSearch = false
@@ -196,6 +200,10 @@ params:
   # You can also specify this parameter per page in front matter.
   geekdocEditPath: edit/main/exampleSite
 
+  # (Optional, default false) Show last modification date of the page in the header.
+  # Keep in mind that last modification date works best if `enableGitInfo` is set to true.
+  geekdocPageLastmod: true
+
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slow down your website.
   geekdocSearch: false
@@ -294,6 +302,9 @@ geekdocRepo = "https://github.com/thegeeklab/hugo-geekdoc"
 # the parent directory of the 'content' folder.
 geekdocEditPath = "edit/main/exampleSite"
 
+# Show last modification date of the page in the header.
+geekdocPageLastmod = true
+
 # Used for 'Edit page' link, set to '.File.Path' by default.
 # Can be overwritten by a path relative to 'geekdocEditPath'
 geekdocFilePath =
@@ -353,6 +364,9 @@ geekdocRepo: "https://github.com/thegeeklab/hugo-geekdoc"
 # Enable 'Edit page' links. Requires 'geekdocRepo' param and the path must point to
 # the parent directory of the 'content' folder.
 geekdocEditPath: "edit/main/exampleSite"
+
+# Show last modification date of the page in the header.
+geekdocPageLastmod: true
 
 # Used for 'Edit page' link, set to '.File.Path' by default.
 # Can be overwritten by a path relative to 'geekdocEditPath'
