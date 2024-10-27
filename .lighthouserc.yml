@@ -8,7 +8,7 @@ ci:
       - http://localhost/404.html
       - http://localhost/usage/getting-started/
     settings:
-      chromeFlags: "--no-sandbox"
+      chromeFlags: "--no-sandbox --headless --disable-dev-shm-usage"
       onlyCategories: ["performance", "accessibility", "best-practices", "seo"]
       skipAudits:
         [
