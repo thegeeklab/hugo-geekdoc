@@ -44,7 +44,7 @@
     "uuid": "11.0.1"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.25.8",
+    "@babel/eslint-parser": "7.25.9",
     "autoprefixer": "10.4.20",
     "copy-webpack-plugin": "12.0.2",
     "css-loader": "7.1.2",
@@ -55,10 +55,10 @@
     "favicons-webpack-plugin": "6.0.1",
     "globals": "15.11.0",
     "html-validate": "8.24.2",
-    "npm-run-all2": "7.0.0",
+    "npm-run-all2": "7.0.1",
     "postcss-loader": "8.1.1",
     "prettier": "3.3.3",
-    "sass": "1.80.3",
+    "sass": "1.80.4",
     "sass-loader": "16.0.2",
     "shx": "0.3.4",
     "svg-sprite": "2.0.4",
