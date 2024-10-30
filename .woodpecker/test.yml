@@ -16,6 +16,7 @@ steps:
 
   - name: assets
     image: docker.io/library/node:lts
+    depends_on: [eslint]
     commands:
       - npm install --quiet --no-progress
       - npm run build
@@ -24,13 +25,14 @@ steps:
 
   - name: testbuild
     image: quay.io/thegeeklab/hugo:0.136.5
+    depends_on: [assets]
     commands:
       - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/${CI_REPO_NAME}
       - hugo --panicOnWarning -s exampleSite/ -b http://localhost:8000/
 
   - name: html-validation
     image: docker.io/library/node:lts
-    group: test
+    depends_on: [testbuild]
     commands:
       - npm install --quiet --no-progress
       - npm run lint:html
@@ -39,13 +41,13 @@ steps:
 
   - name: link-validation
     image: docker.io/lycheeverse/lychee
-    group: test
+    depends_on: [testbuild]
     commands:
       - lychee --no-progress --format detailed exampleSite/content/ README.md
 
   - name: page-validation
     image: quay.io/thegeeklab/lhci:0.14
-    group: test
+    depends_on: [testbuild]
     commands:
       - lhci autorun
     environment:
