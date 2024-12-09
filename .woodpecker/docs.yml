@@ -44,9 +44,12 @@ steps:
       - event: [pull_request]
 
   - name: build
-    image: quay.io/thegeeklab/hugo:0.136.5
+    image: ghcr.io/gohugoio/hugo:v0.136.5
     commands:
       - hugo --panicOnWarning -s exampleSite/
+    backend_options:
+      docker:
+        user: root
 
   - name: beautify
     image: quay.io/thegeeklab/alpine-tools
