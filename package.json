@@ -34,7 +34,7 @@
     "node": ">=18 <=22"
   },
   "dependencies": {
-    "@cfworker/json-schema": "4.0.2",
+    "@cfworker/json-schema": "4.0.3",
     "clipboard": "2.0.11",
     "flexsearch": "0.7.43",
     "katex": "0.16.15",
