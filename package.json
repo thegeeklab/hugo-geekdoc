@@ -40,7 +40,7 @@
     "katex": "0.16.18",
     "lodash": "4.17.21",
     "mermaid": "11.4.1",
-    "store2": "2.14.3",
+    "store2": "2.14.4",
     "uuid": "11.0.3"
   },
   "devDependencies": {
