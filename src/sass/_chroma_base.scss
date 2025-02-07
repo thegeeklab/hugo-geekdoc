@@ -1,3 +1,5 @@
+@use "defaults";
+
 @mixin chroma_base {
   .chroma {
     color: var(--code-font-color);
@@ -18,8 +20,8 @@
 
   /* LineTable */
   .chroma .lntable {
-    border: $border-1 solid var(--code-accent-color);
-    border-radius: $border-radius;
+    border: defaults.$border-1 solid var(--code-accent-color);
+    border-radius: defaults.$border-radius;
     border-spacing: 0;
     padding: 0;
     margin: 0;
@@ -37,7 +39,7 @@
   .chroma .lntable td:first-child {
     code {
       background-color: var(--code-accent-color-lite);
-      border-right: $border-1 solid var(--code-accent-color);
+      border-right: defaults.$border-1 solid var(--code-accent-color);
       padding-left: 0;
       padding-right: 0;
       border-radius: 0;
@@ -45,6 +47,6 @@
   }
   .chroma .lntable td:nth-child(2) {
     width: 100%;
-    margin-left: $padding-32;
+    margin-left: defaults.$padding-32;
   }
 }

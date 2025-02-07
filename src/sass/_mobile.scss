@@ -1,7 +1,9 @@
-@media screen and (max-width: $sm-breakpoint) {
+@use "defaults";
+
+@media screen and (max-width: defaults.$sm-breakpoint) {
   .gdoc-nav {
-    margin-left: -$menu-width;
-    font-size: $font-size-base;
+    margin-left: -(defaults.$menu-width);
+    font-size: defaults.$font-size-base;
 
     &__control {
       display: inline-block;
@@ -10,14 +12,14 @@
 
   .gdoc-header {
     svg.gdoc-icon {
-      width: $font-size-24;
-      height: $font-size-24;
+      width: defaults.$font-size-24;
+      height: defaults.$font-size-24;
     }
   }
 
   .gdoc-brand {
-    font-size: $font-size-24;
-    line-height: $font-size-24;
+    font-size: defaults.$font-size-24;
+    line-height: defaults.$font-size-24;
 
     &__img {
       display: none;
@@ -36,23 +38,23 @@
   }
 
   .gdoc-error {
-    padding: $padding-96 $padding-16;
+    padding: defaults.$padding-96 defaults.$padding-16;
 
     svg.gdoc-icon {
-      width: $font-size-96;
-      height: $font-size-96;
+      width: defaults.$font-size-96;
+      height: defaults.$font-size-96;
     }
 
     &__message {
-      padding-left: $padding-32;
+      padding-left: defaults.$padding-32;
     }
 
     &__line {
-      padding: $padding-4 0;
+      padding: defaults.$padding-4 0;
     }
 
     &__title {
-      font-size: $font-size-32;
+      font-size: defaults.$font-size-32;
     }
   }
 
@@ -65,7 +67,7 @@
     flex-direction: column;
 
     &.gdoc-columns {
-      margin: $padding-32 0;
+      margin: defaults.$padding-32 0;
     }
 
     .gdoc-columns__content {
@@ -77,7 +79,7 @@
   #menu-control:checked ~ main {
     .gdoc-nav nav,
     .gdoc-page {
-      transform: translateX($menu-width);
+      transform: translateX(defaults.$menu-width);
     }
 
     .gdoc-page {

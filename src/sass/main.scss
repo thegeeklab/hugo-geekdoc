@@ -1,18 +1,8 @@
-@use "sass:map";
-@use "sass:meta";
-@use "sass:color";
+@use "_normalize";
+@use "_utils";
+@use "_fonts";
+@use "_base";
 
-@import "_defaults";
-@import "_color_mode";
-@import "_chroma_base";
-@import "_chroma_light";
-@import "_chroma_dark";
-
-@import "_normalize";
-@import "_utils";
-@import "_fonts";
-@import "_base";
-
-@import "_markdown";
-@import "_asciidoc";
-@import "_shortcodes";
+@use "_markdown";
+@use "_asciidoc";
+@use "_shortcodes";

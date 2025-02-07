@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Used in layout
 $padding-2: 0.125rem !default;
 $padding-4: 0.25rem !default;
@@ -61,7 +63,7 @@ $main-color: rgba(32, 83, 117, 1) !default;
 $second-color: rgba(17, 43, 60, 1) !default;
 $mark-color: rgba(255, 171, 0, 1) !default;
 
-$body-background-dark: mix(invert($body-background, 75%), $second-color) !default;
+$body-background-dark: color.mix(color.invert($body-background, 75%), $second-color) !default;
 $body-font-color-dark: $gray-100 !default;
 
 $link-color-dark: rgba(110, 168, 212, 1) !default;

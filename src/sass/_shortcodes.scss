@@ -1,21 +1,24 @@
+@use "sass:color";
+@use "defaults";
+
 // {{< expand "Label" "icon" >}}
 .gdoc-expand {
-  margin: $padding-16 0;
+  margin: defaults.$padding-16 0;
 
-  border: $border-1 solid var(--accent-color);
-  border-radius: $border-radius;
+  border: defaults.$border-1 solid var(--accent-color);
+  border-radius: defaults.$border-radius;
 
   overflow: hidden;
 
   &__head {
     background: var(--accent-color-lite);
-    padding: $padding-8 $padding-16;
+    padding: defaults.$padding-8 defaults.$padding-16;
     cursor: pointer;
   }
 
   &__content {
     display: none;
-    padding: 0 $padding-16;
+    padding: 0 defaults.$padding-16;
   }
 
   &__control:checked + &__content {
@@ -29,10 +32,10 @@
 
 // {{< tabs >}}
 .gdoc-tabs {
-  margin: $padding-16 0;
+  margin: defaults.$padding-16 0;
 
-  border: $border-1 solid var(--accent-color);
-  border-radius: $border-radius;
+  border: defaults.$border-1 solid var(--accent-color);
+  border-radius: defaults.$border-radius;
 
   overflow: hidden;
 
@@ -41,21 +44,21 @@
 
   &__label {
     display: inline-block;
-    padding: $padding-8 $padding-16;
-    border-bottom: $border-1 transparent;
+    padding: defaults.$padding-8 defaults.$padding-16;
+    border-bottom: defaults.$border-1 transparent;
     cursor: pointer;
   }
 
   &__content {
     order: 999; //Move content blocks to the end
     width: 100%;
-    border-top: $border-1 solid var(--accent-color-lite);
-    padding: 0 $padding-16;
+    border-top: defaults.$border-1 solid var(--accent-color-lite);
+    padding: 0 defaults.$padding-16;
     display: none;
   }
 
   &__control:checked + &__label {
-    border-bottom: $border-2 solid var(--link-color);
+    border-bottom: defaults.$border-2 solid var(--link-color);
   }
   &__control:checked + &__label + &__content {
     display: block;
@@ -68,7 +71,7 @@
 
 // {{< columns >}}
 .gdoc-columns {
-  margin: $padding-16 0;
+  margin: defaults.$padding-16 0;
 
   &--regular > :first-child {
     flex: 1;
@@ -76,17 +79,17 @@
 
   &--small > :first-child {
     flex: 0.35;
-    min-width: $body-min-width * 0.35;
+    min-width: defaults.$body-min-width * 0.35;
   }
 
   &--large > :first-child {
     flex: 1.65;
-    min-width: $body-min-width * 1.65;
+    min-width: defaults.$body-min-width * 1.65;
   }
 
   &__content {
     flex: 1 1;
-    min-width: $body-min-width * 0.66;
+    min-width: defaults.$body-min-width * 0.66;
     padding: 0;
   }
 
@@ -98,12 +101,12 @@
 // {{< button >}}
 .gdoc-button {
   $root: &;
-  margin: $padding-16 0;
+  margin: defaults.$padding-16 0;
 
   display: inline-block;
   background: var(--accent-color-lite);
-  border: $border-1 solid var(--accent-color);
-  border-radius: $border-radius;
+  border: defaults.$border-1 solid var(--accent-color);
+  border-radius: defaults.$border-radius;
   cursor: pointer;
 
   &__link {
@@ -115,78 +118,78 @@
   &:hover {
     background: var(--button-background);
     border-color: var(--button-border-color);
-    color: $gray-100;
+    color: defaults.$gray-100;
   }
 
   &--regular {
-    font-size: $font-size-base;
+    font-size: defaults.$font-size-base;
 
     #{$root}__link {
-      padding: $padding-4 $padding-8;
+      padding: defaults.$padding-4 defaults.$padding-8;
     }
   }
 
   &--large {
-    font-size: $font-size-20;
+    font-size: defaults.$font-size-20;
 
     #{$root}__link {
-      padding: $padding-8 $padding-16;
+      padding: defaults.$padding-8 defaults.$padding-16;
     }
   }
 }
 
 // {{< hint >}}
 .gdoc-hint {
-  @each $name, $color in $hint-colors {
+  @each $name, $color in defaults.$hint-colors {
     &.#{$name} {
       border-left-color: $color;
       background-color: color.scale($color, $lightness: 95%, $saturation: -30%);
-      color: $body-font-color;
+      color: defaults.$body-font-color;
       padding: 0;
 
       code,
       pre {
         background-color: color.scale($color, $lightness: 80%, $saturation: -75%);
-        color: $code-font-color;
+        color: defaults.$code-font-color;
       }
     }
   }
 
   &__title {
-    padding: $padding-4 $padding-16;
-    background-color: color.scale($gray-600, $alpha: -95%);
+    padding: defaults.$padding-4 defaults.$padding-16;
+    background-color: color.scale(defaults.$gray-600, $alpha: -95%);
     font-weight: bold;
-    color: color.scale($body-font-color, $alpha: -15%);
+    color: color.scale(defaults.$body-font-color, $alpha: -15%);
 
     i.fa::after {
       content: attr(title);
       font-style: normal;
-      padding-left: $padding-24;
+      padding-left: defaults.$padding-24;
     }
 
     i.fa {
-      color: $black;
+      color: defaults.$black;
       background-size: auto 90%;
       background-repeat: no-repeat;
       filter: invert(30%);
       margin-left: -5px;
     }
 
-    @each $name, $icon in $hint-icons {
+    @each $name, $icon in defaults.$hint-icons {
       i.fa.#{$name} {
         background-image: url(img/geekdoc-stack.svg##{$icon});
       }
     }
 
     .gdoc-icon {
-      width: $font-size-24;
-      height: $font-size-24;
+      width: defaults.$font-size-24;
+      height: defaults.$font-size-24;
       margin-left: -5px;
     }
   }
 
   &__text {
-    padding: $padding-4 $padding-16;
+    padding: defaults.$padding-4 defaults.$padding-16;
   }
 
   .gdoc-page__anchor {
@@ -201,7 +204,7 @@
   // Fix height of mermaid SVG elements (see https://github.com/mermaid-js/mermaid/issues/2481)
   > svg {
     height: 100%;
-    padding: $padding-8;
+    padding: defaults.$padding-8;
   }
 }
 
@@ -217,14 +220,14 @@
   &__meta {
     gap: 0.5em;
     line-height: normal;
-    margin-bottom: $padding-4;
+    margin-bottom: defaults.$padding-4;
 
     &:hover .gdoc-page__anchor svg.gdoc-icon {
       color: var(--control-icons);
     }
   }
 
-  @each $name, $color in $hint-colors {
+  @each $name, $color in defaults.$hint-colors {
     &__tag.#{$name} {
       border-color: color.scale($color, $lightness: 90%, $saturation: -30%);
       background-color: color.scale($color, $lightness: 95%, $saturation: -30%);
@@ -232,26 +235,26 @@
   }
 
   &__tag {
-    font-size: $font-size-14;
+    font-size: defaults.$font-size-14;
     font-weight: normal;
-    background-color: $gray-100;
-    border: $border-1 solid $gray-200;
-    border-radius: $border-radius;
-    padding: $padding-2 $padding-4;
-    color: $body-font-color;
+    background-color: defaults.$gray-100;
+    border: defaults.$border-1 solid defaults.$gray-200;
+    border-radius: defaults.$border-radius;
+    padding: defaults.$padding-2 defaults.$padding-4;
+    color: defaults.$body-font-color;
   }
 
   &__default {
-    font-size: $font-size-14;
+    font-size: defaults.$font-size-14;
   }
 }
 
 // {{% progress %}}
 .gdoc-progress {
-  margin-bottom: $padding-16;
+  margin-bottom: defaults.$padding-16;
 
   &__label {
-    padding: $padding-4 0;
+    padding: defaults.$padding-4 0;
 
     &--name {
       font-weight: bold;
@@ -261,7 +264,7 @@
   &__wrap {
     background-color: var(--accent-color-lite);
     border-radius: 1em;
-    box-shadow: inset 0 0 0 $border-1 var(--accent-color);
+    box-shadow: inset 0 0 0 defaults.$border-1 var(--accent-color);
   }
 
   &__bar {
@@ -278,6 +281,6 @@
       transparent
     );
     background-size: 2.5em 2.5em;
-    background-color: $main-color !important;
+    background-color: defaults.$main-color !important;
   }
 }
