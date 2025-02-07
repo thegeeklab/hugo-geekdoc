@@ -1,7 +1,9 @@
+@use "chroma_base";
+
 @mixin chroma_github {
   /* Theme: GitHub */
   /* Background */
-  @include chroma_base;
+  @include chroma_base.chroma_base;
 
   /* Other */
   .chroma .x {

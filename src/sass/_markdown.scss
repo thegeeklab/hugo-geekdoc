@@ -1,3 +1,5 @@
+@use "defaults";
+
 .gdoc-markdown {
   line-height: 1.6rem;
 
@@ -10,8 +12,8 @@
     font-weight: 600;
 
     > code {
-      border-top: $border-4 solid var(--accent-color);
-      font-size: $font-size-12 !important;
+      border-top: defaults.$border-4 solid var(--accent-color);
+      font-size: defaults.$font-size-12 !important;
     }
   }
 
@@ -19,7 +21,7 @@
   h5,
   h6 {
     > code {
-      font-size: $font-size-14 !important;
+      font-size: defaults.$font-size-14 !important;
     }
   }
 
@@ -32,7 +34,7 @@
   a,
   &__link {
     text-decoration: underline;
-    border-bottom: $border-1 solid transparent;
+    border-bottom: defaults.$border-1 solid transparent;
     line-height: normal;
 
     &:hover {
@@ -42,14 +44,14 @@
 
   &__link--raw {
     text-decoration: none !important;
-    color: $body-font-color !important;
+    color: defaults.$body-font-color !important;
 
     &:hover {
       text-decoration: none !important;
     }
 
     &:visited {
-      color: $body-font-color !important;
+      color: defaults.$body-font-color !important;
     }
   }
 
@@ -72,12 +74,12 @@
   }
 
   &__figure {
-    padding: $padding-4;
-    margin: $padding-16 0;
+    padding: defaults.$padding-4;
+    margin: defaults.$padding-16 0;
     background-color: var(--accent-color);
     display: table;
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
+    border-top-left-radius: defaults.$border-radius;
+    border-top-right-radius: defaults.$border-radius;
 
     &--round,
     &--round img {
@@ -88,10 +90,10 @@
       display: table-caption;
       caption-side: bottom;
       background-color: var(--accent-color);
-      padding: 0 $padding-4 $padding-4;
+      padding: 0 defaults.$padding-4 defaults.$padding-4;
       text-align: center;
-      border-bottom-left-radius: $border-radius;
-      border-bottom-right-radius: $border-radius;
+      border-bottom-left-radius: defaults.$border-radius;
+      border-bottom-right-radius: defaults.$border-radius;
     }
 
     img {
@@ -102,37 +104,37 @@
 
   img {
     max-width: 100%;
-    border-radius: $border-radius;
+    border-radius: defaults.$border-radius;
   }
 
   blockquote {
-    margin: $padding-16 0;
-    padding: $padding-8 $padding-16 $padding-8 ($padding-16 - $padding-4); //to keep total left space 16dp
+    margin: defaults.$padding-16 0;
+    padding: defaults.$padding-8 defaults.$padding-16 defaults.$padding-8 (defaults.$padding-16 - defaults.$padding-4); //to keep total left space 16dp
 
-    border-left: $border-4 solid var(--accent-color);
-    border-radius: $border-radius;
+    border-left: defaults.$border-4 solid var(--accent-color);
+    border-radius: defaults.$border-radius;
   }
 
   table:not(.lntable):not(.highlight) {
     display: table;
     border-spacing: 0;
     border-collapse: collapse;
-    margin-top: $padding-16;
-    margin-bottom: $padding-16;
+    margin-top: defaults.$padding-16;
+    margin-bottom: defaults.$padding-16;
     width: 100%;
     text-align: left;
 
     thead {
-      border-bottom: $border-4 solid var(--accent-color);
+      border-bottom: defaults.$border-4 solid var(--accent-color);
     }
 
     tr th,
     tr td {
-      padding: $padding-8 $padding-16;
+      padding: defaults.$padding-8 defaults.$padding-16;
     }
 
     tr {
-      border-bottom: $border-2 solid var(--accent-color);
+      border-bottom: defaults.$border-2 solid var(--accent-color);
     }
 
     tr:nth-child(2n) {
@@ -141,43 +143,43 @@
   }
 
   hr {
-    height: $border-2;
+    height: defaults.$border-2;
     border: none;
     background: var(--accent-color);
   }
 
   ul,
   ol {
-    padding-left: $padding-32;
+    padding-left: defaults.$padding-32;
   }
 
   dl {
     dt {
       font-weight: bolder;
-      margin-top: $padding-16;
+      margin-top: defaults.$padding-16;
     }
 
     dd {
-      margin-left: $padding-32;
+      margin-left: defaults.$padding-32;
     }
   }
 
   code {
-    padding: $padding-4 $padding-8;
+    padding: defaults.$padding-4 defaults.$padding-8;
   }
 
   pre,
   code {
     background-color: var(--code-background);
-    border-radius: $border-radius;
+    border-radius: defaults.$border-radius;
     color: var(--code-font-color);
-    font-size: $font-size-14;
-    line-height: $padding-16;
+    font-size: defaults.$font-size-14;
+    line-height: defaults.$padding-16;
   }
 
   pre code {
     display: block;
-    padding: $padding-16;
+    padding: defaults.$padding-16;
     width: 100%;
   }
 

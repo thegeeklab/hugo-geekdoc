@@ -1,18 +1,21 @@
+@use "sass:color";
+@use "defaults";
+
 .admonitionblock {
-  @each $name, $color in $hint-colors {
+  @each $name, $color in defaults.$hint-colors {
     &.#{$name} {
       border-left-color: $color;
       background-color: color.scale($color, $lightness: 95%, $saturation: -30%);
-      color: $body-font-color;
+      color: defaults.$body-font-color;
     }
   }
 
   & {
-    margin: $padding-16 0;
+    margin: defaults.$padding-16 0;
     padding: 0;
 
-    border-left: $border-4 solid var(--accent-color);
-    border-radius: $border-radius;
+    border-left: defaults.$border-4 solid var(--accent-color);
+    border-radius: defaults.$border-radius;
   }
 
   table {
@@ -25,10 +28,10 @@
 
     td {
       display: block;
-      padding: $padding-4 $padding-16 !important;
+      padding: defaults.$padding-4 defaults.$padding-16 !important;
 
       &:first-child {
-        background-color: color.scale($gray-600, $alpha: -95%);
+        background-color: color.scale(defaults.$gray-600, $alpha: -95%);
         font-weight: bold;
 
         &.icon {
@@ -40,18 +43,18 @@
           i.fa::after {
             content: attr(title);
             font-style: normal;
-            padding-left: $padding-24;
+            padding-left: defaults.$padding-24;
           }
 
           i.fa {
-            color: $black;
+            color: defaults.$black;
             background-size: auto 90%;
             background-repeat: no-repeat;
             filter: invert(30%);
             margin-left: -5px;
           }
 
-          @each $name, $icon in $hint-icons {
+          @each $name, $icon in defaults.$hint-icons {
             i.fa.icon-#{$name} {
               background-image: url(img/geekdoc-stack.svg##{$icon});
             }

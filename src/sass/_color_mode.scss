@@ -1,31 +1,37 @@
+@use "sass:color";
+@use "sass:map";
+@use "chroma_dark";
+@use "chroma_light";
+@use "defaults";
+
 @mixin color_theme_light {
-  --header-background: #{$main-color};
-  --header-font-color: #{$white};
+  --header-background: #{defaults.$main-color};
+  --header-font-color: #{defaults.$white};
 
-  --body-background: #{$body-background};
-  --body-font-color: #{$body-font-color};
+  --body-background: #{defaults.$body-background};
+  --body-font-color: #{defaults.$body-font-color};
 
-  --mark-color: #{$mark-color};
+  --mark-color: #{defaults.$mark-color};
 
-  --button-background: #{color.scale($main-color, $lightness: 15%)};
-  --button-border-color: #{$main-color};
+  --button-background: #{color.scale(defaults.$main-color, $lightness: 15%)};
+  --button-border-color: #{defaults.$main-color};
 
-  --link-color: #{$link-color};
-  --link-color-visited: #{$link-color-visited};
+  --link-color: #{defaults.$link-color};
+  --link-color-visited: #{defaults.$link-color-visited};
 
-  --hint-link-color: #{$link-color};
-  --hint-link-color-visited: #{$link-color-visited};
+  --hint-link-color: #{defaults.$link-color};
+  --hint-link-color-visited: #{defaults.$link-color-visited};
 
-  --accent-color-dark: #{$gray-400};
-  --accent-color: #{$gray-200};
-  --accent-color-lite: #{$gray-100};
+  --accent-color-dark: #{defaults.$gray-400};
+  --accent-color: #{defaults.$gray-200};
+  --accent-color-lite: #{defaults.$gray-100};
 
-  --control-icons: #{color.scale($body-font-color, $lightness: 40%)};
+  --control-icons: #{color.scale(defaults.$body-font-color, $lightness: 40%)};
 
-  --footer-background: #{$second-color};
-  --footer-font-color: #{$white};
-  --footer-link-color: #{$link-color-footer};
-  --footer-link-color-visited: #{$link-color-footer};
+  --footer-background: #{defaults.$second-color};
+  --footer-font-color: #{defaults.$white};
+  --footer-link-color: #{defaults.$link-color-footer};
+  --footer-link-color-visited: #{defaults.$link-color-footer};
 
   .dark-mode-dim .gdoc-markdown {
     img {
@@ -42,39 +48,39 @@
 
     .gdoc-hint__title,
     .admonitionblock table td:first-child {
-      background-color: color.scale($gray-600, $alpha: -95%);
+      background-color: color.scale(defaults.$gray-600, $alpha: -95%);
     }
   }
 }
 
 @mixin color_theme_dark {
-  --header-background: #{$main-color};
-  --header-font-color: #{$white};
+  --header-background: #{defaults.$main-color};
+  --header-font-color: #{defaults.$white};
 
-  --body-background: #{$body-background-dark};
-  --body-font-color: #{color.scale($body-background-dark, $lightness: 70%)};
+  --body-background: #{defaults.$body-background-dark};
+  --body-font-color: #{color.scale(defaults.$body-background-dark, $lightness: 70%)};
 
-  --mark-color: #{$mark-color};
+  --mark-color: #{defaults.$mark-color};
 
-  --button-background: #{color.scale($main-color, $lightness: 15%)};
-  --button-border-color: #{$main-color};
+  --button-background: #{color.scale(defaults.$main-color, $lightness: 15%)};
+  --button-border-color: #{defaults.$main-color};
 
-  --link-color: #{$link-color-dark};
-  --link-color-visited: #{$link-color-visited-dark};
+  --link-color: #{defaults.$link-color-dark};
+  --link-color-visited: #{defaults.$link-color-visited-dark};
 
-  --hint-link-color: #{$link-color};
-  --hint-link-color-visited: #{$link-color-visited};
+  --hint-link-color: #{defaults.$link-color};
+  --hint-link-color-visited: #{defaults.$link-color-visited};
 
-  --accent-color-dark: #{color.scale($body-background-dark, $lightness: -60%)};
-  --accent-color: #{color.scale($body-background-dark, $lightness: -30%)};
-  --accent-color-lite: #{color.scale($body-background-dark, $lightness: -15%)};
+  --accent-color-dark: #{color.scale(defaults.$body-background-dark, $lightness: -60%)};
+  --accent-color: #{color.scale(defaults.$body-background-dark, $lightness: -30%)};
+  --accent-color-lite: #{color.scale(defaults.$body-background-dark, $lightness: -15%)};
 
-  --control-icons: #{color.scale($body-font-color, $lightness: 40%)};
+  --control-icons: #{color.scale(defaults.$body-font-color, $lightness: 40%)};
 
-  --footer-background: #{$second-color};
-  --footer-font-color: #{$white};
-  --footer-link-color: #{$link-color-footer};
-  --footer-link-color-visited: #{$link-color-footer};
+  --footer-background: #{defaults.$second-color};
+  --footer-font-color: #{defaults.$white};
+  --footer-link-color: #{defaults.$link-color-footer};
+  --footer-link-color-visited: #{defaults.$link-color-footer};
 
   .dark-mode-dim {
     .gdoc-markdown img {
@@ -102,39 +108,39 @@
 
     .gdoc-hint__title,
     .admonitionblock table td:first-child {
-      background-color: color.scale($gray-600, $alpha: -85%);
+      background-color: color.scale(defaults.$gray-600, $alpha: -85%);
     }
   }
 }
 
 @mixin code_theme_dark {
-  @include chroma_dark;
+  @include chroma_dark.chroma_dark;
 
   & {
-    --code-background: #{$code-background-dark};
-    --code-accent-color: #{color.scale($code-background-dark, $lightness: -30%)};
-    --code-accent-color-lite: #{color.scale($code-background-dark, $lightness: -15%)};
-    --code-font-color: #{$code-font-color-dark};
+    --code-background: #{defaults.$code-background-dark};
+    --code-accent-color: #{color.scale(defaults.$code-background-dark, $lightness: -30%)};
+    --code-accent-color-lite: #{color.scale(defaults.$code-background-dark, $lightness: -15%)};
+    --code-font-color: #{defaults.$code-font-color-dark};
 
-    --code-copy-background: #{$code-background-dark};
-    --code-copy-font-color: #{color.scale($code-font-color-dark, $lightness: -15%)};
-    --code-copy-border-color: #{color.scale($code-font-color-dark, $lightness: -20%)};
-    --code-copy-success-color: #{color.scale(map.get($hint-colors, "ok"), $alpha: -55%)};
+    --code-copy-background: #{defaults.$code-background-dark};
+    --code-copy-font-color: #{color.scale(defaults.$code-font-color-dark, $lightness: -15%)};
+    --code-copy-border-color: #{color.scale(defaults.$code-font-color-dark, $lightness: -20%)};
+    --code-copy-success-color: #{color.scale(map.get(defaults.$hint-colors, "ok"), $alpha: -55%)};
   }
 }
 
 @mixin code_theme_light {
-  @include chroma_github;
+  @include chroma_light.chroma_github;
 
   & {
-    --code-background: #{$code-background};
-    --code-accent-color: #{color.scale($code-background, $lightness: -45%)};
-    --code-accent-color-lite: #{color.scale($code-background, $lightness: -15%)};
-    --code-font-color: #{$code-font-color};
+    --code-background: #{defaults.$code-background};
+    --code-accent-color: #{color.scale(defaults.$code-background, $lightness: -45%)};
+    --code-accent-color-lite: #{color.scale(defaults.$code-background, $lightness: -15%)};
+    --code-font-color: #{defaults.$code-font-color};
 
-    --code-copy-background: #{$code-background};
-    --code-copy-font-color: #{color.scale($code-font-color, $lightness: 20%)};
-    --code-copy-border-color: #{color.scale($code-font-color, $lightness: 40%)};
-    --code-copy-success-color: #{map.get($hint-colors, "ok")};
+    --code-copy-background: #{defaults.$code-background};
+    --code-copy-font-color: #{color.scale(defaults.$code-font-color, $lightness: 20%)};
+    --code-copy-border-color: #{color.scale(defaults.$code-font-color, $lightness: 40%)};
+    --code-copy-success-color: #{map.get(defaults.$hint-colors, "ok")};
   }
 }

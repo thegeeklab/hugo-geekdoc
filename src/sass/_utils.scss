@@ -1,3 +1,5 @@
+@use "defaults";
+
 .flex {
   display: flex;
 }
@@ -24,14 +26,14 @@
 
 .flex-grid {
   flex-direction: column;
-  border: $border-1 solid var(--accent-color);
-  border-radius: $border-radius;
+  border: defaults.$border-1 solid var(--accent-color);
+  border-radius: defaults.$border-radius;
   background: var(--accent-color-lite);
 }
 
 .flex-gap {
   flex-wrap: wrap;
-  gap: $padding-16;
+  gap: defaults.$padding-16;
 }
 
 .justify-start {
@@ -83,7 +85,7 @@
 
 .table-wrap {
   overflow: auto;
-  margin: $padding-16 0;
+  margin: defaults.$padding-16 0;
 
   > table {
     margin: 0 !important;

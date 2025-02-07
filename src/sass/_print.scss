@@ -1,3 +1,5 @@
+@use "defaults";
+
 @media print {
   .gdoc-nav,
   .gdoc-footer .container span:not(:first-child),
@@ -7,7 +9,7 @@
   }
 
   .gdoc-footer {
-    border-top: $border-1 solid $gray-300;
+    border-top: defaults.$border-1 solid defaults.$gray-300;
   }
 
   .gdoc-markdown pre {
@@ -16,8 +18,8 @@
   }
 
   .chroma code {
-    border: $border-1 solid $gray-300;
-    padding: $padding-8 !important;
+    border: defaults.$border-1 solid defaults.$gray-300;
+    padding: defaults.$padding-8 !important;
     font-weight: normal !important;
   }
 

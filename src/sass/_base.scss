@@ -1,42 +1,47 @@
+@use "sass:meta";
+@use "sass:map";
+@use "color_mode";
+@use "defaults";
+
 :root {
   --code-max-height: none;
 
-  --header-font-family: #{meta.inspect($header-font-family)};
-  --body-font-family: #{meta.inspect($body-font-family)};
-  --code-font-family: #{meta.inspect($code-font-family)};
+  --header-font-family: #{meta.inspect(defaults.$header-font-family)};
+  --body-font-family: #{meta.inspect(defaults.$body-font-family)};
+  --code-font-family: #{meta.inspect(defaults.$code-font-family)};
 }
 
 :root,
 :root[color-theme="light"] {
-  @include color_theme_light;
-  @include code_theme_light;
+  @include color_mode.color_theme_light;
+  @include color_mode.code_theme_light;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    @include color_theme_light;
-    @include code_theme_light;
+    @include color_mode.color_theme_light;
+    @include color_mode.code_theme_light;
   }
 }
 
 :root[color-theme="dark"] {
-  @include color_theme_dark;
-  @include code_theme_dark;
+  @include color_mode.color_theme_dark;
+  @include color_mode.code_theme_dark;
 }
 
 :root[code-theme="dark"] {
-  @include code_theme_dark;
+  @include color_mode.code_theme_dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    @include color_theme_dark;
-    @include code_theme_dark;
+    @include color_mode.color_theme_dark;
+    @include color_mode.code_theme_dark;
   }
 }
 
 html {
-  font-size: $font-size-base;
+  font-size: defaults.$font-size-base;
   letter-spacing: 0.33px;
   scroll-behavior: smooth;
 
@@ -87,7 +92,7 @@ html {
 
 html,
 body {
-  min-width: $body-min-width;
+  min-width: defaults.$body-min-width;
   overflow-x: hidden;
 }
 
@@ -108,7 +113,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: $body-font-weight;
+  font-weight: defaults.$body-font-weight;
   display: flex;
   align-items: center;
 }
@@ -116,7 +121,7 @@ h6 {
 h4,
 h5,
 h6 {
-  font-size: $font-size-16 !important;
+  font-size: defaults.$font-size-16 !important;
 }
 
 a {
@@ -161,20 +166,20 @@ img {
   color: var(--body-font-color);
   background: var(--body-background);
 
-  font-weight: $body-font-weight;
+  font-weight: defaults.$body-font-weight;
 }
 
 .container {
   width: 100%;
-  max-width: $container-max-width;
+  max-width: defaults.$container-max-width;
   margin: 0 auto;
-  padding: $padding-20;
+  padding: defaults.$padding-20;
 }
 
 svg.gdoc-icon {
   display: inline-block;
-  width: $font-size-20;
-  height: $font-size-20;
+  width: defaults.$font-size-20;
+  height: defaults.$font-size-20;
   vertical-align: middle;
   stroke-width: 0;
   stroke: currentColor;
@@ -197,19 +202,19 @@ svg.gdoc-icon {
   }
 
   svg.gdoc-icon {
-    width: $font-size-32;
-    height: $font-size-32;
+    width: defaults.$font-size-32;
+    height: defaults.$font-size-32;
   }
 }
 
 .gdoc-brand {
-  font-size: $font-size-32;
-  line-height: $font-size-32;
+  font-size: defaults.$font-size-32;
+  line-height: defaults.$font-size-32;
 
   &__img {
-    margin-right: $padding-16;
-    width: $padding-32;
-    height: $padding-32;
+    margin-right: defaults.$padding-16;
+    width: defaults.$padding-32;
+    height: defaults.$padding-32;
   }
 }
 
@@ -218,7 +223,7 @@ svg.gdoc-icon {
     display: flex;
 
     > span {
-      margin-left: $padding-8;
+      margin-left: defaults.$padding-8;
     }
   }
 
@@ -233,18 +238,18 @@ svg.gdoc-icon {
 }
 
 .gdoc-nav {
-  flex: 0 0 $menu-width;
+  flex: 0 0 defaults.$menu-width;
 
   nav {
-    width: $menu-width;
-    padding: $padding-16 $padding-32 $padding-16 0;
+    width: defaults.$menu-width;
+    padding: defaults.$padding-16 defaults.$padding-32 defaults.$padding-16 0;
 
     > ul > li > * {
       font-weight: normal;
     }
 
     section {
-      margin-top: $padding-32;
+      margin-top: defaults.$padding-32;
     }
   }
 
@@ -267,22 +272,22 @@ svg.gdoc-icon {
   }
 
   &__list {
-    padding-left: $padding-16;
+    padding-left: defaults.$padding-16;
     margin: 0;
     padding: 0;
     list-style: none;
     user-select: none;
 
     ul {
-      padding-left: $padding-16;
+      padding-left: defaults.$padding-16;
     }
 
     li {
-      margin: $padding-12 0;
+      margin: defaults.$padding-12 0;
     }
 
     svg.gdoc-icon {
-      margin-right: $padding-4;
+      margin-right: defaults.$padding-4;
     }
   }
 
@@ -293,8 +298,8 @@ svg.gdoc-icon {
       cursor: pointer;
 
       svg.gdoc-icon.toggle {
-        width: $font-size-16;
-        height: $font-size-16;
+        width: defaults.$font-size-16;
+        height: defaults.$font-size-16;
       }
     }
 
@@ -347,22 +352,22 @@ svg.gdoc-icon {
 .gdoc-search__list,
 .gdoc-language__list {
   background: var(--body-background);
-  border-radius: $border-radius;
+  border-radius: defaults.$border-radius;
   box-shadow:
     0 1px 3px 0 var(--accent-color-dark),
     0 1px 2px 0 var(--accent-color);
   position: absolute;
   margin: 0;
-  padding: $padding-8 $padding-4 !important;
+  padding: defaults.$padding-8 defaults.$padding-4 !important;
   list-style: none;
-  top: calc(100% + #{$padding-8});
+  top: calc(100% + #{defaults.$padding-8});
   z-index: 2;
 }
 
 .gdoc-page {
-  min-width: calc($body-min-width - $padding-32);
+  min-width: calc(defaults.$body-min-width - defaults.$padding-32);
   flex-grow: 1;
-  padding: $padding-16 0;
+  padding: defaults.$padding-16 0;
 
   h1,
   h2,
@@ -375,7 +380,7 @@ svg.gdoc-icon {
 
   &__header,
   &__footer {
-    margin-bottom: $padding-24;
+    margin-bottom: defaults.$padding-24;
 
     svg.gdoc-icon {
       color: var(--control-icons);
@@ -389,8 +394,8 @@ svg.gdoc-icon {
 
   &__header {
     background: var(--accent-color-lite);
-    padding: $padding-8 $padding-16;
-    border-radius: $border-radius;
+    padding: defaults.$padding-8 defaults.$padding-16;
+    border-radius: defaults.$border-radius;
   }
 
   &__nav {
@@ -425,7 +430,7 @@ svg.gdoc-icon {
   }
 
   &__footer {
-    margin-top: $padding-32;
+    margin-top: defaults.$padding-32;
 
     a:hover {
       text-decoration: none;
@@ -435,8 +440,8 @@ svg.gdoc-icon {
 
 .gdoc-post {
   word-wrap: break-word;
-  border-top: 1px dashed $gray-600;
-  padding: $padding-32 0;
+  border-top: 1px dashed defaults.$gray-600;
+  padding: defaults.$padding-32 0;
 
   &:first-of-type {
     padding-top: 0;
@@ -469,7 +474,7 @@ svg.gdoc-icon {
   }
 
   &__readmore {
-    margin: $padding-32 0;
+    margin: defaults.$padding-32 0;
 
     a,
     a:hover,
@@ -485,22 +490,22 @@ svg.gdoc-icon {
     }
 
     > span {
-      margin: $padding-4 0;
+      margin: defaults.$padding-4 0;
       &:not(:last-child) {
-        margin-right: $padding-8;
+        margin-right: defaults.$padding-8;
       }
     }
 
     svg.gdoc-icon {
-      font-size: $font-size-20;
+      font-size: defaults.$font-size-20;
     }
 
     .gdoc-button {
-      margin: 0 $padding-2 0 0;
+      margin: 0 defaults.$padding-2 0 0;
     }
 
     &--head {
-      margin-bottom: $padding-32;
+      margin-bottom: defaults.$padding-32;
     }
   }
 
@@ -515,19 +520,19 @@ svg.gdoc-icon {
   &__codecopy {
     visibility: hidden;
     position: absolute;
-    top: $padding-8;
-    right: $padding-8;
+    top: defaults.$padding-8;
+    right: defaults.$padding-8;
 
-    border: $border-2 solid var(--code-copy-border-color);
-    border-radius: $border-radius;
+    border: defaults.$border-2 solid var(--code-copy-border-color);
+    border-radius: defaults.$border-radius;
     background: var(--code-copy-background);
-    width: $padding-32;
-    height: $padding-32;
+    width: defaults.$padding-32;
+    height: defaults.$padding-32;
 
     svg.gdoc-icon {
       top: 0;
-      width: $font-size-20;
-      height: $font-size-20;
+      width: defaults.$font-size-20;
+      height: defaults.$font-size-20;
       color: var(--code-copy-font-color);
     }
 
@@ -562,10 +567,10 @@ svg.gdoc-icon {
   }
 
   &__item {
-    line-height: $padding-32;
+    line-height: defaults.$padding-32;
 
     &--row {
-      margin-right: $padding-16;
+      margin-right: defaults.$padding-16;
     }
   }
 
@@ -584,10 +589,10 @@ svg.gdoc-icon {
 
   svg.gdoc-icon {
     position: absolute;
-    left: $padding-8;
+    left: defaults.$padding-8;
     color: var(--control-icons);
-    width: $font-size-20;
-    height: $font-size-20;
+    width: defaults.$font-size-20;
+    height: defaults.$font-size-20;
   }
 
   &::after {
@@ -598,14 +603,14 @@ svg.gdoc-icon {
 
   &__input {
     width: 100%;
-    padding: $padding-8;
-    padding-left: $padding-32;
+    padding: defaults.$padding-8;
+    padding-left: defaults.$padding-32;
 
     transition:
       border-color 0.15s ease-in-out,
       box-shadow 0.15s ease-in-out;
     border: 1px solid transparent;
-    border-radius: $border-radius;
+    border-radius: defaults.$border-radius;
 
     background: var(--accent-color-lite);
     color: var(--body-font-color);
@@ -631,26 +636,26 @@ svg.gdoc-icon {
     }
 
     > li + li {
-      margin-top: $padding-4;
+      margin-top: defaults.$padding-4;
     }
 
     svg.gdoc-icon {
-      margin-right: $padding-4;
+      margin-right: defaults.$padding-4;
     }
   }
 
   &__section {
     display: flex;
     flex-direction: column;
-    padding: $padding-4 !important;
+    padding: defaults.$padding-4 !important;
   }
 
   &__entry {
     display: flex;
     flex-direction: column;
     color: var(--body-font-color);
-    padding: $padding-4 !important;
-    border-radius: $border-radius;
+    padding: defaults.$padding-4 !important;
+    border-radius: defaults.$border-radius;
 
     &:hover,
     &.is-active {
@@ -668,7 +673,7 @@ svg.gdoc-icon {
     }
 
     &--description {
-      font-size: $font-size-14;
+      font-size: defaults.$font-size-14;
       font-style: italic;
     }
   }
@@ -707,7 +712,7 @@ svg.gdoc-icon {
 }
 
 .gdoc-paging {
-  padding: $padding-16 0;
+  padding: defaults.$padding-16 0;
 
   &__item {
     flex: 1 1 0;
@@ -719,7 +724,7 @@ svg.gdoc-icon {
     a:hover,
     a:visited:hover {
       background: var(--link-color);
-      color: $gray-100;
+      color: defaults.$gray-100;
     }
 
     &--next {
@@ -733,13 +738,13 @@ svg.gdoc-icon {
 }
 
 .gdoc-error {
-  padding: $padding-96 $padding-16;
+  padding: defaults.$padding-96 defaults.$padding-16;
   margin: 0 auto;
   max-width: 45em;
 
   svg.gdoc-icon {
-    width: $font-size-128;
-    height: $font-size-128;
+    width: defaults.$font-size-128;
+    height: defaults.$font-size-128;
     color: var(--body-font-color);
   }
 
@@ -750,15 +755,15 @@ svg.gdoc-icon {
   }
 
   &__message {
-    padding-left: $padding-64;
+    padding-left: defaults.$padding-64;
   }
 
   &__line {
-    padding: $padding-8 0;
+    padding: defaults.$padding-8 0;
   }
 
   &__title {
-    font-size: $font-size-64;
+    font-size: defaults.$font-size-64;
   }
 
   &__code {
@@ -767,10 +772,10 @@ svg.gdoc-icon {
 }
 
 .gdoc-toc {
-  margin: $padding-16 0;
+  margin: defaults.$padding-16 0;
 
   li {
-    margin: $padding-4 0;
+    margin: defaults.$padding-4 0;
   }
 
   // Classes to hide nested levels of ToC/Menu
