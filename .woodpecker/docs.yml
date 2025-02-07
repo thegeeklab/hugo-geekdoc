@@ -44,7 +44,7 @@ steps:
       - event: [pull_request]
 
   - name: build
-    image: quay.io/thegeeklab/hugo:0.142
+    image: quay.io/thegeeklab/hugo:0.143
     commands:
       - hugo --panicOnWarning -s exampleSite/
 
