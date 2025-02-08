@@ -281,6 +281,23 @@
       transparent
     );
     background-size: 2.5em 2.5em;
-    background-color: defaults.$main-color !important;
+    background-color: defaults.$main-color;
+
+    @each $name, $color in defaults.$hint-colors {
+      &.#{$name} {
+        background-image: linear-gradient(
+          -45deg,
+          #{color.scale($color, $lightness: -20%)} 25%,
+          transparent 25%,
+          transparent 50%,
+          #{color.scale($color, $lightness: -20%)} 50%,
+          #{color.scale($color, $lightness: -20%)} 75%,
+          transparent 75%,
+          transparent
+        );
+
+        background-color: $color;
+      }
+    }
   }
 }

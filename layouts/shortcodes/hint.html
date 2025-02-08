@@ -1,6 +1,6 @@
-{{ $type := default "note" (.Get "type") }}
-{{ $icon := .Get "icon" }}
-{{ $title := default ($type | title) (.Get "title") }}
+{{- $type := default "note" (.Get "type") }}
+{{- $icon := .Get "icon" }}
+{{- $title := default ($type | title) (.Get "title") }}
 
 
 <blockquote class="gdoc-hint {{ $type | lower }}">

@@ -1,5 +1,10 @@
 ---
 properties:
+  - name: type
+    type: string
+    description: Color type of the progress bar. Supported values are `main|note|tip|important|caution|warning`.
+    required: false
+    defaultValue: main
   - name: value
     type: integer
     description: Progress value.
