@@ -100,6 +100,14 @@
       max-width: 100%;
       height: auto;
     }
+
+    &:has(audio) {
+      width: 100%;
+
+      audio {
+        width: 100%;
+      }
+    }
   }
 
   img {
@@ -109,7 +117,8 @@
 
   blockquote {
     margin: defaults.$padding-16 0;
-    padding: defaults.$padding-8 defaults.$padding-16 defaults.$padding-8 (defaults.$padding-16 - defaults.$padding-4); //to keep total left space 16dp
+    padding: defaults.$padding-8 defaults.$padding-16 defaults.$padding-8
+      (defaults.$padding-16 - defaults.$padding-4); //to keep total left space 16dp
 
     border-left: defaults.$border-4 solid var(--accent-color);
     border-radius: defaults.$border-radius;
