@@ -95,6 +95,10 @@
       filter: saturate(2.5) brightness(0.85);
     }
 
+    .gdoc-progress__bar {
+      filter: saturate(0.85) brightness(0.85);
+    }
+
     .gdoc-hint,
     .admonitionblock {
       a {
