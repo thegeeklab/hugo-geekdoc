@@ -33,7 +33,7 @@ resources:
 
 <!-- prettier-ignore-start -->
 <!-- spellchecker-disable -->
-{{< propertylist name=shortcode-images sort=name order=asc >}}
+{{< propertylist name=shortcode-audio sort=name order=asc >}}
 <!-- spellchecker-enable -->
 <!-- prettier-ignore-end -->
 
