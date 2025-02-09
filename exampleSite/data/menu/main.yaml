@@ -8,6 +8,7 @@ main:
           en: Level 1.1 (EN)
           de: Level 1.1 (DE)
         ref: "/toc-tree/level-1/level-1-1"
+        rel: me
       - name: Level 1.2
         ref: "/toc-tree/level-1/level-1-2"
       - name: Level 1.3
