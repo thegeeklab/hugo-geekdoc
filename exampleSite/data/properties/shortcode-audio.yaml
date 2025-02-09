@@ -1,0 +1,6 @@
+---
+properties:
+  - name: name
+    type: string
+    description: Name of the audio resource defined in page front matter.
+    required: true
