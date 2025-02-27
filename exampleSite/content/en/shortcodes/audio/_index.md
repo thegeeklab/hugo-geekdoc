@@ -1,11 +1,11 @@
 ---
 title: Audio
 resources:
-  - name: risen
-    src: "risen.mp3"
-    title: Risen
+  - name: diamonds-trap
+    src: "diamonds-trap.mp3"
+    title: Diamonds Trap
     params:
-      credits: "[Sascha Ende on filmmusic.io](https://filmmusic.io/en/song/12856-risen)"
+      credits: "[Jakob Eglmeier on openmusic.academy CC0-1.0](https://openmusic.academy/media-library/b9do2E2ZwVCfppyBf2yuej)"
 ---
 
 The audio shortcode allows you to embed audio files.
@@ -19,14 +19,14 @@ Define your resources in the page front matter, custom parameter `params.credits
 ```md
 ---
 resources:
-  - name: risen
-    src: "risen.mp3"
-    title: Risen
+  - name: diamonds-trap
+    src: "diamonds-trap.mp3"
+    title: Diamonds Trap
     params:
-      credits: "[Sascha Ende on filmmusic.io](https://filmmusic.io/en/song/12856-risen)"
+      credits: "[Jakob Eglmeier on openmusic.academy CC0-1.0](https://openmusic.academy/media-library/b9do2E2ZwVCfppyBf2yuej)"
 ---
 
-{{</* audio name="risen" */>}}
+{{</* audio name="diamonds-trap" */>}}
 ```
 
 ### Attributes
@@ -43,6 +43,6 @@ resources:
 
 <!-- spellchecker-disable -->
 
-{{< audio name="risen" >}}
+{{< audio name="diamonds-trap" >}}
 
 <!-- spellchecker-enable -->
