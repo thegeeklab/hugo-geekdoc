@@ -354,8 +354,8 @@ svg.gdoc-icon {
   background: var(--body-background);
   border-radius: defaults.$border-radius;
   box-shadow:
-    0 1px 3px 0 var(--accent-color-dark),
-    0 1px 2px 0 var(--accent-color);
+    0 1px 3px 0 var(--accent-color),
+    0 1px 2px 0 var(--accent-color-lite);
   position: absolute;
   margin: 0;
   padding: defaults.$padding-8 defaults.$padding-4 !important;
@@ -577,6 +577,10 @@ svg.gdoc-icon {
   &__link {
     text-decoration: underline;
     color: var(--footer-link-color);
+
+    &:hover {
+      text-decoration: none;
+    }
 
     &:visited {
       color: var(--footer-link-color-visited);
