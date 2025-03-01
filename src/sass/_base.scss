@@ -420,6 +420,7 @@ svg.gdoc-icon {
       width: 1.85em;
       height: 1.85em;
       color: transparent;
+      transition: color 0.2s ease-in-out;
     }
 
     &:focus {
@@ -513,12 +514,20 @@ svg.gdoc-icon {
     position: relative;
 
     &:hover > .gdoc-post__codecopy {
+      opacity: 1;
       visibility: visible;
+      pointer-events: auto;
     }
   }
 
   &__codecopy {
+    opacity: 0;
     visibility: hidden;
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease;
+    pointer-events: none;
+
     position: absolute;
     top: defaults.$padding-8;
     right: defaults.$padding-8;
