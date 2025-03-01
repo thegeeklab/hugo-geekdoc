@@ -105,6 +105,24 @@ body {
   * {
     box-sizing: inherit;
   }
+
+  #gdoc-to-main {
+    position: absolute;
+    margin: defaults.$padding-8 0;
+    padding: defaults.$padding-8;
+
+    display: inline-block;
+    background-color: var(--accent-color-lite);
+    border-radius: defaults.$border-radius;
+    border: defaults.$border-1 solid var(--accent-color);
+
+    transform: translateY(0);
+    transition: transform 250ms ease-in;
+
+    &:not(:focus) {
+      transform: translateY(-#{defaults.$padding-64});
+    }
+  }
 }
 
 h1,
