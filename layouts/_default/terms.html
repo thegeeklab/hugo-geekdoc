@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ range .Paginator.Pages.ByTitle }}
-    <article class="gdoc-post">
+    <article class="gdoc-post" id="main-content" tabindex="-1">
       <header class="gdoc-post__header">
         <h1 class="gdoc-post__title">
           <a href="{{ .RelPermalink }}">{{ partial "utils/title" . }}</a>
