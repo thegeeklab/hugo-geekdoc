@@ -33,7 +33,7 @@
 
   a,
   &__link {
-    text-decoration: underline;
+    text-decoration: node;
     border-bottom: defaults.$border-1 solid transparent;
     line-height: normal;
 
@@ -120,6 +120,7 @@
     padding: defaults.$padding-8 defaults.$padding-16 defaults.$padding-8
       (defaults.$padding-16 - defaults.$padding-4); //to keep total left space 16dp
 
+    border: defaults.$border-1 solid var(--accent-color);
     border-left: defaults.$border-4 solid var(--accent-color);
     border-radius: defaults.$border-radius;
   }
@@ -174,7 +175,7 @@
   }
 
   code {
-    padding: defaults.$padding-4 defaults.$padding-8;
+    padding: defaults.$padding-2 defaults.$padding-4;
   }
 
   pre,
@@ -183,7 +184,7 @@
     border-radius: defaults.$border-radius;
     color: var(--code-font-color);
     font-size: defaults.$font-size-14;
-    line-height: defaults.$padding-16;
+    line-height: defaults.$padding-20;
   }
 
   pre code {

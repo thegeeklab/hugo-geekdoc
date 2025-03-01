@@ -31,7 +31,12 @@
   background: var(--accent-color-lite);
 }
 
-.flex-gap {
+.gap-8 {
+  flex-wrap: wrap;
+  gap: defaults.$padding-8;
+}
+
+.gap-16 {
   flex-wrap: wrap;
   gap: defaults.$padding-16;
 }

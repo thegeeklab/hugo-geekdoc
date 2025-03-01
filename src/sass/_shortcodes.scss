@@ -140,51 +140,44 @@
 
 // {{< hint >}}
 .gdoc-hint {
+  $root: &;
   @each $name, $color in defaults.$hint-colors {
     &.#{$name} {
-      border-left-color: $color;
-      background-color: color.scale($color, $lightness: 95%, $saturation: -30%);
-      color: defaults.$body-font-color;
+      border-color: $color;
       padding: 0;
 
-      code,
-      pre {
-        background-color: color.scale($color, $lightness: 80%, $saturation: -75%);
-        color: defaults.$code-font-color;
+      #{$root}__title {
+        background-color: color.adjust($color, $alpha: -0.9);
+        border-start-start-radius: inherit;
+        border-start-end-radius: inherit;
+        position: relative;
+        z-index: -10;
+        outline: color.adjust($color, $alpha: -0.9);
       }
     }
   }
 
   &__title {
     padding: defaults.$padding-4 defaults.$padding-16;
-    background-color: color.scale(defaults.$gray-600, $alpha: -95%);
     font-weight: bold;
-    color: color.scale(defaults.$body-font-color, $alpha: -15%);
-
-    i.fa::after {
-      content: attr(title);
-      font-style: normal;
-      padding-left: defaults.$padding-24;
-    }
-
-    i.fa {
-      color: defaults.$black;
-      background-size: auto 90%;
-      background-repeat: no-repeat;
-      filter: invert(30%);
-      margin-left: -5px;
-    }
+    color: var(--body-font-color);
+    margin-left: -5px;
 
     @each $name, $icon in defaults.$hint-icons {
       i.fa.#{$name} {
-        background-image: url(img/geekdoc-stack.svg##{$icon});
+        width: defaults.$font-size-24;
+        height: defaults.$font-size-24;
+
+        mask-image: url(img/geekdoc-stack.svg##{$icon});
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        background-color: var(--body-font-color);
       }
     }
 
     .gdoc-icon {
       width: defaults.$font-size-24;
       height: defaults.$font-size-24;
-      margin-left: -5px;
     }
   }
 
