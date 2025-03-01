@@ -1,6 +1,7 @@
 {{ define "main" }}
+  <div id="main-content" tabindex="-1">
   {{ range .Paginator.Pages }}
-    <article class="gdoc-post" id="main-content" tabindex="-1">
+    <article class="gdoc-post">
       <header class="gdoc-post__header">
         <h1 class="gdoc-post__title">
           <a href="{{ .RelPermalink }}">{{ partial "utils/title" . }}</a>
@@ -31,6 +32,7 @@
       </footer>
     </article>
   {{ end }}
+  </div>
   {{ partial "pagination.html" . }}
 {{ end }}
 
