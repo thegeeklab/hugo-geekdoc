@@ -19,10 +19,6 @@
   --link-color: #{defaults.$link-color};
   --link-color-visited: #{defaults.$link-color-visited};
 
-  --hint-link-color: #{defaults.$link-color};
-  --hint-link-color-visited: #{defaults.$link-color-visited};
-
-  --accent-color-dark: #{defaults.$gray-400};
   --accent-color: #{defaults.$gray-200};
   --accent-color-lite: #{defaults.$gray-100};
 
@@ -40,15 +36,9 @@
   }
 
   .gdoc-markdown {
-    .gdoc-hint,
     .gdoc-props__tag,
     .admonitionblock {
       filter: none;
-    }
-
-    .gdoc-hint__title,
-    .admonitionblock table td:first-child {
-      background-color: color.scale(defaults.$gray-600, $alpha: -95%);
     }
   }
 }
@@ -68,10 +58,6 @@
   --link-color: #{defaults.$link-color-dark};
   --link-color-visited: #{defaults.$link-color-visited-dark};
 
-  --hint-link-color: #{defaults.$link-color};
-  --hint-link-color-visited: #{defaults.$link-color-visited};
-
-  --accent-color-dark: #{color.scale(defaults.$body-background-dark, $lightness: -60%)};
   --accent-color: #{color.scale(defaults.$body-background-dark, $lightness: -30%)};
   --accent-color-lite: #{color.scale(defaults.$body-background-dark, $lightness: -15%)};
 
@@ -89,7 +75,6 @@
   }
 
   .gdoc-markdown {
-    .gdoc-hint,
     .gdoc-props__tag,
     .admonitionblock {
       filter: saturate(2.5) brightness(0.85);
@@ -97,22 +82,6 @@
 
     .gdoc-progress__bar {
       filter: saturate(0.85) brightness(0.85);
-    }
-
-    .gdoc-hint,
-    .admonitionblock {
-      a {
-        color: var(--hint-link-color);
-
-        &:visited {
-          color: var(--hint-link-color-visited);
-        }
-      }
-    }
-
-    .gdoc-hint__title,
-    .admonitionblock table td:first-child {
-      background-color: color.scale(defaults.$gray-600, $alpha: -85%);
     }
   }
 }
@@ -124,7 +93,7 @@
     --code-background: #{defaults.$code-background-dark};
     --code-accent-color: #{color.scale(defaults.$code-background-dark, $lightness: -30%)};
     --code-accent-color-lite: #{color.scale(defaults.$code-background-dark, $lightness: -15%)};
-    --code-font-color: #{defaults.$code-font-color-dark};
+    --code-font-color: #{defaults.$gray-300};
 
     --code-copy-background: #{defaults.$code-background-dark};
     --code-copy-font-color: #{color.scale(defaults.$code-font-color-dark, $lightness: -15%)};
@@ -140,11 +109,11 @@
     --code-background: #{defaults.$code-background};
     --code-accent-color: #{color.scale(defaults.$code-background, $lightness: -45%)};
     --code-accent-color-lite: #{color.scale(defaults.$code-background, $lightness: -15%)};
-    --code-font-color: #{defaults.$code-font-color};
+    --code-font-color: #{defaults.$gray-700};
 
     --code-copy-background: #{defaults.$code-background};
-    --code-copy-font-color: #{color.scale(defaults.$code-font-color, $lightness: 20%)};
-    --code-copy-border-color: #{color.scale(defaults.$code-font-color, $lightness: 40%)};
+    --code-copy-font-color: #{defaults.$gray-500};
+    --code-copy-border-color: #{defaults.$gray-400};
     --code-copy-success-color: #{map.get(defaults.$hint-colors, "ok")};
   }
 }
