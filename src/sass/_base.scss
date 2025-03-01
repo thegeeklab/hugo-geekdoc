@@ -578,6 +578,10 @@ svg.gdoc-icon {
     text-decoration: underline;
     color: var(--footer-link-color);
 
+    &:hover {
+      text-decoration: none;
+    }
+
     &:visited {
       color: var(--footer-link-color-visited);
     }
