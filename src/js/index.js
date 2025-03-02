@@ -1,4 +1,5 @@
 import Clipboard from "clipboard"
+import "./accessibility.js"
 
 document.addEventListener("DOMContentLoaded", function () {
   let clipboard = new Clipboard(".clip")

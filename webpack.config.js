@@ -87,7 +87,7 @@ var config = {
       generate(seed, files) {
         let manifest = {}
 
-        files.forEach(function (element, index) {
+        files.forEach(function (element) {
           if (element.name.endsWith("VERSION")) return
           if (element.name.endsWith(".svg")) return
           if (element.name.startsWith("fonts/")) return
