@@ -7,7 +7,7 @@ import { TOGGLE_COLOR_THEMES, THEME, COLOR_THEME_AUTO } from "./config.js"
 document.addEventListener("DOMContentLoaded", () => {
   const colorThemeToggle = document.getElementById("gdoc-color-theme")
 
-  colorThemeToggle.onclick = function () {
+  function toggleColorTheme() {
     let lstore = Storage.namespace(THEME)
     let currentColorTheme = lstore.get("color-theme") || COLOR_THEME_AUTO
     let nextColorTheme = toggle(TOGGLE_COLOR_THEMES, currentColorTheme)
@@ -15,6 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
     lstore.set("color-theme", TOGGLE_COLOR_THEMES[nextColorTheme])
     applyTheme(false)
   }
+
+  colorThemeToggle.onclick = function () {
+    toggleColorTheme()
+  }
+
+  colorThemeToggle.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      toggleColorTheme()
+      event.preventDefault()
+    }
+  })
 })
 
 function applyTheme(init = true) {

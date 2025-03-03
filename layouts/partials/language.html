@@ -1,6 +1,6 @@
 {{ if hugo.IsMultilingual }}
   <span class="gdoc-language">
-    <ul class="gdoc-language__selector" role="button" aria-pressed="false" tabindex="0">
+    <ul class="gdoc-language__selector" tabindex="0" role="button" aria-pressed="false">
       <li>
         {{ range .Site.Languages }}
           {{ if eq . $.Site.Language }}
