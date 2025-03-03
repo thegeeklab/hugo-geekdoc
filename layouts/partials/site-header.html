@@ -1,17 +1,19 @@
 <header class="gdoc-header">
   <div class="container flex align-center justify-between">
     {{ if .MenuEnabled }}
-      <label for="menu-control" class="gdoc-nav__control" tabindex="0" role="button" aria-pressed="false">
-        <input type="checkbox" class="hidden" id="menu-control" />
+      <label for="menu-control" class="gdoc-nav__control">
+        <div tabindex="0" role="button" aria-pressed="false">
+          <input type="checkbox" class="hidden" id="menu-control" />
 
-        <svg class="gdoc-icon gdoc_menu">
-          <title>{{ i18n "button_nav_open" }}</title>
-          <use xlink:href="#gdoc_menu"></use>
-        </svg>
-        <svg class="gdoc-icon gdoc_arrow_back">
-          <title>{{ i18n "button_nav_close" }}</title>
-          <use xlink:href="#gdoc_arrow_back"></use>
-        </svg>
+          <svg class="gdoc-icon gdoc_menu">
+            <title>{{ i18n "button_nav_open" }}</title>
+            <use xlink:href="#gdoc_menu"></use>
+          </svg>
+          <svg class="gdoc-icon gdoc_arrow_back">
+            <title>{{ i18n "button_nav_close" }}</title>
+            <use xlink:href="#gdoc_arrow_back"></use>
+          </svg>
+        </div>
       </label>
     {{ end }}
     <div>
@@ -33,7 +35,7 @@
         {{ end }}
 
 
-        <span id="gdoc-color-theme">
+        <span id="gdoc-color-theme" tabindex="0" role="button" aria-pressed="false">
           <svg class="gdoc-icon gdoc_brightness_dark">
             <title>{{ i18n "button_toggle_dark" }}</title>
             <use xlink:href="#gdoc_brightness_dark"></use>
@@ -60,18 +62,20 @@
         {{ partial "language" .Root }}
       </span>
       <span class="gdoc-menu-header__control">
-        <label for="menu-header-control" tabindex="0">
-          <input type="checkbox" class="hidden" id="menu-header-control" />
+        <label for="menu-header-control">
+          <div tabindex="0" role="button" aria-pressed="false">
+            <input type="checkbox" class="hidden" id="menu-header-control" />
 
-          <svg class="gdoc-icon gdoc_keyboard_arrow_right">
-            <use xlink:href="#gdoc_keyboard_arrow_right"></use>
-            <title>{{ i18n "button_menu_close" }}</title>
-          </svg>
+            <svg class="gdoc-icon gdoc_keyboard_arrow_right">
+              <use xlink:href="#gdoc_keyboard_arrow_right"></use>
+              <title>{{ i18n "button_menu_close" }}</title>
+            </svg>
 
-          <svg class="gdoc-icon gdoc_keyboard_arrow_left">
-            <use xlink:href="#gdoc_keyboard_arrow_left"></use>
-            <title>{{ i18n "button_menu_open" }}</title>
-          </svg>
+            <svg class="gdoc-icon gdoc_keyboard_arrow_left">
+              <use xlink:href="#gdoc_keyboard_arrow_left"></use>
+              <title>{{ i18n "button_menu_open" }}</title>
+            </svg>
+          </div>
         </label>
       </span>
     </div>
