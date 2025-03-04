@@ -1,13 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Find all elements with role="button"
-  const buttonRoleElements = document.querySelectorAll('[role="button"]')
-
   const gdocNav = document.querySelector(".gdoc-nav")
   const gdocPage = document.querySelector(".gdoc-page")
+  const menuControl = document.getElementById("menu-control")
 
-  buttonRoleElements.forEach((buttonElement) => {
-    // Check if this button controls a checkbox
-    const controlId = buttonElement.parentElement.getAttribute("for")
+  // Helper function for menu navigation accessibility
+  function updateMenuAccessibility() {
+    if (!gdocNav || !gdocPage || !menuControl) return
+
+    const isMenuOpen = menuControl.checked
+    const isDesktop = window.matchMedia("(min-width: 41rem)").matches
+
+    // Set nav accessibility attributes
+    gdocNav.toggleAttribute("inert", !isDesktop && !isMenuOpen)
+    gdocNav.setAttribute("aria-hidden", (!isDesktop && !isMenuOpen).toString())
+
+    // Set page accessibility attributes
+    gdocPage.toggleAttribute("inert", !isDesktop && isMenuOpen)
+    gdocPage.setAttribute("aria-hidden", (!isDesktop && isMenuOpen).toString())
+  }
+
+  // Process all button role elements
+  document.querySelectorAll('[role="button"]').forEach((buttonElement) => {
+    const controlId = buttonElement.parentElement?.getAttribute("for")
     if (!controlId) return
 
     const controlElement = document.getElementById(controlId)
@@ -16,48 +30,24 @@ document.addEventListener("DOMContentLoaded", function () {
     // Set initial accessibility state
     buttonElement.setAttribute("aria-pressed", controlElement.checked)
 
-    if (controlId === "menu-control" && gdocNav && gdocPage) {
-      updateMenuAccessibility(controlElement.checked)
+    // Handle accessibility updates
+    const updateButton = () => {
+      buttonElement.setAttribute("aria-pressed", controlElement.checked)
+      if (controlId === "menu-control") updateMenuAccessibility()
     }
 
-    buttonElement.addEventListener("click", function () {
-      this.setAttribute("aria-pressed", controlElement.checked)
-
-      if (controlId === "menu-control" && gdocNav && gdocPage) {
-        updateMenuAccessibility(controlElement.checked)
-      }
-    })
-
-    buttonElement.addEventListener("keydown", function (event) {
+    // Event listeners
+    buttonElement.addEventListener("click", updateButton)
+    buttonElement.addEventListener("keydown", (event) => {
       if (event.key === "Enter") {
         controlElement.checked = !controlElement.checked
-        this.setAttribute("aria-pressed", controlElement.checked)
-
-        if (controlId === "menu-control" && gdocNav && gdocPage) {
-          updateMenuAccessibility(controlElement.checked)
-        }
-
+        updateButton()
         event.preventDefault()
       }
     })
   })
 
-  // Helper function for menu navigation accessibility
-  function updateMenuAccessibility(isMenuOpen) {
-    if (!gdocNav || !gdocPage) return
-
-    if (isMenuOpen) {
-      gdocNav.removeAttribute("inert")
-      gdocNav.setAttribute("aria-hidden", false)
-
-      gdocPage.setAttribute("inert", "")
-      gdocPage.setAttribute("aria-hidden", true)
-    } else {
-      gdocNav.setAttribute("inert", "")
-      gdocNav.setAttribute("aria-hidden", true)
-
-      gdocPage.removeAttribute("inert")
-      gdocPage.setAttribute("aria-hidden", false)
-    }
-  }
+  // Initial call and resize handler
+  updateMenuAccessibility()
+  window.addEventListener("resize", updateMenuAccessibility)
 })
