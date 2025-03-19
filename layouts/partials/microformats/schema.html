@@ -60,7 +60,7 @@
           "url": {{ .Site.Home.Permalink }},
           "logo": {
               "@type": "ImageObject",
-              "url": {{ (default "brand.svg" .Site.Params.logo) | absURL }},
+              "url": {{ (default "brand.svg" .Site.Params.geekdocLogo) | absURL }},
               "width":"32",
               "height":"32"
           }
