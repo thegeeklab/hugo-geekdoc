@@ -13,6 +13,7 @@ weight: -10
 ```toml
 baseURL = "http://localhost"
 title = "Geekdocs"
+subtitle = "A Hugo theme for documentation"
 theme = "hugo-geekdoc"
 
 # Required to get well formatted code blocks
@@ -142,6 +143,7 @@ enableRobotsTXT = true
 ---
 baseURL: "http://localhost"
 title: "Geekdocs"
+subtitle: "A Hugo theme for documentation"
 theme: "hugo-geekdoc"
 
 # Required to get well formatted code blocks
