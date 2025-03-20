@@ -37,6 +37,9 @@ enableRobotsTXT = true
   tag = "tags"
 
 [params]
+  # (Optional, default none) Set a subtitle used in the page header.
+  geekdocSubtitle = "A Hugo theme for documentation"
+
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
   # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
   # You can also specify this parameter per page in front matter.
@@ -167,6 +170,9 @@ taxonomies:
   tag: tags
 
 params:
+  # (Optional, default none) Set a subtitle used in the page header.
+  geekdocSubtitle: "A Hugo theme for documentation"
+
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
   # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)
   # You can also specify this parameter per page in front matter.
