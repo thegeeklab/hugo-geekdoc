@@ -17,15 +17,18 @@
       </label>
     {{ end }}
     <div>
-      <a class="gdoc-brand gdoc-header__link" href="{{ .Root.Site.Home.Permalink }}">
-        <span class="flex align-center">
-          <img
-            class="gdoc-brand__img"
-            src="{{ (default "brand.svg" .Root.Site.Params.geekdocLogo) | relURL }}"
-            alt=""
-          />
-          <span class="gdoc-brand__title">{{ .Root.Site.Title }}</span>
-        </span>
+      <a class="gdoc-brand gdoc-header__link flex gap-16 align-center" href="{{ .Root.Site.Home.Permalink }}">
+        <img
+          class="gdoc-brand__img"
+          src="{{ (default "brand.svg" .Root.Site.Params.geekdocLogo) | relURL }}"
+          alt=""
+        />
+        <div>
+          <div class="gdoc-brand__title">{{ .Root.Site.Title }}</div>
+          {{ with .Root.Site.Params.geekdocSubtitle }}
+          <div class="gdoc-brand__subtitle">{{ . }}</div>
+          {{ end }}
+        </div>
       </a>
     </div>
     <div class="gdoc-menu-header flex gap-16">

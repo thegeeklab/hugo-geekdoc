@@ -226,13 +226,18 @@ svg.gdoc-icon {
 }
 
 .gdoc-brand {
-  font-size: defaults.$font-size-32;
-  line-height: defaults.$font-size-32;
-
   &__img {
-    margin-right: defaults.$padding-16;
     width: defaults.$padding-32;
     height: defaults.$padding-32;
+  }
+
+  &__title {
+    font-size: defaults.$font-size-24;
+    line-height: defaults.$font-size-24;
+  }
+
+  &__subtitle {
+    font-size: defaults.$font-size-12;
   }
 }
 
