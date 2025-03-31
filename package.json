@@ -44,13 +44,13 @@
     "uuid": "11.1.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.26.10",
+    "@babel/eslint-parser": "7.27.0",
     "autoprefixer": "10.4.21",
     "copy-webpack-plugin": "13.0.0",
     "css-loader": "7.1.2",
     "eslint": "9.23.0",
     "eslint-config-prettier": "10.1.1",
-    "eslint-plugin-prettier": "5.2.4",
+    "eslint-plugin-prettier": "5.2.5",
     "favicons": "7.2.0",
     "favicons-webpack-plugin": "6.0.1",
     "globals": "16.0.0",
