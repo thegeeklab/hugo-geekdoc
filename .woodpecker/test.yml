@@ -44,6 +44,9 @@ steps:
     depends_on: [testbuild]
     commands:
       - lychee --no-progress --format detailed exampleSite/content/ README.md
+    environment:
+      GITHUB_TOKEN:
+        from_secret: github_token_ro
 
   - name: page-validation
     image: quay.io/thegeeklab/lhci:0.14
