@@ -49,7 +49,7 @@ steps:
         from_secret: github_token_ro
 
   - name: page-validation
-    image: quay.io/thegeeklab/lhci:0.14
+    image: quay.io/thegeeklab/lhci:0.15
     depends_on: [testbuild]
     commands:
       - lhci autorun
