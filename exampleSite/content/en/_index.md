@@ -1,5 +1,5 @@
 ---
-title: Welcome to the documentation
+title: Welcome to DÜNYA
 geekdocNav: false
 geekdocAlign: center
 geekdocAnchor: false
