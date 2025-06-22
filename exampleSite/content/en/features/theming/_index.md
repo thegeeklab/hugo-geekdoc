@@ -41,7 +41,7 @@ The minimal steps to load a custom Favicon is to overwrite the three default Fav
 
 ### Full replacement
 
-If you want to add more Favicon formats you have to [overwrite](https://gohugo.io/templates/partials/#partial-template-lookup-order) the default partial that is used to load the files. In the next step you have to place the required files in the `static` folder of your project as well.
+If you want to add more Favicon formats you have to [overwrite](https://gohugo.io/templates/lookup-order/) the default partial that is used to load the files. In the next step you have to place the required files in the `static` folder of your project as well.
 
 **Example:**
 
