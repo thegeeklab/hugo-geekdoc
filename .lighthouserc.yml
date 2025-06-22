@@ -1,11 +1,11 @@
 ---
 ci:
   collect:
-    numberOfRuns: 1
+    numberOfRuns: 3
     staticDistDir: exampleSite/public
     url:
-      # - http://localhost/
-      # - http://localhost/404.html
+      - http://localhost/
+      - http://localhost/404.html
       - http://localhost/usage/getting-started/
     settings:
       chromeFlags: "--no-sandbox --headless --disable-dev-shm-usage"
@@ -26,7 +26,8 @@ ci:
           "errors-in-console",
           "max-potential-fid",
           "interactive",
-          "dom-size"
+          "dom-size",
+          "forced-reflow-insight"
         ]
   assert:
     preset: "lighthouse:no-pwa"
@@ -47,6 +48,7 @@ ci:
       max-potential-fid: off
       interactive: off
       dom-size: off
+      forced-reflow-insight: off
       total-byte-weight: warn
       identical-links-same-purpose: warn
       tap-targets: warn
