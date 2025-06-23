@@ -1,6 +1,6 @@
 import groupBy from "lodash/groupBy.js"
 import truncate from "lodash/truncate.js"
-import Document from "flexsearch/dist/module/document.js"
+import { Document, Charset } from "flexsearch"
 import { Validator } from "@cfworker/json-schema"
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -55,7 +55,8 @@ function init(input, searchConfig) {
   input.removeEventListener("focus", init)
 
   const indexCfgDefaults = {
-    tokenize: "forward"
+    tokenize: "forward",
+    encoder: Charset.LatinBalance
   }
   const indexCfg = searchConfig.indexConfig ? searchConfig.indexConfig : indexCfgDefaults
   const dataUrl = searchConfig.dataFile
@@ -63,7 +64,7 @@ function init(input, searchConfig) {
   indexCfg.document = {
     key: "id",
     index: ["title", "content", "description"],
-    store: ["title", "href", "parent", "description"]
+    store: ["title", "href", "parent", "content", "description"]
   }
 
   const index = new Document(indexCfg)
@@ -79,7 +80,14 @@ function init(input, searchConfig) {
 function search(input, results, searchConfig) {
   const searchCfg = {
     enrich: true,
-    limit: 5
+    limit: 5,
+    highlight: {
+      template: "<b>$1</b>",
+      boundary: {
+        before: 10,
+        after: 20
+      }
+    }
   }
 
   while (results.firstChild) {
@@ -157,10 +165,23 @@ function createLinks(pages, target, showDesc) {
     if (showDesc === true) {
       const desc = a.appendChild(document.createElement("span"))
       desc.classList.add("gdoc-search__entry--description")
-      desc.textContent = truncate(page.description, {
-        length: 55,
-        separator: " "
-      })
+
+      if (page.highlight) {
+        const parser = new DOMParser()
+        const doc = parser.parseFromString(
+          truncate(page.highlight, {
+            length: 55,
+            separator: " "
+          }),
+          "text/html"
+        )
+        desc.innerHTML = doc.body.innerHTML
+      } else {
+        desc.textContent = truncate(page.description, {
+          length: 55,
+          separator: " "
+        })
+      }
     }
 
     if (target) {
@@ -206,6 +227,11 @@ function flattenHits(results) {
     for (const page of field.result) {
       if (!map.has(page.doc.href)) {
         map.set(page.doc.href, true)
+
+        if (page.highlight) {
+          page.doc.highlight = page.highlight
+        }
+
         items.push(page.doc)
       }
     }
