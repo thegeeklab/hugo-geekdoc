@@ -3,6 +3,7 @@
   "rules": {
     "element-required-content": "off",
     "element-permitted-content": "off",
-    "no-raw-characters": "off"
+    "no-raw-characters": "off",
+    "attribute-misuse": "warn"
   }
 }
