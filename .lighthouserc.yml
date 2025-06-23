@@ -19,7 +19,15 @@ ci:
           "is-crawlable",
           "image-size-responsive",
           "render-blocking-resources",
-          "largest-contentful-paint"
+          "largest-contentful-paint",
+          "unused-css-rules",
+          "network-dependency-tree-insight",
+          "legacy-javascript",
+          "errors-in-console",
+          "max-potential-fid",
+          "interactive",
+          "dom-size",
+          "forced-reflow-insight"
         ]
   assert:
     preset: "lighthouse:no-pwa"
@@ -33,6 +41,14 @@ ci:
       image-size-responsive: off
       render-blocking-resources: off
       largest-contentful-paint: off
+      unused-css-rules: off
+      network-dependency-tree-insight: off
+      legacy-javascript: off
+      errors-in-console: off
+      max-potential-fid: off
+      interactive: off
+      dom-size: off
+      forced-reflow-insight: off
       total-byte-weight: warn
       identical-links-same-purpose: warn
       tap-targets: warn
