@@ -41,7 +41,7 @@
     "lodash": "4.17.21",
     "mermaid": "11.11.0",
     "store2": "2.14.4",
-    "uuid": "12.0.0"
+    "uuid": "13.0.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.28.4",
