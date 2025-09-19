@@ -10,7 +10,7 @@ weight: -10
 {{< tabs "site-config" >}}
 {{< tab "TOML" >}}
 
-```toml
+```
 baseURL = "http://localhost"
 title = "Geekdocs"
 theme = "hugo-geekdoc"
