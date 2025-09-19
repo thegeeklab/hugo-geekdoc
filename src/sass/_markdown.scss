@@ -191,6 +191,8 @@
     display: block;
     padding: defaults.$padding-16;
     width: 100%;
+    overflow: auto;
+    max-height: var(--code-max-height);
   }
 
   mark {
