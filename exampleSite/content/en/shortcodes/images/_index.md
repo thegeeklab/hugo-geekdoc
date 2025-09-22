@@ -40,7 +40,7 @@ resources:
     src: "forest-8.svg"
     title: Forest (8)
     params:
-      credits: "SVG Repo on [SVGRepo](https://www.svgrepo.com/svg/286078/forest)"
+      credits: "SVG Repo"
 ---
 
 If you need more flexibility for your embedded images, you could use the `img` shortcode. It is using Hugo's
