@@ -16,4 +16,4 @@ properties:
     type: string
     description: Preset of different button sizes. Supported values are `regular|large`.
     required: false
-    devaultValue: regular
+    defaultValue: regular
