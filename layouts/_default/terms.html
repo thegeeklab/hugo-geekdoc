@@ -20,8 +20,8 @@
         <span class="flex align-center no-wrap">
           <svg class="gdoc-icon gdoc_star"><use xlink:href="#gdoc_star"></use></svg>
           <span>
-            {{ $latet := index .Pages.ByDate 0 }}
-            {{ with $latet }}
+            {{ $latest := index .Pages.ByDate 0 }}
+            {{ with $latest }}
               <a href="{{ .RelPermalink }}">{{ partial "utils/title" . }}</a>
             {{ end }}
           </span>
