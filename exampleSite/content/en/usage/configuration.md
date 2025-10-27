@@ -53,7 +53,7 @@ enableRobotsTXT = true
   # See also https://geekdocs.de/usage/menus/#bundle-menu.
   geekdocMenuBundle = true
 
-  # (Optional, default false) Collapse all menu entries, can not be overwritten
+  # (Optional, default false) Collapse all menu entries, cannot be overwritten
   # per page if enabled. Can be enabled per page via 'geekdocCollapseSection'.
   geekdocCollapseAllSections = true
 
@@ -186,7 +186,7 @@ params:
   # See also https://geekdocs.de/usage/menus/#bundle-menu.
   geekdocMenuBundle: true
 
-  # (Optional, default false) Collapse all menu entries, can not be overwritten
+  # (Optional, default false) Collapse all menu entries, cannot be overwritten
   # per page if enabled. Can be enabled per page via 'geekdocCollapseSection'.
   geekdocCollapseAllSections: true
 
