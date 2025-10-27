@@ -44,7 +44,7 @@
     "uuid": "13.0.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.28.4",
+    "@babel/eslint-parser": "7.28.5",
     "autoprefixer": "10.4.21",
     "copy-webpack-plugin": "13.0.1",
     "css-loader": "7.1.2",
@@ -54,12 +54,12 @@
     "favicons": "7.2.0",
     "favicons-webpack-plugin": "6.0.1",
     "globals": "16.4.0",
-    "html-validate": "10.1.2",
+    "html-validate": "10.2.1",
     "npm-run-all2": "8.0.4",
     "postcss-loader": "8.2.0",
     "prettier": "3.6.2",
     "sass": "1.93.2",
-    "sass-loader": "16.0.5",
+    "sass-loader": "16.0.6",
     "shx": "0.4.0",
     "svg-sprite": "2.0.4",
     "svgtofont": "6.4.1",
