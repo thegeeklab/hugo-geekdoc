@@ -4,5 +4,5 @@
   "dataFile": {{ $searchData.RelPermalink | jsonify }},
   "indexConfig": {{ .Site.Params.geekdocSearchConfig | jsonify }},
   "showParent": {{ if .Site.Params.geekdocSearchShowParent }}true{{ else }}false{{ end }},
-  "showDescription": {{ if .Site.Params.geekdocSearchshowDescription }}true{{ else }}false{{ end }}
+  "showDescription": {{ if .Site.Params.geekdocSearchShowDescription }}true{{ else }}false{{ end }}
 }

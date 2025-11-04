@@ -53,7 +53,7 @@ enableRobotsTXT = true
   # See also https://geekdocs.de/usage/menus/#bundle-menu.
   geekdocMenuBundle = true
 
-  # (Optional, default false) Collapse all menu entries, can not be overwritten
+  # (Optional, default false) Collapse all menu entries, cannot be overwritten
   # per page if enabled. Can be enabled per page via 'geekdocCollapseSection'.
   geekdocCollapseAllSections = true
 
@@ -105,7 +105,7 @@ enableRobotsTXT = true
   geekdocImageLazyLoading = true
 
   # (Optional, default false) Set HTMl <base> to .Site.Home.Permalink if enabled. It might be required
-  # if a subdirectory is used within Hugos BaseURL.
+  # if a subdirectory is used within Hugo's BaseURL.
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekdocOverwriteHTMLBase = false
 
@@ -186,7 +186,7 @@ params:
   # See also https://geekdocs.de/usage/menus/#bundle-menu.
   geekdocMenuBundle: true
 
-  # (Optional, default false) Collapse all menu entries, can not be overwritten
+  # (Optional, default false) Collapse all menu entries, cannot be overwritten
   # per page if enabled. Can be enabled per page via 'geekdocCollapseSection'.
   geekdocCollapseAllSections: true
 
@@ -238,7 +238,7 @@ params:
   geekdocImageLazyLoading: true
 
   # (Optional, default false) Set HTMl <base> to .Site.Home.Permalink if enabled. It might be required
-  # if a subdirectory is used within Hugos BaseURL.
+  # if a subdirectory is used within Hugo's BaseURL.
   # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
   geekdocOverwriteHTMLBase: false
 
@@ -332,7 +332,7 @@ geekdocCollapseSection = true
 geekdocAnchor = true
 
 # If you have protected some pages with e.g. basic authentication you may want to exclude these pages
-# from data file, otherwise information may be leaked. Setting this parameter to 'true' will exclude the
+# from data file, otherwise, information may be leaked. Setting this parameter to 'true' will exclude the
 # page from search data, feeds, etc.
 # WARNING: Consider hosting a standalone, fully auth-protected static page for secret information instead!
 geekdocProtected = false
@@ -395,7 +395,7 @@ geekdocCollapseSection: true
 geekdocAnchor: true
 
 # If you have protected some pages with e.g. basic authentication you may want to exclude these pages
-# from data file, otherwise information may be leaked. Setting this parameter to 'true' will exclude the
+# from data file, otherwise, information may be leaked. Setting this parameter to 'true' will exclude the
 # page from search data, feeds, etc.
 # WARNING: Consider hosting a standalone, fully auth-protected static page for secret information instead!
 geekdocProtected: false

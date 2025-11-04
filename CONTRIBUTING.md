@@ -7,7 +7,7 @@ Instead, send an email to `security@thegeeklab.de` with as many details as possi
 
 ## Bug Reports and Feature Requests
 
-If you have found a **bug** or have a **feature request** please use the search first in case a similar issue already exists.
+If you have found a **bug** or have a **feature request** please use the search first to see if a similar issue already exists.
 If not, please create an issue in this repository
 
 ## Code

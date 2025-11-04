@@ -26,10 +26,10 @@ The result of a valid minimal SVG sprite file could look like this:
 
 **Example:**
 
-FontAwesome provides three pre-build sprites included in the regular Web download pack, `sprites/brands.svg`, `sprites/regular.svg` and `sprites/solid.svg`. Choose your sprite to use and copy it to your projects root directory into `assets/sprites`, right beside your `content` folder:
+FontAwesome provides three pre-build sprites included in the regular Web download pack, `sprites/brands.svg`, `sprites/regular.svg` and `sprites/solid.svg`. Choose your sprite to use and copy it to your project's root directory into `assets/sprites`, right beside your `content` folder:
 
 ```bash
-my_projcet/
+my_project/
 ├── assets
 │   └── sprites
 │       └── regular.svg
