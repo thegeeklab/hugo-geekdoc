@@ -31,7 +31,7 @@
   "author": "Robert Kaussow",
   "license": "MIT",
   "engines": {
-    "node": ">=18 <=22"
+    "node": ">=20 <=24"
   },
   "dependencies": {
     "@cfworker/json-schema": "4.1.1",
@@ -39,33 +39,33 @@
     "flexsearch": "0.8.205",
     "katex": "0.16.25",
     "lodash": "4.17.21",
-    "mermaid": "11.12.0",
+    "mermaid": "11.12.1",
     "store2": "2.14.4",
     "uuid": "13.0.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.28.4",
+    "@babel/eslint-parser": "7.28.5",
     "autoprefixer": "10.4.21",
     "copy-webpack-plugin": "13.0.1",
     "css-loader": "7.1.2",
-    "eslint": "9.38.0",
+    "eslint": "9.39.1",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.4",
     "favicons": "7.2.0",
     "favicons-webpack-plugin": "6.0.1",
-    "globals": "16.4.0",
-    "html-validate": "10.1.2",
+    "globals": "16.5.0",
+    "html-validate": "10.3.0",
     "npm-run-all2": "8.0.4",
     "postcss-loader": "8.2.0",
     "prettier": "3.6.2",
-    "sass": "1.93.2",
-    "sass-loader": "16.0.5",
+    "sass": "1.93.3",
+    "sass-loader": "16.0.6",
     "shx": "0.4.0",
     "svg-sprite": "2.0.4",
-    "svgtofont": "6.4.1",
+    "svgtofont": "6.5.0",
     "webpack": "5.102.1",
     "webpack-cli": "6.0.1",
-    "webpack-manifest-plugin": "5.0.1",
+    "webpack-manifest-plugin": "6.0.1",
     "webpack-remove-empty-scripts": "1.1.1"
   },
   "overrides": {
