@@ -65,7 +65,7 @@
     "svgtofont": "6.5.0",
     "webpack": "5.102.1",
     "webpack-cli": "6.0.1",
-    "webpack-manifest-plugin": "5.0.1",
+    "webpack-manifest-plugin": "6.0.1",
     "webpack-remove-empty-scripts": "1.1.1"
   },
   "overrides": {
