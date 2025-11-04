@@ -8,15 +8,37 @@ when:
 steps:
   - name: eslint
     image: docker.io/library/node:lts
+    depends_on: []
     commands:
       - npm install --quiet --no-progress
       - npm run lint:js
     environment:
       FORCE_COLOR: "true"
 
+  - name: markdownlint
+    image: quay.io/thegeeklab/markdownlint-cli
+    depends_on: []
+    commands:
+      - markdownlint 'exampleSite/content/**/*.md' 'README.md' 'CONTRIBUTING.md'
+
+  - name: spellcheck
+    image: ghcr.io/streetsidesoftware/cspell
+    depends_on: []
+    commands:
+      - cspell-cli lint . --gitignore --color
+
+  - name: link-validation
+    image: docker.io/lycheeverse/lychee
+    depends_on: []
+    commands:
+      - lychee --no-progress --format detailed exampleSite/content/ README.md
+    environment:
+      GITHUB_TOKEN:
+        from_secret: github_token_ro
+
   - name: assets
     image: docker.io/library/node:lts
-    depends_on: [eslint]
+    depends_on: [eslint, markdownlint, spellcheck, link-validation]
     commands:
       - npm install --quiet --no-progress
       - npm run build
@@ -38,15 +60,6 @@ steps:
       - npm run lint:html
     environment:
       FORCE_COLOR: "true"
-
-  - name: link-validation
-    image: docker.io/lycheeverse/lychee
-    depends_on: [testbuild]
-    commands:
-      - lychee --no-progress --format detailed exampleSite/content/ README.md
-    environment:
-      GITHUB_TOKEN:
-        from_secret: github_token_ro
 
   - name: page-validation
     image: quay.io/thegeeklab/lhci:0.15

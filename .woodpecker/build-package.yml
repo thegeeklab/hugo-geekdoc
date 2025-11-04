@@ -49,4 +49,4 @@ steps:
       - event: [tag]
 
 depends_on:
-  - test
+  - static

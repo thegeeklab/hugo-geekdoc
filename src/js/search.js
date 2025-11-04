@@ -146,7 +146,7 @@ function search(input, results, searchConfig) {
 /**
  * Creates links to given fields and either returns them in an array or attaches them to a target element
  * @param {Object} fields Page to which the link should point to
- * @param {HTMLElement} target Element to which the links should be attatched
+ * @param {HTMLElement} target Element to which the links should be attached
  * @returns {Array} If target is not specified, returns an array of built links
  */
 function createLinks(pages, target, showDesc) {

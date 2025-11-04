@@ -46,7 +46,7 @@ function applyTheme(init = true) {
   }
 
   if (!init) {
-    // Reload required to re-initialise e.g. Mermaid with the new theme
+    // Reload required to re-initialize e.g. Mermaid with the new theme
     // and re-parse the Mermaid code blocks.
     location.reload()
   }

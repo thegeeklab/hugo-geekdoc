@@ -1,6 +1,7 @@
 ---
 title: Getting Started
 weight: -20
+# cspell:ignore demosite testlink gohugoio
 ---
 
 This page tells you how to get started with the Geekdoc theme, including installation and basic configuration.

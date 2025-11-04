@@ -1,5 +1,6 @@
 ---
 title: KaTeX
+# cspell:ignore infty
 ---
 
 [KaTeX](https://katex.org/) shortcode let you render math typesetting in markdown document.
