@@ -1,5 +1,6 @@
 ---
 title: Theming
+# cspell:ignore msapplication
 ---
 
 {{< toc >}}

@@ -1,5 +1,6 @@
 ---
 title: Multilingual
+# cSpell:ignore Veröffentlichung
 ---
 
 {{< toc >}}

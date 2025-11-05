@@ -1,6 +1,7 @@
 ---
 title: Configuration
 weight: -10
+# cspell:ignore expirydate linktitle publishdate
 ---
 
 {{< toc >}}

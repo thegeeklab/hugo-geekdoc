@@ -6,6 +6,7 @@ resources:
     title: Diamonds Trap
     params:
       credits: "[Jakob Eglmeier on openmusic.academy CC0-1.0](https://openmusic.academy/media-library/b9do2E2ZwVCfppyBf2yuej)"
+# cspell:ignore Jakob Eglmeier openmusic
 ---
 
 The audio shortcode allows you to embed audio files.

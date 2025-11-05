@@ -41,6 +41,7 @@ resources:
     title: Forest (8)
     params:
       credits: "SVG Repo"
+# cspell:ignore Mantri
 ---
 
 If you need more flexibility for your embedded images, you could use the `img` shortcode. It is using Hugo's

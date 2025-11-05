@@ -6,18 +6,6 @@ when:
       - ${CI_REPO_DEFAULT_BRANCH}
 
 steps:
-  - name: markdownlint
-    image: quay.io/thegeeklab/markdownlint-cli
-    commands:
-      - markdownlint 'exampleSite/content/**/*.md' 'README.md' 'CONTRIBUTING.md'
-
-  - name: spellcheck
-    image: quay.io/thegeeklab/alpine-tools
-    commands:
-      - spellchecker --files 'exampleSite/content/**/*.md' 'README.md' -d .dictionary -p spell indefinite-article syntax-urls frontmatter --frontmatter-keys title
-    environment:
-      FORCE_COLOR: "true"
-
   - name: assets
     image: docker.io/library/node:lts
     commands:

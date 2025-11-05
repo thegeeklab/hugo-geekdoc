@@ -52,7 +52,7 @@ branches:
       required_status_checks:
         strict: false
         contexts:
-          - ci/woodpecker/pr/test
+          - ci/woodpecker/pr/static
           - ci/woodpecker/pr/build-package
           - ci/woodpecker/pr/docs
       enforce_admins: false

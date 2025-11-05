@@ -1,5 +1,6 @@
 ---
 title: Icon Sets
+# cSpell:ignore svgsprit.es
 ---
 
 {{< toc >}}

@@ -2,6 +2,8 @@
 title = "Admonitions"
 +++
 
+// cspell:ignore toclevels
+
 :toc:
 :toclevels: 2
 
