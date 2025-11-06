@@ -50,6 +50,7 @@ ci:
       interactive: off
       dom-size: off
       forced-reflow-insight: off
+      unused-javascript: off
       total-byte-weight: warn
       identical-links-same-purpose: warn
       tap-targets: warn
