@@ -27,7 +27,8 @@ ci:
           "max-potential-fid",
           "interactive",
           "dom-size",
-          "forced-reflow-insight"
+          "forced-reflow-insight",
+          "unused-javascript"
         ]
   assert:
     preset: "lighthouse:no-pwa"
@@ -49,6 +50,7 @@ ci:
       interactive: off
       dom-size: off
       forced-reflow-insight: off
+      unused-javascript: off
       total-byte-weight: warn
       identical-links-same-purpose: warn
       tap-targets: warn
