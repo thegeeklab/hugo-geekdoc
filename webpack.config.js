@@ -112,9 +112,9 @@ var config = {
   ]
 }
 
-export default (argv) => {
+export default (env, argv) => {
   if (argv.mode === "development") {
-    config.devtool = "eval-cheap-source-map"
+    config.devtool = "source-map"
   }
 
   config.module = {
