@@ -41,14 +41,14 @@ steps:
     depends_on: [assets]
     commands:
       - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/${CI_REPO_NAME}
-      - hugo --panicOnWarning -s exampleSite/ -b http://localhost:8000/
+      - hugo --panicOnWarning -s exampleSite/
 
   - name: link-validation
     image: docker.io/lycheeverse/lychee
     depends_on: [testbuild]
     commands:
       - lychee --no-progress --format detailed README.md
-      - lychee --no-progress --format detailed --base-url "http://localhost:8000/" --root-dir "$(pwd)/exampleSite/public" "exampleSite/public/**/*.html"
+      - lychee --no-progress --format detailed --root-dir "$(pwd)/exampleSite/public" "exampleSite/public/**/*.html"
     environment:
       GITHUB_TOKEN:
         from_secret: github_token_ro
