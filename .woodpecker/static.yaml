@@ -27,18 +27,9 @@ steps:
     commands:
       - cspell-cli lint . --gitignore --color
 
-  - name: link-validation
-    image: docker.io/lycheeverse/lychee
-    depends_on: []
-    commands:
-      - lychee --no-progress --format detailed exampleSite/content/ README.md
-    environment:
-      GITHUB_TOKEN:
-        from_secret: github_token_ro
-
   - name: assets
     image: docker.io/library/node:lts
-    depends_on: [eslint, markdownlint, spellcheck, link-validation]
+    depends_on: [eslint, markdownlint, spellcheck]
     commands:
       - npm install --quiet --no-progress
       - npm run build
@@ -46,11 +37,21 @@ steps:
       FORCE_COLOR: "true"
 
   - name: testbuild
-    image: quay.io/thegeeklab/hugo:0.151
+    image: quay.io/thegeeklab/hugo:0.152
     depends_on: [assets]
     commands:
       - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/${CI_REPO_NAME}
-      - hugo --panicOnWarning -s exampleSite/ -b http://localhost:8000/
+      - hugo --panicOnWarning -s exampleSite/
+
+  - name: link-validation
+    image: docker.io/lycheeverse/lychee
+    depends_on: [testbuild]
+    commands:
+      - lychee --no-progress --format detailed README.md
+      - lychee --no-progress --format detailed --root-dir "$(pwd)/exampleSite/public" "exampleSite/public/**/*.html"
+    environment:
+      GITHUB_TOKEN:
+        from_secret: github_token_ro
 
   - name: html-validation
     image: docker.io/library/node:lts
