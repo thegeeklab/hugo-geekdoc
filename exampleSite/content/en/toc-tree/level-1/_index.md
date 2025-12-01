@@ -4,8 +4,8 @@ geekdocCollapseSection: true
 
 Level 1
 
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 
 {{< toc-tree >}}
 
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->

@@ -19,9 +19,9 @@ Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclima
 ### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 {{< propertylist name=shortcode-hints sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 <!-- prettier-ignore-end -->
 
 ## Example
@@ -61,11 +61,11 @@ Romanesque acclimates investiture.
 Example with a custom icon and title:
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 {{< hint type=note icon=gdoc_github title=GitHub >}}
 **Markdown content**\
 Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
 Ornateness bland it ex enc, est yeti am bongo detract re.
 {{< /hint >}}
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 <!-- prettier-ignore-end -->

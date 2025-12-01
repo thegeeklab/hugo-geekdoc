@@ -14,15 +14,15 @@ A progress bar shows how far a process has progressed.
 ### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 {{< propertylist name=shortcode-progress sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 <!-- prettier-ignore-end -->
 
 ## Example
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 {{< progress title=Eating value=65 icon=gdoc_heart >}}
 
 {{< progress title="Type: note" value=10 icon=gdoc_heart type=note >}}
@@ -34,5 +34,5 @@ A progress bar shows how far a process has progressed.
 {{< progress title="Type: caution" value=90 icon=gdoc_heart type=caution >}}
 
 {{< progress title="Type: warning" value=80 icon=gdoc_heart type=warning >}}
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 <!-- prettier-ignore-end -->

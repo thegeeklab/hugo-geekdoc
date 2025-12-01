@@ -14,7 +14,7 @@ The avatar shortcode is another custom image shortcode.
 
 Define a resource in the page front matter.
 
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 
 ```md
 ---
@@ -27,20 +27,20 @@ resources:
 {{</* avatar name="avatar" */>}}
 ```
 
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 
 ## Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 {{< propertylist name=shortcode-avatar sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 <!-- prettier-ignore-end -->
 
 ## Example
 
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 
 {{< avatar name=avatar size="small" >}}
 
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->

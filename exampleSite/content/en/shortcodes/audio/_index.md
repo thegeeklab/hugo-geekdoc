@@ -15,7 +15,7 @@ The audio shortcode allows you to embed audio files.
 
 Define your resources in the page front matter, custom parameter `params.credits` is optional.
 
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 
 ```md
 ---
@@ -33,17 +33,17 @@ resources:
 ### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 {{< propertylist name=shortcode-audio sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 <!-- prettier-ignore-end -->
 
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 
 ## Example
 
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 
 {{< audio name="diamonds-trap" >}}
 
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
