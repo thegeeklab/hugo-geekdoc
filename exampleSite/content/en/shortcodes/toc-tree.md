@@ -15,9 +15,9 @@ The `toc-tree` shortcode will generate a Table of Content from a section file tr
 ### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 {{< propertylist name=shortcode-toc-tree sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 <!-- prettier-ignore-end -->
 
 ## Example

@@ -16,9 +16,9 @@ All the necessary CSS customization properties are listed below. If you want to 
 **Custom CSS:**
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 {{< include file="/static/custom.css.example" language="CSS" options="linenos=table" >}}
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 <!-- prettier-ignore-end -->
 
 ## Favicons

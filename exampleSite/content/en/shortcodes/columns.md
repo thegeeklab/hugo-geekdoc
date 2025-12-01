@@ -26,9 +26,9 @@ Dolor sit, sumo unique argument um no ...
 ### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 {{< propertylist name=shortcode-columns sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 <!-- prettier-ignore-end -->
 
 ## Example

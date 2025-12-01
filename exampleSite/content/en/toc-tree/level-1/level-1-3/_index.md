@@ -4,8 +4,8 @@ title: Level 1.3
 
 Level 1.3
 
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 
 {{< toc-tree >}}
 
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->

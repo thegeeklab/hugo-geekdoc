@@ -15,9 +15,9 @@ Include shortcode can include files of different types. By specifying a language
 ### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 {{< propertylist name=shortcode-includes sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 <!-- prettier-ignore-end -->
 
 ## Example
@@ -37,9 +37,9 @@ If you include markdown files that should not get a menu entry, place them outsi
 ```
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 {{< include file="/static/_includes/example.md.part" >}}
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 <!-- prettier-ignore-end -->
 
 ### Example 2: Language files
@@ -54,9 +54,9 @@ This method can be used to include source code files and keep them automatically
 Result:
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 {{< include file="config/_default/config.yaml" language="yaml" options="linenos=table,hl_lines=5-6,linenostart=100" >}}
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 <!-- prettier-ignore-end -->
 
 ### Example 3: HTML

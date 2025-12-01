@@ -16,19 +16,19 @@ f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 ### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 {{< propertylist name=shortcode-katex sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 <!-- prettier-ignore-end -->
 
 ## Example
 
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 <!-- prettier-ignore -->
 {{< katex display >}}
 f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
 {{< /katex >}}
 
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 
 KaTeX can be used inline, for example {{< katex >}}\pi(x){{< /katex >}} or used with the `display` parameter as above.

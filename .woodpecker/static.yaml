@@ -29,7 +29,7 @@ steps:
 
   - name: assets
     image: docker.io/library/node:lts
-    depends_on: [eslint, markdownlint, spellcheck]
+    depends_on: []
     commands:
       - npm install --quiet --no-progress
       - npm run build

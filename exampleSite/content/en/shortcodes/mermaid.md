@@ -25,14 +25,14 @@ sequenceDiagram
 ### Attributes
 
 <!-- prettier-ignore-start -->
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 {{< propertylist name=shortcode-mermaid sort=name order=asc >}}
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 <!-- prettier-ignore-end -->
 
 ## Example
 
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 <!-- prettier-ignore -->
 {{< mermaid class="text-center" >}}
 sequenceDiagram
@@ -47,7 +47,7 @@ sequenceDiagram
     end
 {{< /mermaid >}}
 
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 
 As an alternative to shortcodes, code blocks can be used for markdown as well.
 
@@ -66,7 +66,7 @@ C -->|Two| E[Result 2]
 
 <--->
 
-<!-- spellchecker-disable -->
+<!-- cspell:disable -->
 <!-- prettier-ignore -->
 ```mermaid
 flowchart LR
@@ -76,6 +76,6 @@ C -->|One| D[Result 1]
 C -->|Two| E[Result 2]
 ```
 
-<!-- spellchecker-enable -->
+<!-- cspell:enable -->
 
 {{< /columns >}}
