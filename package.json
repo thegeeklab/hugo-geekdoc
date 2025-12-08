@@ -37,7 +37,7 @@
     "@cfworker/json-schema": "4.1.1",
     "clipboard": "2.0.11",
     "flexsearch": "0.8.212",
-    "katex": "0.16.26",
+    "katex": "0.16.27",
     "lodash": "4.17.21",
     "mermaid": "11.12.2",
     "store2": "2.14.4",
