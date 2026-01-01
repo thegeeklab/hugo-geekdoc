@@ -53,7 +53,7 @@
     "eslint-plugin-prettier": "5.5.4",
     "favicons": "7.2.0",
     "favicons-webpack-plugin": "6.0.1",
-    "globals": "16.5.0",
+    "globals": "17.0.0",
     "html-validate": "10.5.0",
     "npm-run-all2": "8.0.4",
     "postcss-loader": "8.2.0",
