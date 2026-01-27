@@ -10,13 +10,13 @@
       class="gdoc-tabs__control hidden"
       name="{{ $group }}"
       id="{{ printf "%s-%d" $group $index }}"
-      {{ if not $index }}checked="checked"{{ end }}
+      {{- if not $index }}checked="checked"{{- end }}
     />
     <label for="{{ printf "%s-%d" $group $index }}" class="gdoc-tabs__label">
       {{ $tab.Name }}
     </label>
     <div class="gdoc-markdown--nested gdoc-tabs__content">
-      {{ .Content | $.Page.RenderString }}
+      {{ .Content | $.Page.RenderString -}}
     </div>
   {{- end }}
 </div>
