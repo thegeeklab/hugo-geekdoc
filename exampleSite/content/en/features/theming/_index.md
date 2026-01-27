@@ -34,7 +34,7 @@ The Theme is shipped with a set of default Favicons in various formats generated
 
 ### Simple replacement
 
-The minimal steps to load a custom Favicon is to overwrite the three default Favicon files. Therefor place these files into your projects root folder:
+The minimal steps to load a custom Favicon is to overwrite the three default Favicon files. Therefore place these files into your projects root folder:
 
 - `static/favicon/favicon.svg`
 - `static/favicon/favicon-32x32.png`
