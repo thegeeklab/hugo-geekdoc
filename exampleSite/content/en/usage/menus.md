@@ -73,7 +73,7 @@ As an advantage you can add [icons](/features/icon-sets/) to your menu entries e
 The more menu is special type of the bundle menu and can be combined with the default file-tree menu.
 {{< /hint >}}
 
-As this is a special type of the bundle menu it is basically working in the same way. To enable it just add a data file to `data/menu/more.yaml`. The more menu will also work with the file-tree menu and therefor **don't need to be enabled** by the `geekdocMenuBundle` parameter.
+As this is a special type of the bundle menu it is basically working in the same way. To enable it just add a data file to `data/menu/more.yaml`. The more menu will also work with the file-tree menu and therefore **don't need to be enabled** by the `geekdocMenuBundle` parameter.
 
 **Example:**
 
