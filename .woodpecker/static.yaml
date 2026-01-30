@@ -44,7 +44,7 @@ steps:
       - hugo --panicOnWarning -s exampleSite/
 
   - name: link-validation
-    image: docker.io/lycheeverse/lychee
+    image: docker.io/lycheeverse/lychee:0.22
     depends_on: [testbuild]
     commands:
       - lychee --no-progress --format detailed README.md
