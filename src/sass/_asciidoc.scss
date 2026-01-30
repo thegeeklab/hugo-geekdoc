@@ -14,7 +14,6 @@
   @each $name, $color in defaults.$hint-colors {
     &.#{$name} {
       border-color: $color;
-      color: defaults.$body-font-color;
 
       td.icon {
         background-color: color.adjust($color, $alpha: -0.9);
