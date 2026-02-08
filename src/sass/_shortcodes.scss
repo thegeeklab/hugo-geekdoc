@@ -14,6 +14,7 @@
     background: var(--accent-color-lite);
     padding: defaults.$padding-8 defaults.$padding-16;
     cursor: pointer;
+    user-select: none;
   }
 
   &__content {
@@ -47,6 +48,7 @@
     padding: defaults.$padding-8 defaults.$padding-16;
     border-bottom: defaults.$border-1 transparent;
     cursor: pointer;
+    user-select: none;
   }
 
   &__content {
@@ -108,6 +110,7 @@
   border: defaults.$border-1 solid var(--accent-color);
   border-radius: defaults.$border-radius;
   cursor: pointer;
+  user-select: none;
 
   &__link {
     display: inline-block;

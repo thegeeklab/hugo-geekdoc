@@ -1,7 +1,6 @@
 {{- $source := ($.Page.Resources.ByType "audio").GetMatch (printf "%s" (.Get "name")) }}
 {{- $customAlt := .Get "alt" }}
 
-
 {{- with $source }}
   {{- $caption := default .Title $customAlt }}
 
