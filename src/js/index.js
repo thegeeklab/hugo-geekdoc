@@ -1,31 +1,31 @@
 import Clipboard from "clipboard"
 import "./accessibility.js"
 
-document.addEventListener("DOMContentLoaded", function () {
-  let clipboard = new Clipboard(".clip")
+document.addEventListener("DOMContentLoaded", () => {
+  const clipboard = new Clipboard(".clip")
 
-  clipboard.on("success", function (e) {
-    const trigger = e.trigger
+  clipboard.on("success", (e) => {
+    const { trigger, clearSelection } = e
 
     if (trigger.hasAttribute("data-copy-feedback")) {
       trigger.classList.add("gdoc-post__codecopy--success", "gdoc-post__codecopy--out")
       trigger.querySelector(".gdoc-icon.copy").classList.add("hidden")
       trigger.querySelector(".gdoc-icon.check").classList.remove("hidden")
 
-      setTimeout(function () {
+      setTimeout(() => {
         trigger.classList.remove("gdoc-post__codecopy--success", "gdoc-post__codecopy--out")
         trigger.querySelector(".gdoc-icon.copy").classList.remove("hidden")
         trigger.querySelector(".gdoc-icon.check").classList.add("hidden")
       }, 3000)
     }
 
-    e.clearSelection()
+    clearSelection()
   })
 
-  document.querySelectorAll(".highlight").forEach((highlightDiv) => createCopyButton(highlightDiv))
+  document.querySelectorAll(".highlight").forEach(createCopyButton)
 })
 
-function createCopyButton(highlightDiv) {
+const createCopyButton = (highlightDiv) => {
   const button = document.createElement("span")
 
   let codeSelector = "pre > code"
