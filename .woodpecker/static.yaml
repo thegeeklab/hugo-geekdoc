@@ -37,7 +37,7 @@ steps:
       FORCE_COLOR: "true"
 
   - name: testbuild
-    image: quay.io/thegeeklab/hugo:0.155
+    image: quay.io/thegeeklab/hugo:0.156
     depends_on: [assets]
     commands:
       - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/${CI_REPO_NAME}
