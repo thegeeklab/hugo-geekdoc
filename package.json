@@ -48,7 +48,7 @@
     "autoprefixer": "10.4.27",
     "copy-webpack-plugin": "14.0.0",
     "css-loader": "7.1.4",
-    "eslint": "10.0.3",
+    "eslint": "10.1.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.5",
     "favicons": "7.2.0",
@@ -64,7 +64,7 @@
     "svg-sprite": "2.0.4",
     "svgtofont": "6.5.1",
     "webpack": "5.105.4",
-    "webpack-cli": "7.0.0",
+    "webpack-cli": "7.0.2",
     "webpack-manifest-plugin": "6.0.1",
     "webpack-remove-empty-scripts": "1.1.1"
   },
