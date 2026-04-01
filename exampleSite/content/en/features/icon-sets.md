@@ -34,7 +34,7 @@ my_project/
 ├── assets
 │   └── sprites
 │       └── regular.svg
-├── config.yaml
+├── hugo.toml
 ├── content
 │   ├── _index.md
 │   ├── ...

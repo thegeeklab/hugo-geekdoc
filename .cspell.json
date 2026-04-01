@@ -43,6 +43,7 @@
     "renovate.json",
     "package.json",
     "config.yaml",
+    "hugo.yaml",
     "webpack.config.js",
     "theme.toml",
     "svgsprite.config.json",
