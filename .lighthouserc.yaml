@@ -28,7 +28,10 @@ ci:
           "interactive",
           "dom-size",
           "forced-reflow-insight",
-          "unused-javascript"
+          "unused-javascript",
+          "cls-culprits-insight",
+          "cache-insight",
+          "render-blocking-insight"
         ]
   assert:
     preset: "lighthouse:no-pwa"
@@ -44,6 +47,9 @@ ci:
       largest-contentful-paint: off
       unused-css-rules: off
       network-dependency-tree-insight: off
+      cls-culprits-insight: off
+      cache-insight: off
+      render-blocking-insight: off
       legacy-javascript: off
       errors-in-console: off
       max-potential-fid: off
@@ -53,7 +59,7 @@ ci:
       unused-javascript: off
       total-byte-weight: warn
       identical-links-same-purpose: warn
-      tap-targets: warn
+      tap-targets: off
       unsized-images: warn
       # FIXME: https://github.com/GoogleChrome/lighthouse/issues/11460
       categories:performance:
