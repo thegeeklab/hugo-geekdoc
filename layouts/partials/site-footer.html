@@ -19,6 +19,11 @@
             </a>
           </span>
         {{ end }}
+        {{ with .Site.Params.geekdocFooterHTML }}
+          <span class="gdoc-footer">
+            {{ . | safeHTML }}
+          </span>
+        {{ end }}
       </section>
       {{ with .Site.Params.geekdocContentLicense }}
         <section class="flex flex-wrap align-center">

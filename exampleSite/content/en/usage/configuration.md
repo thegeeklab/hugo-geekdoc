@@ -95,6 +95,9 @@ enableRobotsTXT = true
   # It can be either a remote url or a local file path relative to your content directory.
   geekdocPrivacyPolicy = "/privacy"
 
+  # (Optional, default none) Add custom HTML code to the site footer.
+  geekdocFooterHTML = '<a href="https://example.com">Example Link</a>'
+
   # (Optional, default true) Add an anchor link to headlines.
   geekdocAnchor = true
 
@@ -227,6 +230,9 @@ params:
   # (Optional, default none) Add a link to your Privacy Policy page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
   geekdocPrivacyPolicy: "/privacy"
+
+  # (Optional, default none) Add custom HTML code to the site footer.
+  geekdocFooterHTML: '<a href="https://example.com">Example Link</a>'
 
   # (Optional, default true) Add an anchor link to headlines.
   geekdocAnchor: true
