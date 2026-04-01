@@ -3,9 +3,9 @@
 {{- $order := default "asc" (.Get "order") -}}
 {{- $showAnchor := (and (default true .Page.Params.geekdocAnchor) (default true .Page.Site.Params.geekdocAnchor)) -}}
 
-{{- if .Site.Data.properties }}
+{{- if hugo.Data.properties }}
   <dl class="gdoc-props">
-    {{- with (index .Site.Data.properties (split $name ".")) }}
+    {{- with (index hugo.Data.properties (split $name ".")) }}
       {{- $properties := .properties }}
       {{- with $sort }}
         {{- $properties = (sort $properties . $order) }}

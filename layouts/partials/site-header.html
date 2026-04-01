@@ -33,8 +33,8 @@
     </div>
     <div class="gdoc-menu-header flex gap-16">
       <span class="gdoc-menu-header__items">
-        {{ if .Root.Site.Data.menu.extra.header }}
-          {{ partial "menu-extra" (dict "current" .Root "source" .Root.Site.Data.menu.extra.header "target" "header") }}
+        {{ if .Roothugo.Data.menu.extra.header }}
+          {{ partial "menu-extra" (dict "current" .Root "source" .Roothugo.Data.menu.extra.header "target" "header") }}
         {{ end }}
 
 
