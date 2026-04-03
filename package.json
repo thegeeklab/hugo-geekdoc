@@ -38,7 +38,7 @@
     "clipboard": "2.0.11",
     "flexsearch": "0.8.212",
     "katex": "0.16.44",
-    "lodash": "4.17.23",
+    "lodash": "4.18.1",
     "mermaid": "11.14.0",
     "store2": "2.14.4",
     "uuid": "13.0.0"
