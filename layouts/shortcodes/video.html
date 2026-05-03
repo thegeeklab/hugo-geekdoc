@@ -1,0 +1,32 @@
+{{- $source := ($.Page.Resources.ByType "video").GetMatch (printf "%s" (.Get "name")) }}
+{{- $customAlt := .Get "alt" }}
+{{- $preload := default "auto" (.Get "preload") }}
+{{- $type := .Get "type" }}
+{{- $controls := default false (.Get "controls") }}
+{{- $autoplay := default false (.Get "autoplay") }}
+{{- $loop := default false (.Get "loop") }}
+
+{{- with $source }}
+  {{- $caption := default .Title $customAlt }}
+
+  <div class="flex justify-center">
+    <figure class="gdoc-markdown__figure">
+      <video width=100% class="player" preload="{{ $preload | lower | safeHTMLAttr }}"
+             {{- if $controls }}{{ print " controls" | safeHTMLAttr }}{{- end }}
+             {{- if $autoplay }}{{ print " autoplay" | safeHTMLAttr }}{{- end }}
+             {{- if $loop }}{{ print " loop" | safeHTMLAttr }}{{- end }}
+      >
+        <source src="{{ .Permalink }}" {{- if gt (len $type) 0 }}{{ print "type=\"" $type "\"" | lower | safeHTMLAttr }}{{- end }}>
+        Your browser does not support the video tag.
+      </video>
+      {{- with $caption }}
+        <figcaption>
+          {{ . }}
+          {{- with $source.Params.credits }}
+            {{ printf " (%s)" . | $.Page.RenderString }}
+          {{- end }}
+        </figcaption>
+      {{- end }}
+    </figure>
+  </div>
+{{- end }}

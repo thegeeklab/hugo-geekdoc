@@ -1,0 +1,30 @@
+---
+properties:
+  - name: name
+    type: string
+    description: Name of the video resource defined in the page front matter.
+    required: true
+  - name: preload
+    type: string
+    description: What content to be loaded before the video is played. Supported values are `none|metadata|auto`. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#preload) for details.
+    required: false
+    defaultValue: auto
+  - name: type
+    type: string
+    description: The MIME media type of the video. If unspecified the browser retrieves the MIME type from the web server. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/source#type) for details.
+    required: false
+  - name: controls
+    type: bool
+    description: Enable/disable whether the browser will offer controls to allow the user to control video playback. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#controls) for details.
+    required: false
+    defaultValue: false
+  - name: autoplay
+    type: bool
+    description: Enable/disable whether the video automatically begins to play back when it is loaded. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#autoplay) for details.
+    required: false
+    defaultValue: false
+  - name: loop
+    type: bool
+    description: Enable/disable whether the video automatically begins to play back again from the start when playback reaches the end of the video. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#loop) for details.
+    required: false
+    defaultValue: false
