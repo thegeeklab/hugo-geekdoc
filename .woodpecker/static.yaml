@@ -47,8 +47,8 @@ steps:
     image: docker.io/lycheeverse/lychee:0.24
     depends_on: [testbuild]
     commands:
-      - lychee --no-progress --format detailed README.md
-      - lychee --no-progress --format detailed --root-dir "$(pwd)/exampleSite/public" "exampleSite/public/**/*.html"
+      - lychee detailed README.md
+      - lychee --root-dir "$(pwd)/exampleSite/public" "exampleSite/public/**/*.html"
     environment:
       GITHUB_TOKEN:
         from_secret: github_token_ro
