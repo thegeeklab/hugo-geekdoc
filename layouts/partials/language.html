@@ -1,50 +1,62 @@
 {{ if hugo.IsMultilingual }}
+  {{ $translations := .Rotate "language" }}
+  {{ $others := slice }}
+  {{ $hasTranslation := false }}
+  {{ range $translations }}
+    {{ if ne .Lang $.Lang }}
+      {{ $others = $others | append . }}
+      {{ $hasTranslation = true }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Fallback: if no direct translations, link to other language homepages */}}
+  {{ if not $hasTranslation }}
+    {{ range site.Home.Translations }}
+      {{ $others = $others | append . }}
+    {{ end }}
+  {{ end }}
+
   <span class="gdoc-language">
-    <ul class="gdoc-language__selector" tabindex="0" role="button" aria-pressed="false">
+    <ul class="gdoc-language__selector{{ with $others }} gdoc-language__selector--has-others{{ end }}"{{ with $others }} tabindex="0" role="button" aria-haspopup="true" aria-expanded="false" aria-label="{{ i18n "language_selector" }}"{{ end }}>
       <li>
-        {{ range .Site.Languages }}
-          {{ if eq . $.Site.Language }}
-            <span class="flex align-center">
-              <svg class="gdoc-icon gdoc_language"><use xlink:href="#gdoc_language"></use></svg>
-              <span>{{ .Lang | upper }}</span>
-            </span>
-          {{ end }}
-        {{ end }}
+        <span class="flex align-center">
+          <svg class="gdoc-icon gdoc_language"><use xlink:href="#gdoc_language"></use></svg>
+          <span>{{ $.Lang | upper }}</span>
+        </span>
 
-
+        {{ with $others }}
         <ul class="gdoc-language__list">
-          {{ if $.Translations }}
-            {{ range $.Translations }}
+          {{ if $hasTranslation }}
+            {{ range . }}
               <li>
                 <a
                   class="flex gdoc-language__entry"
-                  title="{{ .Language.LanguageName }}"
+                  title="{{ .Language.Label }}"
                   href="{{ .RelPermalink }}"
                   hreflang="{{ .Lang }}"
                   lang="{{ .Lang }}"
                 >
-                  {{ .Language.LanguageName }}
+                  {{ .Language.Label }}
                 </a>
               </li>
             {{ end }}
           {{ else }}
-            {{ range .Site.Languages -}}
-              {{ if ne $.Site.Language.Lang .Lang }}
-                <li>
-                  <a
-                    class="flex gdoc-language__entry"
-                    title="{{ i18n "language_switch_no_translation_prefix" }} {{ .LanguageName }}"
-                    href="{{ .Lang | relLangURL }}"
-                    hreflang="{{ .Lang }}"
-                    lang="{{ .Lang }}"
-                  >
-                    {{ .LanguageName }}*
-                  </a>
-                </li>
-              {{ end -}}
-            {{ end -}}
+            {{ range . }}
+              <li>
+                <a
+                  class="flex gdoc-language__entry"
+                  title="{{ i18n "language_switch_no_translation_prefix" }} {{ .Language.Label }}"
+                  href="{{ .RelPermalink }}"
+                  hreflang="{{ .Lang }}"
+                  lang="{{ .Lang }}"
+                >
+                  {{ .Language.Label }}*
+                </a>
+              </li>
+            {{ end }}
           {{ end }}
         </ul>
+        {{ end }}
       </li>
     </ul>
   </span>

@@ -1,5 +1,5 @@
 ---
 en:
-  languageName: "English"
+  label: "English"
   contentDir: "content/en"
   weight: 10
