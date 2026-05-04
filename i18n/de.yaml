@@ -51,3 +51,5 @@ propertylist_default: Standardwert
 pagination_page_prev: vorher
 pagination_page_next: weiter
 pagination_page_state: "{{ .PageNumber }}/{{ .TotalPages }}"
+
+video_unsupported: Ihr Browser unterstützt das Video-Tag nicht.
