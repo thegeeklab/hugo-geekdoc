@@ -17,7 +17,7 @@
   {{ end }}
 
   <span class="gdoc-language">
-    <ul class="gdoc-language__selector{{ with $others }} gdoc-language__selector--has-others{{ end }}"{{ with $others }} tabindex="0" role="button" aria-haspopup="true"{{ end }}>
+    <ul class="gdoc-language__selector{{ with $others }} gdoc-language__selector--has-others{{ end }}"{{ with $others }} tabindex="0" role="button" aria-haspopup="true" aria-expanded="false" aria-label="{{ i18n "language_selector" }}"{{ end }}>
       <li>
         <span class="flex align-center">
           <svg class="gdoc-icon gdoc_language"><use xlink:href="#gdoc_language"></use></svg>
