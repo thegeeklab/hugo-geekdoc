@@ -12,9 +12,9 @@
   <div class="flex justify-center">
     <figure class="gdoc-markdown__figure">
       <video preload="{{ $preload | safeHTMLAttr }}"
-        {{- if $controls }}{{ print " controls" | safeHTMLAttr }}{{- end }}
-        {{- if $autoplay }}{{ print " autoplay" | safeHTMLAttr }}{{- end }}
-        {{- if $loop }}{{ print " loop" | safeHTMLAttr }}{{- end }}
+        {{- if $controls }}{{ print " controls" | safeHTMLAttr }}{{ end }}
+        {{- if $autoplay }}{{ print " autoplay" | safeHTMLAttr }}{{ end }}
+        {{- if $loop }}{{ print " loop" | safeHTMLAttr }}{{ end -}}
       >
         <source src="{{ .Permalink }}" {{- with $type }}{{ printf "type=\"%s\"" . | safeHTMLAttr }}{{- end }}>
         {{ i18n "video_unsupported" }}
