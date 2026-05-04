@@ -1,0 +1,16 @@
+no_progress = true
+format = "detailed"
+
+max_redirects = 10
+max_retries = 2
+max_concurrency = 10
+
+retry_wait_time = 5
+
+exclude = [
+    '^https?://(www.)?pexels\.com',
+    '^https?://github\.com/thegeeklab/.+/edit/main',
+    '^https?://unsplash\.com',
+    '^https?://www\.color-hex\.com',
+    '^https?://geekdocs\.de/',
+]
