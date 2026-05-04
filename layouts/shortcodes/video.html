@@ -1,7 +1,7 @@
 {{- $source := ($.Page.Resources.ByType "video").GetMatch (printf "%s" (.Get "name")) }}
 {{- $customAlt := .Get "alt" }}
-{{- $preload := default "auto" (.Get "preload") }}
-{{- $type := .Get "type" }}
+{{- $preload := default "auto" (.Get "preload") | lower }}
+{{- $type := .Get "type" | lower }}
 {{- $controls := default false (.Get "controls") }}
 {{- $autoplay := default false (.Get "autoplay") }}
 {{- $loop := default false (.Get "loop") }}
@@ -11,13 +11,13 @@
 
   <div class="flex justify-center">
     <figure class="gdoc-markdown__figure">
-      <video width=100% class="player" preload="{{ $preload | lower | safeHTMLAttr }}"
-             {{- if $controls }}{{ print " controls" | safeHTMLAttr }}{{- end }}
-             {{- if $autoplay }}{{ print " autoplay" | safeHTMLAttr }}{{- end }}
-             {{- if $loop }}{{ print " loop" | safeHTMLAttr }}{{- end }}
+      <video preload="{{ $preload | safeHTMLAttr }}"
+        {{- if $controls }}{{ print " controls" | safeHTMLAttr }}{{- end }}
+        {{- if $autoplay }}{{ print " autoplay" | safeHTMLAttr }}{{- end }}
+        {{- if $loop }}{{ print " loop" | safeHTMLAttr }}{{- end }}
       >
-        <source src="{{ .Permalink }}" {{- if gt (len $type) 0 }}{{ print "type=\"" $type "\"" | lower | safeHTMLAttr }}{{- end }}>
-        Your browser does not support the video tag.
+        <source src="{{ .Permalink }}" {{- with $type }}{{ printf "type=\"%s\"" . | safeHTMLAttr }}{{- end }}>
+        {{ i18n "video_unsupported" }}
       </video>
       {{- with $caption }}
         <figcaption>
