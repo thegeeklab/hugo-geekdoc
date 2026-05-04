@@ -17,12 +17,12 @@ You need to set a default language and configure at least two different language
 defaultContentLanguage = "en"
 
 [languages.en]
-languageName = "English"
+label = "English"
 contentDir = "content/en"
 weight = 10
 
 [languages.de]
-languageName = "German"
+label = "German"
 contentDir = "content/de"
 weight = 20
 ```

@@ -725,16 +725,19 @@ svg.gdoc-icon {
     position: relative;
     list-style: none;
     user-select: none;
-    cursor: pointer;
     margin: 0;
     padding: 0;
     width: 100%;
 
-    &:focus,
-    &:focus-within,
-    &:active {
-      .gdoc-language__list {
-        display: block;
+    &--has-others {
+      cursor: pointer;
+
+      &:focus,
+      &:focus-within,
+      &:active {
+        .gdoc-language__list {
+          display: block;
+        }
       }
     }
   }
