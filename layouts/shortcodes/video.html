@@ -16,7 +16,7 @@
         {{- if $autoplay }}{{ print " autoplay" | safeHTMLAttr }}{{ end }}
         {{- if $loop }}{{ print " loop" | safeHTMLAttr }}{{ end -}}
       >
-        <source src="{{ .Permalink }}" {{- with $type }}{{ printf "type=\"%s\"" . | safeHTMLAttr }}{{- end }}>
+        <source src="{{ .Permalink }}" {{- with $type }}{{ printf " type=\"%s\"" . | safeHTMLAttr }}{{- end }}>
         {{ i18n "video_unsupported" }}
       </video>
       {{- with $caption }}
