@@ -1,11 +1,11 @@
 ---
 title: Video
 resources:
-  - name: lorem-ipsum-crossfade
-    src: "lorem-ipsum-crossfade.mp4"
-    title: Lorem Ipsum crossfade
+  - name: ferris-wheel
+    src: "ferris-wheel.mp4"
+    title: Stunning view of a Ferris wheel glowing with vibrant lights against the night sky.
     params:
-      credits: "Created with Claude on an iPad. The license is public domain."
+      credits: "[Siarhei Dalivelia on pexels.com](https://www.pexels.com/video/vibrant-ferris-wheel-at-night-with-colorful-lights-32072019/)"
 ---
 
 The video shortcode allows you to embed video files.
@@ -17,14 +17,14 @@ Define your resources in the page front matter, custom parameter `params.credits
 ```md
 ---
 resources:
-  - name: lorem-ipsum-crossfade
-    src: "lorem-ipsum-crossfade.mp3"
-    title: Lorem Ipsum crossfade
+  - name: ferris-wheel
+    src: "ferris-wheel.mp3"
+    title: Stunning view of a Ferris wheel glowing with vibrant lights against the night sky.
     params:
-      credits: "Created with Claude on an iPad. This is public domain."
+      credits: "[Siarhei Dalivelia on pexels.com](https://www.pexels.com/video/vibrant-ferris-wheel-at-night-with-colorful-lights-32072019/)"
 ---
 
-{{</* video name="lorem-ipsum-crossfade" */>}}
+{{</* video name="ferris-wheel" */>}}
 ```
 
 ### Attributes
@@ -41,6 +41,6 @@ resources:
 
 <!-- cspell:disable -->
 
-{{< video name="lorem-ipsum-crossfade" type="video/MP4" preload="auto" controls="true" autoplay="true" loop="true" >}}
+{{< video name="ferris-wheel" type="video/MP4" preload="auto" controls="true" autoplay="true" loop="true" >}}
 
 <!-- cspell:enable -->
