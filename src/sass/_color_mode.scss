@@ -34,13 +34,6 @@
       filter: none;
     }
   }
-
-  .gdoc-markdown {
-    .gdoc-props__tag,
-    .admonitionblock {
-      filter: none;
-    }
-  }
 }
 
 @mixin color_theme_dark {
@@ -71,17 +64,6 @@
   .dark-mode-dim {
     .gdoc-markdown img {
       filter: brightness(0.75) grayscale(0.2);
-    }
-  }
-
-  .gdoc-markdown {
-    .gdoc-props__tag,
-    .admonitionblock {
-      filter: saturate(2.5) brightness(0.85);
-    }
-
-    .gdoc-progress__bar {
-      filter: saturate(0.85) brightness(0.85);
     }
   }
 }

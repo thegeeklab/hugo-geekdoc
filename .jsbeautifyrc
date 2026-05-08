@@ -2,7 +2,7 @@
     "indent_size": 4,
     "indent_char": " ",
     "preserve_newlines": false,
-    "unformatted" : ["svg"],
+    "unformatted": ["svg"],
     "content_unformatted": ["pre"],
     "extra_liners": ["head", "body", "html", "main", "header", "footer", "section"]
 }

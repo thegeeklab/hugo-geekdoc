@@ -6,7 +6,7 @@
 {{ $current.Scratch.Set "nextPage" false }}
 {{ $current.Scratch.Set "prevPage" false }}
 
-{{ template "menu-bundle-np" dict "sect" $.Site.Data.menu.main.main "current" $current "site" $site }}
+{{ template "menu-bundle-np" dict "sect" hugo.Data.menu.main.main "current" $current "site" $site }}
 
 {{ define "menu-bundle-np" }}
   {{ $current := .current }}

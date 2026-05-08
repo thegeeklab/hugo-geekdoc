@@ -1,5 +1,5 @@
 <div class="flex flex-wrap justify-center">
-  {{ range $key, $value := .Site.Data.sprites.geekdoc }}
+  {{ range $key, $value := hugo.Data.sprites.geekdoc }}
     <div class="flex flex-grid icon-grid">
       <div class="flex align-center justify-center icon-grid__line">
         <svg class="gdoc-icon {{ $key }}"><use xlink:href="#{{ $key }}"></use></svg>

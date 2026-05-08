@@ -43,6 +43,7 @@ footer_content_license_prefix: >
   Content licensed under
 
 language_switch_no_translation_prefix: "Page not translated:"
+language_selector: Language selector
 
 propertylist_required: required
 propertylist_optional: optional
@@ -51,3 +52,5 @@ propertylist_default: default
 pagination_page_prev: prev
 pagination_page_next: next
 pagination_page_state: "{{ .PageNumber }}/{{ .TotalPages }}"
+
+video_unsupported: Your browser does not support the video tag.

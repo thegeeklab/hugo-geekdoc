@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const gdocNav = document.querySelector(".gdoc-nav")
   const gdocPage = document.querySelector(".gdoc-page")
   const menuControl = document.getElementById("menu-control")
 
   // Helper function for menu navigation accessibility
-  function updateMenuAccessibility() {
+  const updateMenuAccessibility = () => {
     if (!gdocNav || !gdocPage || !menuControl) return
 
     const isMenuOpen = menuControl.checked

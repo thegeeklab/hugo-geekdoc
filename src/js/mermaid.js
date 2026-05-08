@@ -4,10 +4,10 @@ import { COLOR_THEME_DARK, THEME, COLOR_THEME_AUTO } from "./config.js"
 
 import mermaid from "mermaid"
 
-document.addEventListener("DOMContentLoaded", function () {
-  let lstore = Storage.namespace(THEME)
-  let currentMode = lstore.get("color-theme") || COLOR_THEME_AUTO
-  let darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)")
+document.addEventListener("DOMContentLoaded", () => {
+  const lstore = Storage.namespace(THEME)
+  const currentMode = lstore.get("color-theme") || COLOR_THEME_AUTO
+  const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)")
   let darkMode = false
   let theme = "default"
 
@@ -22,14 +22,14 @@ document.addEventListener("DOMContentLoaded", function () {
   mermaid.initialize({
     startOnLoad: false,
     flowchart: { useMaxWidth: true },
-    theme: theme,
+    theme,
     themeVariables: {
-      darkMode: darkMode
+      darkMode
     }
   })
 
-  document.querySelectorAll(".mermaid").forEach(function (el) {
-    let id = "graph-" + uuidv4()
+  document.querySelectorAll(".mermaid").forEach((el) => {
+    const id = `graph-${uuidv4()}`
 
     mermaid.render(id, el.innerText).then(({ svg, bindFunctions }) => {
       el.innerHTML = svg

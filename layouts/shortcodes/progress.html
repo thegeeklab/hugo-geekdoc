@@ -1,5 +1,6 @@
 {{- $value := default 0 (.Get "value") -}}
-{{- $type := default "main" (.Get "type") }}
+{{- $label := default (printf "%v %%" $value) (.Get "label") -}}
+{{- $type := default "main" (.Get "type") -}}
 {{- $title := .Get "title" -}}
 {{- $icon := .Get "icon" -}}
 
@@ -12,13 +13,13 @@
       {{- end }}
       {{ with $title }}<span>{{ . }}</span>{{ end }}
     </div>
-    <div>{{ $value }}%</div>
+    <div>{{ $label }}</div>
   </div>
   <div class="gdoc-progress__wrap">
     <div
       class="gdoc-progress__bar {{ $type | lower }}"
       data-percent="{{ $value }}"
-      style="width: {{ $value }}%;"
+      style="width: {{ $value }}%; max-width: 100%; min-width: 0"
     ></div>
   </div>
 </div>

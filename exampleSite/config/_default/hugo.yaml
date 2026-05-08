@@ -5,7 +5,7 @@ theme: hugo-geekdoc
 
 pygmentsUseClasses: true
 pygmentsCodeFences: true
-timeout: 180000
+timeout: "180000s"
 pluralizeListTitles: false
 
 defaultContentLanguage: en

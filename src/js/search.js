@@ -31,12 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!input) return
 
-  getJson(combineURLs(basePath, "/search/" + lang + ".config.min.json"), function (searchConfig) {
+  getJson(combineURLs(basePath, `/search/${lang}.config.min.json`), function (searchConfig) {
     const validationResult = validator.validate(searchConfig)
 
     if (!validationResult.valid)
       throw AggregateError(
-        validationResult.errors.map((err) => new Error("Validation error: " + err.error)),
+        validationResult.errors.map((err) => new Error(`Validation error: ${err.error}`)),
         "Schema validation failed"
       )
 
@@ -197,7 +197,7 @@ function createLinks(pages, target, showDesc) {
 
 function fetchErrors(response) {
   if (!response.ok) {
-    throw Error("Failed to fetch '" + response.url + "': " + response.statusText)
+    throw Error(`Failed to fetch '${response.url}': ${response.statusText}`)
   }
   return response
 }
@@ -241,7 +241,7 @@ function flattenHits(results) {
 }
 
 function urlPath(rawURL) {
-  var parser = document.createElement("a")
+  const parser = document.createElement("a")
   parser.href = rawURL
 
   return parser.pathname
@@ -257,6 +257,6 @@ function urlPath(rawURL) {
  */
 function combineURLs(baseURL, relativeURL) {
   return relativeURL
-    ? baseURL.replace(/\/+$/, "") + "/" + relativeURL.replace(/^\/+/, "")
+    ? `${baseURL.replace(/\/+$/, "")}/${relativeURL.replace(/^\/+/, "")}`
     : baseURL
 }

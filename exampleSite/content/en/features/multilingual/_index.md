@@ -11,18 +11,18 @@ Hugo supports the creation of websites with multiple languages. In this post we 
 
 ### Languages
 
-You need to set a default language and configure at least two different languages used by your site to your configuration file at `config.toml`:
+You need to set a default language and configure at least two different languages used by your site to your configuration file at `hugo.toml`:
 
 ```toml
 defaultContentLanguage = "en"
 
 [languages.en]
-languageName = "English"
+label = "English"
 contentDir = "content/en"
 weight = 10
 
 [languages.de]
-languageName = "German"
+label = "German"
 contentDir = "content/de"
 weight = 20
 ```
@@ -43,7 +43,7 @@ more:
     ref: "/#"
     icon: "gdoc_notification"
   # To translate the name you can add a sub-item per language. Important: If you miss a language key
-  # that is configured in the languages list of your `config.toml` the name will be empty for this language!
+  # that is configured in the languages list of your `hugo.toml` the name will be empty for this language!
   - name:
       en: Releases
       de: Veröffentlichung
