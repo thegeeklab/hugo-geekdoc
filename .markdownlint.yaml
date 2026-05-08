@@ -7,3 +7,5 @@ MD004:
   style: dash
 MD010:
   code_blocks: False
+MD024:
+  siblings_only: True

@@ -2,8 +2,8 @@
 {{ if not (.Page.Scratch.Get "mermaid") }}
   <!-- Include mermaid only first time -->
   <script defer src="{{ index (index hugo.Data.assets "mermaid.js") "src" | relURL }}"></script>
-  {{ .Page.Scratch.Set "mermaid" true }}
 {{ end }}
+{{ .Page.Scratch.Set "mermaid" true }}
 <!-- prettier-ignore-end -->
 
 <pre class="gdoc-mermaid mermaid{{ with .Get "class" }}{{ printf " %s" . }}{{ end }}">
