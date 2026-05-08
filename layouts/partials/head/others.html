@@ -3,6 +3,14 @@
 {{- end }}
 <script src="{{ index (index hugo.Data.assets "main.js") "src" | relURL }}"></script>
 
+{{- if .Page.Param "geekdocMath" }}
+  <link
+    rel="stylesheet"
+    href="{{ index (index hugo.Data.assets "katex.css") "src" | relURL }}"
+  />
+  <script defer src="{{ index (index hugo.Data.assets "katex.js") "src" | relURL }}"></script>
+{{- end }}
+
 <link
   rel="preload"
   as="font"

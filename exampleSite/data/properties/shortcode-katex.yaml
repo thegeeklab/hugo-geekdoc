@@ -4,3 +4,9 @@ properties:
     type: list
     description: List of space-separated CSS class names to apply.
     required: false
+  - name: display
+    type: flag
+    description: >
+      Render the expression as display math (block-level, centered, on its own
+      line) instead of inline math.
+    required: false
