@@ -60,7 +60,7 @@
     "postcss-loader": "8.2.1",
     "prettier": "3.8.3",
     "sass": "1.99.0",
-    "sass-loader": "16.0.8",
+    "sass-loader": "17.0.0",
     "shx": "0.4.0",
     "svg-sprite": "2.0.4",
     "svgtofont": "6.5.2",
