@@ -87,6 +87,10 @@ enableRobotsTXT = true
   # NOTE: This parameter only applies when 'geekdocSearch = true'.
   geekdocSearchShowParent = true
 
+  # (Optional, default none) Configure the flexsearch index. This replaces the
+  # default index config, so include all options you want to keep.
+  geekdocSearchConfig = { tokenize = "forward", encoder = "Normalize" }
+
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
   geekdocLegalNotice = "https://blog.example.com/legal"
@@ -219,6 +223,12 @@ params:
   # option allows you to distinguish between files with the same name in different folders.
   # NOTE: This parameter only applies when 'geekdocSearch: true'.
   geekdocSearchShowParent: true
+
+  # (Optional, default none) Configure the flexsearch index. This replaces the
+  # default index config, so include all options you want to keep.
+  geekdocSearchConfig:
+    tokenize: forward
+    encoder: Normalize
 
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
