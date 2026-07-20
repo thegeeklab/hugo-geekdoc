@@ -87,9 +87,10 @@ enableRobotsTXT = true
   # NOTE: This parameter only applies when 'geekdocSearch = true'.
   geekdocSearchShowParent = true
 
-  # (Optional, default none) Configure the flexsearch index. This replaces the
-  # default index config, so include all options you want to keep.
-  geekdocSearchConfig = { tokenize = "forward", encoder = "Normalize" }
+  # (Optional, default { tokenize = "forward", encoder = "LatinBalance" }) Configure the flexsearch
+  # index. The value replaces the default config entirely. See
+  # https://github.com/nextapps-de/flexsearch#index-options for available options.
+  geekdocSearchConfig = { tokenize = "forward", encoder = "LatinBalance" }
 
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
@@ -224,11 +225,12 @@ params:
   # NOTE: This parameter only applies when 'geekdocSearch: true'.
   geekdocSearchShowParent: true
 
-  # (Optional, default none) Configure the flexsearch index. This replaces the
-  # default index config, so include all options you want to keep.
+  # (Optional, default { tokenize: forward, encoder: LatinBalance }) Configure the flexsearch
+  # index. The value replaces the default config entirely. See
+  # https://github.com/nextapps-de/flexsearch#index-options for available options.
   geekdocSearchConfig:
     tokenize: forward
-    encoder: Normalize
+    encoder: LatinBalance
 
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
