@@ -87,6 +87,11 @@ enableRobotsTXT = true
   # NOTE: This parameter only applies when 'geekdocSearch = true'.
   geekdocSearchShowParent = true
 
+  # (Optional, default { tokenize = "forward", encoder = "LatinBalance" }) Configure the flexsearch
+  # index. The value replaces the default config entirely. See
+  # https://github.com/nextapps-de/flexsearch#index-options for available options.
+  geekdocSearchConfig = { tokenize = "forward", encoder = "LatinBalance" }
+
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
   geekdocLegalNotice = "https://blog.example.com/legal"
@@ -219,6 +224,13 @@ params:
   # option allows you to distinguish between files with the same name in different folders.
   # NOTE: This parameter only applies when 'geekdocSearch: true'.
   geekdocSearchShowParent: true
+
+  # (Optional, default { tokenize: forward, encoder: LatinBalance }) Configure the flexsearch
+  # index. The value replaces the default config entirely. See
+  # https://github.com/nextapps-de/flexsearch#index-options for available options.
+  geekdocSearchConfig:
+    tokenize: forward
+    encoder: LatinBalance
 
   # (Optional, default none) Add a link to your Legal Notice page to the site footer.
   # It can be either a remote url or a local file path relative to your content directory.
