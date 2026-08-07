@@ -6,27 +6,6 @@ when:
       - ${CI_REPO_DEFAULT_BRANCH}
 
 steps:
-  - name: eslint
-    image: docker.io/library/node:lts
-    depends_on: []
-    commands:
-      - npm install --quiet --no-progress
-      - npm run lint:js
-    environment:
-      FORCE_COLOR: "true"
-
-  - name: markdownlint
-    image: quay.io/thegeeklab/markdownlint-cli
-    depends_on: []
-    commands:
-      - markdownlint 'exampleSite/content/**/*.md' 'README.md' 'CONTRIBUTING.md'
-
-  - name: spellcheck
-    image: ghcr.io/streetsidesoftware/cspell
-    depends_on: []
-    commands:
-      - cspell-cli lint . --gitignore --color
-
   - name: assets
     image: docker.io/library/node:lts
     depends_on: []
@@ -35,6 +14,26 @@ steps:
       - npm run build
     environment:
       FORCE_COLOR: "true"
+
+  - name: eslint
+    image: docker.io/library/node:lts
+    depends_on: [assets]
+    commands:
+      - npm run lint:js
+    environment:
+      FORCE_COLOR: "true"
+
+  - name: markdownlint
+    image: quay.io/thegeeklab/markdownlint-cli
+    depends_on: [assets]
+    commands:
+      - markdownlint 'exampleSite/content/**/*.md' 'README.md' 'CONTRIBUTING.md'
+
+  - name: spellcheck
+    image: ghcr.io/streetsidesoftware/cspell
+    depends_on: [assets]
+    commands:
+      - cspell-cli lint . --gitignore --color
 
   - name: testbuild
     image: quay.io/thegeeklab/hugo:0.164
@@ -57,7 +56,6 @@ steps:
     image: docker.io/library/node:lts
     depends_on: [testbuild]
     commands:
-      - npm install --quiet --no-progress
       - npm run lint:html
     environment:
       FORCE_COLOR: "true"
