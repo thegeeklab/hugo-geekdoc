@@ -36,6 +36,7 @@
     text-decoration: underline;
     border-bottom: defaults.$border-1 solid transparent;
     line-height: normal;
+    overflow-wrap: anywhere;
 
     &:hover {
       text-decoration: none;
