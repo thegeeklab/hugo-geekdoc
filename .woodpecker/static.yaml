@@ -36,7 +36,7 @@ steps:
       - cspell-cli lint . --gitignore --color
 
   - name: testbuild
-    image: quay.io/thegeeklab/hugo:0.164
+    image: quay.io/thegeeklab/hugo:0.165
     depends_on: [assets]
     commands:
       - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/${CI_REPO_NAME}
