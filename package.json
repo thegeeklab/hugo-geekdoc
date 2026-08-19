@@ -41,7 +41,7 @@
     "lodash": "4.18.1",
     "mermaid": "11.16.1",
     "store2": "2.14.4",
-    "uuid": "14.0.1"
+    "uuid": "14.0.2"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
