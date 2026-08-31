@@ -42,15 +42,15 @@ steps:
       - mkdir -p exampleSite/themes/ && ln -s $(pwd)/ exampleSite/themes/${CI_REPO_NAME}
       - hugo --panicOnWarning -s exampleSite/
 
-  # - name: link-validation
-  #   image: docker.io/lycheeverse/lychee:0.24
-  #   depends_on: [testbuild]
-  #   commands:
-  #     - lychee -c .lychee.toml README.md
-  #     - lychee -c .lychee.toml --root-dir "$(pwd)/exampleSite/public" "exampleSite/public/**/*.html"
-  #   environment:
-  #     GITHUB_TOKEN:
-  #       from_secret: github_token_ro
+  - name: link-validation
+    image: docker.io/lycheeverse/lychee:0.24
+    depends_on: [testbuild]
+    commands:
+      - lychee -c .lychee.toml README.md
+      - lychee -c .lychee.toml --root-dir "$(pwd)/exampleSite/public" "exampleSite/public/**/*.html"
+    environment:
+      GITHUB_TOKEN:
+        from_secret: github_token_ro
 
   - name: html-validation
     image: docker.io/library/node:lts
