@@ -1,0 +1,6 @@
+---
+formatter:
+  type: basic
+  include_document_start: True
+  eof_newline: True
+  retain_line_breaks_single: True
