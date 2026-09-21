@@ -32,3 +32,15 @@ properties:
     type: string
     description: Property to demonstrate sorting.
     required: true
+
+  - name: list-prop
+    type: list
+    description: Property to demonstrate list default values.
+    required: false
+    defaultValue: ["value1", "value2"]
+
+  - name: dict-prop
+    type: dict
+    description: Property to demonstrate dict default values.
+    required: false
+    defaultValue: {"key1": "value1", "key2": "value2"}
