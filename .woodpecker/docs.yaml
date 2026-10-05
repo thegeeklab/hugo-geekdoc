@@ -46,17 +46,17 @@ steps:
   - name: publish
     image: quay.io/thegeeklab/wp-s3-action
     settings:
+      action: [upload]
       access_key:
         from_secret: s3_access_key_geekdocs_root
       bucket: geekdocs-root
-      delete: true
       endpoint:
         from_secret: s3_endpoint
       path_style: true
       secret_key:
         from_secret: s3_secret_access_key_geekdocs_root
       source: exampleSite/public/
-      strip_prefix: exampleSite/public/
+      upload_delete: true
     when:
       - event: [tag]
       - event: [push, manual]
