@@ -132,6 +132,12 @@ enableRobotsTXT = true
   # (Optional, default false) Enable or disable adding tags for post pages automatically to the navigation sidebar.
   geekdocTagsToMenu = true
 
+  # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
+  # Could be used if you want to give credits to your hosting provider.
+  [params.geekdocHostedOn]
+    name = "Uberspace"
+    link = "https://uberspace.de/en/"
+
   # (Optional, default 'title') Configure how to sort file-tree menu entries. Possible options are 'title', 'linktitle',
   # 'date', 'publishdate', 'expirydate' or 'lastmod'. Every option can be used with a reverse modifier as well
   # e.g. 'title_reverse'.
@@ -271,6 +277,12 @@ params:
 
   # (Optional, default false) Enable or disable adding tags for post pages automatically to the navigation sidebar.
   geekdocTagsToMenu: true
+
+  # (Optional, default none) Adds a "Hosted on <provider>" line to the footer.
+  # Could be used if you want to give credits to your hosting provider.
+  geekdocHostedOn:
+    name: Uberspace
+    link: https://uberspace.de/en/
 
   # (Optional, default 'title') Configure how to sort file-tree menu entries. Possible options are 'title', 'linktitle',
   # 'date', 'publishdate', 'expirydate' or 'lastmod'. Every option can be used with a reverse modifier as well

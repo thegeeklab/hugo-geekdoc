@@ -2,6 +2,9 @@
   <nav class="container flex">
     <div>
       <section class="flex flex-wrap align-center">
+        {{ if hugo.Data.menu.extra.footer }}
+          {{ partial "menu-extra" (dict "current" . "source" hugo.Data.menu.extra.footer "target" "footer") }}
+        {{ end }}
         <span class="gdoc-footer__item gdoc-footer__item--row">
           {{ i18n "footer_build_with" | safeHTML }}
         </span>
@@ -20,6 +23,13 @@
           </span>
         {{ end }}
       </section>
+      {{ with .Site.Params.geekdocHostedOn }}
+        <section class="flex flex-wrap align-center">
+          <span class="gdoc-footer__item">
+            Hosted on <a href="{{ .link }}" class="gdoc-footer__link">{{ .name }}</a>
+          </span>
+        </section>
+      {{ end }}
       {{ with .Site.Params.geekdocContentLicense }}
         <section class="flex flex-wrap align-center">
           <span class="gdoc-footer__item">

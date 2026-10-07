@@ -33,7 +33,7 @@
             {{- end }}
           {{- end }}
           {{- if $showAnchor }}
-          <a data-clipboard-text="{{ .Page.Permalink }}#{{ $uniqueAnchor }}" class="gdoc-page__anchor clip flex align-center" title="{{ i18n "title_anchor_prefix" }} {{ .name | safeHTML }}" aria-label="{{ i18n "title_anchor_prefix" }} {{ .name | safeHTML }}" href="#{{ $uniqueAnchor }}">
+          <a data-clipboard-text="{{ .Page.Permalink }}#{{ $uniqueAnchor }}" class="gdoc-page__anchor clip flex align-center" title="{{ i18n "title_anchor_prefix" }} {{ .name | safeHTML }}" aria-label="{{ i18n "title_anchor_prefix" }} {{ .name | safeHTML }}" href="#{{ $uniqueAnchor | safeHTML }}">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
           </a>
           {{- end }}

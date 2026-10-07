@@ -20,11 +20,29 @@
         {{ $name = (index .name $site.Language.Lang) }}
       {{ end }}
 
-      {{ if not .icon }}
-        {{ errorf "Missing 'icon' attribute in data file for '%s' menu item '%s'" $target $name }}
-      {{ end }}
-
-      {{ if eq $target "header" }}
+      {{ if eq $target "footer" }}
+        <span class="gdoc-footer__item gdoc-footer__item--row">
+          {{ if $icon }}
+            <svg class="gdoc-icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>
+          {{ end }}
+          <a
+            href="{{ if .external -}}
+              {{ .ref }}
+            {{- else -}}
+              {{ relref $current .ref }}
+            {{- end }}"
+            class="gdoc-footer__link"
+            {{ if .rel -}}
+              rel="{{ .rel }}"
+            {{- end }}
+          >
+            {{ $name }}
+          </a>
+        </span>
+      {{ else if eq $target "header" }}
+        {{ if not .icon }}
+          {{ errorf "Missing 'icon' attribute in data file for '%s' menu item '%s'" $target $name }}
+        {{ end }}
         <span>
           <a
             href="{{ if .external -}}

@@ -93,9 +93,9 @@ more:
     icon: "gdoc_github"
 ```
 
-## Extra Header Menu
+## Extra menu
 
-If you want to customize the header menu, this can be achieved by using a data file written in YAML and placed at `data/menu/extra.yaml`.
+If you want to customize the header and footer menu, this can be achieved by using a data file written in YAML and placed at `data/menu/extra.yaml`.
 
 **Example:**
 
@@ -103,7 +103,12 @@ If you want to customize the header menu, this can be achieved by using a data f
 ---
 header:
   - name: GitHub
-    ref: https://github.com/thegeeklab/hugo-geekdoc
     icon: gdoc_github
+    ref: https://github.com/thegeeklab/hugo-geekdoc
     external: true
+
+footer:
+  - name: About
+    icon: gdoc_email
+    ref: "/about"
 ```

@@ -8,4 +8,8 @@
   {{ $title = .File.BaseFileName | humanize | title }}
 {{ end }}
 
+{{ if eq .Kind "term" }}
+  {{ $title = $title | humanize | title }}
+{{ end }}
+
 {{ return $title }}
