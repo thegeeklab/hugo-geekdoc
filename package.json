@@ -58,7 +58,7 @@
     "html-validate": "11.16.2",
     "npm-run-all2": "9.0.3",
     "postcss-loader": "8.2.1",
-    "prettier": "3.9.9",
+    "prettier": "3.9.10",
     "sass": "1.105.1",
     "sass-loader": "17.0.1",
     "shx": "0.4.0",
