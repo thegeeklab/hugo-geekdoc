@@ -61,7 +61,7 @@ steps:
       FORCE_COLOR: "true"
 
   - name: page-validation
-    image: quay.io/thegeeklab/lhci:0.15
+    image: quay.io/thegeeklab/lhci:0.16
     depends_on: [testbuild]
     commands:
       - lhci autorun
