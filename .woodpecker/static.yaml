@@ -7,7 +7,7 @@ when:
 
 steps:
   - name: assets
-    image: docker.io/library/node:lts
+    image: docker.io/library/node:26
     depends_on: []
     commands:
       - npm install --quiet --no-progress
@@ -16,7 +16,7 @@ steps:
       FORCE_COLOR: "true"
 
   - name: eslint
-    image: docker.io/library/node:lts
+    image: docker.io/library/node:26
     depends_on: [assets]
     commands:
       - npm run lint:js
@@ -53,7 +53,7 @@ steps:
         from_secret: github_token_ro
 
   - name: html-validation
-    image: docker.io/library/node:lts
+    image: docker.io/library/node:26
     depends_on: [testbuild]
     commands:
       - npm run lint:html

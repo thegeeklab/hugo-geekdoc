@@ -7,7 +7,7 @@ when:
 
 steps:
   - name: assets
-    image: docker.io/library/node:lts
+    image: docker.io/library/node:26
     commands:
       - npm install --quiet --no-progress
       - npm run build
@@ -16,7 +16,7 @@ steps:
       FORCE_COLOR: "true"
 
   - name: package
-    image: docker.io/library/node:lts
+    image: docker.io/library/node:26
     commands:
       - npm run pack
     environment:
