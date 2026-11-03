@@ -7,7 +7,7 @@ when:
 
 steps:
   - name: assets
-    image: docker.io/library/node:lts
+    image: docker.io/library/node:26
     commands:
       - npm install --quiet --no-progress
       - npm run svg-sprite-list
@@ -20,7 +20,7 @@ steps:
           - ${CI_REPO_DEFAULT_BRANCH}
 
   - name: assets-main
-    image: docker.io/library/node:lts
+    image: docker.io/library/node:26
     commands:
       - npm install --quiet --no-progress
       - npm run build
